@@ -1,0 +1,20 @@
+H:\ClinicaPro\ClinicaPro.Entities\bin\Debug\ClinicaPro.Entities.dll.config
+H:\ClinicaPro\ClinicaPro.Entities\bin\Debug\ClinicaPro.Entities.dll
+H:\ClinicaPro\ClinicaPro.Entities\bin\Debug\ClinicaPro.Entities.pdb
+H:\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.dll
+H:\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.SqlServer.dll
+H:\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.xml
+H:\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.SqlServer.xml
+H:\ClinicaPro\ClinicaPro.Entities\obj\Debug\ClinicaPro.Entities.csprojResolveAssemblyReference.cache
+H:\ClinicaPro\ClinicaPro.Entities\obj\Debug\ClinicaPro.Entities.dll
+H:\ClinicaPro\ClinicaPro.Entities\obj\Debug\ClinicaPro.Entities.pdb
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\bin\Debug\ClinicaPro.Entities.dll.config
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\bin\Debug\ClinicaPro.Entities.dll
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\bin\Debug\ClinicaPro.Entities.pdb
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.dll
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.SqlServer.dll
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.xml
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\bin\Debug\EntityFramework.SqlServer.xml
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\obj\Debug\ClinicaPro.Entities.csprojResolveAssemblyReference.cache
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\obj\Debug\ClinicaPro.Entities.dll
+E:\Practicas c#\ClinicaPro\ClinicaPro.Entities\obj\Debug\ClinicaPro.Entities.pdb

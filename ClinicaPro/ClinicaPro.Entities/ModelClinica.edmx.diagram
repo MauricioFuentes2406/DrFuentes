@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="102ac276047943c5bd6810072c9f8e23" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedenteHereditario" Width="1.5" PointX="13.5" PointY="48.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedentePersonalesPatologico" Width="1.5" PointX="16.5" PointY="49.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedentesGinecoObstrectico" Width="1.5" PointX="10.5" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.BusquedaImagene" Width="1.5" PointX="8" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Busqueda" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cita" Width="1.5" PointX="5.25" PointY="50.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cliente" PointX="3" PointY="49.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteOtrosArchivo" Width="1.75" PointX="5.25" PointY="54" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ColorPaciente" Width="1.5" PointX="14.25" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Consulta" Width="1.5" PointX="8.25" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Consulta_RespuestasGenerales" Width="1.5" PointX="14.25" PointY="60.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaAparatoDigestivo" Width="1.5" PointX="10.5" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaBoca" Width="1.5" PointX="10.5" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaCraneo" Width="1.5" PointX="10.5" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaCuello" Width="1.5" PointX="10.5" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaEstadoEmocional" Width="1.5" PointX="10.5" PointY="59.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaEstadoVivienda" Width="1.5" PointX="13.5" PointY="55.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaEstadoViviendaMateriale" Width="1.5" PointX="11.25" PointY="67.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaExploracionFisica" Width="1.5" PointX="16.5" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaNariz" Width="1.5" PointX="19.875" PointY="45.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaOido" Width="1.5" PointX="10.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaOjo" Width="1.5" PointX="10.5" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaParesCraneale" Width="1.5" PointX="10.5" PointY="82.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaReflejo" Width="1.5" PointX="10.5" PointY="78.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaSensibilidad" Width="1.5" PointX="10.5" PointY="90" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaToraxPulmone" Width="1.5" PointX="16.5" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.CoordinacionyMarcha" Width="1.5" PointX="10.5" PointY="97" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ElectroResultado" Width="1.5" PointX="19.5" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.EscalaTiempo" PointX="8.25" PointY="41.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Examene" Width="1.5" PointX="5.25" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExamenesResultado" Width="1.5" PointX="7.5" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExploracionMano" Width="1.5" PointX="14.25" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Familiar" Width="1.5" PointX="11.25" PointY="62.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.GastosGenerale" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.GeneralTipoServicio" Width="1.5" PointX="10.5" PointY="102.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.InventarioMedicina" Width="1.5" PointX="12.75" PointY="102.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Seguimiento" Width="1.5" PointX="10.5" PointY="105.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoAlergia" Width="1.5" PointX="0.5" PointY="49.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoCita" Width="1.5" PointX="3" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoExamene" Width="1.5" PointX="3" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoGastosGenerale" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Usuario" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExpedienteT" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar1" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar2" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar3" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar4" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar5" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar6" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar7" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar8" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar9" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Bronquitis" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Fiebre_Reumatica" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Paludismo" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Parotiditis" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Rubeola" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Sarampion" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Varicela" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentesGinecoObstrecticos_Consulta1" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_BusquedaImagenes_Busquedas" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_Citas_Cliente" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Citas_TipoCitas" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_Consulta_Cliente" />
+        <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_ElectroResultados_Cliente" />
+        <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_Examenes_Cliente" />
+        <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaExploracionFisica_ColorPaciente" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaAparatoDigestivo_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaCraneo_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaCuello_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaEstadoEmocional_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaOidos_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaOjos_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaParesCraneales_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaReflejos_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaSensibilidad_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaToraxPulmones_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_CoordinacionyMarcha_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ElectroResultados_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.PK_ConsultaEstadoVivienda_ConsultaEstadoViviendaMateriales" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.PK_ConsultaExploracionFisica_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaToraxPulmones_Consulta_RespuestasGenerales_AscultacionMurmulloVescular" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaToraxPulmones_Consulta_RespuestasGenerales_ExpasibilidadToraxica" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaToraxPulmones_Consulta_RespuestasGenerales_RespiracionDiafragmaticaAbdominal" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaToraxPulmones_Consulta_RespuestasGenerales_RuidosAgregados" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaEstadoVivienda_ConsultaEstadoViviendaMateriales_Paredes_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaEstadoVivienda_ConsultaEstadoViviendaMateriales_Piso" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaExploracionFisica_ExploracionManos" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Examenes_TipoExamenes" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ExamenesResultado_Examenes" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoGastosGenerales" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.ConsultaServicios" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.InsumosPorServicio" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Vista_TiposAlergia_comboBox" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteAlergia" Width="1.5" PointX="2.375" PointY="57.375" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ClienteAlergias_Cliente" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ClienteAlergias_Alergias" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaNariz_Consulta" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedenteAlcohol" PointX="10.5" PointY="41" Width="1.5" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedenteDrogra" PointX="10.5" PointY="34" Width="1.5" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedenteTabaco" PointX="19.5" PointY="53.5" Width="1.5" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedenteVacuna" PointX="10.5" PointY="31.125" Width="1.5" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Drogas" Width="1.5" PointX="15.75" PointY="35.625" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Vacunas" Width="1.5" PointX="21.75" PointY="42.625" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteAlcohol_Consulta" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteAlcohol_EscalaTiempo" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteDrogra_Consulta" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteDrogra_EscalaTiempo" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteTabaco_Consulta" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteTabaco_EscalaTiempo" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteVacunas_Consulta" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteVacunas_EscalaTiempo" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.AntecedentesYVacunas" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.AntecedenteYDrogas" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.GlasgowResultado" Width="1.5" PointX="10.5" PointY="28.25" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.ConsultaGlasgow" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Consulta_EscalaTiempo" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaAbdomen" Width="1.5" PointX="10.5" PointY="24.25" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaAbdomen_Consulta" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAntecedentesPatologicos" Width="1.5" PointX="10.375" PointY="3" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAntecedenteHereditario" Width="1.5" PointX="7.375" PointY="10.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaClienteAlergias" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaExploracionFisica" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaConsulta" Width="1.5" PointX="2.125" PointY="11.375" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaServicios" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaDrogas" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaVacunas" Width="1.5" PointX="12.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAlchol" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaTabaco" Width="1.5" PointX="13.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaEstadoVivienda" Width="1.5" PointX="4.375" PointY="11.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaToraxPulmones" Width="1.5" PointX="11.375" PointY="12.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

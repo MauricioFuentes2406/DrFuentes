@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAF4140F-76F0-433F-B063-CA7A17E32860}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Frm</RootNamespace>
+    <AssemblyName>Frm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgregarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarArticulo.Designer.cs">
+      <DependentUpon>AgregarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Modificar_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Modificar_Cliente.Designer.cs">
+      <DependentUpon>Agregar_Modificar_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarConsulta.Designer.cs">
+      <DependentUpon>AgregarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarExamenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarExamenes.Designer.cs">
+      <DependentUpon>AgregarExamenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarGastos.Designer.cs">
+      <DependentUpon>AgregarGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarTipoExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarTipoExamen.Designer.cs">
+      <DependentUpon>AgregarTipoExamen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador.Designer.cs">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\ConfiguracionGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ConfiguracionGeneral.Designer.cs">
+      <DependentUpon>ConfiguracionGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmDrogas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmDrogas.Designer.cs">
+      <DependentUpon>frmDrogas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmFamiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmFamiliar.Designer.cs">
+      <DependentUpon>frmFamiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmMaterialesCasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmMaterialesCasa.Designer.cs">
+      <DependentUpon>frmMaterialesCasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmRespuestaGenerales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmRespuestaGenerales.Designer.cs">
+      <DependentUpon>frmRespuestaGenerales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmVacunas.Designer.cs">
+      <DependentUpon>frmVacunas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expediente.Designer.cs">
+      <DependentUpon>Expediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteBuscar.Designer.cs">
+      <DependentUpon>ClienteBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedas.Designer.cs">
+      <DependentUpon>frmBusquedas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gridbusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gridbusqueda.Designer.cs">
+      <DependentUpon>gridbusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratorio.Designer.cs">
+      <DependentUpon>Laboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoInventario.Designer.cs">
+      <DependentUpon>MantenimientoInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoConsulta.Designer.cs">
+      <DependentUpon>MantenimientoConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralPrincipal.Designer.cs">
+      <DependentUpon>GeneralPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCliente.Designer.cs">
+      <DependentUpon>MantenimientoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoUsuarios.Designer.cs">
+      <DependentUpon>MantenimientoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paginacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paginacion.Designer.cs">
+      <DependentUpon>paginacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuxiliarLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuxiliarLogin.Designer.cs">
+      <DependentUpon>AuxiliarLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaPobrarSparse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaPobrarSparse.Designer.cs">
+      <DependentUpon>PaPobrarSparse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmAgregarAlergia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarAlergia.Designer.cs">
+      <DependentUpon>frmAgregarAlergia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria.Designer.cs">
+      <DependentUpon>Secretaria.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AgregarArticulo.resx">
+      <DependentUpon>AgregarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Modificar_Cliente.resx">
+      <DependentUpon>Agregar_Modificar_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarConsulta.resx">
+      <DependentUpon>AgregarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarExamenes.resx">
+      <DependentUpon>AgregarExamenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarGastos.resx">
+      <DependentUpon>AgregarGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarTipoExamen.resx">
+      <DependentUpon>AgregarTipoExamen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador.resx">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuxiliarLogin.resx">
+      <DependentUpon>AuxiliarLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteBuscar.resx">
+      <DependentUpon>ClienteBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\ConfiguracionGeneral.resx">
+      <DependentUpon>ConfiguracionGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmDrogas.resx">
+      <DependentUpon>frmDrogas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmFamiliar.resx">
+      <DependentUpon>frmFamiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmMaterialesCasa.resx">
+      <DependentUpon>frmMaterialesCasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmRespuestaGenerales.resx">
+      <DependentUpon>frmRespuestaGenerales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmVacunas.resx">
+      <DependentUpon>frmVacunas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expediente.resx">
+      <DependentUpon>Expediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedas.resx">
+      <DependentUpon>frmBusquedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gridbusqueda.resx">
+      <DependentUpon>gridbusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralPrincipal.resx">
+      <DependentUpon>GeneralPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratorio.resx">
+      <DependentUpon>Laboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoInventario.resx">
+      <DependentUpon>MantenimientoInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoCliente.resx">
+      <DependentUpon>MantenimientoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoConsulta.resx">
+      <DependentUpon>MantenimientoConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoUsuarios.resx">
+      <DependentUpon>MantenimientoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paginacion.resx">
+      <DependentUpon>paginacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaPobrarSparse.resx">
+      <DependentUpon>PaPobrarSparse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmAgregarAlergia.resx">
+      <DependentUpon>frmAgregarAlergia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria.resx">
+      <DependentUpon>Secretaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\molecule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cambio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electrocardiogram50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\point-of-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info59x29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price-tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price-tag-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price-tag-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blood-sample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClinicaPro.BL\ClinicaPro.BL.csproj">
+      <Project>{6766ad43-4824-4374-b413-c5a9e3a5d3ba}</Project>
+      <Name>ClinicaPro.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClinicaPro.DB\ClinicaPro.DB.csproj">
+      <Project>{ed60358b-a1cc-495a-be03-28d6d2798c6a}</Project>
+      <Name>ClinicaPro.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClinicaPro.Entities\ClinicaPro.Entities.csproj">
+      <Project>{baa9224e-fe89-43f4-b88d-8db6a1e9519a}</Project>
+      <Name>ClinicaPro.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClinicaPro.General\ClinicaPro.General.csproj">
+      <Project>{17722a54-4ccd-4a2d-9899-3e172455fc84}</Project>
+      <Name>ClinicaPro.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-012.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report 50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch-OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch-ON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marijuana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\syringe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoBlanco.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funnel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

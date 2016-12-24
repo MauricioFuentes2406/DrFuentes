@@ -1,0 +1,41 @@
+¿Como se va hacer si se quiere comparar expedientes de distintas personas?
+ o  Consultas de distintas personas 
+
+Si se desea Eliminar una respuesta ejemplo en Familiar?
+
+
+// Lincho Ek toque de las cedulas con datos
+
+Revisar en Busqueda si idNombre es FullTextindex
+
+-Tamaño de textos correctos , especialmeDIagnosticos y padecimiento Actual
+
+
+--No se ha terminado de testear Alergias , no esta  optimizado , cuando se abre frmAlergia y ya se añade, lo ideal es poder
+devolver esa misma lista al cbTipoAlergia , sin embargo ahorita lo que hace es volve a cargar la lista actualizada desde la base
+de datos 
+
+
+--Si su frecuencia cardíaca es rápida (más de 100 latidos por minuto), se denomina taquicardia. Una frecuencia cardíaca de menos 
+de 60 se denomina bradicardia. Un latido cardíaco adicional se conoce como extrasístol
+
+-- No he puesto las validaciones de los colores , y los eventos de que pase al siguiente control En Agregar Consulta
+
+--Interesante , poner un evento que lea el txt del control para que automaticamente se ponga en  busqueda
+
+-- from a in appointments
+                        from p in properties
+                        from c in clients
+                        where a.Id == p.OID
+                        where a.Start.Date >= startDate.Date
+                        where a.Start.Date <= endDate.Date
+-- Revisar lo de Lista De Imagenes que Parece que avaces se añaden varias
+
+
+-- Cuando se añade Consulta , Hay que agregar siguientes Tablas Intermedias
+  --> ServiciosTipos
+  --> 
+
+
+  -- AgregarCLiente
+  --> Añadir un Sugest de ciudades

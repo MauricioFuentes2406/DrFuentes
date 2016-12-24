@@ -1,0 +1,75 @@
+9/13/2016 12:41:06 AM	Este registro contiene información acerca de la operación de importación de esquema en el proyecto 'Script_No_Usar_Para_Programar' del equipo 'CASALAPTOP-PC' por el usuario 'CasaLaptop'.
+9/13/2016 12:41:07 AM	Se inició la importación del esquema de la base de datos.
+9/13/2016 12:41:15 AM	Recopilando opciones de base de datos
+9/13/2016 12:41:15 AM	Recopilando usuarios
+9/13/2016 12:41:15 AM	Recopilando roles
+9/13/2016 12:41:15 AM	Recopilando roles de aplicación
+9/13/2016 12:41:15 AM	Recopilando pertenencias a roles
+9/13/2016 12:41:15 AM	Recopilando grupos de archivos
+9/13/2016 12:41:15 AM	Recopilando catálogos de texto completo
+9/13/2016 12:41:15 AM	Recopilando ensamblados
+9/13/2016 12:41:15 AM	Recopilando certificados
+9/13/2016 12:41:15 AM	Recopilando claves asimétricas
+9/13/2016 12:41:15 AM	Recopilando claves simétricas
+9/13/2016 12:41:15 AM	Recopilando claves simétricas cifradas
+9/13/2016 12:41:15 AM	Recopilando esquemas
+9/13/2016 12:41:16 AM	Recopilando colecciones de esquemas XML
+9/13/2016 12:41:16 AM	Recopilando tipos de datos definidos por el usuario
+9/13/2016 12:41:16 AM	Recopilando tipos definidos por el usuario
+9/13/2016 12:41:16 AM	Recopilando tipos de tabla
+9/13/2016 12:41:16 AM	Recopilando claves únicas para tipos de tabla
+9/13/2016 12:41:16 AM	Recopilando claves principales para tipos de tabla
+9/13/2016 12:41:16 AM	Recopilando restricciones CHECK para tipos de tabla
+9/13/2016 12:41:16 AM	Recopilando restricciones DEFAULT para tipos de tabla
+9/13/2016 12:41:16 AM	Recopilando funciones de partición
+9/13/2016 12:41:16 AM	Recopilando esquemas de partición
+9/13/2016 12:41:16 AM	Recopilando funciones
+9/13/2016 12:41:16 AM	Recopilando funciones cifradas
+9/13/2016 12:41:16 AM	Recopilando agregados
+9/13/2016 12:41:16 AM	Recopilando procedimientos
+9/13/2016 12:41:16 AM	Recopilando procedimientos cifrados
+9/13/2016 12:41:16 AM	Recopilando tablas
+9/13/2016 12:41:17 AM	Recopilando claves principales
+9/13/2016 12:41:17 AM	Recopilando restricciones UNIQUE
+9/13/2016 12:41:17 AM	Recopilando claves externas
+9/13/2016 12:41:17 AM	Recopilando restricciones DEFAULT
+9/13/2016 12:41:17 AM	Recopilando restricciones CHECK
+9/13/2016 12:41:17 AM	Recopilando vistas
+9/13/2016 12:41:17 AM	Recopilando vistas cifradas
+9/13/2016 12:41:17 AM	Recopilando índices
+9/13/2016 12:41:17 AM	Recopilando estadísticas
+9/13/2016 12:41:17 AM	Recopilando listas de palabras irrelevantes de índices de texto completo
+9/13/2016 12:41:17 AM	Recopilando listas de propiedades de búsqueda
+9/13/2016 12:41:17 AM	Recopilando propiedades de búsqueda
+9/13/2016 12:41:17 AM	Recopilando índices de texto completo
+9/13/2016 12:41:17 AM	Recopilando índices de almacenamiento de columnas
+9/13/2016 12:41:17 AM	Recopilando índices espaciales
+9/13/2016 12:41:17 AM	Recopilando índices XML
+9/13/2016 12:41:17 AM	Recopilando desencadenadores cifrados
+9/13/2016 12:41:17 AM	Recopilando desencadenadores
+9/13/2016 12:41:17 AM	Recopilando DDL triggers cifrados y de CLR
+9/13/2016 12:41:17 AM	Recopilando DDL triggers
+9/13/2016 12:41:17 AM	Recopilando sinónimos
+9/13/2016 12:41:17 AM	Recopilando valores predeterminados
+9/13/2016 12:41:17 AM	Recopilando enlaces UDDT de restricción de datos
+9/13/2016 12:41:17 AM	Recopilando reglas
+9/13/2016 12:41:17 AM	Recopilando enlaces UDDT de restricción de datos
+9/13/2016 12:41:17 AM	Recopilando tipos de mensaje
+9/13/2016 12:41:17 AM	Recopilando colas
+9/13/2016 12:41:17 AM	Recopilando contratos
+9/13/2016 12:41:17 AM	Recopilando servicios
+9/13/2016 12:41:17 AM	Recopilando notificaciones de eventos
+9/13/2016 12:41:17 AM	Recopilando enlaces de servicio remoto
+9/13/2016 12:41:17 AM	Recopilando prioridades de Broker
+9/13/2016 12:41:17 AM	Recopilando firmas
+9/13/2016 12:41:17 AM	Recopilando opciones de compresión de datos
+9/13/2016 12:41:17 AM	Recopilando tipos de secuencia
+9/13/2016 12:41:17 AM	Recopilando propiedades extendidas
+9/13/2016 12:41:17 AM	Recopilando credenciales
+9/13/2016 12:41:17 AM	Recopilando inicios de sesión
+9/13/2016 12:41:17 AM	Recopilando auditorías de servidor
+9/13/2016 12:41:19 AM	Buscando elementos duplicados en el proyecto
+9/13/2016 12:41:19 AM	Ha finalizado el procesamiento de los elementos duplicados
+9/13/2016 12:41:20 AM	Finalizó la importación de la base de datos.
+9/13/2016 12:41:20 AM	Se guardó un resumen de la importación en la siguiente ubicación: E:\Practicas c#\ClinicaPro\Script_No_Usar_Para_Programar\Registros de importación de esquemas\Script_No_Usar_Para__20160913064106.log
+9/13/2016 12:41:20 AM	Haga clic en Finalizar para continuar...

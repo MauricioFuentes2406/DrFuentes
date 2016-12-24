@@ -1,0 +1,4 @@
+E:\Practicas c#\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.dll
+E:\Practicas c#\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.pdb
+E:\Practicas c#\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.dll
+E:\Practicas c#\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.pdb

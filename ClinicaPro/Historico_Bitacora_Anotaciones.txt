@@ -1,0 +1,68 @@
+10/2/2016  - Maux
+
+Proyecto ClinicaPro.DB
+*****Error El tipo 'System.Data.Entity.DbContext' está definido en un ensamblado al que no se hace referencia. Debe agregar una referencia al ensamblado 'EntityFramework, Version=6.0.0.0
+SOlucion: REvise en el proyecto Clinicapro.DB y compare la referecias ,  EntityFramework no estaba, busque la ubicacion (E:\Practicas c#\ClinicaPro\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll)
+   
+          Entre a referencia  y en ...CB y le agregue la referencia 
+
+
+
+*******Error No Implementa
+	2	'ClinicaPro.DB.Consulta.SomeClass' no implementa el miembro de interfaz 'ClinicaPro.DB.Abstract.IEstandar_ManejoDB<ClinicaPro.Entities.SomeEntity>.Eliminar(int, int)'. 'ClinicaPro.DB.Consulta.SomeClass.Eliminar(int, int)' no puede implementar un miembro de interfaz porque no es público.	E:\Practicas c#\ClinicaPro\ClinicaPro.DB\Consulta\AntecedenteAlcoholDB.cs	11	16	ClinicaPro.DB
+
+Solucion: 1- Cuando se usa una interfaz debe declararse todas las funciones de la interfas aunque no hagan nada
+          2- Ya esta implementadas pero aun asi sigue dando el mismo error, 
+		  => Anteponga "public" 
+		  ejemplo 
+		  public Listar()
+		  {
+		   ...//
+		  }
+
+	
+
+Información adicional: The type initializer for 'System.Data.Entity.Internal.AppConfig' threw an exception.	
+Error por que decia que era el AppConfig, probe copiando este archivo varios proyectos pero no sirvio
+La causa del error es que hacia falta referencia EntityFramework.SQLSERVER.dll a la capa presentacion	
+
+*****Error con El Data Grid , cuandos e carga con datos de la Base Datos
+
+System.Reflection.TargetInvocationException: Property accessor '[Nombre de una Propiedad]'	on object 
+'System.Data.Entity.Dynamic Proxies.[Entidad tabla]'_6558C549B3B67AD3A574411D3D4411D3D41044EB994CB77DD8F06E564BF40F808833DD THRE THE
+Following exception:'The objectContext instance has been disposed and can no longer be used for operations that requiere a connection --->
+... ahy sigue
+
+Solucion: 1. No quite los using{} ni los dispose 
+          2. Revise el nombre de la Propiedad que 
+		  3. Vaya al explorador de soluciones , entre a ClinicaPro.Entities
+		  4. Abra el modelo    (Se esta usando ModelClinica.edmx)
+		  5. Busque la tabla que esta ocacionando el problema
+		  6. Mire en la tabla de Navegacion (cDentro de la misma Tabla, es un cuadrito anidado)
+		  7. Use el cick derecho, entre a Propiedades
+		  8. Cambie los valores de los captadores de "Public" a "Private"
+		  9. Guarde los cambios		  
+
+
+
+*********Error  Violancion de constraint donde se supone que no se esta añadiendo un nuevo registro en una LookUptable como escalaTiempo
+{"Violation of UNIQUE KEY constraint 'IX_EscalaTiempo_Unique'. Cannot insert duplicate key in object 'dbo.EscalaTiempo'. The duplicate key value is (Años).\r\nThe statement has been terminated."}
+'
+O Drogas
+
+Causa= Cuando se trae la informacion con una consulta  donde el contexto se  llama la funciona AsNotTracking();
+Solucion 1: Eliminar la llamada  a funcion  AsNotTracking()  Ejemplo (from n in Contexto.SomeTable.AsNotracking() select n).Tolist()
+Solucion 2:(Utilizada) En las llamadas Agregar_Modificar() antes de llamar el Contexto.SaveChanges()
+             Añadir   Contexto.SomeTable.Attach(SomeTableInstance); // Entidad misma Tipo
+			  ejemplo   Contexto.AntecedenteDrogra.Attach(Entidad);
+			  Eso es como decirle , No sea necesia , todos los datos que vienen con la entidad ya existen!! no haga nuevos
+
+
+*****Error 3004  Model Entitie 
+Solucion: Alguien Borro  o cambio el nombre de una Columna desde la Base Datos , y en la tabla del Entities aun no se actualizo-borro
+
+
+******* Error  **** En Vacunas  y Drogas  , Cuando se llama Agregar desde Consulta.GuardarTodos()
+“An entity object cannot be referenced by multiple instances of IEntityChangeTracker.”
+Solucion
+Parece que la solucion fue , dispose el contexto en las clases 

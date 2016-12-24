@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED60358B-A1CC-495A-BE03-28D6D2798C6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClinicaPro.DB</RootNamespace>
+    <AssemblyName>ClinicaPro.DB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IEstandar_ManejoDB.cs" />
+    <Compile Include="Abstract\IListarExpediente.cs" />
+    <Compile Include="BusquedaDB.cs" />
+    <Compile Include="Cliente\ClienteAlergiasDB.cs" />
+    <Compile Include="Cliente\ClienteDB.cs" />
+    <Compile Include="Consulta\AntecedenteAlcoholDB.cs" />
+    <Compile Include="Consulta\AntecedenteDrogaDB.cs" />
+    <Compile Include="Consulta\AntecedenteHereditarioDB.cs" />
+    <Compile Include="Consulta\AntecedentePatologicoPersonalDB.cs" />
+    <Compile Include="Consulta\AntecedenteTabacoDB.cs" />
+    <Compile Include="Consulta\AntecedenteVacunaDB.cs" />
+    <Compile Include="Consulta\ColorPacienteDB.cs" />
+    <Compile Include="Consulta\ConsultaAbdomenDB.cs" />
+    <Compile Include="Consulta\ConsultaAparatoDigestivoDB.cs" />
+    <Compile Include="Consulta\ConsultaBocaDB.cs" />
+    <Compile Include="Consulta\ConsultaCraneoDB.cs" />
+    <Compile Include="Consulta\ConsultaCuelloDB.cs" />
+    <Compile Include="Consulta\ConsultaDB.cs" />
+    <Compile Include="Consulta\ConsultaEstadoEmocionalDB.cs" />
+    <Compile Include="Consulta\ConsultaExploracionFisicaDB.cs" />
+    <Compile Include="Consulta\ConsultaGaslowDB.cs" />
+    <Compile Include="Consulta\ConsultaNarizDB.cs" />
+    <Compile Include="Consulta\ConsultaOidosDB.cs" />
+    <Compile Include="Consulta\ConsultaOjosDB.cs" />
+    <Compile Include="Consulta\ConsultaReflejosDB.cs" />
+    <Compile Include="Consulta\CoordinacionYMarchaDB.cs" />
+    <Compile Include="Consulta\DrogaDB.cs" />
+    <Compile Include="Consulta\EscalaTiempoDB.cs" />
+    <Compile Include="Consulta\EstadoViviendaDB.cs" />
+    <Compile Include="Consulta\EstadoViviendaMaterialesDB.cs" />
+    <Compile Include="Consulta\Expediente\controladorExpedienteDB.cs" />
+    <Compile Include="Consulta\ExploracionManoDB.cs" />
+    <Compile Include="Consulta\FamiliarDB.cs" />
+    <Compile Include="Consulta\GeneralTipoServicioDB.cs" />
+    <Compile Include="Consulta\GinecoObstreticosDB.cs" />
+    <Compile Include="Consulta\ParesCranealesDB.cs" />
+    <Compile Include="Consulta\RespuestaGeneralesDB.cs" />
+    <Compile Include="Consulta\SensbilidadDB.cs" />
+    <Compile Include="Consulta\TipoAlergiaDB.cs" />
+    <Compile Include="Consulta\ToraxPulmonesDB.cs" />
+    <Compile Include="Consulta\VacunasDB.cs" />
+    <Compile Include="Consulta\Viesta_tiposAlergia_ComboBox.cs" />
+    <Compile Include="Consulta\Vistas\VAlchol.cs" />
+    <Compile Include="Consulta\Vistas\VAntecedenteHereditario.cs" />
+    <Compile Include="Consulta\Vistas\VAntecedentePatologico.cs" />
+    <Compile Include="Consulta\Vistas\VConsulta.cs" />
+    <Compile Include="Consulta\Vistas\VDrogas.cs" />
+    <Compile Include="Consulta\Vistas\VEstadoVivienda.cs" />
+    <Compile Include="Consulta\Vistas\VExploracionFisica.cs" />
+    <Compile Include="Consulta\Vistas\VServicios.cs" />
+    <Compile Include="Consulta\Vistas\VTabaco.cs" />
+    <Compile Include="Consulta\Vistas\VToraxPulmones.cs" />
+    <Compile Include="Consulta\Vistas\VVacunas.cs" />
+    <Compile Include="FechaHoraServidorDB.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClinicaPro.BL\ClinicaPro.BL.csproj">
+      <Project>{6766ad43-4824-4374-b413-c5a9e3a5d3ba}</Project>
+      <Name>ClinicaPro.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClinicaPro.Entities\ClinicaPro.Entities.csproj">
+      <Project>{baa9224e-fe89-43f4-b88d-8db6a1e9519a}</Project>
+      <Name>ClinicaPro.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClinicaPro.General\ClinicaPro.General.csproj">
+      <Project>{17722a54-4ccd-4a2d-9899-3e172455fc84}</Project>
+      <Name>ClinicaPro.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Consulta\RuleSet1.ruleset" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

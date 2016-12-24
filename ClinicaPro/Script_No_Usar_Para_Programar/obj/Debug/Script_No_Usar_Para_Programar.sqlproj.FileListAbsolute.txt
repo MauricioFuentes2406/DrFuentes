@@ -1,0 +1,3 @@
+E:\Practicas c#\ClinicaPro\Script_No_Usar_Para_Programar\bin\Debug\Script_No_Usar_Para_Programar.dacpac
+E:\Practicas c#\ClinicaPro\Script_No_Usar_Para_Programar\obj\Debug\Script_No_Usar_Para_Programar.dll
+E:\Practicas c#\ClinicaPro\Script_No_Usar_Para_Programar\obj\Debug\Script_No_Usar_Para_Programar.pdb
