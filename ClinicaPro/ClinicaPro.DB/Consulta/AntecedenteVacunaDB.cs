@@ -24,8 +24,10 @@ namespace ClinicaPro.DB.Consulta
                     Entities.AntecedenteVacuna Original = Contexto.AntecedenteVacuna.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
-                        Original.EscalaTiempo = Original.EscalaTiempo;
+                        if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
+                        { Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo); }
                         Original.NumeroTiempo = Original.NumeroTiempo;
+                        ActulizarVacunas(Contexto, Original, Entidad);
                         Original.Vacunas = Original.Vacunas;
                     }
                 }
@@ -73,6 +75,38 @@ namespace ClinicaPro.DB.Consulta
                                                          where tabla.IdConsulta == idConsulta
                                                          select tabla).ToList();
                return lista;
+           }
+       }
+       private void ActulizarVacunas(Entities.ClinicaDrFuentesEntities Contexto, Entities.AntecedenteVacuna Original, Entities.AntecedenteVacuna Entidad)
+       {
+           // Para Actulizar Los Servicios
+           List<int> removeList = new List<int>();
+
+           //Recoge los IdServicios que Encuentrar EN Originial y No en nueva  Entidad
+           foreach (Entities.Vacunas vacuna in Original.Vacunas)
+           {
+               if (Entidad.Vacunas.Where(x => x.idVacunas == vacuna.idVacunas).Count() > 0)
+               {
+                   continue;
+               }
+               else
+               {
+                   removeList.Add(vacuna.idVacunas);
+               }
+           }
+           // Por Cada Servicio Que Esta Original y No en Entidad se Elimina
+           foreach (int idServicio in removeList)
+           {
+               Original.Vacunas.Remove(Contexto.Vacunas.Find(idServicio));
+           }
+           // Por cada servicio que se encuentra en Entidad y no en Original , se añade
+           foreach (var item in Entidad.Vacunas)
+           {
+               if (Original.Vacunas.Where(x => x.idVacunas == item.idVacunas).Count() == 0)
+               {
+                   Contexto.Vacunas.Attach(item);
+                   Original.Vacunas.Add(item);
+               }
            }
        }
     }

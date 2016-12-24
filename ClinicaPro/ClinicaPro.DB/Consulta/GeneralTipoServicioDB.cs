@@ -66,5 +66,12 @@ namespace ClinicaPro.DB.Consulta
             Contexto.Dispose();
             return lista;
         }
+       public static Entities.GeneralTipoServicio ListarPorIdservicio()
+       { 
+         using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+         {
+             return  (from n in Contexto.GeneralTipoServicios.AsNoTracking() where n.idServicio == 1  select n).FirstOrDefault();
+         }
+       }
     }
 }

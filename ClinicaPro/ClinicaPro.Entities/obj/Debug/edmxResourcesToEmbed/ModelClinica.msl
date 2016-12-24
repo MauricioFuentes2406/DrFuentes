@@ -629,7 +629,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ClienteAlergias1">
+    <EntitySetMapping Name="ClienteAlergias">
       <EntityTypeMapping TypeName="ClinicaDrFuentesModel.ClienteAlergia">
         <MappingFragment StoreEntitySet="ClienteAlergias">
           <ScalarProperty Name="soloxEF" ColumnName="soloxEF" />

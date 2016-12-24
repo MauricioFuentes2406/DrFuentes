@@ -26,7 +26,7 @@ namespace ClinicaPro.DB.Consulta
                         Original.AguaPotable = Entidad.AguaPotable;
                         Original.Cielorraso = Entidad.Cielorraso;
                         Original.DetalleExtra = Entidad.DetalleExtra;
-                        Original.IsPropia = Entidad.IsPropia;
+                        Original.IsPropia = Entidad.IsPropia;                        
                         Original.Paredes_Material = Entidad.Paredes_Material;
                         Original.Piso = Entidad.Piso;
                         Original.SanitariosCantidad = Entidad.SanitariosCantidad;

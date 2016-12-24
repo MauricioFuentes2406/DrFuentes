@@ -22,7 +22,8 @@ namespace ClinicaPro.DB.Consulta
                     if (Original != null)
                     {
                         Original.BebeEnPromedio = Entidad.BebeEnPromedio;
-                        Original.EscalaTiempo = Entidad.EscalaTiempo;
+                        if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
+                        { Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo); }
                         Original.NumeroTiempo = Entidad.NumeroTiempo;
                     }
                 }

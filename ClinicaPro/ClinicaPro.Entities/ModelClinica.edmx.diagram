@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.BusquedaImagene" Width="1.5" PointX="8" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Busqueda" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cita" Width="1.5" PointX="5.25" PointY="50.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cliente" PointX="3" PointY="49.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cliente" PointX="3" PointY="49.125" Width="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteOtrosArchivo" Width="1.75" PointX="5.25" PointY="54" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ColorPaciente" Width="1.5" PointX="14.25" PointY="41.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Consulta" Width="1.5" PointX="8.25" PointY="47.75" IsExpanded="true" />
@@ -109,7 +109,7 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.ConsultaServicios" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.InsumosPorServicio" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Vista_TiposAlergia_comboBox" Width="1.5" PointX="10.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteAlergia" Width="1.5" PointX="2.375" PointY="57.375" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteAlergia" Width="1.875" PointX="2.375" PointY="57.375" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ClienteAlergias_Cliente" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ClienteAlergias_Alergias" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaNariz_Consulta" />

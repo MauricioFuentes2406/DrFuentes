@@ -31,7 +31,10 @@ namespace ClinicaPro.DB.Consulta
                             Original.Descuento = Entidad.Descuento;
                             Original.Diagnostico = Entidad.Diagnostico;
                             Original.DiagnosticoEstado = Entidad.DiagnosticoEstado;
-                            Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo);                                                        
+                            if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
+                            {
+                                Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo);
+                            }
                             /*No modifica Fecha de Consulta */
                             Original.MotivoConsulta = Entidad.MotivoConsulta;
                             Original.NumeroTiempo = Entidad.NumeroTiempo;

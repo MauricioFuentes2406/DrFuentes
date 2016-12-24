@@ -77,8 +77,6 @@ E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Presentacion.csproj.GenerateResource.Ca
 E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.exe
 E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\Frm.exe.config
-E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.exe
-E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\Frm.exe
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\Frm.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\ClinicaPro.BL.dll
@@ -126,3 +124,5 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Properties.Resourc
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.AgregarAlergia.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Secretaria.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.exe
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.pdb

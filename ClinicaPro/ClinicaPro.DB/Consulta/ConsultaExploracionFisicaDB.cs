@@ -32,7 +32,7 @@ namespace ClinicaPro.DB.Consulta
                         Original.PresionArterialDiastolico = consultaExFisica.PresionArterialDiastolico;
                         Original.PresionArterialSistolico = consultaExFisica.PresionArterialSistolico;
                         Original.Talla = consultaExFisica.Talla;
-                        Original.Temperatura = consultaExFisica.Temperatura;
+                        Original.Temperatura = consultaExFisica.Temperatura;                        
                         Original.idExploracionManos = consultaExFisica.idExploracionManos;
                         Original.idColorPaciente = consultaExFisica.idColorPaciente;                        
                     }   

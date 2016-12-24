@@ -55,7 +55,7 @@ namespace ClinicaPro.DB.Consulta
             {
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
                 {
-                    Entities.ConsultaEstadoViviendaMateriale material = Contexto.ConsultaEstadoViviendaMateriales.Where(EntidadLocal => EntidadLocal.IdMaterial == IdMaterial).First();
+                    Entities.ConsultaEstadoViviendaMateriale material = Contexto.ConsultaEstadoViviendaMateriales.Find(IdMaterial);
                     Contexto.ConsultaEstadoViviendaMateriales.Remove(material);
                     Contexto.SaveChanges();
                     return true;

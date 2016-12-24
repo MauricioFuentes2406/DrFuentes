@@ -419,6 +419,7 @@
             this.cbServicios = new System.Windows.Forms.ComboBox();
             this.dgServicios = new System.Windows.Forms.DataGridView();
             this.tabDiagnostico = new System.Windows.Forms.TabPage();
+            this.btnAuxiliarModificar = new System.Windows.Forms.Button();
             this.chk_AplicarDescuento = new System.Windows.Forms.CheckBox();
             this.txtCostoConsulta = new System.Windows.Forms.NumericUpDown();
             this.chk_ConsultaEstado = new System.Windows.Forms.CheckBox();
@@ -443,7 +444,6 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtAuxilirAlergia = new System.Windows.Forms.RichTextBox();
             this.lblCampoRequerido = new System.Windows.Forms.Label();
-            this.btnAuxiliarModificar = new System.Windows.Forms.Button();
             this.tabGeneral.SuspendLayout();
             this.tabMoticoConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Consulta_NumTiempo)).BeginInit();
@@ -775,6 +775,7 @@
             this.auxiliarEVivienda.TabIndex = 1;
             this.auxiliarEVivienda.Text = "button2";
             this.auxiliarEVivienda.UseVisualStyleBackColor = true;
+            this.auxiliarEVivienda.Visible = false;
             this.auxiliarEVivienda.Click += new System.EventHandler(this.auxiliarEVivienda_Click);
             // 
             // gbEstadoVivienda
@@ -4860,6 +4861,16 @@
             this.tabDiagnostico.Text = "Diagnostico*";
             this.tabDiagnostico.UseVisualStyleBackColor = true;
             // 
+            // btnAuxiliarModificar
+            // 
+            this.btnAuxiliarModificar.Location = new System.Drawing.Point(431, 22);
+            this.btnAuxiliarModificar.Name = "btnAuxiliarModificar";
+            this.btnAuxiliarModificar.Size = new System.Drawing.Size(92, 23);
+            this.btnAuxiliarModificar.TabIndex = 56;
+            this.btnAuxiliarModificar.Text = "AuxiliarModificar";
+            this.btnAuxiliarModificar.UseVisualStyleBackColor = true;
+            this.btnAuxiliarModificar.Click += new System.EventHandler(this.btnAuxiliarModificar_Click);
+            // 
             // chk_AplicarDescuento
             // 
             this.chk_AplicarDescuento.Appearance = System.Windows.Forms.Appearance.Button;
@@ -5146,16 +5157,6 @@
             this.lblCampoRequerido.TabIndex = 49;
             this.lblCampoRequerido.Text = " Campos Requeridos *";
             this.lblCampoRequerido.Visible = false;
-            // 
-            // btnAuxiliarModificar
-            // 
-            this.btnAuxiliarModificar.Location = new System.Drawing.Point(431, 22);
-            this.btnAuxiliarModificar.Name = "btnAuxiliarModificar";
-            this.btnAuxiliarModificar.Size = new System.Drawing.Size(92, 23);
-            this.btnAuxiliarModificar.TabIndex = 56;
-            this.btnAuxiliarModificar.Text = "AuxiliarModificar";
-            this.btnAuxiliarModificar.UseVisualStyleBackColor = true;
-            this.btnAuxiliarModificar.Click += new System.EventHandler(this.btnAuxiliarModificar_Click);
             // 
             // AgregarConsulta
             // 

@@ -16,7 +16,7 @@ namespace ClinicaPro.Entities
     {
         public Consulta()
         {
-            this.ElectroResultados = new HashSet<ElectroResultado>();            
+            this.ElectroResultados = new HashSet<ElectroResultado>();
             this.Seguimientoes = new HashSet<Seguimiento>();
             this.GeneralTipoServicios = new HashSet<GeneralTipoServicio>();
             this.AntecedenteDrogra = new HashSet<AntecedenteDrogra>();

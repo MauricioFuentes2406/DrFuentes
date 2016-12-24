@@ -22,8 +22,11 @@ namespace ClinicaPro.DB.Consulta
                 {
                     Entities.AntecedenteTabaco Original = Contexto.AntecedenteTabaco.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
-                    {                        
-                        Original.EscalaTiempo = Entidad.EscalaTiempo;
+                    {
+                        if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
+                        {
+                            Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo);
+                        }                        
                         Original.NumeroTiempo = Entidad.NumeroTiempo;                         
                     }
                 }

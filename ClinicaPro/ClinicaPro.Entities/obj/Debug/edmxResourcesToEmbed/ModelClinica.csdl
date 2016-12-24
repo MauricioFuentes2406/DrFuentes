@@ -1662,14 +1662,14 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
     <EntitySet Name="Vista_TiposAlergia_comboBox" EntityType="ClinicaDrFuentesModel.Vista_TiposAlergia_comboBox" />
-    <EntitySet Name="ClienteAlergias1" EntityType="ClinicaDrFuentesModel.ClienteAlergia" />
+    <EntitySet Name="ClienteAlergias" EntityType="ClinicaDrFuentesModel.ClienteAlergia" />
     <AssociationSet Name="FK_ClienteAlergias_Cliente" Association="ClinicaDrFuentesModel.FK_ClienteAlergias_Cliente">
       <End Role="Cliente" EntitySet="Clientes" />
-      <End Role="ClienteAlergia" EntitySet="ClienteAlergias1" />
+      <End Role="ClienteAlergia" EntitySet="ClienteAlergias" />
     </AssociationSet>
     <AssociationSet Name="FK_ClienteAlergias_Alergias" Association="ClinicaDrFuentesModel.FK_ClienteAlergias_Alergias">
       <End Role="TipoAlergia" EntitySet="TipoAlergias" />
-      <End Role="ClienteAlergia" EntitySet="ClienteAlergias1" />
+      <End Role="ClienteAlergia" EntitySet="ClienteAlergias" />
     </AssociationSet>
     <AssociationSet Name="FK_ConsultaNariz_Consulta" Association="ClinicaDrFuentesModel.FK_ConsultaNariz_Consulta">
       <End Role="Consulta" EntitySet="Consultas" />

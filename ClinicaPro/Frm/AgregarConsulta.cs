@@ -609,7 +609,7 @@ namespace Frm
                 cAbdomen.IdConsulta = this.idConsulta;
                 cAbdomenDB.Agregar_Modificar(cAbdomen, isModificar);
 
-                AlergiasABaseDatos();
+                AlergiasABaseDatos(isModificar);
 
                 scope.Complete(); 
             }
@@ -800,18 +800,22 @@ namespace Frm
                 this.txtAuxilirAlergia.Text += tipo.Tipo_Alergia + ":\t " + tipo.Especificacion + "\n";
             }
         }
-        private BindingList<TipoAlergia> listaAlergia_ParaAgregar() //Cuando ya se va guardar la lista Alergias a la Consulta
+        /// <summary>
+        ///  Retorna la lista con las Alergias Añadidas por el usuario
+        /// </summary>
+        /// <returns></returns>
+        private BindingList<TipoAlergia> listaAlergia_ParaAgregar() 
         {
             return listaDataGridAlergia;
         }
         /// <summary>
         /// Guarda en Base DAtos las Alergias del Cliente, recordar que se liga a cliente y no consulta
         /// </summary>
-        private void AlergiasABaseDatos()
+        private void AlergiasABaseDatos(bool isModificar)
         {
             if (dgAlergias.DataSource != null)
-            {
-                ClinicaPro.DB.Cliente.ClienteAlergiasDB.Agregar_Modificar(listaAlergia_ParaAgregar(), idCliente);
+            {                
+                ClinicaPro.DB.Cliente.ClienteAlergiasDB.Agregar_Modificar(listaAlergia_ParaAgregar(), idCliente, isModificar);
             }
         }
 
@@ -1847,23 +1851,56 @@ namespace Frm
 
             using (TransactionScope scope = new TransactionScope())  // scope Hace un RollBack si ocurre un error
             {  
-                ClinicaPro.DB.Consulta.ConsultaDB consultaDB = new ClinicaPro.DB.Consulta.ConsultaDB();
-                Consulta consulta = Consulta_Controles_A_Clase();
-                if(isModificar)
-                {
-                   consulta.IdConsulta = this.idConsulta;
-                }
-               consultaDB.Agregar_Modificar(consulta,isModificar);
+                  AlergiasABaseDatos(isModificar);
 
-               ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB cFisicaDB = new ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB();
-               ConsultaExploracionFisica exploracionFisica = ExploracionFisica_Controles_A_Clase();
-               exploracionFisica.IdConsulta = this.idConsulta;
-               cFisicaDB.Agregar_Modificar(exploracionFisica, isModificar);
+               // ClinicaPro.DB.Consulta.ConsultaDB consultaDB = new ClinicaPro.DB.Consulta.ConsultaDB();
+               // Consulta consulta = Consulta_Controles_A_Clase();
+               // if(isModificar)
+               // {
+               //    consulta.IdConsulta = this.idConsulta;
+               // }
+               //consultaDB.Agregar_Modificar(consulta,isModificar);
 
-               ClinicaPro.DB.Consulta.ConsultaNarizDB cnariz = new ClinicaPro.DB.Consulta.ConsultaNarizDB();
-               ConsultaNariz consultaNariz = ConsultaNariz_Controles_A_Clase();
-               consultaNariz.IdConsulta = this.idConsulta;
-               cnariz.Agregar_Modificar(consultaNariz, isModificar);
+               //ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB cFisicaDB = new ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB();
+               //ConsultaExploracionFisica exploracionFisica = ExploracionFisica_Controles_A_Clase();
+               //exploracionFisica.IdConsulta = this.idConsulta;
+               //cFisicaDB.Agregar_Modificar(exploracionFisica, isModificar);
+
+               //ClinicaPro.DB.Consulta.ConsultaNarizDB cnariz = new ClinicaPro.DB.Consulta.ConsultaNarizDB();
+               //ConsultaNariz consultaNariz = ConsultaNariz_Controles_A_Clase();
+               //consultaNariz.IdConsulta = this.idConsulta;
+               //cnariz.Agregar_Modificar(consultaNariz, isModificar);
+
+               //ClinicaPro.DB.Consulta.ConsultaOidosDB cOidosDB = new ClinicaPro.DB.Consulta.ConsultaOidosDB();
+               //ConsultaOido consultaOido = ConsultaOido_Controles_A_Clase();
+               //consultaOido.IdConsulta = this.idConsulta;
+               //cOidosDB.Agregar_Modificar(consultaOido, isModificar);
+
+               //ClinicaPro.DB.Consulta.ConsultaOjosDB cOjosDB = new ClinicaPro.DB.Consulta.ConsultaOjosDB();
+               //ConsultaOjo consultaOjos = ConsultaOjos_Controles_A_Clase();
+               //consultaOjos.IdConsulta = this.idConsulta;
+               //cOjosDB.Agregar_Modificar(consultaOjos, isModificar);
+
+               //ClinicaPro.DB.Consulta.ConsultaReflejosDB crefle = new ClinicaPro.DB.Consulta.ConsultaReflejosDB();
+               //ConsultaReflejo consultaReflejo = ConsultaReflejo_Controles_A_Clase();
+               //consultaReflejo.IdConsulta = this.idConsulta;
+               //crefle.Agregar_Modificar(consultaReflejo, isModificar);
+
+               //ClinicaPro.DB.Consulta.ConsultaCuelloDB cCuello = new ClinicaPro.DB.Consulta.ConsultaCuelloDB();
+               //ConsultaCuello consultaCUello = ConsultaCuello_Controles_A_Clase();
+               //consultaCUello.IdConsulta = this.idConsulta;
+               //cCuello.Agregar_Modificar(consultaCUello, isModificar);
+
+               //ClinicaPro.DB.Consulta.ConsultaAbdomenDB cAbdomenDB = new ClinicaPro.DB.Consulta.ConsultaAbdomenDB();
+               //ConsultaAbdomen cAbdomen = ConsultaAbdomen_A_Clase();
+               //cAbdomen.IdConsulta = this.idConsulta;
+               //cAbdomenDB.Agregar_Modificar(cAbdomen, isModificar);
+
+               //ClinicaPro.DB.Consulta.EstadoViviendaDB estadoViviendaDB = new ClinicaPro.DB.Consulta.EstadoViviendaDB();
+               //ConsultaEstadoVivienda cEstadoVivienda = ConsultaEstadoViviendaControles_A_Clase();
+               //cEstadoVivienda.IdConsulta = this.idConsulta;
+               //estadoViviendaDB.Agregar_Modificar(cEstadoVivienda, isModificar);
+
 
                 scope.Complete();
             }

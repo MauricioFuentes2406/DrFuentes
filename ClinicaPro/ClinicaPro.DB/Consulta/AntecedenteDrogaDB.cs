@@ -24,8 +24,9 @@ namespace ClinicaPro.DB.Consulta
                     Entities.AntecedenteDrogra Original = Contexto.AntecedenteDrogra.First(EntidadLocal => EntidadLocal.idConsulta == Entidad.idConsulta);
                     if (Original != null)
                     {
-                        Original.Drogas = Entidad.Drogas;
-                        Original.EscalaTiempo = Entidad.EscalaTiempo;
+                        ActulizarDrogas(Contexto, Original, Entidad);
+                        if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
+                        { Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo);}
                         Original.NumeroTiempo = Entidad.NumeroTiempo;
                     }
                 }
@@ -54,7 +55,6 @@ namespace ClinicaPro.DB.Consulta
                 throw;
             }
         }
-
         public bool Eliminar(int idCliente, int idTipoUsuario)
         {
             return false;
@@ -71,6 +71,37 @@ namespace ClinicaPro.DB.Consulta
                                                            where tabla.idConsulta == idConsulta
                                                            select tabla).ToList();
                 return lista;
+            }
+        }
+        private void ActulizarDrogas(Entities.ClinicaDrFuentesEntities Contexto, Entities.AntecedenteDrogra Original, Entities.AntecedenteDrogra Entidad)
+        {
+            // Para Actulizar Los Servicios
+            List<int> removeList = new List<int>();
+            //Recoge los IdServicios que Encuentrar EN Originial y No en nueva  Entidad
+            foreach (Entities.Drogas droga in Original.Drogas)
+            {
+                if (Entidad.Drogas.Where(x => x.idDrogas == droga.idDrogas).Count() > 0)
+                {
+                    continue;
+                }
+                else
+                {
+                    removeList.Add(droga.idDrogas);
+                }
+            }
+            // Por Cada Servicio Que Esta Original y No en Entidad se Elimina
+            foreach (int idServicio in removeList)
+            {
+                Original.Drogas.Remove(Contexto.Drogas.Find(idServicio));
+            }
+            // Por cada servicio que se encuentra en Entidad y no en Original , se añade
+            foreach (var item in Entidad.Drogas)
+            {
+                if (Original.Drogas.Where(x => x.idDrogas == item.idDrogas).Count() == 0)
+                {
+                    Contexto.Drogas.Attach(item);
+                    Original.Drogas.Add(item);
+                }
             }
         }
         public static void oso()
@@ -92,7 +123,6 @@ namespace ClinicaPro.DB.Consulta
 
             Contexto.AntecedenteDrogra.Add(entidad);
             Contexto.SaveChanges();
-
         }
     }
 }

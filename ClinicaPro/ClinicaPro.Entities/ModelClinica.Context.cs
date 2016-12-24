@@ -73,7 +73,7 @@ namespace ClinicaPro.Entities
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<ExpedienteT> ExpedienteTs { get; set; }
         public virtual DbSet<Vista_TiposAlergia_comboBox> Vista_TiposAlergia_comboBox { get; set; }
-        public virtual DbSet<ClienteAlergia> ClienteAlergias1 { get; set; }
+        public virtual DbSet<ClienteAlergia> ClienteAlergias { get; set; }
         public virtual DbSet<AntecedenteAlcohol> AntecedenteAlcohol { get; set; }
         public virtual DbSet<AntecedenteDrogra> AntecedenteDrogra { get; set; }
         public virtual DbSet<AntecedenteTabaco> AntecedenteTabaco { get; set; }
