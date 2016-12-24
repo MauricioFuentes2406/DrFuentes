@@ -23,13 +23,9 @@ namespace ClinicaPro.DB.Consulta
                 {
                     if (isModificar)
                     {
-                        Entities.Consulta Original = (from n in Contexto.Consultas
-                                                      where n.IdConsulta == Entidad.IdConsulta
-                                                      select n).First();
+                        Entities.Consulta Original = Contexto.Consultas.Find(Entidad.IdConsulta);
                         if (Original != null)
-                        {
-
-                            //Contexto.Entry(Entidad.EscalaTiempo).State = EntityState.Detached;
+                        {                           
                             Original.AntecenteQuirurgico = Entidad.AntecenteQuirurgico;
                             Original.CobroFinalDeConsulta = Entidad.CobroFinalDeConsulta;
                             Original.Descuento = Entidad.Descuento;
