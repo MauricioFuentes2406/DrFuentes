@@ -464,6 +464,8 @@ namespace Frm
             txtDiagnostico.Text = Mensajes.LLenadoRapido;
             txtPlanTratamiento.Text = Mensajes.LLenadoRapido;
             txtPrimerIndicio.Text = Mensajes.LLenadoRapido;
+        //    listaGridServicios.Add(new ClinicaPro.DB.Consulta.GeneralTipoServicioDB.ListarPorIdservicio());
+
         }
         /// <summary>
         /// Guarda en la Base Datos todos los datos de los controles
@@ -903,19 +905,25 @@ namespace Frm
 
         private void LlenacomboMano()
         {
-            ClinicaPro.DB.Consulta.ExploracionManoDB exploraManoDB = new ClinicaPro.DB.Consulta.ExploracionManoDB();
-            List<ExploracionMano> lista = exploraManoDB.Listar();
+            if (cb_Ex_ManosUnas.Items.Count == 0)
+            {
+                ClinicaPro.DB.Consulta.ExploracionManoDB exploraManoDB = new ClinicaPro.DB.Consulta.ExploracionManoDB();
+                List<ExploracionMano> lista = exploraManoDB.Listar();
 
-            ClinicaPro.BL.ComboBoxBL<ExploracionMano> configuraCB = new ComboBoxBL<ExploracionMano>();
-            configuraCB.fuenteBaseDatos(cb_Ex_ManosUnas, lista, comboNombreIDs.exploracionMano);
+                ClinicaPro.BL.ComboBoxBL<ExploracionMano> configuraCB = new ComboBoxBL<ExploracionMano>();
+                configuraCB.fuenteBaseDatos(cb_Ex_ManosUnas, lista, comboNombreIDs.exploracionMano);
+            }
         }
         private void LlenacomboColor()
         {
-            ClinicaPro.DB.Consulta.ColorPacienteDB exploracionColorDB = new ClinicaPro.DB.Consulta.ColorPacienteDB();
-            List<ColorPaciente> lista = exploracionColorDB.Listar();
-
+            if (cb_Ex_Color.Items.Count == 0)
+            {
+                ClinicaPro.DB.Consulta.ColorPacienteDB exploracionColorDB = new ClinicaPro.DB.Consulta.ColorPacienteDB();
+                List<ColorPaciente> lista = exploracionColorDB.Listar();
+            
             ClinicaPro.BL.ComboBoxBL<ColorPaciente> configuraCB = new ComboBoxBL<ColorPaciente>();
             configuraCB.fuenteBaseDatos(cb_Ex_Color, lista, comboNombreIDs.colorPaciente);
+            }
         }
 
         private void btnAuxExploraF_Click(object sender, EventArgs e)
@@ -1827,13 +1835,7 @@ namespace Frm
         }
         private void ModificarTemporal(bool isModificar)
         {
-            ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities();
-       //     var consulta = Contexto.Consultas.Find(idConsulta);                                  
-            //consulta.EscalaTiempo = (EscalaTiempo)cb_Consulta_EscalaTiempo.SelectedItem;
-         ///   var temp = (EscalaTiempo)cb_Consulta_EscalaTiempo.SelectedItem;
-           // var temp2 = Contexto.EscalaTiempoes.Find(temp.IdEscalaTiempo);
-            //consulta.EscalaTiempo = temp2;
-            //Contexto.SaveChanges();            
+            ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities();       
 
             using (TransactionScope scope = new TransactionScope())  // scope Hace un RollBack si ocurre un error
             {  
@@ -1845,10 +1847,10 @@ namespace Frm
                 }
                consultaDB.Agregar_Modificar(consulta,isModificar);
 
-                //ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB cFisicaDB = new ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB();
-                //ConsultaExploracionFisica exploracionFisica = ExploracionFisica_Controles_A_Clase();
-                //exploracionFisica.IdConsulta = this.idConsulta;
-                //cFisicaDB.Agregar_Modificar(exploracionFisica, isModificar);
+               ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB cFisicaDB = new ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB();
+               ConsultaExploracionFisica exploracionFisica = ExploracionFisica_Controles_A_Clase();
+               exploracionFisica.IdConsulta = this.idConsulta;
+               cFisicaDB.Agregar_Modificar(exploracionFisica, isModificar);
 
                 scope.Complete();
             }
