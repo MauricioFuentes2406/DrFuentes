@@ -1462,21 +1462,24 @@ namespace Frm
         }
         private void llenaComboAntecenteHereditario()
         {
-            ClinicaPro.DB.Consulta.FamiliarDB familiaDB = new ClinicaPro.DB.Consulta.FamiliarDB();
-            List<Familiar> listAuxiliar = familiaDB.Listar();
+            if (cb_Here_AfecTiroide.Items.Count == 0 && cb_Here_Neuropatia.Items.Count == 0)
+            {
+                ClinicaPro.DB.Consulta.FamiliarDB familiaDB = new ClinicaPro.DB.Consulta.FamiliarDB();
+                List<Familiar> listAuxiliar = familiaDB.Listar();
 
-            ClinicaPro.BL.ComboBoxBL<Familiar> configuraCB = new ComboBoxBL<Familiar>();
+                ClinicaPro.BL.ComboBoxBL<Familiar> configuraCB = new ComboBoxBL<Familiar>();
 
-            configuraCB.fuenteBaseDatos(cb_Here_AfecTiroide, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_Asma, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_AVC, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_Cancer, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_Cardiopatia, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_DM, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_EnferPulmunar, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_Hepato, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_HTA, listAuxiliar.ToList(), comboNombreIDs.familiar);
-            configuraCB.fuenteBaseDatos(cb_Here_Neuropatia, listAuxiliar, comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_AfecTiroide, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_Asma, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_AVC, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_Cancer, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_Cardiopatia, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_DM, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_EnferPulmunar, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_Hepato, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_HTA, listAuxiliar.ToList(), comboNombreIDs.familiar);
+                configuraCB.fuenteBaseDatos(cb_Here_Neuropatia, listAuxiliar, comboNombreIDs.familiar);
+            }
         }
         private void llenaComboAntecedenteHereditario_Familiar() // Interesante, Llenar los combo en un iteracion
         {
@@ -1566,11 +1569,14 @@ namespace Frm
 
         private void llenaComboVacunas()
         {
-            ClinicaPro.DB.Consulta.VacunasDB vacunaDB = new ClinicaPro.DB.Consulta.VacunasDB();
-            List<Vacunas> listAuxiliar = vacunaDB.Listar();
+            if (cb_Vacunas.Items.Count == 0)
+            {
+                ClinicaPro.DB.Consulta.VacunasDB vacunaDB = new ClinicaPro.DB.Consulta.VacunasDB();
+                List<Vacunas> listAuxiliar = vacunaDB.Listar();
 
-            ClinicaPro.BL.ComboBoxBL<Vacunas> configuraCB = new ComboBoxBL<Vacunas>();
-            configuraCB.fuenteBaseDatos(cb_Vacunas, listAuxiliar, comboNombreIDs.vacunas);
+                ClinicaPro.BL.ComboBoxBL<Vacunas> configuraCB = new ComboBoxBL<Vacunas>();
+                configuraCB.fuenteBaseDatos(cb_Vacunas, listAuxiliar, comboNombreIDs.vacunas);
+            }
         }
 
         private void btnVacunas_Click(object sender, EventArgs e)
@@ -1640,6 +1646,9 @@ namespace Frm
         /// </summary>
         public void llenarComboAntecedentesPatologicos()
         {
+
+            if (cb_Ante_Pato_Bronquitis.Items.Count == 0 && cb_Ante_Pato_Varicela.Items.Count == 0 )
+            { 
             ClinicaPro.DB.Consulta.RespuestaGeneralesDB reespuestaGeneralesDB = new ClinicaPro.DB.Consulta.RespuestaGeneralesDB();
             List<Consulta_RespuestasGenerales> listAuxiliar = reespuestaGeneralesDB.Listar();
 
@@ -1653,7 +1662,7 @@ namespace Frm
             configuraCB.fuenteBaseDatos(cb_Ante_Pato_Sarampion, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
             configuraCB.fuenteBaseDatos(cb_Ante_Pato_Varicela, listAuxiliar, comboNombreIDs.respuestaGenerales);
             // No quitar los toList()
-
+            }
         }
         private void btnAntecedentePatologicoDetalle_Click(object sender, EventArgs e)
         {
@@ -1827,8 +1836,7 @@ namespace Frm
             {
                 gbGaslowEscala.Enabled = true;
             }
-        }     
-      
+        }           
         private void chkLimpiarDatos_CheckedChanged(object sender, EventArgs e)
         {
             Limpiar();
@@ -1851,6 +1859,11 @@ namespace Frm
                ConsultaExploracionFisica exploracionFisica = ExploracionFisica_Controles_A_Clase();
                exploracionFisica.IdConsulta = this.idConsulta;
                cFisicaDB.Agregar_Modificar(exploracionFisica, isModificar);
+
+               ClinicaPro.DB.Consulta.ConsultaNarizDB cnariz = new ClinicaPro.DB.Consulta.ConsultaNarizDB();
+               ConsultaNariz consultaNariz = ConsultaNariz_Controles_A_Clase();
+               consultaNariz.IdConsulta = this.idConsulta;
+               cnariz.Agregar_Modificar(consultaNariz, isModificar);
 
                 scope.Complete();
             }
