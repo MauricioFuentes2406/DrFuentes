@@ -442,6 +442,7 @@
             this.dgTorax.AllowUserToAddRows = false;
             this.dgTorax.AllowUserToDeleteRows = false;
             this.dgTorax.AllowUserToOrderColumns = true;
+            this.dgTorax.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgTorax.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTorax.Location = new System.Drawing.Point(5, 6);
             this.dgTorax.Name = "dgTorax";
@@ -1064,10 +1065,11 @@
             this.btnFiltrarPorCliente.Name = "btnFiltrarPorCliente";
             this.btnFiltrarPorCliente.Size = new System.Drawing.Size(93, 57);
             this.btnFiltrarPorCliente.TabIndex = 42;
-            this.btnFiltrarPorCliente.Text = "FiltrarPorCliente";
+            this.btnFiltrarPorCliente.Text = "FiltrarPorClientes";
             this.btnFiltrarPorCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFiltrarPorCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFiltrarPorCliente.UseVisualStyleBackColor = true;
+            this.btnFiltrarPorCliente.UseWaitCursor = true;
             this.btnFiltrarPorCliente.Click += new System.EventHandler(this.btnFiltrarPorCliente_Click);
             // 
             // btnCancelar

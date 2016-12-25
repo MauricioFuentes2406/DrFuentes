@@ -32,35 +32,39 @@ namespace ClinicaPro.DB.Cliente
                  if(isModificar)
                  {
                      List<ClienteAlergia> Original = (from tabla in Contexto.ClienteAlergias where tabla.IdCLiente== idCliente select tabla).ToList();
-                     List<ClienteAlergia> removeIdList = new List<ClienteAlergia>();
-                     foreach (var alergia in Original)
-                     {
-                         if (listaDataGridAlergia.Any(x => x.idAlergia == alergia.IdAlergia))
-                         {
-                             continue;
-                         }
-                         else
-                         {
-                             removeIdList.Add(alergia);
-                         }
-                     }
-                     foreach (var item in removeIdList)
-                     {
-                         Contexto.ClienteAlergias.Remove(item);
-                     }
-                     //Add 
-                     foreach (var item in listaDataGridAlergia)
-                     {
-                         if (Original.Where(x => x.IdAlergia == item.idAlergia).Count() == 0)
-                         {
-                             ClienteAlergia foreachRegistro = new ClienteAlergia();
-                             foreachRegistro.IdAlergia = item.idAlergia;
-                             foreachRegistro.IdCLiente = idCliente;
-                             Contexto.ClienteAlergias.Add(foreachRegistro);
-                         }
-                     }
 
-                 }else
+                     if (Original != null)
+                     {
+                         List<ClienteAlergia> removeIdList = new List<ClienteAlergia>();
+                         foreach (var alergia in Original)
+                         {
+                             if (listaDataGridAlergia.Any(x => x.idAlergia == alergia.IdAlergia))
+                             {
+                                 continue;
+                             }
+                             else
+                             {
+                                 removeIdList.Add(alergia);
+                             }
+                         }
+                         foreach (var item in removeIdList)
+                         {
+                             Contexto.ClienteAlergias.Remove(item);
+                         }
+                     }
+                         //Add 
+                         foreach (var item in listaDataGridAlergia)
+                         {
+                             if (Original.Where(x => x.IdAlergia == item.idAlergia).Count() == 0)
+                             {
+                                 ClienteAlergia foreachRegistro = new ClienteAlergia();
+                                 foreachRegistro.IdAlergia = item.idAlergia;
+                                 foreachRegistro.IdCLiente = idCliente;
+                                 Contexto.ClienteAlergias.Add(foreachRegistro);
+                             }
+                         }
+                     
+                 }else  // Else de isModificar
                  {
                      foreach (TipoAlergia tipoAlergia in listaDataGridAlergia)
                      {

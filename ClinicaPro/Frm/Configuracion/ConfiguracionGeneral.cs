@@ -52,6 +52,11 @@ namespace Frm
         {
             new Frm.Configuracion.frmMaterialesCasa().Show();
         }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            new Frm.Configuracion.frmServicios().Show();
+        }
               
     }
 }

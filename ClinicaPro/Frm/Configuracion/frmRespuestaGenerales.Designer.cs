@@ -37,6 +37,7 @@
             this.dgRespuestasGenerales = new System.Windows.Forms.DataGridView();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgRespuestasGenerales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,12 +140,25 @@
             this.label1.TabIndex = 65;
             this.label1.Text = "Nombre*";
             // 
+            // btnHelp
+            // 
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Image = global::Frm.Properties.Resources.info59x29;
+            this.btnHelp.Location = new System.Drawing.Point(297, 1);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(39, 32);
+            this.btnHelp.TabIndex = 67;
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // frmRespuestaGenerales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(338, 322);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblCampoRequerido);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
@@ -173,6 +187,7 @@
         private System.Windows.Forms.DataGridView dgRespuestasGenerales;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnHelp;
 
     }
 }

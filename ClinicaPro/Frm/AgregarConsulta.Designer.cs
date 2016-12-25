@@ -4869,6 +4869,7 @@
             this.btnAuxiliarModificar.TabIndex = 56;
             this.btnAuxiliarModificar.Text = "AuxiliarModificar";
             this.btnAuxiliarModificar.UseVisualStyleBackColor = true;
+            this.btnAuxiliarModificar.Visible = false;
             this.btnAuxiliarModificar.Click += new System.EventHandler(this.btnAuxiliarModificar_Click);
             // 
             // chk_AplicarDescuento

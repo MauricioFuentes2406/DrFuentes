@@ -21,13 +21,19 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.AntecedenteDrogra Original = Contexto.AntecedenteDrogra.First(EntidadLocal => EntidadLocal.idConsulta == Entidad.idConsulta);
+                    Entities.AntecedenteDrogra Original = Contexto.AntecedenteDrogra.FirstOrDefault(EntidadLocal => EntidadLocal.idConsulta == Entidad.idConsulta);
                     if (Original != null)
                     {
                         ActulizarDrogas(Contexto, Original, Entidad);
                         if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
-                        { Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo);}
+                        { Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo); }
                         Original.NumeroTiempo = Entidad.NumeroTiempo;
+                    }
+                    else
+                    {
+                        // Es modificar pero no existia Lista Drogas Antes => Agrega
+                        Contexto.AntecedenteDrogra.Attach(Entidad);    // Hay unos objetos que se traen de la BD como AsNotTRacking()                   
+                        Contexto.AntecedenteDrogra.Add(Entidad);
                     }
                 }
                 else
@@ -55,9 +61,12 @@ namespace ClinicaPro.DB.Consulta
                 throw;
             }
         }
-        public bool Eliminar(int idCliente, int idTipoUsuario)
+        public bool Eliminar(int idConsulta, int idTipoUsuario)
         {
-            return false;
+            using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto  = new Entities.ClinicaDrFuentesEntities() )
+            {
+                return false;
+            }
         }
         public List<Entities.AntecedenteDrogra> Listar()
         {
@@ -72,6 +81,21 @@ namespace ClinicaPro.DB.Consulta
                                                            select tabla).ToList();
                 return lista;
             }
+        }        
+        public void EliminarListaDrogas(int IdConsulta)
+        {
+            using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                Entities.AntecedenteDrogra Entidad = (from t in Contexto.AntecedenteDrogra 
+                                where t.idConsulta == IdConsulta select t).FirstOrDefault();
+
+                for (int indice = Entidad.Drogas.Count - 1; indice > -1; indice--)
+                {
+                    var oso = Entidad.Drogas.ElementAt(indice);
+                    Entidad.Drogas.Remove(oso);
+                }   
+                Contexto.SaveChanges();         
+            }                
         }
         private void ActulizarDrogas(Entities.ClinicaDrFuentesEntities Contexto, Entities.AntecedenteDrogra Original, Entities.AntecedenteDrogra Entidad)
         {
@@ -103,20 +127,15 @@ namespace ClinicaPro.DB.Consulta
                     Original.Drogas.Add(item);
                 }
             }
-        }
+        }        
         public static void oso()
         {
             Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
             Entities.AntecedenteDrogra entidad = new Entities.AntecedenteDrogra();
 
-
-
             entidad.idConsulta = 7;
             entidad.NumeroTiempo = 1;
-            //entidad.EscalaTiempo = Contexto.EscalaTiempoes.FirstOrDefault();
             entidad.EscalaTiempo = (from tabla in Contexto.EscalaTiempoes.AsNoTracking() select tabla).FirstOrDefault();
-
-
             List<Entities.Drogas> listaDrogas = (from tabla in Contexto.Drogas select tabla).Take(2).ToList();
 
             entidad.Drogas = listaDrogas;

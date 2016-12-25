@@ -128,15 +128,28 @@ namespace Frm.Configuracion
             if (dgFamiliar.SelectedRows.Count == 1)
             {
                 this.IdFamiliar = (byte)dgFamiliar.CurrentRow.Cells[comboNombreIDs.familiar].Value;
-            }
-            FamiliarDB familiarDB = new FamiliarDB();
-            if (familiarDB.Eliminar(this.IdFamiliar, this.IdUsuario))
+
+                FamiliarDB familiarDB = new FamiliarDB();
+                if (familiarDB.Eliminar(this.IdFamiliar, this.IdUsuario))
+                {
+                    Limpiar();
+                    MensajeDeActulizacion();
+                }
+            }else
             {
-                Limpiar();
-                MensajeDeActulizacion();
-            }            
+                MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,
+                  MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         #endregion
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+             String mensaje = String.Empty;
+            mensaje = @" Se relaciona con las opciones de : 
+                        Antecedentes Hereditarios";                         
+            MessageBox.Show(mensaje," Mensaje Informativo ",MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
       
     }
 }

@@ -481,8 +481,11 @@ namespace Frm
                 ClinicaPro.DB.Consulta.ConsultaDB consultaDB = new ClinicaPro.DB.Consulta.ConsultaDB();
                 Consulta consulta = Consulta_Controles_A_Clase();
 
-                this.idConsulta = consultaDB.Agregar_Modificar(consulta, isModificar);
-
+                if (isModificar == ClinicaPro.General.accion.Agregar)
+                { 
+                    this.idConsulta = consultaDB.Agregar_Modificar(consulta, isModificar); 
+                }
+                                                    
                 if (gbDatosGineco.Enabled)
                 {
                     ClinicaPro.DB.Consulta.GinecoObstreticosDB ginecoDB = new ClinicaPro.DB.Consulta.GinecoObstreticosDB();
@@ -564,22 +567,31 @@ namespace Frm
                 ClinicaPro.DB.Consulta.ParesCranealesDB paresDB = new ClinicaPro.DB.Consulta.ParesCranealesDB();
                 ConsultaParesCraneale cParesCraneales = ParesCranealesControles_A_Clase();
                 cParesCraneales.IdConsulta = this.idConsulta;
-                paresDB.Agregar_Modificar(cParesCraneales, isModificar);
+                paresDB.Agregar_Modificar(cParesCraneales, isModificar);                 
 
-
-                if (isListaDrogasconDatos())
+                if (isListaDrogasconDatos() )
                 {
                     ClinicaPro.DB.Consulta.AntecedenteDrogaDB antedecedenteDrogaDB = new ClinicaPro.DB.Consulta.AntecedenteDrogaDB();
                     AntecedenteDrogra anteDroga = AntecedenteDroga_Controles_A_Clase();
                     anteDroga.idConsulta = this.idConsulta;
                     antedecedenteDrogaDB.Agregar_Modificar(anteDroga, isModificar);
                 }
-                if (isListaVacunasconDatos())
+                else if (ClinicaPro.General.accion.Modificar)
+                {
+                    ClinicaPro.DB.Consulta.AntecedenteDrogaDB antedecedenteDrogaDB = new ClinicaPro.DB.Consulta.AntecedenteDrogaDB();
+                    antedecedenteDrogaDB.EliminarListaDrogas(this.idConsulta);
+                }
+                if (isListaVacunasconDatos() )
                 {
                     ClinicaPro.DB.Consulta.AntecedenteVacunaDB antedecedenteVacunaDB = new ClinicaPro.DB.Consulta.AntecedenteVacunaDB();
                     AntecedenteVacuna entidadAgregar = AntecedenteVacuna_Controles_A_Clase();
                     entidadAgregar.IdConsulta = this.idConsulta;
                     antedecedenteVacunaDB.Agregar_Modificar(entidadAgregar, isModificar);
+                }
+                else if (ClinicaPro.General.accion.Modificar)
+                {
+                    ClinicaPro.DB.Consulta.AntecedenteVacunaDB antedecedenteVacunaDB = new ClinicaPro.DB.Consulta.AntecedenteVacunaDB();
+                    antedecedenteVacunaDB.EliminarListaVacunas(this.idConsulta);
                 }
                 if (gbAnteceDentesNoPatologicos != null)
                 {
@@ -626,6 +638,19 @@ namespace Frm
             consulta = Consulta_Controles_A_Clase();
             consultaDB.Agregar_Modificar(consulta, isModificar);
         }
+        /// <summary>
+        /// Verifica si  hay objetos en la coleccion del ComboBox
+        /// </summary>
+        /// <param name="cb_Algo"></param>
+        /// <returns>true si count mayor a cero </returns>
+        private bool isComboVacio( ComboBox cb_Algo)
+        {
+            if (cb_Algo.Items.Count == 0)
+            { return true; }
+            else return false;
+        }
+
+
         #endregion
         #region Eventos
         private void txtDiagnostico_Enter(object sender, EventArgs e) // Cambia Color AuxliarAlergias, func Estetica
@@ -1410,16 +1435,19 @@ namespace Frm
             // se añade toList() para que  solo sea necesario acceder a la BD una sola vez
             if (gbAnteceDentesNoPatologicos.Enabled)
             {
-                ClinicaPro.DB.Consulta.EscalaTiempoDB escalaTimpoDB = new ClinicaPro.DB.Consulta.EscalaTiempoDB();
-                List<EscalaTiempo> listAuxiliar = escalaTimpoDB.Listar();
+                if (isComboVacio(cb_NoPato_AlcoholEscala) && isComboVacio(cb_NoPato_VacunaEscala))
+                {
+                    ClinicaPro.DB.Consulta.EscalaTiempoDB escalaTimpoDB = new ClinicaPro.DB.Consulta.EscalaTiempoDB();
+                    List<EscalaTiempo> listAuxiliar = escalaTimpoDB.Listar();
 
-                ClinicaPro.BL.ComboBoxBL<EscalaTiempo> configuraCB = new ComboBoxBL<EscalaTiempo>();
+                    ClinicaPro.BL.ComboBoxBL<EscalaTiempo> configuraCB = new ComboBoxBL<EscalaTiempo>();
 
 
-                configuraCB.fuenteBaseDatos(cb_NoPato_AlcoholEscala, listAuxiliar.ToList(), comboNombreIDs.escalaTiempo);
-                configuraCB.fuenteBaseDatos(cb_NoPato_DrogaEscala, listAuxiliar.ToList(), comboNombreIDs.escalaTiempo);
-                configuraCB.fuenteBaseDatos(cb_NoPato_TabaquismoEscala, listAuxiliar.ToList(), comboNombreIDs.escalaTiempo);
-                configuraCB.fuenteBaseDatos(cb_NoPato_VacunaEscala, listAuxiliar, comboNombreIDs.escalaTiempo);
+                    configuraCB.fuenteBaseDatos(cb_NoPato_AlcoholEscala, listAuxiliar.ToList(), comboNombreIDs.escalaTiempo);
+                    configuraCB.fuenteBaseDatos(cb_NoPato_DrogaEscala, listAuxiliar.ToList(), comboNombreIDs.escalaTiempo);
+                    configuraCB.fuenteBaseDatos(cb_NoPato_TabaquismoEscala, listAuxiliar.ToList(), comboNombreIDs.escalaTiempo);
+                    configuraCB.fuenteBaseDatos(cb_NoPato_VacunaEscala, listAuxiliar, comboNombreIDs.escalaTiempo);
+                }
             }
         }
         private void llenaComboEscalaTiempoConsulta()
@@ -1851,64 +1879,14 @@ namespace Frm
 
             using (TransactionScope scope = new TransactionScope())  // scope Hace un RollBack si ocurre un error
             {  
-                  AlergiasABaseDatos(isModificar);
-
-               // ClinicaPro.DB.Consulta.ConsultaDB consultaDB = new ClinicaPro.DB.Consulta.ConsultaDB();
-               // Consulta consulta = Consulta_Controles_A_Clase();
-               // if(isModificar)
-               // {
-               //    consulta.IdConsulta = this.idConsulta;
-               // }
-               //consultaDB.Agregar_Modificar(consulta,isModificar);
-
-               //ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB cFisicaDB = new ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB();
-               //ConsultaExploracionFisica exploracionFisica = ExploracionFisica_Controles_A_Clase();
-               //exploracionFisica.IdConsulta = this.idConsulta;
-               //cFisicaDB.Agregar_Modificar(exploracionFisica, isModificar);
-
-               //ClinicaPro.DB.Consulta.ConsultaNarizDB cnariz = new ClinicaPro.DB.Consulta.ConsultaNarizDB();
-               //ConsultaNariz consultaNariz = ConsultaNariz_Controles_A_Clase();
-               //consultaNariz.IdConsulta = this.idConsulta;
-               //cnariz.Agregar_Modificar(consultaNariz, isModificar);
-
-               //ClinicaPro.DB.Consulta.ConsultaOidosDB cOidosDB = new ClinicaPro.DB.Consulta.ConsultaOidosDB();
-               //ConsultaOido consultaOido = ConsultaOido_Controles_A_Clase();
-               //consultaOido.IdConsulta = this.idConsulta;
-               //cOidosDB.Agregar_Modificar(consultaOido, isModificar);
-
-               //ClinicaPro.DB.Consulta.ConsultaOjosDB cOjosDB = new ClinicaPro.DB.Consulta.ConsultaOjosDB();
-               //ConsultaOjo consultaOjos = ConsultaOjos_Controles_A_Clase();
-               //consultaOjos.IdConsulta = this.idConsulta;
-               //cOjosDB.Agregar_Modificar(consultaOjos, isModificar);
-
-               //ClinicaPro.DB.Consulta.ConsultaReflejosDB crefle = new ClinicaPro.DB.Consulta.ConsultaReflejosDB();
-               //ConsultaReflejo consultaReflejo = ConsultaReflejo_Controles_A_Clase();
-               //consultaReflejo.IdConsulta = this.idConsulta;
-               //crefle.Agregar_Modificar(consultaReflejo, isModificar);
-
-               //ClinicaPro.DB.Consulta.ConsultaCuelloDB cCuello = new ClinicaPro.DB.Consulta.ConsultaCuelloDB();
-               //ConsultaCuello consultaCUello = ConsultaCuello_Controles_A_Clase();
-               //consultaCUello.IdConsulta = this.idConsulta;
-               //cCuello.Agregar_Modificar(consultaCUello, isModificar);
-
-               //ClinicaPro.DB.Consulta.ConsultaAbdomenDB cAbdomenDB = new ClinicaPro.DB.Consulta.ConsultaAbdomenDB();
-               //ConsultaAbdomen cAbdomen = ConsultaAbdomen_A_Clase();
-               //cAbdomen.IdConsulta = this.idConsulta;
-               //cAbdomenDB.Agregar_Modificar(cAbdomen, isModificar);
-
-               //ClinicaPro.DB.Consulta.EstadoViviendaDB estadoViviendaDB = new ClinicaPro.DB.Consulta.EstadoViviendaDB();
-               //ConsultaEstadoVivienda cEstadoVivienda = ConsultaEstadoViviendaControles_A_Clase();
-               //cEstadoVivienda.IdConsulta = this.idConsulta;
-               //estadoViviendaDB.Agregar_Modificar(cEstadoVivienda, isModificar);
-
-
+                  AlergiasABaseDatos(isModificar);              
                 scope.Complete();
             }
         }
         private void btnAuxiliarModificar_Click(object sender, EventArgs e)
         {
-            ModificarTemporal(ClinicaPro.General.accion.Modificar);
-
+            //ModificarTemporal(ClinicaPro.General.accion.Modificar);
+            GuardarTodos(ClinicaPro.General.accion.Modificar) ;
         }
     }
 }

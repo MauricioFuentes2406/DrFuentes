@@ -67,7 +67,8 @@ namespace ClinicaPro.DB.Consulta
         {
             ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
             List<Entities.ConsultaEstadoViviendaMateriale> lista = (from tabla in Contexto.ConsultaEstadoViviendaMateriales.AsNoTracking()
-                                                                 select tabla).ToList();
+                                                                    orderby tabla.IdMaterial
+                                                                   select tabla).ToList();
             Contexto.Dispose();
             return lista;
         }

@@ -112,19 +112,31 @@ namespace Frm.Configuracion
                 
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgRespuestasGenerales.SelectedRows.Count == 1)
             {
                 this.IdRespuestaGeneral = (byte)dgRespuestasGenerales.CurrentRow.Cells[comboNombreIDs.respuestaGenerales].Value;
-            }
-            RespuestaGeneralesDB reespuestaGeneralDB = new RespuestaGeneralesDB();
-            if (reespuestaGeneralDB.Eliminar(this.IdRespuestaGeneral, this.IdUsuario))
+
+                RespuestaGeneralesDB reespuestaGeneralDB = new RespuestaGeneralesDB();
+                if (reespuestaGeneralDB.Eliminar(this.IdRespuestaGeneral, this.IdUsuario))
+                {
+                    MensajeDeActulizacion();
+                    Limpiar();
+                }
+            }else
             {
-                MensajeDeActulizacion();
-                Limpiar();
-            }                                      
+                MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,
+                      MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            String mensaje = String.Empty;
+            mensaje = @" Se relaciona con las opciones de : 
+                        Antecedentes Personales 
+                        Exploración Física Torax y Pulmones ";                               
+            MessageBox.Show(mensaje," Mensaje Informativo ",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

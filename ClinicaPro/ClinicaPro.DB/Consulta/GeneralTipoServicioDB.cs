@@ -51,9 +51,19 @@ namespace ClinicaPro.DB.Consulta
                 throw;
             }
         }
-        public bool Eliminar(int idCliente, int idTipoUsuario)
+        public bool Eliminar(int idServicio, int idTipoUsuario)
         {
-         return false;
+            if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(idServicio))
+            {
+                using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+                {
+                    Entities.GeneralTipoServicio service = Contexto.GeneralTipoServicios.Find(idServicio);
+                    Contexto.GeneralTipoServicios.Remove(service);
+                    Contexto.SaveChanges();
+                    return true;
+                }
+            }
+            else { return false; }
         }
         /// <summary> Selecciona todos los datos , usarlo  para  llenar los DataGrids
         /// </summary>

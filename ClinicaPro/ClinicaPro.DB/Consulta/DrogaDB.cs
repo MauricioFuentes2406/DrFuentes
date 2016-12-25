@@ -59,7 +59,7 @@ namespace ClinicaPro.DB.Consulta
             {
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
                 {
-                    Entities.Drogas droga = Contexto.Drogas.Where(EntidadLocal => EntidadLocal.idDrogas == idDroga).First();
+                    Entities.Drogas droga = Contexto.Drogas.Find(idDroga);
                     Contexto.Drogas.Remove(droga);
                     Contexto.SaveChanges();
                     return true;

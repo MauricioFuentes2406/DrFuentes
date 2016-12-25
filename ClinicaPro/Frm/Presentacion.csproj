@@ -131,6 +131,12 @@
     <Compile Include="Configuracion\frmRespuestaGenerales.Designer.cs">
       <DependentUpon>frmRespuestaGenerales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\frmServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmServicios.Designer.cs">
+      <DependentUpon>frmServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\frmVacunas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmRespuestaGenerales.resx">
       <DependentUpon>frmRespuestaGenerales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmServicios.resx">
+      <DependentUpon>frmServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmVacunas.resx">
       <DependentUpon>frmVacunas.cs</DependentUpon>

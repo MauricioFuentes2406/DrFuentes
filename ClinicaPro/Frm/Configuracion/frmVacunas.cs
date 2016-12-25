@@ -102,13 +102,18 @@ namespace Frm.Configuracion
             if (dgVacunas.SelectedRows.Count == 1)
             {
                 this.IdVacunas = (int)dgVacunas.CurrentRow.Cells[comboNombreIDs.vacunas].Value;
-            }
-            VacunasDB vacunaDB = new VacunasDB();                        
-            if (vacunaDB.Eliminar(this.IdVacunas, this.IdUsuario))
+
+                VacunasDB vacunaDB = new VacunasDB();
+                if (vacunaDB.Eliminar(this.IdVacunas, this.IdUsuario))
+                {
+                    Limpiar();
+                    MensajeDeActulizacion();
+                }
+            }else
             {
-                Limpiar();
-                MensajeDeActulizacion();
-            }            
+                MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,
+                      MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -120,9 +125,7 @@ namespace Frm.Configuracion
                 }
                 Vacunas vacuna = Vacuna_ControlAClase();
                 vacuna.idVacunas = this.IdVacunas;
-                VacunasDB vacunaDB = new VacunasDB();
-                vacunaDB.Agregar_Modificar(vacuna, ClinicaPro.General.accion.Modificar);
-                Limpiar();
+                VacunasDB vacunaDB = new VacunasDB();                           
                 if ( vacunaDB.Agregar_Modificar(vacuna, ClinicaPro.General.accion.Modificar) != 0)
                 {
                     Limpiar();

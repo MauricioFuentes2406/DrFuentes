@@ -126,3 +126,4 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Secretaria.resourc
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Presentacion.csproj.GenerateResource.Cache
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.exe
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.pdb
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Configuracion.frmServicios.resources

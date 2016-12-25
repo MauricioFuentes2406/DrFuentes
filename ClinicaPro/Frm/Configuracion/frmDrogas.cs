@@ -93,21 +93,21 @@ namespace Frm.Configuracion
             if (!Validar())
             {
                 Drogas droga = Droga_ControlAClase();
-                DrogaDB drogaDB = new DrogaDB();                               
+                DrogaDB drogaDB = new DrogaDB();
                 if (drogaDB.Agregar_Modificar(droga, ClinicaPro.General.accion.Agregar) != -1)
                 {
                     Limpiar();
                     MensajeDeActulizacion();
-                }       
+                }
             }
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (!Validar() )
+            if (!Validar())
             {
-                if (dgDrogas.SelectedRows.Count ==1 )
+                if (dgDrogas.SelectedRows.Count == 1)
                 {
-                    this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;                    
+                    this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
                 }
                 Drogas droga = Droga_ControlAClase();
                 droga.idDrogas = this.IdDrogas;
@@ -116,24 +116,25 @@ namespace Frm.Configuracion
                 {
                     Limpiar();
                     MensajeDeActulizacion();
-                }              
+                }
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
-                if (dgDrogas.SelectedRows.Count == 1)
-                {
-                    this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
-                }
+            if (dgDrogas.SelectedRows.Count == 1)
+            {
+                this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
                 DrogaDB drogaDB = new DrogaDB();
-                drogaDB.Eliminar(this.IdDrogas, this.IdUsuario);
-                Limpiar();
-                if (drogaDB.Eliminar(this.IdDrogas, this.IdUsuario) )
+                if (drogaDB.Eliminar(this.IdDrogas, this.IdUsuario))
                 {
                     Limpiar();
                     MensajeDeActulizacion();
-                }       
+                }
+            }else
+            {
+                MessageBox.Show(Mensajes.Seleccione_Una_Fila,Mensajes.Upss_Falto_Algo ,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         #endregion
     }

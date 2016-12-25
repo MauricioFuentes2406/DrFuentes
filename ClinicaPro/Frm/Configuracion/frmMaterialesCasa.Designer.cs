@@ -119,7 +119,7 @@
             this.dgMateriales.Name = "dgMateriales";
             this.dgMateriales.ReadOnly = true;
             this.dgMateriales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMateriales.Size = new System.Drawing.Size(249, 187);
+            this.dgMateriales.Size = new System.Drawing.Size(267, 187);
             this.dgMateriales.TabIndex = 64;
             // 
             // txtNombre

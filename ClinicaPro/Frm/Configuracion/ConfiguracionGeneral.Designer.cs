@@ -149,6 +149,7 @@
             this.btnServicios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
             // ConfiguracionGeneral
             // 

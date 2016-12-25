@@ -125,13 +125,18 @@ namespace Frm.Configuracion
             if (this.dgMateriales.SelectedRows.Count == 1)
             {
                 this.IdMaterial = (byte)dgMateriales.CurrentRow.Cells["IdMaterial"].Value;
+
+                EstadoViviendaMaterialesDB MaterialesDB = new EstadoViviendaMaterialesDB();
+                if (MaterialesDB.Eliminar(this.IdMaterial, this.IdUsuario))
+                {
+                    Limpiar();
+                    MensajeDeActulizacion();
+                }else
+                {
+                    MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            EstadoViviendaMaterialesDB MaterialesDB = new EstadoViviendaMaterialesDB();
-            if (MaterialesDB.Eliminar(this.IdMaterial, this.IdUsuario))
-            {
-                Limpiar();
-                MensajeDeActulizacion();
-            }            
         }
         #region Eventos
 

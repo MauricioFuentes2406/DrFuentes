@@ -21,7 +21,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.AntecedenteVacuna Original = Contexto.AntecedenteVacuna.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.AntecedenteVacuna Original = Contexto.AntecedenteVacuna.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
@@ -29,6 +29,11 @@ namespace ClinicaPro.DB.Consulta
                         Original.NumeroTiempo = Original.NumeroTiempo;
                         ActulizarVacunas(Contexto, Original, Entidad);
                         Original.Vacunas = Original.Vacunas;
+                    }else
+                    {
+                        // Es modificar pero no existia Lista Antes => Agrega
+                        Contexto.AntecedenteVacuna.Attach(Entidad);    
+                        Contexto.AntecedenteVacuna.Add(Entidad);
                     }
                 }
                 else
@@ -108,6 +113,22 @@ namespace ClinicaPro.DB.Consulta
                    Original.Vacunas.Add(item);
                }
            }
+       }
+       public void EliminarListaVacunas (int IdConsulta)
+       {
+           using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+               Entities.AntecedenteVacuna Entidad = (from t in Contexto.AntecedenteVacuna
+                                                     where t.IdConsulta == IdConsulta
+                                                     select t).FirstOrDefault();
+
+               for (int indice = Entidad.Vacunas.Count - 1; indice > -1; indice--)
+               {
+                   var oso = Entidad.Vacunas.ElementAt(indice);
+                   Entidad.Vacunas.Remove(oso);
+               }
+               Contexto.SaveChanges();
+           }                
        }
     }
 }
