@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaOjo Original = Contexto.ConsultaOjos.First(EntidadLocal => EntidadLocal.IdConsulta == consultaOjo.IdConsulta);
+                    Entities.ConsultaOjo Original = Contexto.ConsultaOjos.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaOjo.IdConsulta);
                     if (Original != null)
                     {
                         Original.Diplopia = consultaOjo.Diplopia;
@@ -29,6 +29,9 @@ namespace ClinicaPro.DB.Consulta
                         Original.Midriasis = consultaOjo.Midriasis;
                         Original.PerdidaAgudezaVisual =  consultaOjo.PerdidaAgudezaVisual;
                         Original.Xerolftamia = consultaOjo.Xerolftamia;
+                    }else
+                    {
+                        Contexto.ConsultaOjos.Add(consultaOjo);
                     }
                 }
                 else

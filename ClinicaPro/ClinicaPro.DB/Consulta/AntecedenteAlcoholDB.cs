@@ -18,13 +18,17 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.AntecedenteAlcohol Original = Contexto.AntecedenteAlcohol.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.AntecedenteAlcohol Original = Contexto.AntecedenteAlcohol.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         Original.BebeEnPromedio = Entidad.BebeEnPromedio;
                         if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
                         { Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo); }
                         Original.NumeroTiempo = Entidad.NumeroTiempo;
+                    }if ( Original == null)
+                    {
+                        Contexto.AntecedenteAlcohol.Attach(Entidad);     // Hay unos objetos que se traen de la BD como AsNotTRacking()
+                        Contexto.AntecedenteAlcohol.Add(Entidad);
                     }
                 }
                 else

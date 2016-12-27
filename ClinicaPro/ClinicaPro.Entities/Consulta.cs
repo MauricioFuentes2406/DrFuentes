@@ -43,7 +43,6 @@ namespace ClinicaPro.Entities
         public virtual AntecedentesGinecoObstrectico AntecedentesGinecoObstrectico { private get; set; }
         public virtual Cliente Cliente { private get; set; }
         public virtual ConsultaAparatoDigestivo ConsultaAparatoDigestivo { private get; set; }
-        public virtual ConsultaBoca ConsultaBoca { private get; set; }
         public virtual ConsultaCraneo ConsultaCraneo { private get; set; }
         public virtual ConsultaCuello ConsultaCuello { private get; set; }
         public virtual ConsultaEstadoEmocional ConsultaEstadoEmocional { private get; set; }
@@ -67,5 +66,6 @@ namespace ClinicaPro.Entities
         public virtual GlasgowResultado GlasgowResultado { get; set; }
         public virtual EscalaTiempo EscalaTiempo { get; set; }
         public virtual ConsultaAbdomen ConsultaAbdomen { get; set; }
+        public virtual ConsultaBoca ConsultaBoca { get; set; }
     }
 }

@@ -17,7 +17,6 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Consulta" Width="1.5" PointX="8.25" PointY="47.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Consulta_RespuestasGenerales" Width="1.5" PointX="14.25" PointY="60.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaAparatoDigestivo" Width="1.5" PointX="10.5" PointY="44" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaBoca" Width="1.5" PointX="10.5" PointY="48" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaCraneo" Width="1.5" PointX="10.5" PointY="52.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaCuello" Width="1.5" PointX="10.5" PointY="55.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaEstadoEmocional" Width="1.5" PointX="10.5" PointY="59.125" IsExpanded="true" />
@@ -79,7 +78,6 @@
         <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaExploracionFisica_ColorPaciente" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaAparatoDigestivo_Consulta" ManuallyRouted="false" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaCraneo_Consulta" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaCuello_Consulta" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaEstadoEmocional_Consulta" ManuallyRouted="false" />
@@ -146,6 +144,8 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaTabaco" Width="1.5" PointX="13.375" PointY="9.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaEstadoVivienda" Width="1.5" PointX="4.375" PointY="11.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaToraxPulmones" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaBoca" Width="1.5" PointX="10.5" PointY="18.25" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

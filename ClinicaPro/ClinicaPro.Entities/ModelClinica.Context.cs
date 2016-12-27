@@ -39,7 +39,6 @@ namespace ClinicaPro.Entities
         public virtual DbSet<Consulta> Consultas { get; set; }
         public virtual DbSet<Consulta_RespuestasGenerales> Consulta_RespuestasGenerales { get; set; }
         public virtual DbSet<ConsultaAparatoDigestivo> ConsultaAparatoDigestivoes { get; set; }
-        public virtual DbSet<ConsultaBoca> ConsultaBocas { get; set; }
         public virtual DbSet<ConsultaCraneo> ConsultaCraneos { get; set; }
         public virtual DbSet<ConsultaCuello> ConsultaCuelloes { get; set; }
         public virtual DbSet<ConsultaEstadoEmocional> ConsultaEstadoEmocionals { get; set; }
@@ -94,6 +93,7 @@ namespace ClinicaPro.Entities
         public virtual DbSet<VistaTabaco> VistaTabaco { get; set; }
         public virtual DbSet<VistaEstadoVivienda> VistaEstadoVivienda { get; set; }
         public virtual DbSet<VistaToraxPulmones> VistaToraxPulmones { get; set; }
+        public virtual DbSet<ConsultaBoca> ConsultaBocas { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

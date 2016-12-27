@@ -56,10 +56,10 @@ namespace Frm
         /// <param name="idCliente"></param>
         /// <param name="idConsulta"></param>
         /// <param name="NombreCompleto"></param>
-        public AgregarConsulta(int idCliente,int idConsulta, String NombreCompleto)
+        public AgregarConsulta(int idCliente, int idConsulta, String NombreCompleto)
         {
             InitializeComponent();
-            this.NombreCliente = NombreCompleto;   //Para que ocupo esta Propiedad ??
+            this.NombreCliente = NombreCompleto;
             this.idCliente = idCliente;
             this.idConsulta = idConsulta;
         }
@@ -67,17 +67,18 @@ namespace Frm
         {
             if (isAlgunClienteAsignado())
             {
-              
                 this.lblNumero.Text = this.idCliente.ToString();
                 this.lblNombreCLiente.Text = this.NombreCliente;
                 _isLLenadoRapido = false;
 
-                PonerFecha();
-                llenaComboEscalaTiempoConsulta();
-                llenar_listaOriginalAlergia();
-                llenaComboEstadoVivienda();
-                cbPorDefectoAbdomen();
+                FechaDeHoy();
+                llenarTodosLosCombo();
+                if (isNuevaConsulta() == false)
+                {
+                    recuperarDatosDeConsulta(this.idConsulta);
+                }
             }
+            
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -87,20 +88,19 @@ namespace Frm
             }
             else
             {
-                if (idConsulta == -1 && _isLLenadoRapido == false)  // -1 Bandera indica q  es agregar
+                if (isNuevaConsulta() && _isLLenadoRapido == false)
                 {
                     GuardarTodos(ClinicaPro.General.accion.Agregar);
                 }
                 else
-                    if (idConsulta == -1 && _isLLenadoRapido)
+                    if (isNuevaConsulta() && _isLLenadoRapido)
                     {
                         GuardarRapido(ClinicaPro.General.accion.Agregar);
                     }
                     else
                     {
-                        GuardarTodos(ClinicaPro.General.accion.Modificar);
+                        GuardarTodos(ClinicaPro.General.accion.Modificar);  // Este Modifica
                     }
-
                 MessageBox.Show(Mensajes.Agregar_Modificar,
                                         "Agregar Consulta",
                                           MessageBoxButtons.OKCancel,
@@ -114,6 +114,35 @@ namespace Frm
 
         #region Metodos
         /// <summary>
+        /// Verifica si esta creando una nueva consulta o si  una existente, se verifica mediante el idConsulta Global
+        /// </summary>
+        public bool isNuevaConsulta()
+        {
+            if (this.idConsulta == -1) return true;
+            else return false;
+        }
+        private void llenarTodosLosCombo()
+        {
+            llenaComboEscalaTiempoConsulta();
+            llenar_listaOriginalAlergia();
+            llenaComboEstadoVivienda();
+            cbPorDefectoAbdomen();
+            llenaComboEscalaTiempoAnteceDenteNoPatologico();
+            llenaComboVacunas();
+            llenaComboDrogas();
+            llenarComboAntecedentesPatologicos();
+            llenaComboAntecenteHereditario();
+            cb_NoPato_BebePromedio.SelectedIndex = 1;
+            LlenacomboMano();
+            LlenacomboColor();
+            cbGanglioLinfatico.SelectedIndex = 0;
+            cb_ArteriaCarotida.SelectedIndex = 0;
+            cb_Reflejo_ValoracionGeneral.SelectedIndex = 0;
+            LlenarComboAparatoDigestivo();
+            llenaComboTorax();
+            LlenaComboServicio();
+        }
+        /// <summary>
         /// Chekea si han añadido servios al gridDeServicios 
         /// </summary>
         /// <returns>true si vacio, false no hay nada </returns>
@@ -122,11 +151,11 @@ namespace Frm
             if (dgServicios.DataSource == null) return true;
             else return false;
         }
-        private void LimpiarradioButtons()
+        private void Glasgow_radioButtonPorDefecto()
         {
             if (gbGaslowEscala.Enabled)
             {
-                Rb_Gaslow_AO_Espontanea.Checked=true;
+                Rb_Gaslow_AO_Espontanea.Checked = true;
                 Rb_Gaslow_RV_Orientado.Checked = true;
                 Rb_Gaslow_RM_Obedece.Checked = true;
             }
@@ -238,8 +267,8 @@ namespace Frm
                 txtNoPato_NumTiempo_Vacuna.Value = 1;
             }
             txtNumeroBaños.Value = 0;
-            txtPA_Diastolica.Value = 0;
-            txtPA_Sistolica.Value = 0;
+            txtPresionArterial_Diastolica.Value = 0;
+            txtPresionArterial_Sistolica.Value = 0;
             txtPadecimientoActual.Text = String.Empty;
             if (txtParCranealDetalle.Enabled) { txtParCranealDetalle.Text = String.Empty; }
             if (txtPerdidaAgudeza.Enabled) { txtPerdidaAgudeza.ResetText(); }
@@ -288,20 +317,20 @@ namespace Frm
             }
         }
         private void LimpiarGrids()
-        { 
-          if (gbAnteceDentesNoPatologicos.Enabled)
-          {
-              if (listaDataGridDrogas != null) listaDataGridDrogas.Clear();
-              if (listaGridvacunas != null)listaGridvacunas.Clear();                            
-          }
-          if (listaGridServicios != null) listaGridServicios.Clear();
-          if (listaDataGridAlergia != null) { listaDataGridAlergia.Clear(); }
+        {
+            if (gbAnteceDentesNoPatologicos.Enabled)
+            {
+                if (listaDataGridDrogas != null) listaDataGridDrogas.Clear();
+                if (listaGridvacunas != null) listaGridvacunas.Clear();
+            }
+            if (listaGridServicios != null) listaGridServicios.Clear();
+            if (listaDataGridAlergia != null) { listaDataGridAlergia.Clear(); }
         }
         private void Limpiar()
         {
             this.idConsulta = -1;
             LimpiarGrids();
-            LimpiarradioButtons();
+            Glasgow_radioButtonPorDefecto();
             LimpiarcbPorDefectoTodos();  //Hay que arreglarle los cb, Definir los enabled antes 
             LimpiarTextTodos();
             LimpiarChekBoxTodos();
@@ -319,20 +348,27 @@ namespace Frm
             }
             else return 0;
         }
-        private void PonerFecha()
+        private void FechaDeHoy()
         {
             txtFechaConsulta.Text = ClinicaPro.DB.FechaHoraServidorDB.ActualFecha();
         }
-        private void medidasNormal()
+        /// <summary>
+        /// Estable  medidas de Exploracion Fisica por defecto ejemplo Altura,Peso, Frecuencua Cardiaca
+        /// </summary>
+        private void medidasNormales()
         {
             this.txtTalla.Value = (decimal)1.70;
             this.txtTemperatura.Value = (decimal)37.0;
             this.txtPeso.Value = (decimal)70.00;
-            this.txtPA_Sistolica.Value = (decimal)100;
-            this.txtPA_Diastolica.Value = (decimal)60;
+            this.txtPresionArterial_Sistolica.Value = (decimal)100;
+            this.txtPresionArterial_Diastolica.Value = (decimal)60;
             this.txtFrecuenciaRespiratoria.Value = (decimal)14;
             this.txtFrencuenciaCardiaca.Value = (decimal)60;
         }
+        /// <summary>
+        /// Valida los campos requeridos, si retorna true hubo un error
+        /// </summary>
+        /// <returns></returns>
         private Boolean ValidarConsulta()
         {
             ///<summary>
@@ -452,19 +488,18 @@ namespace Frm
             return (int)txtCostoConsulta.Value - (int)MontoDescuento;
         }
         /// <summary>
-        /// Llenado Rapido
-        /// Cuando solo se quiere añadir un servicio
+        /// Llenado Rapido , Cuando solo se quiere añadir un servicio
         /// </summary>
         private void LlenadoRapidoDatos()
         {
-            medidasNormal();
+            medidasNormales();
             txtMotivoConsulta.Text = Mensajes.LLenadoRapido;
             txtPadecimientoActual.Text = Mensajes.LLenadoRapido;
             txtQSucedeAcontinuacion.Text = Mensajes.LLenadoRapido;
             txtDiagnostico.Text = Mensajes.LLenadoRapido;
             txtPlanTratamiento.Text = Mensajes.LLenadoRapido;
             txtPrimerIndicio.Text = Mensajes.LLenadoRapido;
-        //    listaGridServicios.Add(new ClinicaPro.DB.Consulta.GeneralTipoServicioDB.ListarPorIdservicio());
+            //    listaGridServicios.Add(new ClinicaPro.DB.Consulta.GeneralTipoServicioDB.ListarPorIdservicio());
 
         }
         /// <summary>
@@ -482,10 +517,16 @@ namespace Frm
                 Consulta consulta = Consulta_Controles_A_Clase();
 
                 if (isModificar == ClinicaPro.General.accion.Agregar)
-                { 
-                    this.idConsulta = consultaDB.Agregar_Modificar(consulta, isModificar); 
+                {
+                    this.idConsulta = consultaDB.Agregar_Modificar(consulta, isModificar);
                 }
-                                                    
+                else   
+                        { 
+                        consulta.IdConsulta = this.idConsulta;
+                        consultaDB.Agregar_Modificar(consulta, isModificar);
+                        }
+                
+
                 if (gbDatosGineco.Enabled)
                 {
                     ClinicaPro.DB.Consulta.GinecoObstreticosDB ginecoDB = new ClinicaPro.DB.Consulta.GinecoObstreticosDB();
@@ -567,9 +608,9 @@ namespace Frm
                 ClinicaPro.DB.Consulta.ParesCranealesDB paresDB = new ClinicaPro.DB.Consulta.ParesCranealesDB();
                 ConsultaParesCraneale cParesCraneales = ParesCranealesControles_A_Clase();
                 cParesCraneales.IdConsulta = this.idConsulta;
-                paresDB.Agregar_Modificar(cParesCraneales, isModificar);                 
+                paresDB.Agregar_Modificar(cParesCraneales, isModificar);
 
-                if (isListaDrogasconDatos() )
+                if (isListaDrogasconDatos())
                 {
                     ClinicaPro.DB.Consulta.AntecedenteDrogaDB antedecedenteDrogaDB = new ClinicaPro.DB.Consulta.AntecedenteDrogaDB();
                     AntecedenteDrogra anteDroga = AntecedenteDroga_Controles_A_Clase();
@@ -581,7 +622,7 @@ namespace Frm
                     ClinicaPro.DB.Consulta.AntecedenteDrogaDB antedecedenteDrogaDB = new ClinicaPro.DB.Consulta.AntecedenteDrogaDB();
                     antedecedenteDrogaDB.EliminarListaDrogas(this.idConsulta);
                 }
-                if (isListaVacunasconDatos() )
+                if (isListaVacunasconDatos())
                 {
                     ClinicaPro.DB.Consulta.AntecedenteVacunaDB antedecedenteVacunaDB = new ClinicaPro.DB.Consulta.AntecedenteVacunaDB();
                     AntecedenteVacuna entidadAgregar = AntecedenteVacuna_Controles_A_Clase();
@@ -623,14 +664,14 @@ namespace Frm
 
                 AlergiasABaseDatos(isModificar);
 
-                scope.Complete(); 
+                scope.Complete();
             }
         }
         /// <summary>
         /// Guarda en la Base Datos, únicamente Consulta y Servicios
         /// </summary>
         /// <param name="isModificar"></param>
-        private void GuardarRapido(bool isModificar) 
+        private void GuardarRapido(bool isModificar)
         {
             // Aveces solo se quisiera agregar un servicio
             Consulta consulta;
@@ -643,14 +684,191 @@ namespace Frm
         /// </summary>
         /// <param name="cb_Algo"></param>
         /// <returns>true si count mayor a cero </returns>
-        private bool isComboVacio( ComboBox cb_Algo)
+        private bool isComboVacio(ComboBox cb_Algo)
         {
             if (cb_Algo.Items.Count == 0)
             { return true; }
             else return false;
         }
+        /// <summary>
+        /// Recupera los datos de una Consulta 
+        /// </summary>
+        private void recuperarDatosDeConsulta(int idConsulta)
+        {
+            Consulta_Clase_A_Controles(idConsulta);
+            ExploracionFisica_Clase_A_Controles(idConsulta);
+            ConsultaNariz_Clase_A_Controles(idConsulta);
+            ConsultaOido_Clase_A_Controles(idConsulta);
+            ConsultaOjos_Clase_A_Controles(idConsulta);
+            ConsultaReflejos_Clase_A_Controles(idConsulta);
+            ConsultaCuello_Clase_A_Controles(idConsulta);            
+            ConsultaEstadoEmocional_Clase_A_Controles(idConsulta);
+            ConsultaCraneo_Clase_A_Controles(idConsulta);
+            ConsultaTorax_Controles_A_Clase(idConsulta);           
+        }
+        private void ConsultaTorax_Controles_A_Clase(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ToraxPulmonesDB toraxPulmonDb = new ClinicaPro.DB.Consulta.ToraxPulmonesDB();
+            ConsultaToraxPulmone torax = toraxPulmonDb.GetToraxYPulmones(idConsulta);
+            if (isVacio(torax) == false)
+            {
+                cb_Torax_Ascultacion.SelectedValue = torax.AscultacionMurmulloVescular;
+                cb_Torax_Expa.SelectedValue = torax.ExpasibilidadToraxica;
+                cb_Torax_ResDiafraAbdo.SelectedValue = torax.RespiracionDiafragmaticaAbdominal;
+                cb_Torax_RuidoAgregado.SelectedValue = torax.RuidosAgregados;
+                chk_Torax_SonoridadPulmonar.Checked = (bool)torax.SonoridadPulmunar;
+            }
+        }
+        private void ConsultaCoordinacion_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.CoordinacionYMarchaDB coodinacionMarchaDb = new ClinicaPro.DB.Consulta.CoordinacionYMarchaDB();
+            CoordinacionyMarcha cooMarcha = coodinacionMarchaDb.ListaPorConsulta(idConsulta).FirstOrDefault();
+            if (isVacio(cooMarcha) == false)
+            {
+                chk_CooMar_Camina.Checked = cooMarcha.Camina;
+                chk_CooMar_DedoNariz.Checked = cooMarcha.Dedo_Nariz;
+                txt_ObsCoordinacion.Text = cooMarcha.Observacion;
+                chk_CooMar_Romberg.Checked = cooMarcha.Romberg;
+                chk_CooMar_TalonRodilla.Checked = cooMarcha.Talon_Rodilla;
+            }
+        }
+        private void ConsultaBoca_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaBocaDB BocaDb = new ClinicaPro.DB.Consulta.ConsultaBocaDB();
 
+            ConsultaBoca boca = BocaDb.ListaPorConsulta(idConsulta).FirstOrDefault();
+            if (isVacio(boca) == false)
+            {
+                chk_Boca_Adoncia.Checked = boca.Adoncia;
+                chk_Boca_Amigdalitis.Checked = boca.Amigdalitis;
+                chk_Boca_Calzas.Checked = boca.Calzas;
+                chk_Boca_Disfagia.Checked = (bool)boca.Disfagia;  // Este .l.  no tiene q ser ?
+                chk_Boca_Faringitis.Checked = boca.Faringitis;
+                chk_Boca_Laringitis.Checked = boca.Laringitis;
+                chk_Boca_LenguaDolor.Checked = boca.LenguaDolorosa;
+                chk_Boca_Protesis.Checked = boca.Protesis_Dentales;
+                chk_Boca_Ronquera.Checked = boca.Ronquera;
+                chk_Boca_Ulceras.Checked = boca.UlcerasOrales;
+            }
+        }
+        private void ConsultaCraneo_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaCraneoDB craneoDB = new ClinicaPro.DB.Consulta.ConsultaCraneoDB();
 
+            ConsultaCraneo craneo = craneoDB.ListaPorConsulta(idConsulta).FirstOrDefault();
+            if (isVacio(craneo) == false)
+            {
+                chk_Craneo_AltereacionOsea.Checked = craneo.AlteracionOsea;
+                chk_Craneo_Cefalea.Checked = craneo.Cefalea;
+                txtMareos.Value = craneo.Mareos;
+                chk_Craneo_PerdidaConciencia.Checked = craneo.PerdidaConciencia;
+                chk_Craneo_Prurito.Checked = craneo.Prurito;
+                chk_Craneo_Simetrico.Checked = craneo.Simetrico;
+                chk_Craneo_Sincope.Checked = craneo.Sincope;
+                chk_Craneo_TamanoForma.Checked = craneo.TamañaFormaNormal;
+            }            
+        }
+        private void  ConsultaEstadoEmocional_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaEstadoEmocionalDB estadoEmocionalDb = new ClinicaPro.DB.Consulta.ConsultaEstadoEmocionalDB();
+            ConsultaEstadoEmocional emocional = estadoEmocionalDb.ListaPorConsulta(idConsulta).FirstOrDefault();
+            if (isVacio(emocional) == false)
+            {
+                chk_Emocional_AlteracionSueno.Checked = emocional.AlteracionSueño;
+                chk_Emocional_Alucionaciones.Checked = emocional.Alucinaciones;
+                chk_Emocional_Debilidad.Checked = emocional.Debilidad;
+                chk_Emocional_Depresion.Checked = emocional.Depresion;
+                chk_Emocional_Desmayos.Checked = emocional.Desmayos;
+                chk_Emocional_Distraido.Checked = emocional.Distraido;
+                chk_Emocional_EdadAvanzada.Checked = emocional.EdadAvanzada;
+                chk_Emocional_Irritabilidad.Checked = emocional.Irritabilidad;
+                chk_Emocional_Nervioso.Checked = emocional.Nervioso;
+                chk_Emocional_Normal.Checked = emocional.Normal;
+                txtEmocional_Otro.Text = emocional.Otro;
+                chk_Emocional_Tension.Checked = emocional.Tensión;
+            }
+        }
+        private void ConsultaCuello_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaCuelloDB cuelloDb = new ClinicaPro.DB.Consulta.ConsultaCuelloDB();
+            ConsultaCuello cuello = cuelloDb.ListaPorConsulta(idConsulta).FirstOrDefault();
+            {
+                if (isVacio(cuello) == false)
+                    chk_Cuello_AdenoPatias.Checked = cuello.AdenoPatias;
+                cb_ArteriaCarotida.Text = cuello.ArteriasCarotidas;
+                chk_Cuello_ConfiguracionCuello.Checked = cuello.ConfiguracionDelCuello;
+                cbGanglioLinfatico.Text = cuello.GangliosLinfaticos;
+                chk_Cuello_LesionPiel.Checked = cuello.LesionesPiel;
+                txtPresionVenosaCuello.Value = (byte)cuello.PresionVenosa;
+                chk_Cuello_Simetrico.Checked = cuello.Simetrico;
+
+            }
+        }
+        private void ConsultaReflejos_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaReflejosDB reflejoDb = new ClinicaPro.DB.Consulta.ConsultaReflejosDB();
+            var reflejo = reflejoDb.ListaPorConsulta(idConsulta).FirstOrDefault();
+            if (isVacio(reflejo) == false)
+            {
+                txtReflejoObservacion.Text = reflejo.Observacion;
+                chk_R_Adominales.Checked = reflejo.R_Adominales;
+                chk_R_Bicipital.Checked = reflejo.R_Bicipital;
+                chk_R_Carneano.Checked = reflejo.R_Carneano;
+                chk_R_Mentoniano.Checked = reflejo.R_Mentoniano;
+                chk_R_Orbicular_De_Los_Ojos.Checked = reflejo.R_Orbicular_De_Los_Ojos;
+                chk_R_Patelar.Checked = reflejo.R_Patelar;
+                chk_R_Radial.Checked = reflejo.R_Radial;
+                chk_R_Tricipital.Checked = reflejo.R_Tricipital;
+                cb_Reflejo_ValoracionGeneral.Text = reflejo.R_ValoracionGeneral;
+            }
+        }
+         private void ConsultaOjos_Clase_A_Controles(int idConsulta)
+         {
+             ClinicaPro.DB.Consulta.ConsultaOjosDB ojosDb = new ClinicaPro.DB.Consulta.ConsultaOjosDB();
+             var ojo = ojosDb.ListaPorConsulta(idConsulta).FirstOrDefault();
+             if (isVacio(ojo) == false)
+             {
+                 this.chk_Ojos_Diploplia.Checked = ojo.Diplopia;
+                 this.chk_Ojos_Epifora.Checked = ojo.Epifora;
+                 this.chk_Ojos_FotoFobia.Checked = ojo.FotoFobia;
+                 this.chk_Ojos_Lentes.Checked = ojo.Lentes;
+                 this.chk_Ojos_Midriasis.Checked = ojo.Midriasis;
+                 this.txtPerdidaAgudeza.Text = ojo.PerdidaAgudezaVisual;
+                 this.chk_Ojos_Xerolftamia.Checked = ojo.Xerolftamia;
+             }
+         }
+        private void ConsultaOido_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaOidosDB oidoDb = new ClinicaPro.DB.Consulta.ConsultaOidosDB();
+            var oido = oidoDb.ListaPorConsulta(idConsulta).FirstOrDefault();
+            if (isVacio(oido) == false)
+            {
+                this.chk_Oidos_Acusia.Checked = oido.Acusia;
+                this.chk_Oidos_Hipercusia.Checked = oido.Hipercusia;
+                this.chk_Oidos_Hipocusia.Checked = oido.Hipocusia;
+                this.chk_Oidos_Otalgia.Checked = oido.Otalgia;
+                this.chk_Oidos_Otorrea.Checked = oido.Otorrea;
+                this.chk_Oidos_Tinitus.Checked = oido.Tinitus;
+            }            
+        }
+        private void ConsultaNariz_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaNarizDB cNarizDB = new ClinicaPro.DB.Consulta.ConsultaNarizDB();
+            ConsultaNariz nariz = cNarizDB.ListaPorConsulta(idConsulta).FirstOrDefault();
+            if (isVacio(nariz)  == false)
+            {
+                 chk_Nariz_Epitaxis.Checked = nariz.Epitaxis;
+                chk_Nariz_ResfrioFrecuente.Checked = nariz.ResfrioFrecuente;
+                chk_Nariz_Rinorrea.Checked = nariz.Rinorrea;
+                chk_Nariz_Sinusitis.Checked = nariz.Sinusitis;    
+            }                                    
+        }
+        private bool isVacio (Object Entidad)
+        {
+            if (Entidad == null)
+            { return true; }
+            else return false;
+        }
         #endregion
         #region Eventos
         private void txtDiagnostico_Enter(object sender, EventArgs e) // Cambia Color AuxliarAlergias, func Estetica
@@ -669,7 +887,7 @@ namespace Frm
         {
             txtAuxilirAlergia.BackColor = SystemColors.ControlLightLight;
         }
-        private void cb_Ex_Color_SelectedIndexChanged(object sender, EventArgs e)
+        private void cb_Ex_Color_SelectedIndexChanged(object sender, EventArgs e) // Estetico
         {
             if (cb_Ex_Color.DataSource != null)
             {
@@ -677,17 +895,17 @@ namespace Frm
                 txtExploracionInfoAdicional.Text = "Color piel \n " + objeto.TextoInformativo;
             }
         }
-        private void cb_Ex_ManosUnas_SelectedIndexChanged(object sender, EventArgs e)
+        private void cb_Ex_ManosUnas_SelectedIndexChanged(object sender, EventArgs e)  // Estetico
         {
-            if (cb_Ex_ManosUnas.DataSource != null)
-            {
+            if ( isComboVacio(cb_Ex_ManosUnas) == false)
+            {  
                 var objeto = (ExploracionMano)cb_Ex_ManosUnas.SelectedItem;
                 txtExploracionInfoAdicional.Text = "Exploracion mano \n " + objeto.TextoInformativo;
             }
         }
         private void btnSanoMedidas_Click(object sender, EventArgs e)
         {
-            medidasNormal();
+            medidasNormales();
         }
         private void btnLLenaodoRapido_Click(object sender, EventArgs e)
         {
@@ -707,7 +925,7 @@ namespace Frm
         {
             new Frm.frmBusquedas().ShowDialog();
         }
-        private void chk_AplicarDescuento_CheckedChanged(object sender, EventArgs e) // Check  
+        private void chk_AplicarDescuento_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_AplicarDescuento.Checked == false)
             {
@@ -740,7 +958,7 @@ namespace Frm
             consulta.GeneralTipoServicios = listaServicio_ParaAgregar();
             consulta.CobroFinalDeConsulta = (int)txtCostoConsulta.Value;
             consulta.Descuento = (int)txtDescuentoPorcentaje.Value;
-            consulta.DiagnosticoEstado = chk_ConsultaEstado.Checked;
+            consulta.DiagnosticoEstado = chk_DiagnosticoEstado.Checked;
             consulta.Diagnostico = txtDiagnostico.Text;
             consulta.MotivoConsulta = txtMotivoConsulta.Text;
             consulta.FechaConsulta = DateTime.Parse(txtFechaConsulta.Text);
@@ -753,6 +971,45 @@ namespace Frm
                 consulta.GlasgowResultado = gaslow.getGlasgow(getGaslowid());
             }
             return consulta;
+        }
+        private void Consulta_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaDB consultaDb = new ClinicaPro.DB.Consulta.ConsultaDB();
+            var Entidad = consultaDb.GetConsulta(idConsulta);
+            txtAntecedenteQuirurgico.Text = Entidad.AntecenteQuirurgico;
+            txtCostoConsulta.Value = (int)Entidad.CobroFinalDeConsulta;           
+            txtDiagnostico.Text = Entidad.Diagnostico;
+            chk_DiagnosticoEstado.Checked = Entidad.DiagnosticoEstado;
+            cb_Consulta_EscalaTiempo.SelectedValue = Entidad.EscalaTiempo.IdEscalaTiempo;
+            txtMotivoConsulta.Text = Entidad.MotivoConsulta;
+            txt_Consulta_NumTiempo.Value = (int)Entidad.NumeroTiempo;
+            txtPadecimientoActual.Text = Entidad.PadecimientoActual;
+            txtPlanTratamiento.Text = Entidad.PlanTratamiento;
+            txtPrimerIndicio.Text = Entidad.PrimerIndicio;
+            txtQSucedeAcontinuacion.Text = Entidad.QSucedeAcontinuacion;
+
+            if (Entidad.GeneralTipoServicios.Count != 0)
+            {
+                foreach (var item in Entidad.GeneralTipoServicios)
+                {
+                    if (listaGridServicios == null)
+                    { listaGridServicios = new BindingList<GeneralTipoServicio>(); }
+                    listaGridServicios.Add(item);
+                }
+                dgServicios.DataSource = listaGridServicios;
+                ocultarColumnas_gdServicio();
+
+                txtDescuentoPorcentaje.Value = (int)Entidad.Descuento;
+                if ((int)Entidad.Descuento > 0)
+                {
+                    chk_AplicarDescuento.Checked = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show(Mensajes.Consulta_Sin_Servicios, Mensajes.Upss_Falto_Algo,
+                                 MessageBoxButtons.OK ,   MessageBoxIcon.Warning);
+            }
         }
         #endregion
         #region Alergias
@@ -829,7 +1086,7 @@ namespace Frm
         ///  Retorna la lista con las Alergias Añadidas por el usuario
         /// </summary>
         /// <returns></returns>
-        private BindingList<TipoAlergia> listaAlergia_ParaAgregar() 
+        private BindingList<TipoAlergia> listaAlergia_ParaAgregar()
         {
             return listaDataGridAlergia;
         }
@@ -839,12 +1096,12 @@ namespace Frm
         private void AlergiasABaseDatos(bool isModificar)
         {
             if (dgAlergias.DataSource != null)
-            {                
+            {
                 ClinicaPro.DB.Cliente.ClienteAlergiasDB.Agregar_Modificar(listaAlergia_ParaAgregar(), idCliente, isModificar);
             }
         }
 
-        #endregion       
+        #endregion
         #region Servicios
         List<GeneralTipoServicio> listaOriginalServicio;
         BindingList<GeneralTipoServicio> listaGridServicios;
@@ -865,7 +1122,7 @@ namespace Frm
             {
                 listaGridServicios = new BindingList<GeneralTipoServicio>();
                 this.dgServicios.DataSource = listaGridServicios;
-                ocultarColumnas_gdServicios();
+                ocultarColumnas_gdServicio();
             }
             listaGridServicios.Add((GeneralTipoServicio)cbServicios.SelectedItem);
         }
@@ -879,10 +1136,9 @@ namespace Frm
         {
             listaServicio_ParaAgregar();
         }
-        private void ocultarColumnas_gdServicios()
+        private void ocultarColumnas_gdServicio()
         {
-            this.dgServicios.Columns[comboNombreIDs.GeneralServicio].Visible = false;
-            this.dgServicios.Columns["isPrecioEditable"].Visible = false;
+            this.dgServicios.Columns[comboNombreIDs.GeneralServicio].Visible = false;            
         }
         #endregion
         #region GinecoObstreticos
@@ -909,7 +1165,7 @@ namespace Frm
             AntecedentesGinecoObstrectico entidadAgregar = Gineco_Controles_A_Clase();
             entidadAgregar.idConsulta = 7;
             ginecoDB.Agregar_Modificar(entidadAgregar, false);
-            
+
         }
         #endregion
         #region Exploracion Fisica
@@ -925,13 +1181,29 @@ namespace Frm
             consultaExFisica.FrecuenciaCardiaca = (byte)txtFrencuenciaCardiaca.Value;
             consultaExFisica.FrecuenciaRespiratoria = (byte)txtFrecuenciaRespiratoria.Value;
             consultaExFisica.Peso = txtPeso.Value;
-            consultaExFisica.PresionArterialDiastolico = (byte)txtPA_Diastolica.Value;
-            consultaExFisica.PresionArterialSistolico = (byte)txtPA_Sistolica.Value;
+            consultaExFisica.PresionArterialDiastolico = (byte)txtPresionArterial_Diastolica.Value;
+            consultaExFisica.PresionArterialSistolico = (byte)txtPresionArterial_Sistolica.Value;
             consultaExFisica.Talla = txtTalla.Value;
             consultaExFisica.Temperatura = txtTemperatura.Value;
             return consultaExFisica;
         }
-
+        private void ExploracionFisica_Clase_A_Controles(int idConsulta)
+        {
+            ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB exploracionDb = new ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB();
+            var Entidad = exploracionDb.GetExploracionFisica(idConsulta);
+            if (! isVacio(Entidad) )
+            {
+             txtFrencuenciaCardiaca.Value = (int)Entidad.FrecuenciaCardiaca;
+            txtFrecuenciaRespiratoria.Value = (int)Entidad.FrecuenciaRespiratoria;
+            this.cb_Ex_Color.SelectedValue = Entidad.idColorPaciente;
+            this.cb_Ex_ManosUnas.SelectedValue = Entidad.idExploracionManos;
+            txtPeso.Value = (int)Entidad.Peso;
+            txtPresionArterial_Diastolica.Value = (int)Entidad.PresionArterialDiastolico;
+            txtPresionArterial_Sistolica.Value = (int)Entidad.PresionArterialSistolico;
+            txtTalla.Value = (int)Entidad.Talla;
+            txtTemperatura.Value = (int)Entidad.Temperatura;     
+            }
+        }
         private void LlenacomboMano()
         {
             if (cb_Ex_ManosUnas.Items.Count == 0)
@@ -949,9 +1221,9 @@ namespace Frm
             {
                 ClinicaPro.DB.Consulta.ColorPacienteDB exploracionColorDB = new ClinicaPro.DB.Consulta.ColorPacienteDB();
                 List<ColorPaciente> lista = exploracionColorDB.Listar();
-            
-            ClinicaPro.BL.ComboBoxBL<ColorPaciente> configuraCB = new ComboBoxBL<ColorPaciente>();
-            configuraCB.fuenteBaseDatos(cb_Ex_Color, lista, comboNombreIDs.colorPaciente);
+
+                ClinicaPro.BL.ComboBoxBL<ColorPaciente> configuraCB = new ComboBoxBL<ColorPaciente>();
+                configuraCB.fuenteBaseDatos(cb_Ex_Color, lista, comboNombreIDs.colorPaciente);
             }
         }
 
@@ -1494,6 +1766,7 @@ namespace Frm
         }
         private void llenaComboAntecenteHereditario()
         {
+            // El if es para que no vuelva a la BD a cargar Los Datos
             if (cb_Here_AfecTiroide.Items.Count == 0 && cb_Here_Neuropatia.Items.Count == 0)
             {
                 ClinicaPro.DB.Consulta.FamiliarDB familiaDB = new ClinicaPro.DB.Consulta.FamiliarDB();
@@ -1679,21 +1952,21 @@ namespace Frm
         public void llenarComboAntecedentesPatologicos()
         {
 
-            if (cb_Ante_Pato_Bronquitis.Items.Count == 0 && cb_Ante_Pato_Varicela.Items.Count == 0 )
-            { 
-            ClinicaPro.DB.Consulta.RespuestaGeneralesDB reespuestaGeneralesDB = new ClinicaPro.DB.Consulta.RespuestaGeneralesDB();
-            List<Consulta_RespuestasGenerales> listAuxiliar = reespuestaGeneralesDB.Listar();
+            if (cb_Ante_Pato_Bronquitis.Items.Count == 0 && cb_Ante_Pato_Varicela.Items.Count == 0)
+            {
+                ClinicaPro.DB.Consulta.RespuestaGeneralesDB reespuestaGeneralesDB = new ClinicaPro.DB.Consulta.RespuestaGeneralesDB();
+                List<Consulta_RespuestasGenerales> listAuxiliar = reespuestaGeneralesDB.Listar();
 
-            ClinicaPro.BL.ComboBoxBL<Consulta_RespuestasGenerales> configuraCB = new ComboBoxBL<Consulta_RespuestasGenerales>();
+                ClinicaPro.BL.ComboBoxBL<Consulta_RespuestasGenerales> configuraCB = new ComboBoxBL<Consulta_RespuestasGenerales>();
 
-            configuraCB.fuenteBaseDatos(cb_Ante_Pato_Bronquitis, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
-            configuraCB.fuenteBaseDatos(cb_Ante_Pato_FiebreReumatica, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
-            configuraCB.fuenteBaseDatos(cb_Ante_Pato_Paludismo, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
-            configuraCB.fuenteBaseDatos(cb_Ante_Pato_Paroditis, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
-            configuraCB.fuenteBaseDatos(cb_Ante_Pato_Rubeola, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
-            configuraCB.fuenteBaseDatos(cb_Ante_Pato_Sarampion, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
-            configuraCB.fuenteBaseDatos(cb_Ante_Pato_Varicela, listAuxiliar, comboNombreIDs.respuestaGenerales);
-            // No quitar los toList()
+                configuraCB.fuenteBaseDatos(cb_Ante_Pato_Bronquitis, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
+                configuraCB.fuenteBaseDatos(cb_Ante_Pato_FiebreReumatica, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
+                configuraCB.fuenteBaseDatos(cb_Ante_Pato_Paludismo, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
+                configuraCB.fuenteBaseDatos(cb_Ante_Pato_Paroditis, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
+                configuraCB.fuenteBaseDatos(cb_Ante_Pato_Rubeola, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
+                configuraCB.fuenteBaseDatos(cb_Ante_Pato_Sarampion, listAuxiliar.ToList(), comboNombreIDs.respuestaGenerales);
+                configuraCB.fuenteBaseDatos(cb_Ante_Pato_Varicela, listAuxiliar, comboNombreIDs.respuestaGenerales);
+                // No quitar los toList()
             }
         }
         private void btnAntecedentePatologicoDetalle_Click(object sender, EventArgs e)
@@ -1809,7 +2082,7 @@ namespace Frm
             cb_Abdomen_Bazo.SelectedIndex = 0;
         }
         #endregion
-      
+
         private void button14_Click(object sender, EventArgs e)
         {
             this.gbDatosGineco.Enabled = true;
@@ -1829,33 +2102,9 @@ namespace Frm
         private void buttonmanu_Click(object sender, EventArgs e)
         {
             llenaComboAntecenteHereditario();
-        }     
+        }
         private void tapGeneral_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabGeneral.SelectedTab == tabAntecedente)
-            {
-                gbHereditario.Enabled = true;
-                llenaComboEscalaTiempoAnteceDenteNoPatologico();
-                llenaComboVacunas();
-                llenaComboDrogas();
-                llenarComboAntecedentesPatologicos();
-                llenaComboAntecenteHereditario();
-                cb_NoPato_BebePromedio.SelectedIndex = 1;
-            }
-            if (tabExploracionFisica.SelectedTab == tabMedidas)
-            {
-                LlenacomboMano();
-                LlenacomboColor();
-                cbGanglioLinfatico.SelectedIndex = 0;
-                cb_ArteriaCarotida.SelectedIndex = 0;
-                cb_Reflejo_ValoracionGeneral.SelectedIndex = 0;
-                LlenarComboAparatoDigestivo();
-                llenaComboTorax();
-            }
-            if (tabGeneral.SelectedTab == tabServicio)
-            {
-                LlenaComboServicio();
-            }
             if (tabGeneral.SelectedTab == tabDiagnostico)
             {
                 txtCostoConsulta.Value = CalcularCostoPorServicios();
@@ -1864,29 +2113,10 @@ namespace Frm
             {
                 txtPadecimientoActual.Focus();
             }
-            if (tabGeneral.SelectedTab == tabSentidos)
-            {
-                gbGaslowEscala.Enabled = true;
-            }
-        }           
+        }
         private void chkLimpiarDatos_CheckedChanged(object sender, EventArgs e)
         {
             Limpiar();
-        }
-        private void ModificarTemporal(bool isModificar)
-        {
-            ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities();       
-
-            using (TransactionScope scope = new TransactionScope())  // scope Hace un RollBack si ocurre un error
-            {  
-                  AlergiasABaseDatos(isModificar);              
-                scope.Complete();
-            }
-        }
-        private void btnAuxiliarModificar_Click(object sender, EventArgs e)
-        {
-            //ModificarTemporal(ClinicaPro.General.accion.Modificar);
-            GuardarTodos(ClinicaPro.General.accion.Modificar) ;
         }
     }
 }

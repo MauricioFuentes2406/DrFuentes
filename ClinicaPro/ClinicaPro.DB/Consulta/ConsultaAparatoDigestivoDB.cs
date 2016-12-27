@@ -18,7 +18,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaAparatoDigestivo Original = Contexto.ConsultaAparatoDigestivoes.First(EntidadLocal => EntidadLocal.IdConsulta == aparatoDigestivo.IdConsulta);
+                    Entities.ConsultaAparatoDigestivo Original = Contexto.ConsultaAparatoDigestivoes.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == aparatoDigestivo.IdConsulta);
                     if (Original != null)
                     {
                         Original.Colicos = aparatoDigestivo.Colicos;
@@ -31,6 +31,10 @@ namespace ClinicaPro.DB.Consulta
                         Original.Nauseas = aparatoDigestivo.Nauseas;
                         Original.Pirosis = aparatoDigestivo.Pirosis;
                         Original.Vomito = aparatoDigestivo.Vomito;
+                    }
+                    if (Original ==  null)
+                    {
+                        Contexto.ConsultaAparatoDigestivoes.Add(aparatoDigestivo);
                     }
                 }
                 else

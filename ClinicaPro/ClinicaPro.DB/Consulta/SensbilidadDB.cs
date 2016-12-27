@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaSensibilidad Original = Contexto.ConsultaSensibilidads.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.ConsultaSensibilidad Original = Contexto.ConsultaSensibilidads.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         Original.Detalles = Entidad.Detalles;
@@ -27,6 +27,10 @@ namespace ClinicaPro.DB.Consulta
                         Original.S_Discriminatoria = Entidad.S_Discriminatoria;
                         Original.S_Profunda = Entidad.S_Profunda;
                         Original.S_Superficial = Entidad.S_Superficial;
+                    }
+                    if (Original== null)
+                    {
+                        Contexto.ConsultaSensibilidads.Add(Entidad);
                     }
                 }
                 else

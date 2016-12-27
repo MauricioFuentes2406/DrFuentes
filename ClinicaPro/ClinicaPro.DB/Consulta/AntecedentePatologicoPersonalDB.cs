@@ -20,7 +20,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.AntecedentePersonalesPatologico Original = Contexto.AntecedentePersonalesPatologicos.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.AntecedentePersonalesPatologico Original = Contexto.AntecedentePersonalesPatologicos.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         Original.Bronquitis = Entidad.Bronquitis;
@@ -31,6 +31,9 @@ namespace ClinicaPro.DB.Consulta
                         Original.Rubeola = Original.Rubeola;
                         Original.Sarampion = Original.Sarampion;
                         Original.Varicela = Original.Varicela;                                       
+                    }if (Original == null)
+                    {
+                        Contexto.AntecedentePersonalesPatologicos.Add(Entidad);
                     }
                 }
                 else

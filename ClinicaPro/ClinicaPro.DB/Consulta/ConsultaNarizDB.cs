@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities();
                if (isModificar)
                {
-                   Entities.ConsultaNariz Original = Contexto.ConsultaNarizs.First(EntidadLocal => EntidadLocal.IdConsulta == consultaNariz.IdConsulta);
+                   Entities.ConsultaNariz Original = Contexto.ConsultaNarizs.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaNariz.IdConsulta);
                    if (Original != null)
                    {
                        Original.Epitaxis = consultaNariz.Epitaxis;

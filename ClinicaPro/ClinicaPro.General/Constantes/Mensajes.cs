@@ -36,6 +36,8 @@ namespace ClinicaPro.General.Constantes
 
        public const String Para_Buen_Funcionamiento = "Para un buen funcionamiento del Sistema no intentes este Cambio ";
 
+       public const String Consulta_Sin_Servicios = " Esta Consulta no tiene Servicios ";
+
        #endregion
        
        // Otros

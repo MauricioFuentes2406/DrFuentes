@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.AntecedenteHereditario Original = Contexto.AntecedenteHereditarios.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.AntecedenteHereditario Original = Contexto.AntecedenteHereditarios.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         Original.AfeccionTiroide = Entidad.AfeccionTiroide;
@@ -33,6 +33,9 @@ namespace ClinicaPro.DB.Consulta
                         Original.HTA = Entidad.HTA;
                         Original.Neuropatia = Original.Neuropatia;
                         Original.otro = Entidad.otro;
+                    }if (Original == null)
+                    {
+                        Contexto.AntecedenteHereditarios.Add(Entidad);
                     }
                 }
                 else

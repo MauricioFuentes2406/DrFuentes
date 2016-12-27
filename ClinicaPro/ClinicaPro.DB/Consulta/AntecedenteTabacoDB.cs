@@ -20,7 +20,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.AntecedenteTabaco Original = Contexto.AntecedenteTabaco.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.AntecedenteTabaco Original = Contexto.AntecedenteTabaco.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         if (Original.EscalaTiempo.IdEscalaTiempo != Entidad.EscalaTiempo.IdEscalaTiempo)
@@ -28,6 +28,10 @@ namespace ClinicaPro.DB.Consulta
                             Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo);
                         }                        
                         Original.NumeroTiempo = Entidad.NumeroTiempo;                         
+                    }if(Original == null)
+                    {
+                        Contexto.AntecedenteTabaco.Attach(Entidad);     // Hay unos objetos que se traen de la BD como AsNotTRacking()
+                        Contexto.AntecedenteTabaco.Add(Entidad);
                     }
                 }
                 else

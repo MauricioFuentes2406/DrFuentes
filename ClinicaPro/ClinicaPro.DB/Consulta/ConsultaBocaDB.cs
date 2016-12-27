@@ -20,7 +20,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaBoca Original = Contexto.ConsultaBocas.First(EntidadLocal => EntidadLocal.IdConsulta == consultaBoca.IdConsulta);
+                    Entities.ConsultaBoca Original = Contexto.ConsultaBocas.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaBoca.IdConsulta);
                     if (Original != null)
                     {
                         Original.Adoncia = consultaBoca.Adoncia;
@@ -33,6 +33,10 @@ namespace ClinicaPro.DB.Consulta
                         Original.Protesis_Dentales = consultaBoca.Protesis_Dentales;
                         Original.Ronquera = consultaBoca.Ronquera;
                         Original.UlcerasOrales = consultaBoca.UlcerasOrales;                        
+                    }
+                    if ( Original == null)
+                    {
+                        Contexto.ConsultaBocas.Add(consultaBoca);    
                     }
                 }
                 else

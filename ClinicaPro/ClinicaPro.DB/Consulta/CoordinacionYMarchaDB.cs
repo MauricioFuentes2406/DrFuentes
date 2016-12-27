@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
              ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
              if (isModificar)
              {
-                 Entities.CoordinacionyMarcha Original = Contexto.CoordinacionyMarchas.First(EntidadLocal => EntidadLocal.IdConsulta == coordinacionMarcha.IdConsulta);
+                 Entities.CoordinacionyMarcha Original = Contexto.CoordinacionyMarchas.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == coordinacionMarcha.IdConsulta);
                  if (Original != null)
                  {
                      Original.Camina = coordinacionMarcha.Camina;
@@ -27,6 +27,10 @@ namespace ClinicaPro.DB.Consulta
                      Original.Observacion = coordinacionMarcha.Observacion;
                      Original.Romberg = coordinacionMarcha.Romberg;
                      Original.Talon_Rodilla = coordinacionMarcha.Talon_Rodilla;
+                 }
+                 if (Original ==  null)
+                 {
+                     Contexto.CoordinacionyMarchas.Add(coordinacionMarcha);
                  }
              }
              else

@@ -20,7 +20,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaEstadoVivienda Original = Contexto.ConsultaEstadoViviendas.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.ConsultaEstadoVivienda Original = Contexto.ConsultaEstadoViviendas.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         Original.AguaPotable = Entidad.AguaPotable;
@@ -33,6 +33,9 @@ namespace ClinicaPro.DB.Consulta
                         Original.ServiciosBasicos = Entidad.ServiciosBasicos;
                         Original.Ventilacion = Entidad.Ventilacion;
                         Original.TieneMascota = Entidad.TieneMascota;
+                    }if(Original == null)
+                    {
+                        Contexto.ConsultaEstadoViviendas.Add(Entidad);
                     }
                 }
                 else

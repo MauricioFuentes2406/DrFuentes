@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaCraneo Original = Contexto.ConsultaCraneos.First(EntidadLocal => EntidadLocal.IdConsulta == consultaCraneo.IdConsulta);
+                    Entities.ConsultaCraneo Original = Contexto.ConsultaCraneos.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaCraneo.IdConsulta);
                     if (Original != null)
                     {
                         Original.AlteracionOsea = consultaCraneo.AlteracionOsea;
@@ -30,6 +30,10 @@ namespace ClinicaPro.DB.Consulta
                         Original.Simetrico = consultaCraneo.Simetrico;
                         Original.Sincope = consultaCraneo.Sincope;
                         Original.TamañaFormaNormal = consultaCraneo.TamañaFormaNormal;
+                    }
+                    if ( Original == null)
+                    {
+                        Contexto.ConsultaCraneos.Add(consultaCraneo);
                     }
                 }
                 else

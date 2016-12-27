@@ -20,7 +20,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaAbdomen Original = Contexto.ConsultaAbdomen.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.ConsultaAbdomen Original = Contexto.ConsultaAbdomen.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {                        
                         Original.Ascititis = Entidad.Ascititis;
@@ -28,6 +28,9 @@ namespace ClinicaPro.DB.Consulta
                         Original.Riñon = Entidad.Riñon;
                         Original.TamanoOrganos = Entidad.TamanoOrganos;
                         Original.Vaso = Entidad.Vaso;
+                    }if( Original == null )
+                    {
+                        Contexto.ConsultaAbdomen.Add(Entidad);
                     }
                 }
                 else

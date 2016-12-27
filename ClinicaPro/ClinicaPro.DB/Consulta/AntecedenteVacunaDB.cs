@@ -29,7 +29,7 @@ namespace ClinicaPro.DB.Consulta
                         Original.NumeroTiempo = Original.NumeroTiempo;
                         ActulizarVacunas(Contexto, Original, Entidad);
                         Original.Vacunas = Original.Vacunas;
-                    }else
+                    }if (Original == null)
                     {
                         // Es modificar pero no existia Lista Antes => Agrega
                         Contexto.AntecedenteVacuna.Attach(Entidad);    
@@ -63,7 +63,6 @@ namespace ClinicaPro.DB.Consulta
                 throw;
             }
         }
-
        public bool Eliminar(int idCliente, int idTipoUsuario)
         {
             return false;
@@ -122,12 +121,15 @@ namespace ClinicaPro.DB.Consulta
                                                      where t.IdConsulta == IdConsulta
                                                      select t).FirstOrDefault();
 
-               for (int indice = Entidad.Vacunas.Count - 1; indice > -1; indice--)
+               if (Entidad != null)
                {
-                   var oso = Entidad.Vacunas.ElementAt(indice);
-                   Entidad.Vacunas.Remove(oso);
+                   for (int indice = Entidad.Vacunas.Count - 1; indice > -1; indice--)
+                   {
+                       var oso = Entidad.Vacunas.ElementAt(indice);
+                       Entidad.Vacunas.Remove(oso);
+                   }
+                   Contexto.SaveChanges();
                }
-               Contexto.SaveChanges();
            }                
        }
     }

@@ -243,7 +243,7 @@
     <Property Name="Amigdalitis" Type="bit" Nullable="false" />
     <Property Name="Laringitis" Type="bit" Nullable="false" />
     <Property Name="Ronquera" Type="bit" Nullable="false" />
-    <Property Name="Disfagia" Type="bit" />
+    <Property Name="Disfagia" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="ConsultaCraneo">
     <Key>

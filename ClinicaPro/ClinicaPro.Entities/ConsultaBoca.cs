@@ -16,6 +16,7 @@ namespace ClinicaPro.Entities
     {
         public int IdConsulta { get; set; }
         public bool Adoncia { get; set; }
+        public bool Protesis_Dentales { get; set; }
         public bool Calzas { get; set; }
         public bool UlcerasOrales { get; set; }
         public bool LenguaDolorosa { get; set; }
@@ -23,9 +24,8 @@ namespace ClinicaPro.Entities
         public bool Amigdalitis { get; set; }
         public bool Laringitis { get; set; }
         public bool Ronquera { get; set; }
-        public Nullable<bool> Disfagia { get; set; }
-        public bool Protesis_Dentales { get; set; }
+        public bool Disfagia { get; set; }
     
-        public virtual Consulta Consulta { private get; set; }
+        public virtual Consulta Consulta { get; set; }
     }
 }

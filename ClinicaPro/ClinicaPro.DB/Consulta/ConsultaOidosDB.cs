@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                if (isModificar)
                {
-                   Entities.ConsultaOido Original = Contexto.ConsultaOidos.First(EntidadLocal => EntidadLocal.IdConsulta == consultaOidos.IdConsulta);
+                   Entities.ConsultaOido Original = Contexto.ConsultaOidos.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaOidos.IdConsulta);
                    if (Original != null)
                    {
                        Original.Acusia = consultaOidos.Acusia;
@@ -28,6 +28,9 @@ namespace ClinicaPro.DB.Consulta
                        Original.Otalgia = consultaOidos.Otalgia;
                        Original.Otorrea = consultaOidos.Otorrea;
                        Original.Tinitus = consultaOidos.Tinitus;
+                   }if (Original == null )
+                   {
+                       Contexto.ConsultaOidos.Add(consultaOidos);
                    }
                }
                else

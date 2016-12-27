@@ -98,11 +98,18 @@ namespace ClinicaPro.DB.Consulta
                 List<Entities.Consulta> list = (from tabla in Contexto.Consultas.AsNoTracking()
                                                 select tabla
                                                    ).ToList();
-
-
                 return list;
             }
         }       
+        public Entities.Consulta GetConsulta(int idConsuta)
+        {
+            ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities(); 
+            
+                return (from tabla in Contexto.Consultas.AsNoTracking()
+                        where tabla.IdConsulta == idConsuta
+                        select tabla).First();          
+            
+        }
         /// <summary>
         /// Actuliza la Lista Servicios referente a la Consulta (Multiplicidad  de Uno a Muchos  ,   : *)
         /// </summary>

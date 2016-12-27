@@ -29,7 +29,7 @@ namespace ClinicaPro.DB.Consulta
                         { Original.EscalaTiempo = Contexto.EscalaTiempoes.Find(Entidad.EscalaTiempo.IdEscalaTiempo); }
                         Original.NumeroTiempo = Entidad.NumeroTiempo;
                     }
-                    else
+                    if(Original == null)
                     {
                         // Es modificar pero no existia Lista Drogas Antes => Agrega
                         Contexto.AntecedenteDrogra.Attach(Entidad);    // Hay unos objetos que se traen de la BD como AsNotTRacking()                   
@@ -88,13 +88,15 @@ namespace ClinicaPro.DB.Consulta
             {
                 Entities.AntecedenteDrogra Entidad = (from t in Contexto.AntecedenteDrogra 
                                 where t.idConsulta == IdConsulta select t).FirstOrDefault();
-
-                for (int indice = Entidad.Drogas.Count - 1; indice > -1; indice--)
+                if (Entidad != null)
                 {
-                    var oso = Entidad.Drogas.ElementAt(indice);
-                    Entidad.Drogas.Remove(oso);
-                }   
-                Contexto.SaveChanges();         
+                    for (int indice = Entidad.Drogas.Count - 1; indice > -1; indice--)
+                    {
+                        var oso = Entidad.Drogas.ElementAt(indice);
+                        Entidad.Drogas.Remove(oso);
+                    }
+                    Contexto.SaveChanges();
+                }
             }                
         }
         private void ActulizarDrogas(Entities.ClinicaDrFuentesEntities Contexto, Entities.AntecedenteDrogra Original, Entities.AntecedenteDrogra Entidad)

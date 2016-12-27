@@ -161,7 +161,6 @@
     <NavigationProperty Name="AntecedentesGinecoObstrectico" Relationship="Self.FK_AntecedentesGinecoObstrecticos_Consulta1" FromRole="Consulta" ToRole="AntecedentesGinecoObstrecticos" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
     <NavigationProperty Name="Cliente" Relationship="Self.FK_Consulta_Cliente" FromRole="Consulta" ToRole="Cliente" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
     <NavigationProperty Name="ConsultaAparatoDigestivo" Relationship="Self.FK_ConsultaAparatoDigestivo_Consulta" FromRole="Consulta" ToRole="ConsultaAparatoDigestivo" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-    <NavigationProperty Name="ConsultaBoca" Relationship="Self.FK_ConsultaBoca_Consulta" FromRole="Consulta" ToRole="ConsultaBoca" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
     <NavigationProperty Name="ConsultaCraneo" Relationship="Self.FK_ConsultaCraneo_Consulta" FromRole="Consulta" ToRole="ConsultaCraneo" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
     <NavigationProperty Name="ConsultaCuello" Relationship="Self.FK_ConsultaCuello_Consulta" FromRole="Consulta" ToRole="ConsultaCuello" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
     <NavigationProperty Name="ConsultaEstadoEmocional" Relationship="Self.FK_ConsultaEstadoEmocional_Consulta" FromRole="Consulta" ToRole="ConsultaEstadoEmocional" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
@@ -188,6 +187,7 @@
     <Property Name="QSucedeAcontinuacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="EscalaTiempo" Relationship="ClinicaDrFuentesModel.FK_Consulta_EscalaTiempo" FromRole="Consulta" ToRole="EscalaTiempo" />
     <NavigationProperty Name="ConsultaAbdomen" Relationship="ClinicaDrFuentesModel.FK_ConsultaAbdomen_Consulta" FromRole="Consulta" ToRole="ConsultaAbdomen" />
+    <NavigationProperty Name="ConsultaBoca" Relationship="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" FromRole="Consulta" ToRole="ConsultaBoca" />
   </EntityType>
   <EntityType Name="Consulta_RespuestasGenerales">
     <Key>
@@ -223,23 +223,6 @@
     <Property Name="Distencion" Type="Boolean" Nullable="false" />
     <Property Name="Detalles" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Consulta" Relationship="Self.FK_ConsultaAparatoDigestivo_Consulta" FromRole="ConsultaAparatoDigestivo" ToRole="Consulta" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-  </EntityType>
-  <EntityType Name="ConsultaBoca">
-    <Key>
-      <PropertyRef Name="IdConsulta" />
-    </Key>
-    <Property Name="IdConsulta" Type="Int32" Nullable="false" />
-    <Property Name="Adoncia" Type="Boolean" Nullable="false" />
-    <Property Name="Calzas" Type="Boolean" Nullable="false" />
-    <Property Name="UlcerasOrales" Type="Boolean" Nullable="false" />
-    <Property Name="LenguaDolorosa" Type="Boolean" Nullable="false" />
-    <Property Name="Faringitis" Type="Boolean" Nullable="false" />
-    <Property Name="Amigdalitis" Type="Boolean" Nullable="false" />
-    <Property Name="Laringitis" Type="Boolean" Nullable="false" />
-    <Property Name="Ronquera" Type="Boolean" Nullable="false" />
-    <Property Name="Disfagia" Type="Boolean" />
-    <NavigationProperty Name="Consulta" Relationship="Self.FK_ConsultaBoca_Consulta" FromRole="ConsultaBoca" ToRole="Consulta" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-    <Property Name="Protesis_Dentales" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="ConsultaCraneo">
     <Key>
@@ -1021,18 +1004,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ConsultaBoca_Consulta">
-    <End Role="Consulta" Type="Self.Consulta" Multiplicity="1" />
-    <End Role="ConsultaBoca" Type="Self.ConsultaBoca" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Consulta">
-        <PropertyRef Name="IdConsulta" />
-      </Principal>
-      <Dependent Role="ConsultaBoca">
-        <PropertyRef Name="IdConsulta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ConsultaCraneo_Consulta">
     <End Role="Consulta" Type="Self.Consulta" Multiplicity="1" />
     <End Role="ConsultaCraneo" Type="Self.ConsultaCraneo" Multiplicity="0..1" />
@@ -1366,7 +1337,6 @@
     <EntitySet Name="Consultas" EntityType="Self.Consulta" />
     <EntitySet Name="Consulta_RespuestasGenerales" EntityType="Self.Consulta_RespuestasGenerales" />
     <EntitySet Name="ConsultaAparatoDigestivoes" EntityType="Self.ConsultaAparatoDigestivo" />
-    <EntitySet Name="ConsultaBocas" EntityType="Self.ConsultaBoca" />
     <EntitySet Name="ConsultaCraneos" EntityType="Self.ConsultaCraneo" />
     <EntitySet Name="ConsultaCuelloes" EntityType="Self.ConsultaCuello" />
     <EntitySet Name="ConsultaEstadoEmocionals" EntityType="Self.ConsultaEstadoEmocional" />
@@ -1514,10 +1484,6 @@
     <AssociationSet Name="FK_ConsultaAparatoDigestivo_Consulta" Association="Self.FK_ConsultaAparatoDigestivo_Consulta">
       <End Role="Consulta" EntitySet="Consultas" />
       <End Role="ConsultaAparatoDigestivo" EntitySet="ConsultaAparatoDigestivoes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ConsultaBoca_Consulta" Association="Self.FK_ConsultaBoca_Consulta">
-      <End Role="Consulta" EntitySet="Consultas" />
-      <End Role="ConsultaBoca" EntitySet="ConsultaBocas" />
     </AssociationSet>
     <AssociationSet Name="FK_ConsultaCraneo_Consulta" Association="Self.FK_ConsultaCraneo_Consulta">
       <End Role="Consulta" EntitySet="Consultas" />
@@ -1747,6 +1713,11 @@
     <EntitySet Name="VistaTabaco" EntityType="ClinicaDrFuentesModel.VistaTabaco" />
     <EntitySet Name="VistaEstadoVivienda" EntityType="ClinicaDrFuentesModel.VistaEstadoVivienda" />
     <EntitySet Name="VistaToraxPulmones" EntityType="ClinicaDrFuentesModel.VistaToraxPulmones" />
+    <EntitySet Name="ConsultaBocas" EntityType="ClinicaDrFuentesModel.ConsultaBoca" />
+    <AssociationSet Name="FK_ConsultaBoca_Consulta" Association="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta">
+      <End Role="Consulta" EntitySet="Consultas" />
+      <End Role="ConsultaBoca" EntitySet="ConsultaBocas" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -2163,4 +2134,33 @@
     <Property Name="RuidosAgregados" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="SonoridadPulmunar" Type="Boolean" />
   </EntityType>
+  <EntityType Name="ConsultaBoca">
+    <Key>
+      <PropertyRef Name="IdConsulta" />
+    </Key>
+    <Property Name="IdConsulta" Type="Int32" Nullable="false" />
+    <Property Name="Adoncia" Type="Boolean" Nullable="false" />
+    <Property Name="Protesis_Dentales" Type="Boolean" Nullable="false" />
+    <Property Name="Calzas" Type="Boolean" Nullable="false" />
+    <Property Name="UlcerasOrales" Type="Boolean" Nullable="false" />
+    <Property Name="LenguaDolorosa" Type="Boolean" Nullable="false" />
+    <Property Name="Faringitis" Type="Boolean" Nullable="false" />
+    <Property Name="Amigdalitis" Type="Boolean" Nullable="false" />
+    <Property Name="Laringitis" Type="Boolean" Nullable="false" />
+    <Property Name="Ronquera" Type="Boolean" Nullable="false" />
+    <Property Name="Disfagia" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Consulta" Relationship="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" FromRole="ConsultaBoca" ToRole="Consulta" />
+  </EntityType>
+  <Association Name="FK_ConsultaBoca_Consulta">
+    <End Type="ClinicaDrFuentesModel.Consulta" Role="Consulta" Multiplicity="1" />
+    <End Type="ClinicaDrFuentesModel.ConsultaBoca" Role="ConsultaBoca" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Consulta">
+        <PropertyRef Name="IdConsulta" />
+      </Principal>
+      <Dependent Role="ConsultaBoca">
+        <PropertyRef Name="IdConsulta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

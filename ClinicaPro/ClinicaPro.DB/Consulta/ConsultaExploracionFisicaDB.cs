@@ -23,7 +23,7 @@ namespace ClinicaPro.DB.Consulta
                ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaExploracionFisica Original = Contexto.ConsultaExploracionFisicas.First(EntidadLocal => EntidadLocal.IdConsulta == consultaExFisica.IdConsulta);
+                    Entities.ConsultaExploracionFisica Original = Contexto.ConsultaExploracionFisicas.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaExFisica.IdConsulta);
                     if (Original != null)
                     {
                         Original.FrecuenciaCardiaca = consultaExFisica.FrecuenciaCardiaca;
@@ -32,13 +32,17 @@ namespace ClinicaPro.DB.Consulta
                         Original.PresionArterialDiastolico = consultaExFisica.PresionArterialDiastolico;
                         Original.PresionArterialSistolico = consultaExFisica.PresionArterialSistolico;
                         Original.Talla = consultaExFisica.Talla;
-                        Original.Temperatura = consultaExFisica.Temperatura;                        
+                        Original.Temperatura = consultaExFisica.Temperatura;
                         Original.idExploracionManos = consultaExFisica.idExploracionManos;
-                        Original.idColorPaciente = consultaExFisica.idColorPaciente;                        
-                    }   
+                        Original.idColorPaciente = consultaExFisica.idColorPaciente;
+                    }
+                    if(Original == null)
+                    {
+                        Contexto.ConsultaExploracionFisicas.Add(consultaExFisica);
+                    }
                 } 
                 else
-                {
+                {                    
                     Contexto.ConsultaExploracionFisicas.Add(consultaExFisica);
                 }
                 Contexto.SaveChanges();
@@ -71,7 +75,13 @@ namespace ClinicaPro.DB.Consulta
         {
             return false;
         }
-
+        public Entities.ConsultaExploracionFisica GetExploracionFisica(int IdConsulta)
+       {
+            using (ClinicaDrFuentesEntities Contexto  = new ClinicaDrFuentesEntities())
+            {
+                return Contexto.ConsultaExploracionFisicas.Find(IdConsulta);
+            }
+       }
        public List<Entities.ConsultaExploracionFisica> Listar()
         {
             return null;

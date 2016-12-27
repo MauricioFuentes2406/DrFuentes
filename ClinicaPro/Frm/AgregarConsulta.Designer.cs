@@ -90,11 +90,11 @@
             this.txtTalla = new System.Windows.Forms.NumericUpDown();
             this.txtFrencuenciaCardiaca = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtPA_Diastolica = new System.Windows.Forms.NumericUpDown();
+            this.txtPresionArterial_Diastolica = new System.Windows.Forms.NumericUpDown();
             this.txtTemperatura = new System.Windows.Forms.NumericUpDown();
             this.label47 = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.NumericUpDown();
-            this.txtPA_Sistolica = new System.Windows.Forms.NumericUpDown();
+            this.txtPresionArterial_Sistolica = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -285,14 +285,14 @@
             this.auxDroga = new System.Windows.Forms.Button();
             this.auxTAba = new System.Windows.Forms.Button();
             this.auxAlcho = new System.Windows.Forms.Button();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.gbVacuna = new System.Windows.Forms.GroupBox();
             this.btnVacunas = new System.Windows.Forms.Button();
             this.dgVacuna = new System.Windows.Forms.DataGridView();
             this.cb_Vacunas = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtNoPato_NumTiempo_Vacuna = new System.Windows.Forms.NumericUpDown();
             this.cb_NoPato_VacunaEscala = new System.Windows.Forms.ComboBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.gbDrogra = new System.Windows.Forms.GroupBox();
             this.btnDrogas = new System.Windows.Forms.Button();
             this.dgDrogas = new System.Windows.Forms.DataGridView();
             this.cb_Drogas = new System.Windows.Forms.ComboBox();
@@ -333,7 +333,6 @@
             this.auxHere = new System.Windows.Forms.Button();
             this.limpiar = new System.Windows.Forms.Button();
             this.buttonmanu = new System.Windows.Forms.Button();
-            this.buttonau = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
             this.txt_HereditarioDetalle = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
@@ -417,12 +416,10 @@
             this.btnServicios = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.cbServicios = new System.Windows.Forms.ComboBox();
-            this.dgServicios = new System.Windows.Forms.DataGridView();
             this.tabDiagnostico = new System.Windows.Forms.TabPage();
-            this.btnAuxiliarModificar = new System.Windows.Forms.Button();
             this.chk_AplicarDescuento = new System.Windows.Forms.CheckBox();
             this.txtCostoConsulta = new System.Windows.Forms.NumericUpDown();
-            this.chk_ConsultaEstado = new System.Windows.Forms.CheckBox();
+            this.chk_DiagnosticoEstado = new System.Windows.Forms.CheckBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -444,6 +441,7 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtAuxilirAlergia = new System.Windows.Forms.RichTextBox();
             this.lblCampoRequerido = new System.Windows.Forms.Label();
+            this.dgServicios = new System.Windows.Forms.DataGridView();
             this.tabGeneral.SuspendLayout();
             this.tabMoticoConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Consulta_NumTiempo)).BeginInit();
@@ -457,10 +455,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFrecuenciaRespiratoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTalla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrencuenciaCardiaca)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPA_Diastolica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresionArterial_Diastolica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTemperatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPA_Sistolica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresionArterial_Sistolica)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.gbAbdomen.SuspendLayout();
             this.gbOjos.SuspendLayout();
@@ -490,10 +488,10 @@
             this.tabControl1.SuspendLayout();
             this.tabNoPatologico.SuspendLayout();
             this.gbAnteceDentesNoPatologicos.SuspendLayout();
-            this.groupBox19.SuspendLayout();
+            this.gbVacuna.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVacuna)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoPato_NumTiempo_Vacuna)).BeginInit();
-            this.groupBox18.SuspendLayout();
+            this.gbDrogra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDrogas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoPato_NumTiempo_Droga)).BeginInit();
             this.gbAlcohol.SuspendLayout();
@@ -516,10 +514,10 @@
             this.tabServicio.SuspendLayout();
             this.gbServicio.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.tabDiagnostico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuentoPorcentaje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -995,11 +993,11 @@
             this.tabMedidas.Controls.Add(this.txtTalla);
             this.tabMedidas.Controls.Add(this.txtFrencuenciaCardiaca);
             this.tabMedidas.Controls.Add(this.label2);
-            this.tabMedidas.Controls.Add(this.txtPA_Diastolica);
+            this.tabMedidas.Controls.Add(this.txtPresionArterial_Diastolica);
             this.tabMedidas.Controls.Add(this.txtTemperatura);
             this.tabMedidas.Controls.Add(this.label47);
             this.tabMedidas.Controls.Add(this.txtPeso);
-            this.tabMedidas.Controls.Add(this.txtPA_Sistolica);
+            this.tabMedidas.Controls.Add(this.txtPresionArterial_Sistolica);
             this.tabMedidas.Controls.Add(this.label4);
             this.tabMedidas.Controls.Add(this.label3);
             this.tabMedidas.Controls.Add(this.label7);
@@ -1195,17 +1193,17 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Peso*";
             // 
-            // txtPA_Diastolica
+            // txtPresionArterial_Diastolica
             // 
-            this.txtPA_Diastolica.Location = new System.Drawing.Point(576, 61);
-            this.txtPA_Diastolica.Maximum = new decimal(new int[] {
+            this.txtPresionArterial_Diastolica.Location = new System.Drawing.Point(576, 61);
+            this.txtPresionArterial_Diastolica.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.txtPA_Diastolica.Name = "txtPA_Diastolica";
-            this.txtPA_Diastolica.Size = new System.Drawing.Size(48, 20);
-            this.txtPA_Diastolica.TabIndex = 66;
+            this.txtPresionArterial_Diastolica.Name = "txtPresionArterial_Diastolica";
+            this.txtPresionArterial_Diastolica.Size = new System.Drawing.Size(48, 20);
+            this.txtPresionArterial_Diastolica.TabIndex = 66;
             // 
             // txtTemperatura
             // 
@@ -1242,17 +1240,17 @@
             this.txtPeso.Size = new System.Drawing.Size(142, 20);
             this.txtPeso.TabIndex = 30;
             // 
-            // txtPA_Sistolica
+            // txtPresionArterial_Sistolica
             // 
-            this.txtPA_Sistolica.Location = new System.Drawing.Point(520, 61);
-            this.txtPA_Sistolica.Maximum = new decimal(new int[] {
+            this.txtPresionArterial_Sistolica.Location = new System.Drawing.Point(520, 61);
+            this.txtPresionArterial_Sistolica.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.txtPA_Sistolica.Name = "txtPA_Sistolica";
-            this.txtPA_Sistolica.Size = new System.Drawing.Size(45, 20);
-            this.txtPA_Sistolica.TabIndex = 64;
+            this.txtPresionArterial_Sistolica.Name = "txtPresionArterial_Sistolica";
+            this.txtPresionArterial_Sistolica.Size = new System.Drawing.Size(45, 20);
+            this.txtPresionArterial_Sistolica.TabIndex = 64;
             // 
             // label4
             // 
@@ -3285,8 +3283,8 @@
             this.gbAnteceDentesNoPatologicos.Controls.Add(this.auxDroga);
             this.gbAnteceDentesNoPatologicos.Controls.Add(this.auxTAba);
             this.gbAnteceDentesNoPatologicos.Controls.Add(this.auxAlcho);
-            this.gbAnteceDentesNoPatologicos.Controls.Add(this.groupBox19);
-            this.gbAnteceDentesNoPatologicos.Controls.Add(this.groupBox18);
+            this.gbAnteceDentesNoPatologicos.Controls.Add(this.gbVacuna);
+            this.gbAnteceDentesNoPatologicos.Controls.Add(this.gbDrogra);
             this.gbAnteceDentesNoPatologicos.Controls.Add(this.gbAlcohol);
             this.gbAnteceDentesNoPatologicos.Controls.Add(this.gbTabaquismo);
             this.gbAnteceDentesNoPatologicos.Location = new System.Drawing.Point(19, 3);
@@ -3340,20 +3338,20 @@
             this.auxAlcho.Visible = false;
             this.auxAlcho.Click += new System.EventHandler(this.auxAlcho_Click);
             // 
-            // groupBox19
+            // gbVacuna
             // 
-            this.groupBox19.Controls.Add(this.btnVacunas);
-            this.groupBox19.Controls.Add(this.dgVacuna);
-            this.groupBox19.Controls.Add(this.cb_Vacunas);
-            this.groupBox19.Controls.Add(this.label16);
-            this.groupBox19.Controls.Add(this.txtNoPato_NumTiempo_Vacuna);
-            this.groupBox19.Controls.Add(this.cb_NoPato_VacunaEscala);
-            this.groupBox19.Location = new System.Drawing.Point(382, 122);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(314, 208);
-            this.groupBox19.TabIndex = 18;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Vacuna";
+            this.gbVacuna.Controls.Add(this.btnVacunas);
+            this.gbVacuna.Controls.Add(this.dgVacuna);
+            this.gbVacuna.Controls.Add(this.cb_Vacunas);
+            this.gbVacuna.Controls.Add(this.label16);
+            this.gbVacuna.Controls.Add(this.txtNoPato_NumTiempo_Vacuna);
+            this.gbVacuna.Controls.Add(this.cb_NoPato_VacunaEscala);
+            this.gbVacuna.Location = new System.Drawing.Point(382, 122);
+            this.gbVacuna.Name = "gbVacuna";
+            this.gbVacuna.Size = new System.Drawing.Size(314, 208);
+            this.gbVacuna.TabIndex = 18;
+            this.gbVacuna.TabStop = false;
+            this.gbVacuna.Text = "Vacuna";
             // 
             // btnVacunas
             // 
@@ -3427,20 +3425,20 @@
             this.cb_NoPato_VacunaEscala.Size = new System.Drawing.Size(104, 21);
             this.cb_NoPato_VacunaEscala.TabIndex = 0;
             // 
-            // groupBox18
+            // gbDrogra
             // 
-            this.groupBox18.Controls.Add(this.btnDrogas);
-            this.groupBox18.Controls.Add(this.dgDrogas);
-            this.groupBox18.Controls.Add(this.cb_Drogas);
-            this.groupBox18.Controls.Add(this.label93);
-            this.groupBox18.Controls.Add(this.txtNoPato_NumTiempo_Droga);
-            this.groupBox18.Controls.Add(this.cb_NoPato_DrogaEscala);
-            this.groupBox18.Location = new System.Drawing.Point(19, 122);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(305, 206);
-            this.groupBox18.TabIndex = 11;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Droga";
+            this.gbDrogra.Controls.Add(this.btnDrogas);
+            this.gbDrogra.Controls.Add(this.dgDrogas);
+            this.gbDrogra.Controls.Add(this.cb_Drogas);
+            this.gbDrogra.Controls.Add(this.label93);
+            this.gbDrogra.Controls.Add(this.txtNoPato_NumTiempo_Droga);
+            this.gbDrogra.Controls.Add(this.cb_NoPato_DrogaEscala);
+            this.gbDrogra.Location = new System.Drawing.Point(19, 122);
+            this.gbDrogra.Name = "gbDrogra";
+            this.gbDrogra.Size = new System.Drawing.Size(305, 206);
+            this.gbDrogra.TabIndex = 11;
+            this.gbDrogra.TabStop = false;
+            this.gbDrogra.Text = "Droga";
             // 
             // btnDrogas
             // 
@@ -3855,7 +3853,6 @@
             this.gbHereditario.Controls.Add(this.auxHere);
             this.gbHereditario.Controls.Add(this.limpiar);
             this.gbHereditario.Controls.Add(this.buttonmanu);
-            this.gbHereditario.Controls.Add(this.buttonau);
             this.gbHereditario.Controls.Add(this.label92);
             this.gbHereditario.Controls.Add(this.txt_HereditarioDetalle);
             this.gbHereditario.Controls.Add(this.label91);
@@ -3879,7 +3876,6 @@
             this.gbHereditario.Controls.Add(this.label17);
             this.gbHereditario.Controls.Add(this.cb_Here_DM);
             this.gbHereditario.Controls.Add(this.btnHereditarioDetalle);
-            this.gbHereditario.Enabled = false;
             this.gbHereditario.Location = new System.Drawing.Point(19, 3);
             this.gbHereditario.Name = "gbHereditario";
             this.gbHereditario.Size = new System.Drawing.Size(447, 347);
@@ -3917,17 +3913,6 @@
             this.buttonmanu.UseVisualStyleBackColor = true;
             this.buttonmanu.Visible = false;
             this.buttonmanu.Click += new System.EventHandler(this.buttonmanu_Click);
-            // 
-            // buttonau
-            // 
-            this.buttonau.Location = new System.Drawing.Point(19, 206);
-            this.buttonau.Name = "buttonau";
-            this.buttonau.Size = new System.Drawing.Size(75, 23);
-            this.buttonau.TabIndex = 81;
-            this.buttonau.Text = "au";
-            this.buttonau.UseVisualStyleBackColor = true;
-            this.buttonau.Visible = false;
-            this.buttonau.Click += new System.EventHandler(this.buttonau_Click);
             // 
             // label92
             // 
@@ -4174,7 +4159,6 @@
             // 
             // txtAntecedenteQuirurgico
             // 
-            this.txtAntecedenteQuirurgico.Enabled = false;
             this.txtAntecedenteQuirurgico.Location = new System.Drawing.Point(22, 35);
             this.txtAntecedenteQuirurgico.MaxLength = 200;
             this.txtAntecedenteQuirurgico.Multiline = true;
@@ -4390,7 +4374,9 @@
             // chk_Emocional_Normal
             // 
             this.chk_Emocional_Normal.AutoSize = true;
-            this.chk_Emocional_Normal.Location = new System.Drawing.Point(108, 16);
+            this.chk_Emocional_Normal.Checked = true;
+            this.chk_Emocional_Normal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_Emocional_Normal.Location = new System.Drawing.Point(15, 19);
             this.chk_Emocional_Normal.Name = "chk_Emocional_Normal";
             this.chk_Emocional_Normal.Size = new System.Drawing.Size(59, 17);
             this.chk_Emocional_Normal.TabIndex = 81;
@@ -4482,7 +4468,7 @@
             // chk_Emocional_Depresion
             // 
             this.chk_Emocional_Depresion.AutoSize = true;
-            this.chk_Emocional_Depresion.Location = new System.Drawing.Point(16, 19);
+            this.chk_Emocional_Depresion.Location = new System.Drawing.Point(108, 19);
             this.chk_Emocional_Depresion.Name = "chk_Emocional_Depresion";
             this.chk_Emocional_Depresion.Size = new System.Drawing.Size(74, 17);
             this.chk_Emocional_Depresion.TabIndex = 0;
@@ -4494,7 +4480,6 @@
             this.gbGaslowEscala.Controls.Add(this.gbRespuestaMotora);
             this.gbGaslowEscala.Controls.Add(this.groupBox6);
             this.gbGaslowEscala.Controls.Add(this.gbAperturaOcular);
-            this.gbGaslowEscala.Enabled = false;
             this.gbGaslowEscala.Location = new System.Drawing.Point(10, 21);
             this.gbGaslowEscala.Name = "gbGaslowEscala";
             this.gbGaslowEscala.Size = new System.Drawing.Size(519, 358);
@@ -4702,9 +4687,9 @@
             // 
             // tabServicio
             // 
+            this.tabServicio.Controls.Add(this.dgServicios);
             this.tabServicio.Controls.Add(this.btnAuxServici);
             this.tabServicio.Controls.Add(this.gbServicio);
-            this.tabServicio.Controls.Add(this.dgServicios);
             this.tabServicio.Location = new System.Drawing.Point(4, 22);
             this.tabServicio.Name = "tabServicio";
             this.tabServicio.Padding = new System.Windows.Forms.Padding(3);
@@ -4820,26 +4805,11 @@
             this.cbServicios.Size = new System.Drawing.Size(139, 21);
             this.cbServicios.TabIndex = 0;
             // 
-            // dgServicios
-            // 
-            this.dgServicios.AllowUserToAddRows = false;
-            this.dgServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgServicios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgServicios.Location = new System.Drawing.Point(328, 49);
-            this.dgServicios.MultiSelect = false;
-            this.dgServicios.Name = "dgServicios";
-            this.dgServicios.ReadOnly = true;
-            this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgServicios.Size = new System.Drawing.Size(446, 228);
-            this.dgServicios.TabIndex = 17;
-            // 
             // tabDiagnostico
             // 
-            this.tabDiagnostico.Controls.Add(this.btnAuxiliarModificar);
             this.tabDiagnostico.Controls.Add(this.chk_AplicarDescuento);
             this.tabDiagnostico.Controls.Add(this.txtCostoConsulta);
-            this.tabDiagnostico.Controls.Add(this.chk_ConsultaEstado);
+            this.tabDiagnostico.Controls.Add(this.chk_DiagnosticoEstado);
             this.tabDiagnostico.Controls.Add(this.button6);
             this.tabDiagnostico.Controls.Add(this.button16);
             this.tabDiagnostico.Controls.Add(this.button15);
@@ -4860,17 +4830,6 @@
             this.tabDiagnostico.TabIndex = 5;
             this.tabDiagnostico.Text = "Diagnostico*";
             this.tabDiagnostico.UseVisualStyleBackColor = true;
-            // 
-            // btnAuxiliarModificar
-            // 
-            this.btnAuxiliarModificar.Location = new System.Drawing.Point(431, 22);
-            this.btnAuxiliarModificar.Name = "btnAuxiliarModificar";
-            this.btnAuxiliarModificar.Size = new System.Drawing.Size(92, 23);
-            this.btnAuxiliarModificar.TabIndex = 56;
-            this.btnAuxiliarModificar.Text = "AuxiliarModificar";
-            this.btnAuxiliarModificar.UseVisualStyleBackColor = true;
-            this.btnAuxiliarModificar.Visible = false;
-            this.btnAuxiliarModificar.Click += new System.EventHandler(this.btnAuxiliarModificar_Click);
             // 
             // chk_AplicarDescuento
             // 
@@ -4906,15 +4865,15 @@
             this.txtCostoConsulta.TabIndex = 3;
             this.txtCostoConsulta.ThousandsSeparator = true;
             // 
-            // chk_ConsultaEstado
+            // chk_DiagnosticoEstado
             // 
-            this.chk_ConsultaEstado.AutoSize = true;
-            this.chk_ConsultaEstado.Location = new System.Drawing.Point(175, 44);
-            this.chk_ConsultaEstado.Name = "chk_ConsultaEstado";
-            this.chk_ConsultaEstado.Size = new System.Drawing.Size(108, 17);
-            this.chk_ConsultaEstado.TabIndex = 1;
-            this.chk_ConsultaEstado.Text = "Estado Aceptado";
-            this.chk_ConsultaEstado.UseVisualStyleBackColor = true;
+            this.chk_DiagnosticoEstado.AutoSize = true;
+            this.chk_DiagnosticoEstado.Location = new System.Drawing.Point(175, 44);
+            this.chk_DiagnosticoEstado.Name = "chk_DiagnosticoEstado";
+            this.chk_DiagnosticoEstado.Size = new System.Drawing.Size(108, 17);
+            this.chk_DiagnosticoEstado.TabIndex = 1;
+            this.chk_DiagnosticoEstado.Text = "Estado Aceptado";
+            this.chk_DiagnosticoEstado.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -5159,6 +5118,20 @@
             this.lblCampoRequerido.Text = " Campos Requeridos *";
             this.lblCampoRequerido.Visible = false;
             // 
+            // dgServicios
+            // 
+            this.dgServicios.AllowUserToAddRows = false;
+            this.dgServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgServicios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgServicios.Location = new System.Drawing.Point(346, 49);
+            this.dgServicios.MultiSelect = false;
+            this.dgServicios.Name = "dgServicios";
+            this.dgServicios.ReadOnly = true;
+            this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgServicios.Size = new System.Drawing.Size(446, 228);
+            this.dgServicios.TabIndex = 91;
+            // 
             // AgregarConsulta
             // 
             this.AccessibleName = "";
@@ -5198,10 +5171,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFrecuenciaRespiratoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTalla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrencuenciaCardiaca)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPA_Diastolica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresionArterial_Diastolica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTemperatura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPA_Sistolica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresionArterial_Sistolica)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.gbAbdomen.ResumeLayout(false);
             this.gbAbdomen.PerformLayout();
@@ -5245,12 +5218,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabNoPatologico.ResumeLayout(false);
             this.gbAnteceDentesNoPatologicos.ResumeLayout(false);
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
+            this.gbVacuna.ResumeLayout(false);
+            this.gbVacuna.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVacuna)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoPato_NumTiempo_Vacuna)).EndInit();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
+            this.gbDrogra.ResumeLayout(false);
+            this.gbDrogra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDrogas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoPato_NumTiempo_Droga)).EndInit();
             this.gbAlcohol.ResumeLayout(false);
@@ -5285,11 +5258,11 @@
             this.gbServicio.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.tabDiagnostico.ResumeLayout(false);
             this.tabDiagnostico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuentoPorcentaje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5349,7 +5322,6 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox cbServicios;
-        private System.Windows.Forms.DataGridView dgServicios;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnCalcularCosto;
         private System.Windows.Forms.NumericUpDown txtDescuentoPorcentaje;
@@ -5367,9 +5339,9 @@
         private System.Windows.Forms.TabPage tabParesCraneales;
         private System.Windows.Forms.TextBox txtFechaConsulta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown txtPA_Diastolica;
+        private System.Windows.Forms.NumericUpDown txtPresionArterial_Diastolica;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.NumericUpDown txtPA_Sistolica;
+        private System.Windows.Forms.NumericUpDown txtPresionArterial_Sistolica;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox txtQSucedeAcontinuacion;
         private System.Windows.Forms.Label label49;
@@ -5578,12 +5550,11 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cb_Here_DM;
         private System.Windows.Forms.Button buttonmanu;
-        private System.Windows.Forms.Button buttonau;
         private System.Windows.Forms.Button limpiar;
         private System.Windows.Forms.Button auxHere;
         private System.Windows.Forms.GroupBox gbAnteceDentesNoPatologicos;
         private System.Windows.Forms.ComboBox cb_NoPato_TabaquismoEscala;
-        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox gbDrogra;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.NumericUpDown txtNoPato_NumTiempo_Droga;
         private System.Windows.Forms.ComboBox cb_NoPato_DrogaEscala;
@@ -5600,7 +5571,7 @@
         private System.Windows.Forms.ComboBox cb_Drogas;
         private System.Windows.Forms.TabPage tabHereditarioPatologico;
         private System.Windows.Forms.Button btnDrogas;
-        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.GroupBox gbVacuna;
         private System.Windows.Forms.Button btnVacunas;
         private System.Windows.Forms.DataGridView dgVacuna;
         private System.Windows.Forms.ComboBox cb_Vacunas;
@@ -5678,7 +5649,7 @@
         private System.Windows.Forms.Button btnAuxServici;
         private System.Windows.Forms.NumericUpDown txt_Consulta_NumTiempo;
         private System.Windows.Forms.ComboBox cb_Consulta_EscalaTiempo;
-        private System.Windows.Forms.CheckBox chk_ConsultaEstado;
+        private System.Windows.Forms.CheckBox chk_DiagnosticoEstado;
         private System.Windows.Forms.Label lblCampoRequerido;
         private System.Windows.Forms.NumericUpDown txtCostoConsulta;
         private System.Windows.Forms.TextBox txtPadecimientoActual;
@@ -5711,6 +5682,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtAntecedenteQuirurgico;
         private System.Windows.Forms.CheckBox chkLimpiarDatos;
-        private System.Windows.Forms.Button btnAuxiliarModificar;
+        private System.Windows.Forms.DataGridView dgServicios;
     }
 }

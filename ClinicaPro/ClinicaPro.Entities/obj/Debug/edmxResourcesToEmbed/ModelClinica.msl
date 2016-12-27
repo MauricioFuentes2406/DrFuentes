@@ -162,23 +162,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ConsultaBocas">
-      <EntityTypeMapping TypeName="ClinicaDrFuentesModel.ConsultaBoca">
-        <MappingFragment StoreEntitySet="ConsultaBoca">
-          <ScalarProperty Name="Protesis_Dentales" ColumnName="Protesis_Dentales" />
-          <ScalarProperty Name="IdConsulta" ColumnName="IdConsulta" />
-          <ScalarProperty Name="Adoncia" ColumnName="Adoncia" />
-          <ScalarProperty Name="Calzas" ColumnName="Calzas" />
-          <ScalarProperty Name="UlcerasOrales" ColumnName="UlcerasOrales" />
-          <ScalarProperty Name="LenguaDolorosa" ColumnName="LenguaDolorosa" />
-          <ScalarProperty Name="Faringitis" ColumnName="Faringitis" />
-          <ScalarProperty Name="Amigdalitis" ColumnName="Amigdalitis" />
-          <ScalarProperty Name="Laringitis" ColumnName="Laringitis" />
-          <ScalarProperty Name="Ronquera" ColumnName="Ronquera" />
-          <ScalarProperty Name="Disfagia" ColumnName="Disfagia" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ConsultaCraneos">
       <EntityTypeMapping TypeName="ClinicaDrFuentesModel.ConsultaCraneo">
         <MappingFragment StoreEntitySet="ConsultaCraneo">
@@ -928,6 +911,23 @@
           <ScalarProperty Name="ExpasibilidadToraxica" ColumnName="ExpasibilidadToraxica" />
           <ScalarProperty Name="Ascultacion_Murmullo_Vescular" ColumnName="Ascultacion Murmullo Vescular" />
           <ScalarProperty Name="Número_Consulta" ColumnName="Número Consulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultaBocas">
+      <EntityTypeMapping TypeName="ClinicaDrFuentesModel.ConsultaBoca">
+        <MappingFragment StoreEntitySet="ConsultaBoca">
+          <ScalarProperty Name="Disfagia" ColumnName="Disfagia" />
+          <ScalarProperty Name="Ronquera" ColumnName="Ronquera" />
+          <ScalarProperty Name="Laringitis" ColumnName="Laringitis" />
+          <ScalarProperty Name="Amigdalitis" ColumnName="Amigdalitis" />
+          <ScalarProperty Name="Faringitis" ColumnName="Faringitis" />
+          <ScalarProperty Name="LenguaDolorosa" ColumnName="LenguaDolorosa" />
+          <ScalarProperty Name="UlcerasOrales" ColumnName="UlcerasOrales" />
+          <ScalarProperty Name="Calzas" ColumnName="Calzas" />
+          <ScalarProperty Name="Protesis_Dentales" ColumnName="Protesis_Dentales" />
+          <ScalarProperty Name="Adoncia" ColumnName="Adoncia" />
+          <ScalarProperty Name="IdConsulta" ColumnName="IdConsulta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

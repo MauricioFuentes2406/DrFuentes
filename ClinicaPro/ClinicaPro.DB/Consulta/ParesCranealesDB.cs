@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaParesCraneale Original = Contexto.ConsultaParesCraneales.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.ConsultaParesCraneale Original = Contexto.ConsultaParesCraneales.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         Original.PC_I_Olfatorio = Entidad.PC_I_Olfatorio;
@@ -49,6 +49,10 @@ namespace ClinicaPro.DB.Consulta
                         Original.PC_XI_MovimientoTrapecio = Original.PC_XI_MovimientoTrapecio;
                         Original.PC_XI_TonoFuerzaMuscarlarEsterno= Original.PC_XI_TonoFuerzaMuscarlarEsterno;
                         Original.PC_XI_TonoFuerzaMuscarlarTrapecio= Original.PC_XI_TonoFuerzaMuscarlarTrapecio;                       
+                    }
+                    if (Original == null)
+                    {
+                        Contexto.ConsultaParesCraneales.Add(Entidad);
                     }
                 }
                 else

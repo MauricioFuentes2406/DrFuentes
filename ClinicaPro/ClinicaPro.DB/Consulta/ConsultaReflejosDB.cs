@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaReflejo Original = Contexto.ConsultaReflejos.First(EntidadLocal => EntidadLocal.IdConsulta == consultaReflejo.IdConsulta);
+                    Entities.ConsultaReflejo Original = Contexto.ConsultaReflejos.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaReflejo.IdConsulta);
                     if (Original != null)
                     {
                         Original.Observacion = consultaReflejo.Observacion;
@@ -32,6 +32,10 @@ namespace ClinicaPro.DB.Consulta
                         Original.R_Radial = consultaReflejo.R_Radial;
                         Original.R_Tricipital = consultaReflejo.R_Tricipital;
                         Original.R_ValoracionGeneral = consultaReflejo.R_ValoracionGeneral;                        
+                    }
+                    if (Original == null)
+                    {
+                        Contexto.ConsultaReflejos.Add(consultaReflejo);
                     }
                 }
                 else

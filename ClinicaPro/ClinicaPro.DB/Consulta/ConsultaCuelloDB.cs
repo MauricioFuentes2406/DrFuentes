@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
              ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
              if (isModificar)
              {
-                 Entities.ConsultaCuello Original = Contexto.ConsultaCuelloes.First(EntidadLocal => EntidadLocal.IdConsulta == consultaCuello.IdConsulta);
+                 Entities.ConsultaCuello Original = Contexto.ConsultaCuelloes.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaCuello.IdConsulta);
                  if (Original != null)
                  {
                      Original.AdenoPatias = consultaCuello.AdenoPatias;
@@ -29,6 +29,10 @@ namespace ClinicaPro.DB.Consulta
                      Original.LesionesPiel = consultaCuello.LesionesPiel;
                      Original.PresionVenosa = consultaCuello.PresionVenosa;
                      Original.Simetrico = consultaCuello.Simetrico;
+                 }
+                 if (Original == null)
+                 {
+                     Contexto.ConsultaCuelloes.Add(consultaCuello);
                  }
              }
              else

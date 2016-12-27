@@ -19,7 +19,7 @@ namespace ClinicaPro.DB.Consulta
                ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                if (isModificar)
                {
-                   Entities.ConsultaEstadoEmocional Original = Contexto.ConsultaEstadoEmocionals.First(EntidadLocal => EntidadLocal.IdConsulta == consultaEstadoEmocional.IdConsulta);
+                   Entities.ConsultaEstadoEmocional Original = Contexto.ConsultaEstadoEmocionals.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == consultaEstadoEmocional.IdConsulta);
                    if (Original != null)
                    {
                        Original.AlteracionSueño = consultaEstadoEmocional.AlteracionSueño;
@@ -34,6 +34,10 @@ namespace ClinicaPro.DB.Consulta
                        Original.Nervioso = consultaEstadoEmocional.Nervioso;
                        Original.Otro = consultaEstadoEmocional.Otro;
                        Original.Tensión = Original.Tensión;
+                   }
+                   if (Original == null  )
+                   {
+                       Contexto.ConsultaEstadoEmocionals.Add(consultaEstadoEmocional);
                    }
                }
                else

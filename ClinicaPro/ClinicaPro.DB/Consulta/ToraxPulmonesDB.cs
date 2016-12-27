@@ -20,15 +20,18 @@ namespace ClinicaPro.DB.Consulta
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.ConsultaToraxPulmone Original = Contexto.ConsultaToraxPulmones.First(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
+                    Entities.ConsultaToraxPulmone Original = Contexto.ConsultaToraxPulmones.FirstOrDefault(EntidadLocal => EntidadLocal.IdConsulta == Entidad.IdConsulta);
                     if (Original != null)
                     {
                         Original.AscultacionMurmulloVescular = Entidad.AscultacionMurmulloVescular;
                         Original.ExpasibilidadToraxica = Entidad.ExpasibilidadToraxica;
                         Original.RespiracionDiafragmaticaAbdominal = Entidad.RespiracionDiafragmaticaAbdominal;
                         Original.RuidosAgregados = Entidad.RuidosAgregados;
-                        Original.SonoridadPulmunar = Entidad.SonoridadPulmunar;
-                        
+                        Original.SonoridadPulmunar = Entidad.SonoridadPulmunar;                        
+                    }
+                    if(Original == null)
+                    {
+                        Contexto.ConsultaToraxPulmones.Add(Entidad);
                     }
                 }
                 else
@@ -58,6 +61,13 @@ namespace ClinicaPro.DB.Consulta
         {
             return false;
         }
+        public Entities.ConsultaToraxPulmone GetToraxYPulmones(int idConsulta)
+       {
+           using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities())
+           {
+              return  Contexto.ConsultaToraxPulmones.Find(idConsulta);
+           }
+       }
        public List<Entities.ConsultaToraxPulmone> Listar()
        {
            return null;
