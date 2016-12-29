@@ -130,6 +130,21 @@ namespace ClinicaPro.DB.Consulta
                 }
             }
         }        
+       /// <summary>
+       ///  Debido a Object DIspose en la lista Drogas
+       /// </summary>
+       /// <param name="Entidad"></param>
+       /// <returns></returns>
+        public Entities.AntecedenteDrogra Attach(Entities.AntecedenteDrogra Entidad)
+        {
+            if (Entidad == null)
+            {
+                return null;
+            }
+            Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
+            Contexto.AntecedenteDrogra.Attach(Entidad);
+            return Entidad;
+        }
         public static void oso()
         {
             Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();

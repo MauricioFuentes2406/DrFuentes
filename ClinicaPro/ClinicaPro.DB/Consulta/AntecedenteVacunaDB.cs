@@ -132,5 +132,20 @@ namespace ClinicaPro.DB.Consulta
                }
            }                
        }
+       /// <summary>
+       ///  Debido a Object DIspose en la lista Vacunas
+       /// </summary>
+       /// <param name="Entidad"></param>
+       /// <returns></returns>
+       public Entities.AntecedenteVacuna Attach(Entities.AntecedenteVacuna Entidad)
+       {
+           if (Entidad == null)
+           {
+               return null;
+           }
+           Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
+           Contexto.AntecedenteVacuna.Attach(Entidad);
+           return Entidad;
+       }
     }
 }

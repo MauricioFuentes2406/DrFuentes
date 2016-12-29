@@ -18,11 +18,11 @@ namespace ClinicaPro.DB.Cliente
         {
             return -1;
         }
-      /// <summary> La diferencia de este Agregar es que va añadir una coleccion de una sola vez
+      /// <summary> Añade una coleccion de alergias de una sola vez
       /// </summary>
       /// <param name="listaDataGridAlergia">Es la lista que se usa de dataSource en el Grid de la pestaña Alergia </param>
       /// <param name="idCliente"></param>
-      /// <returns></returns>
+      /// <returns></returns>    
        public static bool Agregar_Modificar(BindingList<TipoAlergia> listaDataGridAlergia, int idCliente , bool isModificar)// Este es el qu voy paa la Consulta 
         {            
             try
@@ -145,6 +145,16 @@ namespace ClinicaPro.DB.Cliente
         public List<ClienteAlergia> Listar()
         {
             return null;
+        }        
+       public static List<TipoAlergia> ListarCliente(int idCliente)
+        {
+             using(ClinicaDrFuentesEntities Contexto = new  ClinicaDrFuentesEntities () )
+             {
+                return (from tabla in Contexto.ClienteAlergias.AsNoTracking()                                  
+                        join tablaAlergia in Contexto.TipoAlergias on tabla.IdAlergia equals tablaAlergia.idAlergia
+                        where tabla.IdCLiente == idCliente       
+                        select tablaAlergia).ToList();
+             }
         }
     }
 }

@@ -26,6 +26,6 @@ namespace ClinicaPro.Entities
         public bool Ronquera { get; set; }
         public bool Disfagia { get; set; }
     
-        public virtual Consulta Consulta { get; set; }
+        public virtual Consulta Consulta { private get; set; }
     }
 }

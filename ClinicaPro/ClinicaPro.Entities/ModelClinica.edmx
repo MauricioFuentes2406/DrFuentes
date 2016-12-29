@@ -4519,7 +4519,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Property Name="Laringitis" Type="Boolean" Nullable="false" />
           <Property Name="Ronquera" Type="Boolean" Nullable="false" />
           <Property Name="Disfagia" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Consulta" Relationship="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" FromRole="ConsultaBoca" ToRole="Consulta" />
+          <NavigationProperty Name="Consulta" Relationship="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" FromRole="ConsultaBoca" ToRole="Consulta" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:GetterAccess="Private" />
         </EntityType>
         <Association Name="FK_ConsultaBoca_Consulta">
           <End Type="ClinicaDrFuentesModel.Consulta" Role="Consulta" Multiplicity="1" />

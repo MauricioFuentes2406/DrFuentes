@@ -46,9 +46,9 @@ namespace ClinicaPro.DB.Consulta
                         Original.PC_X_Paladar = Entidad.PC_X_Paladar;
                         Original.PC_X_ReflejoNauseano = Entidad.PC_X_ReflejoNauseano;
                         Original.PC_XI_MovimientoEsternocleidomastoideo = Original.PC_XI_MovimientoEsternocleidomastoideo;
-                        Original.PC_XI_MovimientoTrapecio = Original.PC_XI_MovimientoTrapecio;
-                        Original.PC_XI_TonoFuerzaMuscarlarEsterno= Original.PC_XI_TonoFuerzaMuscarlarEsterno;
-                        Original.PC_XI_TonoFuerzaMuscarlarTrapecio= Original.PC_XI_TonoFuerzaMuscarlarTrapecio;                       
+                        Original.PC_XI_MovimientoTrapecio = Entidad.PC_XI_MovimientoTrapecio;
+                        Original.PC_XI_TonoFuerzaMuscarlarEsterno = Entidad.PC_XI_TonoFuerzaMuscarlarEsterno;
+                        Original.PC_XI_TonoFuerzaMuscarlarTrapecio = Entidad.PC_XI_TonoFuerzaMuscarlarTrapecio;                       
                     }
                     if (Original == null)
                     {

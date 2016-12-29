@@ -80,5 +80,15 @@ namespace ClinicaPro.DB.Consulta
                return lista;
            }
        }
+       public Entities.AntecedenteTabaco Attach(Entities.AntecedenteTabaco Entidad)
+       {
+           if (Entidad == null)
+           {
+               return null;
+           }
+           Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
+           Contexto.AntecedenteTabaco.Attach(Entidad);
+           return Entidad;
+       }
     }
 }

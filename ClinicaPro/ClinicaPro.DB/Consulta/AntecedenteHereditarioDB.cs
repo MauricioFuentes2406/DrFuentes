@@ -28,10 +28,10 @@ namespace ClinicaPro.DB.Consulta
                         Original.Cancer = Entidad.Cancer;
                         Original.Cardiopatía = Entidad.Cardiopatía;
                         Original.DM = Entidad.DM;
-                        Original.EnfermedadPulmonar = Original.EnfermedadPulmonar;
+                        Original.EnfermedadPulmonar = Entidad.EnfermedadPulmonar;
                         Original.Hepatopapia = Entidad.Hepatopapia;
                         Original.HTA = Entidad.HTA;
-                        Original.Neuropatia = Original.Neuropatia;
+                        Original.Neuropatia = Entidad.Neuropatia;
                         Original.otro = Entidad.otro;
                     }if (Original == null)
                     {

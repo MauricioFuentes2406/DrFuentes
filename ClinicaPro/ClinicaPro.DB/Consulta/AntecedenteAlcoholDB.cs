@@ -84,5 +84,16 @@ namespace ClinicaPro.DB.Consulta
               return lista;
           }
       }
+      public Entities.AntecedenteAlcohol Attach(Entities.AntecedenteAlcohol Entidad)
+      {
+          if (Entidad == null)
+          {
+              return null;
+          }
+          Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
+          Contexto.AntecedenteAlcohol.Attach(Entidad);
+          return Entidad;
+      }
+      
     }
 }

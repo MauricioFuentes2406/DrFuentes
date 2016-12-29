@@ -33,7 +33,7 @@ namespace ClinicaPro.DB.Consulta
                        Original.Normal = consultaEstadoEmocional.Normal;
                        Original.Nervioso = consultaEstadoEmocional.Nervioso;
                        Original.Otro = consultaEstadoEmocional.Otro;
-                       Original.Tensión = Original.Tensión;
+                       Original.Tensión = consultaEstadoEmocional.Tensión;
                    }
                    if (Original == null  )
                    {

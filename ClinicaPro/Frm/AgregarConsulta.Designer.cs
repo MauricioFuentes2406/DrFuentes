@@ -406,6 +406,7 @@
             this.Rb_Gaslow_AO_AOrden = new System.Windows.Forms.RadioButton();
             this.Rb_Gaslow_AO_Espontanea = new System.Windows.Forms.RadioButton();
             this.tabServicio = new System.Windows.Forms.TabPage();
+            this.dgServicios = new System.Windows.Forms.DataGridView();
             this.btnAuxServici = new System.Windows.Forms.Button();
             this.gbServicio = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -441,7 +442,6 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtAuxilirAlergia = new System.Windows.Forms.RichTextBox();
             this.lblCampoRequerido = new System.Windows.Forms.Label();
-            this.dgServicios = new System.Windows.Forms.DataGridView();
             this.tabGeneral.SuspendLayout();
             this.tabMoticoConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Consulta_NumTiempo)).BeginInit();
@@ -512,12 +512,12 @@
             this.groupBox6.SuspendLayout();
             this.gbAperturaOcular.SuspendLayout();
             this.tabServicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.gbServicio.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabDiagnostico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuentoPorcentaje)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -4698,6 +4698,20 @@
             this.tabServicio.Text = "Servicios*";
             this.tabServicio.UseVisualStyleBackColor = true;
             // 
+            // dgServicios
+            // 
+            this.dgServicios.AllowUserToAddRows = false;
+            this.dgServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgServicios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgServicios.Location = new System.Drawing.Point(346, 49);
+            this.dgServicios.MultiSelect = false;
+            this.dgServicios.Name = "dgServicios";
+            this.dgServicios.ReadOnly = true;
+            this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgServicios.Size = new System.Drawing.Size(446, 228);
+            this.dgServicios.TabIndex = 91;
+            // 
             // btnAuxServici
             // 
             this.btnAuxServici.Location = new System.Drawing.Point(279, 301);
@@ -4935,6 +4949,7 @@
             this.txtDescuentoPorcentaje.Name = "txtDescuentoPorcentaje";
             this.txtDescuentoPorcentaje.Size = new System.Drawing.Size(156, 20);
             this.txtDescuentoPorcentaje.TabIndex = 4;
+            this.txtDescuentoPorcentaje.ValueChanged += new System.EventHandler(this.txtDescuentoPorcentaje_ValueChanged);            
             // 
             // label35
             // 
@@ -5118,20 +5133,6 @@
             this.lblCampoRequerido.Text = " Campos Requeridos *";
             this.lblCampoRequerido.Visible = false;
             // 
-            // dgServicios
-            // 
-            this.dgServicios.AllowUserToAddRows = false;
-            this.dgServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgServicios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgServicios.Location = new System.Drawing.Point(346, 49);
-            this.dgServicios.MultiSelect = false;
-            this.dgServicios.Name = "dgServicios";
-            this.dgServicios.ReadOnly = true;
-            this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgServicios.Size = new System.Drawing.Size(446, 228);
-            this.dgServicios.TabIndex = 91;
-            // 
             // AgregarConsulta
             // 
             this.AccessibleName = "";
@@ -5254,6 +5255,7 @@
             this.gbAperturaOcular.ResumeLayout(false);
             this.gbAperturaOcular.PerformLayout();
             this.tabServicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.gbServicio.ResumeLayout(false);
             this.gbServicio.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -5262,7 +5264,6 @@
             this.tabDiagnostico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuentoPorcentaje)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

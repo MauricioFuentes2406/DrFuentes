@@ -65,7 +65,13 @@ namespace ClinicaPro.DB.Consulta
         {
             return false;
         }
-        
+        public Entities.ConsultaEstadoVivienda GetEstadoVivienda(int idConsulta)
+       {
+            using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities())
+            {
+                return Contexto.ConsultaEstadoViviendas.Find(idConsulta);
+            }
+       }
        public List<Entities.ConsultaEstadoVivienda> Listar()
        {
            return null; 

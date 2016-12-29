@@ -25,12 +25,12 @@ namespace ClinicaPro.DB.Consulta
                     {
                         Original.Bronquitis = Entidad.Bronquitis;
                         Original.Fiebre_Reumatica = Entidad.Fiebre_Reumatica;
-                        Original.Detalle = Original.Detalle;
-                        Original.Paludismo = Original.Paludismo;
-                        Original.Parotiditis = Original.Parotiditis;
-                        Original.Rubeola = Original.Rubeola;
-                        Original.Sarampion = Original.Sarampion;
-                        Original.Varicela = Original.Varicela;                                       
+                        Original.Detalle = Entidad.Detalle;
+                        Original.Paludismo = Entidad.Paludismo;
+                        Original.Parotiditis = Entidad.Parotiditis;
+                        Original.Rubeola = Entidad.Rubeola;
+                        Original.Sarampion = Entidad.Sarampion;
+                        Original.Varicela = Entidad.Varicela;                                       
                     }if (Original == null)
                     {
                         Contexto.AntecedentePersonalesPatologicos.Add(Entidad);
