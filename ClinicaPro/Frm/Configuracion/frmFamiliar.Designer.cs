@@ -169,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmFamiliar";
             this.Text = "Familiares";
             this.Load += new System.EventHandler(this.frmFamiliar_Load);

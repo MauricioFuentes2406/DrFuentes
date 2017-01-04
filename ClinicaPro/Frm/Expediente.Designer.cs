@@ -182,6 +182,9 @@
             // 
             // tabGeneral
             // 
+            this.tabGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabGeneral.Controls.Add(this.tabConsulta);
             this.tabGeneral.Controls.Add(this.tabExploracionFisica);
             this.tabGeneral.Controls.Add(this.tabPage3);
@@ -214,6 +217,9 @@
             this.dgConsulta.AllowUserToAddRows = false;
             this.dgConsulta.AllowUserToDeleteRows = false;
             this.dgConsulta.AllowUserToOrderColumns = true;
+            this.dgConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnVerDetalle});
             this.dgConsulta.Location = new System.Drawing.Point(3, 6);
@@ -247,6 +253,9 @@
             // 
             // tabSubExFisica
             // 
+            this.tabSubExFisica.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabSubExFisica.Controls.Add(this.tabExF_General);
             this.tabSubExFisica.Controls.Add(this.tabCraneo);
             this.tabSubExFisica.Controls.Add(this.tabOjos);
@@ -280,6 +289,9 @@
             this.dgExFisica_General.AllowUserToAddRows = false;
             this.dgExFisica_General.AllowUserToDeleteRows = false;
             this.dgExFisica_General.AllowUserToOrderColumns = true;
+            this.dgExFisica_General.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgExFisica_General.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgExFisica_General.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgExFisica_General.Location = new System.Drawing.Point(6, 6);
@@ -304,6 +316,9 @@
             this.dgCraneo.AllowUserToAddRows = false;
             this.dgCraneo.AllowUserToDeleteRows = false;
             this.dgCraneo.AllowUserToOrderColumns = true;
+            this.dgCraneo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgCraneo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgCraneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCraneo.Location = new System.Drawing.Point(5, 6);
@@ -327,6 +342,9 @@
             this.dgOjos.AllowUserToAddRows = false;
             this.dgOjos.AllowUserToDeleteRows = false;
             this.dgOjos.AllowUserToOrderColumns = true;
+            this.dgOjos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgOjos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgOjos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgOjos.Location = new System.Drawing.Point(5, 6);
@@ -350,9 +368,12 @@
             this.dgOidos.AllowUserToAddRows = false;
             this.dgOidos.AllowUserToDeleteRows = false;
             this.dgOidos.AllowUserToOrderColumns = true;
+            this.dgOidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgOidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgOidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgOidos.Location = new System.Drawing.Point(5, 6);
+            this.dgOidos.Location = new System.Drawing.Point(6, 17);
             this.dgOidos.Name = "dgOidos";
             this.dgOidos.ReadOnly = true;
             this.dgOidos.Size = new System.Drawing.Size(947, 354);
@@ -373,6 +394,9 @@
             this.dgNariz.AllowUserToAddRows = false;
             this.dgNariz.AllowUserToDeleteRows = false;
             this.dgNariz.AllowUserToOrderColumns = true;
+            this.dgNariz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgNariz.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgNariz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgNariz.Location = new System.Drawing.Point(5, 6);
@@ -396,6 +420,9 @@
             this.dgBoca.AllowUserToAddRows = false;
             this.dgBoca.AllowUserToDeleteRows = false;
             this.dgBoca.AllowUserToOrderColumns = true;
+            this.dgBoca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgBoca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgBoca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgBoca.Location = new System.Drawing.Point(5, 6);
@@ -419,6 +446,9 @@
             this.dgCuello.AllowUserToAddRows = false;
             this.dgCuello.AllowUserToDeleteRows = false;
             this.dgCuello.AllowUserToOrderColumns = true;
+            this.dgCuello.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgCuello.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgCuello.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCuello.Location = new System.Drawing.Point(5, 6);
@@ -442,6 +472,9 @@
             this.dgTorax.AllowUserToAddRows = false;
             this.dgTorax.AllowUserToDeleteRows = false;
             this.dgTorax.AllowUserToOrderColumns = true;
+            this.dgTorax.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgTorax.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgTorax.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTorax.Location = new System.Drawing.Point(5, 6);
@@ -465,6 +498,9 @@
             this.dgAbdomen.AllowUserToAddRows = false;
             this.dgAbdomen.AllowUserToDeleteRows = false;
             this.dgAbdomen.AllowUserToOrderColumns = true;
+            this.dgAbdomen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgAbdomen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgAbdomen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAbdomen.Location = new System.Drawing.Point(5, 6);
@@ -488,6 +524,9 @@
             this.dgApaDigestivo.AllowUserToAddRows = false;
             this.dgApaDigestivo.AllowUserToDeleteRows = false;
             this.dgApaDigestivo.AllowUserToOrderColumns = true;
+            this.dgApaDigestivo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgApaDigestivo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgApaDigestivo.Location = new System.Drawing.Point(5, 6);
             this.dgApaDigestivo.Name = "dgApaDigestivo";
@@ -510,6 +549,9 @@
             this.dgCoordinacion.AllowUserToAddRows = false;
             this.dgCoordinacion.AllowUserToDeleteRows = false;
             this.dgCoordinacion.AllowUserToOrderColumns = true;
+            this.dgCoordinacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgCoordinacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgCoordinacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCoordinacion.Location = new System.Drawing.Point(5, 6);
@@ -534,6 +576,9 @@
             this.dgEstadoVivienda.AllowUserToAddRows = false;
             this.dgEstadoVivienda.AllowUserToDeleteRows = false;
             this.dgEstadoVivienda.AllowUserToOrderColumns = true;
+            this.dgEstadoVivienda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgEstadoVivienda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEstadoVivienda.Location = new System.Drawing.Point(7, 27);
             this.dgEstadoVivienda.Name = "dgEstadoVivienda";
@@ -554,6 +599,9 @@
             // 
             // dgGinecoObstreticos
             // 
+            this.dgGinecoObstreticos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgGinecoObstreticos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgGinecoObstreticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgGinecoObstreticos.Location = new System.Drawing.Point(6, 43);
@@ -574,6 +622,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabEstadoEmocional);
             this.tabControl1.Controls.Add(this.tabSensibilidad);
             this.tabControl1.Controls.Add(this.tabParCraneales);
@@ -601,6 +652,9 @@
             this.dgEstadoEmocional.AllowUserToAddRows = false;
             this.dgEstadoEmocional.AllowUserToDeleteRows = false;
             this.dgEstadoEmocional.AllowUserToOrderColumns = true;
+            this.dgEstadoEmocional.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgEstadoEmocional.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgEstadoEmocional.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEstadoEmocional.Location = new System.Drawing.Point(6, 6);
@@ -625,6 +679,9 @@
             this.dgSensibilidad.AllowUserToAddRows = false;
             this.dgSensibilidad.AllowUserToDeleteRows = false;
             this.dgSensibilidad.AllowUserToOrderColumns = true;
+            this.dgSensibilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgSensibilidad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgSensibilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSensibilidad.Location = new System.Drawing.Point(6, 6);
@@ -648,6 +705,9 @@
             this.dgParesCraneales.AllowUserToAddRows = false;
             this.dgParesCraneales.AllowUserToDeleteRows = false;
             this.dgParesCraneales.AllowUserToOrderColumns = true;
+            this.dgParesCraneales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgParesCraneales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgParesCraneales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgParesCraneales.Location = new System.Drawing.Point(6, 6);
@@ -671,6 +731,9 @@
             this.dgReflejos.AllowUserToAddRows = false;
             this.dgReflejos.AllowUserToDeleteRows = false;
             this.dgReflejos.AllowUserToOrderColumns = true;
+            this.dgReflejos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgReflejos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgReflejos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgReflejos.Location = new System.Drawing.Point(6, 6);
@@ -694,6 +757,9 @@
             this.dgGlasgow.AllowUserToAddRows = false;
             this.dgGlasgow.AllowUserToDeleteRows = false;
             this.dgGlasgow.AllowUserToOrderColumns = true;
+            this.dgGlasgow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgGlasgow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgGlasgow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgGlasgow.Location = new System.Drawing.Point(6, 6);
@@ -718,6 +784,9 @@
             this.dgServicios.AllowUserToAddRows = false;
             this.dgServicios.AllowUserToDeleteRows = false;
             this.dgServicios.AllowUserToOrderColumns = true;
+            this.dgServicios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgServicios.Location = new System.Drawing.Point(2, 30);
@@ -739,6 +808,9 @@
             // 
             // tabPatologicos
             // 
+            this.tabPatologicos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPatologicos.Controls.Add(this.tabPatologico);
             this.tabPatologicos.Controls.Add(this.tabHereditario);
             this.tabPatologicos.Controls.Add(this.tabDrogaVacuna);
@@ -765,6 +837,9 @@
             this.dgAntePatologicos.AllowUserToAddRows = false;
             this.dgAntePatologicos.AllowUserToDeleteRows = false;
             this.dgAntePatologicos.AllowUserToOrderColumns = true;
+            this.dgAntePatologicos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgAntePatologicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgAntePatologicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAntePatologicos.Location = new System.Drawing.Point(6, 6);
@@ -789,6 +864,9 @@
             this.dgHereditario.AllowUserToAddRows = false;
             this.dgHereditario.AllowUserToDeleteRows = false;
             this.dgHereditario.AllowUserToOrderColumns = true;
+            this.dgHereditario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgHereditario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgHereditario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgHereditario.Location = new System.Drawing.Point(6, 6);
@@ -813,6 +891,8 @@
             this.dgDroga.AllowUserToAddRows = false;
             this.dgDroga.AllowUserToDeleteRows = false;
             this.dgDroga.AllowUserToOrderColumns = true;
+            this.dgDroga.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgDroga.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgDroga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDroga.Location = new System.Drawing.Point(6, 6);
@@ -826,6 +906,8 @@
             this.dgVacunas.AllowUserToAddRows = false;
             this.dgVacunas.AllowUserToDeleteRows = false;
             this.dgVacunas.AllowUserToOrderColumns = true;
+            this.dgVacunas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgVacunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVacunas.Location = new System.Drawing.Point(479, 6);
@@ -850,6 +932,8 @@
             this.dgTabaco.AllowUserToAddRows = false;
             this.dgTabaco.AllowUserToDeleteRows = false;
             this.dgTabaco.AllowUserToOrderColumns = true;
+            this.dgTabaco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgTabaco.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgTabaco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTabaco.Location = new System.Drawing.Point(479, 6);
@@ -863,6 +947,8 @@
             this.dgAlchol.AllowUserToAddRows = false;
             this.dgAlchol.AllowUserToDeleteRows = false;
             this.dgAlchol.AllowUserToOrderColumns = true;
+            this.dgAlchol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgAlchol.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgAlchol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAlchol.Location = new System.Drawing.Point(6, 6);

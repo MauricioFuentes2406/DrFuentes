@@ -168,6 +168,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmRespuestaGenerales";
             this.Text = "Respuesta Generales";
             this.Load += new System.EventHandler(this.frmRespuestaGenerales_Load);

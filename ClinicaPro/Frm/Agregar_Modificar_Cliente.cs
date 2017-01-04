@@ -24,7 +24,10 @@ namespace Frm
         public  int idCliente { get; set; }
         public int idTipoUsuario { get; set; }
         public DialogResult abrirConsulta { get; set; }  // Ok - abre frmAgregarConsulta         
-
+         
+        /// <summary>
+        /// Instancia Cliente, cuado se actualizar recupera los Datos
+        /// </summary>
         public Cliente paraActualizar;     
 
         public Agregar_Modificar_Cliente()  //Constructor
@@ -62,7 +65,7 @@ namespace Frm
             /// 
             ///</summary>
            
-            Boolean isModificar = false;
+            Boolean isModificar = ClinicaPro.General.accion.Agregar;
            
             ClinicaPro.Entities.Cliente cliente = new ClinicaPro.Entities.Cliente();
 
@@ -83,25 +86,14 @@ namespace Frm
 
             if (paraActualizar != null) 
             {
-              isModificar = true;
+              isModificar = ClinicaPro.General.accion.Modificar;
               cliente.IdCliente = this.idCliente; 
             }
-
+            // Si es Agregar Pregunta si abrir Formulario 
             ClienteDB clienteAgregar = new ClienteDB();
             this.idCliente= clienteAgregar.Agregar_Modificar(cliente, isModificar);
-           
-            this.abrirConsulta= MessageBox.Show(Mensajes.Agregar_Modificar + Mensajes.DeseaAbrirFRM_AgregarConsulta,
-                                        "Agregar_Modificar CLiente", 
-                                          MessageBoxButtons.OKCancel,
-                                            MessageBoxIcon.Information);
-            if (abrirConsulta == DialogResult.OK && isModificar ==  false)
-            {
-                this.Close();  //MantenimientoCliente esta el codigo que abre Consulta
-            }
-            else 
-            {
-                Limpiar_Datos();
-            }
+
+            DesplegarMensajeDespuesGuardar(isModificar);            
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -226,7 +218,31 @@ namespace Frm
 #endregion        
 #endregion
 #region Metodos
-           
+           private void DesplegarMensajeDespuesGuardar(bool isModificar)
+        {
+            if (isModificar== false)//SI es nuevo Progunta si desea abrir frmConsulta
+            {
+                this.abrirConsulta = MessageBox.Show(Mensajes.Agregar_Modificar + Mensajes.DeseaAbrirFRM_AgregarConsulta,
+                                 "Agregar_Modificar CLiente",
+                                   MessageBoxButtons.OKCancel,
+                                     MessageBoxIcon.Information);
+                if (abrirConsulta == DialogResult.OK)
+                {
+                    this.Close();  //MantenimientoCliente esta el codigo que abre Consulta
+                }
+                else
+                {
+                    Limpiar_Datos();
+                }
+            }
+            else 
+            {
+                MessageBox.Show(Mensajes.Agregar_Modificar,
+                                    "Agregar_Modificar CLiente",
+                                      MessageBoxButtons.OKCancel,
+                                        MessageBoxIcon.Information);
+            }
+        }
         public void Cargar_Todos_Combo()  // Se llama en el evento Load
         {
             Cargar_cbEstadoCivil();
@@ -321,8 +337,10 @@ namespace Frm
             this.txtNombre.Text = paraActualizar.Nombre;
             this.txtPrimer_Apellido.Text = paraActualizar.Apellido1;
             this.txtSegundo_Apellido.Text = paraActualizar.Apellido2;
-            this.txtCelular.Text = paraActualizar.Celular.ToString();
-            this.txtCedula.Text = paraActualizar.Cedula.ToString();
+            if (txtCelular != null)
+            { this.txtCelular.Text = paraActualizar.Celular.ToString(); }
+            if (paraActualizar.Cedula != null)
+            { this.txtCedula.Text = (string)paraActualizar.Cedula; }
             this.txtEdad.Value = paraActualizar.Edad;
             this.txtCiudad.Text = paraActualizar.Ciudad;
             this.txtEmail.Text = paraActualizar.Email;            
@@ -331,8 +349,9 @@ namespace Frm
 
             if (paraActualizar.Estado != null) { cbEstadoCivil.SelectedValue = paraActualizar.Estado; }
             if (paraActualizar.isExtranjero) { this.cbExtrajero.SelectedItem = "Si"; }           
-            if (paraActualizar.Sexo == "M") { this.rbMujer.Select(); }          
+            if (paraActualizar.Sexo == "M") { this.rbMujer.Select(); }                      
         }        
+        
         public String getNombreCompleto()
         {
             return txtNombre.Text + " " + txtPrimer_Apellido.Text + " " + txtSegundo_Apellido.Text;
