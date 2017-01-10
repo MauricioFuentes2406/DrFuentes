@@ -39,26 +39,42 @@ namespace Frm
         }
         private void btnEViviendaDetalle_Click(object sender, EventArgs e)
         {
-            if (cedulaChek() )
+            try
             {
-                buscarCedula();
+                if (cedulaChek())
+                {
+                    buscarCedula();
+                }
+                else if (nombreChek())
+                {
+                    buscarNombre();
+                }
+                else if (apellidosChek())
+                {
+                    buscarApellido();
+                }
+                else if (ciudadChek())
+                {
+                    buscarCiudad();
+                }
+                else if (idClienteChek())
+                {
+                    buscarIdCliente();
+                }    
+                else if (rangoEdadChek() )
+                {
+                    buscarRangoEdad();
+                }
             }
-            else if (nombreChek() ) 
+                catch(NullReferenceException nullException)
+                    {
+                        ClinicaPro.BL.manejaExcepcionesDB.manejaNullReference(nullException);                        
+                    }
+            catch (Exception)
             {
-                buscarNombre();
-            }
-            else if ( apellidosChek() )
-            {
-                buscarApellido();
-            }else if ( ciudadChek() )
-            {
-                buscarCiudad();
-            }
-            else if (idClienteChek())
-            {
-                buscarIdCliente();
-            }           
-
+                
+                throw;
+            }          
             // Genero
             if (rbHombre.Checked)
             {
@@ -74,19 +90,21 @@ namespace Frm
         private void buscarCedula()
         {
             lista_filtrada = (from EntidadLocal in lista_filtrada
-                              where EntidadLocal.Cedula.Contains(txtCedula.Text)
-                              select EntidadLocal).ToList();
-        }
+                               where EntidadLocal.Cedula != null &&
+                                EntidadLocal.Cedula.Contains(txtCedula.Text)
+                                 select EntidadLocal).ToList();
+        }        
         private void buscarNombre()
-        {
+        {            
             lista_filtrada = (from EntidadLocal in lista_filtrada
-                              where EntidadLocal.Nombre.Contains(txtNombre.Text)
+                              where EntidadLocal.Nombre.ToLower().Contains(txtNombre.Text.ToLower())
                               select EntidadLocal).ToList();
         }
         private void buscarApellido()
         {
             lista_filtrada = (from EntidadLocal in lista_filtrada
-                              where EntidadLocal.Apellido1.Contains(txtApellido1.Text) || EntidadLocal.Apellido2.Contains(txtApellido1.Text)
+                              where EntidadLocal.Apellido1.ToLower().Contains(txtApellido1.Text.ToLower()) 
+                                 || EntidadLocal.Apellido2.ToLower().Contains(txtApellido1.Text.ToLower())
                               select EntidadLocal).ToList();
         }
         private void buscarCiudad()
@@ -113,10 +131,17 @@ namespace Frm
                               where EntidadLocal.IdCliente == (int)txtIdCliente.Value
                               select EntidadLocal).ToList();
         }
+        private void buscarRangoEdad()
+        {
+              lista_filtrada = (from EntidadLocal in lista_filtrada
+                              where EntidadLocal.Edad >= txtEdadMinima.Value &&
+                                    EntidadLocal.Edad <= txtEdadMaxima.Value 
+                              select EntidadLocal).ToList();
+        }
         private void ActivarAutoCompletetxtCiudad()
         {
             ClinicaPro.BL.AutoCompleteTextControl.Activar(txtCiudad, ClinicaPro.DB.Cliente.ClienteDB.ListarNombresCiudad());
-        }
+        }       
         #region chekControles
         /// <summary>
         ///  Revisa si los controles estan vacios
@@ -147,7 +172,17 @@ namespace Frm
                 return false;
             else 
                 return true;
-        }        
+        }    
+        /// <summary>
+        /// Revisa que Edad Minima y Edad Maxima sean mayores a Cero
+        /// </summary>
+        /// <returns></returns>
+        private bool rangoEdadChek()
+        {
+            if (txtEdadMinima.Value == 0 && txtEdadMaxima.Value == 0)
+                return false;
+            return true;
+        }
         #endregion
     }
 }

@@ -24,6 +24,7 @@ namespace Frm
 
     public partial class AgregarConsulta : Form
     {
+        //        ~~~~~~~~~~~~~~~~~~ Atributos  Globales  ~~~~~~~~~~~~~~~~~~~~~~~~
 
         #region Atributos
         public int idCliente { get; set; }
@@ -42,6 +43,9 @@ namespace Frm
         /// </summary>
         private bool _isLLenadoRapido;
         #endregion
+
+        //        ~~~~~~~~~~~~~~~~~~ Constructores   ~~~~~~~~~~~~~~~~~~~~~~~~
+
         public AgregarConsulta(int idCliente)
         {
             InitializeComponent();
@@ -94,7 +98,8 @@ namespace Frm
             }
             else
             {
-                
+                try
+                {
                     if (isNuevaConsulta() && _isLLenadoRapido == false)
                     {
                         GuardarTodos(ClinicaPro.General.accion.Agregar);
@@ -111,7 +116,11 @@ namespace Frm
                     MessageBox.Show(Mensajes.Agregar_Modificar,
                                             "Agregar Consulta",
                                               MessageBoxButtons.OKCancel,
-                                                MessageBoxIcon.Information);                               
+                                                MessageBoxIcon.Information);
+                }
+                catch (Exception )
+                { 
+                }        
             }
         }
         private void btnCalcularCosto_Click(object sender, EventArgs e)  // Podria Calcular Costo x Invetario ahorita no
@@ -120,8 +129,8 @@ namespace Frm
         }
         #region Metodos
         /// <summary>
-        /// Verifica si esta creando una nueva consulta o si  una existente, se verifica mediante el idConsulta Global
-        /// </summary>
+        /// Verifica si esta creando una nueva consulta o si  una existente, se verifica mediante el idConsulta Global        
+        /// </summary>      
         public bool isNuevaConsulta()
         {
             if (this.idConsulta == -1) return true;

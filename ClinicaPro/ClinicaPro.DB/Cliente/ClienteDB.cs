@@ -31,7 +31,7 @@ namespace ClinicaPro.DB.Cliente
                 ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities();
                 if (isModificar)
                 {
-                    Entities.Cliente Original = Contexto.Clientes.First(EntidadLocal => EntidadLocal.IdCliente == cliente.IdCliente);
+                    Entities.Cliente Original = Contexto.Clientes.Find(cliente.IdCliente);
                     if (Original != null)
                     {
                         Original.Nombre = cliente.Nombre;
@@ -47,6 +47,9 @@ namespace ClinicaPro.DB.Cliente
                         Original.Email = cliente.Email;
                         Original.Ciudad = cliente.Ciudad;
                     }
+                    else {
+                            return NosePudoActualizar();
+                         }                   
                 }
                 else
                 {
@@ -73,28 +76,31 @@ namespace ClinicaPro.DB.Cliente
             }
         }
         public bool Eliminar(int idCliente, int idTipoUsuario)
-        {
-            ///<summary>
-            ///1- Recibe id
-            ///2- Busca la tupla asociada con el registro
-            ///3- Verifica que no este vacio (retorna false)
-            ///4- Elimina (retorna true)
-            /// </summary>
-
+        {           
             using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities())
             {
-                Entities.Cliente borrarCliente = (from tabla in Contexto.Clientes where tabla.IdCliente == idCliente select tabla).First();
+               try
+               { 
+                Entities.Cliente borrarCliente = Contexto.Clientes.Find(idCliente);
                 if (borrarCliente != null)
                 {
-                    Contexto.Clientes.Remove(borrarCliente);
-                    Contexto.SaveChanges();
-                    return true;
+                   
+                        Contexto.Clientes.Remove(borrarCliente);
+                        Contexto.SaveChanges();
+                        return true;                    
+                    
                 }
                 else  
                 {                    
                     MessageBox.Show(Mensajes.No_Se_Elimina_No_Se_Encontro, Mensajes.Numero_Paciente_NoExiste, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
-                }
+                }                   
+               }
+                catch(Exception ex)
+               {
+                   MessageBox.Show("Nose pudo Eliminar charita");
+                   return false;
+               }               
             }
         }
         public  List<Entities.Cliente> Listar()                                     //AsNoTracking()
@@ -125,6 +131,7 @@ namespace ClinicaPro.DB.Cliente
                 manejaExcepcionesDB.manejaExcepcion(ex);
                 throw;
             }
+           
         }
         /// <summary>
         /// Trae una lista con los distintos nombres de las ciudades de clientes existentes
@@ -138,7 +145,17 @@ namespace ClinicaPro.DB.Cliente
                                       select tabla.Ciudad).Distinct().ToList();
                 return lista;
             }           
-        }
+        }              
         #endregion
+        /// <summary>
+        /// Si no existe algun registro en la DB
+        /// </summary>
+        /// <returns></returns>
+        private int NosePudoActualizar()
+        {
+            MessageBox.Show(Mensajes.No_Se_Actualizo,Mensajes.No_hay_Cliente,
+                                               MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return -1;
+        }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteBuscar));
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.btnEViviendaDetalle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtIdCliente = new System.Windows.Forms.NumericUpDown();
@@ -44,33 +43,36 @@
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.gbRangoEdad = new System.Windows.Forms.GroupBox();
+            this.txtEdadMinima = new System.Windows.Forms.NumericUpDown();
+            this.txtEdadMaxima = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.gbRangoEdad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMinima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(22, 59);
-            this.txtCedula.MaxLength = 11;
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(109, 20);
-            this.txtCedula.TabIndex = 0;
             // 
             // btnEViviendaDetalle
             // 
             this.btnEViviendaDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEViviendaDetalle.Image = global::Frm.Properties.Resources.search;
-            this.btnEViviendaDetalle.Location = new System.Drawing.Point(169, 258);
+            this.btnEViviendaDetalle.Location = new System.Drawing.Point(164, 333);
             this.btnEViviendaDetalle.Name = "btnEViviendaDetalle";
             this.btnEViviendaDetalle.Size = new System.Drawing.Size(46, 40);
-            this.btnEViviendaDetalle.TabIndex = 1;
+            this.btnEViviendaDetalle.TabIndex = 0;
             this.btnEViviendaDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEViviendaDetalle.UseVisualStyleBackColor = true;
             this.btnEViviendaDetalle.Click += new System.EventHandler(this.btnEViviendaDetalle_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCedula);
+            this.groupBox1.Controls.Add(this.gbRangoEdad);
             this.groupBox1.Controls.Add(this.txtIdCliente);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtCiudad);
@@ -81,10 +83,9 @@
             this.groupBox1.Controls.Add(this.txtApellido1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Location = new System.Drawing.Point(22, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 228);
+            this.groupBox1.Size = new System.Drawing.Size(337, 301);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Métodos  de Filtrado";
@@ -94,7 +95,7 @@
             this.txtIdCliente.Location = new System.Drawing.Point(176, 125);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(125, 20);
-            this.txtIdCliente.TabIndex = 4;
+            this.txtIdCliente.TabIndex = 5;
             // 
             // label5
             // 
@@ -111,7 +112,7 @@
             this.txtCiudad.MaxLength = 50;
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(125, 20);
-            this.txtCiudad.TabIndex = 5;
+            this.txtCiudad.TabIndex = 6;
             // 
             // label4
             // 
@@ -164,7 +165,7 @@
             this.groupBox2.Location = new System.Drawing.Point(176, 19);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(142, 79);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sexo*";
             // 
@@ -201,12 +202,65 @@
             this.txtNombre.Size = new System.Drawing.Size(109, 20);
             this.txtNombre.TabIndex = 1;
             // 
+            // gbRangoEdad
+            // 
+            this.gbRangoEdad.Controls.Add(this.label7);
+            this.gbRangoEdad.Controls.Add(this.label6);
+            this.gbRangoEdad.Controls.Add(this.txtEdadMaxima);
+            this.gbRangoEdad.Controls.Add(this.txtEdadMinima);
+            this.gbRangoEdad.Location = new System.Drawing.Point(22, 226);
+            this.gbRangoEdad.Name = "gbRangoEdad";
+            this.gbRangoEdad.Size = new System.Drawing.Size(279, 57);
+            this.gbRangoEdad.TabIndex = 3;
+            this.gbRangoEdad.TabStop = false;
+            this.gbRangoEdad.Text = "Rango Edad";
+            // 
+            // txtEdadMinima
+            // 
+            this.txtEdadMinima.Location = new System.Drawing.Point(58, 19);
+            this.txtEdadMinima.Name = "txtEdadMinima";
+            this.txtEdadMinima.Size = new System.Drawing.Size(51, 20);
+            this.txtEdadMinima.TabIndex = 0;
+            // 
+            // txtEdadMaxima
+            // 
+            this.txtEdadMaxima.Location = new System.Drawing.Point(183, 21);
+            this.txtEdadMaxima.Name = "txtEdadMaxima";
+            this.txtEdadMaxima.Size = new System.Drawing.Size(51, 20);
+            this.txtEdadMaxima.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Minima";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(134, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Máxima";
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(22, 59);
+            this.txtCedula.Mask = "0 0000 0000";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(109, 20);
+            this.txtCedula.TabIndex = 0;
+            // 
             // ClienteBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(411, 310);
+            this.ClientSize = new System.Drawing.Size(411, 385);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEViviendaDetalle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -221,13 +275,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIdCliente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbRangoEdad.ResumeLayout(false);
+            this.gbRangoEdad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMinima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Button btnEViviendaDetalle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
@@ -242,5 +299,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown txtIdCliente;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox gbRangoEdad;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown txtEdadMaxima;
+        private System.Windows.Forms.NumericUpDown txtEdadMinima;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
     }
 }

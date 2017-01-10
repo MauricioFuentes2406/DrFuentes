@@ -52,19 +52,18 @@ namespace ClinicaPro.DB.Consulta
        }
       public bool Eliminar(int idRespuestaGeneral, int idTipoUsuario)
         {
-            if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(idRespuestaGeneral))
-            {
+          
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
                 {
-                    Entities.Consulta_RespuestasGenerales rgenerales = Contexto.Consulta_RespuestasGenerales.Where(EntidadLocal => EntidadLocal.idRespuestaGeneral == idRespuestaGeneral).First();
+                    if (ValidarEliminar(Contexto,idRespuestaGeneral)== false)
+                    {Entities.Consulta_RespuestasGenerales rgenerales = Contexto.Consulta_RespuestasGenerales.Where(EntidadLocal => EntidadLocal.idRespuestaGeneral == idRespuestaGeneral).First();
                     Contexto.Consulta_RespuestasGenerales.Remove(rgenerales);
                     Contexto.SaveChanges();
                     return true;
-                }
-            }
-            else return false;
+                    }
+                    else return false;
+                }            
         }
-
        public List<Entities.Consulta_RespuestasGenerales> Listar()
         {
             ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
@@ -74,5 +73,105 @@ namespace ClinicaPro.DB.Consulta
             Contexto.Dispose();
             return lista;
         }
+       /// <summary>
+       /// Valida Eliminar , true hay un hallazgo , false todo bien
+       /// </summary>
+       /// <param name="Contexto"></param>
+       /// <param name="idVacuna"></param>
+       /// <returns></returns>
+       private bool ValidarEliminar(Entities.ClinicaDrFuentesEntities Contexto, int idRespuestaGeneral)
+       {
+           if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(idRespuestaGeneral))
+           {
+               if (Contexto.Consulta_RespuestasGenerales.Find(idRespuestaGeneral) == null)
+                   return true;
+               if (ValidarEliminar_SiExisteLLaveForanea(idRespuestaGeneral))
+                   return true;
+               else return false;
+           }
+           else
+           {
+               return true;
+           }
+
+       }
+       /// <summary>
+       /// Valida si existe como llave foranea en algún registor
+       /// </summary>
+       /// <remarks>En este caso se relaciona con 2 tablas </remarks>
+       /// <param name="Contexto"></param>
+       /// <param name="idRespuestaGeneral"></param>
+       /// <returns></returns>
+       private bool ValidarEliminar_SiExisteLLaveForanea (int idRespuestaGeneral)
+       {
+           var list = ListasConIdRespuestaGeneral_ToraxPulmones(idRespuestaGeneral);
+           if (list != null)
+           {
+               MensajeSiExisteLlaveForanea(list);
+               return true;
+           }
+           else
+           {
+               var list2 = ListasConIdRespuestaGeneral_AntecedentePersonal(idRespuestaGeneral);
+               if(list2 != null)
+               {
+                   MensajeSiExisteLlaveForanea(list);
+                   return true;
+               }
+               return false;
+           }
+       }
+       private List<Entities.ConsultaToraxPulmone> ListasConIdRespuestaGeneral_ToraxPulmones(int idRespuestaGeneral)
+       {
+           using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+               return Contexto.ConsultaToraxPulmones.Where
+                      (EntidadLocal => EntidadLocal.AscultacionMurmulloVescular == idRespuestaGeneral
+                                      || EntidadLocal.ExpasibilidadToraxica == idRespuestaGeneral
+                                       || EntidadLocal.RespiracionDiafragmaticaAbdominal == idRespuestaGeneral
+                                        || EntidadLocal.RuidosAgregados == idRespuestaGeneral).ToList();
+           }
+       }
+       private List<Entities.AntecedentePersonalesPatologico> ListasConIdRespuestaGeneral_AntecedentePersonal(int idRespuestaGeneral)
+       {
+           using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+               return Contexto.AntecedentePersonalesPatologicos.Where
+                      (EntidadLocal => EntidadLocal.Bronquitis == idRespuestaGeneral
+                                      || EntidadLocal.Fiebre_Reumatica == idRespuestaGeneral
+                                       || EntidadLocal.Paludismo == idRespuestaGeneral
+                                        || EntidadLocal.Parotiditis == idRespuestaGeneral
+                                        || EntidadLocal.Rubeola == idRespuestaGeneral
+                                        || EntidadLocal.Sarampion == idRespuestaGeneral
+                                        || EntidadLocal.Varicela == idRespuestaGeneral
+                                        ).ToList();
+           }
+       }
+       private void MensajeSiExisteLlaveForanea(List<Entities.ConsultaToraxPulmone> list)
+       {
+           String datos = String.Empty;
+           foreach (var item in list)
+           {
+               datos += "\n Número Consulta:" + "  " + item.IdConsulta;
+           }
+           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+               ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
+               , System.Windows.Forms.MessageBoxButtons.OK
+               , System.Windows.Forms.MessageBoxIcon.Warning
+               );
+       }
+       private void MensajeSiExisteLlaveForanea(List<Entities.AntecedentePersonalesPatologico> list)
+       {
+           String datos = String.Empty;
+           foreach (var item in list)
+           {
+               datos += "\n Número Consulta:" + "  " + item.IdConsulta;
+           }
+           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+               ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
+               , System.Windows.Forms.MessageBoxButtons.OK
+               , System.Windows.Forms.MessageBoxIcon.Warning
+               );
+       }
     }
 }

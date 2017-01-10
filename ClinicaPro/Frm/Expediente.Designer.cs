@@ -57,11 +57,11 @@
             this.dgApaDigestivo = new System.Windows.Forms.DataGridView();
             this.tabCoordinacioMarcha = new System.Windows.Forms.TabPage();
             this.dgCoordinacion = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabEstadoVivienda = new System.Windows.Forms.TabPage();
             this.dgEstadoVivienda = new System.Windows.Forms.DataGridView();
             this.tabGineco = new System.Windows.Forms.TabPage();
             this.dgGinecoObstreticos = new System.Windows.Forms.DataGridView();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabSentidos5 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEstadoEmocional = new System.Windows.Forms.TabPage();
             this.dgEstadoEmocional = new System.Windows.Forms.DataGridView();
@@ -73,7 +73,7 @@
             this.dgReflejos = new System.Windows.Forms.DataGridView();
             this.tabGlasgow = new System.Windows.Forms.TabPage();
             this.dgGlasgow = new System.Windows.Forms.DataGridView();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabServicios = new System.Windows.Forms.TabPage();
             this.dgServicios = new System.Windows.Forms.DataGridView();
             this.tabAntecedentes = new System.Windows.Forms.TabPage();
             this.tabPatologicos = new System.Windows.Forms.TabControl();
@@ -113,6 +113,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMensajeInformativo = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.tabAlergias = new System.Windows.Forms.TabPage();
+            this.dgAlergias = new System.Windows.Forms.DataGridView();
             this.tabGeneral.SuspendLayout();
             this.tabConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsulta)).BeginInit();
@@ -140,11 +142,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgApaDigestivo)).BeginInit();
             this.tabCoordinacioMarcha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCoordinacion)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.tabEstadoVivienda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEstadoVivienda)).BeginInit();
             this.tabGineco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGinecoObstreticos)).BeginInit();
-            this.tabPage5.SuspendLayout();
+            this.tabSentidos5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabEstadoEmocional.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEstadoEmocional)).BeginInit();
@@ -156,7 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgReflejos)).BeginInit();
             this.tabGlasgow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGlasgow)).BeginInit();
-            this.tabPage7.SuspendLayout();
+            this.tabServicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.tabAntecedentes.SuspendLayout();
             this.tabPatologicos.SuspendLayout();
@@ -178,6 +180,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).BeginInit();
+            this.tabAlergias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -187,11 +191,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabGeneral.Controls.Add(this.tabConsulta);
             this.tabGeneral.Controls.Add(this.tabExploracionFisica);
-            this.tabGeneral.Controls.Add(this.tabPage3);
+            this.tabGeneral.Controls.Add(this.tabEstadoVivienda);
             this.tabGeneral.Controls.Add(this.tabGineco);
-            this.tabGeneral.Controls.Add(this.tabPage5);
-            this.tabGeneral.Controls.Add(this.tabPage7);
+            this.tabGeneral.Controls.Add(this.tabSentidos5);
+            this.tabGeneral.Controls.Add(this.tabServicios);
             this.tabGeneral.Controls.Add(this.tabAntecedentes);
+            this.tabGeneral.Controls.Add(this.tabAlergias);
             this.tabGeneral.Controls.Add(this.tabPage8);
             this.tabGeneral.Controls.Add(this.tabPage9);
             this.tabGeneral.Controls.Add(this.tabPage10);
@@ -560,16 +565,16 @@
             this.dgCoordinacion.Size = new System.Drawing.Size(947, 354);
             this.dgCoordinacion.TabIndex = 9;
             // 
-            // tabPage3
+            // tabEstadoVivienda
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.dgEstadoVivienda);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(960, 392);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "EstadoVivienda";
+            this.tabEstadoVivienda.BackColor = System.Drawing.Color.White;
+            this.tabEstadoVivienda.Controls.Add(this.dgEstadoVivienda);
+            this.tabEstadoVivienda.Location = new System.Drawing.Point(4, 22);
+            this.tabEstadoVivienda.Name = "tabEstadoVivienda";
+            this.tabEstadoVivienda.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEstadoVivienda.Size = new System.Drawing.Size(960, 392);
+            this.tabEstadoVivienda.TabIndex = 2;
+            this.tabEstadoVivienda.Text = "EstadoVivienda";
             // 
             // dgEstadoVivienda
             // 
@@ -580,7 +585,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgEstadoVivienda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEstadoVivienda.Location = new System.Drawing.Point(7, 27);
+            this.dgEstadoVivienda.Location = new System.Drawing.Point(10, 21);
             this.dgEstadoVivienda.Name = "dgEstadoVivienda";
             this.dgEstadoVivienda.ReadOnly = true;
             this.dgEstadoVivienda.Size = new System.Drawing.Size(947, 359);
@@ -604,21 +609,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgGinecoObstreticos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgGinecoObstreticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgGinecoObstreticos.Location = new System.Drawing.Point(6, 43);
+            this.dgGinecoObstreticos.Location = new System.Drawing.Point(0, 21);
             this.dgGinecoObstreticos.Name = "dgGinecoObstreticos";
-            this.dgGinecoObstreticos.Size = new System.Drawing.Size(932, 316);
+            this.dgGinecoObstreticos.Size = new System.Drawing.Size(958, 316);
             this.dgGinecoObstreticos.TabIndex = 0;
             // 
-            // tabPage5
+            // tabSentidos5
             // 
-            this.tabPage5.Controls.Add(this.tabControl1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(960, 392);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Sentidos";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabSentidos5.Controls.Add(this.tabControl1);
+            this.tabSentidos5.Location = new System.Drawing.Point(4, 22);
+            this.tabSentidos5.Name = "tabSentidos5";
+            this.tabSentidos5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSentidos5.Size = new System.Drawing.Size(960, 392);
+            this.tabSentidos5.TabIndex = 4;
+            this.tabSentidos5.Text = "Sentidos";
+            this.tabSentidos5.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -768,16 +773,16 @@
             this.dgGlasgow.Size = new System.Drawing.Size(947, 354);
             this.dgGlasgow.TabIndex = 5;
             // 
-            // tabPage7
+            // tabServicios
             // 
-            this.tabPage7.Controls.Add(this.dgServicios);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(960, 392);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Servicios";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.tabServicios.Controls.Add(this.dgServicios);
+            this.tabServicios.Location = new System.Drawing.Point(4, 22);
+            this.tabServicios.Name = "tabServicios";
+            this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
+            this.tabServicios.Size = new System.Drawing.Size(960, 392);
+            this.tabServicios.TabIndex = 6;
+            this.tabServicios.Text = "Servicios";
+            this.tabServicios.UseVisualStyleBackColor = true;
             // 
             // dgServicios
             // 
@@ -1209,6 +1214,32 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // tabAlergias
+            // 
+            this.tabAlergias.Controls.Add(this.dgAlergias);
+            this.tabAlergias.Location = new System.Drawing.Point(4, 22);
+            this.tabAlergias.Name = "tabAlergias";
+            this.tabAlergias.Size = new System.Drawing.Size(960, 392);
+            this.tabAlergias.TabIndex = 10;
+            this.tabAlergias.Text = "Alergias";
+            this.tabAlergias.UseVisualStyleBackColor = true;
+            // 
+            // dgAlergias
+            // 
+            this.dgAlergias.AllowUserToAddRows = false;
+            this.dgAlergias.AllowUserToDeleteRows = false;
+            this.dgAlergias.AllowUserToOrderColumns = true;
+            this.dgAlergias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgAlergias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgAlergias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAlergias.Location = new System.Drawing.Point(7, 20);
+            this.dgAlergias.Name = "dgAlergias";
+            this.dgAlergias.ReadOnly = true;
+            this.dgAlergias.Size = new System.Drawing.Size(947, 359);
+            this.dgAlergias.TabIndex = 7;
+            // 
             // Expediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1254,11 +1285,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgApaDigestivo)).EndInit();
             this.tabCoordinacioMarcha.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgCoordinacion)).EndInit();
-            this.tabPage3.ResumeLayout(false);
+            this.tabEstadoVivienda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgEstadoVivienda)).EndInit();
             this.tabGineco.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgGinecoObstreticos)).EndInit();
-            this.tabPage5.ResumeLayout(false);
+            this.tabSentidos5.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabEstadoEmocional.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgEstadoEmocional)).EndInit();
@@ -1270,7 +1301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgReflejos)).EndInit();
             this.tabGlasgow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgGlasgow)).EndInit();
-            this.tabPage7.ResumeLayout(false);
+            this.tabServicios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.tabAntecedentes.ResumeLayout(false);
             this.tabPatologicos.ResumeLayout(false);
@@ -1293,6 +1324,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).EndInit();
+            this.tabAlergias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1303,14 +1336,14 @@
         private System.Windows.Forms.TabControl tabGeneral;
         private System.Windows.Forms.TabPage tabConsulta;
         private System.Windows.Forms.TabPage tabGineco;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabEstadoVivienda;
         private System.Windows.Forms.TabPage tabExploracionFisica;
-        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabServicios;
         private System.Windows.Forms.TabPage tabAntecedentes;
         private System.Windows.Forms.DataGridView dgConsulta;
         private System.Windows.Forms.DataGridView dgGinecoObstreticos;
         private System.Windows.Forms.DataGridView dgEstadoVivienda;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabSentidos5;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridView dataGridView8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
@@ -1384,5 +1417,7 @@
         private System.Windows.Forms.NumericUpDown txtNumeroCliente;
         private System.Windows.Forms.CheckBox chkActivarFiltro;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabAlergias;
+        private System.Windows.Forms.DataGridView dgAlergias;
     }
 }

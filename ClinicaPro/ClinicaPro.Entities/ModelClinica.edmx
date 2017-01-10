@@ -737,13 +737,15 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaAntecedentesPatolo
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaClienteAlergias' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VistaClienteAlergias">
           <Key>
+            <PropertyRef Name="Número Cliente" />
+            <PropertyRef Name="Nombre" />
             <PropertyRef Name="Especificacion" />
             <PropertyRef Name="Tipo Alergia" />
-            <PropertyRef Name="IdCLiente" />
           </Key>
+          <Property Name="Número Cliente" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Especificacion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Tipo Alergia" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdCLiente" Type="int" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaConsulta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -1836,6 +1838,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
+        <Function Name="sp_Droga_ListarConsultasRelacionadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idDroga" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -1854,6 +1859,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_VacunaListarConsultasRelacionadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdVacuna" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="ClinicaDrFuentesModelStoreContainer">
           <EntitySet Name="AntecedenteAlcohol" EntityType="Self.AntecedenteAlcohol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AntecedenteDrogra" EntityType="Self.AntecedenteDrogra" Schema="dbo" store:Type="Tables" />
@@ -1962,9 +1970,10 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </EntitySet>
           <EntitySet Name="VistaClienteAlergias" EntityType="Self.VistaClienteAlergias" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [VistaClienteAlergias].[Número Cliente] AS [Número Cliente], 
+    [VistaClienteAlergias].[Nombre] AS [Nombre], 
     [VistaClienteAlergias].[Especificacion] AS [Especificacion], 
-    [VistaClienteAlergias].[Tipo Alergia] AS [Tipo Alergia], 
-    [VistaClienteAlergias].[IdCLiente] AS [IdCLiente]
+    [VistaClienteAlergias].[Tipo Alergia] AS [Tipo Alergia]
     FROM [dbo].[VistaClienteAlergias] AS [VistaClienteAlergias]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VistaConsulta" EntityType="Self.VistaConsulta" store:Type="Views" store:Schema="dbo">
@@ -4073,7 +4082,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </AssociationSet>
           <EntitySet Name="VistaAntecedentesPatologicos" EntityType="ClinicaDrFuentesModel.VistaAntecedentesPatologicos" />
           <EntitySet Name="VistaAntecedenteHereditario" EntityType="ClinicaDrFuentesModel.VistaAntecedenteHereditario" />
-          <EntitySet Name="VistaClienteAlergias" EntityType="ClinicaDrFuentesModel.VistaClienteAlergias" />
           <EntitySet Name="VistaExploracionFisica" EntityType="ClinicaDrFuentesModel.VistaExploracionFisica" />
           <EntitySet Name="VistaConsulta" EntityType="ClinicaDrFuentesModel.VistaConsulta" />
           <EntitySet Name="VistaServicios" EntityType="ClinicaDrFuentesModel.VistaServicios" />
@@ -4088,6 +4096,16 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="Consulta" EntitySet="Consultas" />
             <End Role="ConsultaBoca" EntitySet="ConsultaBocas" />
           </AssociationSet>
+          <FunctionImport Name="Droga_ListarConsultasRelacionadas" ReturnType="Collection(ClinicaDrFuentesModel.Droga_ListarConsultasRelacionadas_Result)">
+          <Parameter Name="idDroga" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Droga_ListarConsultasRelacionadas" ReturnType="Collection(ClinicaDrFuentesModel.sp_Droga_ListarConsultasRelacionadas_Result)">
+          <Parameter Name="idDroga" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_VacunaListarConsultasRelacionadas" ReturnType="Collection(ClinicaDrFuentesModel.sp_VacunaListarConsultasRelacionadas_Result)">
+          <Parameter Name="IdVacuna" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="VistaClienteAlergiasSet" EntityType="ClinicaDrFuentesModel.VistaClienteAlergias" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -4364,16 +4382,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Property Name="Neuropatia" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="otro" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="VistaClienteAlergias">
-          <Key>
-            <PropertyRef Name="Especificacion" />
-            <PropertyRef Name="Tipo_Alergia" />
-            <PropertyRef Name="IdCLiente" />
-          </Key>
-          <Property Name="Especificacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Tipo_Alergia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdCLiente" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="VistaExploracionFisica">
           <Key>
             <PropertyRef Name="Número_Consulta" />
@@ -4533,6 +4541,33 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="Droga_ListarConsultasRelacionadas_Result">
+          <Property Type="Int32" Name="NúmeroConsulta" Nullable="false" />
+          <Property Type="String" Name="Nombre_Cliente" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre_Droga" Nullable="false" MaxLength="35" />
+        </ComplexType>
+        <ComplexType Name="sp_Droga_ListarConsultasRelacionadas_Result">
+          <Property Type="Int32" Name="NúmeroConsulta" Nullable="false" />
+          <Property Type="String" Name="Nombre_Cliente" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre_Droga" Nullable="false" MaxLength="35" />
+        </ComplexType>
+        <ComplexType Name="sp_VacunaListarConsultasRelacionadas_Result">
+          <Property Type="Int32" Name="NúmeroConsulta" Nullable="false" />
+          <Property Type="String" Name="Nombre_Cliente" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre_Vacuna" Nullable="false" MaxLength="35" />
+        </ComplexType>
+        <EntityType Name="VistaClienteAlergias">
+          <Key>
+            <PropertyRef Name="Número_Cliente" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Especificacion" />
+            <PropertyRef Name="Tipo_Alergia" />
+          </Key>
+          <Property Name="Número_Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Especificacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo_Alergia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5332,15 +5367,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="VistaClienteAlergias">
-            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaClienteAlergias">
-              <MappingFragment StoreEntitySet="VistaClienteAlergias">
-                <ScalarProperty Name="IdCLiente" ColumnName="IdCLiente" />
-                <ScalarProperty Name="Tipo_Alergia" ColumnName="Tipo Alergia" />
-                <ScalarProperty Name="Especificacion" ColumnName="Especificacion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="VistaExploracionFisica">
             <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaExploracionFisica">
               <MappingFragment StoreEntitySet="VistaExploracionFisica">
@@ -5466,6 +5492,34 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
                 <ScalarProperty Name="Protesis_Dentales" ColumnName="Protesis_Dentales" />
                 <ScalarProperty Name="Adoncia" ColumnName="Adoncia" />
                 <ScalarProperty Name="IdConsulta" ColumnName="IdConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Droga_ListarConsultasRelacionadas" FunctionName="ClinicaDrFuentesModel.Store.sp_Droga_ListarConsultasRelacionadas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.sp_Droga_ListarConsultasRelacionadas_Result">
+                <ScalarProperty Name="NúmeroConsulta" ColumnName="NúmeroConsulta" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre Cliente" />
+                <ScalarProperty Name="Nombre_Droga" ColumnName="Nombre Droga" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_VacunaListarConsultasRelacionadas" FunctionName="ClinicaDrFuentesModel.Store.sp_VacunaListarConsultasRelacionadas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.sp_VacunaListarConsultasRelacionadas_Result">
+                <ScalarProperty Name="NúmeroConsulta" ColumnName="NúmeroConsulta" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre Cliente" />
+                <ScalarProperty Name="Nombre_Vacuna" ColumnName="Nombre Vacuna" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="VistaClienteAlergiasSet">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaClienteAlergias">
+              <MappingFragment StoreEntitySet="VistaClienteAlergias">
+                <ScalarProperty Name="Tipo_Alergia" ColumnName="Tipo Alergia" />
+                <ScalarProperty Name="Especificacion" ColumnName="Especificacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Número_Cliente" ColumnName="Número Cliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

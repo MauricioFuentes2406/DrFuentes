@@ -52,18 +52,19 @@ namespace ClinicaPro.DB.Consulta
             }
         }
         public bool Eliminar(int idServicio, int idTipoUsuario)
-        {
-            if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(idServicio))
-            {
+        {                           
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
                 {
-                    Entities.GeneralTipoServicio service = Contexto.GeneralTipoServicios.Find(idServicio);
-                    Contexto.GeneralTipoServicios.Remove(service);
-                    Contexto.SaveChanges();
-                    return true;
-                }
-            }
-            else { return false; }
+                    if (ValidarEliminar(Contexto, idServicio) == false)
+                    {
+                        Entities.GeneralTipoServicio service = Contexto.GeneralTipoServicios.Find(idServicio);
+                        Contexto.GeneralTipoServicios.Remove(service);
+                        Contexto.SaveChanges();
+                        return true;
+                    }
+                    else 
+                        return false; 
+                }                        
         }
         /// <summary> Selecciona todos los datos , usarlo  para  llenar los DataGrids
         /// </summary>
@@ -76,12 +77,54 @@ namespace ClinicaPro.DB.Consulta
             Contexto.Dispose();
             return lista;
         }
-       public static Entities.GeneralTipoServicio ListarPorIdservicio()
-       { 
-         using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
-         {
-             return  (from n in Contexto.GeneralTipoServicios.AsNoTracking() where n.idServicio == 1  select n).FirstOrDefault();
-         }
+       private bool ValidarEliminar(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto, int IdConsulta)
+       {
+           if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(IdConsulta))
+           {
+               if (Contexto.Consultas.Find(IdConsulta) == null)
+                   return true;
+               if (ValidarEliminar_SiExisteLLaveForanea(IdConsulta))
+                   return true;
+               else
+                   return false;
+           }
+           else
+               return true;
        }
-    }
+       private bool ValidarEliminar_SiExisteLLaveForanea(int IdConsulta)
+       {
+           var list = ListasConIdServicio(IdConsulta);
+           if (list != null)
+           {
+               MensajeSiExisteLlaveForanea(list);
+               return true;
+           }
+           else
+               return false;
+       }
+          private List<int> ListasConIdServicio( int idServicio)     
+       {
+           using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+               return (from consulta in Contexto.Consultas
+                       from servicios in consulta.GeneralTipoServicios
+                       where servicios.idServicio == idServicio
+                       select consulta.IdConsulta).ToList();
+           }
+       }
+         // private void MensajeSiExisteLlaveForanea(List<Entities.Consulta> list)
+          private void MensajeSiExisteLlaveForanea(List<int> list)
+          {
+              String datos = String.Empty;
+              foreach (var item in list)
+              {
+                  datos += "\n Número Consulta:" + "  " + item;
+              }
+              System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+                  ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
+                  , System.Windows.Forms.MessageBoxButtons.OK
+                  , System.Windows.Forms.MessageBoxIcon.Warning
+                  );
+          }
+    }  
 }

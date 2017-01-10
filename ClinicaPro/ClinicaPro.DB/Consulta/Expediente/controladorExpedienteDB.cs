@@ -38,7 +38,8 @@ namespace ClinicaPro.DB.Consulta.Expediente
         List<Entities.VistaAlchol> _ListaVistaAlcohol;
         List<Entities.VistaTabaco> _ListaVistaTabaco;
        //
-        List<Entities.VistaServicios> _ListaServicios;
+        List<Entities.VistaServicios> _ListaServicios;        
+
         public controladorExpedienteDB()
         {
             // Exploracion Fisica
@@ -68,7 +69,7 @@ namespace ClinicaPro.DB.Consulta.Expediente
             _ListaVistaAlcohol = new List<Entities.VistaAlchol>();
             _ListaVistaTabaco = new List<Entities.VistaTabaco>();
             //
-            _ListaServicios = new List<Entities.VistaServicios>(); 
+            _ListaServicios = new List<Entities.VistaServicios>();           
         }
         public void addVServicios(int idConsulta)
         {
@@ -275,9 +276,7 @@ namespace ClinicaPro.DB.Consulta.Expediente
         public List<Entities.VistaExploracionFisica> get_ListExploracionFisica()
         {
             return _ListaVistaExploracionFisica;
-        }
-
-       
+        }           
     }
 }
 

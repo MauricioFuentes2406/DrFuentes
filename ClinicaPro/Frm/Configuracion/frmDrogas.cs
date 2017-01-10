@@ -19,11 +19,14 @@ namespace Frm.Configuracion
         //Atributos
         public int IdUsuario { get; set; }
         public int IdDrogas { get; set; }
-
+        /// <summary>
+        /// = -1
+        /// </summary>
+        const int IdVacia = -1;
         public frmDrogas()
         {
             InitializeComponent();
-            IdDrogas = -1;
+            IdDrogas = IdVacia;
         }
 
         private void frmDrogas_Load(object sender, EventArgs e)
@@ -77,7 +80,7 @@ namespace Frm.Configuracion
         }
         private void Limpiar()
         {
-            this.IdDrogas = -1;
+            this.IdDrogas = IdVacia;
             this.txtNombre.ResetText();
             cargarGrid();
             txtNombre.Focus();
@@ -92,12 +95,19 @@ namespace Frm.Configuracion
         {
             if (!Validar())
             {
-                Drogas droga = Droga_ControlAClase();
-                DrogaDB drogaDB = new DrogaDB();
-                if (drogaDB.Agregar_Modificar(droga, ClinicaPro.General.accion.Agregar) != -1)
+                try
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Drogas droga = Droga_ControlAClase();
+                    DrogaDB drogaDB = new DrogaDB();
+                    if (drogaDB.Agregar_Modificar(droga, ClinicaPro.General.accion.Agregar) != IdVacia)
+                    {
+                        Limpiar();
+                        MensajeDeActulizacion();
+                    }
+                }
+                catch (Exception)
+                {
+
                 }
             }
         }
@@ -105,34 +115,50 @@ namespace Frm.Configuracion
         {
             if (!Validar())
             {
-                if (dgDrogas.SelectedRows.Count == 1)
+                try
                 {
-                    this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
+                    if (dgDrogas.SelectedRows.Count == 1)
+                    {
+                        this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
+                    }
+                    Drogas droga = Droga_ControlAClase();
+                    droga.idDrogas = this.IdDrogas;
+                    DrogaDB drogaDB = new DrogaDB();
+                    if (drogaDB.Agregar_Modificar(droga, ClinicaPro.General.accion.Modificar) != IdVacia)
+                    {
+                        Limpiar();
+                        MensajeDeActulizacion();
+                    }
                 }
-                Drogas droga = Droga_ControlAClase();
-                droga.idDrogas = this.IdDrogas;
-                DrogaDB drogaDB = new DrogaDB();
-                if (drogaDB.Agregar_Modificar(droga, ClinicaPro.General.accion.Modificar) != -1)
+                catch (Exception)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+
                 }
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+           
             if (dgDrogas.SelectedRows.Count == 1)
             {
-                this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
-                DrogaDB drogaDB = new DrogaDB();
-                if (drogaDB.Eliminar(this.IdDrogas, this.IdUsuario))
+                try
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
+                    DrogaDB drogaDB = new DrogaDB();
+                    if (drogaDB.Eliminar(this.IdDrogas, this.IdUsuario))
+                    {
+                        Limpiar();
+                        MensajeDeActulizacion();
+                    }
                 }
-            }else
+                catch (Exception)
+                {
+                   
+                }                
+            }
+            else
             {
-                MessageBox.Show(Mensajes.Seleccione_Una_Fila,Mensajes.Upss_Falto_Algo ,
+                MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }

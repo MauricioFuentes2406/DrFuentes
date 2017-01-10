@@ -36,6 +36,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +52,7 @@
     <Compile Include="BusquedaDB.cs" />
     <Compile Include="Cliente\ClienteAlergiasDB.cs" />
     <Compile Include="Cliente\ClienteDB.cs" />
+    <Compile Include="Cliente\Vistas\VClienteAlergias.cs" />
     <Compile Include="Consulta\AntecedenteAlcoholDB.cs" />
     <Compile Include="Consulta\AntecedenteDrogaDB.cs" />
     <Compile Include="Consulta\AntecedenteHereditarioDB.cs" />
@@ -117,7 +121,6 @@
   <ItemGroup>
     <None Include="Consulta\RuleSet1.ruleset" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

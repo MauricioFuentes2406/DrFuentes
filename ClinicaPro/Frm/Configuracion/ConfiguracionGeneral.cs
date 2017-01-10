@@ -57,6 +57,9 @@ namespace Frm
         {
             new Frm.Configuracion.frmServicios().Show();
         }
-              
+        private void btnDiccionario_Click(object sender, EventArgs e)
+        {
+            new frmBusquedas().Show();
+        }              
     }
 }

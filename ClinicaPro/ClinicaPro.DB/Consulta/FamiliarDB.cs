@@ -51,17 +51,18 @@ namespace ClinicaPro.DB.Consulta
         }
       public bool Eliminar(int idFamiliar, int idTipoUsuario)
         {
-            if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(idFamiliar))
-            {
+          
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
                 {
-                    Entities.Familiar droga = Contexto.Familiars.Where(EntidadLocal => EntidadLocal.IdFamiliar == idFamiliar).First();
-                    Contexto.Familiars.Remove(droga);
-                    Contexto.SaveChanges();
-                    return true;
-                }
-            }
-            else { return false; }                
+                    if (ValidarEliminar(Contexto,idFamiliar) == false)
+                    {
+                        Entities.Familiar droga = Contexto.Familiars.Find(idFamiliar);
+                        Contexto.Familiars.Remove(droga);
+                        Contexto.SaveChanges();
+                        return true;
+                    }
+                    else return false;
+                }                         
         }
       public List<Entities.Familiar> Listar()
         {
@@ -73,5 +74,57 @@ namespace ClinicaPro.DB.Consulta
               return lista;
             }
         }
+       /// <summary>
+       /// Valida Eliminar , true hay un hallazgo , false todo bien
+       /// </summary>
+       /// <param name="Contexto"></param>
+       /// <param name="IdFamiliar"></param>
+       /// <returns></returns>
+       private bool ValidarEliminar(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto, int IdFamiliar)
+       {
+           if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(IdFamiliar))
+           {
+               if (Contexto.Familiars.Find(IdFamiliar) == null)
+                   return true;
+               if (ValidarEliminar_SiExisteLLaveForanea(Contexto, IdFamiliar))
+                   return true;
+               else 
+                   return false;               
+           }
+           else           
+               return true;          
+       }
+       private  bool ValidarEliminar_SiExisteLLaveForanea(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto, int IdFamiliar)
+       {
+           var list = ListasConIdFamiliar(Contexto, IdFamiliar);                                                             
+           if (list != null)
+           {
+               MensajeSiExisteLlaveForanea(list);
+               return true;
+           }
+           else
+               return false;
+       }
+       private List<Entities.AntecedenteHereditario> ListasConIdFamiliar(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto, int IdFamiliar)
+       {
+          return  Contexto.AntecedenteHereditarios.Where
+                  (EntidadLocal => EntidadLocal.AfeccionTiroide == IdFamiliar || EntidadLocal.Asma == IdFamiliar ||EntidadLocal.AVC == IdFamiliar 
+                   ||EntidadLocal.Cancer == IdFamiliar || EntidadLocal.Cardiopatía == IdFamiliar || EntidadLocal.DM == IdFamiliar 
+                   || EntidadLocal.EnfermedadPulmonar == IdFamiliar || EntidadLocal.Hepatopapia == IdFamiliar || EntidadLocal.HTA == IdFamiliar 
+                   || EntidadLocal.Neuropatia == IdFamiliar).ToList();
+       }
+       private void MensajeSiExisteLlaveForanea(List<Entities.AntecedenteHereditario> list)
+       {
+           String datos = String.Empty;
+           foreach (var item in list)
+           {
+               datos += "\n Número Consulta:" + "  " + item.IdConsulta;
+           }
+           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+               ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
+               , System.Windows.Forms.MessageBoxButtons.OK
+               , System.Windows.Forms.MessageBoxIcon.Warning
+               );
+       }
     }
 }

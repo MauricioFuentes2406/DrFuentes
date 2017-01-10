@@ -24,6 +24,7 @@ namespace ClinicaPro.General.Constantes
        #region Para las  Validaciones
 
        public const String Campo_Requerido = " No puede quedar en blanco \n";
+       public const String Campo_DatoIncompleto = " Está Incompleto, Llena el campo faltante  , o Elimínalo del todo";
        public const String Numero_Mayor_Cero = " Deberia ser un número mayor a Cero  \n";
        public const String Upss_Falto_Algo = " Upss, falto algo ";
        public const String No_Se_Elimina_No_Se_Encontro = " No se puede Eliminar un registro que no existe";
@@ -33,8 +34,10 @@ namespace ClinicaPro.General.Constantes
        public const String No_hay_Servicios = "No ha añadido  servicios ";
        public const String No_hay_Cliente = "No se podrá guardar Los datos si no hay asignado un cliente,\n regrese y asigne un cliente ";
        public const String No_Eliminar_idUno = "No Se Puede Eliminar las Opciones por Defecto  ";
-
+       public const String No_Se_Actualizo = "No se Actualizaron los datos, el registro que Intenta Actualizar  no existe en la Base Datos \n Actualize La lista de egistros ";
        public const String Para_Buen_Funcionamiento = "Para un buen funcionamiento del Sistema no intentes este Cambio ";
+
+       public const String fk_ConstraintDelete = " No se puede eliminar el registro por que esta siendo usando en alguna Consulta,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
 
        public const String Consulta_Sin_Servicios = " Esta Consulta no tiene Servicios ";
 

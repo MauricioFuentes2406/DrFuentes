@@ -732,13 +732,15 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaAntecedentesPatolo
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaClienteAlergias' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="VistaClienteAlergias">
     <Key>
+      <PropertyRef Name="Número Cliente" />
+      <PropertyRef Name="Nombre" />
       <PropertyRef Name="Especificacion" />
       <PropertyRef Name="Tipo Alergia" />
-      <PropertyRef Name="IdCLiente" />
     </Key>
+    <Property Name="Número Cliente" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Especificacion" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Tipo Alergia" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="IdCLiente" Type="int" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaConsulta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -1831,6 +1833,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="sp_Droga_ListarConsultasRelacionadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idDroga" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -1849,6 +1854,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_VacunaListarConsultasRelacionadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdVacuna" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="ClinicaDrFuentesModelStoreContainer">
     <EntitySet Name="AntecedenteAlcohol" EntityType="Self.AntecedenteAlcohol" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AntecedenteDrogra" EntityType="Self.AntecedenteDrogra" Schema="dbo" store:Type="Tables" />
@@ -1957,9 +1965,10 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     </EntitySet>
     <EntitySet Name="VistaClienteAlergias" EntityType="Self.VistaClienteAlergias" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
+    [VistaClienteAlergias].[Número Cliente] AS [Número Cliente], 
+    [VistaClienteAlergias].[Nombre] AS [Nombre], 
     [VistaClienteAlergias].[Especificacion] AS [Especificacion], 
-    [VistaClienteAlergias].[Tipo Alergia] AS [Tipo Alergia], 
-    [VistaClienteAlergias].[IdCLiente] AS [IdCLiente]
+    [VistaClienteAlergias].[Tipo Alergia] AS [Tipo Alergia]
     FROM [dbo].[VistaClienteAlergias] AS [VistaClienteAlergias]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="VistaConsulta" EntityType="Self.VistaConsulta" store:Type="Views" store:Schema="dbo">

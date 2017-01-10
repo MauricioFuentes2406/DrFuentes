@@ -83,7 +83,6 @@ namespace ClinicaPro.Entities
         public virtual DbSet<ConsultaAbdomen> ConsultaAbdomen { get; set; }
         public virtual DbSet<VistaAntecedentesPatologicos> VistaAntecedentesPatologicos { get; set; }
         public virtual DbSet<VistaAntecedenteHereditario> VistaAntecedenteHereditario { get; set; }
-        public virtual DbSet<VistaClienteAlergias> VistaClienteAlergias { get; set; }
         public virtual DbSet<VistaExploracionFisica> VistaExploracionFisica { get; set; }
         public virtual DbSet<VistaConsulta> VistaConsulta { get; set; }
         public virtual DbSet<VistaServicios> VistaServicios { get; set; }
@@ -94,6 +93,7 @@ namespace ClinicaPro.Entities
         public virtual DbSet<VistaEstadoVivienda> VistaEstadoVivienda { get; set; }
         public virtual DbSet<VistaToraxPulmones> VistaToraxPulmones { get; set; }
         public virtual DbSet<ConsultaBoca> ConsultaBocas { get; set; }
+        public virtual DbSet<VistaClienteAlergias> VistaClienteAlergias { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -196,6 +196,33 @@ namespace ClinicaPro.Entities
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<Droga_ListarConsultasRelacionadas_Result> Droga_ListarConsultasRelacionadas(Nullable<int> idDroga)
+        {
+            var idDrogaParameter = idDroga.HasValue ?
+                new ObjectParameter("idDroga", idDroga) :
+                new ObjectParameter("idDroga", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Droga_ListarConsultasRelacionadas_Result>("Droga_ListarConsultasRelacionadas", idDrogaParameter);
+        }
+    
+        public virtual ObjectResult<sp_Droga_ListarConsultasRelacionadas_Result> sp_Droga_ListarConsultasRelacionadas(Nullable<int> idDroga)
+        {
+            var idDrogaParameter = idDroga.HasValue ?
+                new ObjectParameter("idDroga", idDroga) :
+                new ObjectParameter("idDroga", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Droga_ListarConsultasRelacionadas_Result>("sp_Droga_ListarConsultasRelacionadas", idDrogaParameter);
+        }
+    
+        public virtual ObjectResult<sp_VacunaListarConsultasRelacionadas_Result> sp_VacunaListarConsultasRelacionadas(Nullable<int> idVacuna)
+        {
+            var idVacunaParameter = idVacuna.HasValue ?
+                new ObjectParameter("IdVacuna", idVacuna) :
+                new ObjectParameter("IdVacuna", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_VacunaListarConsultasRelacionadas_Result>("sp_VacunaListarConsultasRelacionadas", idVacunaParameter);
         }
     }
 }

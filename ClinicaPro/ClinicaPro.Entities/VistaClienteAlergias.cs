@@ -14,8 +14,9 @@ namespace ClinicaPro.Entities
     
     public partial class VistaClienteAlergias
     {
+        public int Número_Cliente { get; set; }
+        public string Nombre { get; set; }
         public string Especificacion { get; set; }
         public string Tipo_Alergia { get; set; }
-        public int IdCLiente { get; set; }
     }
 }

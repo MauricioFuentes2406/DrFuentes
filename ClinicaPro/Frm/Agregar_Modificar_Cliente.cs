@@ -75,7 +75,7 @@ namespace Frm
             cliente.Edad = (byte)this.txtEdad.Value;
             if (rbHombre.Checked) { cliente.Sexo = "H"; } else { cliente.Sexo = "M"; }
             if (cbExtrajero.SelectedIndex == 0) { cliente.isExtranjero = false; } else { cliente.isExtranjero = true; }
-            if (txtCelular.Text != String.Empty) { cliente.Celular = int.Parse(txtCelular.Text); }
+            if (txtCelular.MaskCompleted) { cliente.Celular = int.Parse(txtCelular.Text); }
             if (txtCedula.MaskCompleted) { cliente.Cedula = txtCedula.Text.Trim(); }           
             cliente.Estado = (byte)cbEstadoCivil.SelectedValue;
             cliente.Apellido1 = txtPrimer_Apellido.Text.Trim();
@@ -93,7 +93,8 @@ namespace Frm
             ClienteDB clienteAgregar = new ClienteDB();
             this.idCliente= clienteAgregar.Agregar_Modificar(cliente, isModificar);
 
-            DesplegarMensajeDespuesGuardar(isModificar);            
+            if (idCliente != -1)
+               DesplegarMensajeDespuesGuardar(isModificar); 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -300,7 +301,13 @@ namespace Frm
                 detalles += "Ciudad " + Mensajes.Campo_Requerido;
                 this.txtCiudad.BackColor = System.Drawing.Color.AliceBlue;
                 hallazgo = true;
-            }          
+            }
+            if (txtCelular.Text.Length > 0 && txtCelular.MaskCompleted == false)
+            {
+                detalles += "Celular " + Mensajes.Campo_DatoIncompleto;
+                this.txtCelular.BackColor = System.Drawing.Color.AliceBlue;
+                hallazgo = true;
+            }
             if (this.txtEdad.Value == 0)
             {
                 detalles += "Campo edad" + Mensajes.Numero_Mayor_Cero;

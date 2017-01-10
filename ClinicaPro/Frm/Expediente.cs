@@ -31,8 +31,7 @@ namespace Frm
         }
 
         private void Expediente_Load(object sender, EventArgs e)
-        {
-            
+        {            
             llenarConsulta_NoFiltro();
         }
 
@@ -139,22 +138,13 @@ namespace Frm
 
             //  Sentidos
             controladorExpediente.addEstadoEmocional(idConsulta);
-            this.dgEstadoEmocional.DataSource = controladorExpediente.get_ListaEstadoEmocional();
-
-            //ConsultaEstadoEmocionalDB eeDb = new ConsultaEstadoEmocionalDB();
-            //this.dgEstadoEmocional.DataSource = eeDb.ListaPorConsulta(idConsulta);
+            this.dgEstadoEmocional.DataSource = controladorExpediente.get_ListaEstadoEmocional();          
 
             controladorExpediente.addSensibilidad(idConsulta);
             this.dgSensibilidad.DataSource = controladorExpediente.get_ListaSensibilidad();
 
-            //SensbilidadDB sDb = new SensbilidadDB();
-            //dgSensibilidad.DataSource=  sDb.ListaPorConsulta(idConsulta);
-
             controladorExpediente.addConsultaParesCraneales(idConsulta);
             this.dgParesCraneales.DataSource = controladorExpediente.get_ListaParesCraneales();
-
-            //ParesCranealesDB pcDb = new ParesCranealesDB();
-            //dgParesCraneales.DataSource = pcDb.ListaPorConsulta(idConsulta);
 
             controladorExpediente.addReflejo(idConsulta);
             this.dgReflejos.DataSource = controladorExpediente.get_ListaReflejo();
@@ -164,38 +154,39 @@ namespace Frm
 
             controladorExpediente.addVServicios(idConsulta);
             this.dgServicios.DataSource = controladorExpediente.get_ListaVServicios();
-            //dgServicios.DataSource = ClinicaPro.DB.Consulta.Vistas.VServicios.ListaPorConsulta(idConsulta);
 
             //Antecedentes  
 
             controladorExpediente.addVAntecedentePatologico(idConsulta);
             dgAntePatologicos.DataSource = controladorExpediente.get_ListaVAntecedentePatologico();
 
-            //dgHereditario.DataSource = ClinicaPro.DB.Consulta.Vistas.VAntecedenteHereditario.ListaPorConsulta(idConsulta);
             controladorExpediente.addVAntecedenteHereditario(idConsulta);
             dgHereditario.DataSource = controladorExpediente.get_ListaVAntecedenteHereditario();
 
             controladorExpediente.addVDrogas(idConsulta);
             this.dgDroga.DataSource = controladorExpediente.get_ListaVDrogas();
 
-            // dgDroga.DataSource=ClinicaPro.DB.Consulta.Vistas.VDrogas.ListaPorConsulta(idConsulta);
             controladorExpediente.addVVacunas(idConsulta);
             this.dgVacunas.DataSource = controladorExpediente.get_ListaVVacunas();
 
-            //            dgVacunas.DataSource = ClinicaPro.DB.Consulta.Vistas.VVacunas.ListaPorConsulta(idConsulta);
             controladorExpediente.addVAlcohol(idConsulta);
             this.dgAlchol.DataSource = controladorExpediente.get_ListaVAlcohol();
 
             controladorExpediente.addVTabaco(idConsulta);
             dgTabaco.DataSource = controladorExpediente.get_ListaVTabaco();
 
-            //dgAlchol.DataSource = ClinicaPro.DB.Consulta.Vistas.VAlchol.ListaPorConsulta(idConsulta);
-            // dgTabaco.DataSource = ClinicaPro.DB.Consulta.Vistas.VTabaco.ListaPorConsulta(idConsulta);
-
         }
         private void cambiarEncabezadoIdConsulta_NumeroConsulta(DataGridView gridconIdConsulta)
         {
             gridconIdConsulta.Columns["IdConsulta"].HeaderText = "Número de Consulta";
+        }
+        private void llenarAlergiasDetalle(int idCliente)
+        {
+            this.dgAlergias.DataSource = ClinicaPro.DB.Cliente.Vistas.VClienteAlergias.Listar(idCliente);
+        }
+        private void llenarAlergiasFiltroClientes(List<int> idCliente)
+        {
+            this.dgAlergias.DataSource = ClinicaPro.DB.Cliente.Vistas.VClienteAlergias.Listar(idCliente);
         }
         #endregion
         /// <summary>
@@ -212,6 +203,7 @@ namespace Frm
                 //  this.txtNumeroCliente = (int)senderASGrid.CurrentRow.Cells[columnIdCliente].Value;
                 setNombreNumeroClienteDisplayControl();
                 llenarconVerDetalle((int)senderASGrid.CurrentRow.Cells[Numero_Consulta].Value);
+                llenarAlergiasDetalle((int)senderASGrid.CurrentRow.Cells["IdCliente"].Value);
                 manejaMensajeInformativo(sender);
             }
         }
@@ -255,14 +247,15 @@ namespace Frm
 
                 foreach (int idCliente in listIdsClientes)
                 {
-                    _ListaIdConsultas.AddRange(listdgConsultaSource.FindAll(Entidad => Entidad.IdCliente == idCliente).Select(Entidad => Entidad.Número_Consulta));    
-                }
+                    _ListaIdConsultas.AddRange(listdgConsultaSource.FindAll(Entidad => Entidad.IdCliente == idCliente).Select(Entidad => Entidad.Número_Consulta));                        
+                }              
+                    llenarAlergiasFiltroClientes(listIdsClientes);               
             }
             foreach (var item in _ListaIdConsultas)
-            {
-                //MessageBox.Show(item.ToString());
+            {                
                 llenarConCliente(_ListaIdConsultas);
-            }            
+            }
+           
             manejaMensajeInformativo(sender);
             this.UseWaitCursor = false;
         }
@@ -271,7 +264,7 @@ namespace Frm
             if (chkActivarFiltro.Checked)
                 this.btnFiltrarXNumeroCliente.Enabled = true;
             else
-                this.btnFiltrarPorCliente.Enabled = false;
+                this.btnFiltrarXNumeroCliente.Enabled = false;
         }
         private void dgConsulta_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

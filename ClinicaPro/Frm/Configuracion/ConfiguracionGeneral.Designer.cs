@@ -36,6 +36,7 @@
             this.btnVacuna = new System.Windows.Forms.Button();
             this.btnDrogas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDiccionario = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -130,11 +131,27 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnDiccionario);
             this.panel2.Controls.Add(this.btnServicios);
             this.panel2.Location = new System.Drawing.Point(35, 260);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(770, 151);
             this.panel2.TabIndex = 8;
+            // 
+            // btnDiccionario
+            // 
+            this.btnDiccionario.FlatAppearance.BorderSize = 0;
+            this.btnDiccionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiccionario.Image = global::Frm.Properties.Resources.dictionary__100;
+            this.btnDiccionario.Location = new System.Drawing.Point(173, 12);
+            this.btnDiccionario.Name = "btnDiccionario";
+            this.btnDiccionario.Size = new System.Drawing.Size(115, 123);
+            this.btnDiccionario.TabIndex = 8;
+            this.btnDiccionario.Text = "Diccionario";
+            this.btnDiccionario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDiccionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDiccionario.UseVisualStyleBackColor = true;
+            this.btnDiccionario.Click += new System.EventHandler(this.btnDiccionario_Click);
             // 
             // btnServicios
             // 
@@ -183,5 +200,6 @@
         private System.Windows.Forms.Button btnMaterialesCasa;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnServicios;
+        private System.Windows.Forms.Button btnDiccionario;
     }
 }

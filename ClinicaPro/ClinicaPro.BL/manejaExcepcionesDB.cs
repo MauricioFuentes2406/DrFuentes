@@ -52,7 +52,9 @@ namespace ClinicaPro.BL
         }
         public static void manejaNullReference(NullReferenceException nullReference)
         {
-            String values = nullReference.Data.ToString();
+            String values = String.Empty;
+            
+            values += "\n" + nullReference.Message;
             values += "\n" + nullReference.Source;                        
             MessageBox.Show(ExcepcionesMensajes.Null_Reference + "\n" + values, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

@@ -11,7 +11,7 @@ namespace ClinicaPro.General.Excepciones
        public const String Title_Exception = "Se encontró un error";
        public const String Void_Open="Void Open()";
        public const String Sin_ConexionDB = " No se pudo establecer una comunicación con la base datos ";
-       public const String Null_Reference = " Algún dato al  que se hace referencia no existe ";
+       public const String Null_Reference = " Algún Campo Obligatorio  o párametro de Busqueda al  que se hace referencia no existe en la BD ";
        public const String ExcepcionGeneral = " Ocurrío un  error ";
        public const String Id_Duplicada = " No se puede añadir un nuevo Registro con un Identificador Duplicado ";
        public const String Error_En_BaseDatos = " Ocurrio un error en la Base de Datos  ";

@@ -134,7 +134,6 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaAbdomen_Consulta" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAntecedentesPatologicos" Width="1.5" PointX="10.375" PointY="3" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAntecedenteHereditario" Width="1.5" PointX="7.375" PointY="10.75" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaClienteAlergias" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaExploracionFisica" Width="1.5" PointX="9.375" PointY="10.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaConsulta" Width="1.5" PointX="2.125" PointY="11.375" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaServicios" Width="1.5" PointX="7.375" PointY="0.75" />
@@ -146,6 +145,7 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaToraxPulmones" Width="1.5" PointX="11.375" PointY="12.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaBoca" Width="1.5" PointX="10.5" PointY="18.25" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaClienteAlergias" Width="2.875" PointX="13.375" PointY="12.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

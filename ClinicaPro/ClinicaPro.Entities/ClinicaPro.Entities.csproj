@@ -151,6 +151,9 @@
     <Compile Include="Drogas.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="Droga_ListarConsultasRelacionadas_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="ElectroResultado.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -203,10 +206,16 @@
     <Compile Include="Seguimiento.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_Droga_ListarConsultasRelacionadas_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_VacunaListarConsultasRelacionadas_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">

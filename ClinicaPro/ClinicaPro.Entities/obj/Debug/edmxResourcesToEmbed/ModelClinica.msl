@@ -794,15 +794,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="VistaClienteAlergias">
-      <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaClienteAlergias">
-        <MappingFragment StoreEntitySet="VistaClienteAlergias">
-          <ScalarProperty Name="IdCLiente" ColumnName="IdCLiente" />
-          <ScalarProperty Name="Tipo_Alergia" ColumnName="Tipo Alergia" />
-          <ScalarProperty Name="Especificacion" ColumnName="Especificacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="VistaExploracionFisica">
       <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaExploracionFisica">
         <MappingFragment StoreEntitySet="VistaExploracionFisica">
@@ -928,6 +919,34 @@
           <ScalarProperty Name="Protesis_Dentales" ColumnName="Protesis_Dentales" />
           <ScalarProperty Name="Adoncia" ColumnName="Adoncia" />
           <ScalarProperty Name="IdConsulta" ColumnName="IdConsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Droga_ListarConsultasRelacionadas" FunctionName="ClinicaDrFuentesModel.Store.sp_Droga_ListarConsultasRelacionadas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.sp_Droga_ListarConsultasRelacionadas_Result">
+          <ScalarProperty Name="NúmeroConsulta" ColumnName="NúmeroConsulta" />
+          <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre Cliente" />
+          <ScalarProperty Name="Nombre_Droga" ColumnName="Nombre Droga" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_VacunaListarConsultasRelacionadas" FunctionName="ClinicaDrFuentesModel.Store.sp_VacunaListarConsultasRelacionadas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.sp_VacunaListarConsultasRelacionadas_Result">
+          <ScalarProperty Name="NúmeroConsulta" ColumnName="NúmeroConsulta" />
+          <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre Cliente" />
+          <ScalarProperty Name="Nombre_Vacuna" ColumnName="Nombre Vacuna" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="VistaClienteAlergiasSet">
+      <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaClienteAlergias">
+        <MappingFragment StoreEntitySet="VistaClienteAlergias">
+          <ScalarProperty Name="Tipo_Alergia" ColumnName="Tipo Alergia" />
+          <ScalarProperty Name="Especificacion" ColumnName="Especificacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Número_Cliente" ColumnName="Número Cliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
