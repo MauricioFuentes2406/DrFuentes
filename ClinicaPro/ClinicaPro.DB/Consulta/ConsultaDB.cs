@@ -84,9 +84,27 @@ namespace ClinicaPro.DB.Consulta
                 throw;
             }
         }
-        public bool Eliminar(int idCliente, int idTipoUsuario)
+        public bool Eliminar(int IdConsulta, int idTipoUsuario)
         {
-            return false;
+            try
+            {
+                using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+                {
+                    Entities.Consulta consulta = Contexto.Consultas.Find(IdConsulta);
+                    if (consulta != null)
+                    {
+                        Contexto.Consultas.Remove(consulta);
+                        Contexto.SaveChanges();
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }            
         }
         /// <summary> Selecciona todos los datos , usarlo  para  llenar los DataGrids
         /// </summary>
@@ -147,6 +165,10 @@ namespace ClinicaPro.DB.Consulta
                     Original.GeneralTipoServicios.Add(item);
                 }
             }                   
+        }
+        public bool ValidarEliminar()
+        {
+            return false;
         }
     }
 }

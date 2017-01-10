@@ -53,8 +53,7 @@ namespace ClinicaPro.DB.Consulta
             }
         }
       public bool Eliminar(int idVacuna, int idTipoUsuario)
-        {
-            
+        {            
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
                 {
                     if (ValidarEliminar(Contexto,idVacuna) == false)
@@ -105,23 +104,28 @@ namespace ClinicaPro.DB.Consulta
       private bool ValidarEliminar_SiExisteLLaveForanea(Entities.ClinicaDrFuentesEntities Contexto, int idVacuna)
       {
           List<Entities.sp_VacunaListarConsultasRelacionadas_Result> list = Contexto.sp_VacunaListarConsultasRelacionadas(idVacuna).ToList();
-          if (list != null)
+          if (list.Count >  0 )
           {
-              String datos = String.Empty;
-              foreach (var item in list)
-              {
-                  datos += "\n Número Consulta:" + "  " + item.NúmeroConsulta + "  Nombre:" + "   " + item.Nombre_Cliente + "  Vacuna: " + item.Nombre_Vacuna;
-              }
-              System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
-                  ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
-                  , System.Windows.Forms.MessageBoxButtons.OK
-                  , System.Windows.Forms.MessageBoxIcon.Warning
-                  );
+              MensajeSiExisteLlaveForanea(list);
               return true;
           }
           else
               return false;
       }
+      private void MensajeSiExisteLlaveForanea(List<Entities.sp_VacunaListarConsultasRelacionadas_Result> list)
+      {
+          String datos = String.Empty;
+          foreach (var item in list)
+          {
+              datos += "\n Número Consulta:" + "  " + item.NúmeroConsulta + "  Nombre:" + "   " + item.Nombre_Cliente + "  Vacuna: " + item.Nombre_Vacuna;
+          }
+          System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+              ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
+              , System.Windows.Forms.MessageBoxButtons.OK
+              , System.Windows.Forms.MessageBoxIcon.Warning
+              );
+      }
     }
+ 
      
 }

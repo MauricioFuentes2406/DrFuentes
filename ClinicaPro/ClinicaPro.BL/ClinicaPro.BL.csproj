@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoCompleteTextControl.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Calculos.cs" />
+    <Compile Include="Mensaje.cs" />
     <Compile Include="ComboBoxBL.cs" />
     <Compile Include="manejaExcepcionesDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

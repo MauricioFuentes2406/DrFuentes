@@ -101,14 +101,18 @@ namespace Frm.Configuracion
         {
             if (dgVacunas.SelectedRows.Count == 1)
             {
-                this.IdVacunas = (int)dgVacunas.CurrentRow.Cells[comboNombreIDs.vacunas].Value;
-
-                VacunasDB vacunaDB = new VacunasDB();
-                if (vacunaDB.Eliminar(this.IdVacunas, this.IdUsuario))
+                if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    this.IdVacunas = (int)dgVacunas.CurrentRow.Cells[comboNombreIDs.vacunas].Value;
+
+                    VacunasDB vacunaDB = new VacunasDB();
+                    if (vacunaDB.Eliminar(this.IdVacunas, this.IdUsuario))
+                    {
+                        Limpiar();
+                        MensajeDeActulizacion();
+                    }
                 }
+                
             }else
             {
                 MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,
@@ -138,5 +142,6 @@ namespace Frm.Configuracion
         {
             cargarGrid();            
         }
+      
     }
 }

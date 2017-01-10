@@ -124,6 +124,7 @@ namespace Frm.Configuracion
         {
             if (this.dgMateriales.SelectedRows.Count == 1)
             {
+
                 this.IdMaterial = (byte)dgMateriales.CurrentRow.Cells["IdMaterial"].Value;
 
                 EstadoViviendaMaterialesDB MaterialesDB = new EstadoViviendaMaterialesDB();

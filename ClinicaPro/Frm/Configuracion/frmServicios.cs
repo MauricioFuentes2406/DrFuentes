@@ -133,13 +133,16 @@ namespace Frm.Configuracion
         {
             if (dgServicios.SelectedRows.Count == 1)
             {
-                this.idServicio = (int)dgServicios.CurrentRow.Cells[comboNombreIDs.GeneralServicio].Value;
-                GeneralTipoServicioDB servicioDb = new GeneralTipoServicioDB();
-                if (servicioDb.Eliminar(this.idServicio, this.IdUsuario))
+                if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
-                }
+                    this.idServicio = (int)dgServicios.CurrentRow.Cells[comboNombreIDs.GeneralServicio].Value;
+                    GeneralTipoServicioDB servicioDb = new GeneralTipoServicioDB();
+                    if (servicioDb.Eliminar(this.idServicio, this.IdUsuario))
+                    {
+                        Limpiar();
+                        MensajeDeActulizacion();
+                    }
+                }               
             }
             else
             {

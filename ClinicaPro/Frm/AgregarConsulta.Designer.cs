@@ -72,13 +72,11 @@
             this.ExploracionFisicaTab = new System.Windows.Forms.TabPage();
             this.tabExploracionFisica = new System.Windows.Forms.TabControl();
             this.tabMedidas = new System.Windows.Forms.TabPage();
+            this.checkIMC = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtIMC = new System.Windows.Forms.NumericUpDown();
+            this.pictureIndeceMasaCorporal = new System.Windows.Forms.PictureBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtExploracionInfoAdicional = new System.Windows.Forms.TextBox();
-            this.cb_Ex_ManosUnas = new System.Windows.Forms.ComboBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.cb_Ex_Color = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.btnSanoMedidas = new System.Windows.Forms.Button();
             this.label54 = new System.Windows.Forms.Label();
@@ -99,18 +97,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.gbAbdomen = new System.Windows.Forms.GroupBox();
-            this.cb_Abdomen_TamanoOrganos = new System.Windows.Forms.ComboBox();
-            this.chk_AbdomenAscititis = new System.Windows.Forms.CheckBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.cb_Abdomen_Recto = new System.Windows.Forms.ComboBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.cb_Abdomen_Bazo = new System.Windows.Forms.ComboBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.cb_Abdomen_Rinon = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.auxiliarCuello = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.auxiliarNariz = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.gbOidos = new System.Windows.Forms.GroupBox();
+            this.chk_Oidos_Tinitus = new System.Windows.Forms.CheckBox();
+            this.chk_Oidos_Otorrea = new System.Windows.Forms.CheckBox();
+            this.chk_Oidos_Otalgia = new System.Windows.Forms.CheckBox();
+            this.chk_Oidos_Hipercusia = new System.Windows.Forms.CheckBox();
+            this.chk_Oidos_Hipocusia = new System.Windows.Forms.CheckBox();
+            this.chk_Oidos_Acusia = new System.Windows.Forms.CheckBox();
+            this.gbNariz = new System.Windows.Forms.GroupBox();
+            this.chk_Nariz_ResfrioFrecuente = new System.Windows.Forms.CheckBox();
+            this.chk_Nariz_Sinusitis = new System.Windows.Forms.CheckBox();
+            this.chk_Nariz_Epitaxis = new System.Windows.Forms.CheckBox();
+            this.chk_Nariz_Rinorrea = new System.Windows.Forms.CheckBox();
             this.gbOjos = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPerdidaAgudeza = new System.Windows.Forms.TextBox();
@@ -120,6 +121,30 @@
             this.chk_Ojos_Lentes = new System.Windows.Forms.CheckBox();
             this.chk_Ojos_FotoFobia = new System.Windows.Forms.CheckBox();
             this.chk_Ojos_Diploplia = new System.Windows.Forms.CheckBox();
+            this.auxiliarCraneo = new System.Windows.Forms.Button();
+            this.gbCraneo = new System.Windows.Forms.GroupBox();
+            this.chk_Craneo_Prurito = new System.Windows.Forms.CheckBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txtMareos = new System.Windows.Forms.NumericUpDown();
+            this.chk_Craneo_PerdidaConciencia = new System.Windows.Forms.CheckBox();
+            this.chk_Craneo_Cefalea = new System.Windows.Forms.CheckBox();
+            this.chk_Craneo_Sincope = new System.Windows.Forms.CheckBox();
+            this.chk_Craneo_AltereacionOsea = new System.Windows.Forms.CheckBox();
+            this.chk_Craneo_Simetrico = new System.Windows.Forms.CheckBox();
+            this.chk_Craneo_TamanoForma = new System.Windows.Forms.CheckBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.auxiliarToraxP = new System.Windows.Forms.Button();
+            this.gbTorax = new System.Windows.Forms.GroupBox();
+            this.chk_Torax_SonoridadPulmonar = new System.Windows.Forms.CheckBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.cb_Torax_RuidoAgregado = new System.Windows.Forms.ComboBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.cb_Torax_Ascultacion = new System.Windows.Forms.ComboBox();
+            this.cb_Torax_Expa = new System.Windows.Forms.ComboBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.cb_Torax_ResDiafraAbdo = new System.Windows.Forms.ComboBox();
+            this.auxiliarCuello = new System.Windows.Forms.Button();
             this.gbCuello = new System.Windows.Forms.GroupBox();
             this.label41 = new System.Windows.Forms.Label();
             this.txtPresionVenosaCuello = new System.Windows.Forms.NumericUpDown();
@@ -131,31 +156,6 @@
             this.cb_ArteriaCarotida = new System.Windows.Forms.ComboBox();
             this.label60 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
-            this.AuiliarReflejo = new System.Windows.Forms.Button();
-            this.gbReflejos = new System.Windows.Forms.GroupBox();
-            this.btn_ReflejoObservacion = new System.Windows.Forms.Button();
-            this.chk_R_Patelar = new System.Windows.Forms.CheckBox();
-            this.chk_R_Adominales = new System.Windows.Forms.CheckBox();
-            this.chk_R_Radial = new System.Windows.Forms.CheckBox();
-            this.chk_R_Tricipital = new System.Windows.Forms.CheckBox();
-            this.chk_R_Bicipital = new System.Windows.Forms.CheckBox();
-            this.chk_R_Mentoniano = new System.Windows.Forms.CheckBox();
-            this.chk_R_Carneano = new System.Windows.Forms.CheckBox();
-            this.chk_R_Orbicular_De_Los_Ojos = new System.Windows.Forms.CheckBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtReflejoObservacion = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cb_Reflejo_ValoracionGeneral = new System.Windows.Forms.ComboBox();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.auxCoorMarcha = new System.Windows.Forms.Button();
-            this.gbCoordinacionMarcha = new System.Windows.Forms.GroupBox();
-            this.txt_ObsCoordinacion = new System.Windows.Forms.TextBox();
-            this.btn_Obs_CoordinacionMarcha = new System.Windows.Forms.Button();
-            this.chk_CooMar_TalonRodilla = new System.Windows.Forms.CheckBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.chk_CooMar_Romberg = new System.Windows.Forms.CheckBox();
-            this.chk_CooMar_DedoNariz = new System.Windows.Forms.CheckBox();
-            this.chk_CooMar_Camina = new System.Windows.Forms.CheckBox();
             this.auxiliarboca = new System.Windows.Forms.Button();
             this.gbBoca = new System.Windows.Forms.GroupBox();
             this.chk_Boca_Disfagia = new System.Windows.Forms.CheckBox();
@@ -168,6 +168,14 @@
             this.chk_Boca_Ulceras = new System.Windows.Forms.CheckBox();
             this.chk_Boca_Protesis = new System.Windows.Forms.CheckBox();
             this.chk_Boca_Adoncia = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtExploracionInfoAdicional = new System.Windows.Forms.TextBox();
+            this.cb_Ex_ManosUnas = new System.Windows.Forms.ComboBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.cb_Ex_Color = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.AuxiliarDigestivo = new System.Windows.Forms.Button();
             this.gbAparatoDigestivo = new System.Windows.Forms.GroupBox();
             this.label72 = new System.Windows.Forms.Label();
@@ -183,32 +191,60 @@
             this.chk_ApaDigestivo_FaltaApetito = new System.Windows.Forms.CheckBox();
             this.chk_ApaDigestivo_Nauseas = new System.Windows.Forms.CheckBox();
             this.chk_ApaDigestivo_Dolor = new System.Windows.Forms.CheckBox();
-            this.auxiliarCraneo = new System.Windows.Forms.Button();
-            this.gbCraneo = new System.Windows.Forms.GroupBox();
-            this.chk_Craneo_Prurito = new System.Windows.Forms.CheckBox();
-            this.label70 = new System.Windows.Forms.Label();
-            this.txtMareos = new System.Windows.Forms.NumericUpDown();
-            this.chk_Craneo_PerdidaConciencia = new System.Windows.Forms.CheckBox();
-            this.chk_Craneo_Cefalea = new System.Windows.Forms.CheckBox();
-            this.chk_Craneo_Sincope = new System.Windows.Forms.CheckBox();
-            this.chk_Craneo_AltereacionOsea = new System.Windows.Forms.CheckBox();
-            this.chk_Craneo_Simetrico = new System.Windows.Forms.CheckBox();
-            this.chk_Craneo_TamanoForma = new System.Windows.Forms.CheckBox();
+            this.gbAbdomen = new System.Windows.Forms.GroupBox();
+            this.cb_Abdomen_TamanoOrganos = new System.Windows.Forms.ComboBox();
+            this.chk_AbdomenAscititis = new System.Windows.Forms.CheckBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.cb_Abdomen_Recto = new System.Windows.Forms.ComboBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.cb_Abdomen_Bazo = new System.Windows.Forms.ComboBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.cb_Abdomen_Rinon = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.auxiliarNariz = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.gbOidos = new System.Windows.Forms.GroupBox();
-            this.chk_Oidos_Tinitus = new System.Windows.Forms.CheckBox();
-            this.chk_Oidos_Otorrea = new System.Windows.Forms.CheckBox();
-            this.chk_Oidos_Otalgia = new System.Windows.Forms.CheckBox();
-            this.chk_Oidos_Hipercusia = new System.Windows.Forms.CheckBox();
-            this.chk_Oidos_Hipocusia = new System.Windows.Forms.CheckBox();
-            this.chk_Oidos_Acusia = new System.Windows.Forms.CheckBox();
-            this.gbNariz = new System.Windows.Forms.GroupBox();
-            this.chk_Nariz_ResfrioFrecuente = new System.Windows.Forms.CheckBox();
-            this.chk_Nariz_Sinusitis = new System.Windows.Forms.CheckBox();
-            this.chk_Nariz_Epitaxis = new System.Windows.Forms.CheckBox();
-            this.chk_Nariz_Rinorrea = new System.Windows.Forms.CheckBox();
+            this.auxCoorMarcha = new System.Windows.Forms.Button();
+            this.gbCoordinacionMarcha = new System.Windows.Forms.GroupBox();
+            this.txt_ObsCoordinacion = new System.Windows.Forms.TextBox();
+            this.btn_Obs_CoordinacionMarcha = new System.Windows.Forms.Button();
+            this.chk_CooMar_TalonRodilla = new System.Windows.Forms.CheckBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.chk_CooMar_Romberg = new System.Windows.Forms.CheckBox();
+            this.chk_CooMar_DedoNariz = new System.Windows.Forms.CheckBox();
+            this.chk_CooMar_Camina = new System.Windows.Forms.CheckBox();
+            this.tabGinecoObstréticos = new System.Windows.Forms.TabPage();
+            this.btnAuxiliar = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.gbDatosGineco = new System.Windows.Forms.GroupBox();
+            this.txtCesareas = new System.Windows.Forms.NumericUpDown();
+            this.txtAbortos = new System.Windows.Forms.NumericUpDown();
+            this.txtPartos = new System.Windows.Forms.NumericUpDown();
+            this.dtFUM = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.labelCesarea = new System.Windows.Forms.Label();
+            this.labelAborto = new System.Windows.Forms.Label();
+            this.labelPartos = new System.Windows.Forms.Label();
+            this.txtGestaciones = new System.Windows.Forms.NumericUpDown();
+            this.labelgestaciones = new System.Windows.Forms.Label();
+            this.dtFUP = new System.Windows.Forms.DateTimePicker();
+            this.labelFechaUltimoPapa = new System.Windows.Forms.Label();
+            this.tabSentidos = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabEstadoEmocional = new System.Windows.Forms.TabPage();
+            this.gbReflejos = new System.Windows.Forms.GroupBox();
+            this.btn_ReflejoObservacion = new System.Windows.Forms.Button();
+            this.chk_R_Patelar = new System.Windows.Forms.CheckBox();
+            this.chk_R_Adominales = new System.Windows.Forms.CheckBox();
+            this.chk_R_Radial = new System.Windows.Forms.CheckBox();
+            this.chk_R_Tricipital = new System.Windows.Forms.CheckBox();
+            this.chk_R_Bicipital = new System.Windows.Forms.CheckBox();
+            this.chk_R_Mentoniano = new System.Windows.Forms.CheckBox();
+            this.chk_R_Carneano = new System.Windows.Forms.CheckBox();
+            this.chk_R_Orbicular_De_Los_Ojos = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtReflejoObservacion = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cb_Reflejo_ValoracionGeneral = new System.Windows.Forms.ComboBox();
+            this.AuiliarReflejo = new System.Windows.Forms.Button();
             this.gbSensibilidad = new System.Windows.Forms.GroupBox();
             this.txtSensibilidadDetalle = new System.Windows.Forms.TextBox();
             this.btnSensbilidadDetalle = new System.Windows.Forms.Button();
@@ -217,18 +253,23 @@
             this.chk_Sensiblidad_Dis_DosPuntos = new System.Windows.Forms.CheckBox();
             this.chk_Sensiblidad_Profunda = new System.Windows.Forms.CheckBox();
             this.chk_Sensiblidad_Superficial = new System.Windows.Forms.CheckBox();
-            this.auxiliarToraxP = new System.Windows.Forms.Button();
-            this.gbTorax = new System.Windows.Forms.GroupBox();
-            this.chk_Torax_SonoridadPulmonar = new System.Windows.Forms.CheckBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.cb_Torax_RuidoAgregado = new System.Windows.Forms.ComboBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.cb_Torax_Ascultacion = new System.Windows.Forms.ComboBox();
-            this.cb_Torax_Expa = new System.Windows.Forms.ComboBox();
-            this.label74 = new System.Windows.Forms.Label();
-            this.cb_Torax_ResDiafraAbdo = new System.Windows.Forms.ComboBox();
-            this.tabParesCraneales = new System.Windows.Forms.TabPage();
+            this.auxiliarEstadoEmo = new System.Windows.Forms.Button();
+            this.gbEstadoEmocional = new System.Windows.Forms.GroupBox();
+            this.chk_Emocional_Distraido = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_Desmayos = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_EdadAvanzada = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_Debilidad = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_Normal = new System.Windows.Forms.CheckBox();
+            this.btn_EmocionalOtro = new System.Windows.Forms.Button();
+            this.txtEmocional_Otro = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.chk_Emocional_Alucionaciones = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_AlteracionSueno = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_Irritabilidad = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_Tension = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_Nervioso = new System.Windows.Forms.CheckBox();
+            this.chk_Emocional_Depresion = new System.Windows.Forms.CheckBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.auxPares = new System.Windows.Forms.Button();
             this.gbParesCraneales = new System.Windows.Forms.GroupBox();
             this.btnParCranealDetalle = new System.Windows.Forms.Button();
@@ -261,22 +302,26 @@
             this.chk_PC_II_AgudezaVisual = new System.Windows.Forms.CheckBox();
             this.chk_PC_II_FondoOjo = new System.Windows.Forms.CheckBox();
             this.chk_PC_I_Olfatorio = new System.Windows.Forms.CheckBox();
-            this.tabGinecoObstréticos = new System.Windows.Forms.TabPage();
-            this.btnAuxiliar = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.gbDatosGineco = new System.Windows.Forms.GroupBox();
-            this.txtCesareas = new System.Windows.Forms.NumericUpDown();
-            this.txtAbortos = new System.Windows.Forms.NumericUpDown();
-            this.txtPartos = new System.Windows.Forms.NumericUpDown();
-            this.dtFUM = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.labelCesarea = new System.Windows.Forms.Label();
-            this.labelAborto = new System.Windows.Forms.Label();
-            this.labelPartos = new System.Windows.Forms.Label();
-            this.txtGestaciones = new System.Windows.Forms.NumericUpDown();
-            this.labelgestaciones = new System.Windows.Forms.Label();
-            this.dtFUP = new System.Windows.Forms.DateTimePicker();
-            this.labelFechaUltimoPapa = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.gbGaslowEscala = new System.Windows.Forms.GroupBox();
+            this.gbRespuestaMotora = new System.Windows.Forms.GroupBox();
+            this.Rb_Gaslow_RM_Ausencia = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RM_Rextension = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RM_Evita = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RM_Rflexion = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RM_Localiza = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RM_Obedece = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Rb_Gaslow_RV_Lincompresible = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RV_Carencia = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RV_Linapropiado = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RV_Pconfuso = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_RV_Orientado = new System.Windows.Forms.RadioButton();
+            this.gbAperturaOcular = new System.Windows.Forms.GroupBox();
+            this.Rb_Gaslow_AO_Estimulo = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_AO_Ausencia = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_AO_AOrden = new System.Windows.Forms.RadioButton();
+            this.Rb_Gaslow_AO_Espontanea = new System.Windows.Forms.RadioButton();
             this.tabAntecedente = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabNoPatologico = new System.Windows.Forms.TabPage();
@@ -368,43 +413,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbTipoAlergia = new System.Windows.Forms.ComboBox();
             this.dgAlergias = new System.Windows.Forms.DataGridView();
-            this.tabSentidos = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.auxiliarEstadoEmo = new System.Windows.Forms.Button();
-            this.gbEstadoEmocional = new System.Windows.Forms.GroupBox();
-            this.chk_Emocional_Distraido = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_Desmayos = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_EdadAvanzada = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_Debilidad = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_Normal = new System.Windows.Forms.CheckBox();
-            this.btn_EmocionalOtro = new System.Windows.Forms.Button();
-            this.txtEmocional_Otro = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.chk_Emocional_Alucionaciones = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_AlteracionSueno = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_Irritabilidad = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_Tension = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_Nervioso = new System.Windows.Forms.CheckBox();
-            this.chk_Emocional_Depresion = new System.Windows.Forms.CheckBox();
-            this.gbGaslowEscala = new System.Windows.Forms.GroupBox();
-            this.gbRespuestaMotora = new System.Windows.Forms.GroupBox();
-            this.Rb_Gaslow_RM_Ausencia = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RM_Rextension = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RM_Evita = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RM_Rflexion = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RM_Localiza = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RM_Obedece = new System.Windows.Forms.RadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.Rb_Gaslow_RV_Lincompresible = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RV_Carencia = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RV_Linapropiado = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RV_Pconfuso = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_RV_Orientado = new System.Windows.Forms.RadioButton();
-            this.gbAperturaOcular = new System.Windows.Forms.GroupBox();
-            this.Rb_Gaslow_AO_Estimulo = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_AO_Ausencia = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_AO_AOrden = new System.Windows.Forms.RadioButton();
-            this.Rb_Gaslow_AO_Espontanea = new System.Windows.Forms.RadioButton();
             this.tabServicio = new System.Windows.Forms.TabPage();
             this.dgServicios = new System.Windows.Forms.DataGridView();
             this.btnAuxServici = new System.Windows.Forms.Button();
@@ -451,7 +459,8 @@
             this.ExploracionFisicaTab.SuspendLayout();
             this.tabExploracionFisica.SuspendLayout();
             this.tabMedidas.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIMC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureIndeceMasaCorporal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrecuenciaRespiratoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTalla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrencuenciaCardiaca)).BeginInit();
@@ -459,31 +468,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTemperatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresionArterial_Sistolica)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            this.gbAbdomen.SuspendLayout();
-            this.gbOjos.SuspendLayout();
-            this.gbCuello.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPresionVenosaCuello)).BeginInit();
-            this.gbReflejos.SuspendLayout();
-            this.tabPage9.SuspendLayout();
-            this.gbCoordinacionMarcha.SuspendLayout();
-            this.gbBoca.SuspendLayout();
-            this.gbAparatoDigestivo.SuspendLayout();
-            this.gbCraneo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMareos)).BeginInit();
-            this.tabPage10.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.gbOidos.SuspendLayout();
             this.gbNariz.SuspendLayout();
-            this.gbSensibilidad.SuspendLayout();
+            this.gbOjos.SuspendLayout();
+            this.gbCraneo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMareos)).BeginInit();
+            this.tabPage9.SuspendLayout();
             this.gbTorax.SuspendLayout();
-            this.tabParesCraneales.SuspendLayout();
-            this.gbParesCraneales.SuspendLayout();
+            this.gbCuello.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresionVenosaCuello)).BeginInit();
+            this.gbBoca.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.gbAparatoDigestivo.SuspendLayout();
+            this.gbAbdomen.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            this.gbCoordinacionMarcha.SuspendLayout();
             this.tabGinecoObstréticos.SuspendLayout();
             this.gbDatosGineco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCesareas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAbortos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPartos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGestaciones)).BeginInit();
+            this.tabSentidos.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabEstadoEmocional.SuspendLayout();
+            this.gbReflejos.SuspendLayout();
+            this.gbSensibilidad.SuspendLayout();
+            this.gbEstadoEmocional.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.gbParesCraneales.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.gbGaslowEscala.SuspendLayout();
+            this.gbRespuestaMotora.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.gbAperturaOcular.SuspendLayout();
             this.tabAntecedente.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabNoPatologico.SuspendLayout();
@@ -505,12 +526,6 @@
             this.tabAlergia.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).BeginInit();
-            this.tabSentidos.SuspendLayout();
-            this.gbEstadoEmocional.SuspendLayout();
-            this.gbGaslowEscala.SuspendLayout();
-            this.gbRespuestaMotora.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.gbAperturaOcular.SuspendLayout();
             this.tabServicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.gbServicio.SuspendLayout();
@@ -543,11 +558,10 @@
             this.tabGeneral.Controls.Add(this.tabMoticoConsulta);
             this.tabGeneral.Controls.Add(this.tabEstadoVivienda);
             this.tabGeneral.Controls.Add(this.ExploracionFisicaTab);
-            this.tabGeneral.Controls.Add(this.tabParesCraneales);
             this.tabGeneral.Controls.Add(this.tabGinecoObstréticos);
+            this.tabGeneral.Controls.Add(this.tabSentidos);
             this.tabGeneral.Controls.Add(this.tabAntecedente);
             this.tabGeneral.Controls.Add(this.tabAlergia);
-            this.tabGeneral.Controls.Add(this.tabSentidos);
             this.tabGeneral.Controls.Add(this.tabServicio);
             this.tabGeneral.Controls.Add(this.tabDiagnostico);
             this.tabGeneral.Location = new System.Drawing.Point(32, 25);
@@ -969,8 +983,10 @@
             // tabExploracionFisica
             // 
             this.tabExploracionFisica.Controls.Add(this.tabMedidas);
-            this.tabExploracionFisica.Controls.Add(this.tabPage4);
+            this.tabExploracionFisica.Controls.Add(this.tabPage1);
             this.tabExploracionFisica.Controls.Add(this.tabPage9);
+            this.tabExploracionFisica.Controls.Add(this.tabPage3);
+            this.tabExploracionFisica.Controls.Add(this.tabPage4);
             this.tabExploracionFisica.Controls.Add(this.tabPage10);
             this.tabExploracionFisica.Location = new System.Drawing.Point(3, 0);
             this.tabExploracionFisica.Name = "tabExploracionFisica";
@@ -980,8 +996,11 @@
             // 
             // tabMedidas
             // 
+            this.tabMedidas.Controls.Add(this.checkIMC);
+            this.tabMedidas.Controls.Add(this.label19);
+            this.tabMedidas.Controls.Add(this.txtIMC);
+            this.tabMedidas.Controls.Add(this.pictureIndeceMasaCorporal);
             this.tabMedidas.Controls.Add(this.label37);
-            this.tabMedidas.Controls.Add(this.groupBox2);
             this.tabMedidas.Controls.Add(this.label68);
             this.tabMedidas.Controls.Add(this.btnSanoMedidas);
             this.tabMedidas.Controls.Add(this.label54);
@@ -1007,82 +1026,66 @@
             this.tabMedidas.Padding = new System.Windows.Forms.Padding(3);
             this.tabMedidas.Size = new System.Drawing.Size(823, 367);
             this.tabMedidas.TabIndex = 0;
-            this.tabMedidas.Text = "Medidas,  Manos y Piel";
+            this.tabMedidas.Text = "General";
             this.tabMedidas.UseVisualStyleBackColor = true;
+            // 
+            // checkIMC
+            // 
+            this.checkIMC.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkIMC.AutoSize = true;
+            this.checkIMC.BackgroundImage = global::Frm.Properties.Resources.switch_OFF;
+            this.checkIMC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkIMC.FlatAppearance.BorderSize = 0;
+            this.checkIMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkIMC.Location = new System.Drawing.Point(353, 236);
+            this.checkIMC.Name = "checkIMC";
+            this.checkIMC.Size = new System.Drawing.Size(29, 23);
+            this.checkIMC.TabIndex = 94;
+            this.checkIMC.Text = "    ";
+            this.checkIMC.UseVisualStyleBackColor = true;
+            this.checkIMC.CheckedChanged += new System.EventHandler(this.checkIMC_CheckedChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(33, 246);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(26, 13);
+            this.label19.TabIndex = 93;
+            this.label19.Text = "IMC";
+            // 
+            // txtIMC
+            // 
+            this.txtIMC.DecimalPlaces = 1;
+            this.txtIMC.Location = new System.Drawing.Point(205, 239);
+            this.txtIMC.Name = "txtIMC";
+            this.txtIMC.ReadOnly = true;
+            this.txtIMC.Size = new System.Drawing.Size(142, 20);
+            this.txtIMC.TabIndex = 92;
+            // 
+            // pictureIndeceMasaCorporal
+            // 
+            this.pictureIndeceMasaCorporal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureIndeceMasaCorporal.Image = ((System.Drawing.Image)(resources.GetObject("pictureIndeceMasaCorporal.Image")));
+            this.pictureIndeceMasaCorporal.Location = new System.Drawing.Point(472, 60);
+            this.pictureIndeceMasaCorporal.Name = "pictureIndeceMasaCorporal";
+            this.pictureIndeceMasaCorporal.Size = new System.Drawing.Size(310, 237);
+            this.pictureIndeceMasaCorporal.TabIndex = 91;
+            this.pictureIndeceMasaCorporal.TabStop = false;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(625, 68);
+            this.label37.Location = new System.Drawing.Point(311, 156);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(37, 13);
             this.label37.TabIndex = 87;
             this.label37.Text = "mmHg";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtExploracionInfoAdicional);
-            this.groupBox2.Controls.Add(this.cb_Ex_ManosUnas);
-            this.groupBox2.Controls.Add(this.label62);
-            this.groupBox2.Controls.Add(this.cb_Ex_Color);
-            this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Location = new System.Drawing.Point(48, 175);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(636, 163);
-            this.groupBox2.TabIndex = 91;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Manos y Piel";
-            // 
-            // txtExploracionInfoAdicional
-            // 
-            this.txtExploracionInfoAdicional.Location = new System.Drawing.Point(269, 33);
-            this.txtExploracionInfoAdicional.Multiline = true;
-            this.txtExploracionInfoAdicional.Name = "txtExploracionInfoAdicional";
-            this.txtExploracionInfoAdicional.ReadOnly = true;
-            this.txtExploracionInfoAdicional.Size = new System.Drawing.Size(345, 100);
-            this.txtExploracionInfoAdicional.TabIndex = 46;
-            this.txtExploracionInfoAdicional.Text = "Info Adicional";
-            // 
-            // cb_Ex_ManosUnas
-            // 
-            this.cb_Ex_ManosUnas.FormattingEnabled = true;
-            this.cb_Ex_ManosUnas.Location = new System.Drawing.Point(94, 77);
-            this.cb_Ex_ManosUnas.Name = "cb_Ex_ManosUnas";
-            this.cb_Ex_ManosUnas.Size = new System.Drawing.Size(142, 21);
-            this.cb_Ex_ManosUnas.TabIndex = 50;
-            this.cb_Ex_ManosUnas.SelectedIndexChanged += new System.EventHandler(this.cb_Ex_ManosUnas_SelectedIndexChanged);
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(9, 82);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(64, 13);
-            this.label62.TabIndex = 49;
-            this.label62.Text = "ManosUñas";
-            // 
-            // cb_Ex_Color
-            // 
-            this.cb_Ex_Color.FormattingEnabled = true;
-            this.cb_Ex_Color.Location = new System.Drawing.Point(94, 45);
-            this.cb_Ex_Color.Name = "cb_Ex_Color";
-            this.cb_Ex_Color.Size = new System.Drawing.Size(142, 21);
-            this.cb_Ex_Color.TabIndex = 45;
-            this.cb_Ex_Color.SelectedIndexChanged += new System.EventHandler(this.cb_Ex_Color_SelectedIndexChanged);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 48);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 13);
-            this.label21.TabIndex = 44;
-            this.label21.Text = "Color";
-            // 
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(566, 98);
+            this.label68.Location = new System.Drawing.Point(252, 186);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(39, 13);
             this.label68.TabIndex = 90;
@@ -1093,7 +1096,7 @@
             this.btnSanoMedidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSanoMedidas.Image = ((System.Drawing.Image)(resources.GetObject("btnSanoMedidas.Image")));
             this.btnSanoMedidas.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnSanoMedidas.Location = new System.Drawing.Point(48, 8);
+            this.btnSanoMedidas.Location = new System.Drawing.Point(36, 6);
             this.btnSanoMedidas.Name = "btnSanoMedidas";
             this.btnSanoMedidas.Size = new System.Drawing.Size(85, 37);
             this.btnSanoMedidas.TabIndex = 86;
@@ -1105,7 +1108,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(565, 121);
+            this.label54.Location = new System.Drawing.Point(251, 209);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(48, 13);
             this.label54.TabIndex = 89;
@@ -1114,7 +1117,7 @@
             // label100
             // 
             this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(284, 120);
+            this.label100.Location = new System.Drawing.Point(348, 94);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(15, 13);
             this.label100.TabIndex = 85;
@@ -1123,7 +1126,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(350, 116);
+            this.label9.Location = new System.Drawing.Point(33, 204);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 13);
             this.label9.TabIndex = 76;
@@ -1131,7 +1134,7 @@
             // 
             // txtFrecuenciaRespiratoria
             // 
-            this.txtFrecuenciaRespiratoria.Location = new System.Drawing.Point(520, 114);
+            this.txtFrecuenciaRespiratoria.Location = new System.Drawing.Point(206, 202);
             this.txtFrecuenciaRespiratoria.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1144,7 +1147,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(284, 69);
+            this.label40.Location = new System.Drawing.Point(347, 68);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(19, 13);
             this.label40.TabIndex = 83;
@@ -1153,7 +1156,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(350, 90);
+            this.label8.Location = new System.Drawing.Point(32, 178);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 13);
             this.label8.TabIndex = 72;
@@ -1162,7 +1165,7 @@
             // txtTalla
             // 
             this.txtTalla.DecimalPlaces = 2;
-            this.txtTalla.Location = new System.Drawing.Point(142, 114);
+            this.txtTalla.Location = new System.Drawing.Point(206, 88);
             this.txtTalla.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1174,7 +1177,7 @@
             // 
             // txtFrencuenciaCardiaca
             // 
-            this.txtFrencuenciaCardiaca.Location = new System.Drawing.Point(520, 90);
+            this.txtFrencuenciaCardiaca.Location = new System.Drawing.Point(206, 178);
             this.txtFrencuenciaCardiaca.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1187,7 +1190,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 62);
+            this.label2.Location = new System.Drawing.Point(33, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 16;
@@ -1195,7 +1198,7 @@
             // 
             // txtPresionArterial_Diastolica
             // 
-            this.txtPresionArterial_Diastolica.Location = new System.Drawing.Point(576, 61);
+            this.txtPresionArterial_Diastolica.Location = new System.Drawing.Point(262, 149);
             this.txtPresionArterial_Diastolica.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1208,7 +1211,7 @@
             // txtTemperatura
             // 
             this.txtTemperatura.DecimalPlaces = 2;
-            this.txtTemperatura.Location = new System.Drawing.Point(142, 88);
+            this.txtTemperatura.Location = new System.Drawing.Point(205, 120);
             this.txtTemperatura.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1221,7 +1224,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(347, 63);
+            this.label47.Location = new System.Drawing.Point(33, 151);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(167, 13);
             this.label47.TabIndex = 63;
@@ -1230,7 +1233,7 @@
             // txtPeso
             // 
             this.txtPeso.DecimalPlaces = 2;
-            this.txtPeso.Location = new System.Drawing.Point(142, 63);
+            this.txtPeso.Location = new System.Drawing.Point(205, 62);
             this.txtPeso.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1239,10 +1242,15 @@
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(142, 20);
             this.txtPeso.TabIndex = 30;
+            this.txtPeso.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             // 
             // txtPresionArterial_Sistolica
             // 
-            this.txtPresionArterial_Sistolica.Location = new System.Drawing.Point(520, 61);
+            this.txtPresionArterial_Sistolica.Location = new System.Drawing.Point(206, 149);
             this.txtPresionArterial_Sistolica.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1255,7 +1263,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 116);
+            this.label4.Location = new System.Drawing.Point(33, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 18;
@@ -1264,7 +1272,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 90);
+            this.label3.Location = new System.Drawing.Point(32, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 17;
@@ -1274,7 +1282,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(560, 55);
+            this.label7.Location = new System.Drawing.Point(246, 143);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(22, 31);
             this.label7.TabIndex = 70;
@@ -1283,156 +1291,175 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(281, 93);
+            this.label38.Location = new System.Drawing.Point(344, 125);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(18, 13);
             this.label38.TabIndex = 84;
             this.label38.Text = "°C";
             // 
-            // tabPage4
+            // tabPage1
             // 
-            this.tabPage4.Controls.Add(this.gbAbdomen);
-            this.tabPage4.Controls.Add(this.auxiliarCuello);
-            this.tabPage4.Controls.Add(this.gbOjos);
-            this.tabPage4.Controls.Add(this.gbCuello);
-            this.tabPage4.Controls.Add(this.AuiliarReflejo);
-            this.tabPage4.Controls.Add(this.gbReflejos);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(823, 367);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Reflejos,Cuello,Ojos,Abdomen";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.auxiliarNariz);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.gbOidos);
+            this.tabPage1.Controls.Add(this.gbNariz);
+            this.tabPage1.Controls.Add(this.gbOjos);
+            this.tabPage1.Controls.Add(this.auxiliarCraneo);
+            this.tabPage1.Controls.Add(this.gbCraneo);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(823, 367);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Craneo - Ojos - Nariz - Oidos";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // gbAbdomen
+            // auxiliarNariz
             // 
-            this.gbAbdomen.Controls.Add(this.cb_Abdomen_TamanoOrganos);
-            this.gbAbdomen.Controls.Add(this.chk_AbdomenAscititis);
-            this.gbAbdomen.Controls.Add(this.label56);
-            this.gbAbdomen.Controls.Add(this.cb_Abdomen_Recto);
-            this.gbAbdomen.Controls.Add(this.label55);
-            this.gbAbdomen.Controls.Add(this.cb_Abdomen_Bazo);
-            this.gbAbdomen.Controls.Add(this.label46);
-            this.gbAbdomen.Controls.Add(this.cb_Abdomen_Rinon);
-            this.gbAbdomen.Controls.Add(this.label20);
-            this.gbAbdomen.Location = new System.Drawing.Point(530, 18);
-            this.gbAbdomen.Name = "gbAbdomen";
-            this.gbAbdomen.Size = new System.Drawing.Size(280, 169);
-            this.gbAbdomen.TabIndex = 3;
-            this.gbAbdomen.TabStop = false;
-            this.gbAbdomen.Text = "Abdomen";
+            this.auxiliarNariz.Location = new System.Drawing.Point(345, 178);
+            this.auxiliarNariz.Name = "auxiliarNariz";
+            this.auxiliarNariz.Size = new System.Drawing.Size(75, 23);
+            this.auxiliarNariz.TabIndex = 88;
+            this.auxiliarNariz.Text = "button1";
+            this.auxiliarNariz.UseVisualStyleBackColor = true;
+            this.auxiliarNariz.Visible = false;
             // 
-            // cb_Abdomen_TamanoOrganos
+            // button1
             // 
-            this.cb_Abdomen_TamanoOrganos.FormattingEnabled = true;
-            this.cb_Abdomen_TamanoOrganos.Items.AddRange(new object[] {
-            "Normal",
-            "Dolor",
-            "Inflamación",
-            "Nota Percusiva Mate",
-            "Otro.."});
-            this.cb_Abdomen_TamanoOrganos.Location = new System.Drawing.Point(135, 18);
-            this.cb_Abdomen_TamanoOrganos.Name = "cb_Abdomen_TamanoOrganos";
-            this.cb_Abdomen_TamanoOrganos.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_TamanoOrganos.TabIndex = 68;
+            this.button1.Location = new System.Drawing.Point(526, 178);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 87;
+            this.button1.Text = "auxiliarOido";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
-            // chk_AbdomenAscititis
+            // gbOidos
             // 
-            this.chk_AbdomenAscititis.AutoSize = true;
-            this.chk_AbdomenAscititis.Location = new System.Drawing.Point(135, 132);
-            this.chk_AbdomenAscititis.Name = "chk_AbdomenAscititis";
-            this.chk_AbdomenAscititis.Size = new System.Drawing.Size(59, 17);
-            this.chk_AbdomenAscititis.TabIndex = 67;
-            this.chk_AbdomenAscititis.Text = "Asctitis";
-            this.chk_AbdomenAscititis.UseVisualStyleBackColor = true;
+            this.gbOidos.Controls.Add(this.chk_Oidos_Tinitus);
+            this.gbOidos.Controls.Add(this.chk_Oidos_Otorrea);
+            this.gbOidos.Controls.Add(this.chk_Oidos_Otalgia);
+            this.gbOidos.Controls.Add(this.chk_Oidos_Hipercusia);
+            this.gbOidos.Controls.Add(this.chk_Oidos_Hipocusia);
+            this.gbOidos.Controls.Add(this.chk_Oidos_Acusia);
+            this.gbOidos.Location = new System.Drawing.Point(519, 13);
+            this.gbOidos.Name = "gbOidos";
+            this.gbOidos.Size = new System.Drawing.Size(124, 145);
+            this.gbOidos.TabIndex = 86;
+            this.gbOidos.TabStop = false;
+            this.gbOidos.Text = "Oidos";
             // 
-            // label56
+            // chk_Oidos_Tinitus
             // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(16, 77);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(36, 13);
-            this.label56.TabIndex = 66;
-            this.label56.Text = "Recto";
+            this.chk_Oidos_Tinitus.AutoSize = true;
+            this.chk_Oidos_Tinitus.Location = new System.Drawing.Point(16, 119);
+            this.chk_Oidos_Tinitus.Name = "chk_Oidos_Tinitus";
+            this.chk_Oidos_Tinitus.Size = new System.Drawing.Size(57, 17);
+            this.chk_Oidos_Tinitus.TabIndex = 5;
+            this.chk_Oidos_Tinitus.Text = "Tinitus";
+            this.chk_Oidos_Tinitus.UseVisualStyleBackColor = true;
             // 
-            // cb_Abdomen_Recto
+            // chk_Oidos_Otorrea
             // 
-            this.cb_Abdomen_Recto.FormattingEnabled = true;
-            this.cb_Abdomen_Recto.Items.AddRange(new object[] {
-            "Normal",
-            "Incontinencia",
-            "Hemorroides",
-            "Colgajos de piel",
-            ""});
-            this.cb_Abdomen_Recto.Location = new System.Drawing.Point(135, 74);
-            this.cb_Abdomen_Recto.Name = "cb_Abdomen_Recto";
-            this.cb_Abdomen_Recto.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_Recto.TabIndex = 65;
+            this.chk_Oidos_Otorrea.AutoSize = true;
+            this.chk_Oidos_Otorrea.Location = new System.Drawing.Point(16, 99);
+            this.chk_Oidos_Otorrea.Name = "chk_Oidos_Otorrea";
+            this.chk_Oidos_Otorrea.Size = new System.Drawing.Size(61, 17);
+            this.chk_Oidos_Otorrea.TabIndex = 4;
+            this.chk_Oidos_Otorrea.Text = "Otorrea";
+            this.chk_Oidos_Otorrea.UseVisualStyleBackColor = true;
             // 
-            // label55
+            // chk_Oidos_Otalgia
             // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(21, 104);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(31, 13);
-            this.label55.TabIndex = 64;
-            this.label55.Text = "Bazo";
+            this.chk_Oidos_Otalgia.AutoSize = true;
+            this.chk_Oidos_Otalgia.Location = new System.Drawing.Point(15, 79);
+            this.chk_Oidos_Otalgia.Name = "chk_Oidos_Otalgia";
+            this.chk_Oidos_Otalgia.Size = new System.Drawing.Size(59, 17);
+            this.chk_Oidos_Otalgia.TabIndex = 3;
+            this.chk_Oidos_Otalgia.Text = "Otalgia";
+            this.chk_Oidos_Otalgia.UseVisualStyleBackColor = true;
             // 
-            // cb_Abdomen_Bazo
+            // chk_Oidos_Hipercusia
             // 
-            this.cb_Abdomen_Bazo.FormattingEnabled = true;
-            this.cb_Abdomen_Bazo.Items.AddRange(new object[] {
-            "Normal",
-            "Agrandado",
-            "Sensible,Dolor"});
-            this.cb_Abdomen_Bazo.Location = new System.Drawing.Point(135, 105);
-            this.cb_Abdomen_Bazo.Name = "cb_Abdomen_Bazo";
-            this.cb_Abdomen_Bazo.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_Bazo.TabIndex = 63;
+            this.chk_Oidos_Hipercusia.AutoSize = true;
+            this.chk_Oidos_Hipercusia.Location = new System.Drawing.Point(16, 59);
+            this.chk_Oidos_Hipercusia.Name = "chk_Oidos_Hipercusia";
+            this.chk_Oidos_Hipercusia.Size = new System.Drawing.Size(76, 17);
+            this.chk_Oidos_Hipercusia.TabIndex = 2;
+            this.chk_Oidos_Hipercusia.Text = "Hipercusia";
+            this.chk_Oidos_Hipercusia.UseVisualStyleBackColor = true;
             // 
-            // label46
+            // chk_Oidos_Hipocusia
             // 
-            this.label46.AutoSize = true;
-            this.label46.ForeColor = System.Drawing.Color.Black;
-            this.label46.Location = new System.Drawing.Point(16, 26);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(89, 13);
-            this.label46.TabIndex = 60;
-            this.label46.Text = "Tamaño Organos";
+            this.chk_Oidos_Hipocusia.AutoSize = true;
+            this.chk_Oidos_Hipocusia.Location = new System.Drawing.Point(16, 39);
+            this.chk_Oidos_Hipocusia.Name = "chk_Oidos_Hipocusia";
+            this.chk_Oidos_Hipocusia.Size = new System.Drawing.Size(73, 17);
+            this.chk_Oidos_Hipocusia.TabIndex = 1;
+            this.chk_Oidos_Hipocusia.Text = "Hipocusia";
+            this.chk_Oidos_Hipocusia.UseVisualStyleBackColor = true;
             // 
-            // cb_Abdomen_Rinon
+            // chk_Oidos_Acusia
             // 
-            this.cb_Abdomen_Rinon.FormattingEnabled = true;
-            this.cb_Abdomen_Rinon.Items.AddRange(new object[] {
-            "Normal",
-            "Dolor",
-            "Inflamación",
-            "Nota Percusiva Mate",
-            "Otro.."});
-            this.cb_Abdomen_Rinon.Location = new System.Drawing.Point(135, 45);
-            this.cb_Abdomen_Rinon.Name = "cb_Abdomen_Rinon";
-            this.cb_Abdomen_Rinon.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_Rinon.TabIndex = 60;
+            this.chk_Oidos_Acusia.AutoSize = true;
+            this.chk_Oidos_Acusia.Location = new System.Drawing.Point(16, 19);
+            this.chk_Oidos_Acusia.Name = "chk_Oidos_Acusia";
+            this.chk_Oidos_Acusia.Size = new System.Drawing.Size(58, 17);
+            this.chk_Oidos_Acusia.TabIndex = 0;
+            this.chk_Oidos_Acusia.Text = "Acusia";
+            this.chk_Oidos_Acusia.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // gbNariz
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(16, 53);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(35, 13);
-            this.label20.TabIndex = 59;
-            this.label20.Text = "Riñon";
+            this.gbNariz.Controls.Add(this.chk_Nariz_ResfrioFrecuente);
+            this.gbNariz.Controls.Add(this.chk_Nariz_Sinusitis);
+            this.gbNariz.Controls.Add(this.chk_Nariz_Epitaxis);
+            this.gbNariz.Controls.Add(this.chk_Nariz_Rinorrea);
+            this.gbNariz.Location = new System.Drawing.Point(358, 13);
+            this.gbNariz.Name = "gbNariz";
+            this.gbNariz.Size = new System.Drawing.Size(139, 117);
+            this.gbNariz.TabIndex = 85;
+            this.gbNariz.TabStop = false;
+            this.gbNariz.Text = "Nariz";
             // 
-            // auxiliarCuello
+            // chk_Nariz_ResfrioFrecuente
             // 
-            this.auxiliarCuello.Location = new System.Drawing.Point(212, 327);
-            this.auxiliarCuello.Name = "auxiliarCuello";
-            this.auxiliarCuello.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarCuello.TabIndex = 83;
-            this.auxiliarCuello.Text = "Cuello";
-            this.auxiliarCuello.UseVisualStyleBackColor = true;
-            this.auxiliarCuello.Click += new System.EventHandler(this.auxiliarCuello_Click);
+            this.chk_Nariz_ResfrioFrecuente.AutoSize = true;
+            this.chk_Nariz_ResfrioFrecuente.Location = new System.Drawing.Point(14, 83);
+            this.chk_Nariz_ResfrioFrecuente.Name = "chk_Nariz_ResfrioFrecuente";
+            this.chk_Nariz_ResfrioFrecuente.Size = new System.Drawing.Size(110, 17);
+            this.chk_Nariz_ResfrioFrecuente.TabIndex = 3;
+            this.chk_Nariz_ResfrioFrecuente.Text = "Resfrio Frecuente";
+            this.chk_Nariz_ResfrioFrecuente.UseVisualStyleBackColor = true;
+            // 
+            // chk_Nariz_Sinusitis
+            // 
+            this.chk_Nariz_Sinusitis.AutoSize = true;
+            this.chk_Nariz_Sinusitis.Location = new System.Drawing.Point(14, 60);
+            this.chk_Nariz_Sinusitis.Name = "chk_Nariz_Sinusitis";
+            this.chk_Nariz_Sinusitis.Size = new System.Drawing.Size(64, 17);
+            this.chk_Nariz_Sinusitis.TabIndex = 2;
+            this.chk_Nariz_Sinusitis.Text = "Sinusitis";
+            this.chk_Nariz_Sinusitis.UseVisualStyleBackColor = true;
+            // 
+            // chk_Nariz_Epitaxis
+            // 
+            this.chk_Nariz_Epitaxis.AutoSize = true;
+            this.chk_Nariz_Epitaxis.Location = new System.Drawing.Point(14, 39);
+            this.chk_Nariz_Epitaxis.Name = "chk_Nariz_Epitaxis";
+            this.chk_Nariz_Epitaxis.Size = new System.Drawing.Size(62, 17);
+            this.chk_Nariz_Epitaxis.TabIndex = 1;
+            this.chk_Nariz_Epitaxis.Text = "Epitaxis";
+            this.chk_Nariz_Epitaxis.UseVisualStyleBackColor = true;
+            // 
+            // chk_Nariz_Rinorrea
+            // 
+            this.chk_Nariz_Rinorrea.AutoSize = true;
+            this.chk_Nariz_Rinorrea.Location = new System.Drawing.Point(14, 19);
+            this.chk_Nariz_Rinorrea.Name = "chk_Nariz_Rinorrea";
+            this.chk_Nariz_Rinorrea.Size = new System.Drawing.Size(66, 17);
+            this.chk_Nariz_Rinorrea.TabIndex = 0;
+            this.chk_Nariz_Rinorrea.Text = "Rinorrea";
+            this.chk_Nariz_Rinorrea.UseVisualStyleBackColor = true;
             // 
             // gbOjos
             // 
@@ -1444,10 +1471,10 @@
             this.gbOjos.Controls.Add(this.chk_Ojos_Lentes);
             this.gbOjos.Controls.Add(this.chk_Ojos_FotoFobia);
             this.gbOjos.Controls.Add(this.chk_Ojos_Diploplia);
-            this.gbOjos.Location = new System.Drawing.Point(372, 18);
+            this.gbOjos.Location = new System.Drawing.Point(194, 13);
             this.gbOjos.Name = "gbOjos";
             this.gbOjos.Size = new System.Drawing.Size(142, 215);
-            this.gbOjos.TabIndex = 2;
+            this.gbOjos.TabIndex = 4;
             this.gbOjos.TabStop = false;
             this.gbOjos.Text = "Ojos";
             // 
@@ -1528,6 +1555,263 @@
             this.chk_Ojos_Diploplia.Text = "Diploplia";
             this.chk_Ojos_Diploplia.UseVisualStyleBackColor = true;
             // 
+            // auxiliarCraneo
+            // 
+            this.auxiliarCraneo.Location = new System.Drawing.Point(22, 309);
+            this.auxiliarCraneo.Name = "auxiliarCraneo";
+            this.auxiliarCraneo.Size = new System.Drawing.Size(75, 23);
+            this.auxiliarCraneo.TabIndex = 3;
+            this.auxiliarCraneo.Text = "button2";
+            this.auxiliarCraneo.UseVisualStyleBackColor = true;
+            this.auxiliarCraneo.Visible = false;
+            // 
+            // gbCraneo
+            // 
+            this.gbCraneo.Controls.Add(this.chk_Craneo_Prurito);
+            this.gbCraneo.Controls.Add(this.label70);
+            this.gbCraneo.Controls.Add(this.txtMareos);
+            this.gbCraneo.Controls.Add(this.chk_Craneo_PerdidaConciencia);
+            this.gbCraneo.Controls.Add(this.chk_Craneo_Cefalea);
+            this.gbCraneo.Controls.Add(this.chk_Craneo_Sincope);
+            this.gbCraneo.Controls.Add(this.chk_Craneo_AltereacionOsea);
+            this.gbCraneo.Controls.Add(this.chk_Craneo_Simetrico);
+            this.gbCraneo.Controls.Add(this.chk_Craneo_TamanoForma);
+            this.gbCraneo.Location = new System.Drawing.Point(22, 13);
+            this.gbCraneo.Name = "gbCraneo";
+            this.gbCraneo.Size = new System.Drawing.Size(146, 280);
+            this.gbCraneo.TabIndex = 2;
+            this.gbCraneo.TabStop = false;
+            this.gbCraneo.Text = "Craneo";
+            // 
+            // chk_Craneo_Prurito
+            // 
+            this.chk_Craneo_Prurito.AutoSize = true;
+            this.chk_Craneo_Prurito.Location = new System.Drawing.Point(6, 157);
+            this.chk_Craneo_Prurito.Name = "chk_Craneo_Prurito";
+            this.chk_Craneo_Prurito.Size = new System.Drawing.Size(56, 17);
+            this.chk_Craneo_Prurito.TabIndex = 8;
+            this.chk_Craneo_Prurito.Text = "Prurito";
+            this.chk_Craneo_Prurito.UseVisualStyleBackColor = true;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(6, 181);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(110, 13);
+            this.label70.TabIndex = 7;
+            this.label70.Text = "Mareo Escala del  0-5";
+            // 
+            // txtMareos
+            // 
+            this.txtMareos.Location = new System.Drawing.Point(9, 207);
+            this.txtMareos.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtMareos.Name = "txtMareos";
+            this.txtMareos.Size = new System.Drawing.Size(120, 20);
+            this.txtMareos.TabIndex = 6;
+            // 
+            // chk_Craneo_PerdidaConciencia
+            // 
+            this.chk_Craneo_PerdidaConciencia.AutoSize = true;
+            this.chk_Craneo_PerdidaConciencia.Location = new System.Drawing.Point(6, 134);
+            this.chk_Craneo_PerdidaConciencia.Name = "chk_Craneo_PerdidaConciencia";
+            this.chk_Craneo_PerdidaConciencia.Size = new System.Drawing.Size(118, 17);
+            this.chk_Craneo_PerdidaConciencia.TabIndex = 5;
+            this.chk_Craneo_PerdidaConciencia.Text = "Perdida Conciencia";
+            this.chk_Craneo_PerdidaConciencia.UseVisualStyleBackColor = true;
+            // 
+            // chk_Craneo_Cefalea
+            // 
+            this.chk_Craneo_Cefalea.AutoSize = true;
+            this.chk_Craneo_Cefalea.Location = new System.Drawing.Point(6, 88);
+            this.chk_Craneo_Cefalea.Name = "chk_Craneo_Cefalea";
+            this.chk_Craneo_Cefalea.Size = new System.Drawing.Size(62, 17);
+            this.chk_Craneo_Cefalea.TabIndex = 4;
+            this.chk_Craneo_Cefalea.Text = "Cefalea";
+            this.chk_Craneo_Cefalea.UseVisualStyleBackColor = true;
+            // 
+            // chk_Craneo_Sincope
+            // 
+            this.chk_Craneo_Sincope.AutoSize = true;
+            this.chk_Craneo_Sincope.Location = new System.Drawing.Point(6, 111);
+            this.chk_Craneo_Sincope.Name = "chk_Craneo_Sincope";
+            this.chk_Craneo_Sincope.Size = new System.Drawing.Size(65, 17);
+            this.chk_Craneo_Sincope.TabIndex = 3;
+            this.chk_Craneo_Sincope.Text = "Sincope";
+            this.chk_Craneo_Sincope.UseVisualStyleBackColor = true;
+            // 
+            // chk_Craneo_AltereacionOsea
+            // 
+            this.chk_Craneo_AltereacionOsea.AutoSize = true;
+            this.chk_Craneo_AltereacionOsea.Location = new System.Drawing.Point(6, 65);
+            this.chk_Craneo_AltereacionOsea.Name = "chk_Craneo_AltereacionOsea";
+            this.chk_Craneo_AltereacionOsea.Size = new System.Drawing.Size(101, 17);
+            this.chk_Craneo_AltereacionOsea.TabIndex = 2;
+            this.chk_Craneo_AltereacionOsea.Text = "Alteración Ósea";
+            this.chk_Craneo_AltereacionOsea.UseVisualStyleBackColor = true;
+            // 
+            // chk_Craneo_Simetrico
+            // 
+            this.chk_Craneo_Simetrico.AutoSize = true;
+            this.chk_Craneo_Simetrico.Location = new System.Drawing.Point(6, 42);
+            this.chk_Craneo_Simetrico.Name = "chk_Craneo_Simetrico";
+            this.chk_Craneo_Simetrico.Size = new System.Drawing.Size(69, 17);
+            this.chk_Craneo_Simetrico.TabIndex = 1;
+            this.chk_Craneo_Simetrico.Text = "Simétrico";
+            this.chk_Craneo_Simetrico.UseVisualStyleBackColor = true;
+            // 
+            // chk_Craneo_TamanoForma
+            // 
+            this.chk_Craneo_TamanoForma.AutoSize = true;
+            this.chk_Craneo_TamanoForma.Location = new System.Drawing.Point(6, 19);
+            this.chk_Craneo_TamanoForma.Name = "chk_Craneo_TamanoForma";
+            this.chk_Craneo_TamanoForma.Size = new System.Drawing.Size(133, 17);
+            this.chk_Craneo_TamanoForma.TabIndex = 0;
+            this.chk_Craneo_TamanoForma.Text = "Tamaño,Forma Normal";
+            this.chk_Craneo_TamanoForma.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.auxiliarToraxP);
+            this.tabPage9.Controls.Add(this.gbTorax);
+            this.tabPage9.Controls.Add(this.auxiliarCuello);
+            this.tabPage9.Controls.Add(this.gbCuello);
+            this.tabPage9.Controls.Add(this.auxiliarboca);
+            this.tabPage9.Controls.Add(this.gbBoca);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(823, 367);
+            this.tabPage9.TabIndex = 2;
+            this.tabPage9.Text = "Boca - Cuello - Torax y Pulmones";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // auxiliarToraxP
+            // 
+            this.auxiliarToraxP.Location = new System.Drawing.Point(378, 301);
+            this.auxiliarToraxP.Name = "auxiliarToraxP";
+            this.auxiliarToraxP.Size = new System.Drawing.Size(75, 23);
+            this.auxiliarToraxP.TabIndex = 87;
+            this.auxiliarToraxP.Text = "button2";
+            this.auxiliarToraxP.UseVisualStyleBackColor = true;
+            this.auxiliarToraxP.Visible = false;
+            // 
+            // gbTorax
+            // 
+            this.gbTorax.Controls.Add(this.chk_Torax_SonoridadPulmonar);
+            this.gbTorax.Controls.Add(this.label77);
+            this.gbTorax.Controls.Add(this.cb_Torax_RuidoAgregado);
+            this.gbTorax.Controls.Add(this.label76);
+            this.gbTorax.Controls.Add(this.label75);
+            this.gbTorax.Controls.Add(this.cb_Torax_Ascultacion);
+            this.gbTorax.Controls.Add(this.cb_Torax_Expa);
+            this.gbTorax.Controls.Add(this.label74);
+            this.gbTorax.Controls.Add(this.cb_Torax_ResDiafraAbdo);
+            this.gbTorax.Location = new System.Drawing.Point(357, 20);
+            this.gbTorax.Name = "gbTorax";
+            this.gbTorax.Size = new System.Drawing.Size(194, 249);
+            this.gbTorax.TabIndex = 86;
+            this.gbTorax.TabStop = false;
+            this.gbTorax.Text = "Torax Pulmones";
+            // 
+            // chk_Torax_SonoridadPulmonar
+            // 
+            this.chk_Torax_SonoridadPulmonar.AutoSize = true;
+            this.chk_Torax_SonoridadPulmonar.Location = new System.Drawing.Point(27, 226);
+            this.chk_Torax_SonoridadPulmonar.Name = "chk_Torax_SonoridadPulmonar";
+            this.chk_Torax_SonoridadPulmonar.Size = new System.Drawing.Size(121, 17);
+            this.chk_Torax_SonoridadPulmonar.TabIndex = 8;
+            this.chk_Torax_SonoridadPulmonar.Text = "Sonoridad Pulmonar";
+            this.chk_Torax_SonoridadPulmonar.UseVisualStyleBackColor = true;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(24, 165);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(94, 13);
+            this.label77.TabIndex = 7;
+            this.label77.Text = "Ruidos Agregados";
+            // 
+            // cb_Torax_RuidoAgregado
+            // 
+            this.cb_Torax_RuidoAgregado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Torax_RuidoAgregado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Torax_RuidoAgregado.FormattingEnabled = true;
+            this.cb_Torax_RuidoAgregado.Location = new System.Drawing.Point(27, 185);
+            this.cb_Torax_RuidoAgregado.Name = "cb_Torax_RuidoAgregado";
+            this.cb_Torax_RuidoAgregado.Size = new System.Drawing.Size(131, 21);
+            this.cb_Torax_RuidoAgregado.TabIndex = 6;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(24, 121);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(151, 13);
+            this.label76.TabIndex = 5;
+            this.label76.Text = "Ascultacion Murmullo Vescular";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(24, 70);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(98, 13);
+            this.label75.TabIndex = 4;
+            this.label75.Text = "ExpancionToraxica";
+            // 
+            // cb_Torax_Ascultacion
+            // 
+            this.cb_Torax_Ascultacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Torax_Ascultacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Torax_Ascultacion.FormattingEnabled = true;
+            this.cb_Torax_Ascultacion.Location = new System.Drawing.Point(27, 141);
+            this.cb_Torax_Ascultacion.Name = "cb_Torax_Ascultacion";
+            this.cb_Torax_Ascultacion.Size = new System.Drawing.Size(131, 21);
+            this.cb_Torax_Ascultacion.TabIndex = 3;
+            // 
+            // cb_Torax_Expa
+            // 
+            this.cb_Torax_Expa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Torax_Expa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Torax_Expa.FormattingEnabled = true;
+            this.cb_Torax_Expa.Location = new System.Drawing.Point(27, 87);
+            this.cb_Torax_Expa.Name = "cb_Torax_Expa";
+            this.cb_Torax_Expa.Size = new System.Drawing.Size(131, 21);
+            this.cb_Torax_Expa.TabIndex = 2;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(24, 27);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(166, 13);
+            this.label74.TabIndex = 1;
+            this.label74.Text = "Respiracion Diafragma Abdominal";
+            // 
+            // cb_Torax_ResDiafraAbdo
+            // 
+            this.cb_Torax_ResDiafraAbdo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Torax_ResDiafraAbdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Torax_ResDiafraAbdo.FormattingEnabled = true;
+            this.cb_Torax_ResDiafraAbdo.Location = new System.Drawing.Point(27, 46);
+            this.cb_Torax_ResDiafraAbdo.Name = "cb_Torax_ResDiafraAbdo";
+            this.cb_Torax_ResDiafraAbdo.Size = new System.Drawing.Size(131, 21);
+            this.cb_Torax_ResDiafraAbdo.TabIndex = 0;
+            // 
+            // auxiliarCuello
+            // 
+            this.auxiliarCuello.Location = new System.Drawing.Point(233, 344);
+            this.auxiliarCuello.Name = "auxiliarCuello";
+            this.auxiliarCuello.Size = new System.Drawing.Size(75, 23);
+            this.auxiliarCuello.TabIndex = 85;
+            this.auxiliarCuello.Text = "Cuello";
+            this.auxiliarCuello.UseVisualStyleBackColor = true;
+            // 
             // gbCuello
             // 
             this.gbCuello.Controls.Add(this.label41);
@@ -1540,10 +1824,10 @@
             this.gbCuello.Controls.Add(this.cb_ArteriaCarotida);
             this.gbCuello.Controls.Add(this.label60);
             this.gbCuello.Controls.Add(this.label59);
-            this.gbCuello.Location = new System.Drawing.Point(204, 17);
+            this.gbCuello.Location = new System.Drawing.Point(187, 20);
             this.gbCuello.Name = "gbCuello";
             this.gbCuello.Size = new System.Drawing.Size(143, 304);
-            this.gbCuello.TabIndex = 1;
+            this.gbCuello.TabIndex = 84;
             this.gbCuello.TabStop = false;
             this.gbCuello.Text = "Cuello";
             // 
@@ -1653,15 +1937,804 @@
             this.label59.TabIndex = 55;
             this.label59.Text = "Arterias Carotidas";
             // 
-            // AuiliarReflejo
+            // auxiliarboca
             // 
-            this.AuiliarReflejo.Location = new System.Drawing.Point(22, 323);
-            this.AuiliarReflejo.Name = "AuiliarReflejo";
-            this.AuiliarReflejo.Size = new System.Drawing.Size(75, 23);
-            this.AuiliarReflejo.TabIndex = 1;
-            this.AuiliarReflejo.Text = "reflejo";
-            this.AuiliarReflejo.UseVisualStyleBackColor = true;
-            this.AuiliarReflejo.Click += new System.EventHandler(this.AuiliarReflejo_Click);
+            this.auxiliarboca.Location = new System.Drawing.Point(70, 305);
+            this.auxiliarboca.Name = "auxiliarboca";
+            this.auxiliarboca.Size = new System.Drawing.Size(75, 23);
+            this.auxiliarboca.TabIndex = 5;
+            this.auxiliarboca.Text = "boca";
+            this.auxiliarboca.UseVisualStyleBackColor = true;
+            this.auxiliarboca.Visible = false;
+            this.auxiliarboca.Click += new System.EventHandler(this.auxiliarboca_Click);
+            // 
+            // gbBoca
+            // 
+            this.gbBoca.Controls.Add(this.chk_Boca_Disfagia);
+            this.gbBoca.Controls.Add(this.chk_Boca_Ronquera);
+            this.gbBoca.Controls.Add(this.chk_Boca_Amigdalitis);
+            this.gbBoca.Controls.Add(this.chk_Boca_Laringitis);
+            this.gbBoca.Controls.Add(this.chk_Boca_Faringitis);
+            this.gbBoca.Controls.Add(this.chk_Boca_LenguaDolor);
+            this.gbBoca.Controls.Add(this.chk_Boca_Calzas);
+            this.gbBoca.Controls.Add(this.chk_Boca_Ulceras);
+            this.gbBoca.Controls.Add(this.chk_Boca_Protesis);
+            this.gbBoca.Controls.Add(this.chk_Boca_Adoncia);
+            this.gbBoca.Location = new System.Drawing.Point(32, 20);
+            this.gbBoca.Name = "gbBoca";
+            this.gbBoca.Size = new System.Drawing.Size(135, 280);
+            this.gbBoca.TabIndex = 2;
+            this.gbBoca.TabStop = false;
+            this.gbBoca.Text = "Boca";
+            // 
+            // chk_Boca_Disfagia
+            // 
+            this.chk_Boca_Disfagia.AutoSize = true;
+            this.chk_Boca_Disfagia.Location = new System.Drawing.Point(5, 223);
+            this.chk_Boca_Disfagia.Name = "chk_Boca_Disfagia";
+            this.chk_Boca_Disfagia.Size = new System.Drawing.Size(64, 17);
+            this.chk_Boca_Disfagia.TabIndex = 9;
+            this.chk_Boca_Disfagia.Text = "Disfagia";
+            this.chk_Boca_Disfagia.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Ronquera
+            // 
+            this.chk_Boca_Ronquera.AutoSize = true;
+            this.chk_Boca_Ronquera.Location = new System.Drawing.Point(7, 200);
+            this.chk_Boca_Ronquera.Name = "chk_Boca_Ronquera";
+            this.chk_Boca_Ronquera.Size = new System.Drawing.Size(73, 17);
+            this.chk_Boca_Ronquera.TabIndex = 8;
+            this.chk_Boca_Ronquera.Text = "Ronquera";
+            this.chk_Boca_Ronquera.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Amigdalitis
+            // 
+            this.chk_Boca_Amigdalitis.AutoSize = true;
+            this.chk_Boca_Amigdalitis.Location = new System.Drawing.Point(7, 157);
+            this.chk_Boca_Amigdalitis.Name = "chk_Boca_Amigdalitis";
+            this.chk_Boca_Amigdalitis.Size = new System.Drawing.Size(75, 17);
+            this.chk_Boca_Amigdalitis.TabIndex = 7;
+            this.chk_Boca_Amigdalitis.Text = "Amigdalitis";
+            this.chk_Boca_Amigdalitis.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Laringitis
+            // 
+            this.chk_Boca_Laringitis.AutoSize = true;
+            this.chk_Boca_Laringitis.Location = new System.Drawing.Point(6, 177);
+            this.chk_Boca_Laringitis.Name = "chk_Boca_Laringitis";
+            this.chk_Boca_Laringitis.Size = new System.Drawing.Size(67, 17);
+            this.chk_Boca_Laringitis.TabIndex = 6;
+            this.chk_Boca_Laringitis.Text = "Laringitis";
+            this.chk_Boca_Laringitis.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Faringitis
+            // 
+            this.chk_Boca_Faringitis.AutoSize = true;
+            this.chk_Boca_Faringitis.Location = new System.Drawing.Point(6, 134);
+            this.chk_Boca_Faringitis.Name = "chk_Boca_Faringitis";
+            this.chk_Boca_Faringitis.Size = new System.Drawing.Size(67, 17);
+            this.chk_Boca_Faringitis.TabIndex = 5;
+            this.chk_Boca_Faringitis.Text = "Faringitis";
+            this.chk_Boca_Faringitis.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_LenguaDolor
+            // 
+            this.chk_Boca_LenguaDolor.AutoSize = true;
+            this.chk_Boca_LenguaDolor.Location = new System.Drawing.Point(6, 111);
+            this.chk_Boca_LenguaDolor.Name = "chk_Boca_LenguaDolor";
+            this.chk_Boca_LenguaDolor.Size = new System.Drawing.Size(116, 17);
+            this.chk_Boca_LenguaDolor.TabIndex = 4;
+            this.chk_Boca_LenguaDolor.Text = "Dolor en la Lengua";
+            this.chk_Boca_LenguaDolor.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Calzas
+            // 
+            this.chk_Boca_Calzas.AutoSize = true;
+            this.chk_Boca_Calzas.Location = new System.Drawing.Point(6, 65);
+            this.chk_Boca_Calzas.Name = "chk_Boca_Calzas";
+            this.chk_Boca_Calzas.Size = new System.Drawing.Size(57, 17);
+            this.chk_Boca_Calzas.TabIndex = 3;
+            this.chk_Boca_Calzas.Text = "Calzas";
+            this.chk_Boca_Calzas.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Ulceras
+            // 
+            this.chk_Boca_Ulceras.AutoSize = true;
+            this.chk_Boca_Ulceras.Location = new System.Drawing.Point(7, 88);
+            this.chk_Boca_Ulceras.Name = "chk_Boca_Ulceras";
+            this.chk_Boca_Ulceras.Size = new System.Drawing.Size(62, 17);
+            this.chk_Boca_Ulceras.TabIndex = 2;
+            this.chk_Boca_Ulceras.Text = "Úlceras";
+            this.chk_Boca_Ulceras.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Protesis
+            // 
+            this.chk_Boca_Protesis.AutoSize = true;
+            this.chk_Boca_Protesis.Location = new System.Drawing.Point(7, 42);
+            this.chk_Boca_Protesis.Name = "chk_Boca_Protesis";
+            this.chk_Boca_Protesis.Size = new System.Drawing.Size(63, 17);
+            this.chk_Boca_Protesis.TabIndex = 1;
+            this.chk_Boca_Protesis.Text = "Protesis";
+            this.chk_Boca_Protesis.UseVisualStyleBackColor = true;
+            // 
+            // chk_Boca_Adoncia
+            // 
+            this.chk_Boca_Adoncia.AutoSize = true;
+            this.chk_Boca_Adoncia.Location = new System.Drawing.Point(7, 20);
+            this.chk_Boca_Adoncia.Name = "chk_Boca_Adoncia";
+            this.chk_Boca_Adoncia.Size = new System.Drawing.Size(65, 17);
+            this.chk_Boca_Adoncia.TabIndex = 0;
+            this.chk_Boca_Adoncia.Text = "Adoncia";
+            this.chk_Boca_Adoncia.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(823, 367);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "Manos y Piel";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtExploracionInfoAdicional);
+            this.groupBox2.Controls.Add(this.cb_Ex_ManosUnas);
+            this.groupBox2.Controls.Add(this.label62);
+            this.groupBox2.Controls.Add(this.cb_Ex_Color);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Location = new System.Drawing.Point(14, 18);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(636, 163);
+            this.groupBox2.TabIndex = 92;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Manos y Piel";
+            // 
+            // txtExploracionInfoAdicional
+            // 
+            this.txtExploracionInfoAdicional.Location = new System.Drawing.Point(269, 33);
+            this.txtExploracionInfoAdicional.Multiline = true;
+            this.txtExploracionInfoAdicional.Name = "txtExploracionInfoAdicional";
+            this.txtExploracionInfoAdicional.ReadOnly = true;
+            this.txtExploracionInfoAdicional.Size = new System.Drawing.Size(345, 100);
+            this.txtExploracionInfoAdicional.TabIndex = 46;
+            this.txtExploracionInfoAdicional.Text = "Info Adicional";
+            // 
+            // cb_Ex_ManosUnas
+            // 
+            this.cb_Ex_ManosUnas.FormattingEnabled = true;
+            this.cb_Ex_ManosUnas.Location = new System.Drawing.Point(94, 84);
+            this.cb_Ex_ManosUnas.Name = "cb_Ex_ManosUnas";
+            this.cb_Ex_ManosUnas.Size = new System.Drawing.Size(142, 21);
+            this.cb_Ex_ManosUnas.TabIndex = 50;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(9, 89);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(64, 13);
+            this.label62.TabIndex = 49;
+            this.label62.Text = "ManosUñas";
+            // 
+            // cb_Ex_Color
+            // 
+            this.cb_Ex_Color.FormattingEnabled = true;
+            this.cb_Ex_Color.Location = new System.Drawing.Point(94, 45);
+            this.cb_Ex_Color.Name = "cb_Ex_Color";
+            this.cb_Ex_Color.Size = new System.Drawing.Size(142, 21);
+            this.cb_Ex_Color.TabIndex = 45;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(15, 48);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 13);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "Color";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.AuxiliarDigestivo);
+            this.tabPage4.Controls.Add(this.gbAparatoDigestivo);
+            this.tabPage4.Controls.Add(this.gbAbdomen);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(823, 367);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Abdomen - Aparato Digestivo ";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // AuxiliarDigestivo
+            // 
+            this.AuxiliarDigestivo.Location = new System.Drawing.Point(359, 324);
+            this.AuxiliarDigestivo.Name = "AuxiliarDigestivo";
+            this.AuxiliarDigestivo.Size = new System.Drawing.Size(75, 23);
+            this.AuxiliarDigestivo.TabIndex = 49;
+            this.AuxiliarDigestivo.Text = "diges";
+            this.AuxiliarDigestivo.UseVisualStyleBackColor = true;
+            this.AuxiliarDigestivo.Visible = false;
+            // 
+            // gbAparatoDigestivo
+            // 
+            this.gbAparatoDigestivo.Controls.Add(this.label72);
+            this.gbAparatoDigestivo.Controls.Add(this.cbVomito);
+            this.gbAparatoDigestivo.Controls.Add(this.btnApaDigestivoDetalle);
+            this.gbAparatoDigestivo.Controls.Add(this.label71);
+            this.gbAparatoDigestivo.Controls.Add(this.txtAparatoDigestivoDetalle);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivoDistencion);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Colico);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Pirosis);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Estrenimiento);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Diarrea);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_FaltaApetito);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Nauseas);
+            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Dolor);
+            this.gbAparatoDigestivo.Location = new System.Drawing.Point(352, 27);
+            this.gbAparatoDigestivo.Name = "gbAparatoDigestivo";
+            this.gbAparatoDigestivo.Size = new System.Drawing.Size(269, 280);
+            this.gbAparatoDigestivo.TabIndex = 48;
+            this.gbAparatoDigestivo.TabStop = false;
+            this.gbAparatoDigestivo.Text = "AparatoDigestivo";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(6, 119);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(39, 13);
+            this.label72.TabIndex = 83;
+            this.label72.Text = "Vómito";
+            // 
+            // cbVomito
+            // 
+            this.cbVomito.FormattingEnabled = true;
+            this.cbVomito.Items.AddRange(new object[] {
+            "Sin Vomito",
+            "Alimenticio",
+            "Rojo Fuerte",
+            "Rojo claro",
+            "Verde"});
+            this.cbVomito.Location = new System.Drawing.Point(51, 119);
+            this.cbVomito.Name = "cbVomito";
+            this.cbVomito.Size = new System.Drawing.Size(134, 21);
+            this.cbVomito.TabIndex = 82;
+            // 
+            // btnApaDigestivoDetalle
+            // 
+            this.btnApaDigestivoDetalle.FlatAppearance.BorderSize = 0;
+            this.btnApaDigestivoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApaDigestivoDetalle.Image = global::Frm.Properties.Resources.more;
+            this.btnApaDigestivoDetalle.Location = new System.Drawing.Point(48, 159);
+            this.btnApaDigestivoDetalle.Name = "btnApaDigestivoDetalle";
+            this.btnApaDigestivoDetalle.Size = new System.Drawing.Size(27, 17);
+            this.btnApaDigestivoDetalle.TabIndex = 81;
+            this.btnApaDigestivoDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnApaDigestivoDetalle.UseVisualStyleBackColor = true;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(6, 161);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(40, 13);
+            this.label71.TabIndex = 9;
+            this.label71.Text = "Detalle";
+            // 
+            // txtAparatoDigestivoDetalle
+            // 
+            this.txtAparatoDigestivoDetalle.Enabled = false;
+            this.txtAparatoDigestivoDetalle.Location = new System.Drawing.Point(6, 178);
+            this.txtAparatoDigestivoDetalle.MaxLength = 400;
+            this.txtAparatoDigestivoDetalle.Multiline = true;
+            this.txtAparatoDigestivoDetalle.Name = "txtAparatoDigestivoDetalle";
+            this.txtAparatoDigestivoDetalle.Size = new System.Drawing.Size(250, 73);
+            this.txtAparatoDigestivoDetalle.TabIndex = 8;
+            // 
+            // chk_ApaDigestivoDistencion
+            // 
+            this.chk_ApaDigestivoDistencion.AutoSize = true;
+            this.chk_ApaDigestivoDistencion.Location = new System.Drawing.Point(105, 88);
+            this.chk_ApaDigestivoDistencion.Name = "chk_ApaDigestivoDistencion";
+            this.chk_ApaDigestivoDistencion.Size = new System.Drawing.Size(76, 17);
+            this.chk_ApaDigestivoDistencion.TabIndex = 7;
+            this.chk_ApaDigestivoDistencion.Text = "Distencion";
+            this.chk_ApaDigestivoDistencion.UseVisualStyleBackColor = true;
+            // 
+            // chk_ApaDigestivo_Colico
+            // 
+            this.chk_ApaDigestivo_Colico.AutoSize = true;
+            this.chk_ApaDigestivo_Colico.Location = new System.Drawing.Point(105, 65);
+            this.chk_ApaDigestivo_Colico.Name = "chk_ApaDigestivo_Colico";
+            this.chk_ApaDigestivo_Colico.Size = new System.Drawing.Size(60, 17);
+            this.chk_ApaDigestivo_Colico.TabIndex = 6;
+            this.chk_ApaDigestivo_Colico.Text = "Colicos";
+            this.chk_ApaDigestivo_Colico.UseVisualStyleBackColor = true;
+            // 
+            // chk_ApaDigestivo_Pirosis
+            // 
+            this.chk_ApaDigestivo_Pirosis.AutoSize = true;
+            this.chk_ApaDigestivo_Pirosis.Location = new System.Drawing.Point(105, 42);
+            this.chk_ApaDigestivo_Pirosis.Name = "chk_ApaDigestivo_Pirosis";
+            this.chk_ApaDigestivo_Pirosis.Size = new System.Drawing.Size(56, 17);
+            this.chk_ApaDigestivo_Pirosis.TabIndex = 5;
+            this.chk_ApaDigestivo_Pirosis.Text = "Pirosis";
+            this.chk_ApaDigestivo_Pirosis.UseVisualStyleBackColor = true;
+            // 
+            // chk_ApaDigestivo_Estrenimiento
+            // 
+            this.chk_ApaDigestivo_Estrenimiento.AutoSize = true;
+            this.chk_ApaDigestivo_Estrenimiento.Location = new System.Drawing.Point(105, 19);
+            this.chk_ApaDigestivo_Estrenimiento.Name = "chk_ApaDigestivo_Estrenimiento";
+            this.chk_ApaDigestivo_Estrenimiento.Size = new System.Drawing.Size(89, 17);
+            this.chk_ApaDigestivo_Estrenimiento.TabIndex = 4;
+            this.chk_ApaDigestivo_Estrenimiento.Text = "Estreñimiento";
+            this.chk_ApaDigestivo_Estrenimiento.UseVisualStyleBackColor = true;
+            // 
+            // chk_ApaDigestivo_Diarrea
+            // 
+            this.chk_ApaDigestivo_Diarrea.AutoSize = true;
+            this.chk_ApaDigestivo_Diarrea.Location = new System.Drawing.Point(7, 88);
+            this.chk_ApaDigestivo_Diarrea.Name = "chk_ApaDigestivo_Diarrea";
+            this.chk_ApaDigestivo_Diarrea.Size = new System.Drawing.Size(60, 17);
+            this.chk_ApaDigestivo_Diarrea.TabIndex = 3;
+            this.chk_ApaDigestivo_Diarrea.Text = "Diarrea";
+            this.chk_ApaDigestivo_Diarrea.UseVisualStyleBackColor = true;
+            // 
+            // chk_ApaDigestivo_FaltaApetito
+            // 
+            this.chk_ApaDigestivo_FaltaApetito.AutoSize = true;
+            this.chk_ApaDigestivo_FaltaApetito.Location = new System.Drawing.Point(7, 42);
+            this.chk_ApaDigestivo_FaltaApetito.Name = "chk_ApaDigestivo_FaltaApetito";
+            this.chk_ApaDigestivo_FaltaApetito.Size = new System.Drawing.Size(85, 17);
+            this.chk_ApaDigestivo_FaltaApetito.TabIndex = 2;
+            this.chk_ApaDigestivo_FaltaApetito.Text = "Falta Apetito";
+            this.chk_ApaDigestivo_FaltaApetito.UseVisualStyleBackColor = true;
+            // 
+            // chk_ApaDigestivo_Nauseas
+            // 
+            this.chk_ApaDigestivo_Nauseas.AutoSize = true;
+            this.chk_ApaDigestivo_Nauseas.Location = new System.Drawing.Point(7, 65);
+            this.chk_ApaDigestivo_Nauseas.Name = "chk_ApaDigestivo_Nauseas";
+            this.chk_ApaDigestivo_Nauseas.Size = new System.Drawing.Size(68, 17);
+            this.chk_ApaDigestivo_Nauseas.TabIndex = 1;
+            this.chk_ApaDigestivo_Nauseas.Text = "Náuseas";
+            this.chk_ApaDigestivo_Nauseas.UseVisualStyleBackColor = true;
+            // 
+            // chk_ApaDigestivo_Dolor
+            // 
+            this.chk_ApaDigestivo_Dolor.AutoSize = true;
+            this.chk_ApaDigestivo_Dolor.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.chk_ApaDigestivo_Dolor.Location = new System.Drawing.Point(7, 19);
+            this.chk_ApaDigestivo_Dolor.Name = "chk_ApaDigestivo_Dolor";
+            this.chk_ApaDigestivo_Dolor.Size = new System.Drawing.Size(51, 17);
+            this.chk_ApaDigestivo_Dolor.TabIndex = 0;
+            this.chk_ApaDigestivo_Dolor.Text = "Dolor";
+            this.chk_ApaDigestivo_Dolor.UseVisualStyleBackColor = true;
+            // 
+            // gbAbdomen
+            // 
+            this.gbAbdomen.Controls.Add(this.cb_Abdomen_TamanoOrganos);
+            this.gbAbdomen.Controls.Add(this.chk_AbdomenAscititis);
+            this.gbAbdomen.Controls.Add(this.label56);
+            this.gbAbdomen.Controls.Add(this.cb_Abdomen_Recto);
+            this.gbAbdomen.Controls.Add(this.label55);
+            this.gbAbdomen.Controls.Add(this.cb_Abdomen_Bazo);
+            this.gbAbdomen.Controls.Add(this.label46);
+            this.gbAbdomen.Controls.Add(this.cb_Abdomen_Rinon);
+            this.gbAbdomen.Controls.Add(this.label20);
+            this.gbAbdomen.Location = new System.Drawing.Point(18, 27);
+            this.gbAbdomen.Name = "gbAbdomen";
+            this.gbAbdomen.Size = new System.Drawing.Size(280, 169);
+            this.gbAbdomen.TabIndex = 3;
+            this.gbAbdomen.TabStop = false;
+            this.gbAbdomen.Text = "Abdomen";
+            // 
+            // cb_Abdomen_TamanoOrganos
+            // 
+            this.cb_Abdomen_TamanoOrganos.FormattingEnabled = true;
+            this.cb_Abdomen_TamanoOrganos.Items.AddRange(new object[] {
+            "Normal",
+            "Dolor",
+            "Inflamación",
+            "Nota Percusiva Mate",
+            "Otro.."});
+            this.cb_Abdomen_TamanoOrganos.Location = new System.Drawing.Point(135, 18);
+            this.cb_Abdomen_TamanoOrganos.Name = "cb_Abdomen_TamanoOrganos";
+            this.cb_Abdomen_TamanoOrganos.Size = new System.Drawing.Size(121, 21);
+            this.cb_Abdomen_TamanoOrganos.TabIndex = 68;
+            // 
+            // chk_AbdomenAscititis
+            // 
+            this.chk_AbdomenAscititis.AutoSize = true;
+            this.chk_AbdomenAscititis.Location = new System.Drawing.Point(135, 132);
+            this.chk_AbdomenAscititis.Name = "chk_AbdomenAscititis";
+            this.chk_AbdomenAscititis.Size = new System.Drawing.Size(59, 17);
+            this.chk_AbdomenAscititis.TabIndex = 67;
+            this.chk_AbdomenAscititis.Text = "Asctitis";
+            this.chk_AbdomenAscititis.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(16, 77);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(36, 13);
+            this.label56.TabIndex = 66;
+            this.label56.Text = "Recto";
+            // 
+            // cb_Abdomen_Recto
+            // 
+            this.cb_Abdomen_Recto.FormattingEnabled = true;
+            this.cb_Abdomen_Recto.Items.AddRange(new object[] {
+            "Normal",
+            "Incontinencia",
+            "Hemorroides",
+            "Colgajos de piel",
+            ""});
+            this.cb_Abdomen_Recto.Location = new System.Drawing.Point(135, 74);
+            this.cb_Abdomen_Recto.Name = "cb_Abdomen_Recto";
+            this.cb_Abdomen_Recto.Size = new System.Drawing.Size(121, 21);
+            this.cb_Abdomen_Recto.TabIndex = 65;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(21, 104);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(31, 13);
+            this.label55.TabIndex = 64;
+            this.label55.Text = "Bazo";
+            // 
+            // cb_Abdomen_Bazo
+            // 
+            this.cb_Abdomen_Bazo.FormattingEnabled = true;
+            this.cb_Abdomen_Bazo.Items.AddRange(new object[] {
+            "Normal",
+            "Agrandado",
+            "Sensible,Dolor"});
+            this.cb_Abdomen_Bazo.Location = new System.Drawing.Point(135, 105);
+            this.cb_Abdomen_Bazo.Name = "cb_Abdomen_Bazo";
+            this.cb_Abdomen_Bazo.Size = new System.Drawing.Size(121, 21);
+            this.cb_Abdomen_Bazo.TabIndex = 63;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.ForeColor = System.Drawing.Color.Black;
+            this.label46.Location = new System.Drawing.Point(16, 26);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(89, 13);
+            this.label46.TabIndex = 60;
+            this.label46.Text = "Tamaño Organos";
+            // 
+            // cb_Abdomen_Rinon
+            // 
+            this.cb_Abdomen_Rinon.FormattingEnabled = true;
+            this.cb_Abdomen_Rinon.Items.AddRange(new object[] {
+            "Normal",
+            "Dolor",
+            "Inflamación",
+            "Nota Percusiva Mate",
+            "Otro.."});
+            this.cb_Abdomen_Rinon.Location = new System.Drawing.Point(135, 45);
+            this.cb_Abdomen_Rinon.Name = "cb_Abdomen_Rinon";
+            this.cb_Abdomen_Rinon.Size = new System.Drawing.Size(121, 21);
+            this.cb_Abdomen_Rinon.TabIndex = 60;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 13);
+            this.label20.TabIndex = 59;
+            this.label20.Text = "Riñon";
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.auxCoorMarcha);
+            this.tabPage10.Controls.Add(this.gbCoordinacionMarcha);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(823, 367);
+            this.tabPage10.TabIndex = 3;
+            this.tabPage10.Text = "Coodinacion y Marcha";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // auxCoorMarcha
+            // 
+            this.auxCoorMarcha.Location = new System.Drawing.Point(26, 304);
+            this.auxCoorMarcha.Name = "auxCoorMarcha";
+            this.auxCoorMarcha.Size = new System.Drawing.Size(75, 23);
+            this.auxCoorMarcha.TabIndex = 47;
+            this.auxCoorMarcha.Text = "button2";
+            this.auxCoorMarcha.UseVisualStyleBackColor = true;
+            this.auxCoorMarcha.Visible = false;
+            // 
+            // gbCoordinacionMarcha
+            // 
+            this.gbCoordinacionMarcha.Controls.Add(this.txt_ObsCoordinacion);
+            this.gbCoordinacionMarcha.Controls.Add(this.btn_Obs_CoordinacionMarcha);
+            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_TalonRodilla);
+            this.gbCoordinacionMarcha.Controls.Add(this.label73);
+            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_Romberg);
+            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_DedoNariz);
+            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_Camina);
+            this.gbCoordinacionMarcha.Location = new System.Drawing.Point(17, 23);
+            this.gbCoordinacionMarcha.Name = "gbCoordinacionMarcha";
+            this.gbCoordinacionMarcha.Size = new System.Drawing.Size(168, 280);
+            this.gbCoordinacionMarcha.TabIndex = 46;
+            this.gbCoordinacionMarcha.TabStop = false;
+            this.gbCoordinacionMarcha.Text = "Coodinación y Marcha";
+            // 
+            // txt_ObsCoordinacion
+            // 
+            this.txt_ObsCoordinacion.Enabled = false;
+            this.txt_ObsCoordinacion.Location = new System.Drawing.Point(9, 128);
+            this.txt_ObsCoordinacion.MaxLength = 300;
+            this.txt_ObsCoordinacion.Multiline = true;
+            this.txt_ObsCoordinacion.Name = "txt_ObsCoordinacion";
+            this.txt_ObsCoordinacion.Size = new System.Drawing.Size(153, 146);
+            this.txt_ObsCoordinacion.TabIndex = 86;
+            // 
+            // btn_Obs_CoordinacionMarcha
+            // 
+            this.btn_Obs_CoordinacionMarcha.FlatAppearance.BorderSize = 0;
+            this.btn_Obs_CoordinacionMarcha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Obs_CoordinacionMarcha.Image = global::Frm.Properties.Resources.more;
+            this.btn_Obs_CoordinacionMarcha.Location = new System.Drawing.Point(79, 110);
+            this.btn_Obs_CoordinacionMarcha.Name = "btn_Obs_CoordinacionMarcha";
+            this.btn_Obs_CoordinacionMarcha.Size = new System.Drawing.Size(27, 17);
+            this.btn_Obs_CoordinacionMarcha.TabIndex = 84;
+            this.btn_Obs_CoordinacionMarcha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Obs_CoordinacionMarcha.UseVisualStyleBackColor = true;
+            // 
+            // chk_CooMar_TalonRodilla
+            // 
+            this.chk_CooMar_TalonRodilla.AutoSize = true;
+            this.chk_CooMar_TalonRodilla.Location = new System.Drawing.Point(7, 65);
+            this.chk_CooMar_TalonRodilla.Name = "chk_CooMar_TalonRodilla";
+            this.chk_CooMar_TalonRodilla.Size = new System.Drawing.Size(88, 17);
+            this.chk_CooMar_TalonRodilla.TabIndex = 3;
+            this.chk_CooMar_TalonRodilla.Text = "Talon-Rodilla";
+            this.chk_CooMar_TalonRodilla.UseVisualStyleBackColor = true;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(6, 111);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(67, 13);
+            this.label73.TabIndex = 85;
+            this.label73.Text = "Observacion";
+            // 
+            // chk_CooMar_Romberg
+            // 
+            this.chk_CooMar_Romberg.AutoSize = true;
+            this.chk_CooMar_Romberg.Location = new System.Drawing.Point(7, 88);
+            this.chk_CooMar_Romberg.Name = "chk_CooMar_Romberg";
+            this.chk_CooMar_Romberg.Size = new System.Drawing.Size(69, 17);
+            this.chk_CooMar_Romberg.TabIndex = 2;
+            this.chk_CooMar_Romberg.Text = "Romberg";
+            this.chk_CooMar_Romberg.UseVisualStyleBackColor = true;
+            // 
+            // chk_CooMar_DedoNariz
+            // 
+            this.chk_CooMar_DedoNariz.AutoSize = true;
+            this.chk_CooMar_DedoNariz.Location = new System.Drawing.Point(7, 42);
+            this.chk_CooMar_DedoNariz.Name = "chk_CooMar_DedoNariz";
+            this.chk_CooMar_DedoNariz.Size = new System.Drawing.Size(85, 17);
+            this.chk_CooMar_DedoNariz.TabIndex = 1;
+            this.chk_CooMar_DedoNariz.Text = "Dedo - Nariz";
+            this.chk_CooMar_DedoNariz.UseVisualStyleBackColor = true;
+            // 
+            // chk_CooMar_Camina
+            // 
+            this.chk_CooMar_Camina.AutoSize = true;
+            this.chk_CooMar_Camina.Location = new System.Drawing.Point(7, 20);
+            this.chk_CooMar_Camina.Name = "chk_CooMar_Camina";
+            this.chk_CooMar_Camina.Size = new System.Drawing.Size(61, 17);
+            this.chk_CooMar_Camina.TabIndex = 0;
+            this.chk_CooMar_Camina.Text = "Camina";
+            this.chk_CooMar_Camina.UseVisualStyleBackColor = true;
+            // 
+            // tabGinecoObstréticos
+            // 
+            this.tabGinecoObstréticos.Controls.Add(this.btnAuxiliar);
+            this.tabGinecoObstréticos.Controls.Add(this.button14);
+            this.tabGinecoObstréticos.Controls.Add(this.gbDatosGineco);
+            this.tabGinecoObstréticos.Location = new System.Drawing.Point(4, 22);
+            this.tabGinecoObstréticos.Name = "tabGinecoObstréticos";
+            this.tabGinecoObstréticos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGinecoObstréticos.Size = new System.Drawing.Size(834, 396);
+            this.tabGinecoObstréticos.TabIndex = 1;
+            this.tabGinecoObstréticos.Text = "Gineco Obstréticos";
+            this.tabGinecoObstréticos.UseVisualStyleBackColor = true;
+            // 
+            // btnAuxiliar
+            // 
+            this.btnAuxiliar.Location = new System.Drawing.Point(309, 17);
+            this.btnAuxiliar.Name = "btnAuxiliar";
+            this.btnAuxiliar.Size = new System.Drawing.Size(75, 23);
+            this.btnAuxiliar.TabIndex = 38;
+            this.btnAuxiliar.Text = "aux";
+            this.btnAuxiliar.UseVisualStyleBackColor = true;
+            this.btnAuxiliar.Visible = false;
+            this.btnAuxiliar.Click += new System.EventHandler(this.btnAuxiliar_Click);
+            // 
+            // button14
+            // 
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Image = global::Frm.Properties.Resources.more;
+            this.button14.Location = new System.Drawing.Point(443, 20);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(30, 22);
+            this.button14.TabIndex = 37;
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // gbDatosGineco
+            // 
+            this.gbDatosGineco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.gbDatosGineco.Controls.Add(this.txtCesareas);
+            this.gbDatosGineco.Controls.Add(this.txtAbortos);
+            this.gbDatosGineco.Controls.Add(this.txtPartos);
+            this.gbDatosGineco.Controls.Add(this.dtFUM);
+            this.gbDatosGineco.Controls.Add(this.label12);
+            this.gbDatosGineco.Controls.Add(this.labelCesarea);
+            this.gbDatosGineco.Controls.Add(this.labelAborto);
+            this.gbDatosGineco.Controls.Add(this.labelPartos);
+            this.gbDatosGineco.Controls.Add(this.txtGestaciones);
+            this.gbDatosGineco.Controls.Add(this.labelgestaciones);
+            this.gbDatosGineco.Controls.Add(this.dtFUP);
+            this.gbDatosGineco.Controls.Add(this.labelFechaUltimoPapa);
+            this.gbDatosGineco.Enabled = false;
+            this.gbDatosGineco.Location = new System.Drawing.Point(30, 48);
+            this.gbDatosGineco.Name = "gbDatosGineco";
+            this.gbDatosGineco.Size = new System.Drawing.Size(449, 284);
+            this.gbDatosGineco.TabIndex = 14;
+            this.gbDatosGineco.TabStop = false;
+            this.gbDatosGineco.Text = "      Datos  GinecoObstreticos";
+            // 
+            // txtCesareas
+            // 
+            this.txtCesareas.Location = new System.Drawing.Point(159, 165);
+            this.txtCesareas.Name = "txtCesareas";
+            this.txtCesareas.Size = new System.Drawing.Size(204, 20);
+            this.txtCesareas.TabIndex = 40;
+            // 
+            // txtAbortos
+            // 
+            this.txtAbortos.Location = new System.Drawing.Point(159, 130);
+            this.txtAbortos.Name = "txtAbortos";
+            this.txtAbortos.Size = new System.Drawing.Size(204, 20);
+            this.txtAbortos.TabIndex = 39;
+            // 
+            // txtPartos
+            // 
+            this.txtPartos.Location = new System.Drawing.Point(159, 95);
+            this.txtPartos.Name = "txtPartos";
+            this.txtPartos.Size = new System.Drawing.Size(204, 20);
+            this.txtPartos.TabIndex = 38;
+            // 
+            // dtFUM
+            // 
+            this.dtFUM.CustomFormat = "yy:mm:dd";
+            this.dtFUM.Location = new System.Drawing.Point(159, 25);
+            this.dtFUM.Name = "dtFUM";
+            this.dtFUM.Size = new System.Drawing.Size(204, 20);
+            this.dtFUM.TabIndex = 37;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 30);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(130, 13);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Fecha Ultima Mestruacion";
+            // 
+            // labelCesarea
+            // 
+            this.labelCesarea.AutoSize = true;
+            this.labelCesarea.Location = new System.Drawing.Point(8, 172);
+            this.labelCesarea.Name = "labelCesarea";
+            this.labelCesarea.Size = new System.Drawing.Size(51, 13);
+            this.labelCesarea.TabIndex = 35;
+            this.labelCesarea.Text = "Cesareas";
+            // 
+            // labelAborto
+            // 
+            this.labelAborto.AutoSize = true;
+            this.labelAborto.Location = new System.Drawing.Point(8, 137);
+            this.labelAborto.Name = "labelAborto";
+            this.labelAborto.Size = new System.Drawing.Size(43, 13);
+            this.labelAborto.TabIndex = 34;
+            this.labelAborto.Text = "Abortos";
+            // 
+            // labelPartos
+            // 
+            this.labelPartos.AutoSize = true;
+            this.labelPartos.Location = new System.Drawing.Point(8, 102);
+            this.labelPartos.Name = "labelPartos";
+            this.labelPartos.Size = new System.Drawing.Size(37, 13);
+            this.labelPartos.TabIndex = 33;
+            this.labelPartos.Text = "Partos";
+            // 
+            // txtGestaciones
+            // 
+            this.txtGestaciones.Location = new System.Drawing.Point(159, 60);
+            this.txtGestaciones.Name = "txtGestaciones";
+            this.txtGestaciones.Size = new System.Drawing.Size(204, 20);
+            this.txtGestaciones.TabIndex = 32;
+            // 
+            // labelgestaciones
+            // 
+            this.labelgestaciones.AutoSize = true;
+            this.labelgestaciones.Location = new System.Drawing.Point(6, 62);
+            this.labelgestaciones.Name = "labelgestaciones";
+            this.labelgestaciones.Size = new System.Drawing.Size(66, 13);
+            this.labelgestaciones.TabIndex = 31;
+            this.labelgestaciones.Text = "Gestaciones";
+            // 
+            // dtFUP
+            // 
+            this.dtFUP.CustomFormat = "yy:mm:dd";
+            this.dtFUP.Location = new System.Drawing.Point(159, 200);
+            this.dtFUP.Name = "dtFUP";
+            this.dtFUP.Size = new System.Drawing.Size(204, 20);
+            this.dtFUP.TabIndex = 30;
+            // 
+            // labelFechaUltimoPapa
+            // 
+            this.labelFechaUltimoPapa.AutoSize = true;
+            this.labelFechaUltimoPapa.Location = new System.Drawing.Point(6, 206);
+            this.labelFechaUltimoPapa.Name = "labelFechaUltimoPapa";
+            this.labelFechaUltimoPapa.Size = new System.Drawing.Size(131, 13);
+            this.labelFechaUltimoPapa.TabIndex = 17;
+            this.labelFechaUltimoPapa.Text = "Fecha Ultimo Papanicolau";
+            // 
+            // tabSentidos
+            // 
+            this.tabSentidos.Controls.Add(this.tabControl2);
+            this.tabSentidos.Location = new System.Drawing.Point(4, 22);
+            this.tabSentidos.Name = "tabSentidos";
+            this.tabSentidos.Size = new System.Drawing.Size(834, 396);
+            this.tabSentidos.TabIndex = 10;
+            this.tabSentidos.Text = "Sentidos";
+            this.tabSentidos.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabEstadoEmocional);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(835, 390);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabEstadoEmocional
+            // 
+            this.tabEstadoEmocional.Controls.Add(this.gbReflejos);
+            this.tabEstadoEmocional.Controls.Add(this.AuiliarReflejo);
+            this.tabEstadoEmocional.Controls.Add(this.gbSensibilidad);
+            this.tabEstadoEmocional.Controls.Add(this.auxiliarEstadoEmo);
+            this.tabEstadoEmocional.Controls.Add(this.gbEstadoEmocional);
+            this.tabEstadoEmocional.Location = new System.Drawing.Point(4, 22);
+            this.tabEstadoEmocional.Name = "tabEstadoEmocional";
+            this.tabEstadoEmocional.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEstadoEmocional.Size = new System.Drawing.Size(827, 364);
+            this.tabEstadoEmocional.TabIndex = 0;
+            this.tabEstadoEmocional.Text = "Estado Emocional - Sensibilidad - Reflejos";
+            this.tabEstadoEmocional.UseVisualStyleBackColor = true;
             // 
             // gbReflejos
             // 
@@ -1678,10 +2751,10 @@
             this.gbReflejos.Controls.Add(this.txtReflejoObservacion);
             this.gbReflejos.Controls.Add(this.label11);
             this.gbReflejos.Controls.Add(this.cb_Reflejo_ValoracionGeneral);
-            this.gbReflejos.Location = new System.Drawing.Point(22, 17);
+            this.gbReflejos.Location = new System.Drawing.Point(547, 14);
             this.gbReflejos.Name = "gbReflejos";
             this.gbReflejos.Size = new System.Drawing.Size(148, 304);
-            this.gbReflejos.TabIndex = 0;
+            this.gbReflejos.TabIndex = 94;
             this.gbReflejos.TabStop = false;
             this.gbReflejos.Text = "Reflejos";
             // 
@@ -1696,7 +2769,6 @@
             this.btn_ReflejoObservacion.TabIndex = 79;
             this.btn_ReflejoObservacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ReflejoObservacion.UseVisualStyleBackColor = true;
-            this.btn_ReflejoObservacion.Click += new System.EventHandler(this.btn_ReflejoObservacion_Click);
             // 
             // chk_R_Patelar
             // 
@@ -1821,704 +2893,14 @@
             this.cb_Reflejo_ValoracionGeneral.TabIndex = 0;
             this.cb_Reflejo_ValoracionGeneral.Text = "Bien";
             // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.auxCoorMarcha);
-            this.tabPage9.Controls.Add(this.gbCoordinacionMarcha);
-            this.tabPage9.Controls.Add(this.auxiliarboca);
-            this.tabPage9.Controls.Add(this.gbBoca);
-            this.tabPage9.Controls.Add(this.AuxiliarDigestivo);
-            this.tabPage9.Controls.Add(this.gbAparatoDigestivo);
-            this.tabPage9.Controls.Add(this.auxiliarCraneo);
-            this.tabPage9.Controls.Add(this.gbCraneo);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(823, 367);
-            this.tabPage9.TabIndex = 2;
-            this.tabPage9.Text = "Craneo, Boca, Aparato Digestivo, Boca, Coodinacion y Marchar";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // auxCoorMarcha
-            // 
-            this.auxCoorMarcha.Location = new System.Drawing.Point(637, 300);
-            this.auxCoorMarcha.Name = "auxCoorMarcha";
-            this.auxCoorMarcha.Size = new System.Drawing.Size(75, 23);
-            this.auxCoorMarcha.TabIndex = 7;
-            this.auxCoorMarcha.Text = "button2";
-            this.auxCoorMarcha.UseVisualStyleBackColor = true;
-            this.auxCoorMarcha.Visible = false;
-            this.auxCoorMarcha.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // gbCoordinacionMarcha
-            // 
-            this.gbCoordinacionMarcha.Controls.Add(this.txt_ObsCoordinacion);
-            this.gbCoordinacionMarcha.Controls.Add(this.btn_Obs_CoordinacionMarcha);
-            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_TalonRodilla);
-            this.gbCoordinacionMarcha.Controls.Add(this.label73);
-            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_Romberg);
-            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_DedoNariz);
-            this.gbCoordinacionMarcha.Controls.Add(this.chk_CooMar_Camina);
-            this.gbCoordinacionMarcha.Location = new System.Drawing.Point(628, 19);
-            this.gbCoordinacionMarcha.Name = "gbCoordinacionMarcha";
-            this.gbCoordinacionMarcha.Size = new System.Drawing.Size(168, 280);
-            this.gbCoordinacionMarcha.TabIndex = 3;
-            this.gbCoordinacionMarcha.TabStop = false;
-            this.gbCoordinacionMarcha.Text = "Coodinación y Marcha";
-            // 
-            // txt_ObsCoordinacion
-            // 
-            this.txt_ObsCoordinacion.Enabled = false;
-            this.txt_ObsCoordinacion.Location = new System.Drawing.Point(9, 128);
-            this.txt_ObsCoordinacion.MaxLength = 300;
-            this.txt_ObsCoordinacion.Multiline = true;
-            this.txt_ObsCoordinacion.Name = "txt_ObsCoordinacion";
-            this.txt_ObsCoordinacion.Size = new System.Drawing.Size(153, 146);
-            this.txt_ObsCoordinacion.TabIndex = 86;
-            // 
-            // btn_Obs_CoordinacionMarcha
-            // 
-            this.btn_Obs_CoordinacionMarcha.FlatAppearance.BorderSize = 0;
-            this.btn_Obs_CoordinacionMarcha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Obs_CoordinacionMarcha.Image = global::Frm.Properties.Resources.more;
-            this.btn_Obs_CoordinacionMarcha.Location = new System.Drawing.Point(79, 110);
-            this.btn_Obs_CoordinacionMarcha.Name = "btn_Obs_CoordinacionMarcha";
-            this.btn_Obs_CoordinacionMarcha.Size = new System.Drawing.Size(27, 17);
-            this.btn_Obs_CoordinacionMarcha.TabIndex = 84;
-            this.btn_Obs_CoordinacionMarcha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Obs_CoordinacionMarcha.UseVisualStyleBackColor = true;
-            this.btn_Obs_CoordinacionMarcha.Click += new System.EventHandler(this.btn_Obs_CoordinacionMarcha_Click);
-            // 
-            // chk_CooMar_TalonRodilla
-            // 
-            this.chk_CooMar_TalonRodilla.AutoSize = true;
-            this.chk_CooMar_TalonRodilla.Location = new System.Drawing.Point(7, 65);
-            this.chk_CooMar_TalonRodilla.Name = "chk_CooMar_TalonRodilla";
-            this.chk_CooMar_TalonRodilla.Size = new System.Drawing.Size(88, 17);
-            this.chk_CooMar_TalonRodilla.TabIndex = 3;
-            this.chk_CooMar_TalonRodilla.Text = "Talon-Rodilla";
-            this.chk_CooMar_TalonRodilla.UseVisualStyleBackColor = true;
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(6, 111);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(67, 13);
-            this.label73.TabIndex = 85;
-            this.label73.Text = "Observacion";
-            // 
-            // chk_CooMar_Romberg
-            // 
-            this.chk_CooMar_Romberg.AutoSize = true;
-            this.chk_CooMar_Romberg.Location = new System.Drawing.Point(7, 88);
-            this.chk_CooMar_Romberg.Name = "chk_CooMar_Romberg";
-            this.chk_CooMar_Romberg.Size = new System.Drawing.Size(69, 17);
-            this.chk_CooMar_Romberg.TabIndex = 2;
-            this.chk_CooMar_Romberg.Text = "Romberg";
-            this.chk_CooMar_Romberg.UseVisualStyleBackColor = true;
-            // 
-            // chk_CooMar_DedoNariz
-            // 
-            this.chk_CooMar_DedoNariz.AutoSize = true;
-            this.chk_CooMar_DedoNariz.Location = new System.Drawing.Point(7, 42);
-            this.chk_CooMar_DedoNariz.Name = "chk_CooMar_DedoNariz";
-            this.chk_CooMar_DedoNariz.Size = new System.Drawing.Size(85, 17);
-            this.chk_CooMar_DedoNariz.TabIndex = 1;
-            this.chk_CooMar_DedoNariz.Text = "Dedo - Nariz";
-            this.chk_CooMar_DedoNariz.UseVisualStyleBackColor = true;
-            // 
-            // chk_CooMar_Camina
-            // 
-            this.chk_CooMar_Camina.AutoSize = true;
-            this.chk_CooMar_Camina.Location = new System.Drawing.Point(7, 20);
-            this.chk_CooMar_Camina.Name = "chk_CooMar_Camina";
-            this.chk_CooMar_Camina.Size = new System.Drawing.Size(61, 17);
-            this.chk_CooMar_Camina.TabIndex = 0;
-            this.chk_CooMar_Camina.Text = "Camina";
-            this.chk_CooMar_Camina.UseVisualStyleBackColor = true;
-            // 
-            // auxiliarboca
-            // 
-            this.auxiliarboca.Location = new System.Drawing.Point(482, 301);
-            this.auxiliarboca.Name = "auxiliarboca";
-            this.auxiliarboca.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarboca.TabIndex = 5;
-            this.auxiliarboca.Text = "boca";
-            this.auxiliarboca.UseVisualStyleBackColor = true;
-            this.auxiliarboca.Visible = false;
-            this.auxiliarboca.Click += new System.EventHandler(this.auxiliarboca_Click);
-            // 
-            // gbBoca
-            // 
-            this.gbBoca.Controls.Add(this.chk_Boca_Disfagia);
-            this.gbBoca.Controls.Add(this.chk_Boca_Ronquera);
-            this.gbBoca.Controls.Add(this.chk_Boca_Amigdalitis);
-            this.gbBoca.Controls.Add(this.chk_Boca_Laringitis);
-            this.gbBoca.Controls.Add(this.chk_Boca_Faringitis);
-            this.gbBoca.Controls.Add(this.chk_Boca_LenguaDolor);
-            this.gbBoca.Controls.Add(this.chk_Boca_Calzas);
-            this.gbBoca.Controls.Add(this.chk_Boca_Ulceras);
-            this.gbBoca.Controls.Add(this.chk_Boca_Protesis);
-            this.gbBoca.Controls.Add(this.chk_Boca_Adoncia);
-            this.gbBoca.Location = new System.Drawing.Point(475, 19);
-            this.gbBoca.Name = "gbBoca";
-            this.gbBoca.Size = new System.Drawing.Size(135, 280);
-            this.gbBoca.TabIndex = 2;
-            this.gbBoca.TabStop = false;
-            this.gbBoca.Text = "Boca";
-            // 
-            // chk_Boca_Disfagia
-            // 
-            this.chk_Boca_Disfagia.AutoSize = true;
-            this.chk_Boca_Disfagia.Location = new System.Drawing.Point(5, 223);
-            this.chk_Boca_Disfagia.Name = "chk_Boca_Disfagia";
-            this.chk_Boca_Disfagia.Size = new System.Drawing.Size(64, 17);
-            this.chk_Boca_Disfagia.TabIndex = 9;
-            this.chk_Boca_Disfagia.Text = "Disfagia";
-            this.chk_Boca_Disfagia.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Ronquera
-            // 
-            this.chk_Boca_Ronquera.AutoSize = true;
-            this.chk_Boca_Ronquera.Location = new System.Drawing.Point(7, 200);
-            this.chk_Boca_Ronquera.Name = "chk_Boca_Ronquera";
-            this.chk_Boca_Ronquera.Size = new System.Drawing.Size(73, 17);
-            this.chk_Boca_Ronquera.TabIndex = 8;
-            this.chk_Boca_Ronquera.Text = "Ronquera";
-            this.chk_Boca_Ronquera.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Amigdalitis
-            // 
-            this.chk_Boca_Amigdalitis.AutoSize = true;
-            this.chk_Boca_Amigdalitis.Location = new System.Drawing.Point(7, 157);
-            this.chk_Boca_Amigdalitis.Name = "chk_Boca_Amigdalitis";
-            this.chk_Boca_Amigdalitis.Size = new System.Drawing.Size(75, 17);
-            this.chk_Boca_Amigdalitis.TabIndex = 7;
-            this.chk_Boca_Amigdalitis.Text = "Amigdalitis";
-            this.chk_Boca_Amigdalitis.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Laringitis
-            // 
-            this.chk_Boca_Laringitis.AutoSize = true;
-            this.chk_Boca_Laringitis.Location = new System.Drawing.Point(6, 177);
-            this.chk_Boca_Laringitis.Name = "chk_Boca_Laringitis";
-            this.chk_Boca_Laringitis.Size = new System.Drawing.Size(67, 17);
-            this.chk_Boca_Laringitis.TabIndex = 6;
-            this.chk_Boca_Laringitis.Text = "Laringitis";
-            this.chk_Boca_Laringitis.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Faringitis
-            // 
-            this.chk_Boca_Faringitis.AutoSize = true;
-            this.chk_Boca_Faringitis.Location = new System.Drawing.Point(6, 134);
-            this.chk_Boca_Faringitis.Name = "chk_Boca_Faringitis";
-            this.chk_Boca_Faringitis.Size = new System.Drawing.Size(67, 17);
-            this.chk_Boca_Faringitis.TabIndex = 5;
-            this.chk_Boca_Faringitis.Text = "Faringitis";
-            this.chk_Boca_Faringitis.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_LenguaDolor
-            // 
-            this.chk_Boca_LenguaDolor.AutoSize = true;
-            this.chk_Boca_LenguaDolor.Location = new System.Drawing.Point(6, 111);
-            this.chk_Boca_LenguaDolor.Name = "chk_Boca_LenguaDolor";
-            this.chk_Boca_LenguaDolor.Size = new System.Drawing.Size(116, 17);
-            this.chk_Boca_LenguaDolor.TabIndex = 4;
-            this.chk_Boca_LenguaDolor.Text = "Dolor en la Lengua";
-            this.chk_Boca_LenguaDolor.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Calzas
-            // 
-            this.chk_Boca_Calzas.AutoSize = true;
-            this.chk_Boca_Calzas.Location = new System.Drawing.Point(6, 65);
-            this.chk_Boca_Calzas.Name = "chk_Boca_Calzas";
-            this.chk_Boca_Calzas.Size = new System.Drawing.Size(57, 17);
-            this.chk_Boca_Calzas.TabIndex = 3;
-            this.chk_Boca_Calzas.Text = "Calzas";
-            this.chk_Boca_Calzas.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Ulceras
-            // 
-            this.chk_Boca_Ulceras.AutoSize = true;
-            this.chk_Boca_Ulceras.Location = new System.Drawing.Point(7, 88);
-            this.chk_Boca_Ulceras.Name = "chk_Boca_Ulceras";
-            this.chk_Boca_Ulceras.Size = new System.Drawing.Size(62, 17);
-            this.chk_Boca_Ulceras.TabIndex = 2;
-            this.chk_Boca_Ulceras.Text = "Úlceras";
-            this.chk_Boca_Ulceras.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Protesis
-            // 
-            this.chk_Boca_Protesis.AutoSize = true;
-            this.chk_Boca_Protesis.Location = new System.Drawing.Point(7, 42);
-            this.chk_Boca_Protesis.Name = "chk_Boca_Protesis";
-            this.chk_Boca_Protesis.Size = new System.Drawing.Size(63, 17);
-            this.chk_Boca_Protesis.TabIndex = 1;
-            this.chk_Boca_Protesis.Text = "Protesis";
-            this.chk_Boca_Protesis.UseVisualStyleBackColor = true;
-            // 
-            // chk_Boca_Adoncia
-            // 
-            this.chk_Boca_Adoncia.AutoSize = true;
-            this.chk_Boca_Adoncia.Location = new System.Drawing.Point(7, 20);
-            this.chk_Boca_Adoncia.Name = "chk_Boca_Adoncia";
-            this.chk_Boca_Adoncia.Size = new System.Drawing.Size(65, 17);
-            this.chk_Boca_Adoncia.TabIndex = 0;
-            this.chk_Boca_Adoncia.Text = "Adoncia";
-            this.chk_Boca_Adoncia.UseVisualStyleBackColor = true;
-            // 
-            // AuxiliarDigestivo
-            // 
-            this.AuxiliarDigestivo.Location = new System.Drawing.Point(195, 315);
-            this.AuxiliarDigestivo.Name = "AuxiliarDigestivo";
-            this.AuxiliarDigestivo.Size = new System.Drawing.Size(75, 23);
-            this.AuxiliarDigestivo.TabIndex = 3;
-            this.AuxiliarDigestivo.Text = "diges";
-            this.AuxiliarDigestivo.UseVisualStyleBackColor = true;
-            this.AuxiliarDigestivo.Visible = false;
-            this.AuxiliarDigestivo.Click += new System.EventHandler(this.AuxiliarDigestivo_Click);
-            // 
-            // gbAparatoDigestivo
-            // 
-            this.gbAparatoDigestivo.Controls.Add(this.label72);
-            this.gbAparatoDigestivo.Controls.Add(this.cbVomito);
-            this.gbAparatoDigestivo.Controls.Add(this.btnApaDigestivoDetalle);
-            this.gbAparatoDigestivo.Controls.Add(this.label71);
-            this.gbAparatoDigestivo.Controls.Add(this.txtAparatoDigestivoDetalle);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivoDistencion);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Colico);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Pirosis);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Estrenimiento);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Diarrea);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_FaltaApetito);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Nauseas);
-            this.gbAparatoDigestivo.Controls.Add(this.chk_ApaDigestivo_Dolor);
-            this.gbAparatoDigestivo.Location = new System.Drawing.Point(191, 19);
-            this.gbAparatoDigestivo.Name = "gbAparatoDigestivo";
-            this.gbAparatoDigestivo.Size = new System.Drawing.Size(269, 280);
-            this.gbAparatoDigestivo.TabIndex = 1;
-            this.gbAparatoDigestivo.TabStop = false;
-            this.gbAparatoDigestivo.Text = "AparatoDigestivo";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(6, 119);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(39, 13);
-            this.label72.TabIndex = 83;
-            this.label72.Text = "Vómito";
-            // 
-            // cbVomito
-            // 
-            this.cbVomito.FormattingEnabled = true;
-            this.cbVomito.Items.AddRange(new object[] {
-            "Sin Vomito",
-            "Alimenticio",
-            "Rojo Fuerte",
-            "Rojo claro",
-            "Verde"});
-            this.cbVomito.Location = new System.Drawing.Point(51, 119);
-            this.cbVomito.Name = "cbVomito";
-            this.cbVomito.Size = new System.Drawing.Size(134, 21);
-            this.cbVomito.TabIndex = 82;
-            // 
-            // btnApaDigestivoDetalle
-            // 
-            this.btnApaDigestivoDetalle.FlatAppearance.BorderSize = 0;
-            this.btnApaDigestivoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApaDigestivoDetalle.Image = global::Frm.Properties.Resources.more;
-            this.btnApaDigestivoDetalle.Location = new System.Drawing.Point(48, 159);
-            this.btnApaDigestivoDetalle.Name = "btnApaDigestivoDetalle";
-            this.btnApaDigestivoDetalle.Size = new System.Drawing.Size(27, 17);
-            this.btnApaDigestivoDetalle.TabIndex = 81;
-            this.btnApaDigestivoDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApaDigestivoDetalle.UseVisualStyleBackColor = true;
-            this.btnApaDigestivoDetalle.Click += new System.EventHandler(this.btnApaDigestivoDetalle_Click);
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(6, 161);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(40, 13);
-            this.label71.TabIndex = 9;
-            this.label71.Text = "Detalle";
-            // 
-            // txtAparatoDigestivoDetalle
-            // 
-            this.txtAparatoDigestivoDetalle.Enabled = false;
-            this.txtAparatoDigestivoDetalle.Location = new System.Drawing.Point(6, 178);
-            this.txtAparatoDigestivoDetalle.MaxLength = 400;
-            this.txtAparatoDigestivoDetalle.Multiline = true;
-            this.txtAparatoDigestivoDetalle.Name = "txtAparatoDigestivoDetalle";
-            this.txtAparatoDigestivoDetalle.Size = new System.Drawing.Size(250, 73);
-            this.txtAparatoDigestivoDetalle.TabIndex = 8;
-            // 
-            // chk_ApaDigestivoDistencion
-            // 
-            this.chk_ApaDigestivoDistencion.AutoSize = true;
-            this.chk_ApaDigestivoDistencion.Location = new System.Drawing.Point(105, 88);
-            this.chk_ApaDigestivoDistencion.Name = "chk_ApaDigestivoDistencion";
-            this.chk_ApaDigestivoDistencion.Size = new System.Drawing.Size(76, 17);
-            this.chk_ApaDigestivoDistencion.TabIndex = 7;
-            this.chk_ApaDigestivoDistencion.Text = "Distencion";
-            this.chk_ApaDigestivoDistencion.UseVisualStyleBackColor = true;
-            // 
-            // chk_ApaDigestivo_Colico
-            // 
-            this.chk_ApaDigestivo_Colico.AutoSize = true;
-            this.chk_ApaDigestivo_Colico.Location = new System.Drawing.Point(105, 65);
-            this.chk_ApaDigestivo_Colico.Name = "chk_ApaDigestivo_Colico";
-            this.chk_ApaDigestivo_Colico.Size = new System.Drawing.Size(60, 17);
-            this.chk_ApaDigestivo_Colico.TabIndex = 6;
-            this.chk_ApaDigestivo_Colico.Text = "Colicos";
-            this.chk_ApaDigestivo_Colico.UseVisualStyleBackColor = true;
-            // 
-            // chk_ApaDigestivo_Pirosis
-            // 
-            this.chk_ApaDigestivo_Pirosis.AutoSize = true;
-            this.chk_ApaDigestivo_Pirosis.Location = new System.Drawing.Point(105, 42);
-            this.chk_ApaDigestivo_Pirosis.Name = "chk_ApaDigestivo_Pirosis";
-            this.chk_ApaDigestivo_Pirosis.Size = new System.Drawing.Size(56, 17);
-            this.chk_ApaDigestivo_Pirosis.TabIndex = 5;
-            this.chk_ApaDigestivo_Pirosis.Text = "Pirosis";
-            this.chk_ApaDigestivo_Pirosis.UseVisualStyleBackColor = true;
-            // 
-            // chk_ApaDigestivo_Estrenimiento
-            // 
-            this.chk_ApaDigestivo_Estrenimiento.AutoSize = true;
-            this.chk_ApaDigestivo_Estrenimiento.Location = new System.Drawing.Point(105, 19);
-            this.chk_ApaDigestivo_Estrenimiento.Name = "chk_ApaDigestivo_Estrenimiento";
-            this.chk_ApaDigestivo_Estrenimiento.Size = new System.Drawing.Size(89, 17);
-            this.chk_ApaDigestivo_Estrenimiento.TabIndex = 4;
-            this.chk_ApaDigestivo_Estrenimiento.Text = "Estreñimiento";
-            this.chk_ApaDigestivo_Estrenimiento.UseVisualStyleBackColor = true;
-            // 
-            // chk_ApaDigestivo_Diarrea
-            // 
-            this.chk_ApaDigestivo_Diarrea.AutoSize = true;
-            this.chk_ApaDigestivo_Diarrea.Location = new System.Drawing.Point(7, 88);
-            this.chk_ApaDigestivo_Diarrea.Name = "chk_ApaDigestivo_Diarrea";
-            this.chk_ApaDigestivo_Diarrea.Size = new System.Drawing.Size(60, 17);
-            this.chk_ApaDigestivo_Diarrea.TabIndex = 3;
-            this.chk_ApaDigestivo_Diarrea.Text = "Diarrea";
-            this.chk_ApaDigestivo_Diarrea.UseVisualStyleBackColor = true;
-            // 
-            // chk_ApaDigestivo_FaltaApetito
-            // 
-            this.chk_ApaDigestivo_FaltaApetito.AutoSize = true;
-            this.chk_ApaDigestivo_FaltaApetito.Location = new System.Drawing.Point(7, 42);
-            this.chk_ApaDigestivo_FaltaApetito.Name = "chk_ApaDigestivo_FaltaApetito";
-            this.chk_ApaDigestivo_FaltaApetito.Size = new System.Drawing.Size(85, 17);
-            this.chk_ApaDigestivo_FaltaApetito.TabIndex = 2;
-            this.chk_ApaDigestivo_FaltaApetito.Text = "Falta Apetito";
-            this.chk_ApaDigestivo_FaltaApetito.UseVisualStyleBackColor = true;
-            // 
-            // chk_ApaDigestivo_Nauseas
-            // 
-            this.chk_ApaDigestivo_Nauseas.AutoSize = true;
-            this.chk_ApaDigestivo_Nauseas.Location = new System.Drawing.Point(7, 65);
-            this.chk_ApaDigestivo_Nauseas.Name = "chk_ApaDigestivo_Nauseas";
-            this.chk_ApaDigestivo_Nauseas.Size = new System.Drawing.Size(68, 17);
-            this.chk_ApaDigestivo_Nauseas.TabIndex = 1;
-            this.chk_ApaDigestivo_Nauseas.Text = "Náuseas";
-            this.chk_ApaDigestivo_Nauseas.UseVisualStyleBackColor = true;
-            // 
-            // chk_ApaDigestivo_Dolor
-            // 
-            this.chk_ApaDigestivo_Dolor.AutoSize = true;
-            this.chk_ApaDigestivo_Dolor.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.chk_ApaDigestivo_Dolor.Location = new System.Drawing.Point(7, 19);
-            this.chk_ApaDigestivo_Dolor.Name = "chk_ApaDigestivo_Dolor";
-            this.chk_ApaDigestivo_Dolor.Size = new System.Drawing.Size(51, 17);
-            this.chk_ApaDigestivo_Dolor.TabIndex = 0;
-            this.chk_ApaDigestivo_Dolor.Text = "Dolor";
-            this.chk_ApaDigestivo_Dolor.UseVisualStyleBackColor = true;
-            // 
-            // auxiliarCraneo
-            // 
-            this.auxiliarCraneo.Location = new System.Drawing.Point(20, 315);
-            this.auxiliarCraneo.Name = "auxiliarCraneo";
-            this.auxiliarCraneo.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarCraneo.TabIndex = 1;
-            this.auxiliarCraneo.Text = "button2";
-            this.auxiliarCraneo.UseVisualStyleBackColor = true;
-            this.auxiliarCraneo.Visible = false;
-            this.auxiliarCraneo.Click += new System.EventHandler(this.auxiliarCraneo_Click);
-            // 
-            // gbCraneo
-            // 
-            this.gbCraneo.Controls.Add(this.chk_Craneo_Prurito);
-            this.gbCraneo.Controls.Add(this.label70);
-            this.gbCraneo.Controls.Add(this.txtMareos);
-            this.gbCraneo.Controls.Add(this.chk_Craneo_PerdidaConciencia);
-            this.gbCraneo.Controls.Add(this.chk_Craneo_Cefalea);
-            this.gbCraneo.Controls.Add(this.chk_Craneo_Sincope);
-            this.gbCraneo.Controls.Add(this.chk_Craneo_AltereacionOsea);
-            this.gbCraneo.Controls.Add(this.chk_Craneo_Simetrico);
-            this.gbCraneo.Controls.Add(this.chk_Craneo_TamanoForma);
-            this.gbCraneo.Location = new System.Drawing.Point(20, 19);
-            this.gbCraneo.Name = "gbCraneo";
-            this.gbCraneo.Size = new System.Drawing.Size(146, 280);
-            this.gbCraneo.TabIndex = 0;
-            this.gbCraneo.TabStop = false;
-            this.gbCraneo.Text = "Craneo";
-            // 
-            // chk_Craneo_Prurito
-            // 
-            this.chk_Craneo_Prurito.AutoSize = true;
-            this.chk_Craneo_Prurito.Location = new System.Drawing.Point(6, 157);
-            this.chk_Craneo_Prurito.Name = "chk_Craneo_Prurito";
-            this.chk_Craneo_Prurito.Size = new System.Drawing.Size(56, 17);
-            this.chk_Craneo_Prurito.TabIndex = 8;
-            this.chk_Craneo_Prurito.Text = "Prurito";
-            this.chk_Craneo_Prurito.UseVisualStyleBackColor = true;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(6, 181);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(110, 13);
-            this.label70.TabIndex = 7;
-            this.label70.Text = "Mareo Escala del  0-5";
-            // 
-            // txtMareos
-            // 
-            this.txtMareos.Location = new System.Drawing.Point(9, 207);
-            this.txtMareos.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.txtMareos.Name = "txtMareos";
-            this.txtMareos.Size = new System.Drawing.Size(120, 20);
-            this.txtMareos.TabIndex = 6;
-            // 
-            // chk_Craneo_PerdidaConciencia
-            // 
-            this.chk_Craneo_PerdidaConciencia.AutoSize = true;
-            this.chk_Craneo_PerdidaConciencia.Location = new System.Drawing.Point(6, 134);
-            this.chk_Craneo_PerdidaConciencia.Name = "chk_Craneo_PerdidaConciencia";
-            this.chk_Craneo_PerdidaConciencia.Size = new System.Drawing.Size(118, 17);
-            this.chk_Craneo_PerdidaConciencia.TabIndex = 5;
-            this.chk_Craneo_PerdidaConciencia.Text = "Perdida Conciencia";
-            this.chk_Craneo_PerdidaConciencia.UseVisualStyleBackColor = true;
-            // 
-            // chk_Craneo_Cefalea
-            // 
-            this.chk_Craneo_Cefalea.AutoSize = true;
-            this.chk_Craneo_Cefalea.Location = new System.Drawing.Point(6, 88);
-            this.chk_Craneo_Cefalea.Name = "chk_Craneo_Cefalea";
-            this.chk_Craneo_Cefalea.Size = new System.Drawing.Size(62, 17);
-            this.chk_Craneo_Cefalea.TabIndex = 4;
-            this.chk_Craneo_Cefalea.Text = "Cefalea";
-            this.chk_Craneo_Cefalea.UseVisualStyleBackColor = true;
-            // 
-            // chk_Craneo_Sincope
-            // 
-            this.chk_Craneo_Sincope.AutoSize = true;
-            this.chk_Craneo_Sincope.Location = new System.Drawing.Point(6, 111);
-            this.chk_Craneo_Sincope.Name = "chk_Craneo_Sincope";
-            this.chk_Craneo_Sincope.Size = new System.Drawing.Size(65, 17);
-            this.chk_Craneo_Sincope.TabIndex = 3;
-            this.chk_Craneo_Sincope.Text = "Sincope";
-            this.chk_Craneo_Sincope.UseVisualStyleBackColor = true;
-            // 
-            // chk_Craneo_AltereacionOsea
-            // 
-            this.chk_Craneo_AltereacionOsea.AutoSize = true;
-            this.chk_Craneo_AltereacionOsea.Location = new System.Drawing.Point(6, 65);
-            this.chk_Craneo_AltereacionOsea.Name = "chk_Craneo_AltereacionOsea";
-            this.chk_Craneo_AltereacionOsea.Size = new System.Drawing.Size(101, 17);
-            this.chk_Craneo_AltereacionOsea.TabIndex = 2;
-            this.chk_Craneo_AltereacionOsea.Text = "Alteración Ósea";
-            this.chk_Craneo_AltereacionOsea.UseVisualStyleBackColor = true;
-            // 
-            // chk_Craneo_Simetrico
-            // 
-            this.chk_Craneo_Simetrico.AutoSize = true;
-            this.chk_Craneo_Simetrico.Location = new System.Drawing.Point(6, 42);
-            this.chk_Craneo_Simetrico.Name = "chk_Craneo_Simetrico";
-            this.chk_Craneo_Simetrico.Size = new System.Drawing.Size(69, 17);
-            this.chk_Craneo_Simetrico.TabIndex = 1;
-            this.chk_Craneo_Simetrico.Text = "Simétrico";
-            this.chk_Craneo_Simetrico.UseVisualStyleBackColor = true;
-            // 
-            // chk_Craneo_TamanoForma
-            // 
-            this.chk_Craneo_TamanoForma.AutoSize = true;
-            this.chk_Craneo_TamanoForma.Location = new System.Drawing.Point(6, 19);
-            this.chk_Craneo_TamanoForma.Name = "chk_Craneo_TamanoForma";
-            this.chk_Craneo_TamanoForma.Size = new System.Drawing.Size(133, 17);
-            this.chk_Craneo_TamanoForma.TabIndex = 0;
-            this.chk_Craneo_TamanoForma.Text = "Tamaño,Forma Normal";
-            this.chk_Craneo_TamanoForma.UseVisualStyleBackColor = true;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Controls.Add(this.auxiliarNariz);
-            this.tabPage10.Controls.Add(this.button1);
-            this.tabPage10.Controls.Add(this.gbOidos);
-            this.tabPage10.Controls.Add(this.gbNariz);
-            this.tabPage10.Controls.Add(this.gbSensibilidad);
-            this.tabPage10.Controls.Add(this.auxiliarToraxP);
-            this.tabPage10.Controls.Add(this.gbTorax);
-            this.tabPage10.Location = new System.Drawing.Point(4, 22);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(823, 367);
-            this.tabPage10.TabIndex = 3;
-            this.tabPage10.Text = "Torax, Nariz,Oido,Sensibilidad";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // auxiliarNariz
-            // 
-            this.auxiliarNariz.Location = new System.Drawing.Point(231, 188);
-            this.auxiliarNariz.Name = "auxiliarNariz";
-            this.auxiliarNariz.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarNariz.TabIndex = 84;
-            this.auxiliarNariz.Text = "button1";
-            this.auxiliarNariz.UseVisualStyleBackColor = true;
-            this.auxiliarNariz.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(412, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 83;
-            this.button1.Text = "auxiliarOido";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            // 
-            // gbOidos
-            // 
-            this.gbOidos.Controls.Add(this.chk_Oidos_Tinitus);
-            this.gbOidos.Controls.Add(this.chk_Oidos_Otorrea);
-            this.gbOidos.Controls.Add(this.chk_Oidos_Otalgia);
-            this.gbOidos.Controls.Add(this.chk_Oidos_Hipercusia);
-            this.gbOidos.Controls.Add(this.chk_Oidos_Hipocusia);
-            this.gbOidos.Controls.Add(this.chk_Oidos_Acusia);
-            this.gbOidos.Location = new System.Drawing.Point(405, 23);
-            this.gbOidos.Name = "gbOidos";
-            this.gbOidos.Size = new System.Drawing.Size(124, 145);
-            this.gbOidos.TabIndex = 82;
-            this.gbOidos.TabStop = false;
-            this.gbOidos.Text = "Oidos";
-            // 
-            // chk_Oidos_Tinitus
-            // 
-            this.chk_Oidos_Tinitus.AutoSize = true;
-            this.chk_Oidos_Tinitus.Location = new System.Drawing.Point(16, 119);
-            this.chk_Oidos_Tinitus.Name = "chk_Oidos_Tinitus";
-            this.chk_Oidos_Tinitus.Size = new System.Drawing.Size(57, 17);
-            this.chk_Oidos_Tinitus.TabIndex = 5;
-            this.chk_Oidos_Tinitus.Text = "Tinitus";
-            this.chk_Oidos_Tinitus.UseVisualStyleBackColor = true;
-            // 
-            // chk_Oidos_Otorrea
-            // 
-            this.chk_Oidos_Otorrea.AutoSize = true;
-            this.chk_Oidos_Otorrea.Location = new System.Drawing.Point(16, 99);
-            this.chk_Oidos_Otorrea.Name = "chk_Oidos_Otorrea";
-            this.chk_Oidos_Otorrea.Size = new System.Drawing.Size(61, 17);
-            this.chk_Oidos_Otorrea.TabIndex = 4;
-            this.chk_Oidos_Otorrea.Text = "Otorrea";
-            this.chk_Oidos_Otorrea.UseVisualStyleBackColor = true;
-            // 
-            // chk_Oidos_Otalgia
-            // 
-            this.chk_Oidos_Otalgia.AutoSize = true;
-            this.chk_Oidos_Otalgia.Location = new System.Drawing.Point(15, 79);
-            this.chk_Oidos_Otalgia.Name = "chk_Oidos_Otalgia";
-            this.chk_Oidos_Otalgia.Size = new System.Drawing.Size(59, 17);
-            this.chk_Oidos_Otalgia.TabIndex = 3;
-            this.chk_Oidos_Otalgia.Text = "Otalgia";
-            this.chk_Oidos_Otalgia.UseVisualStyleBackColor = true;
-            // 
-            // chk_Oidos_Hipercusia
-            // 
-            this.chk_Oidos_Hipercusia.AutoSize = true;
-            this.chk_Oidos_Hipercusia.Location = new System.Drawing.Point(16, 59);
-            this.chk_Oidos_Hipercusia.Name = "chk_Oidos_Hipercusia";
-            this.chk_Oidos_Hipercusia.Size = new System.Drawing.Size(76, 17);
-            this.chk_Oidos_Hipercusia.TabIndex = 2;
-            this.chk_Oidos_Hipercusia.Text = "Hipercusia";
-            this.chk_Oidos_Hipercusia.UseVisualStyleBackColor = true;
-            // 
-            // chk_Oidos_Hipocusia
-            // 
-            this.chk_Oidos_Hipocusia.AutoSize = true;
-            this.chk_Oidos_Hipocusia.Location = new System.Drawing.Point(16, 39);
-            this.chk_Oidos_Hipocusia.Name = "chk_Oidos_Hipocusia";
-            this.chk_Oidos_Hipocusia.Size = new System.Drawing.Size(73, 17);
-            this.chk_Oidos_Hipocusia.TabIndex = 1;
-            this.chk_Oidos_Hipocusia.Text = "Hipocusia";
-            this.chk_Oidos_Hipocusia.UseVisualStyleBackColor = true;
-            // 
-            // chk_Oidos_Acusia
-            // 
-            this.chk_Oidos_Acusia.AutoSize = true;
-            this.chk_Oidos_Acusia.Location = new System.Drawing.Point(16, 19);
-            this.chk_Oidos_Acusia.Name = "chk_Oidos_Acusia";
-            this.chk_Oidos_Acusia.Size = new System.Drawing.Size(58, 17);
-            this.chk_Oidos_Acusia.TabIndex = 0;
-            this.chk_Oidos_Acusia.Text = "Acusia";
-            this.chk_Oidos_Acusia.UseVisualStyleBackColor = true;
-            // 
-            // gbNariz
-            // 
-            this.gbNariz.Controls.Add(this.chk_Nariz_ResfrioFrecuente);
-            this.gbNariz.Controls.Add(this.chk_Nariz_Sinusitis);
-            this.gbNariz.Controls.Add(this.chk_Nariz_Epitaxis);
-            this.gbNariz.Controls.Add(this.chk_Nariz_Rinorrea);
-            this.gbNariz.Location = new System.Drawing.Point(244, 23);
-            this.gbNariz.Name = "gbNariz";
-            this.gbNariz.Size = new System.Drawing.Size(139, 117);
-            this.gbNariz.TabIndex = 81;
-            this.gbNariz.TabStop = false;
-            this.gbNariz.Text = "Nariz";
-            // 
-            // chk_Nariz_ResfrioFrecuente
-            // 
-            this.chk_Nariz_ResfrioFrecuente.AutoSize = true;
-            this.chk_Nariz_ResfrioFrecuente.Location = new System.Drawing.Point(14, 83);
-            this.chk_Nariz_ResfrioFrecuente.Name = "chk_Nariz_ResfrioFrecuente";
-            this.chk_Nariz_ResfrioFrecuente.Size = new System.Drawing.Size(110, 17);
-            this.chk_Nariz_ResfrioFrecuente.TabIndex = 3;
-            this.chk_Nariz_ResfrioFrecuente.Text = "Resfrio Frecuente";
-            this.chk_Nariz_ResfrioFrecuente.UseVisualStyleBackColor = true;
-            // 
-            // chk_Nariz_Sinusitis
-            // 
-            this.chk_Nariz_Sinusitis.AutoSize = true;
-            this.chk_Nariz_Sinusitis.Location = new System.Drawing.Point(14, 60);
-            this.chk_Nariz_Sinusitis.Name = "chk_Nariz_Sinusitis";
-            this.chk_Nariz_Sinusitis.Size = new System.Drawing.Size(64, 17);
-            this.chk_Nariz_Sinusitis.TabIndex = 2;
-            this.chk_Nariz_Sinusitis.Text = "Sinusitis";
-            this.chk_Nariz_Sinusitis.UseVisualStyleBackColor = true;
-            // 
-            // chk_Nariz_Epitaxis
-            // 
-            this.chk_Nariz_Epitaxis.AutoSize = true;
-            this.chk_Nariz_Epitaxis.Location = new System.Drawing.Point(14, 39);
-            this.chk_Nariz_Epitaxis.Name = "chk_Nariz_Epitaxis";
-            this.chk_Nariz_Epitaxis.Size = new System.Drawing.Size(62, 17);
-            this.chk_Nariz_Epitaxis.TabIndex = 1;
-            this.chk_Nariz_Epitaxis.Text = "Epitaxis";
-            this.chk_Nariz_Epitaxis.UseVisualStyleBackColor = true;
-            // 
-            // chk_Nariz_Rinorrea
-            // 
-            this.chk_Nariz_Rinorrea.AutoSize = true;
-            this.chk_Nariz_Rinorrea.Location = new System.Drawing.Point(14, 19);
-            this.chk_Nariz_Rinorrea.Name = "chk_Nariz_Rinorrea";
-            this.chk_Nariz_Rinorrea.Size = new System.Drawing.Size(66, 17);
-            this.chk_Nariz_Rinorrea.TabIndex = 0;
-            this.chk_Nariz_Rinorrea.Text = "Rinorrea";
-            this.chk_Nariz_Rinorrea.UseVisualStyleBackColor = true;
+            // AuiliarReflejo
+            // 
+            this.AuiliarReflejo.Location = new System.Drawing.Point(515, 335);
+            this.AuiliarReflejo.Name = "AuiliarReflejo";
+            this.AuiliarReflejo.Size = new System.Drawing.Size(75, 23);
+            this.AuiliarReflejo.TabIndex = 93;
+            this.AuiliarReflejo.Text = "reflejo";
+            this.AuiliarReflejo.UseVisualStyleBackColor = true;
             // 
             // gbSensibilidad
             // 
@@ -2529,10 +2911,10 @@
             this.gbSensibilidad.Controls.Add(this.chk_Sensiblidad_Dis_DosPuntos);
             this.gbSensibilidad.Controls.Add(this.chk_Sensiblidad_Profunda);
             this.gbSensibilidad.Controls.Add(this.chk_Sensiblidad_Superficial);
-            this.gbSensibilidad.Location = new System.Drawing.Point(575, 23);
+            this.gbSensibilidad.Location = new System.Drawing.Point(295, 14);
             this.gbSensibilidad.Name = "gbSensibilidad";
             this.gbSensibilidad.Size = new System.Drawing.Size(200, 213);
-            this.gbSensibilidad.TabIndex = 45;
+            this.gbSensibilidad.TabIndex = 92;
             this.gbSensibilidad.TabStop = false;
             this.gbSensibilidad.Text = "Sensibilidad";
             // 
@@ -2556,7 +2938,6 @@
             this.btnSensbilidadDetalle.TabIndex = 83;
             this.btnSensbilidadDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSensbilidadDetalle.UseVisualStyleBackColor = true;
-            this.btnSensbilidadDetalle.Click += new System.EventHandler(this.btnSensbilidadDetalle_Click);
             // 
             // label79
             // 
@@ -2607,142 +2988,202 @@
             this.chk_Sensiblidad_Superficial.Text = "Superficial";
             this.chk_Sensiblidad_Superficial.UseVisualStyleBackColor = true;
             // 
-            // auxiliarToraxP
+            // auxiliarEstadoEmo
             // 
-            this.auxiliarToraxP.Location = new System.Drawing.Point(42, 292);
-            this.auxiliarToraxP.Name = "auxiliarToraxP";
-            this.auxiliarToraxP.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarToraxP.TabIndex = 8;
-            this.auxiliarToraxP.Text = "button2";
-            this.auxiliarToraxP.UseVisualStyleBackColor = true;
-            this.auxiliarToraxP.Visible = false;
-            this.auxiliarToraxP.Click += new System.EventHandler(this.auxiliarToraxP_Click);
+            this.auxiliarEstadoEmo.Location = new System.Drawing.Point(15, 257);
+            this.auxiliarEstadoEmo.Name = "auxiliarEstadoEmo";
+            this.auxiliarEstadoEmo.Size = new System.Drawing.Size(75, 23);
+            this.auxiliarEstadoEmo.TabIndex = 91;
+            this.auxiliarEstadoEmo.Text = "Emocional";
+            this.auxiliarEstadoEmo.UseVisualStyleBackColor = true;
+            this.auxiliarEstadoEmo.Visible = false;
             // 
-            // gbTorax
+            // gbEstadoEmocional
             // 
-            this.gbTorax.Controls.Add(this.chk_Torax_SonoridadPulmonar);
-            this.gbTorax.Controls.Add(this.label77);
-            this.gbTorax.Controls.Add(this.cb_Torax_RuidoAgregado);
-            this.gbTorax.Controls.Add(this.label76);
-            this.gbTorax.Controls.Add(this.label75);
-            this.gbTorax.Controls.Add(this.cb_Torax_Ascultacion);
-            this.gbTorax.Controls.Add(this.cb_Torax_Expa);
-            this.gbTorax.Controls.Add(this.label74);
-            this.gbTorax.Controls.Add(this.cb_Torax_ResDiafraAbdo);
-            this.gbTorax.Location = new System.Drawing.Point(25, 23);
-            this.gbTorax.Name = "gbTorax";
-            this.gbTorax.Size = new System.Drawing.Size(194, 249);
-            this.gbTorax.TabIndex = 0;
-            this.gbTorax.TabStop = false;
-            this.gbTorax.Text = "Torax Pulmones";
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Distraido);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Desmayos);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_EdadAvanzada);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Debilidad);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Normal);
+            this.gbEstadoEmocional.Controls.Add(this.btn_EmocionalOtro);
+            this.gbEstadoEmocional.Controls.Add(this.txtEmocional_Otro);
+            this.gbEstadoEmocional.Controls.Add(this.label61);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Alucionaciones);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_AlteracionSueno);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Irritabilidad);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Tension);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Nervioso);
+            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Depresion);
+            this.gbEstadoEmocional.Location = new System.Drawing.Point(8, 14);
+            this.gbEstadoEmocional.Name = "gbEstadoEmocional";
+            this.gbEstadoEmocional.Size = new System.Drawing.Size(240, 234);
+            this.gbEstadoEmocional.TabIndex = 90;
+            this.gbEstadoEmocional.TabStop = false;
+            this.gbEstadoEmocional.Text = "EstadoEmocional";
             // 
-            // chk_Torax_SonoridadPulmonar
+            // chk_Emocional_Distraido
             // 
-            this.chk_Torax_SonoridadPulmonar.AutoSize = true;
-            this.chk_Torax_SonoridadPulmonar.Location = new System.Drawing.Point(27, 226);
-            this.chk_Torax_SonoridadPulmonar.Name = "chk_Torax_SonoridadPulmonar";
-            this.chk_Torax_SonoridadPulmonar.Size = new System.Drawing.Size(121, 17);
-            this.chk_Torax_SonoridadPulmonar.TabIndex = 8;
-            this.chk_Torax_SonoridadPulmonar.Text = "Sonoridad Pulmonar";
-            this.chk_Torax_SonoridadPulmonar.UseVisualStyleBackColor = true;
+            this.chk_Emocional_Distraido.AutoSize = true;
+            this.chk_Emocional_Distraido.Location = new System.Drawing.Point(16, 108);
+            this.chk_Emocional_Distraido.Name = "chk_Emocional_Distraido";
+            this.chk_Emocional_Distraido.Size = new System.Drawing.Size(67, 17);
+            this.chk_Emocional_Distraido.TabIndex = 85;
+            this.chk_Emocional_Distraido.Text = "Distraido";
+            this.chk_Emocional_Distraido.UseVisualStyleBackColor = true;
             // 
-            // label77
+            // chk_Emocional_Desmayos
             // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(24, 165);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(94, 13);
-            this.label77.TabIndex = 7;
-            this.label77.Text = "Ruidos Agregados";
+            this.chk_Emocional_Desmayos.AutoSize = true;
+            this.chk_Emocional_Desmayos.Location = new System.Drawing.Point(108, 66);
+            this.chk_Emocional_Desmayos.Name = "chk_Emocional_Desmayos";
+            this.chk_Emocional_Desmayos.Size = new System.Drawing.Size(75, 17);
+            this.chk_Emocional_Desmayos.TabIndex = 84;
+            this.chk_Emocional_Desmayos.Text = "Desmayos";
+            this.chk_Emocional_Desmayos.UseVisualStyleBackColor = true;
             // 
-            // cb_Torax_RuidoAgregado
+            // chk_Emocional_EdadAvanzada
             // 
-            this.cb_Torax_RuidoAgregado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Torax_RuidoAgregado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Torax_RuidoAgregado.FormattingEnabled = true;
-            this.cb_Torax_RuidoAgregado.Location = new System.Drawing.Point(27, 185);
-            this.cb_Torax_RuidoAgregado.Name = "cb_Torax_RuidoAgregado";
-            this.cb_Torax_RuidoAgregado.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_RuidoAgregado.TabIndex = 6;
+            this.chk_Emocional_EdadAvanzada.AutoSize = true;
+            this.chk_Emocional_EdadAvanzada.Location = new System.Drawing.Point(108, 43);
+            this.chk_Emocional_EdadAvanzada.Name = "chk_Emocional_EdadAvanzada";
+            this.chk_Emocional_EdadAvanzada.Size = new System.Drawing.Size(102, 17);
+            this.chk_Emocional_EdadAvanzada.TabIndex = 83;
+            this.chk_Emocional_EdadAvanzada.Text = "Edad Avanzada";
+            this.chk_Emocional_EdadAvanzada.UseVisualStyleBackColor = true;
             // 
-            // label76
+            // chk_Emocional_Debilidad
             // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(24, 121);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(151, 13);
-            this.label76.TabIndex = 5;
-            this.label76.Text = "Ascultacion Murmullo Vescular";
+            this.chk_Emocional_Debilidad.AutoSize = true;
+            this.chk_Emocional_Debilidad.Location = new System.Drawing.Point(108, 89);
+            this.chk_Emocional_Debilidad.Name = "chk_Emocional_Debilidad";
+            this.chk_Emocional_Debilidad.Size = new System.Drawing.Size(70, 17);
+            this.chk_Emocional_Debilidad.TabIndex = 82;
+            this.chk_Emocional_Debilidad.Text = "Debilidad";
+            this.chk_Emocional_Debilidad.UseVisualStyleBackColor = true;
             // 
-            // label75
+            // chk_Emocional_Normal
             // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(24, 70);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(98, 13);
-            this.label75.TabIndex = 4;
-            this.label75.Text = "ExpancionToraxica";
+            this.chk_Emocional_Normal.AutoSize = true;
+            this.chk_Emocional_Normal.Checked = true;
+            this.chk_Emocional_Normal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_Emocional_Normal.Location = new System.Drawing.Point(15, 19);
+            this.chk_Emocional_Normal.Name = "chk_Emocional_Normal";
+            this.chk_Emocional_Normal.Size = new System.Drawing.Size(59, 17);
+            this.chk_Emocional_Normal.TabIndex = 81;
+            this.chk_Emocional_Normal.Text = "Normal";
+            this.chk_Emocional_Normal.UseVisualStyleBackColor = true;
             // 
-            // cb_Torax_Ascultacion
+            // btn_EmocionalOtro
             // 
-            this.cb_Torax_Ascultacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Torax_Ascultacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Torax_Ascultacion.FormattingEnabled = true;
-            this.cb_Torax_Ascultacion.Location = new System.Drawing.Point(27, 141);
-            this.cb_Torax_Ascultacion.Name = "cb_Torax_Ascultacion";
-            this.cb_Torax_Ascultacion.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_Ascultacion.TabIndex = 3;
+            this.btn_EmocionalOtro.FlatAppearance.BorderSize = 0;
+            this.btn_EmocionalOtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EmocionalOtro.Image = global::Frm.Properties.Resources.more;
+            this.btn_EmocionalOtro.Location = new System.Drawing.Point(42, 163);
+            this.btn_EmocionalOtro.Name = "btn_EmocionalOtro";
+            this.btn_EmocionalOtro.Size = new System.Drawing.Size(27, 17);
+            this.btn_EmocionalOtro.TabIndex = 80;
+            this.btn_EmocionalOtro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_EmocionalOtro.UseVisualStyleBackColor = true;
             // 
-            // cb_Torax_Expa
+            // txtEmocional_Otro
             // 
-            this.cb_Torax_Expa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Torax_Expa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Torax_Expa.FormattingEnabled = true;
-            this.cb_Torax_Expa.Location = new System.Drawing.Point(27, 87);
-            this.cb_Torax_Expa.Name = "cb_Torax_Expa";
-            this.cb_Torax_Expa.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_Expa.TabIndex = 2;
+            this.txtEmocional_Otro.Enabled = false;
+            this.txtEmocional_Otro.Location = new System.Drawing.Point(16, 188);
+            this.txtEmocional_Otro.MaxLength = 100;
+            this.txtEmocional_Otro.Multiline = true;
+            this.txtEmocional_Otro.Name = "txtEmocional_Otro";
+            this.txtEmocional_Otro.Size = new System.Drawing.Size(151, 20);
+            this.txtEmocional_Otro.TabIndex = 80;
             // 
-            // label74
+            // label61
             // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(24, 27);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(166, 13);
-            this.label74.TabIndex = 1;
-            this.label74.Text = "Respiracion Diafragma Abdominal";
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(13, 164);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(27, 13);
+            this.label61.TabIndex = 6;
+            this.label61.Text = "Otro";
             // 
-            // cb_Torax_ResDiafraAbdo
+            // chk_Emocional_Alucionaciones
             // 
-            this.cb_Torax_ResDiafraAbdo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Torax_ResDiafraAbdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Torax_ResDiafraAbdo.FormattingEnabled = true;
-            this.cb_Torax_ResDiafraAbdo.Location = new System.Drawing.Point(27, 46);
-            this.cb_Torax_ResDiafraAbdo.Name = "cb_Torax_ResDiafraAbdo";
-            this.cb_Torax_ResDiafraAbdo.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_ResDiafraAbdo.TabIndex = 0;
+            this.chk_Emocional_Alucionaciones.AutoSize = true;
+            this.chk_Emocional_Alucionaciones.Location = new System.Drawing.Point(108, 108);
+            this.chk_Emocional_Alucionaciones.Name = "chk_Emocional_Alucionaciones";
+            this.chk_Emocional_Alucionaciones.Size = new System.Drawing.Size(92, 17);
+            this.chk_Emocional_Alucionaciones.TabIndex = 5;
+            this.chk_Emocional_Alucionaciones.Text = "Alucinaciones";
+            this.chk_Emocional_Alucionaciones.UseVisualStyleBackColor = true;
             // 
-            // tabParesCraneales
+            // chk_Emocional_AlteracionSueno
             // 
-            this.tabParesCraneales.Controls.Add(this.auxPares);
-            this.tabParesCraneales.Controls.Add(this.gbParesCraneales);
-            this.tabParesCraneales.Location = new System.Drawing.Point(4, 22);
-            this.tabParesCraneales.Name = "tabParesCraneales";
-            this.tabParesCraneales.Size = new System.Drawing.Size(834, 396);
-            this.tabParesCraneales.TabIndex = 8;
-            this.tabParesCraneales.Text = "Pares Craneales";
-            this.tabParesCraneales.UseVisualStyleBackColor = true;
+            this.chk_Emocional_AlteracionSueno.AutoSize = true;
+            this.chk_Emocional_AlteracionSueno.Location = new System.Drawing.Point(16, 129);
+            this.chk_Emocional_AlteracionSueno.Name = "chk_Emocional_AlteracionSueno";
+            this.chk_Emocional_AlteracionSueno.Size = new System.Drawing.Size(154, 17);
+            this.chk_Emocional_AlteracionSueno.TabIndex = 4;
+            this.chk_Emocional_AlteracionSueno.Text = "Con alteraciones de Sueño";
+            this.chk_Emocional_AlteracionSueno.UseVisualStyleBackColor = true;
+            // 
+            // chk_Emocional_Irritabilidad
+            // 
+            this.chk_Emocional_Irritabilidad.AutoSize = true;
+            this.chk_Emocional_Irritabilidad.Location = new System.Drawing.Point(16, 86);
+            this.chk_Emocional_Irritabilidad.Name = "chk_Emocional_Irritabilidad";
+            this.chk_Emocional_Irritabilidad.Size = new System.Drawing.Size(58, 17);
+            this.chk_Emocional_Irritabilidad.TabIndex = 3;
+            this.chk_Emocional_Irritabilidad.Text = "Irritado";
+            this.chk_Emocional_Irritabilidad.UseVisualStyleBackColor = true;
+            // 
+            // chk_Emocional_Tension
+            // 
+            this.chk_Emocional_Tension.AutoSize = true;
+            this.chk_Emocional_Tension.Location = new System.Drawing.Point(16, 66);
+            this.chk_Emocional_Tension.Name = "chk_Emocional_Tension";
+            this.chk_Emocional_Tension.Size = new System.Drawing.Size(56, 17);
+            this.chk_Emocional_Tension.TabIndex = 2;
+            this.chk_Emocional_Tension.Text = "Tenso";
+            this.chk_Emocional_Tension.UseVisualStyleBackColor = true;
+            // 
+            // chk_Emocional_Nervioso
+            // 
+            this.chk_Emocional_Nervioso.AutoSize = true;
+            this.chk_Emocional_Nervioso.Location = new System.Drawing.Point(16, 42);
+            this.chk_Emocional_Nervioso.Name = "chk_Emocional_Nervioso";
+            this.chk_Emocional_Nervioso.Size = new System.Drawing.Size(68, 17);
+            this.chk_Emocional_Nervioso.TabIndex = 1;
+            this.chk_Emocional_Nervioso.Text = "Nervioso";
+            this.chk_Emocional_Nervioso.UseVisualStyleBackColor = true;
+            // 
+            // chk_Emocional_Depresion
+            // 
+            this.chk_Emocional_Depresion.AutoSize = true;
+            this.chk_Emocional_Depresion.Location = new System.Drawing.Point(108, 19);
+            this.chk_Emocional_Depresion.Name = "chk_Emocional_Depresion";
+            this.chk_Emocional_Depresion.Size = new System.Drawing.Size(74, 17);
+            this.chk_Emocional_Depresion.TabIndex = 0;
+            this.chk_Emocional_Depresion.Text = "Depresion";
+            this.chk_Emocional_Depresion.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.auxPares);
+            this.tabPage2.Controls.Add(this.gbParesCraneales);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(827, 364);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Pares Craneales";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // auxPares
             // 
-            this.auxPares.Location = new System.Drawing.Point(262, 22);
+            this.auxPares.Location = new System.Drawing.Point(720, 34);
             this.auxPares.Name = "auxPares";
             this.auxPares.Size = new System.Drawing.Size(75, 23);
-            this.auxPares.TabIndex = 63;
+            this.auxPares.TabIndex = 65;
             this.auxPares.Text = "Pares";
             this.auxPares.UseVisualStyleBackColor = true;
             this.auxPares.Visible = false;
-            this.auxPares.Click += new System.EventHandler(this.auxPares_Click);
             // 
             // gbParesCraneales
             // 
@@ -2776,10 +3217,10 @@
             this.gbParesCraneales.Controls.Add(this.chk_PC_II_AgudezaVisual);
             this.gbParesCraneales.Controls.Add(this.chk_PC_II_FondoOjo);
             this.gbParesCraneales.Controls.Add(this.chk_PC_I_Olfatorio);
-            this.gbParesCraneales.Location = new System.Drawing.Point(35, 58);
+            this.gbParesCraneales.Location = new System.Drawing.Point(20, 12);
             this.gbParesCraneales.Name = "gbParesCraneales";
             this.gbParesCraneales.Size = new System.Drawing.Size(694, 331);
-            this.gbParesCraneales.TabIndex = 62;
+            this.gbParesCraneales.TabIndex = 64;
             this.gbParesCraneales.TabStop = false;
             this.gbParesCraneales.Text = "Pares Craneales";
             // 
@@ -2794,7 +3235,6 @@
             this.btnParCranealDetalle.TabIndex = 83;
             this.btnParCranealDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParCranealDetalle.UseVisualStyleBackColor = true;
-            this.btnParCranealDetalle.Click += new System.EventHandler(this.btnParCranealDetalle_Click);
             // 
             // label27
             // 
@@ -3085,163 +3525,225 @@
             this.chk_PC_I_Olfatorio.Text = "I Olfatorio";
             this.chk_PC_I_Olfatorio.UseVisualStyleBackColor = true;
             // 
-            // tabGinecoObstréticos
+            // tabPage6
             // 
-            this.tabGinecoObstréticos.Controls.Add(this.btnAuxiliar);
-            this.tabGinecoObstréticos.Controls.Add(this.button14);
-            this.tabGinecoObstréticos.Controls.Add(this.gbDatosGineco);
-            this.tabGinecoObstréticos.Location = new System.Drawing.Point(4, 22);
-            this.tabGinecoObstréticos.Name = "tabGinecoObstréticos";
-            this.tabGinecoObstréticos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGinecoObstréticos.Size = new System.Drawing.Size(834, 396);
-            this.tabGinecoObstréticos.TabIndex = 1;
-            this.tabGinecoObstréticos.Text = "Gineco Obstréticos";
-            this.tabGinecoObstréticos.UseVisualStyleBackColor = true;
+            this.tabPage6.Controls.Add(this.gbGaslowEscala);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(827, 364);
+            this.tabPage6.TabIndex = 4;
+            this.tabPage6.Text = "Glasgow";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // btnAuxiliar
+            // gbGaslowEscala
             // 
-            this.btnAuxiliar.Location = new System.Drawing.Point(309, 17);
-            this.btnAuxiliar.Name = "btnAuxiliar";
-            this.btnAuxiliar.Size = new System.Drawing.Size(75, 23);
-            this.btnAuxiliar.TabIndex = 38;
-            this.btnAuxiliar.Text = "aux";
-            this.btnAuxiliar.UseVisualStyleBackColor = true;
-            this.btnAuxiliar.Visible = false;
-            this.btnAuxiliar.Click += new System.EventHandler(this.btnAuxiliar_Click);
+            this.gbGaslowEscala.Controls.Add(this.gbRespuestaMotora);
+            this.gbGaslowEscala.Controls.Add(this.groupBox6);
+            this.gbGaslowEscala.Controls.Add(this.gbAperturaOcular);
+            this.gbGaslowEscala.Location = new System.Drawing.Point(10, 9);
+            this.gbGaslowEscala.Name = "gbGaslowEscala";
+            this.gbGaslowEscala.Size = new System.Drawing.Size(519, 351);
+            this.gbGaslowEscala.TabIndex = 29;
+            this.gbGaslowEscala.TabStop = false;
+            this.gbGaslowEscala.Text = "Escala Gaslow";
             // 
-            // button14
+            // gbRespuestaMotora
             // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Image = global::Frm.Properties.Resources.more;
-            this.button14.Location = new System.Drawing.Point(443, 20);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 22);
-            this.button14.TabIndex = 37;
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Ausencia);
+            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Rextension);
+            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Evita);
+            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Rflexion);
+            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Localiza);
+            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Obedece);
+            this.gbRespuestaMotora.Location = new System.Drawing.Point(35, 237);
+            this.gbRespuestaMotora.Name = "gbRespuestaMotora";
+            this.gbRespuestaMotora.Size = new System.Drawing.Size(459, 100);
+            this.gbRespuestaMotora.TabIndex = 11;
+            this.gbRespuestaMotora.TabStop = false;
+            this.gbRespuestaMotora.Text = "Respuesta Motora";
             // 
-            // gbDatosGineco
+            // Rb_Gaslow_RM_Ausencia
             // 
-            this.gbDatosGineco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gbDatosGineco.Controls.Add(this.txtCesareas);
-            this.gbDatosGineco.Controls.Add(this.txtAbortos);
-            this.gbDatosGineco.Controls.Add(this.txtPartos);
-            this.gbDatosGineco.Controls.Add(this.dtFUM);
-            this.gbDatosGineco.Controls.Add(this.label12);
-            this.gbDatosGineco.Controls.Add(this.labelCesarea);
-            this.gbDatosGineco.Controls.Add(this.labelAborto);
-            this.gbDatosGineco.Controls.Add(this.labelPartos);
-            this.gbDatosGineco.Controls.Add(this.txtGestaciones);
-            this.gbDatosGineco.Controls.Add(this.labelgestaciones);
-            this.gbDatosGineco.Controls.Add(this.dtFUP);
-            this.gbDatosGineco.Controls.Add(this.labelFechaUltimoPapa);
-            this.gbDatosGineco.Enabled = false;
-            this.gbDatosGineco.Location = new System.Drawing.Point(30, 48);
-            this.gbDatosGineco.Name = "gbDatosGineco";
-            this.gbDatosGineco.Size = new System.Drawing.Size(449, 284);
-            this.gbDatosGineco.TabIndex = 14;
-            this.gbDatosGineco.TabStop = false;
-            this.gbDatosGineco.Text = "      Datos  GinecoObstreticos";
+            this.Rb_Gaslow_RM_Ausencia.AutoSize = true;
+            this.Rb_Gaslow_RM_Ausencia.Location = new System.Drawing.Point(183, 63);
+            this.Rb_Gaslow_RM_Ausencia.Name = "Rb_Gaslow_RM_Ausencia";
+            this.Rb_Gaslow_RM_Ausencia.Size = new System.Drawing.Size(168, 17);
+            this.Rb_Gaslow_RM_Ausencia.TabIndex = 15;
+            this.Rb_Gaslow_RM_Ausencia.Text = "Ausencia de respuesta motora";
+            this.Rb_Gaslow_RM_Ausencia.UseVisualStyleBackColor = true;
             // 
-            // txtCesareas
+            // Rb_Gaslow_RM_Rextension
             // 
-            this.txtCesareas.Location = new System.Drawing.Point(159, 165);
-            this.txtCesareas.Name = "txtCesareas";
-            this.txtCesareas.Size = new System.Drawing.Size(204, 20);
-            this.txtCesareas.TabIndex = 40;
+            this.Rb_Gaslow_RM_Rextension.AutoSize = true;
+            this.Rb_Gaslow_RM_Rextension.Location = new System.Drawing.Point(183, 40);
+            this.Rb_Gaslow_RM_Rextension.Name = "Rb_Gaslow_RM_Rextension";
+            this.Rb_Gaslow_RM_Rextension.Size = new System.Drawing.Size(263, 17);
+            this.Rb_Gaslow_RM_Rextension.TabIndex = 14;
+            this.Rb_Gaslow_RM_Rextension.Text = "Respuesta con extensión anormal de los miembros";
+            this.Rb_Gaslow_RM_Rextension.UseVisualStyleBackColor = true;
             // 
-            // txtAbortos
+            // Rb_Gaslow_RM_Evita
             // 
-            this.txtAbortos.Location = new System.Drawing.Point(159, 130);
-            this.txtAbortos.Name = "txtAbortos";
-            this.txtAbortos.Size = new System.Drawing.Size(204, 20);
-            this.txtAbortos.TabIndex = 39;
+            this.Rb_Gaslow_RM_Evita.AutoSize = true;
+            this.Rb_Gaslow_RM_Evita.Location = new System.Drawing.Point(6, 66);
+            this.Rb_Gaslow_RM_Evita.Name = "Rb_Gaslow_RM_Evita";
+            this.Rb_Gaslow_RM_Evita.Size = new System.Drawing.Size(145, 17);
+            this.Rb_Gaslow_RM_Evita.TabIndex = 13;
+            this.Rb_Gaslow_RM_Evita.Text = "Evita estímulos dolorosos";
+            this.Rb_Gaslow_RM_Evita.UseVisualStyleBackColor = true;
             // 
-            // txtPartos
+            // Rb_Gaslow_RM_Rflexion
             // 
-            this.txtPartos.Location = new System.Drawing.Point(159, 95);
-            this.txtPartos.Name = "txtPartos";
-            this.txtPartos.Size = new System.Drawing.Size(204, 20);
-            this.txtPartos.TabIndex = 38;
+            this.Rb_Gaslow_RM_Rflexion.AutoSize = true;
+            this.Rb_Gaslow_RM_Rflexion.Location = new System.Drawing.Point(183, 19);
+            this.Rb_Gaslow_RM_Rflexion.Name = "Rb_Gaslow_RM_Rflexion";
+            this.Rb_Gaslow_RM_Rflexion.Size = new System.Drawing.Size(248, 17);
+            this.Rb_Gaslow_RM_Rflexion.TabIndex = 12;
+            this.Rb_Gaslow_RM_Rflexion.Text = "Respuesta con flexión anormal de los miembros";
+            this.Rb_Gaslow_RM_Rflexion.UseVisualStyleBackColor = true;
             // 
-            // dtFUM
+            // Rb_Gaslow_RM_Localiza
             // 
-            this.dtFUM.CustomFormat = "yy:mm:dd";
-            this.dtFUM.Location = new System.Drawing.Point(159, 25);
-            this.dtFUM.Name = "dtFUM";
-            this.dtFUM.Size = new System.Drawing.Size(204, 20);
-            this.dtFUM.TabIndex = 37;
+            this.Rb_Gaslow_RM_Localiza.AutoSize = true;
+            this.Rb_Gaslow_RM_Localiza.Location = new System.Drawing.Point(6, 42);
+            this.Rb_Gaslow_RM_Localiza.Name = "Rb_Gaslow_RM_Localiza";
+            this.Rb_Gaslow_RM_Localiza.Size = new System.Drawing.Size(160, 17);
+            this.Rb_Gaslow_RM_Localiza.TabIndex = 11;
+            this.Rb_Gaslow_RM_Localiza.Text = "Localiza estímulos dolorosos";
+            this.Rb_Gaslow_RM_Localiza.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // Rb_Gaslow_RM_Obedece
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 30);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 13);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Fecha Ultima Mestruacion";
+            this.Rb_Gaslow_RM_Obedece.AutoSize = true;
+            this.Rb_Gaslow_RM_Obedece.Checked = true;
+            this.Rb_Gaslow_RM_Obedece.Location = new System.Drawing.Point(6, 21);
+            this.Rb_Gaslow_RM_Obedece.Name = "Rb_Gaslow_RM_Obedece";
+            this.Rb_Gaslow_RM_Obedece.Size = new System.Drawing.Size(181, 17);
+            this.Rb_Gaslow_RM_Obedece.TabIndex = 10;
+            this.Rb_Gaslow_RM_Obedece.TabStop = true;
+            this.Rb_Gaslow_RM_Obedece.Text = "Obedece órdenes correctamente";
+            this.Rb_Gaslow_RM_Obedece.UseVisualStyleBackColor = true;
             // 
-            // labelCesarea
+            // groupBox6
             // 
-            this.labelCesarea.AutoSize = true;
-            this.labelCesarea.Location = new System.Drawing.Point(8, 172);
-            this.labelCesarea.Name = "labelCesarea";
-            this.labelCesarea.Size = new System.Drawing.Size(51, 13);
-            this.labelCesarea.TabIndex = 35;
-            this.labelCesarea.Text = "Cesareas";
+            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Lincompresible);
+            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Carencia);
+            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Linapropiado);
+            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Pconfuso);
+            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Orientado);
+            this.groupBox6.Location = new System.Drawing.Point(35, 121);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(464, 100);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Respuesta Verbal";
             // 
-            // labelAborto
+            // Rb_Gaslow_RV_Lincompresible
             // 
-            this.labelAborto.AutoSize = true;
-            this.labelAborto.Location = new System.Drawing.Point(8, 137);
-            this.labelAborto.Name = "labelAborto";
-            this.labelAborto.Size = new System.Drawing.Size(43, 13);
-            this.labelAborto.TabIndex = 34;
-            this.labelAborto.Text = "Abortos";
+            this.Rb_Gaslow_RV_Lincompresible.AutoSize = true;
+            this.Rb_Gaslow_RV_Lincompresible.Location = new System.Drawing.Point(188, 43);
+            this.Rb_Gaslow_RV_Lincompresible.Name = "Rb_Gaslow_RV_Lincompresible";
+            this.Rb_Gaslow_RV_Lincompresible.Size = new System.Drawing.Size(142, 17);
+            this.Rb_Gaslow_RV_Lincompresible.TabIndex = 4;
+            this.Rb_Gaslow_RV_Lincompresible.Text = "Lenguaje incomprensible";
+            this.Rb_Gaslow_RV_Lincompresible.UseVisualStyleBackColor = true;
             // 
-            // labelPartos
+            // Rb_Gaslow_RV_Carencia
             // 
-            this.labelPartos.AutoSize = true;
-            this.labelPartos.Location = new System.Drawing.Point(8, 102);
-            this.labelPartos.Name = "labelPartos";
-            this.labelPartos.Size = new System.Drawing.Size(37, 13);
-            this.labelPartos.TabIndex = 33;
-            this.labelPartos.Text = "Partos";
+            this.Rb_Gaslow_RV_Carencia.AutoSize = true;
+            this.Rb_Gaslow_RV_Carencia.Location = new System.Drawing.Point(5, 65);
+            this.Rb_Gaslow_RV_Carencia.Name = "Rb_Gaslow_RV_Carencia";
+            this.Rb_Gaslow_RV_Carencia.Size = new System.Drawing.Size(160, 17);
+            this.Rb_Gaslow_RV_Carencia.TabIndex = 3;
+            this.Rb_Gaslow_RV_Carencia.Text = "Carencia de actividad verbal";
+            this.Rb_Gaslow_RV_Carencia.UseVisualStyleBackColor = true;
             // 
-            // txtGestaciones
+            // Rb_Gaslow_RV_Linapropiado
             // 
-            this.txtGestaciones.Location = new System.Drawing.Point(159, 60);
-            this.txtGestaciones.Name = "txtGestaciones";
-            this.txtGestaciones.Size = new System.Drawing.Size(204, 20);
-            this.txtGestaciones.TabIndex = 32;
+            this.Rb_Gaslow_RV_Linapropiado.AutoSize = true;
+            this.Rb_Gaslow_RV_Linapropiado.Location = new System.Drawing.Point(5, 42);
+            this.Rb_Gaslow_RV_Linapropiado.Name = "Rb_Gaslow_RV_Linapropiado";
+            this.Rb_Gaslow_RV_Linapropiado.Size = new System.Drawing.Size(130, 17);
+            this.Rb_Gaslow_RV_Linapropiado.TabIndex = 2;
+            this.Rb_Gaslow_RV_Linapropiado.Text = "Lenguaje inapropiado ";
+            this.Rb_Gaslow_RV_Linapropiado.UseVisualStyleBackColor = true;
             // 
-            // labelgestaciones
+            // Rb_Gaslow_RV_Pconfuso
             // 
-            this.labelgestaciones.AutoSize = true;
-            this.labelgestaciones.Location = new System.Drawing.Point(6, 62);
-            this.labelgestaciones.Name = "labelgestaciones";
-            this.labelgestaciones.Size = new System.Drawing.Size(66, 13);
-            this.labelgestaciones.TabIndex = 31;
-            this.labelgestaciones.Text = "Gestaciones";
+            this.Rb_Gaslow_RV_Pconfuso.AutoSize = true;
+            this.Rb_Gaslow_RV_Pconfuso.Location = new System.Drawing.Point(188, 19);
+            this.Rb_Gaslow_RV_Pconfuso.Name = "Rb_Gaslow_RV_Pconfuso";
+            this.Rb_Gaslow_RV_Pconfuso.Size = new System.Drawing.Size(108, 17);
+            this.Rb_Gaslow_RV_Pconfuso.TabIndex = 1;
+            this.Rb_Gaslow_RV_Pconfuso.Text = "Paciente confuso";
+            this.Rb_Gaslow_RV_Pconfuso.UseVisualStyleBackColor = true;
             // 
-            // dtFUP
+            // Rb_Gaslow_RV_Orientado
             // 
-            this.dtFUP.CustomFormat = "yy:mm:dd";
-            this.dtFUP.Location = new System.Drawing.Point(159, 200);
-            this.dtFUP.Name = "dtFUP";
-            this.dtFUP.Size = new System.Drawing.Size(204, 20);
-            this.dtFUP.TabIndex = 30;
+            this.Rb_Gaslow_RV_Orientado.AutoSize = true;
+            this.Rb_Gaslow_RV_Orientado.Checked = true;
+            this.Rb_Gaslow_RV_Orientado.Location = new System.Drawing.Point(5, 19);
+            this.Rb_Gaslow_RV_Orientado.Name = "Rb_Gaslow_RV_Orientado";
+            this.Rb_Gaslow_RV_Orientado.Size = new System.Drawing.Size(142, 17);
+            this.Rb_Gaslow_RV_Orientado.TabIndex = 0;
+            this.Rb_Gaslow_RV_Orientado.TabStop = true;
+            this.Rb_Gaslow_RV_Orientado.Text = "Orientado correctamente";
+            this.Rb_Gaslow_RV_Orientado.UseVisualStyleBackColor = true;
             // 
-            // labelFechaUltimoPapa
+            // gbAperturaOcular
             // 
-            this.labelFechaUltimoPapa.AutoSize = true;
-            this.labelFechaUltimoPapa.Location = new System.Drawing.Point(6, 206);
-            this.labelFechaUltimoPapa.Name = "labelFechaUltimoPapa";
-            this.labelFechaUltimoPapa.Size = new System.Drawing.Size(131, 13);
-            this.labelFechaUltimoPapa.TabIndex = 17;
-            this.labelFechaUltimoPapa.Text = "Fecha Ultimo Papanicolau";
+            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_Estimulo);
+            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_Ausencia);
+            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_AOrden);
+            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_Espontanea);
+            this.gbAperturaOcular.Location = new System.Drawing.Point(35, 19);
+            this.gbAperturaOcular.Name = "gbAperturaOcular";
+            this.gbAperturaOcular.Size = new System.Drawing.Size(464, 96);
+            this.gbAperturaOcular.TabIndex = 8;
+            this.gbAperturaOcular.TabStop = false;
+            this.gbAperturaOcular.Text = "AperturaOcular";
+            // 
+            // Rb_Gaslow_AO_Estimulo
+            // 
+            this.Rb_Gaslow_AO_Estimulo.AutoSize = true;
+            this.Rb_Gaslow_AO_Estimulo.Location = new System.Drawing.Point(6, 47);
+            this.Rb_Gaslow_AO_Estimulo.Name = "Rb_Gaslow_AO_Estimulo";
+            this.Rb_Gaslow_AO_Estimulo.Size = new System.Drawing.Size(148, 17);
+            this.Rb_Gaslow_AO_Estimulo.TabIndex = 3;
+            this.Rb_Gaslow_AO_Estimulo.Text = "Ante un estímulo doloroso";
+            this.Rb_Gaslow_AO_Estimulo.UseVisualStyleBackColor = true;
+            // 
+            // Rb_Gaslow_AO_Ausencia
+            // 
+            this.Rb_Gaslow_AO_Ausencia.AutoSize = true;
+            this.Rb_Gaslow_AO_Ausencia.Location = new System.Drawing.Point(188, 47);
+            this.Rb_Gaslow_AO_Ausencia.Name = "Rb_Gaslow_AO_Ausencia";
+            this.Rb_Gaslow_AO_Ausencia.Size = new System.Drawing.Size(158, 17);
+            this.Rb_Gaslow_AO_Ausencia.TabIndex = 2;
+            this.Rb_Gaslow_AO_Ausencia.Text = "Ausencia de apertura ocular";
+            this.Rb_Gaslow_AO_Ausencia.UseVisualStyleBackColor = true;
+            // 
+            // Rb_Gaslow_AO_AOrden
+            // 
+            this.Rb_Gaslow_AO_AOrden.AutoSize = true;
+            this.Rb_Gaslow_AO_AOrden.Location = new System.Drawing.Point(188, 24);
+            this.Rb_Gaslow_AO_AOrden.Name = "Rb_Gaslow_AO_AOrden";
+            this.Rb_Gaslow_AO_AOrden.Size = new System.Drawing.Size(73, 17);
+            this.Rb_Gaslow_AO_AOrden.TabIndex = 1;
+            this.Rb_Gaslow_AO_AOrden.Text = "A la orden";
+            this.Rb_Gaslow_AO_AOrden.UseVisualStyleBackColor = true;
+            // 
+            // Rb_Gaslow_AO_Espontanea
+            // 
+            this.Rb_Gaslow_AO_Espontanea.AutoSize = true;
+            this.Rb_Gaslow_AO_Espontanea.Checked = true;
+            this.Rb_Gaslow_AO_Espontanea.Location = new System.Drawing.Point(6, 24);
+            this.Rb_Gaslow_AO_Espontanea.Name = "Rb_Gaslow_AO_Espontanea";
+            this.Rb_Gaslow_AO_Espontanea.Size = new System.Drawing.Size(82, 17);
+            this.Rb_Gaslow_AO_Espontanea.TabIndex = 0;
+            this.Rb_Gaslow_AO_Espontanea.TabStop = true;
+            this.Rb_Gaslow_AO_Espontanea.Text = "Espontánea";
+            this.Rb_Gaslow_AO_Espontanea.UseVisualStyleBackColor = true;
             // 
             // tabAntecedente
             // 
@@ -4274,417 +4776,6 @@
             this.dgAlergias.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgAlergias_RowsAdded);
             this.dgAlergias.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgAlergias_RowsRemoved);
             // 
-            // tabSentidos
-            // 
-            this.tabSentidos.Controls.Add(this.button2);
-            this.tabSentidos.Controls.Add(this.auxiliarEstadoEmo);
-            this.tabSentidos.Controls.Add(this.gbEstadoEmocional);
-            this.tabSentidos.Controls.Add(this.gbGaslowEscala);
-            this.tabSentidos.Location = new System.Drawing.Point(4, 22);
-            this.tabSentidos.Name = "tabSentidos";
-            this.tabSentidos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSentidos.Size = new System.Drawing.Size(834, 396);
-            this.tabSentidos.TabIndex = 4;
-            this.tabSentidos.Text = "Sentidos";
-            this.tabSentidos.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(559, 356);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
-            // auxiliarEstadoEmo
-            // 
-            this.auxiliarEstadoEmo.Location = new System.Drawing.Point(559, 261);
-            this.auxiliarEstadoEmo.Name = "auxiliarEstadoEmo";
-            this.auxiliarEstadoEmo.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarEstadoEmo.TabIndex = 89;
-            this.auxiliarEstadoEmo.Text = "Emocional";
-            this.auxiliarEstadoEmo.UseVisualStyleBackColor = true;
-            this.auxiliarEstadoEmo.Visible = false;
-            // 
-            // gbEstadoEmocional
-            // 
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Distraido);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Desmayos);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_EdadAvanzada);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Debilidad);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Normal);
-            this.gbEstadoEmocional.Controls.Add(this.btn_EmocionalOtro);
-            this.gbEstadoEmocional.Controls.Add(this.txtEmocional_Otro);
-            this.gbEstadoEmocional.Controls.Add(this.label61);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Alucionaciones);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_AlteracionSueno);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Irritabilidad);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Tension);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Nervioso);
-            this.gbEstadoEmocional.Controls.Add(this.chk_Emocional_Depresion);
-            this.gbEstadoEmocional.Location = new System.Drawing.Point(559, 21);
-            this.gbEstadoEmocional.Name = "gbEstadoEmocional";
-            this.gbEstadoEmocional.Size = new System.Drawing.Size(240, 234);
-            this.gbEstadoEmocional.TabIndex = 88;
-            this.gbEstadoEmocional.TabStop = false;
-            this.gbEstadoEmocional.Text = "EstadoEmocional";
-            // 
-            // chk_Emocional_Distraido
-            // 
-            this.chk_Emocional_Distraido.AutoSize = true;
-            this.chk_Emocional_Distraido.Location = new System.Drawing.Point(16, 108);
-            this.chk_Emocional_Distraido.Name = "chk_Emocional_Distraido";
-            this.chk_Emocional_Distraido.Size = new System.Drawing.Size(67, 17);
-            this.chk_Emocional_Distraido.TabIndex = 85;
-            this.chk_Emocional_Distraido.Text = "Distraido";
-            this.chk_Emocional_Distraido.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_Desmayos
-            // 
-            this.chk_Emocional_Desmayos.AutoSize = true;
-            this.chk_Emocional_Desmayos.Location = new System.Drawing.Point(108, 66);
-            this.chk_Emocional_Desmayos.Name = "chk_Emocional_Desmayos";
-            this.chk_Emocional_Desmayos.Size = new System.Drawing.Size(75, 17);
-            this.chk_Emocional_Desmayos.TabIndex = 84;
-            this.chk_Emocional_Desmayos.Text = "Desmayos";
-            this.chk_Emocional_Desmayos.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_EdadAvanzada
-            // 
-            this.chk_Emocional_EdadAvanzada.AutoSize = true;
-            this.chk_Emocional_EdadAvanzada.Location = new System.Drawing.Point(108, 43);
-            this.chk_Emocional_EdadAvanzada.Name = "chk_Emocional_EdadAvanzada";
-            this.chk_Emocional_EdadAvanzada.Size = new System.Drawing.Size(102, 17);
-            this.chk_Emocional_EdadAvanzada.TabIndex = 83;
-            this.chk_Emocional_EdadAvanzada.Text = "Edad Avanzada";
-            this.chk_Emocional_EdadAvanzada.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_Debilidad
-            // 
-            this.chk_Emocional_Debilidad.AutoSize = true;
-            this.chk_Emocional_Debilidad.Location = new System.Drawing.Point(108, 89);
-            this.chk_Emocional_Debilidad.Name = "chk_Emocional_Debilidad";
-            this.chk_Emocional_Debilidad.Size = new System.Drawing.Size(70, 17);
-            this.chk_Emocional_Debilidad.TabIndex = 82;
-            this.chk_Emocional_Debilidad.Text = "Debilidad";
-            this.chk_Emocional_Debilidad.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_Normal
-            // 
-            this.chk_Emocional_Normal.AutoSize = true;
-            this.chk_Emocional_Normal.Checked = true;
-            this.chk_Emocional_Normal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_Emocional_Normal.Location = new System.Drawing.Point(15, 19);
-            this.chk_Emocional_Normal.Name = "chk_Emocional_Normal";
-            this.chk_Emocional_Normal.Size = new System.Drawing.Size(59, 17);
-            this.chk_Emocional_Normal.TabIndex = 81;
-            this.chk_Emocional_Normal.Text = "Normal";
-            this.chk_Emocional_Normal.UseVisualStyleBackColor = true;
-            // 
-            // btn_EmocionalOtro
-            // 
-            this.btn_EmocionalOtro.FlatAppearance.BorderSize = 0;
-            this.btn_EmocionalOtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EmocionalOtro.Image = global::Frm.Properties.Resources.more;
-            this.btn_EmocionalOtro.Location = new System.Drawing.Point(42, 163);
-            this.btn_EmocionalOtro.Name = "btn_EmocionalOtro";
-            this.btn_EmocionalOtro.Size = new System.Drawing.Size(27, 17);
-            this.btn_EmocionalOtro.TabIndex = 80;
-            this.btn_EmocionalOtro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_EmocionalOtro.UseVisualStyleBackColor = true;
-            this.btn_EmocionalOtro.Click += new System.EventHandler(this.btn_EmocionalOtro_Click_1);
-            // 
-            // txtEmocional_Otro
-            // 
-            this.txtEmocional_Otro.Enabled = false;
-            this.txtEmocional_Otro.Location = new System.Drawing.Point(16, 188);
-            this.txtEmocional_Otro.MaxLength = 100;
-            this.txtEmocional_Otro.Multiline = true;
-            this.txtEmocional_Otro.Name = "txtEmocional_Otro";
-            this.txtEmocional_Otro.Size = new System.Drawing.Size(151, 20);
-            this.txtEmocional_Otro.TabIndex = 80;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(13, 164);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(27, 13);
-            this.label61.TabIndex = 6;
-            this.label61.Text = "Otro";
-            // 
-            // chk_Emocional_Alucionaciones
-            // 
-            this.chk_Emocional_Alucionaciones.AutoSize = true;
-            this.chk_Emocional_Alucionaciones.Location = new System.Drawing.Point(108, 108);
-            this.chk_Emocional_Alucionaciones.Name = "chk_Emocional_Alucionaciones";
-            this.chk_Emocional_Alucionaciones.Size = new System.Drawing.Size(92, 17);
-            this.chk_Emocional_Alucionaciones.TabIndex = 5;
-            this.chk_Emocional_Alucionaciones.Text = "Alucinaciones";
-            this.chk_Emocional_Alucionaciones.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_AlteracionSueno
-            // 
-            this.chk_Emocional_AlteracionSueno.AutoSize = true;
-            this.chk_Emocional_AlteracionSueno.Location = new System.Drawing.Point(16, 129);
-            this.chk_Emocional_AlteracionSueno.Name = "chk_Emocional_AlteracionSueno";
-            this.chk_Emocional_AlteracionSueno.Size = new System.Drawing.Size(154, 17);
-            this.chk_Emocional_AlteracionSueno.TabIndex = 4;
-            this.chk_Emocional_AlteracionSueno.Text = "Con alteraciones de Sueño";
-            this.chk_Emocional_AlteracionSueno.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_Irritabilidad
-            // 
-            this.chk_Emocional_Irritabilidad.AutoSize = true;
-            this.chk_Emocional_Irritabilidad.Location = new System.Drawing.Point(16, 86);
-            this.chk_Emocional_Irritabilidad.Name = "chk_Emocional_Irritabilidad";
-            this.chk_Emocional_Irritabilidad.Size = new System.Drawing.Size(58, 17);
-            this.chk_Emocional_Irritabilidad.TabIndex = 3;
-            this.chk_Emocional_Irritabilidad.Text = "Irritado";
-            this.chk_Emocional_Irritabilidad.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_Tension
-            // 
-            this.chk_Emocional_Tension.AutoSize = true;
-            this.chk_Emocional_Tension.Location = new System.Drawing.Point(16, 66);
-            this.chk_Emocional_Tension.Name = "chk_Emocional_Tension";
-            this.chk_Emocional_Tension.Size = new System.Drawing.Size(56, 17);
-            this.chk_Emocional_Tension.TabIndex = 2;
-            this.chk_Emocional_Tension.Text = "Tenso";
-            this.chk_Emocional_Tension.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_Nervioso
-            // 
-            this.chk_Emocional_Nervioso.AutoSize = true;
-            this.chk_Emocional_Nervioso.Location = new System.Drawing.Point(16, 42);
-            this.chk_Emocional_Nervioso.Name = "chk_Emocional_Nervioso";
-            this.chk_Emocional_Nervioso.Size = new System.Drawing.Size(68, 17);
-            this.chk_Emocional_Nervioso.TabIndex = 1;
-            this.chk_Emocional_Nervioso.Text = "Nervioso";
-            this.chk_Emocional_Nervioso.UseVisualStyleBackColor = true;
-            // 
-            // chk_Emocional_Depresion
-            // 
-            this.chk_Emocional_Depresion.AutoSize = true;
-            this.chk_Emocional_Depresion.Location = new System.Drawing.Point(108, 19);
-            this.chk_Emocional_Depresion.Name = "chk_Emocional_Depresion";
-            this.chk_Emocional_Depresion.Size = new System.Drawing.Size(74, 17);
-            this.chk_Emocional_Depresion.TabIndex = 0;
-            this.chk_Emocional_Depresion.Text = "Depresion";
-            this.chk_Emocional_Depresion.UseVisualStyleBackColor = true;
-            // 
-            // gbGaslowEscala
-            // 
-            this.gbGaslowEscala.Controls.Add(this.gbRespuestaMotora);
-            this.gbGaslowEscala.Controls.Add(this.groupBox6);
-            this.gbGaslowEscala.Controls.Add(this.gbAperturaOcular);
-            this.gbGaslowEscala.Location = new System.Drawing.Point(10, 21);
-            this.gbGaslowEscala.Name = "gbGaslowEscala";
-            this.gbGaslowEscala.Size = new System.Drawing.Size(519, 358);
-            this.gbGaslowEscala.TabIndex = 28;
-            this.gbGaslowEscala.TabStop = false;
-            this.gbGaslowEscala.Text = "Escala Gaslow";
-            // 
-            // gbRespuestaMotora
-            // 
-            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Ausencia);
-            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Rextension);
-            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Evita);
-            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Rflexion);
-            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Localiza);
-            this.gbRespuestaMotora.Controls.Add(this.Rb_Gaslow_RM_Obedece);
-            this.gbRespuestaMotora.Location = new System.Drawing.Point(35, 237);
-            this.gbRespuestaMotora.Name = "gbRespuestaMotora";
-            this.gbRespuestaMotora.Size = new System.Drawing.Size(459, 100);
-            this.gbRespuestaMotora.TabIndex = 11;
-            this.gbRespuestaMotora.TabStop = false;
-            this.gbRespuestaMotora.Text = "Respuesta Motora";
-            // 
-            // Rb_Gaslow_RM_Ausencia
-            // 
-            this.Rb_Gaslow_RM_Ausencia.AutoSize = true;
-            this.Rb_Gaslow_RM_Ausencia.Location = new System.Drawing.Point(183, 63);
-            this.Rb_Gaslow_RM_Ausencia.Name = "Rb_Gaslow_RM_Ausencia";
-            this.Rb_Gaslow_RM_Ausencia.Size = new System.Drawing.Size(168, 17);
-            this.Rb_Gaslow_RM_Ausencia.TabIndex = 15;
-            this.Rb_Gaslow_RM_Ausencia.Text = "Ausencia de respuesta motora";
-            this.Rb_Gaslow_RM_Ausencia.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RM_Rextension
-            // 
-            this.Rb_Gaslow_RM_Rextension.AutoSize = true;
-            this.Rb_Gaslow_RM_Rextension.Location = new System.Drawing.Point(183, 40);
-            this.Rb_Gaslow_RM_Rextension.Name = "Rb_Gaslow_RM_Rextension";
-            this.Rb_Gaslow_RM_Rextension.Size = new System.Drawing.Size(263, 17);
-            this.Rb_Gaslow_RM_Rextension.TabIndex = 14;
-            this.Rb_Gaslow_RM_Rextension.Text = "Respuesta con extensión anormal de los miembros";
-            this.Rb_Gaslow_RM_Rextension.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RM_Evita
-            // 
-            this.Rb_Gaslow_RM_Evita.AutoSize = true;
-            this.Rb_Gaslow_RM_Evita.Location = new System.Drawing.Point(6, 66);
-            this.Rb_Gaslow_RM_Evita.Name = "Rb_Gaslow_RM_Evita";
-            this.Rb_Gaslow_RM_Evita.Size = new System.Drawing.Size(145, 17);
-            this.Rb_Gaslow_RM_Evita.TabIndex = 13;
-            this.Rb_Gaslow_RM_Evita.Text = "Evita estímulos dolorosos";
-            this.Rb_Gaslow_RM_Evita.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RM_Rflexion
-            // 
-            this.Rb_Gaslow_RM_Rflexion.AutoSize = true;
-            this.Rb_Gaslow_RM_Rflexion.Location = new System.Drawing.Point(183, 19);
-            this.Rb_Gaslow_RM_Rflexion.Name = "Rb_Gaslow_RM_Rflexion";
-            this.Rb_Gaslow_RM_Rflexion.Size = new System.Drawing.Size(248, 17);
-            this.Rb_Gaslow_RM_Rflexion.TabIndex = 12;
-            this.Rb_Gaslow_RM_Rflexion.Text = "Respuesta con flexión anormal de los miembros";
-            this.Rb_Gaslow_RM_Rflexion.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RM_Localiza
-            // 
-            this.Rb_Gaslow_RM_Localiza.AutoSize = true;
-            this.Rb_Gaslow_RM_Localiza.Location = new System.Drawing.Point(6, 42);
-            this.Rb_Gaslow_RM_Localiza.Name = "Rb_Gaslow_RM_Localiza";
-            this.Rb_Gaslow_RM_Localiza.Size = new System.Drawing.Size(160, 17);
-            this.Rb_Gaslow_RM_Localiza.TabIndex = 11;
-            this.Rb_Gaslow_RM_Localiza.Text = "Localiza estímulos dolorosos";
-            this.Rb_Gaslow_RM_Localiza.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RM_Obedece
-            // 
-            this.Rb_Gaslow_RM_Obedece.AutoSize = true;
-            this.Rb_Gaslow_RM_Obedece.Checked = true;
-            this.Rb_Gaslow_RM_Obedece.Location = new System.Drawing.Point(6, 21);
-            this.Rb_Gaslow_RM_Obedece.Name = "Rb_Gaslow_RM_Obedece";
-            this.Rb_Gaslow_RM_Obedece.Size = new System.Drawing.Size(181, 17);
-            this.Rb_Gaslow_RM_Obedece.TabIndex = 10;
-            this.Rb_Gaslow_RM_Obedece.TabStop = true;
-            this.Rb_Gaslow_RM_Obedece.Text = "Obedece órdenes correctamente";
-            this.Rb_Gaslow_RM_Obedece.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Lincompresible);
-            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Carencia);
-            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Linapropiado);
-            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Pconfuso);
-            this.groupBox6.Controls.Add(this.Rb_Gaslow_RV_Orientado);
-            this.groupBox6.Location = new System.Drawing.Point(35, 121);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(464, 100);
-            this.groupBox6.TabIndex = 9;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Respuesta Verbal";
-            // 
-            // Rb_Gaslow_RV_Lincompresible
-            // 
-            this.Rb_Gaslow_RV_Lincompresible.AutoSize = true;
-            this.Rb_Gaslow_RV_Lincompresible.Location = new System.Drawing.Point(188, 43);
-            this.Rb_Gaslow_RV_Lincompresible.Name = "Rb_Gaslow_RV_Lincompresible";
-            this.Rb_Gaslow_RV_Lincompresible.Size = new System.Drawing.Size(142, 17);
-            this.Rb_Gaslow_RV_Lincompresible.TabIndex = 4;
-            this.Rb_Gaslow_RV_Lincompresible.Text = "Lenguaje incomprensible";
-            this.Rb_Gaslow_RV_Lincompresible.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RV_Carencia
-            // 
-            this.Rb_Gaslow_RV_Carencia.AutoSize = true;
-            this.Rb_Gaslow_RV_Carencia.Location = new System.Drawing.Point(5, 65);
-            this.Rb_Gaslow_RV_Carencia.Name = "Rb_Gaslow_RV_Carencia";
-            this.Rb_Gaslow_RV_Carencia.Size = new System.Drawing.Size(160, 17);
-            this.Rb_Gaslow_RV_Carencia.TabIndex = 3;
-            this.Rb_Gaslow_RV_Carencia.Text = "Carencia de actividad verbal";
-            this.Rb_Gaslow_RV_Carencia.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RV_Linapropiado
-            // 
-            this.Rb_Gaslow_RV_Linapropiado.AutoSize = true;
-            this.Rb_Gaslow_RV_Linapropiado.Location = new System.Drawing.Point(5, 42);
-            this.Rb_Gaslow_RV_Linapropiado.Name = "Rb_Gaslow_RV_Linapropiado";
-            this.Rb_Gaslow_RV_Linapropiado.Size = new System.Drawing.Size(130, 17);
-            this.Rb_Gaslow_RV_Linapropiado.TabIndex = 2;
-            this.Rb_Gaslow_RV_Linapropiado.Text = "Lenguaje inapropiado ";
-            this.Rb_Gaslow_RV_Linapropiado.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RV_Pconfuso
-            // 
-            this.Rb_Gaslow_RV_Pconfuso.AutoSize = true;
-            this.Rb_Gaslow_RV_Pconfuso.Location = new System.Drawing.Point(188, 19);
-            this.Rb_Gaslow_RV_Pconfuso.Name = "Rb_Gaslow_RV_Pconfuso";
-            this.Rb_Gaslow_RV_Pconfuso.Size = new System.Drawing.Size(108, 17);
-            this.Rb_Gaslow_RV_Pconfuso.TabIndex = 1;
-            this.Rb_Gaslow_RV_Pconfuso.Text = "Paciente confuso";
-            this.Rb_Gaslow_RV_Pconfuso.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_RV_Orientado
-            // 
-            this.Rb_Gaslow_RV_Orientado.AutoSize = true;
-            this.Rb_Gaslow_RV_Orientado.Checked = true;
-            this.Rb_Gaslow_RV_Orientado.Location = new System.Drawing.Point(5, 19);
-            this.Rb_Gaslow_RV_Orientado.Name = "Rb_Gaslow_RV_Orientado";
-            this.Rb_Gaslow_RV_Orientado.Size = new System.Drawing.Size(142, 17);
-            this.Rb_Gaslow_RV_Orientado.TabIndex = 0;
-            this.Rb_Gaslow_RV_Orientado.TabStop = true;
-            this.Rb_Gaslow_RV_Orientado.Text = "Orientado correctamente";
-            this.Rb_Gaslow_RV_Orientado.UseVisualStyleBackColor = true;
-            // 
-            // gbAperturaOcular
-            // 
-            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_Estimulo);
-            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_Ausencia);
-            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_AOrden);
-            this.gbAperturaOcular.Controls.Add(this.Rb_Gaslow_AO_Espontanea);
-            this.gbAperturaOcular.Location = new System.Drawing.Point(35, 19);
-            this.gbAperturaOcular.Name = "gbAperturaOcular";
-            this.gbAperturaOcular.Size = new System.Drawing.Size(464, 96);
-            this.gbAperturaOcular.TabIndex = 8;
-            this.gbAperturaOcular.TabStop = false;
-            this.gbAperturaOcular.Text = "AperturaOcular";
-            // 
-            // Rb_Gaslow_AO_Estimulo
-            // 
-            this.Rb_Gaslow_AO_Estimulo.AutoSize = true;
-            this.Rb_Gaslow_AO_Estimulo.Location = new System.Drawing.Point(6, 47);
-            this.Rb_Gaslow_AO_Estimulo.Name = "Rb_Gaslow_AO_Estimulo";
-            this.Rb_Gaslow_AO_Estimulo.Size = new System.Drawing.Size(148, 17);
-            this.Rb_Gaslow_AO_Estimulo.TabIndex = 3;
-            this.Rb_Gaslow_AO_Estimulo.Text = "Ante un estímulo doloroso";
-            this.Rb_Gaslow_AO_Estimulo.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_AO_Ausencia
-            // 
-            this.Rb_Gaslow_AO_Ausencia.AutoSize = true;
-            this.Rb_Gaslow_AO_Ausencia.Location = new System.Drawing.Point(188, 47);
-            this.Rb_Gaslow_AO_Ausencia.Name = "Rb_Gaslow_AO_Ausencia";
-            this.Rb_Gaslow_AO_Ausencia.Size = new System.Drawing.Size(158, 17);
-            this.Rb_Gaslow_AO_Ausencia.TabIndex = 2;
-            this.Rb_Gaslow_AO_Ausencia.Text = "Ausencia de apertura ocular";
-            this.Rb_Gaslow_AO_Ausencia.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_AO_AOrden
-            // 
-            this.Rb_Gaslow_AO_AOrden.AutoSize = true;
-            this.Rb_Gaslow_AO_AOrden.Location = new System.Drawing.Point(188, 24);
-            this.Rb_Gaslow_AO_AOrden.Name = "Rb_Gaslow_AO_AOrden";
-            this.Rb_Gaslow_AO_AOrden.Size = new System.Drawing.Size(73, 17);
-            this.Rb_Gaslow_AO_AOrden.TabIndex = 1;
-            this.Rb_Gaslow_AO_AOrden.Text = "A la orden";
-            this.Rb_Gaslow_AO_AOrden.UseVisualStyleBackColor = true;
-            // 
-            // Rb_Gaslow_AO_Espontanea
-            // 
-            this.Rb_Gaslow_AO_Espontanea.AutoSize = true;
-            this.Rb_Gaslow_AO_Espontanea.Checked = true;
-            this.Rb_Gaslow_AO_Espontanea.Location = new System.Drawing.Point(6, 24);
-            this.Rb_Gaslow_AO_Espontanea.Name = "Rb_Gaslow_AO_Espontanea";
-            this.Rb_Gaslow_AO_Espontanea.Size = new System.Drawing.Size(82, 17);
-            this.Rb_Gaslow_AO_Espontanea.TabIndex = 0;
-            this.Rb_Gaslow_AO_Espontanea.TabStop = true;
-            this.Rb_Gaslow_AO_Espontanea.Text = "Espontánea";
-            this.Rb_Gaslow_AO_Espontanea.UseVisualStyleBackColor = true;
-            // 
             // tabServicio
             // 
             this.tabServicio.Controls.Add(this.dgServicios);
@@ -4949,7 +5040,7 @@
             this.txtDescuentoPorcentaje.Name = "txtDescuentoPorcentaje";
             this.txtDescuentoPorcentaje.Size = new System.Drawing.Size(156, 20);
             this.txtDescuentoPorcentaje.TabIndex = 4;
-            this.txtDescuentoPorcentaje.ValueChanged += new System.EventHandler(this.txtDescuentoPorcentaje_ValueChanged);            
+            this.txtDescuentoPorcentaje.ValueChanged += new System.EventHandler(this.txtDescuentoPorcentaje_ValueChanged);
             // 
             // label35
             // 
@@ -5043,11 +5134,11 @@
             this.btnBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBusqueda.Image = global::Frm.Properties.Resources.search;
             this.btnBusqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusqueda.Location = new System.Drawing.Point(825, 3);
+            this.btnBusqueda.Location = new System.Drawing.Point(783, 6);
             this.btnBusqueda.Name = "btnBusqueda";
-            this.btnBusqueda.Size = new System.Drawing.Size(78, 35);
+            this.btnBusqueda.Size = new System.Drawing.Size(91, 35);
             this.btnBusqueda.TabIndex = 45;
-            this.btnBusqueda.Text = "Busqueda";
+            this.btnBusqueda.Text = "Diccionario";
             this.btnBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBusqueda.UseVisualStyleBackColor = true;
             this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
@@ -5167,8 +5258,8 @@
             this.tabExploracionFisica.ResumeLayout(false);
             this.tabMedidas.ResumeLayout(false);
             this.tabMedidas.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIMC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureIndeceMasaCorporal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrecuenciaRespiratoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTalla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrencuenciaCardiaca)).EndInit();
@@ -5176,38 +5267,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTemperatura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresionArterial_Sistolica)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.gbAbdomen.ResumeLayout(false);
-            this.gbAbdomen.PerformLayout();
-            this.gbOjos.ResumeLayout(false);
-            this.gbOjos.PerformLayout();
-            this.gbCuello.ResumeLayout(false);
-            this.gbCuello.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPresionVenosaCuello)).EndInit();
-            this.gbReflejos.ResumeLayout(false);
-            this.gbReflejos.PerformLayout();
-            this.tabPage9.ResumeLayout(false);
-            this.gbCoordinacionMarcha.ResumeLayout(false);
-            this.gbCoordinacionMarcha.PerformLayout();
-            this.gbBoca.ResumeLayout(false);
-            this.gbBoca.PerformLayout();
-            this.gbAparatoDigestivo.ResumeLayout(false);
-            this.gbAparatoDigestivo.PerformLayout();
-            this.gbCraneo.ResumeLayout(false);
-            this.gbCraneo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMareos)).EndInit();
-            this.tabPage10.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.gbOidos.ResumeLayout(false);
             this.gbOidos.PerformLayout();
             this.gbNariz.ResumeLayout(false);
             this.gbNariz.PerformLayout();
-            this.gbSensibilidad.ResumeLayout(false);
-            this.gbSensibilidad.PerformLayout();
+            this.gbOjos.ResumeLayout(false);
+            this.gbOjos.PerformLayout();
+            this.gbCraneo.ResumeLayout(false);
+            this.gbCraneo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMareos)).EndInit();
+            this.tabPage9.ResumeLayout(false);
             this.gbTorax.ResumeLayout(false);
             this.gbTorax.PerformLayout();
-            this.tabParesCraneales.ResumeLayout(false);
-            this.gbParesCraneales.ResumeLayout(false);
-            this.gbParesCraneales.PerformLayout();
+            this.gbCuello.ResumeLayout(false);
+            this.gbCuello.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresionVenosaCuello)).EndInit();
+            this.gbBoca.ResumeLayout(false);
+            this.gbBoca.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.gbAparatoDigestivo.ResumeLayout(false);
+            this.gbAparatoDigestivo.PerformLayout();
+            this.gbAbdomen.ResumeLayout(false);
+            this.gbAbdomen.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.gbCoordinacionMarcha.ResumeLayout(false);
+            this.gbCoordinacionMarcha.PerformLayout();
             this.tabGinecoObstréticos.ResumeLayout(false);
             this.gbDatosGineco.ResumeLayout(false);
             this.gbDatosGineco.PerformLayout();
@@ -5215,6 +5303,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAbortos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPartos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGestaciones)).EndInit();
+            this.tabSentidos.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabEstadoEmocional.ResumeLayout(false);
+            this.gbReflejos.ResumeLayout(false);
+            this.gbReflejos.PerformLayout();
+            this.gbSensibilidad.ResumeLayout(false);
+            this.gbSensibilidad.PerformLayout();
+            this.gbEstadoEmocional.ResumeLayout(false);
+            this.gbEstadoEmocional.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.gbParesCraneales.ResumeLayout(false);
+            this.gbParesCraneales.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.gbGaslowEscala.ResumeLayout(false);
+            this.gbRespuestaMotora.ResumeLayout(false);
+            this.gbRespuestaMotora.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.gbAperturaOcular.ResumeLayout(false);
+            this.gbAperturaOcular.PerformLayout();
             this.tabAntecedente.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabNoPatologico.ResumeLayout(false);
@@ -5244,16 +5352,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).EndInit();
-            this.tabSentidos.ResumeLayout(false);
-            this.gbEstadoEmocional.ResumeLayout(false);
-            this.gbEstadoEmocional.PerformLayout();
-            this.gbGaslowEscala.ResumeLayout(false);
-            this.gbRespuestaMotora.ResumeLayout(false);
-            this.gbRespuestaMotora.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.gbAperturaOcular.ResumeLayout(false);
-            this.gbAperturaOcular.PerformLayout();
             this.tabServicio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.gbServicio.ResumeLayout(false);
@@ -5307,7 +5405,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbTipoAlergia;
         private System.Windows.Forms.DataGridView dgAlergias;
-        private System.Windows.Forms.TabPage tabSentidos;
         private System.Windows.Forms.TabPage tabDiagnostico;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.RichTextBox txtPlanTratamiento;
@@ -5337,7 +5434,6 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.RichTextBox txtMotivoConsulta;
-        private System.Windows.Forms.TabPage tabParesCraneales;
         private System.Windows.Forms.TextBox txtFechaConsulta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown txtPresionArterial_Diastolica;
@@ -5349,7 +5445,6 @@
         private System.Windows.Forms.TextBox txtPrimerIndicio;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.GroupBox gbGaslowEscala;
         private System.Windows.Forms.Label lblNombreCLiente;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Button button14;
@@ -5360,72 +5455,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown txtFrecuenciaRespiratoria;
-        private System.Windows.Forms.GroupBox gbOjos;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtPerdidaAgudeza;
-        private System.Windows.Forms.CheckBox chk_Ojos_Midriasis;
-        private System.Windows.Forms.CheckBox chk_Ojos_Epifora;
-        private System.Windows.Forms.CheckBox chk_Ojos_Xerolftamia;
-        private System.Windows.Forms.CheckBox chk_Ojos_Lentes;
-        private System.Windows.Forms.CheckBox chk_Ojos_FotoFobia;
-        private System.Windows.Forms.CheckBox chk_Ojos_Diploplia;
         private System.Windows.Forms.TabControl tabExploracionFisica;
         private System.Windows.Forms.TabPage tabMedidas;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.GroupBox gbReflejos;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cb_Reflejo_ValoracionGeneral;
-        private System.Windows.Forms.CheckBox chk_R_Patelar;
-        private System.Windows.Forms.CheckBox chk_R_Adominales;
-        private System.Windows.Forms.CheckBox chk_R_Radial;
-        private System.Windows.Forms.CheckBox chk_R_Tricipital;
-        private System.Windows.Forms.CheckBox chk_R_Bicipital;
-        private System.Windows.Forms.CheckBox chk_R_Mentoniano;
-        private System.Windows.Forms.CheckBox chk_R_Carneano;
-        private System.Windows.Forms.CheckBox chk_R_Orbicular_De_Los_Ojos;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtReflejoObservacion;
-        private System.Windows.Forms.Button btn_ReflejoObservacion;
-        private System.Windows.Forms.Button AuiliarReflejo;
-        private System.Windows.Forms.GroupBox gbCuello;
-        private System.Windows.Forms.CheckBox chk_Cuello_AdenoPatias;
-        private System.Windows.Forms.CheckBox chk_Cuello_LesionPiel;
-        private System.Windows.Forms.CheckBox chk_Cuello_Simetrico;
-        private System.Windows.Forms.CheckBox chk_Cuello_ConfiguracionCuello;
-        private System.Windows.Forms.ComboBox cbGanglioLinfatico;
-        private System.Windows.Forms.ComboBox cb_ArteriaCarotida;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.NumericUpDown txtPresionVenosaCuello;
-        private System.Windows.Forms.Button auxiliarCuello;
         private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.GroupBox gbCraneo;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.NumericUpDown txtMareos;
-        private System.Windows.Forms.CheckBox chk_Craneo_PerdidaConciencia;
-        private System.Windows.Forms.CheckBox chk_Craneo_Cefalea;
-        private System.Windows.Forms.CheckBox chk_Craneo_Sincope;
-        private System.Windows.Forms.CheckBox chk_Craneo_AltereacionOsea;
-        private System.Windows.Forms.CheckBox chk_Craneo_Simetrico;
-        private System.Windows.Forms.CheckBox chk_Craneo_TamanoForma;
-        private System.Windows.Forms.Button auxiliarCraneo;
-        private System.Windows.Forms.CheckBox chk_Craneo_Prurito;
-        private System.Windows.Forms.GroupBox gbAparatoDigestivo;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.ComboBox cbVomito;
-        private System.Windows.Forms.Button btnApaDigestivoDetalle;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.TextBox txtAparatoDigestivoDetalle;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivoDistencion;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Colico;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Pirosis;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Estrenimiento;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Diarrea;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivo_FaltaApetito;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Nauseas;
-        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Dolor;
-        private System.Windows.Forms.Button AuxiliarDigestivo;
         private System.Windows.Forms.GroupBox gbBoca;
         private System.Windows.Forms.CheckBox chk_Boca_Disfagia;
         private System.Windows.Forms.CheckBox chk_Boca_Ronquera;
@@ -5438,35 +5471,7 @@
         private System.Windows.Forms.CheckBox chk_Boca_Protesis;
         private System.Windows.Forms.CheckBox chk_Boca_Adoncia;
         private System.Windows.Forms.Button auxiliarboca;
-        private System.Windows.Forms.GroupBox gbCoordinacionMarcha;
-        private System.Windows.Forms.Button btn_Obs_CoordinacionMarcha;
-        private System.Windows.Forms.CheckBox chk_CooMar_TalonRodilla;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.CheckBox chk_CooMar_Romberg;
-        private System.Windows.Forms.CheckBox chk_CooMar_DedoNariz;
-        private System.Windows.Forms.CheckBox chk_CooMar_Camina;
-        private System.Windows.Forms.TextBox txt_ObsCoordinacion;
-        private System.Windows.Forms.Button auxCoorMarcha;
         private System.Windows.Forms.TabPage tabPage10;
-        private System.Windows.Forms.GroupBox gbTorax;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.ComboBox cb_Torax_ResDiafraAbdo;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.ComboBox cb_Torax_RuidoAgregado;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.ComboBox cb_Torax_Ascultacion;
-        private System.Windows.Forms.ComboBox cb_Torax_Expa;
-        private System.Windows.Forms.Button auxiliarToraxP;
-        private System.Windows.Forms.CheckBox chk_Torax_SonoridadPulmonar;
-        private System.Windows.Forms.GroupBox gbSensibilidad;
-        private System.Windows.Forms.TextBox txtSensibilidadDetalle;
-        private System.Windows.Forms.Button btnSensbilidadDetalle;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.CheckBox chk_Sensiblidad_Discriminatoria;
-        private System.Windows.Forms.CheckBox chk_Sensiblidad_Dis_DosPuntos;
-        private System.Windows.Forms.CheckBox chk_Sensiblidad_Profunda;
-        private System.Windows.Forms.CheckBox chk_Sensiblidad_Superficial;
         private System.Windows.Forms.TabPage tabEstadoVivienda;
         private System.Windows.Forms.GroupBox gbEstadoVivienda;
         private System.Windows.Forms.CheckBox chk_Evivienda_BuenaVentilacion;
@@ -5486,34 +5491,6 @@
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.TextBox txtServiciosBasicos;
         private System.Windows.Forms.Button auxiliarEVivienda;
-        private System.Windows.Forms.GroupBox gbParesCraneales;
-        private System.Windows.Forms.CheckBox chk_PC_I_Olfatorio;
-        private System.Windows.Forms.CheckBox chk_PC_XI_TonoFuerzaMuscarlarTrapecio;
-        private System.Windows.Forms.CheckBox chk_PC_XI_MovimientoTrapecio;
-        private System.Windows.Forms.CheckBox chk_PC_XI_TonoFuerzaMuscarlarEsterno;
-        private System.Windows.Forms.CheckBox chk_PC_XI_MovimientoEsternocleidomastoideo;
-        private System.Windows.Forms.CheckBox chk_PC_X_ReflejoNauseano;
-        private System.Windows.Forms.CheckBox chk_PC_X_Paladar;
-        private System.Windows.Forms.CheckBox chk_PC_X_Lengua;
-        private System.Windows.Forms.CheckBox chk_PC_IX_FunciasGustativa;
-        private System.Windows.Forms.CheckBox chk_PC_X_ElevacionSimetrica;
-        private System.Windows.Forms.CheckBox chk_PC_VIII_Romberg;
-        private System.Windows.Forms.CheckBox chk_PC_VII_MuecasAmbosLado;
-        private System.Windows.Forms.CheckBox chk_PC_VII_CierreOjosVsResistencia;
-        private System.Windows.Forms.CheckBox chk_PC_VII_MovibilidadMusculosCara;
-        private System.Windows.Forms.CheckBox chk_PC_V_ReflejoCorneano;
-        private System.Windows.Forms.CheckBox chk_PC_II_Campimetria;
-        private System.Windows.Forms.CheckBox chk_PC_III_IV_VI_MovimientoOcular;
-        private System.Windows.Forms.CheckBox chk_PC_II_VisionColores;
-        private System.Windows.Forms.CheckBox chk_PC_II_ReflejoPupilar;
-        private System.Windows.Forms.CheckBox chk_PC_VIII_WebberYRinne;
-        private System.Windows.Forms.CheckBox chk_PC_VII_SoplaMuentraDientes;
-        private System.Windows.Forms.CheckBox chk_PC_VII_Gustos2TerciosAnterioresLengua;
-        private System.Windows.Forms.CheckBox chk_PC_V_MovimientoMandibula;
-        private System.Windows.Forms.CheckBox chk_PC_V_SensibilidadCara;
-        private System.Windows.Forms.CheckBox chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual;
-        private System.Windows.Forms.CheckBox chk_PC_II_AgudezaVisual;
-        private System.Windows.Forms.CheckBox chk_PC_II_FondoOjo;
         private System.Windows.Forms.GroupBox gbAbdomen;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.ComboBox cb_Abdomen_Recto;
@@ -5522,10 +5499,6 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.ComboBox cb_Abdomen_Rinon;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtParCranealDetalle;
-        private System.Windows.Forms.Button btnParCranealDetalle;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button auxPares;
         private System.Windows.Forms.GroupBox gbHereditario;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Button btnHereditarioDetalle;
@@ -5585,41 +5558,6 @@
         private System.Windows.Forms.ComboBox cb_NoPato_BebePromedio;
         private System.Windows.Forms.Button auxTAba;
         private System.Windows.Forms.Button auxAlcho;
-        private System.Windows.Forms.GroupBox gbAperturaOcular;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_Estimulo;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_Ausencia;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_AOrden;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_Espontanea;
-        private System.Windows.Forms.GroupBox gbRespuestaMotora;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Obedece;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Lincompresible;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Carencia;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Linapropiado;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Pconfuso;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Orientado;
-        private System.Windows.Forms.Button auxiliarEstadoEmo;
-        private System.Windows.Forms.GroupBox gbEstadoEmocional;
-        private System.Windows.Forms.CheckBox chk_Emocional_Distraido;
-        private System.Windows.Forms.CheckBox chk_Emocional_Desmayos;
-        private System.Windows.Forms.CheckBox chk_Emocional_EdadAvanzada;
-        private System.Windows.Forms.CheckBox chk_Emocional_Debilidad;
-        private System.Windows.Forms.CheckBox chk_Emocional_Normal;
-        private System.Windows.Forms.Button btn_EmocionalOtro;
-        private System.Windows.Forms.TextBox txtEmocional_Otro;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.CheckBox chk_Emocional_Alucionaciones;
-        private System.Windows.Forms.CheckBox chk_Emocional_AlteracionSueno;
-        private System.Windows.Forms.CheckBox chk_Emocional_Irritabilidad;
-        private System.Windows.Forms.CheckBox chk_Emocional_Tension;
-        private System.Windows.Forms.CheckBox chk_Emocional_Nervioso;
-        private System.Windows.Forms.CheckBox chk_Emocional_Depresion;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Ausencia;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Rextension;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Evita;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Rflexion;
-        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Localiza;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox gbAntecedentePatologicos;
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.Button btnAntecedentePatologicoDetalle;
@@ -5639,11 +5577,6 @@
         private System.Windows.Forms.ComboBox cb_Ante_Pato_Paroditis;
         private System.Windows.Forms.TextBox txt_Ante_Pato_Detalle;
         private System.Windows.Forms.Button AuxPatologico;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cb_Ex_Color;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox txtExploracionInfoAdicional;
-        private System.Windows.Forms.ComboBox cb_Ex_ManosUnas;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label100;
@@ -5659,10 +5592,37 @@
         private System.Windows.Forms.CheckBox chk_AbdomenAscititis;
         private System.Windows.Forms.CheckBox chk_AplicarDescuento;
         private System.Windows.Forms.Button btnSanoMedidas;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button btnLLenaodoRapido;
+        private System.Windows.Forms.Label lblLlebadoRapido;
+        private System.Windows.Forms.TabPage tabquirurgico;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtAntecedenteQuirurgico;
+        private System.Windows.Forms.CheckBox chkLimpiarDatos;
+        private System.Windows.Forms.DataGridView dgServicios;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button auxiliarCraneo;
+        private System.Windows.Forms.GroupBox gbCraneo;
+        private System.Windows.Forms.CheckBox chk_Craneo_Prurito;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.NumericUpDown txtMareos;
+        private System.Windows.Forms.CheckBox chk_Craneo_PerdidaConciencia;
+        private System.Windows.Forms.CheckBox chk_Craneo_Cefalea;
+        private System.Windows.Forms.CheckBox chk_Craneo_Sincope;
+        private System.Windows.Forms.CheckBox chk_Craneo_AltereacionOsea;
+        private System.Windows.Forms.CheckBox chk_Craneo_Simetrico;
+        private System.Windows.Forms.CheckBox chk_Craneo_TamanoForma;
+        private System.Windows.Forms.GroupBox gbOjos;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtPerdidaAgudeza;
+        private System.Windows.Forms.CheckBox chk_Ojos_Midriasis;
+        private System.Windows.Forms.CheckBox chk_Ojos_Epifora;
+        private System.Windows.Forms.CheckBox chk_Ojos_Xerolftamia;
+        private System.Windows.Forms.CheckBox chk_Ojos_Lentes;
+        private System.Windows.Forms.CheckBox chk_Ojos_FotoFobia;
+        private System.Windows.Forms.CheckBox chk_Ojos_Diploplia;
         private System.Windows.Forms.Button auxiliarNariz;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gbOidos;
@@ -5677,12 +5637,158 @@
         private System.Windows.Forms.CheckBox chk_Nariz_Sinusitis;
         private System.Windows.Forms.CheckBox chk_Nariz_Epitaxis;
         private System.Windows.Forms.CheckBox chk_Nariz_Rinorrea;
-        private System.Windows.Forms.Button btnLLenaodoRapido;
-        private System.Windows.Forms.Label lblLlebadoRapido;
-        private System.Windows.Forms.TabPage tabquirurgico;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAntecedenteQuirurgico;
-        private System.Windows.Forms.CheckBox chkLimpiarDatos;
-        private System.Windows.Forms.DataGridView dgServicios;
+        private System.Windows.Forms.Button auxiliarCuello;
+        private System.Windows.Forms.GroupBox gbCuello;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.NumericUpDown txtPresionVenosaCuello;
+        private System.Windows.Forms.CheckBox chk_Cuello_AdenoPatias;
+        private System.Windows.Forms.CheckBox chk_Cuello_LesionPiel;
+        private System.Windows.Forms.CheckBox chk_Cuello_Simetrico;
+        private System.Windows.Forms.CheckBox chk_Cuello_ConfiguracionCuello;
+        private System.Windows.Forms.ComboBox cbGanglioLinfatico;
+        private System.Windows.Forms.ComboBox cb_ArteriaCarotida;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Button auxiliarToraxP;
+        private System.Windows.Forms.GroupBox gbTorax;
+        private System.Windows.Forms.CheckBox chk_Torax_SonoridadPulmonar;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.ComboBox cb_Torax_RuidoAgregado;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.ComboBox cb_Torax_Ascultacion;
+        private System.Windows.Forms.ComboBox cb_Torax_Expa;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.ComboBox cb_Torax_ResDiafraAbdo;
+        private System.Windows.Forms.Button AuxiliarDigestivo;
+        private System.Windows.Forms.GroupBox gbAparatoDigestivo;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.ComboBox cbVomito;
+        private System.Windows.Forms.Button btnApaDigestivoDetalle;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox txtAparatoDigestivoDetalle;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivoDistencion;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Colico;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Pirosis;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Estrenimiento;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Diarrea;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivo_FaltaApetito;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Nauseas;
+        private System.Windows.Forms.CheckBox chk_ApaDigestivo_Dolor;
+        private System.Windows.Forms.Button auxCoorMarcha;
+        private System.Windows.Forms.GroupBox gbCoordinacionMarcha;
+        private System.Windows.Forms.TextBox txt_ObsCoordinacion;
+        private System.Windows.Forms.Button btn_Obs_CoordinacionMarcha;
+        private System.Windows.Forms.CheckBox chk_CooMar_TalonRodilla;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.CheckBox chk_CooMar_Romberg;
+        private System.Windows.Forms.CheckBox chk_CooMar_DedoNariz;
+        private System.Windows.Forms.CheckBox chk_CooMar_Camina;
+        private System.Windows.Forms.TabPage tabSentidos;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabEstadoEmocional;
+        private System.Windows.Forms.GroupBox gbReflejos;
+        private System.Windows.Forms.Button btn_ReflejoObservacion;
+        private System.Windows.Forms.CheckBox chk_R_Patelar;
+        private System.Windows.Forms.CheckBox chk_R_Adominales;
+        private System.Windows.Forms.CheckBox chk_R_Radial;
+        private System.Windows.Forms.CheckBox chk_R_Tricipital;
+        private System.Windows.Forms.CheckBox chk_R_Bicipital;
+        private System.Windows.Forms.CheckBox chk_R_Mentoniano;
+        private System.Windows.Forms.CheckBox chk_R_Carneano;
+        private System.Windows.Forms.CheckBox chk_R_Orbicular_De_Los_Ojos;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtReflejoObservacion;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cb_Reflejo_ValoracionGeneral;
+        private System.Windows.Forms.Button AuiliarReflejo;
+        private System.Windows.Forms.GroupBox gbSensibilidad;
+        private System.Windows.Forms.TextBox txtSensibilidadDetalle;
+        private System.Windows.Forms.Button btnSensbilidadDetalle;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.CheckBox chk_Sensiblidad_Discriminatoria;
+        private System.Windows.Forms.CheckBox chk_Sensiblidad_Dis_DosPuntos;
+        private System.Windows.Forms.CheckBox chk_Sensiblidad_Profunda;
+        private System.Windows.Forms.CheckBox chk_Sensiblidad_Superficial;
+        private System.Windows.Forms.Button auxiliarEstadoEmo;
+        private System.Windows.Forms.GroupBox gbEstadoEmocional;
+        private System.Windows.Forms.CheckBox chk_Emocional_Distraido;
+        private System.Windows.Forms.CheckBox chk_Emocional_Desmayos;
+        private System.Windows.Forms.CheckBox chk_Emocional_EdadAvanzada;
+        private System.Windows.Forms.CheckBox chk_Emocional_Debilidad;
+        private System.Windows.Forms.CheckBox chk_Emocional_Normal;
+        private System.Windows.Forms.Button btn_EmocionalOtro;
+        private System.Windows.Forms.TextBox txtEmocional_Otro;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.CheckBox chk_Emocional_Alucionaciones;
+        private System.Windows.Forms.CheckBox chk_Emocional_AlteracionSueno;
+        private System.Windows.Forms.CheckBox chk_Emocional_Irritabilidad;
+        private System.Windows.Forms.CheckBox chk_Emocional_Tension;
+        private System.Windows.Forms.CheckBox chk_Emocional_Nervioso;
+        private System.Windows.Forms.CheckBox chk_Emocional_Depresion;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button auxPares;
+        private System.Windows.Forms.GroupBox gbParesCraneales;
+        private System.Windows.Forms.Button btnParCranealDetalle;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtParCranealDetalle;
+        private System.Windows.Forms.CheckBox chk_PC_XI_TonoFuerzaMuscarlarTrapecio;
+        private System.Windows.Forms.CheckBox chk_PC_XI_MovimientoTrapecio;
+        private System.Windows.Forms.CheckBox chk_PC_XI_TonoFuerzaMuscarlarEsterno;
+        private System.Windows.Forms.CheckBox chk_PC_XI_MovimientoEsternocleidomastoideo;
+        private System.Windows.Forms.CheckBox chk_PC_X_ReflejoNauseano;
+        private System.Windows.Forms.CheckBox chk_PC_X_Paladar;
+        private System.Windows.Forms.CheckBox chk_PC_X_Lengua;
+        private System.Windows.Forms.CheckBox chk_PC_IX_FunciasGustativa;
+        private System.Windows.Forms.CheckBox chk_PC_X_ElevacionSimetrica;
+        private System.Windows.Forms.CheckBox chk_PC_VIII_Romberg;
+        private System.Windows.Forms.CheckBox chk_PC_VII_MuecasAmbosLado;
+        private System.Windows.Forms.CheckBox chk_PC_VII_CierreOjosVsResistencia;
+        private System.Windows.Forms.CheckBox chk_PC_VII_MovibilidadMusculosCara;
+        private System.Windows.Forms.CheckBox chk_PC_V_ReflejoCorneano;
+        private System.Windows.Forms.CheckBox chk_PC_II_Campimetria;
+        private System.Windows.Forms.CheckBox chk_PC_III_IV_VI_MovimientoOcular;
+        private System.Windows.Forms.CheckBox chk_PC_II_VisionColores;
+        private System.Windows.Forms.CheckBox chk_PC_II_ReflejoPupilar;
+        private System.Windows.Forms.CheckBox chk_PC_VIII_WebberYRinne;
+        private System.Windows.Forms.CheckBox chk_PC_VII_SoplaMuentraDientes;
+        private System.Windows.Forms.CheckBox chk_PC_VII_Gustos2TerciosAnterioresLengua;
+        private System.Windows.Forms.CheckBox chk_PC_V_MovimientoMandibula;
+        private System.Windows.Forms.CheckBox chk_PC_V_SensibilidadCara;
+        private System.Windows.Forms.CheckBox chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual;
+        private System.Windows.Forms.CheckBox chk_PC_II_AgudezaVisual;
+        private System.Windows.Forms.CheckBox chk_PC_II_FondoOjo;
+        private System.Windows.Forms.CheckBox chk_PC_I_Olfatorio;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.GroupBox gbGaslowEscala;
+        private System.Windows.Forms.GroupBox gbRespuestaMotora;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Ausencia;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Rextension;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Evita;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Rflexion;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Localiza;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RM_Obedece;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Lincompresible;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Carencia;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Linapropiado;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Pconfuso;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_RV_Orientado;
+        private System.Windows.Forms.GroupBox gbAperturaOcular;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_Estimulo;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_Ausencia;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_AOrden;
+        private System.Windows.Forms.RadioButton Rb_Gaslow_AO_Espontanea;
+        private System.Windows.Forms.PictureBox pictureIndeceMasaCorporal;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtExploracionInfoAdicional;
+        private System.Windows.Forms.ComboBox cb_Ex_ManosUnas;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.ComboBox cb_Ex_Color;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.CheckBox checkIMC;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown txtIMC;
     }
 }

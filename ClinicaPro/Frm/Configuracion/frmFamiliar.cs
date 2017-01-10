@@ -128,13 +128,16 @@ namespace Frm.Configuracion
             if (dgFamiliar.SelectedRows.Count == 1)
             {
                 this.IdFamiliar = (byte)dgFamiliar.CurrentRow.Cells[comboNombreIDs.familiar].Value;
-
-                FamiliarDB familiarDB = new FamiliarDB();
-                if (familiarDB.Eliminar(this.IdFamiliar, this.IdUsuario))
-                {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
+                {                
+                    FamiliarDB familiarDB = new FamiliarDB();
+                    if (familiarDB.Eliminar(this.IdFamiliar, this.IdUsuario))
+                    {
+                        Limpiar();
+                        MensajeDeActulizacion();
+                    }
                 }
+                
             }else
             {
                 MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,

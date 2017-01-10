@@ -97,7 +97,7 @@ namespace ClinicaPro.DB.Consulta
        private  bool ValidarEliminar_SiExisteLLaveForanea(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto, int IdFamiliar)
        {
            var list = ListasConIdFamiliar(Contexto, IdFamiliar);                                                             
-           if (list != null)
+           if (list.Count > 0 )
            {
                MensajeSiExisteLlaveForanea(list);
                return true;

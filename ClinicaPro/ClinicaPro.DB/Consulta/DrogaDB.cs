@@ -71,7 +71,7 @@ namespace ClinicaPro.DB.Consulta
                         }                     
                         catch (Exception)
                         {
-                            throw;
+                            return false;
                         }
                     }
                     else return false;
@@ -112,7 +112,7 @@ namespace ClinicaPro.DB.Consulta
        private bool ValidarEliminar_SiExisteLLaveForanea(Entities.ClinicaDrFuentesEntities Contexto, int idDroga)
        {
            var list = Contexto.sp_Droga_ListarConsultasRelacionadas(idDroga).ToList();
-           if (list != null)
+           if (list.Count > 0 )
            {
                MensajeSiExisteLlaveForanea(list);
                return true;

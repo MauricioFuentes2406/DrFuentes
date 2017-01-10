@@ -141,20 +141,16 @@ namespace Frm.Configuracion
            
             if (dgDrogas.SelectedRows.Count == 1)
             {
-                try
-                {
-                    this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
-                    DrogaDB drogaDB = new DrogaDB();
-                    if (drogaDB.Eliminar(this.IdDrogas, this.IdUsuario))
-                    {
-                        Limpiar();
-                        MensajeDeActulizacion();
-                    }
+                if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
+                {                                  
+                        this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
+                        DrogaDB drogaDB = new DrogaDB();
+                        if (drogaDB.Eliminar(this.IdDrogas, this.IdUsuario))
+                        {
+                            Limpiar();
+                            MensajeDeActulizacion();
+                        }                                     
                 }
-                catch (Exception)
-                {
-                   
-                }                
             }
             else
             {

@@ -16,12 +16,6 @@ namespace Frm
         {
             InitializeComponent();
         }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             new AgregarExamenes().Show();
@@ -30,6 +24,11 @@ namespace Frm
         private void button8_Click(object sender, EventArgs e)
         {
             new AgregarTipoExamen().Show();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            new MantenimientoCliente().Show();
         }
     }
 }

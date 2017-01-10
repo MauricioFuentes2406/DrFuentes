@@ -361,6 +361,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GeneralPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MedicinaGeneral";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panel1.ResumeLayout(false);

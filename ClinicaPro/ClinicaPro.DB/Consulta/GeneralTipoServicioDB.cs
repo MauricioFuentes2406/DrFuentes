@@ -77,13 +77,13 @@ namespace ClinicaPro.DB.Consulta
             Contexto.Dispose();
             return lista;
         }
-       private bool ValidarEliminar(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto, int IdConsulta)
+       private bool ValidarEliminar(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto, int IdGeneralServicio)
        {
-           if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(IdConsulta))
+           if (ClinicaPro.BL.manejaExcepcionesDB.isID_distintodeUNO(IdGeneralServicio))
            {
-               if (Contexto.Consultas.Find(IdConsulta) == null)
+               if (Contexto.GeneralTipoServicios.Find(IdGeneralServicio) == null)
                    return true;
-               if (ValidarEliminar_SiExisteLLaveForanea(IdConsulta))
+               if (ValidarEliminar_SiExisteLLaveForanea(IdGeneralServicio))
                    return true;
                else
                    return false;
@@ -94,7 +94,7 @@ namespace ClinicaPro.DB.Consulta
        private bool ValidarEliminar_SiExisteLLaveForanea(int IdConsulta)
        {
            var list = ListasConIdServicio(IdConsulta);
-           if (list != null)
+           if (list.Count > 0 )
            {
                MensajeSiExisteLlaveForanea(list);
                return true;

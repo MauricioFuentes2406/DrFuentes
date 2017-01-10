@@ -2389,8 +2389,9 @@ namespace Frm
             Limpiar();
         }
 
-       
-        
-      
+        private void checkIMC_CheckedChanged(object sender, EventArgs e)
+        {
+            txtIMC.Value = ClinicaPro.BL.Calculos.IndiceMasaCorporal(txtPeso.Value, txtTalla.Value);
+        }     
     }
 }

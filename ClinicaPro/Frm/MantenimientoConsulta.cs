@@ -53,11 +53,34 @@ namespace Frm
 
             string nombre = this.dgConsulta.CurrentRow.Cells["Nombre"].Value.ToString();
             int IdCliente = (int)this.dgConsulta.CurrentRow.Cells["Número_Cliente"].Value;
-            int IdConsulta = (int)this.dgConsulta.CurrentRow.Cells["Número_Consulta"].Value;
+            int IdConsulta = getIdConsultaDataGridView();
             this.Hide();
             this.dgConsulta.Dispose();
             this.Close();
             new AgregarConsulta(IdCliente,IdConsulta,nombre).Show();
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.dgConsulta.SelectedRows.Count >= 1)
+            {
+                if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
+                {
+                    new ClinicaPro.DB.Consulta.ConsultaDB().Eliminar(getIdConsultaDataGridView(), this.IdCliente);
+                    CargarDatos();
+                }
+            }
+            else
+            {
+                MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.Seleccione_Una_Fila, "Para Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+        private int  getIdConsultaDataGridView()
+        {
+            if (dgConsulta.SelectedRows.Count == 1)
+            {
+               return (int)this.dgConsulta.CurrentRow.Cells["Número_Consulta"].Value;
+            }
+            else return -1;
         }
         
     }

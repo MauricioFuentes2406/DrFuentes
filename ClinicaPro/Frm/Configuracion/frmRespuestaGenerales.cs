@@ -116,14 +116,17 @@ namespace Frm.Configuracion
         {
             if (dgRespuestasGenerales.SelectedRows.Count == 1)
             {
-                this.IdRespuestaGeneral = (byte)dgRespuestasGenerales.CurrentRow.Cells[comboNombreIDs.respuestaGenerales].Value;
-
-                RespuestaGeneralesDB reespuestaGeneralDB = new RespuestaGeneralesDB();
-                if (reespuestaGeneralDB.Eliminar(this.IdRespuestaGeneral, this.IdUsuario))
+                if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {
-                    MensajeDeActulizacion();
-                    Limpiar();
-                }
+                    this.IdRespuestaGeneral = (byte)dgRespuestasGenerales.CurrentRow.Cells[comboNombreIDs.respuestaGenerales].Value;
+
+                    RespuestaGeneralesDB reespuestaGeneralDB = new RespuestaGeneralesDB();
+                    if (reespuestaGeneralDB.Eliminar(this.IdRespuestaGeneral, this.IdUsuario))
+                    {
+                        MensajeDeActulizacion();
+                        Limpiar();
+                    }
+                }                
             }else
             {
                 MessageBox.Show(Mensajes.Seleccione_Una_Fila, Mensajes.Upss_Falto_Algo,

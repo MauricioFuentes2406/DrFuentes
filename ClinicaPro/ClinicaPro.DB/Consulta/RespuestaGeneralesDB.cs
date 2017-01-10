@@ -105,7 +105,7 @@ namespace ClinicaPro.DB.Consulta
        private bool ValidarEliminar_SiExisteLLaveForanea (int idRespuestaGeneral)
        {
            var list = ListasConIdRespuestaGeneral_ToraxPulmones(idRespuestaGeneral);
-           if (list != null)
+           if (list.Count > 0)
            {
                MensajeSiExisteLlaveForanea(list);
                return true;

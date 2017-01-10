@@ -101,9 +101,11 @@ namespace Frm
         {
             if (this.dgClientes.SelectedRows.Count >= 1)
             {
-
-                new ClinicaPro.DB.Cliente.ClienteDB().Eliminar(this.idCliente, this.idTipoUsario);
-                CargarDatos();
+                if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
+                {
+                    new ClinicaPro.DB.Cliente.ClienteDB().Eliminar(this.idCliente, this.idTipoUsario);
+                    CargarDatos();
+                }
             }
             else
             {

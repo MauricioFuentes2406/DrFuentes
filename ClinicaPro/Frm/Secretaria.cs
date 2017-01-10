@@ -36,5 +36,15 @@ namespace Frm
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            new MantenimientoCliente().Show();
+        }
     }
 }
