@@ -58,7 +58,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::Frm.Properties.Resources.unchecked_24;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(401, 346);
+            this.btnCancelar.Location = new System.Drawing.Point(372, 367);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 38);
             this.btnCancelar.TabIndex = 16;
@@ -71,7 +71,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::Frm.Properties.Resources.diskette;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.Location = new System.Drawing.Point(527, 346);
+            this.btnGuardar.Location = new System.Drawing.Point(480, 367);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(92, 38);
             this.btnGuardar.TabIndex = 6;
@@ -244,6 +244,7 @@
             this.button1.TabIndex = 32;
             this.button1.Text = "BusquedaAvanzada";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // chkActivarBusqueda
             // 
@@ -262,7 +263,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(929, 413);
+            this.ClientSize = new System.Drawing.Size(929, 434);
             this.Controls.Add(this.chkActivarBusqueda);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCampoRequerido);

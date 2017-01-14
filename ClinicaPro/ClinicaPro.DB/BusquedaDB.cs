@@ -62,10 +62,10 @@ namespace ClinicaPro.DB
        /// </summary>
        /// <remarks> CaseIgnore pq  lo hace el motor de Base de Datos
        ///           No Dispose , ya que al evaluar un condicion en el Form Busqueda Busqueda == null , ocurre una excepcion
-       /// </remarks>
-       /// 
+       /// </remarks>       
        /// <param name="nombreBuscado"></param>
        /// <returns></returns>
+
        public Entities.Busqueda busquedaPorNombre(string nombreBuscado) // No dispose Ver Summary
        {
            ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
@@ -76,10 +76,9 @@ namespace ClinicaPro.DB
        }
        public List<Entities.Busqueda> Listar()
         {
-
             using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
-                List<Entities.Busqueda> lista = (from tabla in Contexto.Busquedas
+                List<Entities.Busqueda> lista = (from tabla in Contexto.Busquedas.AsNoTracking()
                                                  select tabla).ToList(); 
                 return lista;
             }                   
@@ -92,7 +91,66 @@ namespace ClinicaPro.DB
                List<String> lista = (from tabla in Contexto.Busquedas.AsNoTracking()
                                                 select tabla.Nombre).ToList();
                return lista;
-           }           
+           }
        }
+        #region Busquedas
+       /// <summary>
+       /// Difiere de BusquedaPorNombre, Devuelve una lista con las entidades que contengan el clave de busqueda, no reconoce mayusculas
+       /// </summary>
+       /// <param name="nombre"></param>
+       /// <returns></returns>       
+       public List<Entities.Busqueda> ListarNombre(string nombre)
+       {
+           using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+               
+               return (from tabla in Contexto.Busquedas
+                       where tabla.Nombre.Contains(nombre)
+                       select tabla).ToList();
+           }
+       }
+       public List<Entities.Busqueda> ListarSintoma(string sintoma)
+       {
+           using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+
+               return (from tabla in Contexto.Busquedas
+                       where tabla.Síntoma.Contains(sintoma)
+                       select tabla).ToList();
+           }
+       }
+       public List<Entities.Busqueda> ListarTratamiento(string tratamiento)
+       {
+           using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+
+               return (from tabla in Contexto.Busquedas
+                       where tabla.Tratamiento.Contains(tratamiento)
+                       select tabla).ToList();
+           }
+       }
+       public List<Entities.Busqueda> ListarEnfermedadRelacionada(string enfermedadRelacionada)
+       {
+           using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+
+               return (from tabla in Contexto.Busquedas
+                       where tabla.EnfermedadRelacionada.Contains(enfermedadRelacionada)
+                       select tabla).ToList();
+           }
+       }
+       public List<Entities.Busqueda> ListarDescripcion(string descripcion)
+       {
+           using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+           {
+
+               return (from tabla in Contexto.Busquedas
+                       where tabla.DescripcionAdicional.Contains(descripcion)
+                       select tabla).ToList();
+           }
+       }    
+
+        #endregion
+
     }
 }

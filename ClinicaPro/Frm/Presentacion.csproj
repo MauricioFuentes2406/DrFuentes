@@ -107,6 +107,12 @@
     <Compile Include="Configuracion\ConfiguracionGeneral.Designer.cs">
       <DependentUpon>ConfiguracionGeneral.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\frmAlergias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmAlergias.Designer.cs">
+      <DependentUpon>frmAlergias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\frmDrogas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     </Compile>
     <Compile Include="Configuracion\frmVacunas.Designer.cs">
       <DependentUpon>frmVacunas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diccionario\frmBusquedaAvanzada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diccionario\frmBusquedaAvanzada.Designer.cs">
+      <DependentUpon>frmBusquedaAvanzada.cs</DependentUpon>
     </Compile>
     <Compile Include="Expediente.cs">
       <SubType>Form</SubType>
@@ -274,6 +286,9 @@
     <EmbeddedResource Include="Configuracion\ConfiguracionGeneral.resx">
       <DependentUpon>ConfiguracionGeneral.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmAlergias.resx">
+      <DependentUpon>frmAlergias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmDrogas.resx">
       <DependentUpon>frmDrogas.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmVacunas.resx">
       <DependentUpon>frmVacunas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diccionario\frmBusquedaAvanzada.resx">
+      <DependentUpon>frmBusquedaAvanzada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expediente.resx">
       <DependentUpon>Expediente.cs</DependentUpon>
@@ -581,6 +599,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tabla-IMC.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\molecule 100.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

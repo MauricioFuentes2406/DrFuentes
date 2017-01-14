@@ -60,6 +60,11 @@ namespace Frm
         private void btnDiccionario_Click(object sender, EventArgs e)
         {
             new frmBusquedas().Show();
+        }
+
+        private void btnAlergias_Click(object sender, EventArgs e)
+        {
+            new Configuracion.frmAlergias().Show();
         }              
     }
 }

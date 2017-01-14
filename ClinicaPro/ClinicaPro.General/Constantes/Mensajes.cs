@@ -27,7 +27,7 @@ namespace ClinicaPro.General.Constantes
        public const String Campo_DatoIncompleto = " Está Incompleto, Llena el campo faltante  , o Elimínalo del todo";
        public const String Numero_Mayor_Cero = " Deberia ser un número mayor a Cero  \n";
        public const String Upss_Falto_Algo = " Upss, falto algo ";
-       public const String No_Se_Elimina_No_Se_Encontro = " No se puede Eliminar un registro que no existe";
+       public const String No_Se_Elimina_No_Se_Encontro = " No se pudo Eliminar el  registro \n Tal vez no se encontró o ya no existe";
        public const String Numero_Paciente_NoExiste = " Número de paciente inexistente";
        public const String No_Se_Encontro_Ningun_Registro = "No se encontro ningún Registro con los criterios de Busqueda ";
        public const String Descuento_No_Aplicable = " No se  aplicara descuento a este servicio"; // Referencia la Tabla GeneralServicio , isPrecioEditable
