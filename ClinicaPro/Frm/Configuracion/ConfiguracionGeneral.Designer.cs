@@ -36,6 +36,7 @@
             this.btnVacuna = new System.Windows.Forms.Button();
             this.btnDrogas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAlergias = new System.Windows.Forms.Button();
             this.btnDiccionario = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -131,12 +132,29 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnAlergias);
             this.panel2.Controls.Add(this.btnDiccionario);
             this.panel2.Controls.Add(this.btnServicios);
             this.panel2.Location = new System.Drawing.Point(35, 260);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(770, 151);
             this.panel2.TabIndex = 8;
+            // 
+            // btnAlergias
+            // 
+            this.btnAlergias.BackgroundImage = global::Frm.Properties.Resources.molecule_100;
+            this.btnAlergias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAlergias.FlatAppearance.BorderSize = 0;
+            this.btnAlergias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlergias.Location = new System.Drawing.Point(328, 14);
+            this.btnAlergias.Name = "btnAlergias";
+            this.btnAlergias.Size = new System.Drawing.Size(115, 123);
+            this.btnAlergias.TabIndex = 9;
+            this.btnAlergias.Text = "Alergias";
+            this.btnAlergias.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAlergias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAlergias.UseVisualStyleBackColor = true;
+            this.btnAlergias.Click += new System.EventHandler(this.btnAlergias_Click);
             // 
             // btnDiccionario
             // 
@@ -201,5 +219,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnDiccionario;
+        private System.Windows.Forms.Button btnAlergias;
     }
 }

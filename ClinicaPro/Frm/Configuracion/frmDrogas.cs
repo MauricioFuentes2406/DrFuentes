@@ -114,9 +114,7 @@ namespace Frm.Configuracion
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (!Validar())
-            {
-                try
-                {
+            {               
                     if (dgDrogas.SelectedRows.Count == 1)
                     {
                         this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
@@ -128,12 +126,7 @@ namespace Frm.Configuracion
                     {
                         Limpiar();
                         MensajeDeActulizacion();
-                    }
-                }
-                catch (Exception)
-                {
-
-                }
+                    }              
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)

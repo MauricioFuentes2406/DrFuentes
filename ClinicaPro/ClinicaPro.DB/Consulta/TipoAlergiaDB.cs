@@ -47,40 +47,40 @@ namespace ClinicaPro.DB.Consulta
             catch (EntityException entityException)
             {                               
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return -1;
             }          
             catch (NullReferenceException nullReference)
             {
-                manejaExcepcionesDB.manejaNullReference(nullReference);               
-                throw nullReference;
+                manejaExcepcionesDB.manejaNullReference(nullReference);
+                return -1;
             }
             catch (Exception ex)
             {
-                manejaExcepcionesDB.manejaExcepcion(ex);                
-                throw ex;
+                manejaExcepcionesDB.manejaExcepcion(ex);
+                return -1;
             }
         }
-        public bool Eliminar(int idCliente, int idAlergia)
-        {
-            ///<summary>
-            ///1- Recibe id
-            ///2- Busca la tupla asociada con el registro
-            ///3- Verifica que no este vacio (retorna false)
-            ///4- Elimina (retorna true)
-            /// </summary>
-
+        public bool Eliminar(int idAlergia, int idCliente)
+        {            
             using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities())
             {
-                Entities.TipoAlergia borrarCliente = (from tabla in Contexto.TipoAlergias where tabla.idAlergia == idAlergia select tabla).First();
-                if (borrarCliente != null)
+                if (ValidarEliminar(Contexto, idAlergia) == false)
                 {
-                    Contexto.TipoAlergias.Remove(borrarCliente);
-                    Contexto.SaveChanges();
-                    return true;
+                    try
+                    {
+                        Entities.TipoAlergia borrarAlergia = Contexto.TipoAlergias.Find(idAlergia);
+                        Contexto.TipoAlergias.Remove(borrarAlergia);
+                        Contexto.SaveChanges();
+                        return true;  
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }                                    
                 }
                 else
                 {
-                    MessageBox.Show(Mensajes.No_Se_Elimina_No_Se_Encontro, Mensajes.Numero_Paciente_NoExiste, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Mensajes.No_Se_Elimina_No_Se_Encontro, Mensajes.No_Se_Elimina_No_Se_Encontro, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -98,18 +98,57 @@ namespace ClinicaPro.DB.Consulta
             catch (EntityException entityException)
             {                               
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return null;
             }
             catch (NullReferenceException nullReference)
             {
-                manejaExcepcionesDB.manejaNullReference(nullReference);               
-                throw nullReference;
+                manejaExcepcionesDB.manejaNullReference(nullReference);
+                return null;
             }
             catch (Exception ex)
             {
-                manejaExcepcionesDB.manejaExcepcion(ex);                
-                throw;
+                manejaExcepcionesDB.manejaExcepcion(ex);
+                return null;
             }
+        }
+        private bool ValidarEliminar(Entities.ClinicaDrFuentesEntities Contexto, int idAlergia)
+        {           
+                if (Contexto.TipoAlergias.Find(idAlergia) == null)
+                    return true;
+                if (ValidarEliminar_SiExisteLLaveForanea(Contexto, idAlergia))
+                    return true;
+                else return false;                      
+        }
+        private bool ValidarEliminar_SiExisteLLaveForanea(Entities.ClinicaDrFuentesEntities Contexto, int idAlergia)
+        {
+            var list = ListarClientesConAlergia(idAlergia).ToList();
+            if (list.Count > 0)
+            {
+                MensajeSiExisteLlaveForanea(list);
+                return true;
+            }
+            else
+                return false;
+        }
+        private List<Entities.ClienteAlergia> ListarClientesConAlergia(int idAlergia)
+        {
+            using (ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities())
+            {
+                return Contexto.ClienteAlergias.Where(EntidadLocal  => EntidadLocal.IdAlergia == idAlergia).ToList();
+            }
+        }
+        private void MensajeSiExisteLlaveForanea(List<Entities.ClienteAlergia> list)
+        {
+            String datos = String.Empty;
+            foreach (var item in list)
+            {
+                datos += "\n Número Cliente:" + "  " + item.IdCLiente ;
+            }
+            System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+                ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
+                , System.Windows.Forms.MessageBoxButtons.OK
+                , System.Windows.Forms.MessageBoxIcon.Warning
+                );
         }
     }
 }

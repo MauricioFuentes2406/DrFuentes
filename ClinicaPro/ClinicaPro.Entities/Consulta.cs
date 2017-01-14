@@ -17,10 +17,10 @@ namespace ClinicaPro.Entities
         public Consulta()
         {
             this.ElectroResultados = new HashSet<ElectroResultado>();
-            this.Seguimientoes = new HashSet<Seguimiento>();
             this.GeneralTipoServicios = new HashSet<GeneralTipoServicio>();
             this.AntecedenteDrogra = new HashSet<AntecedenteDrogra>();
             this.AntecedenteVacuna = new HashSet<AntecedenteVacuna>();
+            this.Seguimiento = new HashSet<Seguimiento>();
         }
     
         public int IdConsulta { get; set; }
@@ -54,7 +54,6 @@ namespace ClinicaPro.Entities
         public virtual ConsultaToraxPulmone ConsultaToraxPulmone { private get; set; }
         public virtual CoordinacionyMarcha CoordinacionyMarcha { private get; set; }
         public virtual ICollection<ElectroResultado> ElectroResultados { private get; set; }
-        public virtual ICollection<Seguimiento> Seguimientoes { private get; set; }
         public virtual ConsultaEstadoVivienda ConsultaEstadoVivienda { private get; set; }
         public virtual ConsultaExploracionFisica ConsultaExploracionFisica { private get; set; }
         public virtual ICollection<GeneralTipoServicio> GeneralTipoServicios { get; set; }
@@ -67,5 +66,6 @@ namespace ClinicaPro.Entities
         public virtual EscalaTiempo EscalaTiempo { get; set; }
         public virtual ConsultaAbdomen ConsultaAbdomen { get; set; }
         public virtual ConsultaBoca ConsultaBoca { get; set; }
+        public virtual ICollection<Seguimiento> Seguimiento { get; set; }
     }
 }

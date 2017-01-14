@@ -12,15 +12,16 @@ namespace ClinicaPro.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Seguimiento
+    public partial class Ingresos
     {
-        public int IdSeguimiento { get; set; }
-        public int IdConsulta { get; set; }
-        public System.DateTime FechaSeguimiento { get; set; }
-        public byte Prioridad { get; set; }
-        public string Descripcion { get; set; }
-        public int Estado { get; set; }
+        public int IdIngreso { get; set; }
+        public int IdTipoUsuario { get; set; }
+        public int CantidadIngreso { get; set; }
+        public System.DateTime FechaDeIngreso { get; set; }
+        public string DescripcionBreve { get; set; }
     
-        public virtual Consulta Consulta { get; set; }
+        public virtual CategoriaIngreso CategoriaIngreso { get; set; }
+        public virtual FuenteIngreso FuenteIngreso { get; set; }
+        public virtual TipoUsuario TipoUsuario { get; set; }
     }
 }

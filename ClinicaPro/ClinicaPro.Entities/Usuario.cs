@@ -18,7 +18,6 @@ namespace ClinicaPro.Entities
         public string Username { get; set; }
         public string Password { get; set; }
         public int Estado { get; set; }
-        public Nullable<int> IdTipoUsuario { get; set; }
         public string Nombre { get; set; }
         public Nullable<int> Telefono { get; set; }
         public string Apellido1 { get; set; }
@@ -26,6 +25,6 @@ namespace ClinicaPro.Entities
         public string FraseRecordar { get; set; }
         public string Email { get; set; }
     
-        public virtual TipoUsuario TipoUsuario { private get; set; }
+        public virtual TipoUsuario TipoUsuario { get; set; }
     }
 }

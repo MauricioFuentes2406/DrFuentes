@@ -59,7 +59,6 @@ namespace Frm
                 MemoryStream ms = new MemoryStream();
                 pictureBoxImg.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
                 return ms.ToArray();
-
             }
             else
             {
@@ -67,8 +66,8 @@ namespace Frm
             }
 
             return bytecode;
-
         }
+
         private void Clase_A_Controles(Busqueda Entidad)
         {
             if (Entidad.BusquedaImagenes != null)
@@ -88,7 +87,13 @@ namespace Frm
             lista.Add(busquedaImg);
             return lista;
         }
-        private Busqueda Controles_A_Clase() // No añade el Id
+        /// <summary>
+        /// Crea una instacia Busqueda con los datos en los controles , 
+        
+        /// </summary>        
+        /// 
+        /// <returns></returns>
+        private Busqueda Controles_A_Clase() 
         {
             Busqueda busqueda = new Busqueda();
             busqueda.BusquedaImagenes = creaInstanciaBusquedaImagen();
@@ -97,7 +102,7 @@ namespace Frm
             busqueda.Nombre = txtNombre.Text.ToLower().Trim();
             busqueda.Síntoma = txtSintoma.Text.Trim();
             busqueda.Tratamiento = txtTratamiento.Text.Trim();
-            if (IdItem != -1)
+            if (accion.Modificar)
             {
                 busqueda.IdItem = this.IdItem;
             }
@@ -138,7 +143,6 @@ namespace Frm
         {
             ClinicaPro.BL.AutoCompleteTextControl.Activar(txtNombre, BusquedaDB.ListarNombres());            
         }
-
         private void DesactivarAutoCompletetxtNombre()
         {
             ClinicaPro.BL.AutoCompleteTextControl.DesActivar(txtNombre);          
@@ -153,6 +157,15 @@ namespace Frm
             txtTratamiento.Text = String.Empty;
             pictureBoxImg.Image = null;
         }
+        private void Agregar_Modificar(bool isModificar)
+        {
+            ClinicaPro.DB.BusquedaDB busquedaDB = new BusquedaDB();
+            int a = busquedaDB.Agregar_Modificar(Controles_A_Clase(), isModificar);
+            if (a >= 1)
+            {
+                MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.Agregar_Modificar);
+            }
+        }
         #endregion
         #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -165,21 +178,10 @@ namespace Frm
             {
                 if (IdItem == -1)
                 {
-                    ClinicaPro.DB.BusquedaDB busquedaDB = new BusquedaDB();
-                    int a = busquedaDB.Agregar_Modificar(Controles_A_Clase(), accion.Agregar);
-                    if (a >= 1)
-                    {
-                        MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.Agregar_Modificar);
-                    }
-                } if (IdItem != 1)
+                    Agregar_Modificar(accion.Agregar);                    
+                } if (IdItem > 0)
                 {
-                    ClinicaPro.DB.BusquedaDB busquedaDB = new BusquedaDB();
-                    int a = busquedaDB.Agregar_Modificar(Controles_A_Clase(), accion.Modificar);
-                    if (a >= 1)
-                    {
-                        MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.Agregar_Modificar);
-                    }
-
+                    Agregar_Modificar(accion.Modificar);
                 }
                 LimpiarControles();
             }
@@ -273,5 +275,10 @@ namespace Frm
         }
 
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Diccionario.frmBusquedaAvanzada().Show();
+        }
     }
 }

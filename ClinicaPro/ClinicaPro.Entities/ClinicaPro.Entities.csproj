@@ -75,6 +75,12 @@
     <Compile Include="BusquedaImagene.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="CategoriaIngreso.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriasGasto.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="Cita.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -175,13 +181,19 @@
     <Compile Include="Familiar.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="GastosGenerale.cs">
+    <Compile Include="FuenteIngreso.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gastos.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="GeneralTipoServicio.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="GlasgowResultado.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ingresos.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="InventarioMedicina.cs">
@@ -228,9 +240,6 @@
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoExamene.cs">
-      <DependentUpon>ModelClinica.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TipoGastosGenerale.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoUsuario.cs">

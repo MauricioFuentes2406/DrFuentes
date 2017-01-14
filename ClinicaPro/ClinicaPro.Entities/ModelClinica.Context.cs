@@ -59,16 +59,12 @@ namespace ClinicaPro.Entities
         public virtual DbSet<ExamenesResultado> ExamenesResultadoes { get; set; }
         public virtual DbSet<ExploracionMano> ExploracionManos { get; set; }
         public virtual DbSet<Familiar> Familiars { get; set; }
-        public virtual DbSet<GastosGenerale> GastosGenerales { get; set; }
         public virtual DbSet<GeneralTipoServicio> GeneralTipoServicios { get; set; }
         public virtual DbSet<InventarioMedicina> InventarioMedicinas { get; set; }
-        public virtual DbSet<Seguimiento> Seguimientoes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TipoAlergia> TipoAlergias { get; set; }
         public virtual DbSet<TipoCita> TipoCitas { get; set; }
         public virtual DbSet<TipoExamene> TipoExamenes { get; set; }
-        public virtual DbSet<TipoGastosGenerale> TipoGastosGenerales { get; set; }
-        public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<ExpedienteT> ExpedienteTs { get; set; }
         public virtual DbSet<Vista_TiposAlergia_comboBox> Vista_TiposAlergia_comboBox { get; set; }
@@ -94,6 +90,13 @@ namespace ClinicaPro.Entities
         public virtual DbSet<VistaToraxPulmones> VistaToraxPulmones { get; set; }
         public virtual DbSet<ConsultaBoca> ConsultaBocas { get; set; }
         public virtual DbSet<VistaClienteAlergias> VistaClienteAlergias { get; set; }
+        public virtual DbSet<CategoriaIngreso> CategoriaIngreso { get; set; }
+        public virtual DbSet<CategoriasGasto> CategoriasGasto { get; set; }
+        public virtual DbSet<FuenteIngreso> FuenteIngreso { get; set; }
+        public virtual DbSet<Gastos> Gastos { get; set; }
+        public virtual DbSet<Ingresos> Ingresos { get; set; }
+        public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
+        public virtual DbSet<Seguimiento> Seguimiento { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

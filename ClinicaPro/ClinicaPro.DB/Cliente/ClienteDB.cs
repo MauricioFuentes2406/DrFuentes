@@ -83,12 +83,10 @@ namespace ClinicaPro.DB.Cliente
                { 
                 Entities.Cliente borrarCliente = Contexto.Clientes.Find(idCliente);
                 if (borrarCliente != null)
-                {
-                   
+                {                   
                         Contexto.Clientes.Remove(borrarCliente);
                         Contexto.SaveChanges();
-                        return true;                    
-                    
+                        return true;                                        
                 }
                 else  
                 {                    

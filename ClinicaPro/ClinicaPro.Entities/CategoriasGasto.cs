@@ -12,22 +12,16 @@ namespace ClinicaPro.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class TipoUsuario
+    public partial class CategoriasGasto
     {
-        public TipoUsuario()
+        public CategoriasGasto()
         {
-            this.FuenteIngreso = new HashSet<FuenteIngreso>();
             this.Gastos = new HashSet<Gastos>();
-            this.Ingresos = new HashSet<Ingresos>();
-            this.Usuario = new HashSet<Usuario>();
         }
     
-        public int IdTipoUsuario { get; set; }
-        public string NombreTipo { get; set; }
+        public byte IdCategoriaGasto { get; set; }
+        public string Nombre { get; set; }
     
-        public virtual ICollection<FuenteIngreso> FuenteIngreso { get; set; }
         public virtual ICollection<Gastos> Gastos { get; set; }
-        public virtual ICollection<Ingresos> Ingresos { get; set; }
-        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }
