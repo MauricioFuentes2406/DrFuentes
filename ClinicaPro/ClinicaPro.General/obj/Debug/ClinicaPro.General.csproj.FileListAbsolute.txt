@@ -2,3 +2,11 @@ E:\Practicas c#\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.dll
 E:\Practicas c#\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.pdb
 E:\Practicas c#\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.dll
 E:\Practicas c#\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.pdb
+<<<<<<< HEAD
+=======
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.dll
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.pdb
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.dll
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.pdb
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.csprojResolveAssemblyReference.cache
+>>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
