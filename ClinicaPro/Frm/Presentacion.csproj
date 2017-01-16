@@ -179,6 +179,12 @@
     <Compile Include="gridbusqueda.Designer.cs">
       <DependentUpon>gridbusqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresoGastos\frmVentanaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoGastos\frmVentanaInicial.Designer.cs">
+      <DependentUpon>frmVentanaInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -603,12 +609,6 @@
   <ItemGroup>
     <None Include="Resources\molecule 100.gif" />
   </ItemGroup>
-<<<<<<< HEAD
-  <ItemGroup>
-    <Folder Include="GastosIngresos\" />
-  </ItemGroup>
-=======
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

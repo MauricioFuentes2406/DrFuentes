@@ -19,9 +19,6 @@ namespace Frm.Diccionario
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-        #region Metodos
-=======
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -31,7 +28,6 @@ namespace Frm.Diccionario
         {
             cargarGrid();
         }
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
         private void cargarGrid()
         {
             this.dgBusqueda.DataSource = new ClinicaPro.DB.BusquedaDB().Listar();
@@ -50,30 +46,9 @@ namespace Frm.Diccionario
             txtSintoma.ResetText();
             txtTratamiento.ResetText();
         }
-<<<<<<< HEAD
-        /// <summary>
-        /// Si hay mas de  un  resultado actualiza Grid, sino muestra un mensaje
-        /// </summary>
-        /// <param name="resultado"></param>
-        private void validarBusqueda(List<ClinicaPro.Entities.Busqueda> resultado)
-        {
-            if (resultado.Count == 0)
-            {
-                MessageBox.Show(Mensajes.No_Se_Encontro_Ningun_Registro, "Intenta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                this.dgBusqueda.DataSource = resultado;
-        }
-        #endregion
-        #region Eventos
-        private void frmBusquedaAvanzada_Load(object sender, EventArgs e)
-        {
-            cargarGrid();
-=======
         private void txtTratamiento_TextChanged(object sender, EventArgs e)
         {
 
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -84,11 +59,7 @@ namespace Frm.Diccionario
         {
             var resultado = new ClinicaPro.DB.BusquedaDB().ListarNombre(txtNombre.Text);
             validarBusqueda(resultado);
-<<<<<<< HEAD
-        }
-=======
         }       
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
         private void btnBusquedaSintoma_Click(object sender, EventArgs e)
         {
             var resultado = new ClinicaPro.DB.BusquedaDB().ListarSintoma(txtSintoma.Text);
@@ -103,24 +74,12 @@ namespace Frm.Diccionario
 
         private void btnBusquedaEnfermedadRelaionada_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            var resultado = new ClinicaPro.DB.BusquedaDB().ListarEnfermedadRelacionada(txtEnfeRelacionada.Text);
-            validarBusqueda(resultado);
-=======
           var resultado = new ClinicaPro.DB.BusquedaDB().ListarEnfermedadRelacionada(txtEnfeRelacionada.Text);
           validarBusqueda(resultado);
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
         }
 
         private void btnBusquedaDescripcion_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            var resultado = new ClinicaPro.DB.BusquedaDB().ListarDescripcion(txtDescricpcion.Text);
-            validarBusqueda(resultado);
-        }
-        #endregion     
-      
-=======
            var resultado = new ClinicaPro.DB.BusquedaDB().ListarDescripcion(txtDescricpcion.Text);
            validarBusqueda(resultado);
         }
@@ -137,7 +96,6 @@ namespace Frm.Diccionario
             else
                 this.dgBusqueda.DataSource = resultado;
         }
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
     }
 }
  

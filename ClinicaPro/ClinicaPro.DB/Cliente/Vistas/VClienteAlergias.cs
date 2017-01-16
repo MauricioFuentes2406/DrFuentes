@@ -27,8 +27,7 @@ namespace ClinicaPro.DB.Cliente.Vistas
                 {
                     lista.AddRange( (from tabla in Contexto.VistaClienteAlergias.AsNoTracking()
                                                                  where tabla.Número_Cliente == idCliente
-                                                                 select tabla).ToList() );
-                   
+                                                                 select tabla).ToList() );                   
                 }
                 return lista;
             }

@@ -118,7 +118,6 @@ namespace ClinicaPro.DB
                        where tabla.Síntoma.Contains(sintoma)
                        select tabla).ToList();
            }
-<<<<<<< HEAD
        }
        public List<Entities.Busqueda> ListarTratamiento(string tratamiento)
        {
@@ -140,29 +139,6 @@ namespace ClinicaPro.DB
                        select tabla).ToList();
            }
        }
-=======
-       }
-       public List<Entities.Busqueda> ListarTratamiento(string tratamiento)
-       {
-           using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
-           {
-
-               return (from tabla in Contexto.Busquedas
-                       where tabla.Tratamiento.Contains(tratamiento)
-                       select tabla).ToList();
-           }
-       }
-       public List<Entities.Busqueda> ListarEnfermedadRelacionada(string enfermedadRelacionada)
-       {
-           using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
-           {
-
-               return (from tabla in Contexto.Busquedas
-                       where tabla.EnfermedadRelacionada.Contains(enfermedadRelacionada)
-                       select tabla).ToList();
-           }
-       }
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
        public List<Entities.Busqueda> ListarDescripcion(string descripcion)
        {
            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
@@ -173,12 +149,8 @@ namespace ClinicaPro.DB
                        select tabla).ToList();
            }
        }    
-<<<<<<< HEAD
-        #endregion
-=======
 
         #endregion
 
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
     }
 }

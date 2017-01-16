@@ -43,7 +43,7 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoAlergia" Width="1.5" PointX="0.5" PointY="49.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoCita" Width="1.5" PointX="3" PointY="54.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoExamene" Width="1.5" PointX="3" PointY="45.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Usuario" Width="1.5" PointX="4" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Usuario" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExpedienteT" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Consulta" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar" ManuallyRouted="false" />
@@ -128,7 +128,7 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAntecedenteHereditario" Width="1.5" PointX="7.375" PointY="10.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaExploracionFisica" Width="1.5" PointX="9.375" PointY="10.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaConsulta" Width="1.5" PointX="2.125" PointY="11.375" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaServicios" Width="1.5" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaServicios" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaDrogas" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaVacunas" Width="1.5" PointX="12.375" PointY="3.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAlchol" Width="1.5" PointX="12.375" PointY="6.75" />
@@ -138,12 +138,12 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ConsultaBoca" Width="1.5" PointX="10.5" PointY="18.25" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaClienteAlergias" Width="2.875" PointX="13.375" PointY="12.75" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.CategoriaIngreso" Width="1.5" PointX="5.75" PointY="19.125" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.CategoriasGasto" Width="1.5" PointX="2.75" PointY="4.125" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.FuenteIngreso" Width="1.5" PointX="1.375" PointY="6.875" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Gastos" Width="1.5" PointX="3.75" PointY="0.5" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Ingresos" Width="1.5" PointX="8" PointY="0.5" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoUsuario" Width="1.5" PointX="0.5" PointY="9.25" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.CategoriaIngreso" Width="1.5" PointX="6" PointY="19.375" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.CategoriasGasto" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.FuenteIngreso" Width="1.5" PointX="1.125" PointY="7" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Gasto" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Ingreso" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="10.875" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_CategoriaIngreso" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoGastosGenerales" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" />

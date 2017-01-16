@@ -184,7 +184,7 @@
     <Compile Include="FuenteIngreso.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gastos.cs">
+    <Compile Include="Gasto.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="GeneralTipoServicio.cs">
@@ -193,7 +193,7 @@
     <Compile Include="GlasgowResultado.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="Ingresos.cs">
+    <Compile Include="Ingreso.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="InventarioMedicina.cs">

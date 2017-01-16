@@ -109,12 +109,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 3;
-<<<<<<< HEAD
-            this.label2.Text = "Sintoma";            
-=======
             this.label2.Text = "Sintoma";
             this.label2.Click += new System.EventHandler(this.label2_Click);
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
             // 
             // label3
             // 
@@ -166,12 +162,8 @@
             this.txtTratamiento.MaxLength = 350;
             this.txtTratamiento.Name = "txtTratamiento";
             this.txtTratamiento.Size = new System.Drawing.Size(187, 20);
-<<<<<<< HEAD
-            this.txtTratamiento.TabIndex = 4;            
-=======
             this.txtTratamiento.TabIndex = 4;
             this.txtTratamiento.TextChanged += new System.EventHandler(this.txtTratamiento_TextChanged);
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
             // 
             // txtEnfeRelacionada
             // 

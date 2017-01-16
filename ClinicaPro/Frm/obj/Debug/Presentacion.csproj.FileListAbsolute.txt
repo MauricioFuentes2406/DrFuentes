@@ -77,8 +77,6 @@ E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Presentacion.csproj.GenerateResource.Ca
 E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.exe
 E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\Frm.exe.config
-<<<<<<< HEAD
-=======
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\Frm.exe
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\Frm.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\bin\Debug\ClinicaPro.BL.dll
@@ -131,4 +129,6 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.exe
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Configuracion.frmAlergias.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Diccionario.frmBusquedaAvanzada.resources
->>>>>>> 8fc416171393af624873d94fe5df1cead5e5a5e5
+E:\New folder\DrFuentes-master\ClinicaPro\Frm\bin\Debug\Frm.exe.config
+E:\New folder\DrFuentes-master\ClinicaPro\Frm\obj\Debug\Frm.exe
+E:\New folder\DrFuentes-master\ClinicaPro\Frm\obj\Debug\Frm.pdb
