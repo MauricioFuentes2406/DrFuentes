@@ -14,5 +14,9 @@ namespace ClinicaPro.BL
                return peso / (talla * talla);
            else return 0;
        }
+       public static int Saldo(int Ingreso , int Gasto )
+      {
+          return Ingreso - Gasto;
+      }
     }
 }

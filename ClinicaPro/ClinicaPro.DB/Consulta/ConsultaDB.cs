@@ -170,5 +170,24 @@ namespace ClinicaPro.DB.Consulta
         {
             return false;
         }
+        public int SumarConsultaMesActual()
+        {
+            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities() )
+            {
+                return (from tabla in Contexto.Consultas
+                        where tabla.FechaConsulta.Month == DateTime.Now.Month &&
+                              tabla.FechaConsulta.Year == DateTime.Now.Year
+                        select tabla.CobroFinalDeConsulta).Sum();
+            }
+        }
+        public List<int> ListaIdConsultaPorCliente(int idCliente)
+        {
+            using (Entities.ClinicaDrFuentesEntities Contexto  = new Entities.ClinicaDrFuentesEntities())
+            {
+                return (from tabla in Contexto.Consultas
+                        where tabla.IdCliente == idCliente
+                        select tabla.IdConsulta).ToList();
+            }
+        }
     }
 }

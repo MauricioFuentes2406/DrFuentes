@@ -128,7 +128,7 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAntecedenteHereditario" Width="1.5" PointX="7.375" PointY="10.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaExploracionFisica" Width="1.5" PointX="9.375" PointY="10.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaConsulta" Width="1.5" PointX="2.125" PointY="11.375" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaServicios" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaServicios" Width="1.5" PointX="8.25" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaDrogas" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaVacunas" Width="1.5" PointX="12.375" PointY="3.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaAlchol" Width="1.5" PointX="12.375" PointY="6.75" />
@@ -141,8 +141,8 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.CategoriaIngreso" Width="1.5" PointX="6" PointY="19.375" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.CategoriasGasto" Width="1.5" PointX="3" PointY="4.375" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.FuenteIngreso" Width="1.5" PointX="1.125" PointY="7" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Gasto" Width="1.5" PointX="5.25" PointY="0.75" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Ingreso" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Gasto" Width="1.5" PointX="4.125" PointY="0.625" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Ingreso" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="10.875" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_CategoriaIngreso" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoGastosGenerales" />

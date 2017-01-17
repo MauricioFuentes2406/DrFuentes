@@ -75,6 +75,12 @@ namespace ClinicaPro.DB.Cliente
                 throw ex;
             }
         }
+        /// <summary>
+        /// Elimina un Cliente y las Consultas Asociadas // Seguimientos y citas  aun no
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <param name="idTipoUsuario"></param>
+        /// <returns></returns>
         public bool Eliminar(int idCliente, int idTipoUsuario)
         {           
             using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities())
@@ -82,6 +88,9 @@ namespace ClinicaPro.DB.Cliente
                try
                { 
                 Entities.Cliente borrarCliente = Contexto.Clientes.Find(idCliente);
+
+                EliminarConsultasAsociadas(borrarCliente, idTipoUsuario);
+
                 if (borrarCliente != null)
                 {                   
                         Contexto.Clientes.Remove(borrarCliente);
@@ -154,6 +163,18 @@ namespace ClinicaPro.DB.Cliente
             MessageBox.Show(Mensajes.No_Se_Actualizo,Mensajes.No_hay_Cliente,
                                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return -1;
+        }
+        private void EliminarConsultasAsociadas(Entities.Cliente  Entidad,int idTipoUsuario)
+        {
+           using(ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities())
+           {
+               Consulta.ConsultaDB consultaDb = new Consulta.ConsultaDB();
+               var listIdConsulta = consultaDb.ListaIdConsultaPorCliente(Entidad.IdCliente);
+               foreach (int idConsulta in listIdConsulta)
+               {
+                   consultaDb.Eliminar(idConsulta, idTipoUsuario);
+               }
+           }
         }
     }
 }

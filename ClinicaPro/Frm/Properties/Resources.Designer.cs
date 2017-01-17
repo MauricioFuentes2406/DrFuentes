@@ -63,6 +63,16 @@ namespace Frm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_1 {
+            get {
+                object obj = ResourceManager.GetObject("add_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alarm_1 {
             get {
                 object obj = ResourceManager.GetObject("alarm_1", resourceCulture);
@@ -336,6 +346,16 @@ namespace Frm.Properties {
         internal static System.Drawing.Bitmap microscope {
             get {
                 object obj = ResourceManager.GetObject("microscope", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minus_1 {
+            get {
+                object obj = ResourceManager.GetObject("minus_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

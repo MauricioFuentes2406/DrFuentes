@@ -96,7 +96,6 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.AgregarArticulo.re
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Agregar_Modificar_Cliente.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.AgregarConsulta.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.AgregarExamenes.resources
-E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.AgregarGastos.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.AgregarTipoExamen.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.AgregarUsuario.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Administrador.resources
@@ -132,3 +131,6 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Diccionario.frmBus
 E:\New folder\DrFuentes-master\ClinicaPro\Frm\bin\Debug\Frm.exe.config
 E:\New folder\DrFuentes-master\ClinicaPro\Frm\obj\Debug\Frm.exe
 E:\New folder\DrFuentes-master\ClinicaPro\Frm\obj\Debug\Frm.pdb
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmVentanaInicial.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmAgregarGastos.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmAgregarIngreso.resources

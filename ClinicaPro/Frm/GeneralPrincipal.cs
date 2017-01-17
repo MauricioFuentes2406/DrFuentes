@@ -56,7 +56,7 @@ namespace Frm
 
         private void button10_Click(object sender, EventArgs e)
         {
-            new AgregarGastos().Show();
+            new Frm.IngresoGastos.frmVentanaInicial().Show();
         }
 
         private void button9_Click(object sender, EventArgs e)

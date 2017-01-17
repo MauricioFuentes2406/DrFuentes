@@ -551,7 +551,7 @@
             <PropertyRef Name="IdGastos" />
             <PropertyRef Name="IdTipoUsuario" />
           </Key>
-          <Property Name="IdGastos" Type="int" Nullable="false" />
+          <Property Name="IdGastos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
           <Property Name="IdCategoriaGasto" Type="tinyint" Nullable="false" />
           <Property Name="IdFuenteIngreso" Type="int" Nullable="false" />
@@ -4697,7 +4697,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <PropertyRef Name="IdGastos" />
             <PropertyRef Name="IdTipoUsuario" />
           </Key>
-          <Property Name="IdGastos" Type="Int32" Nullable="false" />
+          <Property Name="IdGastos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdTipoUsuario" Type="Int32" Nullable="false" />
           <Property Name="CantidadGasto" Type="Int32" Nullable="false" />
           <Property Name="DescripcionBreve" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />

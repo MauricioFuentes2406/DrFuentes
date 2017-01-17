@@ -48,7 +48,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnGastosIngresos = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -245,7 +245,7 @@
             // 
             this.panel4.Controls.Add(this.button13);
             this.panel4.Controls.Add(this.btnConfiguracion);
-            this.panel4.Controls.Add(this.button10);
+            this.panel4.Controls.Add(this.btnGastosIngresos);
             this.panel4.Controls.Add(this.button9);
             this.panel4.Location = new System.Drawing.Point(25, 243);
             this.panel4.Name = "panel4";
@@ -281,20 +281,20 @@
             this.btnConfiguracion.UseVisualStyleBackColor = true;
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
-            // button10
+            // btnGastosIngresos
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = global::Frm.Properties.Resources.point_of_service;
-            this.button10.Location = new System.Drawing.Point(158, 12);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(115, 123);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "Gastos";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.btnGastosIngresos.FlatAppearance.BorderSize = 0;
+            this.btnGastosIngresos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGastosIngresos.Image = global::Frm.Properties.Resources.point_of_service;
+            this.btnGastosIngresos.Location = new System.Drawing.Point(158, 12);
+            this.btnGastosIngresos.Name = "btnGastosIngresos";
+            this.btnGastosIngresos.Size = new System.Drawing.Size(115, 123);
+            this.btnGastosIngresos.TabIndex = 3;
+            this.btnGastosIngresos.Text = "Gastos e Ingresos";
+            this.btnGastosIngresos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGastosIngresos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGastosIngresos.UseVisualStyleBackColor = true;
+            this.btnGastosIngresos.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -393,7 +393,7 @@
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button btnConfiguracion;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnGastosIngresos;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

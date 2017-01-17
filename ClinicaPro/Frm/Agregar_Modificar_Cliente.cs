@@ -37,7 +37,6 @@ namespace Frm
             abrirConsulta = DialogResult.No;  // Define si abrir inmediatamente el FrmAgregarConsulta por defecto No
             InitializeComponent();
         }
-
 #region Eventos
         private void AgregarCliente_Load(object sender, EventArgs e)
         {           

@@ -102,6 +102,11 @@
     <Compile Include="Consulta\Vistas\VToraxPulmones.cs" />
     <Compile Include="Consulta\Vistas\VVacunas.cs" />
     <Compile Include="FechaHoraServidorDB.cs" />
+    <Compile Include="GastosIngresos\CategoriaGastoDB.cs" />
+    <Compile Include="GastosIngresos\CategoriaIngresoDB.cs" />
+    <Compile Include="GastosIngresos\FuenteIngresoDB.cs" />
+    <Compile Include="GastosIngresos\GastosDB.cs" />
+    <Compile Include="GastosIngresos\IngresoDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +126,7 @@
   <ItemGroup>
     <None Include="Consulta\RuleSet1.ruleset" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
