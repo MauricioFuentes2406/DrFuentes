@@ -866,6 +866,44 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaExploracionFisica'
           <Property Name="IndiceMasaCorporal" Type="decimal" Precision="21" Scale="14" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaGasto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VistaGasto">
+          <Key>
+            <PropertyRef Name="IdTipoUsuario" />
+            <PropertyRef Name="IdGastos" />
+            <PropertyRef Name="Categoría" />
+            <PropertyRef Name="CantidadGasto" />
+            <PropertyRef Name="Fuente_Ingreso" />
+            <PropertyRef Name="FechaDeGasto" />
+          </Key>
+          <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
+          <Property Name="IdGastos" Type="int" Nullable="false" />
+          <Property Name="Categoría" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CantidadGasto" Type="int" Nullable="false" />
+          <Property Name="Fuente_Ingreso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DescripcionBreve" Type="varchar" MaxLength="300" />
+          <Property Name="FechaDeGasto" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaIngreso' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VistaIngreso">
+          <Key>
+            <PropertyRef Name="IdTipoUsuario" />
+            <PropertyRef Name="IdIngreso" />
+            <PropertyRef Name="Categoría" />
+            <PropertyRef Name="CantidadIngreso" />
+            <PropertyRef Name="Fuente_Ingreso" />
+            <PropertyRef Name="FechaDeIngreso" />
+          </Key>
+          <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
+          <Property Name="IdIngreso" Type="int" Nullable="false" />
+          <Property Name="Categoría" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CantidadIngreso" Type="int" Nullable="false" />
+          <Property Name="Fuente_Ingreso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DescripcionBreve" Type="varchar" MaxLength="300" />
+          <Property Name="FechaDeIngreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaServicios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VistaServicios">
           <Key>
@@ -1999,6 +2037,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_IngresoGastosUltimos_10" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoUsuario" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -2179,6 +2220,28 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     [VistaExploracionFisica].[FrecuenciaRespiratoria] AS [FrecuenciaRespiratoria], 
     [VistaExploracionFisica].[IndiceMasaCorporal] AS [IndiceMasaCorporal]
     FROM [dbo].[VistaExploracionFisica] AS [VistaExploracionFisica]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaGasto" EntityType="Self.VistaGasto" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaGasto].[IdTipoUsuario] AS [IdTipoUsuario], 
+    [VistaGasto].[IdGastos] AS [IdGastos], 
+    [VistaGasto].[Categoría] AS [Categoría], 
+    [VistaGasto].[CantidadGasto] AS [CantidadGasto], 
+    [VistaGasto].[Fuente_Ingreso] AS [Fuente_Ingreso], 
+    [VistaGasto].[DescripcionBreve] AS [DescripcionBreve], 
+    [VistaGasto].[FechaDeGasto] AS [FechaDeGasto]
+    FROM [dbo].[VistaGasto] AS [VistaGasto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaIngreso" EntityType="Self.VistaIngreso" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaIngreso].[IdTipoUsuario] AS [IdTipoUsuario], 
+    [VistaIngreso].[IdIngreso] AS [IdIngreso], 
+    [VistaIngreso].[Categoría] AS [Categoría], 
+    [VistaIngreso].[CantidadIngreso] AS [CantidadIngreso], 
+    [VistaIngreso].[Fuente_Ingreso] AS [Fuente_Ingreso], 
+    [VistaIngreso].[DescripcionBreve] AS [DescripcionBreve], 
+    [VistaIngreso].[FechaDeIngreso] AS [FechaDeIngreso]
+    FROM [dbo].[VistaIngreso] AS [VistaIngreso]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VistaServicios" EntityType="Self.VistaServicios" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -4204,6 +4267,11 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="Consulta" EntitySet="Consultas" />
             <End Role="Seguimiento" EntitySet="Seguimientoes" />
           </AssociationSet>
+          <FunctionImport Name="sp_IngresoGastosUltimos_10" ReturnType="Collection(ClinicaDrFuentesModel.sp_IngresoGastosUltimos_10_Result)">
+          <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="VistaGasto" EntityType="ClinicaDrFuentesModel.VistaGasto" />
+          <EntitySet Name="VistaIngreso" EntityType="ClinicaDrFuentesModel.VistaIngreso" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -4804,6 +4872,48 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="sp_IngresoGastosUltimos_10_Result">
+          <Property Type="Int32" Name="IdTipoUsuario" Nullable="false" />
+          <Property Type="Int32" Name="IdFuenteIngreso" Nullable="false" />
+          <Property Type="String" Name="Cantidad" Nullable="false" MaxLength="13" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DescripcionBreve" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <EntityType Name="VistaGasto">
+          <Key>
+            <PropertyRef Name="IdGastos" />
+            <PropertyRef Name="Categoría" />
+            <PropertyRef Name="CantidadGasto" />
+            <PropertyRef Name="Fuente_Ingreso" />
+            <PropertyRef Name="FechaDeGasto" />
+            <PropertyRef Name="IdTipoUsuario" />
+          </Key>
+          <Property Name="IdTipoUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IdGastos" Type="Int32" Nullable="false" />
+          <Property Name="Categoría" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadGasto" Type="Int32" Nullable="false" />
+          <Property Name="Fuente_Ingreso" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DescripcionBreve" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDeGasto" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="VistaIngreso">
+          <Key>
+            <PropertyRef Name="IdIngreso" />
+            <PropertyRef Name="Categoría" />
+            <PropertyRef Name="CantidadIngreso" />
+            <PropertyRef Name="Fuente_Ingreso" />
+            <PropertyRef Name="FechaDeIngreso" />
+            <PropertyRef Name="IdTipoUsuario" />
+          </Key>
+          <Property Name="IdTipoUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IdIngreso" Type="Int32" Nullable="false" />
+          <Property Name="Categoría" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadIngreso" Type="Int32" Nullable="false" />
+          <Property Name="Fuente_Ingreso" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DescripcionBreve" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDeIngreso" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5835,6 +5945,44 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_IngresoGastosUltimos_10" FunctionName="ClinicaDrFuentesModel.Store.sp_IngresoGastosUltimos_10">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.sp_IngresoGastosUltimos_10_Result">
+                <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+                <ScalarProperty Name="IdFuenteIngreso" ColumnName="IdFuenteIngreso" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="DescripcionBreve" ColumnName="DescripcionBreve" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="VistaGasto">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaGasto">
+              <MappingFragment StoreEntitySet="VistaGasto">
+                <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+                <ScalarProperty Name="FechaDeGasto" ColumnName="FechaDeGasto" />
+                <ScalarProperty Name="DescripcionBreve" ColumnName="DescripcionBreve" />
+                <ScalarProperty Name="Fuente_Ingreso" ColumnName="Fuente_Ingreso" />
+                <ScalarProperty Name="CantidadGasto" ColumnName="CantidadGasto" />
+                <ScalarProperty Name="Categoría" ColumnName="Categoría" />
+                <ScalarProperty Name="IdGastos" ColumnName="IdGastos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VistaIngreso">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaIngreso">
+              <MappingFragment StoreEntitySet="VistaIngreso">
+                <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+                <ScalarProperty Name="FechaDeIngreso" ColumnName="FechaDeIngreso" />
+                <ScalarProperty Name="DescripcionBreve" ColumnName="DescripcionBreve" />
+                <ScalarProperty Name="Fuente_Ingreso" ColumnName="Fuente_Ingreso" />
+                <ScalarProperty Name="CantidadIngreso" ColumnName="CantidadIngreso" />
+                <ScalarProperty Name="Categoría" ColumnName="Categoría" />
+                <ScalarProperty Name="IdIngreso" ColumnName="IdIngreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -5849,7 +5997,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />

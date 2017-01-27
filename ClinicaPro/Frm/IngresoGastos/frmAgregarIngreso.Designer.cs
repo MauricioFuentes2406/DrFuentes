@@ -55,7 +55,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(206, 317);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 38);
-            this.btnCancelar.TabIndex = 53;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(80, 317);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(92, 38);
-            this.btnGuardar.TabIndex = 52;
+            this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -102,7 +102,8 @@
             this.dtFecha.Location = new System.Drawing.Point(80, 150);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(218, 20);
-            this.dtFecha.TabIndex = 49;
+            this.dtFecha.TabIndex = 3;
+            this.dtFecha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtFecha_KeyDown);
             // 
             // label4
             // 
@@ -120,7 +121,8 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(218, 81);
-            this.txtDescripcion.TabIndex = 47;
+            this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcion_KeyDown);
             // 
             // label3
             // 
@@ -139,7 +141,8 @@
             this.cbCategoria.Location = new System.Drawing.Point(124, 111);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cbCategoria.TabIndex = 45;
+            this.cbCategoria.TabIndex = 2;
+            this.cbCategoria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbCategoria_KeyDown);
             // 
             // label2
             // 
@@ -158,7 +161,8 @@
             this.cbFuenteIngreso.Location = new System.Drawing.Point(125, 74);
             this.cbFuenteIngreso.Name = "cbFuenteIngreso";
             this.cbFuenteIngreso.Size = new System.Drawing.Size(121, 21);
-            this.cbFuenteIngreso.TabIndex = 43;
+            this.cbFuenteIngreso.TabIndex = 1;
+            this.cbFuenteIngreso.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbFuenteIngreso_KeyDown);
             // 
             // btnCalcu
             // 
@@ -169,7 +173,7 @@
             this.btnCalcu.Location = new System.Drawing.Point(263, 22);
             this.btnCalcu.Name = "btnCalcu";
             this.btnCalcu.Size = new System.Drawing.Size(53, 46);
-            this.btnCalcu.TabIndex = 42;
+            this.btnCalcu.TabIndex = 7;
             this.btnCalcu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalcu.UseVisualStyleBackColor = true;
             this.btnCalcu.Click += new System.EventHandler(this.btnCalcu_Click);
@@ -185,6 +189,7 @@
             // 
             // numCantidad
             // 
+            this.numCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numCantidad.Location = new System.Drawing.Point(125, 37);
             this.numCantidad.Maximum = new decimal(new int[] {
             2147483647,
@@ -193,8 +198,9 @@
             0});
             this.numCantidad.Name = "numCantidad";
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
-            this.numCantidad.TabIndex = 40;
+            this.numCantidad.TabIndex = 0;
             this.numCantidad.ThousandsSeparator = true;
+            this.numCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numCantidad_KeyDown);
             // 
             // frmAgregarIngreso
             // 

@@ -125,8 +125,7 @@ namespace ClinicaPro.DB.Consulta
             
                 return (from tabla in Contexto.Consultas.AsNoTracking()
                         where tabla.IdConsulta == idConsuta
-                        select tabla).First();          
-            
+                        select tabla).First();                      
         }
         /// <summary>
         /// Actuliza la Lista Servicios referente a la Consulta (Multiplicidad  de Uno a Muchos  ,   : *)

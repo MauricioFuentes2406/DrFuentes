@@ -12,7 +12,7 @@ namespace ClinicaPro.DB.Cliente.Vistas
         {
             using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
-                List<Entities.VistaClienteAlergias> lista = (from tabla in Contexto.VistaClienteAlergias.AsNoTracking()
+                List<Entities.VistaClienteAlergias> lista = (from tabla in Contexto.VistaClienteAlergiasSet.AsNoTracking()
                                                                where tabla.Número_Cliente == idCliente
                                                                select tabla).ToList();
                 return lista;
@@ -25,7 +25,7 @@ namespace ClinicaPro.DB.Cliente.Vistas
                 List<Entities.VistaClienteAlergias> lista = new List<Entities.VistaClienteAlergias>();
                 foreach (var idCliente in list)
                 {
-                    lista.AddRange( (from tabla in Contexto.VistaClienteAlergias.AsNoTracking()
+                    lista.AddRange((from tabla in Contexto.VistaClienteAlergiasSet.AsNoTracking()
                                                                  where tabla.Número_Cliente == idCliente
                                                                  select tabla).ToList() );                   
                 }

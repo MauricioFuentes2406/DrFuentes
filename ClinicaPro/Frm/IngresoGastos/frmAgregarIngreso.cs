@@ -20,11 +20,20 @@ namespace Frm.IngresoGastos
         //   ~~~~~~~~ Atributos
         private int _SelectedValue;
         private int _TipoUsuario;
+        private bool isModificar ;
+        private int _Idingreso;
         public frmAgregarIngreso(List<FuenteIngreso> list, int TipoUsuario, int fuenteid)
         {
             InitializeComponent();
             constructorParametro(list,fuenteid);
             this._TipoUsuario = TipoUsuario;
+        }
+        public frmAgregarIngreso(int idIngreso, int TipoUsuario)
+        {
+            InitializeComponent();
+            this._TipoUsuario = TipoUsuario;
+            isModificar = true;
+            this._Idingreso = idIngreso;     
         }
         public frmAgregarIngreso()
         {
@@ -33,8 +42,38 @@ namespace Frm.IngresoGastos
         private void frmAgregarIngreso_Load(object sender, EventArgs e)
         {
             cargarCategoriasIngreso();
+            if (isModificar)
+            {
+                var oso = new ClinicaPro.DB.GastosIngresos.FuenteIngresoDB().ListarPorTipoCliente(this._TipoUsuario);
+                new ComboBoxBL<FuenteIngreso>().fuenteBaseDatos(cbFuenteIngreso, oso, comboNombreIDs.FuenteIngreso);
+                RecuperarBD();
+            }
         }
         #region Metodos
+        private void RecuperarBD()
+        {
+            if (this._Idingreso > 0)
+            {
+                ClinicaPro.Entities.Ingreso Entidad = new ClinicaPro.DB.GastosIngresos.IngresoDB().GetIngreso(this._Idingreso);
+                if (Entidad != null)
+                {
+                    numCantidad.Value = Entidad.CantidadIngreso;                   
+                    txtDescripcion.Text = Entidad.DescripcionBreve;
+                    dtFecha.Value = Entidad.FechaDeIngreso;
+                    try
+                    {
+                        cbCategoria.SelectedValue = Entidad.CategoriaIngreso.IdCategoriaIngreso;
+                        cbFuenteIngreso.SelectedValue = Entidad.FuenteIngreso.IdFuenteIngreso;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.InnerException.ToString());
+                        throw;
+                    }
+
+                }
+            }
+        }
         private void constructorParametro(List<FuenteIngreso> list ,  int fuenteid)
         {
             new ClinicaPro.BL.ComboBoxBL<FuenteIngreso>().fuenteBaseDatos(this.cbFuenteIngreso, list, comboNombreIDs.FuenteIngreso);
@@ -81,7 +120,10 @@ namespace Frm.IngresoGastos
             ingreso.FechaDeIngreso = dtFecha.Value;
             ingreso.FuenteIngreso = (FuenteIngreso)this.cbFuenteIngreso.SelectedItem;
             ingreso.IdTipoUsuario = this._TipoUsuario;
-
+            if (this._Idingreso > 0)
+            {
+                ingreso.IdIngreso = this._Idingreso;
+            }
             return ingreso;
         }
         private void MensajeDeActulizacion()
@@ -101,10 +143,22 @@ namespace Frm.IngresoGastos
         {
             if (!Validar())
             {
-                int result = new ClinicaPro.DB.GastosIngresos.IngresoDB().Agregar_Modificar(Ingreso_Controles_A_Clase(), ClinicaPro.General.accion.Agregar);
-                if (result > 0)
+                if (_Idingreso < 1)
                 {
-                    MensajeDeActulizacion();
+                    int result = new ClinicaPro.DB.GastosIngresos.IngresoDB().Agregar_Modificar(Ingreso_Controles_A_Clase(), ClinicaPro.General.accion.Agregar);
+
+                    if (result > 0)
+                    {
+                        MensajeDeActulizacion();
+                        this._Idingreso = result;
+                    }
+                }else
+                {
+                    int result = new ClinicaPro.DB.GastosIngresos.IngresoDB().Agregar_Modificar(Ingreso_Controles_A_Clase(), ClinicaPro.General.accion.Modificar);
+                    if (result > 0)
+                    {
+                        MensajeDeActulizacion();
+                    }
                 }
             }
         }
@@ -112,6 +166,54 @@ namespace Frm.IngresoGastos
         {
             this.Dispose();
         }
+        #region keyDown
+        private void numCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (int)Keys.Enter)
+            {
+                Control p;
+                p = ((NumericUpDown)sender).Parent;
+                p.SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+        private void cbFuenteIngreso_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (int)Keys.Enter)
+            {
+                Control p;
+                p = ((ComboBox)sender).Parent;
+                p.SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+        private void cbCategoria_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (int)Keys.Enter)
+            {
+                Control p;
+                p = ((ComboBox)sender).Parent;
+                p.SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+        private void dtFecha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (int)Keys.Enter)
+            {
+                Control p;
+                p = ((DateTimePicker)sender).Parent;
+                p.SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+        private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (int)Keys.Enter)
+            {
+                Control p;
+                p = ((TextBox)sender).Parent;
+                p.SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+        #endregion                
         #endregion     
+       
     }
 }

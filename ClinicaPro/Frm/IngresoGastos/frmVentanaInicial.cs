@@ -42,7 +42,7 @@ namespace Frm.IngresoGastos
            FechaHoyLabel();
             CargarFuenteIngreso();
             Calculos();
-            ultimos10();
+            ultimos10Movimientos();
         }
 #region Metodos
         private void Calculos()
@@ -150,14 +150,49 @@ namespace Frm.IngresoGastos
         }
         private int fuenteid()
         {
-            return (int)this.cbFuenteIngreso.SelectedValue;
+            try
+            {
+                return (int)this.cbFuenteIngreso.SelectedValue;
+            }
+            catch (Exception)
+            {                
+                return 0;
+            }
+         
         }
-        private void ColumnIngresoColorVerde()
+        
+        private void AlternarColoresEnGrid()
+        {           
+            this.dgUltimos10.Columns[0].DefaultCellStyle.ForeColor = Color.ForestGreen;
+            foreach (DataGridViewRow fila in dgUltimos10.Rows)
+            {
+                string valor = (string)fila.Cells["Cantidad"].Value; 
+              if( valor != null)
+              {
+                  if (valor.Contains("+") )                  
+                      fila.Cells["Cantidad"].Style.ForeColor = Color.ForestGreen;
+                  else
+                      fila.Cells["Cantidad"].Style.ForeColor = Color.Maroon;
+              }
+            }
+        }
+        private void OcultaColumnsIdGrid()
         {
-            this.dgIngresos.Columns[0].DefaultCellStyle.ForeColor = Color.ForestGreen;            
+            this.dgUltimos10.Columns[0].Visible = false;
+            this.dgUltimos10.Columns[1].Visible = false;
+        }
+        private void ultimos10Movimientos()
+        {
+            llenarGrid();
+            OcultaColumnsIdGrid();
+            AlternarColoresEnGrid();
+        }
+        private void llenarGrid()
+        {
+            this.dgUltimos10.DataSource = new ClinicaPro.DB.GastosIngresos.IngresoDB().ListarUltimos10(this.idTipoUsuario);
         }
         #endregion
-        #region Eventos
+#region Eventos
         private void chkConsultasDelmes_CheckedChanged(object sender, EventArgs e)
         {
             if (chkConsultasDelmes.Checked)
@@ -167,25 +202,26 @@ namespace Frm.IngresoGastos
             else Calculos();
         }
         private void btnGastos_Click(object sender, EventArgs e)
-        {
+        {            
             new frmAgregarGastos(enviarFuenteIngreso(), this.idTipoUsuario,fuenteid()).ShowDialog();                        
             ActulizarGasto();
+            ultimos10Movimientos();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             new frmAgregarIngreso(enviarFuenteIngreso(), this.idTipoUsuario, fuenteid()).ShowDialog();           
             ActulizarIngreso();
+            ultimos10Movimientos();
         }
         private void cbFuenteIngreso_SelectionChangeCommitted(object sender, EventArgs e)
         {
             Calculos();
-        }
-        private void ultimos10()
-        {
-             new ClinicaPro.DB.GastosIngresos.IngresoDB().ListarUltimo10(dgIngresos,this.idTipoUsuario);
-             ColumnIngresoColorVerde();
-        }
-        #endregion
+        }     
+        #endregion       
 
+        private void btnListaMovimientos_Click(object sender, EventArgs e)
+        {
+            new frmListaMovimientos(this.idTipoUsuario).Show();
+        }
     }
 }
