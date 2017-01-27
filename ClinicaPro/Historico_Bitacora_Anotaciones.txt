@@ -66,3 +66,17 @@ Solucion: Alguien Borro  o cambio el nombre de una Columna desde la Base Datos ,
 “An entity object cannot be referenced by multiple instances of IEntityChangeTracker.”
 Solucion
 Parece que la solucion fue , dispose el contexto en las clases 
+
+********Error 23  ***************
+~~ Se esta produciendo cuandos e actualiza el Model.edx agregando una tabla-Vista Nuevo
+
+Error	23	'ClinicaPro.Entities.ClinicaDrFuentesEntities' no contiene una definición de 'VistaClienteAlergias' 
+ni se encontró ningún método de extensión 'VistaClienteAlergias' que acepte un primer argumento de tipo 'ClinicaPro.Entities.ClinicaDrFuentesEntities' 
+(¿falta una directiva using o una referencia de ensamblado?)	E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.DB\Cliente\Vistas\VClienteAlergias.cs
+	15	85	ClinicaPro.DB
+
+SOLUCION :  En Codigo ...  Contexto.VistaClienteAlergiasSet...  
+                         1.  refactorizar 
+						 2. Cambiar Nombre a
+						  VistaClienteAlergias
+					     3.Compilar

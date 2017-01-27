@@ -32,7 +32,7 @@ public partial class CategoriaIngreso
 
 
 
-    public virtual ICollection<Ingreso> Ingresos { get; set; }
+    public virtual ICollection<Ingreso> Ingresos { private get; set; }
 
 }
 

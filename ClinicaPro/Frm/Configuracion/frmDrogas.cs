@@ -33,7 +33,6 @@ namespace Frm.Configuracion
         {
             cargarGrid();
         }
-
         #region Metodos
         ///<summary>
         ///  Valida los campos que no esten vacios ni incosistentes , los pone Color.AliceBlue
@@ -94,21 +93,14 @@ namespace Frm.Configuracion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!Validar())
-            {
-                try
-                {
+            {                
                     Drogas droga = Droga_ControlAClase();
                     DrogaDB drogaDB = new DrogaDB();
                     if (drogaDB.Agregar_Modificar(droga, ClinicaPro.General.accion.Agregar) != IdVacia)
                     {
                         Limpiar();
                         MensajeDeActulizacion();
-                    }
-                }
-                catch (Exception)
-                {
-
-                }
+                    }                               
             }
         }
         private void btnActualizar_Click(object sender, EventArgs e)

@@ -186,6 +186,30 @@
     <Compile Include="IngresoGastos\frmAgregarIngreso.Designer.cs">
       <DependentUpon>frmAgregarIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresoGastos\frmCategoriaGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoGastos\frmCategoriaGasto.Designer.cs">
+      <DependentUpon>frmCategoriaGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoGastos\frmCategoriaIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoGastos\frmCategoriaIngreso.Designer.cs">
+      <DependentUpon>frmCategoriaIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoGastos\frmFuenteIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoGastos\frmFuenteIngreso.Designer.cs">
+      <DependentUpon>frmFuenteIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoGastos\frmListaMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoGastos\frmListaMovimientos.Designer.cs">
+      <DependentUpon>frmListaMovimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="IngresoGastos\frmVentanaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +358,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IngresoGastos\frmAgregarIngreso.resx">
       <DependentUpon>frmAgregarIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoGastos\frmCategoriaGasto.resx">
+      <DependentUpon>frmCategoriaGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoGastos\frmCategoriaIngreso.resx">
+      <DependentUpon>frmCategoriaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoGastos\frmFuenteIngreso.resx">
+      <DependentUpon>frmFuenteIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoGastos\frmListaMovimientos.resx">
+      <DependentUpon>frmListaMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresoGastos\frmVentanaInicial.resx">
       <DependentUpon>frmVentanaInicial.cs</DependentUpon>
@@ -627,6 +663,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minus-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagram-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepadCopy 50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagramGasto - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagramaIngreso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagramaFuente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

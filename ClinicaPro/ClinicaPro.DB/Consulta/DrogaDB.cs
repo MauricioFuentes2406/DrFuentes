@@ -57,7 +57,6 @@ namespace ClinicaPro.DB.Consulta
         }
        public bool Eliminar(int idDroga, int idTipoUsuario)
         {
-
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
                 {
                     if (ValidarEliminar(Contexto, idDroga) == false)
@@ -75,10 +74,7 @@ namespace ClinicaPro.DB.Consulta
                         }
                     }
                     else return false;
-                }
-            
-          
-
+                }                      
         }
 
        public List<Entities.Drogas> Listar()
@@ -124,10 +120,10 @@ namespace ClinicaPro.DB.Consulta
        {
            String datos = String.Empty;
            foreach (var item in list)
-           {
+           {               
                datos += "\n Número Consulta:" + "  " + item.NúmeroConsulta + "  Nombre:" + "   " + item.Nombre_Cliente + "  Droga: " + item.Nombre_Droga;
            }
-           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDeleteConsulta + "\n" + datos,
                ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
                , System.Windows.Forms.MessageBoxButtons.OK
                , System.Windows.Forms.MessageBoxIcon.Warning

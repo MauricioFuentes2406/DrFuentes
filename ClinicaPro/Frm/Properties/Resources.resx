@@ -325,4 +325,19 @@
   <data name="minus_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="diagram_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diagram-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notepadCopy_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notepadCopy 50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diagramaFuente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diagramaFuente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diagramaIngreso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diagramaIngreso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diagramGasto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diagramGasto - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

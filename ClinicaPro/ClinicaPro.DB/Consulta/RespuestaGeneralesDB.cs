@@ -154,7 +154,7 @@ namespace ClinicaPro.DB.Consulta
            {
                datos += "\n Número Consulta:" + "  " + item.IdConsulta;
            }
-           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDeleteConsulta + "\n" + datos,
                ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
                , System.Windows.Forms.MessageBoxButtons.OK
                , System.Windows.Forms.MessageBoxIcon.Warning
@@ -167,7 +167,7 @@ namespace ClinicaPro.DB.Consulta
            {
                datos += "\n Número Consulta:" + "  " + item.IdConsulta;
            }
-           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDelete + "\n" + datos,
+           System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.fk_ConstraintDeleteConsulta + "\n" + datos,
                ClinicaPro.General.Constantes.Mensajes.Upss_Falto_Algo
                , System.Windows.Forms.MessageBoxButtons.OK
                , System.Windows.Forms.MessageBoxIcon.Warning

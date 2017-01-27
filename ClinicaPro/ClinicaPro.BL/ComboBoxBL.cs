@@ -21,21 +21,12 @@ namespace ClinicaPro.BL
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="lista"></param>
-        /// <returns></returns>
-           public static ComboBox llenarComboGenericoDB(ComboBox combo, List<T> lista)
-         {
-             combo.DataSource = lista;
-             combo.DisplayMember = "Nombre";
-             combo.ValueMember="idRespuestaGeneral";
-               
-             return combo;                         
-         }
+        /// <returns></returns>               
            public void fuenteBaseDatos(ComboBox combo, List<T> lista, string nombreID)
            {
                combo.DataSource = lista;
                combo.DisplayMember = "Nombre";
                combo.ValueMember = nombreID;               
-           }
-    
+           }          
     }
 }

@@ -107,6 +107,8 @@
     <Compile Include="GastosIngresos\FuenteIngresoDB.cs" />
     <Compile Include="GastosIngresos\GastosDB.cs" />
     <Compile Include="GastosIngresos\IngresoDB.cs" />
+    <Compile Include="GastosIngresos\Vistas\VGasto.cs" />
+    <Compile Include="GastosIngresos\Vistas\VIngreso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

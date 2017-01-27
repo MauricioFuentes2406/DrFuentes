@@ -227,6 +227,9 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_IngresoGastosUltimos_10_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_VacunaListarConsultasRelacionadas_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -273,6 +276,12 @@
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaExploracionFisica.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaGasto.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaIngreso.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaServicios.cs">

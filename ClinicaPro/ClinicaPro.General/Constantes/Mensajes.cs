@@ -20,6 +20,7 @@ namespace ClinicaPro.General.Constantes
        public const String Seleccione_Una_Fila = " Seleccione una fila para continuar  ";
        public const String Detalles_Cargados ="Detalles Cargados"; // Usado para frmExpediente txtMensajeInformativo
        public const String DetallesActualizados = "Detalles Actualizados";   // Usado para frmExpediente txtMensajeInformativo
+       
 
        #region Para las  Validaciones
 
@@ -37,9 +38,12 @@ namespace ClinicaPro.General.Constantes
        public const String No_Se_Actualizo = "No se Actualizaron los datos, el registro que Intenta Actualizar  no existe en la Base Datos \n Actualize La lista de egistros ";
        public const String Para_Buen_Funcionamiento = "Para un buen funcionamiento del Sistema no intentes este Cambio ";
        public const String Esta_Seguro_Eliminar = "¿Esta Seguro que desea ELIMINARLO ?\n Si lo eliminas es probable que no puedas volver a recuperar la información ";
+       public const String AlgoPaso = "Algo Sucedio";
+       public const String Refresh =  "Precion el botón de recargar Datos ";
 
-       public const String fk_ConstraintDelete = " No se puede eliminar el registro por que esta siendo usando en alguna Consulta,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
-
+       public const String HuboErrorConteo = "Hubo un error Con el Conteo Total"; // Contado filas en  DataGrid
+       public const String fk_ConstraintDeleteConsulta = " No se puede eliminar el registro por que esta siendo usando en alguna Consulta,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
+       public const String fk_ConstraintDelete = " No se puede eliminar el registro por que esta siendo usado ,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
        public const String Consulta_Sin_Servicios = " Esta Consulta no tiene Servicios ";
 
        #endregion

@@ -17,7 +17,7 @@ namespace ClinicaPro.General.Constantes
         public const string colorPaciente = "idColorPaciente"; //  Hace referencia a la tabla ColorPaciente
         public const string GeneralServicio = "idServicio"; // Hace referencia a la tabla GeneralTipoServicio
         public const string FuenteIngreso = "IdFuenteIngreso"; // Hace Referencia ala tabla FuenteIngreso
-        public const string CategoriaGasto ="IdCategoriaGasto";
+        public const string CategoriasGasto ="IdCategoriaGasto";
         public const string CategoriaIngreso = "IdCategoriaIngreso";
     }
 }

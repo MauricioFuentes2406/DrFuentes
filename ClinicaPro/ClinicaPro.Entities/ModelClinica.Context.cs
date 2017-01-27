@@ -159,7 +159,7 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<ConsultaBoca> ConsultaBocas { get; set; }
 
-    public virtual DbSet<VistaClienteAlergias> VistaClienteAlergias { get; set; }
+    public virtual DbSet<VistaClienteAlergias> VistaClienteAlergiasSet { get; set; }
 
     public virtual DbSet<CategoriaIngreso> CategoriaIngresoes { get; set; }
 
@@ -174,6 +174,10 @@ public partial class ClinicaDrFuentesEntities : DbContext
     public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
 
     public virtual DbSet<Seguimiento> Seguimientoes { get; set; }
+
+    public virtual DbSet<VistaGasto> VistaGasto { get; set; }
+
+    public virtual DbSet<VistaIngreso> VistaIngreso { get; set; }
 
 
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -343,6 +347,18 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_VacunaListarConsultasRelacionadas_Result>("sp_VacunaListarConsultasRelacionadas", idVacunaParameter);
+    }
+
+
+    public virtual ObjectResult<sp_IngresoGastosUltimos_10_Result> sp_IngresoGastosUltimos_10(Nullable<int> tipoUsuario)
+    {
+
+        var tipoUsuarioParameter = tipoUsuario.HasValue ?
+            new ObjectParameter("TipoUsuario", tipoUsuario) :
+            new ObjectParameter("TipoUsuario", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_IngresoGastosUltimos_10_Result>("sp_IngresoGastosUltimos_10", tipoUsuarioParameter);
     }
 
 }

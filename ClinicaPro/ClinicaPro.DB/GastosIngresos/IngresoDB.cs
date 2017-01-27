@@ -22,15 +22,20 @@ namespace ClinicaPro.DB.GastosIngresos
                 {
                     if (isModificar)
                     {
-                        Entities.Ingreso Original = Contexto.Ingresos.Find(Entidad.IdIngreso);
+                        Entities.Ingreso Original = Contexto.Ingresos.Where(EntidadLocal => EntidadLocal.IdIngreso == Entidad.IdIngreso).FirstOrDefault();
                         if (Original != null)
                         {
                             Original.CantidadIngreso = Entidad.CantidadIngreso;
-                            Original.CategoriaIngreso = Entidad.CategoriaIngreso;
+                            if ( Original.CategoriaIngreso.IdCategoriaIngreso != Entidad.CategoriaIngreso.IdCategoriaIngreso)
+                            {
+                                Original.CategoriaIngreso = Contexto.CategoriaIngresoes.Find(Entidad.CategoriaIngreso.IdCategoriaIngreso);
+                            }                            
                             Original.DescripcionBreve = Entidad.DescripcionBreve;
                             Original.FechaDeIngreso = Entidad.FechaDeIngreso;
-                            Original.FuenteIngreso = Entidad.FuenteIngreso;
-                            Original.IdTipoUsuario = Entidad.IdTipoUsuario;
+                            if (Original.FuenteIngreso.IdFuenteIngreso != Entidad.FuenteIngreso.IdFuenteIngreso)
+                            {
+                                Original.FuenteIngreso = Contexto.FuenteIngresoes.Find(Entidad.FuenteIngreso.IdFuenteIngreso);
+                            }                                                      
                         }
                     }
                     else
@@ -69,6 +74,40 @@ namespace ClinicaPro.DB.GastosIngresos
         public bool Eliminar(int idIngreso, int idTipoUsuario)
         {
             return false;
+        }
+        public bool Eliminar(List<int> listids, int idTipoUsuario)
+        {
+            using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                try
+                {
+                    List<Entities.Ingreso> ingreso = new List<Entities.Ingreso>();
+                    foreach (var id in listids)
+                    {
+
+                        ingreso.Add(Contexto.Ingresos.Where(EntidadLocal => EntidadLocal.IdIngreso == id).FirstOrDefault());
+                    }
+
+                    if (ingreso.Count > 0)
+                    {
+                        Contexto.Ingresos.RemoveRange(ingreso);
+                        Contexto.SaveChanges();
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show(ClinicaPro.General.Constantes.Mensajes.No_Se_Elimina_No_Se_Encontro
+                                                               , "Ingreso", System.Windows.Forms.MessageBoxButtons.OK,
+                                                               System.Windows.Forms.MessageBoxIcon.Exclamation);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ClinicaPro.BL.manejaExcepcionesDB.manejaExcepcion(ex);
+                    return false;
+                }
+            }
+            return true;
         }
         /// <summary>
         /// Devuelve los gastos añadidos en el mes actual, por TipoUsuario
@@ -158,6 +197,77 @@ namespace ClinicaPro.DB.GastosIngresos
                     manejaExcepcionesDB.manejaExcepcion(ex);
                 }
             }           
+        }
+        public List<Entities.sp_IngresoGastosUltimos_10_Result> ListarUltimos10(int idTipoUsuario)
+        {
+            using(ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities() )
+            {
+                return Contexto.sp_IngresoGastosUltimos_10(idTipoUsuario).ToList();
+            }
+        }
+        public Entities.Ingreso GetIngreso(int IdIngreso)
+        {
+            ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();
+            try
+            {
+                return Contexto.Ingresos.AsNoTracking().Where(Entidad => Entidad.IdIngreso == IdIngreso).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return null;
+            }            
+        }
+        /// <summary>
+        /// Crea una Copia de un registro , pero con la Fecha Actual
+        /// </summary>
+        /// <param name="idGasto"></param>
+        /// <returns></returns>
+        public int Clone(int idGasto)
+        {
+            using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                try
+                {
+                    var Entidad = Contexto.Ingresos.Where(EntidadLocal => EntidadLocal.IdIngreso == idGasto).FirstOrDefault();
+                    if (Entidad != null)
+                    {
+                        Entities.Ingreso copia = new Entities.Ingreso();
+                        copia.CantidadIngreso = Entidad.CantidadIngreso;
+                        copia.CategoriaIngreso = Contexto.CategoriaIngresoes.Find(Entidad.CategoriaIngreso.IdCategoriaIngreso);
+                        copia.DescripcionBreve = Entidad.DescripcionBreve;
+                        copia.FechaDeIngreso = DateTime.Now;
+                        copia.FuenteIngreso = Contexto.FuenteIngresoes.Find(Entidad.FuenteIngreso.IdFuenteIngreso);
+                        copia.IdTipoUsuario = Entidad.IdTipoUsuario;
+
+                        Contexto.Ingresos.Add(copia);
+                        Contexto.SaveChanges();
+                        return copia.IdIngreso;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    manejaExcepcionesDB.manejaExcepcion(ex);
+                    return -1;
+                }
+            }
+
+
+
+        }
+        public List<int> ListarAnosUsados(int tipoUsurio)
+        {
+            using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                var list = (from tabla in Contexto.Ingresos
+                            where tabla.IdTipoUsuario == tipoUsurio
+                            select tabla.FechaDeIngreso.Year).Distinct().ToList();
+                list.Reverse();
+                return list;
+            }
         }
     }
 }

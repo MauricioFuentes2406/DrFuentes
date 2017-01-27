@@ -134,3 +134,7 @@ E:\New folder\DrFuentes-master\ClinicaPro\Frm\obj\Debug\Frm.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmVentanaInicial.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmAgregarGastos.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmAgregarIngreso.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmListaMovimientos.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmFuenteIngreso.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmCategoriaIngreso.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmCategoriaGasto.resources
