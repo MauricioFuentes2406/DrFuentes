@@ -156,6 +156,7 @@ namespace Frm.IngresoGastos
         {
             cargarGrid(cbIngresoOEgreso.SelectedIndex);
             CambiarIcono();
+            cargarcomboAno();            
         }
         private void cbMes_SelectionChangeCommitted(object sender, EventArgs e)
         {
