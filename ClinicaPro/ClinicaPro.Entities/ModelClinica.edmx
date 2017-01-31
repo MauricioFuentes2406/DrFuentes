@@ -614,12 +614,12 @@
             <PropertyRef Name="IdSeguimiento" />
             <PropertyRef Name="IdConsulta" />
           </Key>
-          <Property Name="IdSeguimiento" Type="int" Nullable="false" />
+          <Property Name="IdSeguimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdConsulta" Type="int" Nullable="false" />
           <Property Name="FechaSeguimiento" Type="date" Nullable="false" />
           <Property Name="Prioridad" Type="tinyint" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
-          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="isVisto" Type="bit" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -902,6 +902,29 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaIngreso' no tiene 
           <Property Name="Fuente_Ingreso" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DescripcionBreve" Type="varchar" MaxLength="300" />
           <Property Name="FechaDeIngreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaSeguimiento' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VistaSeguimiento">
+          <Key>
+            <PropertyRef Name="IdSeguimiento" />
+            <PropertyRef Name="Número Consulta" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Prioridad" />
+            <PropertyRef Name="PlanTratamiento" />
+            <PropertyRef Name="Fecha" />
+          </Key>
+          <Property Name="IdSeguimiento" Type="int" Nullable="false" />
+          <Property Name="Número Consulta" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="76" Nullable="false" />
+          <Property Name="Celular" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="Prioridad" Type="tinyint" Nullable="false" />
+          <Property Name="isVisto" Type="bit" />
+          <Property Name="PlanTratamiento" Type="varchar" MaxLength="700" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaServicios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -1945,7 +1968,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Seguimiento_Consulta1">
-          <End Role="Consulta" Type="Self.Consulta" Multiplicity="1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Seguimiento" Type="Self.Seguimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Consulta">
@@ -2242,6 +2267,20 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     [VistaIngreso].[DescripcionBreve] AS [DescripcionBreve], 
     [VistaIngreso].[FechaDeIngreso] AS [FechaDeIngreso]
     FROM [dbo].[VistaIngreso] AS [VistaIngreso]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaSeguimiento" EntityType="Self.VistaSeguimiento" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaSeguimiento].[IdSeguimiento] AS [IdSeguimiento], 
+    [VistaSeguimiento].[Número Consulta] AS [Número Consulta], 
+    [VistaSeguimiento].[Nombre] AS [Nombre], 
+    [VistaSeguimiento].[Celular] AS [Celular], 
+    [VistaSeguimiento].[Email] AS [Email], 
+    [VistaSeguimiento].[Descripcion] AS [Descripcion], 
+    [VistaSeguimiento].[Prioridad] AS [Prioridad], 
+    [VistaSeguimiento].[isVisto] AS [isVisto], 
+    [VistaSeguimiento].[PlanTratamiento] AS [PlanTratamiento], 
+    [VistaSeguimiento].[Fecha] AS [Fecha]
+    FROM [dbo].[VistaSeguimiento] AS [VistaSeguimiento]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VistaServicios" EntityType="Self.VistaServicios" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2798,7 +2837,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <NavigationProperty Name="EscalaTiempo" Relationship="ClinicaDrFuentesModel.FK_Consulta_EscalaTiempo" FromRole="Consulta" ToRole="EscalaTiempo" />
           <NavigationProperty Name="ConsultaAbdomen" Relationship="ClinicaDrFuentesModel.FK_ConsultaAbdomen_Consulta" FromRole="Consulta" ToRole="ConsultaAbdomen" />
           <NavigationProperty Name="ConsultaBoca" Relationship="ClinicaDrFuentesModel.FK_ConsultaBoca_Consulta" FromRole="Consulta" ToRole="ConsultaBoca" />
-          <NavigationProperty Name="Seguimientoes" Relationship="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" FromRole="Consulta" ToRole="Seguimiento" />
+          <NavigationProperty Name="Seguimiento" Relationship="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" FromRole="Consulta" ToRole="Seguimiento" />
         </EntityType>
         <EntityType Name="Consulta_RespuestasGenerales">
           <Key>
@@ -4262,16 +4301,17 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
-          <EntitySet Name="Seguimientoes" EntityType="ClinicaDrFuentesModel.Seguimiento" />
-          <AssociationSet Name="FK_Seguimiento_Consulta1" Association="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1">
-            <End Role="Consulta" EntitySet="Consultas" />
-            <End Role="Seguimiento" EntitySet="Seguimientoes" />
-          </AssociationSet>
           <FunctionImport Name="sp_IngresoGastosUltimos_10" ReturnType="Collection(ClinicaDrFuentesModel.sp_IngresoGastosUltimos_10_Result)">
           <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="VistaGasto" EntityType="ClinicaDrFuentesModel.VistaGasto" />
           <EntitySet Name="VistaIngreso" EntityType="ClinicaDrFuentesModel.VistaIngreso" />
+          <EntitySet Name="Seguimiento" EntityType="ClinicaDrFuentesModel.Seguimiento" />
+          <AssociationSet Name="FK_Seguimiento_Consulta1" Association="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1">
+            <End Role="Consulta" EntitySet="Consultas" />
+            <End Role="Seguimiento" EntitySet="Seguimiento" />
+          </AssociationSet>
+          <EntitySet Name="VistaSeguimiento" EntityType="ClinicaDrFuentesModel.VistaSeguimiento" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -4847,31 +4887,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="0..1" />
           <End Type="ClinicaDrFuentesModel.Usuario" Role="Usuario" Multiplicity="*" />
         </Association>
-        <EntityType Name="Seguimiento">
-          <Key>
-            <PropertyRef Name="IdSeguimiento" />
-            <PropertyRef Name="IdConsulta" />
-          </Key>
-          <Property Name="IdSeguimiento" Type="Int32" Nullable="false" />
-          <Property Name="IdConsulta" Type="Int32" Nullable="false" />
-          <Property Name="FechaSeguimiento" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Prioridad" Type="Byte" Nullable="false" />
-          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="Estado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Consulta" Relationship="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" FromRole="Seguimiento" ToRole="Consulta" />
-        </EntityType>
-        <Association Name="FK_Seguimiento_Consulta1">
-          <End Type="ClinicaDrFuentesModel.Consulta" Role="Consulta" Multiplicity="1" />
-          <End Type="ClinicaDrFuentesModel.Seguimiento" Role="Seguimiento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Consulta">
-              <PropertyRef Name="IdConsulta" />
-            </Principal>
-            <Dependent Role="Seguimiento">
-              <PropertyRef Name="IdConsulta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <ComplexType Name="sp_IngresoGastosUltimos_10_Result">
           <Property Type="Int32" Name="IdTipoUsuario" Nullable="false" />
           <Property Type="Int32" Name="IdFuenteIngreso" Nullable="false" />
@@ -4913,6 +4928,52 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Property Name="Fuente_Ingreso" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DescripcionBreve" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="FechaDeIngreso" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Seguimiento">
+          <Key>
+            <PropertyRef Name="IdSeguimiento" />
+            <PropertyRef Name="IdConsulta" />
+          </Key>
+          <Property Name="IdSeguimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdConsulta" Type="Int32" Nullable="false" />
+          <Property Name="FechaSeguimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Prioridad" Type="Byte" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="isVisto" Type="Boolean" />
+          <NavigationProperty Name="Consulta" Relationship="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" FromRole="Seguimiento" ToRole="Consulta" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        </EntityType>
+        <Association Name="FK_Seguimiento_Consulta1">
+          <End Type="ClinicaDrFuentesModel.Consulta" Role="Consulta" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.Seguimiento" Role="Seguimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="IdConsulta" />
+            </Principal>
+            <Dependent Role="Seguimiento">
+              <PropertyRef Name="IdConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VistaSeguimiento">
+          <Key>
+            <PropertyRef Name="IdSeguimiento" />
+            <PropertyRef Name="Número_Consulta" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Prioridad" />
+            <PropertyRef Name="PlanTratamiento" />
+            <PropertyRef Name="Fecha" />
+          </Key>
+          <Property Name="IdSeguimiento" Type="Int32" Nullable="false" />
+          <Property Name="Número_Consulta" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="76" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Prioridad" Type="Byte" Nullable="false" />
+          <Property Name="isVisto" Type="Boolean" />
+          <Property Name="PlanTratamiento" Type="String" Nullable="false" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -5933,18 +5994,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </EndProperty>
             <Condition ColumnName="IdTipoUsuario" IsNull="false" />
           </AssociationSetMapping>
-          <EntitySetMapping Name="Seguimientoes">
-            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.Seguimiento">
-              <MappingFragment StoreEntitySet="Seguimiento">
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
-                <ScalarProperty Name="FechaSeguimiento" ColumnName="FechaSeguimiento" />
-                <ScalarProperty Name="IdConsulta" ColumnName="IdConsulta" />
-                <ScalarProperty Name="IdSeguimiento" ColumnName="IdSeguimiento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_IngresoGastosUltimos_10" FunctionName="ClinicaDrFuentesModel.Store.sp_IngresoGastosUltimos_10">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.sp_IngresoGastosUltimos_10_Result">
@@ -5980,6 +6029,34 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
                 <ScalarProperty Name="CantidadIngreso" ColumnName="CantidadIngreso" />
                 <ScalarProperty Name="Categoría" ColumnName="Categoría" />
                 <ScalarProperty Name="IdIngreso" ColumnName="IdIngreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seguimiento">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.Seguimiento">
+              <MappingFragment StoreEntitySet="Seguimiento">
+                <ScalarProperty Name="isVisto" ColumnName="isVisto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+                <ScalarProperty Name="FechaSeguimiento" ColumnName="FechaSeguimiento" />
+                <ScalarProperty Name="IdConsulta" ColumnName="IdConsulta" />
+                <ScalarProperty Name="IdSeguimiento" ColumnName="IdSeguimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VistaSeguimiento">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaSeguimiento">
+              <MappingFragment StoreEntitySet="VistaSeguimiento">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="PlanTratamiento" ColumnName="PlanTratamiento" />
+                <ScalarProperty Name="isVisto" ColumnName="isVisto" />
+                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Número_Consulta" ColumnName="Número Consulta" />
+                <ScalarProperty Name="IdSeguimiento" ColumnName="IdSeguimiento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

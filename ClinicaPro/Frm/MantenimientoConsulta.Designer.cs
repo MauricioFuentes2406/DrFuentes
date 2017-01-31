@@ -110,7 +110,7 @@
             this.dgConsulta.MultiSelect = false;
             this.dgConsulta.Name = "dgConsulta";
             this.dgConsulta.ReadOnly = true;
-            this.dgConsulta.Size = new System.Drawing.Size(899, 357);
+            this.dgConsulta.Size = new System.Drawing.Size(1028, 392);
             this.dgConsulta.TabIndex = 7;
             // 
             // MantenimientoConsulta
@@ -118,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(933, 478);
+            this.ClientSize = new System.Drawing.Size(1062, 513);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnEliminar);

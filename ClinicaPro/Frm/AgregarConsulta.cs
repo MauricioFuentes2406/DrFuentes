@@ -129,7 +129,7 @@ namespace Frm
         }
         #region Metodos
         /// <summary>
-        /// Verifica si esta creando una nueva consulta o si  una existente, se verifica mediante el idConsulta Global        
+        /// Verifica si se esta creando una nueva consulta o si  es una ya existente, se verifica mediante el idConsulta Global != de -1    
         /// </summary>      
         public bool isNuevaConsulta()
         {
@@ -2392,6 +2392,12 @@ namespace Frm
         private void checkIMC_CheckedChanged(object sender, EventArgs e)
         {
             txtIMC.Value = ClinicaPro.BL.Calculos.IndiceMasaCorporal(txtPeso.Value, txtTalla.Value);
-        }     
+        }
+        private void btnSeguimiento_Click(object sender, EventArgs e)
+        {
+            if ( ! isNuevaConsulta() )
+            new Frm.Seguimientos.frmSeguimientos(idConsulta).Show();            
+        }   
+        
     }
 }

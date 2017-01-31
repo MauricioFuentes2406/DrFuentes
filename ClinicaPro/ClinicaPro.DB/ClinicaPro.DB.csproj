@@ -85,6 +85,7 @@
     <Compile Include="Consulta\GinecoObstreticosDB.cs" />
     <Compile Include="Consulta\ParesCranealesDB.cs" />
     <Compile Include="Consulta\RespuestaGeneralesDB.cs" />
+    <Compile Include="Consulta\SeguimientoDB.cs" />
     <Compile Include="Consulta\SensbilidadDB.cs" />
     <Compile Include="Consulta\TipoAlergiaDB.cs" />
     <Compile Include="Consulta\ToraxPulmonesDB.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Consulta\Vistas\VDrogas.cs" />
     <Compile Include="Consulta\Vistas\VEstadoVivienda.cs" />
     <Compile Include="Consulta\Vistas\VExploracionFisica.cs" />
+    <Compile Include="Consulta\Vistas\VSeguimientos.cs" />
     <Compile Include="Consulta\Vistas\VServicios.cs" />
     <Compile Include="Consulta\Vistas\VTabaco.cs" />
     <Compile Include="Consulta\Vistas\VToraxPulmones.cs" />

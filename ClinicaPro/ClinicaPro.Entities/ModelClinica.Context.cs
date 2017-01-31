@@ -173,11 +173,13 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
 
-    public virtual DbSet<Seguimiento> Seguimientoes { get; set; }
-
     public virtual DbSet<VistaGasto> VistaGasto { get; set; }
 
     public virtual DbSet<VistaIngreso> VistaIngreso { get; set; }
+
+    public virtual DbSet<Seguimiento> Seguimiento { get; set; }
+
+    public virtual DbSet<VistaSeguimiento> VistaSeguimiento { get; set; }
 
 
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

@@ -54,7 +54,7 @@ namespace ClinicaPro.DB.Consulta
                 return -1;
             }
 
-        }
+        }       
        public bool Eliminar(int idDroga, int idTipoUsuario)
         {
                 using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
@@ -76,7 +76,6 @@ namespace ClinicaPro.DB.Consulta
                     else return false;
                 }                      
         }
-
        public List<Entities.Drogas> Listar()
         {
             ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities();

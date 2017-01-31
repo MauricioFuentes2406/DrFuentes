@@ -84,7 +84,6 @@
     <Compile Include="Cita.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -282,6 +281,9 @@
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaIngreso.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaSeguimiento.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaServicios.cs">

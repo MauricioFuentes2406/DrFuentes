@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralPrincipal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -37,9 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnExpediente = new System.Windows.Forms.Button();
@@ -54,26 +55,60 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnSeguimientos = new System.Windows.Forms.Button();
+            this.panelSeguimiento = new System.Windows.Forms.Panel();
+            this.btnOcultarPanel = new System.Windows.Forms.Button();
+            this.dgSeguimientos = new System.Windows.Forms.DataGridView();
+            this.Columndone = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelSeguimiento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(735, 0);
+            this.panel1.Location = new System.Drawing.Point(737, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 451);
+            this.panel1.Size = new System.Drawing.Size(200, 485);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 65);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(93, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Notificaciones";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel5
             // 
@@ -142,33 +177,6 @@
             this.button5.Size = new System.Drawing.Size(23, 23);
             this.button5.TabIndex = 5;
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 65);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Notificaciones";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -314,43 +322,119 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 13);
+            this.label3.Location = new System.Drawing.Point(158, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Identificacion";
+            this.label3.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(396, 13);
+            this.label4.Location = new System.Drawing.Point(393, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Nombre";
+            this.label4.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(237, 10);
+            this.textBox1.Location = new System.Drawing.Point(234, 29);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.Visible = false;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(455, 10);
+            this.textBox2.Location = new System.Drawing.Point(452, 29);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 8;
+            this.textBox2.Visible = false;
+            // 
+            // btnSeguimientos
+            // 
+            this.btnSeguimientos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSeguimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeguimientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeguimientos.Location = new System.Drawing.Point(0, 0);
+            this.btnSeguimientos.Name = "btnSeguimientos";
+            this.btnSeguimientos.Size = new System.Drawing.Size(937, 23);
+            this.btnSeguimientos.TabIndex = 9;
+            this.btnSeguimientos.Text = "Numero Seguimientos Hoy : ";
+            this.btnSeguimientos.UseVisualStyleBackColor = true;
+            this.btnSeguimientos.Click += new System.EventHandler(this.btnSeguimientos_Click);
+            // 
+            // panelSeguimiento
+            // 
+            this.panelSeguimiento.Controls.Add(this.btnOcultarPanel);
+            this.panelSeguimiento.Controls.Add(this.dgSeguimientos);
+            this.panelSeguimiento.Location = new System.Drawing.Point(12, 400);
+            this.panelSeguimiento.Name = "panelSeguimiento";
+            this.panelSeguimiento.Size = new System.Drawing.Size(733, 183);
+            this.panelSeguimiento.TabIndex = 10;
+            this.panelSeguimiento.Visible = false;
+            // 
+            // btnOcultarPanel
+            // 
+            this.btnOcultarPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnOcultarPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOcultarPanel.Image = global::Frm.Properties.Resources.chevron_arrow_up24;
+            this.btnOcultarPanel.Location = new System.Drawing.Point(0, 160);
+            this.btnOcultarPanel.Name = "btnOcultarPanel";
+            this.btnOcultarPanel.Size = new System.Drawing.Size(733, 23);
+            this.btnOcultarPanel.TabIndex = 1;
+            this.btnOcultarPanel.UseVisualStyleBackColor = true;
+            this.btnOcultarPanel.Click += new System.EventHandler(this.btnOcultarPanel_Click);
+            // 
+            // dgSeguimientos
+            // 
+            this.dgSeguimientos.AllowUserToAddRows = false;
+            this.dgSeguimientos.AllowUserToDeleteRows = false;
+            this.dgSeguimientos.AllowUserToOrderColumns = true;
+            this.dgSeguimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgSeguimientos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgSeguimientos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgSeguimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSeguimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Columndone});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSeguimientos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgSeguimientos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgSeguimientos.Location = new System.Drawing.Point(0, 0);
+            this.dgSeguimientos.MultiSelect = false;
+            this.dgSeguimientos.Name = "dgSeguimientos";
+            this.dgSeguimientos.ReadOnly = true;
+            this.dgSeguimientos.RowTemplate.Height = 44;
+            this.dgSeguimientos.Size = new System.Drawing.Size(733, 183);
+            this.dgSeguimientos.TabIndex = 0;
+            this.dgSeguimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSeguimientos_CellContentClick);
+            // 
+            // Columndone
+            // 
+            this.Columndone.HeaderText = "Hecho";
+            this.Columndone.Image = global::Frm.Properties.Resources.successGray;
+            this.Columndone.Name = "Columndone";
+            this.Columndone.ReadOnly = true;
             // 
             // GeneralPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(932, 451);
+            this.ClientSize = new System.Drawing.Size(937, 486);
+            this.Controls.Add(this.panelSeguimiento);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
@@ -358,20 +442,24 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnSeguimientos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GeneralPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MedicinaGeneral";
+            this.Text = "Medicina General";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GeneralPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panelSeguimiento.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,5 +492,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSeguimientos;
+        private System.Windows.Forms.Panel panelSeguimiento;
+        private System.Windows.Forms.Button btnOcultarPanel;
+        private System.Windows.Forms.DataGridView dgSeguimientos;
+        private System.Windows.Forms.DataGridViewImageColumn Columndone;
     }
 }
