@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteBuscar));
             this.btnEViviendaDetalle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.gbRangoEdad = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEdadMaxima = new System.Windows.Forms.NumericUpDown();
+            this.txtEdadMinima = new System.Windows.Forms.NumericUpDown();
             this.txtIdCliente = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCiudad = new System.Windows.Forms.TextBox();
@@ -43,18 +49,12 @@
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.gbRangoEdad = new System.Windows.Forms.GroupBox();
-            this.txtEdadMinima = new System.Windows.Forms.NumericUpDown();
-            this.txtEdadMaxima = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
+            this.gbRangoEdad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMinima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.gbRangoEdad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMinima)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEViviendaDetalle
@@ -90,6 +90,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Métodos  de Filtrado";
             // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(22, 59);
+            this.txtCedula.Mask = "0 0000 0000";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(109, 20);
+            this.txtCedula.TabIndex = 0;
+            // 
+            // gbRangoEdad
+            // 
+            this.gbRangoEdad.Controls.Add(this.label7);
+            this.gbRangoEdad.Controls.Add(this.label6);
+            this.gbRangoEdad.Controls.Add(this.txtEdadMaxima);
+            this.gbRangoEdad.Controls.Add(this.txtEdadMinima);
+            this.gbRangoEdad.Location = new System.Drawing.Point(22, 226);
+            this.gbRangoEdad.Name = "gbRangoEdad";
+            this.gbRangoEdad.Size = new System.Drawing.Size(279, 57);
+            this.gbRangoEdad.TabIndex = 3;
+            this.gbRangoEdad.TabStop = false;
+            this.gbRangoEdad.Text = "Rango Edad";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(134, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Máxima";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Minima";
+            // 
+            // txtEdadMaxima
+            // 
+            this.txtEdadMaxima.Location = new System.Drawing.Point(183, 21);
+            this.txtEdadMaxima.Name = "txtEdadMaxima";
+            this.txtEdadMaxima.Size = new System.Drawing.Size(51, 20);
+            this.txtEdadMaxima.TabIndex = 1;
+            // 
+            // txtEdadMinima
+            // 
+            this.txtEdadMinima.Location = new System.Drawing.Point(58, 19);
+            this.txtEdadMinima.Name = "txtEdadMinima";
+            this.txtEdadMinima.Size = new System.Drawing.Size(51, 20);
+            this.txtEdadMinima.TabIndex = 0;
+            // 
             // txtIdCliente
             // 
             this.txtIdCliente.Location = new System.Drawing.Point(176, 125);
@@ -102,9 +155,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(173, 101);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 17;
-            this.label5.Text = "idCliente";
+            this.label5.Text = "Número Cliente";
             // 
             // txtCiudad
             // 
@@ -202,59 +255,6 @@
             this.txtNombre.Size = new System.Drawing.Size(109, 20);
             this.txtNombre.TabIndex = 1;
             // 
-            // gbRangoEdad
-            // 
-            this.gbRangoEdad.Controls.Add(this.label7);
-            this.gbRangoEdad.Controls.Add(this.label6);
-            this.gbRangoEdad.Controls.Add(this.txtEdadMaxima);
-            this.gbRangoEdad.Controls.Add(this.txtEdadMinima);
-            this.gbRangoEdad.Location = new System.Drawing.Point(22, 226);
-            this.gbRangoEdad.Name = "gbRangoEdad";
-            this.gbRangoEdad.Size = new System.Drawing.Size(279, 57);
-            this.gbRangoEdad.TabIndex = 3;
-            this.gbRangoEdad.TabStop = false;
-            this.gbRangoEdad.Text = "Rango Edad";
-            // 
-            // txtEdadMinima
-            // 
-            this.txtEdadMinima.Location = new System.Drawing.Point(58, 19);
-            this.txtEdadMinima.Name = "txtEdadMinima";
-            this.txtEdadMinima.Size = new System.Drawing.Size(51, 20);
-            this.txtEdadMinima.TabIndex = 0;
-            // 
-            // txtEdadMaxima
-            // 
-            this.txtEdadMaxima.Location = new System.Drawing.Point(183, 21);
-            this.txtEdadMaxima.Name = "txtEdadMaxima";
-            this.txtEdadMaxima.Size = new System.Drawing.Size(51, 20);
-            this.txtEdadMaxima.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Minima";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(134, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Máxima";
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(22, 59);
-            this.txtCedula.Mask = "0 0000 0000";
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(109, 20);
-            this.txtCedula.TabIndex = 0;
-            // 
             // ClienteBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,13 +272,13 @@
             this.Load += new System.EventHandler(this.ClienteBuscar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbRangoEdad.ResumeLayout(false);
+            this.gbRangoEdad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMinima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdCliente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.gbRangoEdad.ResumeLayout(false);
-            this.gbRangoEdad.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMinima)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).EndInit();
             this.ResumeLayout(false);
 
         }

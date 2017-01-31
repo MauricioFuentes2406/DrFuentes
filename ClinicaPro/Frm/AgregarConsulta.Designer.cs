@@ -441,7 +441,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.txtDiagnostico = new System.Windows.Forms.RichTextBox();
             this.btnCalcularCosto = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnSeguimiento = new System.Windows.Forms.Button();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -4927,7 +4927,7 @@
             this.tabDiagnostico.Controls.Add(this.label28);
             this.tabDiagnostico.Controls.Add(this.txtDiagnostico);
             this.tabDiagnostico.Controls.Add(this.btnCalcularCosto);
-            this.tabDiagnostico.Controls.Add(this.button7);
+            this.tabDiagnostico.Controls.Add(this.btnSeguimiento);
             this.tabDiagnostico.Location = new System.Drawing.Point(4, 22);
             this.tabDiagnostico.Name = "tabDiagnostico";
             this.tabDiagnostico.Padding = new System.Windows.Forms.Padding(3);
@@ -5114,20 +5114,21 @@
             this.btnCalcularCosto.UseVisualStyleBackColor = true;
             this.btnCalcularCosto.Click += new System.EventHandler(this.btnCalcularCosto_Click);
             // 
-            // button7
+            // btnSeguimiento
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = global::Frm.Properties.Resources.alarm_1;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(472, 70);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(92, 93);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "Crear Seguimiento";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSeguimiento.FlatAppearance.BorderSize = 0;
+            this.btnSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeguimiento.Image = global::Frm.Properties.Resources.alarm_1;
+            this.btnSeguimiento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSeguimiento.Location = new System.Drawing.Point(472, 70);
+            this.btnSeguimiento.Name = "btnSeguimiento";
+            this.btnSeguimiento.Size = new System.Drawing.Size(92, 93);
+            this.btnSeguimiento.TabIndex = 14;
+            this.btnSeguimiento.Text = "Crear Seguimiento";
+            this.btnSeguimiento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSeguimiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSeguimiento.UseVisualStyleBackColor = true;
+            this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
             // btnBusqueda
             // 
@@ -5410,7 +5411,7 @@
         private System.Windows.Forms.RichTextBox txtPlanTratamiento;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.RichTextBox txtDiagnostico;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSeguimiento;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TabPage tabServicio;
         private System.Windows.Forms.GroupBox gbServicio;

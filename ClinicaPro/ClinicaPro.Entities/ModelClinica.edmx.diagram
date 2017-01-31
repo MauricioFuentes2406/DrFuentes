@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.AntecedentesGinecoObstrectico" Width="1.5" PointX="10.5" PointY="36.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.BusquedaImagene" Width="1.5" PointX="8" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Busqueda" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cita" Width="1.5" PointX="5.25" PointY="50.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cliente" PointX="3" PointY="49.125" Width="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteOtrosArchivo" Width="1.75" PointX="5.25" PointY="54" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ColorPaciente" Width="1.5" PointX="14.25" PointY="41.375" IsExpanded="true" />
@@ -41,7 +40,6 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.InventarioMedicina" Width="1.5" PointX="12.75" PointY="102.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoAlergia" Width="1.5" PointX="0.5" PointY="49.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoCita" Width="1.5" PointX="3" PointY="54.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoExamene" Width="1.5" PointX="3" PointY="45.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Usuario" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExpedienteT" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
@@ -66,8 +64,6 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentePersonalesPatologicos_Varicela" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentesGinecoObstrecticos_Consulta1" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_BusquedaImagenes_Busquedas" ManuallyRouted="false" />
-        <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_Citas_Cliente" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Citas_TipoCitas" ManuallyRouted="false" />
         <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_Consulta_Cliente" />
         <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_ElectroResultados_Cliente" />
         <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_Examenes_Cliente" />
@@ -152,10 +148,13 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Seguimiento" Width="1.5" PointX="10.5" PointY="48.25" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaGasto" Width="1.5" PointX="14.375" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaIngreso" Width="1.5" PointX="14.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Seguimiento" Width="1.5" PointX="10.5" PointY="48.25" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaSeguimiento" Width="1.5" PointX="15.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Citas" Width="1.5" PointX="5.5" PointY="50.375" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Citas_Cliente" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

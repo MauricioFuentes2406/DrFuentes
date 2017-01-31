@@ -81,10 +81,9 @@
     <Compile Include="CategoriasGasto.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cita.cs">
+    <Compile Include="Citas.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -239,9 +238,6 @@
     <Compile Include="TipoAlergia.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="TipoCita.cs">
-      <DependentUpon>ModelClinica.tt</DependentUpon>
-    </Compile>
     <Compile Include="TipoExamene.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -282,6 +278,9 @@
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaIngreso.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaSeguimiento.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaServicios.cs">

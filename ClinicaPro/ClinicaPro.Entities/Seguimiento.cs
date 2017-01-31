@@ -28,11 +28,11 @@ public partial class Seguimiento
 
     public string Descripcion { get; set; }
 
-    public int Estado { get; set; }
+    public Nullable<bool> isVisto { get; set; }
 
 
 
-    public virtual Consulta Consulta { get; set; }
+    public virtual Consulta Consulta { private get; set; }
 
 }
 

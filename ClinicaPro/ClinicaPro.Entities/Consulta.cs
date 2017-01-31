@@ -29,7 +29,7 @@ public partial class Consulta
 
         this.AntecedenteVacuna = new HashSet<AntecedenteVacuna>();
 
-        this.Seguimientoes = new HashSet<Seguimiento>();
+        this.Seguimiento = new HashSet<Seguimiento>();
 
     }
 
@@ -120,7 +120,7 @@ public partial class Consulta
 
     public virtual ConsultaBoca ConsultaBoca { get; set; }
 
-    public virtual ICollection<Seguimiento> Seguimientoes { get; set; }
+    public virtual ICollection<Seguimiento> Seguimiento { get; set; }
 
 }
 

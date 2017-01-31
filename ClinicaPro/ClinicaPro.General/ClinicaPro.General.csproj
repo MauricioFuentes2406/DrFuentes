@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accion.cs" />
+    <Compile Include="Constantes\Citas\DatosDia.cs" />
+    <Compile Include="Constantes\Citas\DisplayDay.cs" />
+    <Compile Include="Constantes\Citas\HoursRowIndex.cs" />
     <Compile Include="Constantes\comboNombreIDs.cs" />
     <Compile Include="Constantes\EscalaGaslow.cs" />
     <Compile Include="Constantes\GenericoComboBox.cs" />

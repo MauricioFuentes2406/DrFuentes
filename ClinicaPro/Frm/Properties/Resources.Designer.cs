@@ -123,6 +123,16 @@ namespace Frm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chevron_arrow_up24 {
+            get {
+                object obj = ResourceManager.GetObject("chevron_arrow_up24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap computer {
             get {
                 object obj = ResourceManager.GetObject("computer", resourceCulture);
@@ -596,6 +606,26 @@ namespace Frm.Properties {
         internal static System.Drawing.Bitmap settings_4 {
             get {
                 object obj = ResourceManager.GetObject("settings_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap successGray {
+            get {
+                object obj = ResourceManager.GetObject("successGray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap successGreen24 {
+            get {
+                object obj = ResourceManager.GetObject("successGreen24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

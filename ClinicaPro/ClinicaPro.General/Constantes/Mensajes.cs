@@ -39,13 +39,14 @@ namespace ClinicaPro.General.Constantes
        public const String Para_Buen_Funcionamiento = "Para un buen funcionamiento del Sistema no intentes este Cambio ";
        public const String Esta_Seguro_Eliminar = "¿Esta Seguro que desea ELIMINARLO ?\n Si lo eliminas es probable que no puedas volver a recuperar la información ";
        public const String AlgoPaso = "Algo Sucedio";
-       public const String Refresh =  "Precion el botón de recargar Datos ";
+       public const String Refresh =  "Precione el botón de recargar Datos ";
+       public const String FechaAnterior = "Estas escogiendo una fecha anterior al día de hoy ,intenta una más actual ";
 
        public const String HuboErrorConteo = "Hubo un error Con el Conteo Total"; // Contado filas en  DataGrid
        public const String fk_ConstraintDeleteConsulta = " No se puede eliminar el registro por que esta siendo usando en alguna Consulta,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
        public const String fk_ConstraintDelete = " No se puede eliminar el registro por que esta siendo usado ,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
        public const String Consulta_Sin_Servicios = " Esta Consulta no tiene Servicios ";
-
+       public const String CitaChocan = " La fecha , hora o duración de la cita chocan con una cita ya existente";
        #endregion
        
        // Otros

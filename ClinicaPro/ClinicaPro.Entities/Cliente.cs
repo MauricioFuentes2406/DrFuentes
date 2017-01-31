@@ -21,8 +21,6 @@ public partial class Cliente
     public Cliente()
     {
 
-        this.Citas = new HashSet<Cita>();
-
         this.Consultas = new HashSet<Consulta>();
 
         this.ElectroResultados = new HashSet<ElectroResultado>();
@@ -32,6 +30,8 @@ public partial class Cliente
         this.ClienteOtrosArchivos = new HashSet<ClienteOtrosArchivo>();
 
         this.ClienteAlergias = new HashSet<ClienteAlergia>();
+
+        this.Citas = new HashSet<Citas>();
 
     }
 
@@ -64,8 +64,6 @@ public partial class Cliente
 
 
 
-    public virtual ICollection<Cita> Citas { protected get; set; }
-
     public virtual ICollection<Consulta> Consultas { private get; set; }
 
     public virtual ICollection<ElectroResultado> ElectroResultados { private get; set; }
@@ -75,6 +73,8 @@ public partial class Cliente
     public virtual ICollection<ClienteOtrosArchivo> ClienteOtrosArchivos { private get; set; }
 
     public virtual ICollection<ClienteAlergia> ClienteAlergias { private get; set; }
+
+    public virtual ICollection<Citas> Citas { get; set; }
 
 }
 

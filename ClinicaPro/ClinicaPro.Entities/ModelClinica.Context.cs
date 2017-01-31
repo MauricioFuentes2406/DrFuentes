@@ -45,8 +45,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<Busqueda> Busquedas { get; set; }
 
-    public virtual DbSet<Cita> Citas { get; set; }
-
     public virtual DbSet<Cliente> Clientes { get; set; }
 
     public virtual DbSet<ClienteOtrosArchivo> ClienteOtrosArchivos { get; set; }
@@ -106,8 +104,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
     public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
     public virtual DbSet<TipoAlergia> TipoAlergias { get; set; }
-
-    public virtual DbSet<TipoCita> TipoCitas { get; set; }
 
     public virtual DbSet<TipoExamene> TipoExamenes { get; set; }
 
@@ -173,11 +169,15 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
 
-    public virtual DbSet<Seguimiento> Seguimientoes { get; set; }
-
     public virtual DbSet<VistaGasto> VistaGasto { get; set; }
 
     public virtual DbSet<VistaIngreso> VistaIngreso { get; set; }
+
+    public virtual DbSet<Seguimiento> Seguimiento { get; set; }
+
+    public virtual DbSet<VistaSeguimiento> VistaSeguimiento { get; set; }
+
+    public virtual DbSet<Citas> Citas { get; set; }
 
 
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -359,6 +359,23 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_IngresoGastosUltimos_10_Result>("sp_IngresoGastosUltimos_10", tipoUsuarioParameter);
+    }
+
+
+    public virtual ObjectResult<Nullable<int>> isCitasColicionan(Nullable<System.DateTime> fechaDesde, Nullable<System.TimeSpan> fechaHasta)
+    {
+
+        var fechaDesdeParameter = fechaDesde.HasValue ?
+            new ObjectParameter("fechaDesde", fechaDesde) :
+            new ObjectParameter("fechaDesde", typeof(System.DateTime));
+
+
+        var fechaHastaParameter = fechaHasta.HasValue ?
+            new ObjectParameter("fechaHasta", fechaHasta) :
+            new ObjectParameter("fechaHasta", typeof(System.TimeSpan));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("isCitasColicionan", fechaDesdeParameter, fechaHastaParameter);
     }
 
 }

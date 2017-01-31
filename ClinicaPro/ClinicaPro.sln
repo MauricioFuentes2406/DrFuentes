@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Otras Cosas", "Otras Cosas", "{D108ECDE-2C8C-4005-8101-2285804CC083}"
 	ProjectSection(SolutionItems) = preProject
 		Historico_Bitacora_Anotaciones.txt = Historico_Bitacora_Anotaciones.txt
+		OtrasCosas.txt = OtrasCosas.txt
 		Valorar.txt = Valorar.txt
 	EndProjectSection
 EndProject
