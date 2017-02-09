@@ -139,5 +139,8 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmF
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmCategoriaIngreso.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmCategoriaGasto.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Seguimientos.frmSeguimientos.resources
+<<<<<<< HEAD
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Citas.frmAgregarCita.resources
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Citas.frmGeneralCitas.resources
+=======
+>>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382

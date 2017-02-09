@@ -177,8 +177,11 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<VistaSeguimiento> VistaSeguimiento { get; set; }
 
+<<<<<<< HEAD
     public virtual DbSet<Citas> Citas { get; set; }
 
+=======
+>>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
 
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
     {
