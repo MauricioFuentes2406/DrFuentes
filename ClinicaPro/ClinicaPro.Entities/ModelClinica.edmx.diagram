@@ -152,12 +152,9 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaIngreso" Width="1.5" PointX="14.375" PointY="3.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Seguimiento" Width="1.5" PointX="10.5" PointY="48.25" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Seguimiento_Consulta1" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaSeguimiento" Width="1.5" PointX="15.375" PointY="7.75" />
-<<<<<<< HEAD
+
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Citas" Width="1.5" PointX="5.5" PointY="50.375" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Citas_Cliente" />
-=======
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

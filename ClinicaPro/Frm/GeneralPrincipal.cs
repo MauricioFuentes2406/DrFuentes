@@ -62,12 +62,7 @@ namespace Frm
         private void ubicarPanel()
         {
             this.panelSeguimiento.Location = new System.Drawing.Point(0, 24);
-<<<<<<< HEAD
         }  
-=======
-        }
-  
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
         private void button7_Click(object sender, EventArgs e)
         {
             MantenimientoCliente Cl = new MantenimientoCliente();
@@ -105,10 +100,6 @@ namespace Frm
            }
 
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
         private void dgSeguimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -143,10 +134,6 @@ namespace Frm
             RemoveSeguimientos();
             this.panelSeguimiento.Visible = false;            
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
         private void btnSeguimientos_Click(object sender, EventArgs e)
         {
             if (this.panelSeguimiento.Visible)
@@ -159,12 +146,7 @@ namespace Frm
                 this.panelSeguimiento.Visible = true;
                 cargar_dgSeguimientos();
             }           
-<<<<<<< HEAD
-        }       
-=======
-        }
-       
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
+        }             
         #region Metodos
         private void cargar_dgSeguimientos()
         {
@@ -198,7 +180,6 @@ namespace Frm
                     SeguimientoFormatoClose();
                 }
                 catch (Exception)
-<<<<<<< HEAD
                 {                    
                     throw;
                 }               
@@ -206,16 +187,7 @@ namespace Frm
         }
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            new Frm.Citas.frmGeneralCitas().Show();
-=======
-                {
-                    
-                    throw;
-                }
-               
-            }
-           
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
+            new Frm.Citas.frmGeneralCitas().Show();                                      
         }
     }
 }

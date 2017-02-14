@@ -154,7 +154,7 @@
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="IdCliente" />
-          </Key>
+         </Key>
           <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Apellido1" Type="varchar" MaxLength="25" Nullable="false" />
@@ -4238,9 +4238,8 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="Seguimiento" EntitySet="Seguimiento" />
           </AssociationSet>
           <EntitySet Name="VistaSeguimiento" EntityType="ClinicaDrFuentesModel.VistaSeguimiento" />
-<<<<<<< HEAD
-          <EntitySet Name="Citas" EntityType="ClinicaDrFuentesModel.Citas" />
-          <AssociationSet Name="FK_Citas_Cliente" Association="ClinicaDrFuentesModel.FK_Citas_Cliente">
+      <EntitySet Name="Citas" EntityType="ClinicaDrFuentesModel.Citas" />
+         <AssociationSet Name="FK_Citas_Cliente" Association="ClinicaDrFuentesModel.FK_Citas_Cliente">
             <End Role="Cliente" EntitySet="Clientes" />
             <End Role="Citas" EntitySet="Citas" />
           </AssociationSet>
@@ -4248,8 +4247,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <Parameter Name="fechaDesde" Mode="In" Type="DateTime" />
             <Parameter Name="fechaHasta" Mode="In" Type="Time" />
           </FunctionImport>
-=======
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -4913,7 +4910,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Property Name="PlanTratamiento" Type="String" Nullable="false" MaxLength="700" FixedLength="false" Unicode="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
-<<<<<<< HEAD
         <EntityType Name="Citas">
           <Key>
             <PropertyRef Name="IdCita" />
@@ -4930,8 +4926,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <End Type="ClinicaDrFuentesModel.Cliente" Role="Cliente" Multiplicity="0..1" />
           <End Type="ClinicaDrFuentesModel.Citas" Role="Citas" Multiplicity="*" />
         </Association>
-=======
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
+      
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5997,7 +5992,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-<<<<<<< HEAD
           <EntitySetMapping Name="Citas">
             <EntityTypeMapping TypeName="ClinicaDrFuentesModel.Citas">
               <MappingFragment StoreEntitySet="Citas">
@@ -6020,8 +6014,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <Condition ColumnName="IdCliente" IsNull="false" />
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="isCitasColicionan" FunctionName="ClinicaDrFuentesModel.Store.sp_isCitasColicionan" />
-=======
->>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

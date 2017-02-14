@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Frm\Presentacion.csproj", "{CAF4140F-76F0-433F-B063-CA7A17E32860}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Otras Cosas", "Otras Cosas", "{D108ECDE-2C8C-4005-8101-2285804CC083}"
 	ProjectSection(SolutionItems) = preProject
 		Historico_Bitacora_Anotaciones.txt = Historico_Bitacora_Anotaciones.txt
@@ -25,16 +23,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Performance1.psess = Performance1.psess
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaPresentacion", "Frm\CapaPresentacion.csproj", "{CAF4140F-76F0-433F-B063-CA7A17E32860}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6766AD43-4824-4374-B413-C5A9E3A5D3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6766AD43-4824-4374-B413-C5A9E3A5D3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6766AD43-4824-4374-B413-C5A9E3A5D3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{17722A54-4CCD-4A2D-9899-3E172455FC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17722A54-4CCD-4A2D-9899-3E172455FC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17722A54-4CCD-4A2D-9899-3E172455FC84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF4140F-76F0-433F-B063-CA7A17E32860}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

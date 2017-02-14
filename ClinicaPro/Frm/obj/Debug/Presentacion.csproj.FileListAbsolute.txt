@@ -144,3 +144,16 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Citas.frmAgregarCi
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Citas.frmGeneralCitas.resources
 =======
 >>>>>>> 2f51f48f2fb39cd76a725f3355c05c0954555382
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.Citas.frmAgregarCita.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.Citas.frmGeneralCitas.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.Configuracion.frmAlergias.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.Configuracion.frmServicios.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.Diccionario.frmBusquedaAvanzada.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmAgregarGastos.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmAgregarIngreso.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmCategoriaGasto.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmCategoriaIngreso.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmFuenteIngreso.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmListaMovimientos.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmVentanaInicial.resources
+E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.Seguimientos.frmSeguimientos.resources
