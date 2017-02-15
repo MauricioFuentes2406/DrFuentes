@@ -113,6 +113,8 @@
     <Compile Include="GastosIngresos\Vistas\VGasto.cs" />
     <Compile Include="GastosIngresos\Vistas\VIngreso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario\TipoUsuarioDB.cs" />
+    <Compile Include="Usuario\UsuarioDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClinicaPro.BL\ClinicaPro.BL.csproj">

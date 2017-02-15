@@ -107,8 +107,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<TipoExamene> TipoExamenes { get; set; }
 
-    public virtual DbSet<Usuario> Usuarios { get; set; }
-
     public virtual DbSet<ExpedienteT> ExpedienteTs { get; set; }
 
     public virtual DbSet<Vista_TiposAlergia_comboBox> Vista_TiposAlergia_comboBox { get; set; }
@@ -167,8 +165,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<Ingreso> Ingresos { get; set; }
 
-    public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
-
     public virtual DbSet<VistaGasto> VistaGasto { get; set; }
 
     public virtual DbSet<VistaIngreso> VistaIngreso { get; set; }
@@ -177,8 +173,13 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<VistaSeguimiento> VistaSeguimiento { get; set; }
 
-
     public virtual DbSet<Citas> Citas { get; set; }
+
+    public virtual DbSet<Usuario> Usuario { get; set; }
+
+    public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
+
+
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
     {
 

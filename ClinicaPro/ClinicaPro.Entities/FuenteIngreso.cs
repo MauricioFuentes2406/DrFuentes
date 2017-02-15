@@ -34,11 +34,11 @@ public partial class FuenteIngreso
 
 
 
-    public virtual TipoUsuario TipoUsuario { get; set; }
-
     public virtual ICollection<Gasto> Gastos { private get; set; }
 
     public virtual ICollection<Ingreso> Ingresos { private get; set; }
+
+    public virtual TipoUsuario TipoUsuario { get; set; }
 
 }
 

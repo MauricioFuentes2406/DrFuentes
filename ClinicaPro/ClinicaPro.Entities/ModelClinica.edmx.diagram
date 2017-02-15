@@ -41,7 +41,6 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoAlergia" Width="1.5" PointX="0.5" PointY="49.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoExamene" Width="1.5" PointX="3" PointY="45.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Usuario" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExpedienteT" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Consulta" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedenteHereditario_Familiar" ManuallyRouted="false" />
@@ -139,15 +138,10 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.FuenteIngreso" Width="1.5" PointX="1.125" PointY="7" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Gasto" Width="1.5" PointX="4.125" PointY="0.625" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Ingreso" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="10.875" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_CategoriaIngreso" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoGastosGenerales" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Gastos_FuenteIngreso" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_FuenteIngreso" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaGasto" Width="1.5" PointX="14.375" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaIngreso" Width="1.5" PointX="14.375" PointY="3.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Seguimiento" Width="1.5" PointX="10.5" PointY="48.25" />
@@ -155,6 +149,12 @@
 
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Citas" Width="1.5" PointX="5.5" PointY="50.375" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Citas_Cliente" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.Usuario" Width="1.5" PointX="2.75" PointY="16.5" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoUsuario" Width="1.5" PointX="0.5" PointY="10.5" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

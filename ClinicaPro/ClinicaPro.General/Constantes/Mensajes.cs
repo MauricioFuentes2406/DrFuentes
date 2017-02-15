@@ -41,6 +41,8 @@ namespace ClinicaPro.General.Constantes
        public const String AlgoPaso = "Algo Sucedio";
        public const String Refresh =  "Precione el botón de recargar Datos ";
        public const String FechaAnterior = "Estas escogiendo una fecha anterior al día de hoy ,intenta una más actual ";
+       public const String ContrasenaNoCoincide = " Las Contraseñas no Coinciden  ";
+       public const String FraseIgualPassword = "La frase para recordar no debe  ser igual a la contraseña  por seguridad ";
 
        public const String HuboErrorConteo = "Hubo un error Con el Conteo Total"; // Contado filas en  DataGrid
        public const String fk_ConstraintDeleteConsulta = " No se puede eliminar el registro por que esta siendo usando en alguna Consulta,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";

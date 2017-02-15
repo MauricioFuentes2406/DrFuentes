@@ -24,11 +24,11 @@ public partial class Usuario
 
     public string Password { get; set; }
 
-    public int Estado { get; set; }
+    public bool Estado { get; set; }
 
     public string Nombre { get; set; }
 
-    public Nullable<int> Telefono { get; set; }
+    public int Telefono { get; set; }
 
     public string Apellido1 { get; set; }
 

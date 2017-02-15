@@ -154,7 +154,7 @@
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="IdCliente" />
-         </Key>
+          </Key>
           <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Apellido1" Type="varchar" MaxLength="25" Nullable="false" />
@@ -656,22 +656,22 @@
             <PropertyRef Name="IdTipoUsuario" />
           </Key>
           <Property Name="IdTipoUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NombreTipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Estado" Type="int" Nullable="false" />
-          <Property Name="IdTipoUsuario" Type="int" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Telefono" Type="int" />
-          <Property Name="Apellido1" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
+          <Property Name="Apellido1" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Apellido2" Type="varchar" MaxLength="50" />
-          <Property Name="FraseRecordar" Type="varchar" MaxLength="50" />
+          <Property Name="FraseRecordar" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Vacunas">
@@ -1976,7 +1976,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuario_TipoUsuario">
-          <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
+          <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoUsuario">
@@ -3195,22 +3195,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Property Name="ProcentajeEnvio" Type="Int32" />
           <NavigationProperty Name="Examenes" Relationship="Self.FK_Examenes_TipoExamenes" FromRole="TipoExamenes" ToRole="Examenes" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
-        <EntityType Name="Usuario">
-          <Key>
-            <PropertyRef Name="IdUsuario" />
-          </Key>
-          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Estado" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="Int32" />
-          <Property Name="Apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FraseRecordar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TipoUsuario" Relationship="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" FromRole="Usuario" ToRole="TipoUsuario" />
-        </EntityType>
         <EntityType Name="ExpedienteT">
           <Key>
             <PropertyRef Name="IdConsulta" />
@@ -3853,7 +3837,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TipoAlergias" EntityType="Self.TipoAlergia" />
           <EntitySet Name="TipoExamenes" EntityType="Self.TipoExamene" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
           <EntitySet Name="ExpedienteTs" EntityType="Self.ExpedienteT" />
           <AssociationSet Name="FK_AntecedenteHereditario_Consulta" Association="Self.FK_AntecedenteHereditario_Consulta">
             <End Role="Consulta" EntitySet="Consultas" />
@@ -4194,7 +4177,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <EntitySet Name="FuenteIngresoes" EntityType="ClinicaDrFuentesModel.FuenteIngreso" />
           <EntitySet Name="Gastos" EntityType="ClinicaDrFuentesModel.Gasto" />
           <EntitySet Name="Ingresos" EntityType="ClinicaDrFuentesModel.Ingreso" />
-          <EntitySet Name="TipoUsuarios" EntityType="ClinicaDrFuentesModel.TipoUsuario" />
           <AssociationSet Name="FK_Ingresos_CategoriaIngreso" Association="ClinicaDrFuentesModel.FK_Ingresos_CategoriaIngreso">
             <End Role="CategoriaIngreso" EntitySet="CategoriaIngresoes" />
             <End Role="Ingreso" EntitySet="Ingresos" />
@@ -4203,10 +4185,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="CategoriasGasto" EntitySet="CategoriasGastoes" />
             <End Role="Gasto" EntitySet="Gastos" />
           </AssociationSet>
-          <AssociationSet Name="FK_FuenteIngreso_TipoUsuario" Association="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario">
-            <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
-            <End Role="FuenteIngreso" EntitySet="FuenteIngresoes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Gastos_FuenteIngreso" Association="ClinicaDrFuentesModel.FK_Gastos_FuenteIngreso">
             <End Role="FuenteIngreso" EntitySet="FuenteIngresoes" />
             <End Role="Gasto" EntitySet="Gastos" />
@@ -4214,18 +4192,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <AssociationSet Name="FK_Ingresos_FuenteIngreso" Association="ClinicaDrFuentesModel.FK_Ingresos_FuenteIngreso">
             <End Role="FuenteIngreso" EntitySet="FuenteIngresoes" />
             <End Role="Ingreso" EntitySet="Ingresos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GastosGenerales_TipoUsuario" Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario">
-            <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
-            <End Role="Gasto" EntitySet="Gastos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ingresos_TipoUsuario" Association="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario">
-            <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
-            <End Role="Ingreso" EntitySet="Ingresos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_TipoUsuario" Association="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario">
-            <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
-            <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
           <FunctionImport Name="sp_IngresoGastosUltimos_10" ReturnType="Collection(ClinicaDrFuentesModel.sp_IngresoGastosUltimos_10_Result)">
           <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
@@ -4247,6 +4213,24 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <Parameter Name="fechaDesde" Mode="In" Type="DateTime" />
             <Parameter Name="fechaHasta" Mode="In" Type="Time" />
           </FunctionImport>
+          <EntitySet Name="Usuario" EntityType="ClinicaDrFuentesModel.Usuario" />
+          <EntitySet Name="TipoUsuario" EntityType="ClinicaDrFuentesModel.TipoUsuario" />
+          <AssociationSet Name="FK_FuenteIngreso_TipoUsuario" Association="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="FuenteIngreso" EntitySet="FuenteIngresoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GastosGenerales_TipoUsuario" Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="Gasto" EntitySet="Gastos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingresos_TipoUsuario" Association="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="Ingreso" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_TipoUsuario" Association="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -4731,9 +4715,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </Key>
           <Property Name="IdFuenteIngreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TipoUsuario" Relationship="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" FromRole="FuenteIngreso" ToRole="TipoUsuario" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Gastos" Relationship="ClinicaDrFuentesModel.FK_Gastos_FuenteIngreso" FromRole="FuenteIngreso" ToRole="Gasto" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Ingresos" Relationship="ClinicaDrFuentesModel.FK_Ingresos_FuenteIngreso" FromRole="FuenteIngreso" ToRole="Ingreso" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="TipoUsuario" Relationship="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" FromRole="FuenteIngreso" ToRole="TipoUsuario" />
         </EntityType>
         <EntityType Name="Gasto">
           <Key>
@@ -4763,17 +4747,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <NavigationProperty Name="FuenteIngreso" Relationship="ClinicaDrFuentesModel.FK_Ingresos_FuenteIngreso" FromRole="Ingreso" ToRole="FuenteIngreso" />
           <NavigationProperty Name="TipoUsuario" Relationship="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario" FromRole="Ingreso" ToRole="TipoUsuario" />
         </EntityType>
-        <EntityType Name="TipoUsuario">
-          <Key>
-            <PropertyRef Name="IdTipoUsuario" />
-          </Key>
-          <Property Name="IdTipoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NombreTipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="FuenteIngresoes" Relationship="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" FromRole="TipoUsuario" ToRole="FuenteIngreso" />
-          <NavigationProperty Name="Gastos" Relationship="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario" FromRole="TipoUsuario" ToRole="Gasto" />
-          <NavigationProperty Name="Ingresos" Relationship="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario" FromRole="TipoUsuario" ToRole="Ingreso" />
-          <NavigationProperty Name="Usuarios" Relationship="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" FromRole="TipoUsuario" ToRole="Usuario" />
-        </EntityType>
         <Association Name="FK_Ingresos_CategoriaIngreso">
           <End Type="ClinicaDrFuentesModel.CategoriaIngreso" Role="CategoriaIngreso" Multiplicity="1" />
           <End Type="ClinicaDrFuentesModel.Ingreso" Role="Ingreso" Multiplicity="*" />
@@ -4782,10 +4755,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <End Type="ClinicaDrFuentesModel.CategoriasGasto" Role="CategoriasGasto" Multiplicity="1" />
           <End Type="ClinicaDrFuentesModel.Gasto" Role="Gasto" Multiplicity="*" />
         </Association>
-        <Association Name="FK_FuenteIngreso_TipoUsuario">
-          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
-          <End Type="ClinicaDrFuentesModel.FuenteIngreso" Role="FuenteIngreso" Multiplicity="*" />
-        </Association>
         <Association Name="FK_Gastos_FuenteIngreso">
           <End Type="ClinicaDrFuentesModel.FuenteIngreso" Role="FuenteIngreso" Multiplicity="1" />
           <End Type="ClinicaDrFuentesModel.Gasto" Role="Gasto" Multiplicity="*" />
@@ -4793,34 +4762,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
         <Association Name="FK_Ingresos_FuenteIngreso">
           <End Type="ClinicaDrFuentesModel.FuenteIngreso" Role="FuenteIngreso" Multiplicity="1" />
           <End Type="ClinicaDrFuentesModel.Ingreso" Role="Ingreso" Multiplicity="*" />
-        </Association>
-        <Association Name="FK_GastosGenerales_TipoUsuario">
-          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
-          <End Type="ClinicaDrFuentesModel.Gasto" Role="Gasto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoUsuario">
-              <PropertyRef Name="IdTipoUsuario" />
-            </Principal>
-            <Dependent Role="Gasto">
-              <PropertyRef Name="IdTipoUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Ingresos_TipoUsuario">
-          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
-          <End Type="ClinicaDrFuentesModel.Ingreso" Role="Ingreso" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoUsuario">
-              <PropertyRef Name="IdTipoUsuario" />
-            </Principal>
-            <Dependent Role="Ingreso">
-              <PropertyRef Name="IdTipoUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Usuario_TipoUsuario">
-          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="0..1" />
-          <End Type="ClinicaDrFuentesModel.Usuario" Role="Usuario" Multiplicity="*" />
         </Association>
         <ComplexType Name="sp_IngresoGastosUltimos_10_Result">
           <Property Type="Int32" Name="IdTipoUsuario" Nullable="false" />
@@ -4925,6 +4866,65 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
         <Association Name="FK_Citas_Cliente">
           <End Type="ClinicaDrFuentesModel.Cliente" Role="Cliente" Multiplicity="0..1" />
           <End Type="ClinicaDrFuentesModel.Citas" Role="Citas" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <Property Name="Apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido2" Type="String" Nullable="true" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FraseRecordar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TipoUsuario" Relationship="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" FromRole="Usuario" ToRole="TipoUsuario" />
+        </EntityType>
+        <EntityType Name="TipoUsuario">
+          <Key>
+            <PropertyRef Name="IdTipoUsuario" />
+          </Key>
+          <Property Name="IdTipoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FuenteIngreso" Relationship="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" FromRole="TipoUsuario" ToRole="FuenteIngreso" />
+          <NavigationProperty Name="Gastos" Relationship="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario" FromRole="TipoUsuario" ToRole="Gasto" />
+          <NavigationProperty Name="Ingresos" Relationship="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario" FromRole="TipoUsuario" ToRole="Ingreso" />
+          <NavigationProperty Name="Usuario" Relationship="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" FromRole="TipoUsuario" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK_FuenteIngreso_TipoUsuario">
+          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.FuenteIngreso" Role="FuenteIngreso" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_GastosGenerales_TipoUsuario">
+          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.Gasto" Role="Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="IdTipoUsuario" />
+            </Principal>
+            <Dependent Role="Gasto">
+              <PropertyRef Name="IdTipoUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingresos_TipoUsuario">
+          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.Ingreso" Role="Ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="IdTipoUsuario" />
+            </Principal>
+            <Dependent Role="Ingreso">
+              <PropertyRef Name="IdTipoUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_TipoUsuario">
+          <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.Usuario" Role="Usuario" Multiplicity="*" />
         </Association>
       
         </Schema>
@@ -5409,22 +5409,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.Usuario">
-              <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
-                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
-                <ScalarProperty Name="FraseRecordar" ColumnName="FraseRecordar" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ExpedienteTs">
             <EntityTypeMapping TypeName="ClinicaDrFuentesModel.ExpedienteT">
               <MappingFragment StoreEntitySet="ExpedienteT">
@@ -5865,14 +5849,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TipoUsuarios">
-            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.TipoUsuario">
-              <MappingFragment StoreEntitySet="TipoUsuario">
-                <ScalarProperty Name="NombreTipo" ColumnName="NombreTipo" />
-                <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="FK_Ingresos_CategoriaIngreso" TypeName="ClinicaDrFuentesModel.FK_Ingresos_CategoriaIngreso" StoreEntitySet="Ingresos">
             <EndProperty Name="Ingreso">
               <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
@@ -5889,14 +5865,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </EndProperty>
             <EndProperty Name="CategoriasGasto">
               <ScalarProperty Name="IdCategoriaGasto" ColumnName="IdCategoriaGasto" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_FuenteIngreso_TipoUsuario" TypeName="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" StoreEntitySet="FuenteIngreso">
-            <EndProperty Name="FuenteIngreso">
-              <ScalarProperty Name="IdFuenteIngreso" ColumnName="IdFuenteIngreso" />
-            </EndProperty>
-            <EndProperty Name="TipoUsuario">
-              <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="FK_Gastos_FuenteIngreso" TypeName="ClinicaDrFuentesModel.FK_Gastos_FuenteIngreso" StoreEntitySet="Gastos">
@@ -5916,15 +5884,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <EndProperty Name="FuenteIngreso">
               <ScalarProperty Name="IdFuenteIngreso" ColumnName="IdFuenteIngreso" />
             </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Usuario_TipoUsuario" TypeName="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" StoreEntitySet="Usuario">
-            <EndProperty Name="Usuario">
-              <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-            </EndProperty>
-            <EndProperty Name="TipoUsuario">
-              <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
-            </EndProperty>
-            <Condition ColumnName="IdTipoUsuario" IsNull="false" />
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="sp_IngresoGastosUltimos_10" FunctionName="ClinicaDrFuentesModel.Store.sp_IngresoGastosUltimos_10">
             <ResultMapping>
@@ -6014,6 +5973,46 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <Condition ColumnName="IdCliente" IsNull="false" />
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="isCitasColicionan" FunctionName="ClinicaDrFuentesModel.Store.sp_isCitasColicionan" />
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FraseRecordar" ColumnName="FraseRecordar" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoUsuario">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.TipoUsuario">
+              <MappingFragment StoreEntitySet="TipoUsuario">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_FuenteIngreso_TipoUsuario" TypeName="ClinicaDrFuentesModel.FK_FuenteIngreso_TipoUsuario" StoreEntitySet="FuenteIngreso">
+            <EndProperty Name="FuenteIngreso">
+              <ScalarProperty Name="IdFuenteIngreso" ColumnName="IdFuenteIngreso" />
+            </EndProperty>
+            <EndProperty Name="TipoUsuario">
+              <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Usuario_TipoUsuario" TypeName="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" StoreEntitySet="Usuario">
+            <EndProperty Name="Usuario">
+              <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+            </EndProperty>
+            <EndProperty Name="TipoUsuario">
+              <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+            </EndProperty>
+          </AssociationSetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

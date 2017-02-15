@@ -21,30 +21,30 @@ public partial class TipoUsuario
     public TipoUsuario()
     {
 
-        this.FuenteIngresoes = new HashSet<FuenteIngreso>();
+        this.FuenteIngreso = new HashSet<FuenteIngreso>();
 
         this.Gastos = new HashSet<Gasto>();
 
         this.Ingresos = new HashSet<Ingreso>();
 
-        this.Usuarios = new HashSet<Usuario>();
+        this.Usuario = new HashSet<Usuario>();
 
     }
 
 
     public int IdTipoUsuario { get; set; }
 
-    public string NombreTipo { get; set; }
+    public string Nombre { get; set; }
 
 
 
-    public virtual ICollection<FuenteIngreso> FuenteIngresoes { get; set; }
+    public virtual ICollection<FuenteIngreso> FuenteIngreso { get; set; }
 
     public virtual ICollection<Gasto> Gastos { get; set; }
 
     public virtual ICollection<Ingreso> Ingresos { get; set; }
 
-    public virtual ICollection<Usuario> Usuarios { get; set; }
+    public virtual ICollection<Usuario> Usuario { get; set; }
 
 }
 

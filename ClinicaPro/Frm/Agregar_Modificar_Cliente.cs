@@ -99,7 +99,6 @@ namespace Frm
         {
             this.Close();
         }
-
 ///<summary>
 ///Cuando se preciona la tecla "enter" o la dirreción hacia "abajo", el windows Form enfoca el siguiente control 
 ///</summary>
@@ -265,15 +264,14 @@ namespace Frm
         {                                                                               //No o Si 
             this.cbExtrajero.DataSource = ClinicaPro.General.Enumerados.ClienteEnums.RespuestaBasica;
         }
+        ///<summary>
+        ///  Valida los campos que no esten vacios ni incosistentes , los pone Color.AliceBlue
+        ///  <value>String Detalles, usado para crear una cadena al final con detalles  </value>
+        ///  <value>boolean hallazgo, usado como bandera, si encontro algo = true </value>
+        ///  <return>hallazgo</return>
+        /// </summary>
         public Boolean Validar()
-        {
-            ///<summary>
-            ///  Valida los campos que no esten vacios ni incosistentes , los pone Color.AliceBlue
-            ///  <value>String Detalles, usado para crear una cadena al final con detalles  </value>
-            ///  <value>boolean hallazgo, usado como bandera, si encontro algo = true </value>
-            ///  <return>hallazgo</return>
-            /// </summary>          
-
+        {                     
             String detalles = String.Empty;
             Boolean hallazgo = false;
 
