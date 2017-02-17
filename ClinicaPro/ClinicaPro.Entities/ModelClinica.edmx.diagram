@@ -155,6 +155,7 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_GastosGenerales_TipoUsuario" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Ingresos_TipoUsuario" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Usuario_TipoUsuario" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.VistaCorreos" Width="1.5" PointX="5.375" PointY="15.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

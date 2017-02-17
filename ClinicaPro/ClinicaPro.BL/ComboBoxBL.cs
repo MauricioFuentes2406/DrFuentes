@@ -8,16 +8,9 @@ using System.Windows.Forms;
 namespace ClinicaPro.BL
 {
     public  class ComboBoxBL<T>  // Aun probando
-    {
-        public static ComboBox llenarComboGenerico(ComboBox combo, List<T> lista)
-         {
-             combo.DataSource = lista;
-             combo.DisplayMember="nombre";
-             combo.ValueMember="valor";
-             return combo;
-         }
+    {      
         /// <summary>
-        /// La diferencia es este para jalar los comboBox que viene de la BaseDatos
+        /// Configura los comboBox que carga los datos de la BD , PD: la columna de tabla debe llamarse nombre  
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="lista"></param>

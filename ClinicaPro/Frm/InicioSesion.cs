@@ -21,31 +21,34 @@ namespace Frm
         {
 
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnIniciar_Click(object sender, EventArgs e)
         {        
             new AuxiliarLogin().Show();
             this.Hide();
+            // If Login exitoso entonces 
+            Properties.Settings.Default.LastDayLogin = DateTime.Now;
+            Properties.Settings.Default.Save();
         }
-
         private void InicioSesion_Load(object sender, EventArgs e)
         {
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             ClinicaPro.DB.Consulta.AntecedenteDrogaDB.oso();
+        }     
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+           /// ClinicaPro.BL.Correo.Enviar();
         }
 
-        private void btnBusqueda_Click(object sender, EventArgs e)
+        private void Correos_DoWork(object sender, DoWorkEventArgs e)
         {
-            new frmBusquedas().ShowDialog();
+            MessageBox.Show("Test");           
         }
 
       

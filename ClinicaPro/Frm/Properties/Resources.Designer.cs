@@ -373,6 +373,16 @@ namespace Frm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mail_10 {
+            get {
+                object obj = ResourceManager.GetObject("mail_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marijuana {
             get {
                 object obj = ResourceManager.GetObject("marijuana", resourceCulture);

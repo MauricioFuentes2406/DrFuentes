@@ -265,6 +265,9 @@
     <Compile Include="VistaConsulta.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="VistaCorreos.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="VistaDrogas.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>

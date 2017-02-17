@@ -662,7 +662,7 @@
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
@@ -798,6 +798,23 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaConsulta' no tiene
           <Property Name="PrimerIndicio" Type="varchar" MaxLength="200" />
           <Property Name="QSucedeAcontinuacion" Type="varchar" MaxLength="150" />
           <Property Name="Diagnostico Confirmado" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaCorreos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VistaCorreos">
+          <Key>
+            <PropertyRef Name="IdCita" />
+            <PropertyRef Name="FechaCitaDesde" />
+            <PropertyRef Name="FechaCitaHasta" />
+            <PropertyRef Name="Comentario" />
+          </Key>
+          <Property Name="IdCita" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="106" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="Celular" Type="int" />
+          <Property Name="FechaCitaDesde" Type="datetime" Nullable="false" />
+          <Property Name="FechaCitaHasta" Type="time" Precision="0" Nullable="false" />
+          <Property Name="Comentario" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaDrogas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -2194,6 +2211,17 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     [VistaConsulta].[Diagnostico Confirmado] AS [Diagnostico Confirmado]
     FROM [dbo].[VistaConsulta] AS [VistaConsulta]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="VistaCorreos" EntityType="Self.VistaCorreos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaCorreos].[IdCita] AS [IdCita], 
+    [VistaCorreos].[Nombre] AS [Nombre], 
+    [VistaCorreos].[Email] AS [Email], 
+    [VistaCorreos].[Celular] AS [Celular], 
+    [VistaCorreos].[FechaCitaDesde] AS [FechaCitaDesde], 
+    [VistaCorreos].[FechaCitaHasta] AS [FechaCitaHasta], 
+    [VistaCorreos].[Comentario] AS [Comentario]
+    FROM [dbo].[VistaCorreos] AS [VistaCorreos]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VistaDrogas" EntityType="Self.VistaDrogas" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VistaDrogas].[Número Consulta] AS [Número Consulta], 
@@ -2738,7 +2766,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <NavigationProperty xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" Name="Examenes" a:GetterAccess="Private" a:SetterAccess="Public" Relationship="Self.FK_Examenes_Cliente" FromRole="Cliente" ToRole="Examenes" />
           <NavigationProperty xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" Name="ClienteOtrosArchivos" a:GetterAccess="Private" a:SetterAccess="Public" Relationship="Self.FK_OtrosArchivosCliente_Cliente" FromRole="Cliente" ToRole="ClienteOtrosArchivos" />
           <NavigationProperty Name="ClienteAlergias" Relationship="ClinicaDrFuentesModel.FK_ClienteAlergias_Cliente" FromRole="Cliente" ToRole="ClienteAlergia" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="Citas" Relationship="ClinicaDrFuentesModel.FK_Citas_Cliente" FromRole="Cliente" ToRole="Citas" />
+          <NavigationProperty Name="Citas" Relationship="ClinicaDrFuentesModel.FK_Citas_Cliente" FromRole="Cliente" ToRole="Citas" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="ClienteOtrosArchivo">
           <Key>
@@ -4231,6 +4259,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="TipoUsuario" EntitySet="TipoUsuario" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
+          <EntitySet Name="VistaCorreos" EntityType="ClinicaDrFuentesModel.VistaCorreos" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -4926,6 +4955,21 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <End Type="ClinicaDrFuentesModel.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
           <End Type="ClinicaDrFuentesModel.Usuario" Role="Usuario" Multiplicity="*" />
         </Association>
+        <EntityType Name="VistaCorreos">
+          <Key>
+            <PropertyRef Name="IdCita" />
+            <PropertyRef Name="FechaCitaDesde" />
+            <PropertyRef Name="FechaCitaHasta" />
+            <PropertyRef Name="Comentario" />
+          </Key>
+          <Property Name="IdCita" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="106" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="Int32" />
+          <Property Name="FechaCitaDesde" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaCitaHasta" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="Comentario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       
         </Schema>
     </edmx:ConceptualModels>
@@ -6013,6 +6057,19 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="VistaCorreos">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaCorreos">
+              <MappingFragment StoreEntitySet="VistaCorreos">
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="FechaCitaHasta" ColumnName="FechaCitaHasta" />
+                <ScalarProperty Name="FechaCitaDesde" ColumnName="FechaCitaDesde" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -74,7 +74,7 @@ public partial class Cliente
 
     public virtual ICollection<ClienteAlergia> ClienteAlergias { private get; set; }
 
-    public virtual ICollection<Citas> Citas { get; set; }
+    public virtual ICollection<Citas> Citas { private get; set; }
 
 }
 

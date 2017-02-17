@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AutoCompleteTextControl.cs" />
     <Compile Include="Calculos.cs" />
+    <Compile Include="Correo.cs" />
     <Compile Include="manejaImagenes.cs" />
     <Compile Include="Mensaje.cs" />
     <Compile Include="ComboBoxBL.cs" />
@@ -55,6 +56,10 @@
     <Compile Include="TabOrderBL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClinicaPro.Entities\ClinicaPro.Entities.csproj">
+      <Project>{baa9224e-fe89-43f4-b88d-8db6a1e9519a}</Project>
+      <Name>ClinicaPro.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClinicaPro.General\ClinicaPro.General.csproj">
       <Project>{17722a54-4ccd-4a2d-9899-3e172455fc84}</Project>
       <Name>ClinicaPro.General</Name>
