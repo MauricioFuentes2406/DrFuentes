@@ -39,7 +39,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Correos = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -161,10 +160,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Sesion";
             // 
-            // Correos
-            // 
-            this.Correos.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Correos_DoWork);
-            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,7 +196,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Button button2;
-        private System.ComponentModel.BackgroundWorker Correos;
     }
 }
 

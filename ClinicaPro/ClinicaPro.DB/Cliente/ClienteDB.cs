@@ -105,7 +105,7 @@ namespace ClinicaPro.DB.Cliente
                }
                 catch(Exception ex)
                {
-                   MessageBox.Show("Nose pudo Eliminar charita");
+                   MessageBox.Show(Mensajes.AlgoPaso);
                    return false;
                }               
             }
@@ -175,6 +175,57 @@ namespace ClinicaPro.DB.Cliente
                    consultaDb.Eliminar(idConsulta, idTipoUsuario);
                }
            }
+        }
+        public static int TotalHombres()
+        {
+            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                return (from tabla in Contexto.Clientes.AsNoTracking()
+                        where tabla.Sexo == "H"
+                        select tabla.IdCliente).Count();
+            }
+        }
+        public static int TotalMujeres()
+        {
+            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                return (from tabla in Contexto.Clientes.AsNoTracking()
+                        where tabla.Sexo == "M"
+                        select tabla.IdCliente).Count();
+            }
+        }
+        public static int TotalExtrajeros()
+        {
+            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                return (from tabla in Contexto.Clientes.AsNoTracking()
+                        where tabla.isExtranjero
+                        select tabla.IdCliente).Count();
+            }
+        }
+        public static List<int> PersonasRangoEdad()
+        {
+            List<int> list = new List<int>();
+            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                // de 1  a 20
+                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                          where tabla.Edad >=1 && tabla.Edad <= 20
+                          select tabla.IdCliente).Count());
+                // 21 a 40
+                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                          where tabla.Edad >= 21 && tabla.Edad <= 40
+                          select tabla.IdCliente).Count());
+                // 41 a 50
+                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                          where tabla.Edad >= 41 && tabla.Edad <= 50
+                          select tabla.IdCliente).Count());
+                //> 50
+                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                          where tabla.Edad > 50
+                          select tabla.IdCliente).Count());
+                return list;
+            }
         }
     }
 }

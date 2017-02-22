@@ -87,6 +87,8 @@
             this.tabAlcholtabaco = new System.Windows.Forms.TabPage();
             this.dgTabaco = new System.Windows.Forms.DataGridView();
             this.dgAlchol = new System.Windows.Forms.DataGridView();
+            this.tabAlergias = new System.Windows.Forms.TabPage();
+            this.dgAlergias = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,8 +115,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMensajeInformativo = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.tabAlergias = new System.Windows.Forms.TabPage();
-            this.dgAlergias = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkMes = new System.Windows.Forms.CheckBox();
             this.tabGeneral.SuspendLayout();
             this.tabConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsulta)).BeginInit();
@@ -172,6 +174,8 @@
             this.tabAlcholtabaco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTabaco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlchol)).BeginInit();
+            this.tabAlergias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.tabPage9.SuspendLayout();
@@ -180,8 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).BeginInit();
-            this.tabAlergias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -962,6 +965,32 @@
             this.dgAlchol.Size = new System.Drawing.Size(473, 354);
             this.dgAlchol.TabIndex = 11;
             // 
+            // tabAlergias
+            // 
+            this.tabAlergias.Controls.Add(this.dgAlergias);
+            this.tabAlergias.Location = new System.Drawing.Point(4, 22);
+            this.tabAlergias.Name = "tabAlergias";
+            this.tabAlergias.Size = new System.Drawing.Size(960, 392);
+            this.tabAlergias.TabIndex = 10;
+            this.tabAlergias.Text = "Alergias";
+            this.tabAlergias.UseVisualStyleBackColor = true;
+            // 
+            // dgAlergias
+            // 
+            this.dgAlergias.AllowUserToAddRows = false;
+            this.dgAlergias.AllowUserToDeleteRows = false;
+            this.dgAlergias.AllowUserToOrderColumns = true;
+            this.dgAlergias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgAlergias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgAlergias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAlergias.Location = new System.Drawing.Point(7, 20);
+            this.dgAlergias.Name = "dgAlergias";
+            this.dgAlergias.ReadOnly = true;
+            this.dgAlergias.Size = new System.Drawing.Size(947, 359);
+            this.dgAlergias.TabIndex = 7;
+            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.dataGridView8);
@@ -1061,7 +1090,7 @@
             this.dataGridView10.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn7});
-            this.dataGridView10.Location = new System.Drawing.Point(29, 61);
+            this.dataGridView10.Location = new System.Drawing.Point(7, 8);
             this.dataGridView10.Name = "dataGridView10";
             this.dataGridView10.Size = new System.Drawing.Size(540, 147);
             this.dataGridView10.TabIndex = 1;
@@ -1093,7 +1122,7 @@
             this.groupBox1.Controls.Add(this.btnFiltrarXNumeroCliente);
             this.groupBox1.Controls.Add(this.btnFiltrarPorCliente);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Location = new System.Drawing.Point(194, 1);
+            this.groupBox1.Location = new System.Drawing.Point(339, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(501, 70);
             this.groupBox1.TabIndex = 40;
@@ -1214,31 +1243,26 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // tabAlergias
+            // groupBox2
             // 
-            this.tabAlergias.Controls.Add(this.dgAlergias);
-            this.tabAlergias.Location = new System.Drawing.Point(4, 22);
-            this.tabAlergias.Name = "tabAlergias";
-            this.tabAlergias.Size = new System.Drawing.Size(960, 392);
-            this.tabAlergias.TabIndex = 10;
-            this.tabAlergias.Text = "Alergias";
-            this.tabAlergias.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.chkMes);
+            this.groupBox2.Location = new System.Drawing.Point(152, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(166, 66);
+            this.groupBox2.TabIndex = 48;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "OtrosFiltros";
+            this.groupBox2.Visible = false;
             // 
-            // dgAlergias
+            // chkMes
             // 
-            this.dgAlergias.AllowUserToAddRows = false;
-            this.dgAlergias.AllowUserToDeleteRows = false;
-            this.dgAlergias.AllowUserToOrderColumns = true;
-            this.dgAlergias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgAlergias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgAlergias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAlergias.Location = new System.Drawing.Point(7, 20);
-            this.dgAlergias.Name = "dgAlergias";
-            this.dgAlergias.ReadOnly = true;
-            this.dgAlergias.Size = new System.Drawing.Size(947, 359);
-            this.dgAlergias.TabIndex = 7;
+            this.chkMes.AutoSize = true;
+            this.chkMes.Location = new System.Drawing.Point(6, 21);
+            this.chkMes.Name = "chkMes";
+            this.chkMes.Size = new System.Drawing.Size(46, 17);
+            this.chkMes.TabIndex = 0;
+            this.chkMes.Text = "Mes";
+            this.chkMes.UseVisualStyleBackColor = true;
             // 
             // Expediente
             // 
@@ -1246,6 +1270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(993, 503);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
@@ -1315,6 +1340,8 @@
             this.tabAlcholtabaco.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgTabaco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlchol)).EndInit();
+            this.tabAlergias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).EndInit();
             this.tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.tabPage9.ResumeLayout(false);
@@ -1324,8 +1351,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).EndInit();
-            this.tabAlergias.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1419,5 +1446,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabAlergias;
         private System.Windows.Forms.DataGridView dgAlergias;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox chkMes;
     }
 }

@@ -23,8 +23,6 @@ public partial class Cliente
 
         this.Consultas = new HashSet<Consulta>();
 
-        this.ElectroResultados = new HashSet<ElectroResultado>();
-
         this.Examenes = new HashSet<Examene>();
 
         this.ClienteOtrosArchivos = new HashSet<ClienteOtrosArchivo>();
@@ -65,8 +63,6 @@ public partial class Cliente
 
 
     public virtual ICollection<Consulta> Consultas { private get; set; }
-
-    public virtual ICollection<ElectroResultado> ElectroResultados { private get; set; }
 
     public virtual ICollection<Examene> Examenes { private get; set; }
 

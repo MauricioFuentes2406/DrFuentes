@@ -29,9 +29,7 @@ namespace Frm
         {        
             new AuxiliarLogin().Show();
             this.Hide();
-            // If Login exitoso entonces 
-            Properties.Settings.Default.LastDayLogin = DateTime.Now;
-            Properties.Settings.Default.Save();
+            // If Login exitoso entonces                      
         }
         private void InicioSesion_Load(object sender, EventArgs e)
         {
@@ -43,14 +41,8 @@ namespace Frm
         }     
         private void button2_Click_1(object sender, EventArgs e)
         {
-           /// ClinicaPro.BL.Correo.Enviar();
+            new Frm.Reportes.frmCliente().Show(); 
         }
-
-        private void Correos_DoWork(object sender, DoWorkEventArgs e)
-        {
-            MessageBox.Show("Test");           
-        }
-
       
     }
 }

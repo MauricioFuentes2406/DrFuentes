@@ -51,6 +51,7 @@
     <Compile Include="Mensaje.cs" />
     <Compile Include="ComboBoxBL.cs" />
     <Compile Include="manejaExcepcionesDB.cs" />
+    <Compile Include="OrdenarNotificacionesBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemProces.cs" />
     <Compile Include="TabOrderBL.cs" />

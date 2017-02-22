@@ -25,13 +25,13 @@ namespace Frm.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("02/16/2017 23:46:00")]
-        public global::System.DateTime LastDayLogin {
+        [global::System.Configuration.DefaultSettingValueAttribute("02/17/2017 10:53:00")]
+        public global::System.DateTime LastDayEmailCitas {
             get {
-                return ((global::System.DateTime)(this["LastDayLogin"]));
+                return ((global::System.DateTime)(this["LastDayEmailCitas"]));
             }
             set {
-                this["LastDayLogin"] = value;
+                this["LastDayEmailCitas"] = value;
             }
         }
     }

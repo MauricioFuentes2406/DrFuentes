@@ -188,5 +188,25 @@ namespace ClinicaPro.DB.Consulta
                         select tabla.IdConsulta).ToList();
             }
         }
+
+
+        //public void  ConsultasXMes()
+        //{
+        //    using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+        //    {
+        //        var results = (from r in Contexto.Consultas
+        //                      let year = DbFunctions.AddYears("yy", r.FechaConsulta)
+        //                       let month = DbFunctions.DatePart("mm", r.FechaConsulta)
+        //                      where (r.datevalue >= frommonth && r.datevalue < tomonth)
+        //                      group r by new { year, month } into g
+        //                      select new
+        //                      {
+        //                          Year = g.Key.year,
+        //                          Month = g.Key.month,
+        //                          NoSales = g.Sum(x => x.No_of_sales)
+        //                      });
+        //    }
+
+        //}
     }
 }

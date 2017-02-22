@@ -112,7 +112,9 @@
     <Compile Include="GastosIngresos\IngresoDB.cs" />
     <Compile Include="GastosIngresos\Vistas\VGasto.cs" />
     <Compile Include="GastosIngresos\Vistas\VIngreso.cs" />
+    <Compile Include="Notificaciones\NotificaionesDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\VReportes.cs" />
     <Compile Include="Usuario\TipoUsuarioDB.cs" />
     <Compile Include="Usuario\UsuarioDB.cs" />
   </ItemGroup>

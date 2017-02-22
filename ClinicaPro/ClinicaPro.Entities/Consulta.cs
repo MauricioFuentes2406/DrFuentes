@@ -21,8 +21,6 @@ public partial class Consulta
     public Consulta()
     {
 
-        this.ElectroResultados = new HashSet<ElectroResultado>();
-
         this.GeneralTipoServicios = new HashSet<GeneralTipoServicio>();
 
         this.AntecedenteDrogra = new HashSet<AntecedenteDrogra>();
@@ -93,8 +91,6 @@ public partial class Consulta
     public virtual ConsultaToraxPulmone ConsultaToraxPulmone { private get; set; }
 
     public virtual CoordinacionyMarcha CoordinacionyMarcha { private get; set; }
-
-    public virtual ICollection<ElectroResultado> ElectroResultados { private get; set; }
 
     public virtual ConsultaEstadoVivienda ConsultaEstadoVivienda { private get; set; }
 

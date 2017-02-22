@@ -159,9 +159,6 @@
     <Compile Include="Droga_ListarConsultasRelacionadas_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="ElectroResultado.cs">
-      <DependentUpon>ModelClinica.tt</DependentUpon>
-    </Compile>
     <Compile Include="EscalaTiempo.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -213,8 +210,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelClinica.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Notificaciones.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguimiento.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteClienteLugares_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteConsultaCantidadAnoActual1_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPReporteConsultaGananciaAnoActual1_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPReporteConsultaGananciaAnoActual_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPReporteConsultaGananciaAnoActual_Result1.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteConsultaGananciaTotal_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteConsultasCantidadTotal_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteConsultaSexos_Result1.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteConsultasTodas_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteConsultaTotalAno_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_Droga_ListarConsultasRelacionadas_Result.cs">

@@ -85,8 +85,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<CoordinacionyMarcha> CoordinacionyMarchas { get; set; }
 
-    public virtual DbSet<ElectroResultado> ElectroResultados { get; set; }
-
     public virtual DbSet<EscalaTiempo> EscalaTiempoes { get; set; }
 
     public virtual DbSet<Examene> Examenes { get; set; }
@@ -180,6 +178,8 @@ public partial class ClinicaDrFuentesEntities : DbContext
     public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
 
     public virtual DbSet<VistaCorreos> VistaCorreos { get; set; }
+
+    public virtual DbSet<Notificaciones> Notificaciones { get; set; }
 
 
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -378,6 +378,48 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("isCitasColicionan", fechaDesdeParameter, fechaHastaParameter);
+    }
+
+
+    public virtual ObjectResult<SpReporteConsultaGananciaTotal_Result> SpReporteConsultaGananciaTotal()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteConsultaGananciaTotal_Result>("SpReporteConsultaGananciaTotal");
+    }
+
+
+    public virtual ObjectResult<SpReporteConsultasCantidadTotal_Result> SpReporteConsultasCantidadTotal()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteConsultasCantidadTotal_Result>("SpReporteConsultasCantidadTotal");
+    }
+
+
+    public virtual ObjectResult<SpReporteConsultaSexos_Result1> SpReporteConsultaSexos()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteConsultaSexos_Result1>("SpReporteConsultaSexos");
+    }
+
+
+    public virtual ObjectResult<SpReporteConsultaCantidadAnoActual1_Result> SpReporteConsultaCantidadAnoActual1()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteConsultaCantidadAnoActual1_Result>("SpReporteConsultaCantidadAnoActual1");
+    }
+
+
+    public virtual ObjectResult<SPReporteConsultaGananciaAnoActual1_Result> SPReporteConsultaGananciaAnoActual1()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SPReporteConsultaGananciaAnoActual1_Result>("SPReporteConsultaGananciaAnoActual1");
+    }
+
+
+    public virtual ObjectResult<SpReporteClienteLugares_Result> SpReporteClienteLugares()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteClienteLugares_Result>("SpReporteClienteLugares");
     }
 
 }

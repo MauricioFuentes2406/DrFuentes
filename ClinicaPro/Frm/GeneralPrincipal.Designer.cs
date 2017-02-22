@@ -28,19 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralPrincipal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralPrincipal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panelNotificaciones = new System.Windows.Forms.Panel();
+            this.dgNotificaciones = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnExpediente = new System.Windows.Forms.Button();
@@ -60,42 +57,85 @@
             this.btnOcultarPanel = new System.Windows.Forms.Button();
             this.dgSeguimientos = new System.Windows.Forms.DataGridView();
             this.Columndone = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1.SuspendLayout();
+            this.panelNotificaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgNotificaciones)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelSeguimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelNotificaciones
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Location = new System.Drawing.Point(737, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 485);
-            this.panel1.TabIndex = 0;
+            this.panelNotificaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelNotificaciones.Controls.Add(this.dgNotificaciones);
+            this.panelNotificaciones.Controls.Add(this.panel2);
+            this.panelNotificaciones.Location = new System.Drawing.Point(737, 0);
+            this.panelNotificaciones.Name = "panelNotificaciones";
+            this.panelNotificaciones.Size = new System.Drawing.Size(233, 485);
+            this.panelNotificaciones.TabIndex = 0;
+            // 
+            // dgNotificaciones
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgNotificaciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgNotificaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgNotificaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgNotificaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgNotificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgNotificaciones.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgNotificaciones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgNotificaciones.Location = new System.Drawing.Point(0, 68);
+            this.dgNotificaciones.Name = "dgNotificaciones";
+            this.dgNotificaciones.ReadOnly = true;
+            this.dgNotificaciones.RowHeadersVisible = false;
+            this.dgNotificaciones.RowTemplate.Height = 38;
+            this.dgNotificaciones.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgNotificaciones.Size = new System.Drawing.Size(231, 415);
+            this.dgNotificaciones.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 65);
+            this.panel2.Size = new System.Drawing.Size(225, 65);
             this.panel2.TabIndex = 0;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Image = global::Frm.Properties.Resources.list;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(96, 22);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(39, 31);
+            this.btnAgregar.TabIndex = 18;
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 27);
+            this.label1.Location = new System.Drawing.Point(93, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 1;
@@ -104,79 +144,11 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Location = new System.Drawing.Point(15, 86);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(169, 307);
-            this.panel5.TabIndex = 11;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(16, 199);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 73);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Notificacion3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(16, 105);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 73);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Notificacion2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(16, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 73);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Notificacion1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 415);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Paginas";
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(102, 410);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(23, 23);
-            this.button6.TabIndex = 6;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(131, 410);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(23, 23);
-            this.button5.TabIndex = 5;
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -188,7 +160,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(686, 151);
             this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnCitas
             // 
@@ -218,7 +189,7 @@
             this.btnExpediente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExpediente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExpediente.UseVisualStyleBackColor = true;
-            this.btnExpediente.Click += new System.EventHandler(this.button12_Click);
+            this.btnExpediente.Click += new System.EventHandler(this.btnExpediente_Click);
             // 
             // btnConsulta
             // 
@@ -233,7 +204,7 @@
             this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConsulta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConsulta.UseVisualStyleBackColor = true;
-            this.btnConsulta.Click += new System.EventHandler(this.button8_Click);
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // button7
             // 
@@ -274,6 +245,7 @@
             this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // btnConfiguracion
             // 
@@ -303,7 +275,7 @@
             this.btnGastosIngresos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGastosIngresos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGastosIngresos.UseVisualStyleBackColor = true;
-            this.btnGastosIngresos.Click += new System.EventHandler(this.button10_Click);
+            this.btnGastosIngresos.Click += new System.EventHandler(this.btnIngresoEgreso_Click);
             // 
             // button9
             // 
@@ -318,7 +290,7 @@
             this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // label3
             // 
@@ -365,7 +337,7 @@
             this.btnSeguimientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeguimientos.Location = new System.Drawing.Point(0, 0);
             this.btnSeguimientos.Name = "btnSeguimientos";
-            this.btnSeguimientos.Size = new System.Drawing.Size(937, 23);
+            this.btnSeguimientos.Size = new System.Drawing.Size(970, 23);
             this.btnSeguimientos.TabIndex = 9;
             this.btnSeguimientos.Text = "Numero Seguimientos Hoy : ";
             this.btnSeguimientos.UseVisualStyleBackColor = true;
@@ -404,14 +376,14 @@
             this.dgSeguimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSeguimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Columndone});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgSeguimientos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSeguimientos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgSeguimientos.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgSeguimientos.Location = new System.Drawing.Point(0, 0);
             this.dgSeguimientos.MultiSelect = false;
@@ -434,7 +406,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(937, 486);
+            this.ClientSize = new System.Drawing.Size(970, 487);
             this.Controls.Add(this.panelSeguimiento);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -442,7 +414,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelNotificaciones);
             this.Controls.Add(this.btnSeguimientos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -451,12 +423,11 @@
             this.Text = "Medicina General";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GeneralPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelNotificaciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgNotificaciones)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panelSeguimiento.ResumeLayout(false);
@@ -468,13 +439,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panelNotificaciones;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -489,14 +457,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnCitas;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSeguimientos;
         private System.Windows.Forms.Panel panelSeguimiento;
         private System.Windows.Forms.Button btnOcultarPanel;
         private System.Windows.Forms.DataGridView dgSeguimientos;
         private System.Windows.Forms.DataGridViewImageColumn Columndone;
+        private System.Windows.Forms.DataGridView dgNotificaciones;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
