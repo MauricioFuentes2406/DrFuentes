@@ -217,6 +217,12 @@
     <Compile Include="Seguimiento.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="SpReporteCitasCategoria_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteCitasTotal_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="SpReporteClienteLugares_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
@@ -245,6 +251,21 @@
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="SpReporteConsultaTotalAno_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteGastosAnoAnual_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteGastoTotal_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteGastoUsoCategorias_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteIngresoAnoActual_Result.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpReporteIngresoTotal_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_Droga_ListarConsultasRelacionadas_Result.cs">

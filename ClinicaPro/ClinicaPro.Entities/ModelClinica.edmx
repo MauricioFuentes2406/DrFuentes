@@ -2051,12 +2051,29 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
         <Function Name="sp_VacunaListarConsultasRelacionadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdVacuna" Type="int" Mode="In" />
         </Function>
+        <Function Name="SpReporteCitasCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SpReporteCitasTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteClienteLugares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteConsultaCantidadAnoActual" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SPReporteConsultaGananciaAnoActual" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteConsultaGananciaTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteConsultasCantidadTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteConsultaSexos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SpReporteGastosAnoAnual" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SpReporteGastoTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SpReporteGastoUsoCategorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SpReporteIngresoAnoActual" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SpReporteIngresoTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoUsuario" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="ClinicaDrFuentesModelStoreContainer">
           <EntitySet Name="AntecedenteAlcohol" EntityType="Self.AntecedenteAlcohol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AntecedenteDrogra" EntityType="Self.AntecedenteDrogra" Schema="dbo" store:Type="Tables" />
@@ -4193,6 +4210,23 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <FunctionImport Name="SpReporteConsultaCantidadAnoActual1" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteConsultaCantidadAnoActual1_Result)" />
           <FunctionImport Name="SPReporteConsultaGananciaAnoActual1" ReturnType="Collection(ClinicaDrFuentesModel.SPReporteConsultaGananciaAnoActual1_Result)" />
           <FunctionImport Name="SpReporteClienteLugares" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteClienteLugares_Result)" />
+          <FunctionImport Name="SpReporteGastosAnoAnual" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteGastosAnoAnual_Result)">
+          <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SpReporteIngresoAnoActual" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteIngresoAnoActual_Result)">
+          <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SpReporteGastoTotal" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteGastoTotal_Result)">
+          <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SpReporteIngresoTotal" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteIngresoTotal_Result)">
+          <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SpReporteGastoUsoCategorias" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteGastoUsoCategorias_Result)">
+          <Parameter Name="TipoUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SpReporteCitasCategoria" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteCitasCategoria_Result)" />
+          <FunctionImport Name="SpReporteCitasTotal" ReturnType="Collection(ClinicaDrFuentesModel.SpReporteCitasTotal_Result)" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -4952,6 +4986,35 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
         <ComplexType Name="SpReporteClienteLugares_Result">
           <Property Type="Int32" Name="Cantidad" Nullable="true" />
           <Property Type="String" Name="Ciudad" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SpReporteGastosAnoAnual_Result">
+          <Property Type="String" Name="Mes" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SpReporteIngresoAnoActual_Result">
+          <Property Type="String" Name="Mes" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SpReporteGastoTotal_Result">
+          <Property Type="String" Name="Mes" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SpReporteIngresoTotal_Result">
+          <Property Type="String" Name="Mes" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SpReporteGastoUsoCategorias_Result">
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="Int32" Name="Total" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SpReporteCitasCategoria_Result">
+          <Property Type="String" Name="EstadoCita" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SpReporteCitasTotal_Result">
+          <Property Type="String" Name="Mes" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -6099,6 +6162,63 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteClienteLugares_Result">
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpReporteGastosAnoAnual" FunctionName="ClinicaDrFuentesModel.Store.SpReporteGastosAnoAnual">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteGastosAnoAnual_Result">
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpReporteIngresoAnoActual" FunctionName="ClinicaDrFuentesModel.Store.SpReporteIngresoAnoActual">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteIngresoAnoActual_Result">
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpReporteGastoTotal" FunctionName="ClinicaDrFuentesModel.Store.SpReporteGastoTotal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteGastoTotal_Result">
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpReporteIngresoTotal" FunctionName="ClinicaDrFuentesModel.Store.SpReporteIngresoTotal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteIngresoTotal_Result">
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpReporteGastoUsoCategorias" FunctionName="ClinicaDrFuentesModel.Store.SpReporteGastoUsoCategorias">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteGastoUsoCategorias_Result">
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpReporteCitasCategoria" FunctionName="ClinicaDrFuentesModel.Store.SpReporteCitasCategoria">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteCitasCategoria_Result">
+                <ScalarProperty Name="EstadoCita" ColumnName="EstadoCita" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpReporteCitasTotal" FunctionName="ClinicaDrFuentesModel.Store.SpReporteCitasTotal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClinicaDrFuentesModel.SpReporteCitasTotal_Result">
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

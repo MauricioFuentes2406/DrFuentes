@@ -422,6 +422,80 @@ public partial class ClinicaDrFuentesEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteClienteLugares_Result>("SpReporteClienteLugares");
     }
 
+
+    public virtual ObjectResult<SpReporteGastosAnoAnual_Result> SpReporteGastosAnoAnual(Nullable<int> tipoUsuario)
+    {
+
+        var tipoUsuarioParameter = tipoUsuario.HasValue ?
+            new ObjectParameter("TipoUsuario", tipoUsuario) :
+            new ObjectParameter("TipoUsuario", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteGastosAnoAnual_Result>("SpReporteGastosAnoAnual", tipoUsuarioParameter);
+    }
+
+
+    public virtual ObjectResult<SpReporteIngresoAnoActual_Result> SpReporteIngresoAnoActual(Nullable<int> tipoUsuario)
+    {
+
+        var tipoUsuarioParameter = tipoUsuario.HasValue ?
+            new ObjectParameter("TipoUsuario", tipoUsuario) :
+            new ObjectParameter("TipoUsuario", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteIngresoAnoActual_Result>("SpReporteIngresoAnoActual", tipoUsuarioParameter);
+    }
+
+
+    public virtual ObjectResult<SpReporteGastoTotal_Result> SpReporteGastoTotal(Nullable<int> tipoUsuario)
+    {
+
+        var tipoUsuarioParameter = tipoUsuario.HasValue ?
+            new ObjectParameter("TipoUsuario", tipoUsuario) :
+            new ObjectParameter("TipoUsuario", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteGastoTotal_Result>("SpReporteGastoTotal", tipoUsuarioParameter);
+    }
+
+
+    public virtual ObjectResult<SpReporteIngresoTotal_Result> SpReporteIngresoTotal(Nullable<int> tipoUsuario)
+    {
+
+        var tipoUsuarioParameter = tipoUsuario.HasValue ?
+            new ObjectParameter("TipoUsuario", tipoUsuario) :
+            new ObjectParameter("TipoUsuario", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteIngresoTotal_Result>("SpReporteIngresoTotal", tipoUsuarioParameter);
+    }
+
+
+    public virtual ObjectResult<SpReporteGastoUsoCategorias_Result> SpReporteGastoUsoCategorias(Nullable<int> tipoUsuario)
+    {
+
+        var tipoUsuarioParameter = tipoUsuario.HasValue ?
+            new ObjectParameter("TipoUsuario", tipoUsuario) :
+            new ObjectParameter("TipoUsuario", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteGastoUsoCategorias_Result>("SpReporteGastoUsoCategorias", tipoUsuarioParameter);
+    }
+
+
+    public virtual ObjectResult<SpReporteCitasCategoria_Result> SpReporteCitasCategoria()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteCitasCategoria_Result>("SpReporteCitasCategoria");
+    }
+
+
+    public virtual ObjectResult<SpReporteCitasTotal_Result> SpReporteCitasTotal()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteCitasTotal_Result>("SpReporteCitasTotal");
+    }
+
 }
 
 }

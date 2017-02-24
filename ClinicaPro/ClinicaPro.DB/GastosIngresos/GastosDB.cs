@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 using ClinicaPro.BL;
 using System.Data.Entity.Core;
 using System.Data.Entity.Infrastructure;
-
+using System.Windows.Forms;
+	
+		 
+	
 
 namespace ClinicaPro.DB.GastosIngresos
 {
@@ -228,6 +231,36 @@ namespace ClinicaPro.DB.GastosIngresos
 
 
 
+        }
+
+        public  static  void CategoriasMasUsadas(int idTipoUsuario)
+        {
+            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                try
+                {
+                    List<CategoriaCantidad> list = new List<CategoriaCantidad>();
+                    var listCategoriasNombre = (from n in Contexto.Gastos
+                                                join c in Contexto.CategoriasGastoes on
+                                                 n.CategoriasGasto.IdCategoriaGasto equals c.IdCategoriaGasto
+                                                select c.Nombre).Distinct().ToList();
+
+
+                    var ListCategoriasCantidad = (from n in Contexto.Gastos
+                                                  group n by n.CategoriasGasto.IdCategoriaGasto into g
+                                                  select 1).Count();
+
+                   
+
+                }
+                catch (Exception)
+                {
+                    
+                    throw;
+                }
+               
+
+            }
         }
     }
 }

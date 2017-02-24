@@ -41,7 +41,7 @@ namespace Frm
         }     
         private void button2_Click_1(object sender, EventArgs e)
         {
-            new Frm.Reportes.frmCliente().Show(); 
+            new Frm.Reportes.frmCitas().Show();
         }
       
     }

@@ -17,11 +17,14 @@ namespace Frm
     public partial class GeneralPrincipal : Form
     {
         public int idCliente { get; set; }
+        public int IdTipoUsuario { get; set; }
         public String nombreCompleto { get; set; }
         private List<int> _IdSeguimientoRemove;
         public GeneralPrincipal()
         {
+            this.IdTipoUsuario = 1;
             InitializeComponent();
+
         }
         private void Principal_Load(object sender, EventArgs e)
         {
@@ -205,7 +208,7 @@ namespace Frm
 
        private void button13_Click(object sender, EventArgs e)
        {
-           new Frm.Reportes.frmReporteGeneral().Show();
+           new Frm.Reportes.frmReporteGeneral(this.IdTipoUsuario).Show();
        }
 
     }
