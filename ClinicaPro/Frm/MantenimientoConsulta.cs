@@ -18,6 +18,7 @@ namespace Frm
         public int IdCliente { get; set; }
         private const String Numero_Cliente = "Número_Cliente";
         private const String Numero_Consulta = "Número Consulta";
+        private bool _IsFiltradaPorDiagnosticoEstado = false;
 
         //        ~~~~~~~~~~~~~~~~~~ Constructor  ~~~~~~~~~~~~~~~~~~~~~~~~
         public MantenimientoConsulta()
@@ -81,6 +82,23 @@ namespace Frm
                return (int)this.dgConsulta.CurrentRow.Cells["Número_Consulta"].Value;
             }
             else return -1;
+        }
+
+        /// <summary>
+        /// Oculta las filas En Con estado Diagnostico false, no consulta a la DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRechazados_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dgConsulta.Rows)
+            {
+                bool DiagnosticoEstado = (bool)row.Cells["Diagnostico_Confirmado"].Value;
+               if (DiagnosticoEstado)
+               {                                                  
+                   row.Visible = false;                                                                                   
+               }
+            }
         }
         
     }

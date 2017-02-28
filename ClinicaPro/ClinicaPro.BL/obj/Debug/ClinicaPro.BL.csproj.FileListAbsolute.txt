@@ -18,3 +18,5 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\EntityFramew
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.csprojResolveAssemblyReference.cache
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.dll
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.pdb
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.BL.dll.CodeAnalysisLog.xml
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.BL.dll.lastcodeanalysissucceeded

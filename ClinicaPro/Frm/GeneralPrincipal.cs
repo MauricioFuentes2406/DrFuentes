@@ -106,7 +106,7 @@ namespace Frm
             }
             catch (Exception ex)
             {
-                throw ex;
+                return;
             }
         }
         private void GeneralPrincipal_FormClosed(object sender, FormClosedEventArgs e)

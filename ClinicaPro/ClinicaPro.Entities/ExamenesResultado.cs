@@ -24,7 +24,7 @@ public partial class ExamenesResultado
 
 
 
-    public virtual Examene Examene { private get; set; }
+    public virtual Examenes Examenes { get; set; }
 
 }
 

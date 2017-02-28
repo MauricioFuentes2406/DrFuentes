@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoConsulta));
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRechazados = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dgConsulta = new System.Windows.Forms.DataGridView();
@@ -52,26 +52,27 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // button2
+            // btnRechazados
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Frm.Properties.Resources.notepad_8;
-            this.button2.Location = new System.Drawing.Point(439, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 75);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Buscar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRechazados.FlatAppearance.BorderSize = 0;
+            this.btnRechazados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechazados.Image = global::Frm.Properties.Resources.funnel32;
+            this.btnRechazados.Location = new System.Drawing.Point(359, 20);
+            this.btnRechazados.Name = "btnRechazados";
+            this.btnRechazados.Size = new System.Drawing.Size(119, 75);
+            this.btnRechazados.TabIndex = 10;
+            this.btnRechazados.Text = "Diagnostico Rechazado";
+            this.btnRechazados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRechazados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRechazados.UseVisualStyleBackColor = true;
+            this.btnRechazados.Click += new System.EventHandler(this.btnRechazados_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::Frm.Properties.Resources.notepad_2;
-            this.btnEliminar.Location = new System.Drawing.Point(323, 20);
+            this.btnEliminar.Location = new System.Drawing.Point(278, 20);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 75);
             this.btnEliminar.TabIndex = 9;
@@ -86,7 +87,7 @@
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Image = global::Frm.Properties.Resources.notepad_15;
-            this.btnModificar.Location = new System.Drawing.Point(187, 20);
+            this.btnModificar.Location = new System.Drawing.Point(161, 20);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(111, 75);
             this.btnModificar.TabIndex = 8;
@@ -120,7 +121,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1062, 513);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRechazados);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgConsulta);
@@ -136,7 +137,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRechazados;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dgConsulta;

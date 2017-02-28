@@ -16,10 +16,6 @@ namespace ClinicaPro.DB.Cliente
 {
     public class ClienteDB : Abstract.IEstandar_ManejoDB<Entities.Cliente> 
     {        
-        #region Atributos
-        public Boolean isModificar { get; set; }
-        public int idTipoUsuario { get; set; }        
-        #endregion
         #region Metodos Publicos
 
         /// <param name="isModificar">En caso  agregar un nuevo registro su valor es, false</param>
@@ -153,6 +149,26 @@ namespace ClinicaPro.DB.Cliente
                 return lista;
             }           
         }              
+        /// <summary>
+        /// Obtiene un instancia de un Clinete con el Id correpondiente , utiliza el metodo Find
+        /// </summary>
+        /// <param name="IdCliente"></param>
+        /// <returns></returns>
+        public Entities.Cliente getCliente(int IdCliente)
+        {
+            using (ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities())
+            {
+                try
+                {
+                    return Contexto.Clientes.Find(IdCliente);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+        
         #endregion
         /// <summary>
         /// Si no existe algun registro en la DB

@@ -162,10 +162,13 @@
     <Compile Include="EscalaTiempo.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="Examene.cs">
+    <Compile Include="Examenes.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="ExamenesResultado.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamenEstado.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="ExpedienteT.cs">
@@ -289,7 +292,7 @@
     <Compile Include="TipoAlergia.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
-    <Compile Include="TipoExamene.cs">
+    <Compile Include="TipoExamenes.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoUsuario.cs">

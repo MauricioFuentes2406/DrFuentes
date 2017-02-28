@@ -87,8 +87,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<EscalaTiempo> EscalaTiempoes { get; set; }
 
-    public virtual DbSet<Examene> Examenes { get; set; }
-
     public virtual DbSet<ExamenesResultado> ExamenesResultadoes { get; set; }
 
     public virtual DbSet<ExploracionMano> ExploracionManos { get; set; }
@@ -102,8 +100,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
     public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
     public virtual DbSet<TipoAlergia> TipoAlergias { get; set; }
-
-    public virtual DbSet<TipoExamene> TipoExamenes { get; set; }
 
     public virtual DbSet<ExpedienteT> ExpedienteTs { get; set; }
 
@@ -180,6 +176,12 @@ public partial class ClinicaDrFuentesEntities : DbContext
     public virtual DbSet<VistaCorreos> VistaCorreos { get; set; }
 
     public virtual DbSet<Notificaciones> Notificaciones { get; set; }
+
+    public virtual DbSet<ExamenEstado> ExamenEstado { get; set; }
+
+    public virtual DbSet<Examenes> Examenes { get; set; }
+
+    public virtual DbSet<TipoExamenes> TipoExamenes { get; set; }
 
 
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

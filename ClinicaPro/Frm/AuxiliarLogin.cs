@@ -24,7 +24,7 @@ namespace Frm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Laboratorio().Show();
+            new Frm.Laboratorio.LaboratorioGeneral().Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
