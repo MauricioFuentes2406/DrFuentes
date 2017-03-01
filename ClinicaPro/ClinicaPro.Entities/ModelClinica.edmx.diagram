@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.BusquedaImagene" Width="1.5" PointX="8" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Busqueda" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Cliente" PointX="3" PointY="49.125" Width="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteOtrosArchivo" Width="1.75" PointX="5.25" PointY="54" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ColorPaciente" Width="1.5" PointX="14.25" PointY="41.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Consulta" Width="1.5" PointX="8.25" PointY="47.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Consulta_RespuestasGenerales" Width="1.5" PointX="14.25" PointY="60.875" IsExpanded="true" />
@@ -61,7 +60,6 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_AntecedentesGinecoObstrecticos_Consulta1" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_BusquedaImagenes_Busquedas" ManuallyRouted="false" />
         <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_Consulta_Cliente" />
-        <AssociationConnector ManuallyRouted="false" Association="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaExploracionFisica_ColorPaciente" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaAparatoDigestivo_Consulta" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaCraneo_Consulta" ManuallyRouted="false" />
@@ -156,6 +154,8 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Examenes_ExamenEstado" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_Examenes_TipoExamenes" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ExamenesResultado_Examenes" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteImagenesExamenesComplementarios" Width="1.5" PointX="5.5" PointY="47.5" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

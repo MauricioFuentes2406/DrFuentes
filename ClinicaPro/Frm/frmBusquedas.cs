@@ -275,8 +275,7 @@ namespace Frm
         }
 
         #endregion
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBusquedaAvanzada(object sender, EventArgs e)
         {
             new Diccionario.frmBusquedaAvanzada().Show();
         }

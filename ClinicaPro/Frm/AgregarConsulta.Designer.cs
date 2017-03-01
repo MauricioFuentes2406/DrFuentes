@@ -429,7 +429,7 @@
             this.chk_AplicarDescuento = new System.Windows.Forms.CheckBox();
             this.txtCostoConsulta = new System.Windows.Forms.NumericUpDown();
             this.chk_DiagnosticoEstado = new System.Windows.Forms.CheckBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnImagenesComplementarias = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -4915,7 +4915,7 @@
             this.tabDiagnostico.Controls.Add(this.chk_AplicarDescuento);
             this.tabDiagnostico.Controls.Add(this.txtCostoConsulta);
             this.tabDiagnostico.Controls.Add(this.chk_DiagnosticoEstado);
-            this.tabDiagnostico.Controls.Add(this.button6);
+            this.tabDiagnostico.Controls.Add(this.btnImagenesComplementarias);
             this.tabDiagnostico.Controls.Add(this.button16);
             this.tabDiagnostico.Controls.Add(this.button15);
             this.tabDiagnostico.Controls.Add(this.button12);
@@ -4980,19 +4980,20 @@
             this.chk_DiagnosticoEstado.Text = "Estado Aceptado";
             this.chk_DiagnosticoEstado.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnImagenesComplementarias
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Frm.Properties.Resources.electrocardiogram50;
-            this.button6.Location = new System.Drawing.Point(697, 150);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 93);
-            this.button6.TabIndex = 50;
-            this.button6.Text = "ExámenesComplementarios";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnImagenesComplementarias.FlatAppearance.BorderSize = 0;
+            this.btnImagenesComplementarias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagenesComplementarias.Image = global::Frm.Properties.Resources.jpg;
+            this.btnImagenesComplementarias.Location = new System.Drawing.Point(697, 150);
+            this.btnImagenesComplementarias.Name = "btnImagenesComplementarias";
+            this.btnImagenesComplementarias.Size = new System.Drawing.Size(101, 89);
+            this.btnImagenesComplementarias.TabIndex = 50;
+            this.btnImagenesComplementarias.Text = "Imágenes Complementarios";
+            this.btnImagenesComplementarias.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnImagenesComplementarias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnImagenesComplementarias.UseVisualStyleBackColor = true;
+            this.btnImagenesComplementarias.Click += new System.EventHandler(this.btnImagenesComplentarias_Click);
             // 
             // button16
             // 
@@ -5120,7 +5121,7 @@
             this.btnSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguimiento.Image = global::Frm.Properties.Resources.alarm_1;
             this.btnSeguimiento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeguimiento.Location = new System.Drawing.Point(472, 70);
+            this.btnSeguimiento.Location = new System.Drawing.Point(473, 61);
             this.btnSeguimiento.Name = "btnSeguimiento";
             this.btnSeguimiento.Size = new System.Drawing.Size(92, 93);
             this.btnSeguimiento.TabIndex = 14;
@@ -5445,7 +5446,7 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox txtPrimerIndicio;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnImagenesComplementarias;
         private System.Windows.Forms.Label lblNombreCLiente;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Button button14;

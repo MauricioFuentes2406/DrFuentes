@@ -31,11 +31,23 @@ namespace Frm
             idCliente = -1;
             InitializeComponent();
         }
+        public MantenimientoCliente(int idTipoUsuario)
+        {
+            idTipoUsario = idTipoUsuario;
+            idCliente = -1;
+            InitializeComponent();
+        }
         #region Eventos
         private void MantenimientoCliente_Load(object sender, EventArgs e)
         {
             CargarDatos();
-        }
+            if(this.idTipoUsario != 1  || this.idTipoUsario !=  2)
+            { 
+                btnAgregarConsulta.Visible = false;
+                this.btnEliminar.Enabled = false;
+                this.btnModificar.Enabled = false;
+            }
+        }        
         private void btnAgregar_Click(object sender, EventArgs e)  //Agrega CLiente
         {
             ///<summary>

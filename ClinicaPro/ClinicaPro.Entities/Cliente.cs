@@ -23,13 +23,13 @@ public partial class Cliente
 
         this.Consultas = new HashSet<Consulta>();
 
-        this.ClienteOtrosArchivos = new HashSet<ClienteOtrosArchivo>();
-
         this.ClienteAlergias = new HashSet<ClienteAlergia>();
 
         this.Citas = new HashSet<Citas>();
 
         this.Examenes = new HashSet<Examenes>();
+
+        this.ClienteImagenesExamenesComplementarios = new HashSet<ClienteImagenesExamenesComplementarios>();
 
     }
 
@@ -64,13 +64,13 @@ public partial class Cliente
 
     public virtual ICollection<Consulta> Consultas { private get; set; }
 
-    public virtual ICollection<ClienteOtrosArchivo> ClienteOtrosArchivos { private get; set; }
-
     public virtual ICollection<ClienteAlergia> ClienteAlergias { private get; set; }
 
     public virtual ICollection<Citas> Citas { private get; set; }
 
     public virtual ICollection<Examenes> Examenes { get; set; }
+
+    public virtual ICollection<ClienteImagenesExamenesComplementarios> ClienteImagenesExamenesComplementarios { get; set; }
 
 }
 

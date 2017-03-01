@@ -45,13 +45,18 @@ namespace ClinicaPro.General.Constantes
        public const String FraseIgualPassword = "La frase para recordar no debe  ser igual a la contraseña  por seguridad ";
        public const String CorreoEnviado = "El correo ya ha sido enviado  ";
 
+     
+       #endregion
+
        public const String HuboErrorConteo = "Hubo un error Con el Conteo Total"; // Contado filas en  DataGrid
        public const String fk_ConstraintDeleteConsulta = " No se puede eliminar el registro por que esta siendo usando en alguna Consulta,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
        public const String fk_ConstraintDelete = " No se puede eliminar el registro por que esta siendo usado ,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
        public const String Consulta_Sin_Servicios = " Esta Consulta no tiene Servicios ";
        public const String CitaChocan = " La fecha , hora o duración de la cita chocan con una cita ya existente";
        public const String NotieneCorreo = "No se puede enviar el mensaje por que el registro seleccionado no tiene asignado un correo ";
-       #endregion
+       public const String NosePuedoGuardar = "No se pudo guardar los datos en la Base de Datos";
+
+
        
        // Otros
 

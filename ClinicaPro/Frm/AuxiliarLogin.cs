@@ -46,7 +46,7 @@ namespace Frm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new PaPobrarSparse().Show();
+            //new PaPobrarSparse().Show();
         }
     }
 }

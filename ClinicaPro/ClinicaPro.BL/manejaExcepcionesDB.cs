@@ -47,8 +47,7 @@ namespace ClinicaPro.BL
                                  ExcepcionesMensajes.Title_Exception ,
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Error);                                  
-            }
-        
+            }        
         }
         public static void manejaNullReference(NullReferenceException nullReference)
         {

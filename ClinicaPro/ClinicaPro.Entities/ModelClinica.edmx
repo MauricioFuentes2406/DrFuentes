@@ -178,14 +178,14 @@
           <Property Name="IdAlergia" Type="int" Nullable="false" />
           <Property Name="soloxEF" Type="bit" />
         </EntityType>
-        <EntityType Name="ClienteOtrosArchivos">
+        <EntityType Name="ClienteImagenesExamenesComplementarios">
           <Key>
-            <PropertyRef Name="idOtrosArchivos" />
+            <PropertyRef Name="idImagen" />
             <PropertyRef Name="IdCliente" />
           </Key>
-          <Property Name="idOtrosArchivos" Type="int" Nullable="false" />
+          <Property Name="idImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdCliente" Type="int" Nullable="false" />
-          <Property Name="Archivo" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Imagen" Type="varbinary(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="ColorPaciente">
           <Key>
@@ -503,9 +503,9 @@
           <Property Name="idExamenes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdTipoExamen" Type="int" />
           <Property Name="IdCliente" Type="int" />
+          <Property Name="IdEstadoExamen" Type="int" Nullable="false" />
           <Property Name="FechaConsulta" Type="date" />
           <Property Name="FechaEntragaResultado" Type="datetime" Nullable="false" />
-          <Property Name="IdEstadoExamen" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ExamenesResultado">
           <Key>
@@ -1948,12 +1948,12 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
         </Association>
         <Association Name="FK_OtrosArchivosCliente_Cliente">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
-          <End Role="ClienteOtrosArchivos" Type="Self.ClienteOtrosArchivos" Multiplicity="*" />
+          <End Role="ClienteImagenesExamenesComplementarios" Type="Self.ClienteImagenesExamenesComplementarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
               <PropertyRef Name="IdCliente" />
             </Principal>
-            <Dependent Role="ClienteOtrosArchivos">
+            <Dependent Role="ClienteImagenesExamenesComplementarios">
               <PropertyRef Name="IdCliente" />
             </Dependent>
           </ReferentialConstraint>
@@ -2109,7 +2109,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <EntitySet Name="Citas" EntityType="Self.Citas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClienteAlergias" EntityType="Self.ClienteAlergias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ClienteOtrosArchivos" EntityType="Self.ClienteOtrosArchivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClienteImagenesExamenesComplementarios" EntityType="Self.ClienteImagenesExamenesComplementarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ColorPaciente" EntityType="Self.ColorPaciente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Consulta" EntityType="Self.Consulta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Consulta_RespuestasGenerales" EntityType="Self.Consulta_RespuestasGenerales" Schema="dbo" Table="Consulta.RespuestasGenerales" store:Type="Tables" />
@@ -2644,7 +2644,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </AssociationSet>
           <AssociationSet Name="FK_OtrosArchivosCliente_Cliente" Association="Self.FK_OtrosArchivosCliente_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
-            <End Role="ClienteOtrosArchivos" EntitySet="ClienteOtrosArchivos" />
+            <End Role="ClienteImagenesExamenesComplementarios" EntitySet="ClienteImagenesExamenesComplementarios" />
           </AssociationSet>
           <AssociationSet Name="FK_Seguimiento_Consulta1" Association="Self.FK_Seguimiento_Consulta1">
             <End Role="Consulta" EntitySet="Consulta" />
@@ -2774,20 +2774,10 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Property Name="Estado" Type="Byte" />
           <Property Name="TipoSangre" MaxLength="3" FixedLength="false" Unicode="false" Type="String" />
           <NavigationProperty xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" Name="Consultas" a:GetterAccess="Private" a:SetterAccess="Public" Relationship="Self.FK_Consulta_Cliente" FromRole="Cliente" ToRole="Consulta" />
-          <NavigationProperty xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" Name="ClienteOtrosArchivos" a:GetterAccess="Private" a:SetterAccess="Public" Relationship="Self.FK_OtrosArchivosCliente_Cliente" FromRole="Cliente" ToRole="ClienteOtrosArchivos" />
           <NavigationProperty Name="ClienteAlergias" Relationship="ClinicaDrFuentesModel.FK_ClienteAlergias_Cliente" FromRole="Cliente" ToRole="ClienteAlergia" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Citas" Relationship="ClinicaDrFuentesModel.FK_Citas_Cliente" FromRole="Cliente" ToRole="Citas" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Examenes" Relationship="ClinicaDrFuentesModel.FK_Examenes_Cliente" FromRole="Cliente" ToRole="Examenes" />
-        </EntityType>
-        <EntityType Name="ClienteOtrosArchivo">
-          <Key>
-            <PropertyRef Name="idOtrosArchivos" />
-            <PropertyRef Name="IdCliente" />
-          </Key>
-          <Property Name="idOtrosArchivos" Type="Int32" Nullable="false" />
-          <Property Name="IdCliente" Type="Int32" Nullable="false" />
-          <Property Name="Archivo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK_OtrosArchivosCliente_Cliente" FromRole="ClienteOtrosArchivos" ToRole="Cliente" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="ClienteImagenesExamenesComplementarios" Relationship="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente" FromRole="Cliente" ToRole="ClienteImagenesExamenesComplementarios" />
         </EntityType>
         <EntityType Name="ColorPaciente">
           <Key>
@@ -3468,18 +3458,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OtrosArchivosCliente_Cliente">
-          <End Type="Self.Cliente" Multiplicity="1" Role="Cliente" />
-          <End Type="Self.ClienteOtrosArchivo" Multiplicity="*" Role="ClienteOtrosArchivos" />
-          <ReferentialConstraint>
-            <Principal Role="Cliente">
-              <PropertyRef Name="IdCliente" />
-            </Principal>
-            <Dependent Role="ClienteOtrosArchivos">
-              <PropertyRef Name="IdCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ConsultaExploracionFisica_ColorPaciente">
           <End Role="ColorPaciente" Type="Self.ColorPaciente" Multiplicity="0..1" />
           <End Role="ConsultaExploracionFisica" Type="Self.ConsultaExploracionFisica" Multiplicity="*" />
@@ -3747,7 +3725,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <EntitySet Name="BusquedaImagenes" EntityType="Self.BusquedaImagene" />
           <EntitySet Name="Busquedas" EntityType="Self.Busqueda" />
           <EntitySet Name="Clientes" EntityType="Self.Cliente" />
-          <EntitySet Name="ClienteOtrosArchivos" EntityType="Self.ClienteOtrosArchivo" />
           <EntitySet Name="ColorPacientes" EntityType="Self.ColorPaciente" />
           <EntitySet Name="Consultas" EntityType="Self.Consulta" />
           <EntitySet Name="Consulta_RespuestasGenerales" EntityType="Self.Consulta_RespuestasGenerales" />
@@ -3862,10 +3839,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <AssociationSet Name="FK_Consulta_Cliente" Association="Self.FK_Consulta_Cliente">
             <End EntitySet="Clientes" Role="Cliente" />
             <End EntitySet="Consultas" Role="Consulta" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OtrosArchivosCliente_Cliente" Association="Self.FK_OtrosArchivosCliente_Cliente">
-            <End EntitySet="Clientes" Role="Cliente" />
-            <End EntitySet="ClienteOtrosArchivos" Role="ClienteOtrosArchivos" />
           </AssociationSet>
           <AssociationSet Name="FK_ConsultaExploracionFisica_ColorPaciente" Association="Self.FK_ConsultaExploracionFisica_ColorPaciente">
             <End Role="ColorPaciente" EntitySet="ColorPacientes" />
@@ -4191,6 +4164,11 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <AssociationSet Name="FK_ExamenesResultado_Examenes" Association="ClinicaDrFuentesModel.FK_ExamenesResultado_Examenes">
             <End Role="Examenes" EntitySet="Examenes" />
             <End Role="ExamenesResultado" EntitySet="ExamenesResultadoes" />
+          </AssociationSet>
+          <EntitySet Name="ClienteImagenesExamenesComplementarios" EntityType="ClinicaDrFuentesModel.ClienteImagenesExamenesComplementarios" />
+          <AssociationSet Name="FK_OtrosArchivosCliente_Cliente" Association="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="ClienteImagenesExamenesComplementarios" EntitySet="ClienteImagenesExamenesComplementarios" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -5037,6 +5015,28 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ClienteImagenesExamenesComplementarios">
+          <Key>
+            <PropertyRef Name="idImagen" />
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="idImagen" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="Imagen" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente" FromRole="ClienteImagenesExamenesComplementarios" ToRole="Cliente" />
+        </EntityType>
+        <Association Name="FK_OtrosArchivosCliente_Cliente">
+          <End Type="ClinicaDrFuentesModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.ClienteImagenesExamenesComplementarios" Role="ClienteImagenesExamenesComplementarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="ClienteImagenesExamenesComplementarios">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5126,15 +5126,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
                 <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ClienteOtrosArchivos">
-            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.ClienteOtrosArchivo">
-              <MappingFragment StoreEntitySet="ClienteOtrosArchivos">
-                <ScalarProperty Name="idOtrosArchivos" ColumnName="idOtrosArchivos" />
-                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6273,6 +6264,15 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </EndProperty>
             <Condition ColumnName="IdTipoExamen" IsNull="false" />
           </AssociationSetMapping>
+          <EntitySetMapping Name="ClienteImagenesExamenesComplementarios">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.ClienteImagenesExamenesComplementarios">
+              <MappingFragment StoreEntitySet="ClienteImagenesExamenesComplementarios">
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

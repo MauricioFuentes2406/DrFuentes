@@ -30,7 +30,7 @@ namespace Frm
         {
             ubicarPanel();
             SeguimientoFormatoLoad();
-            cargarNotificaiones();
+            cargarNotificaciones();
         }
         /// <summary>
         /// Cuenta el numero de registros desde la BaseDatos
@@ -49,9 +49,14 @@ namespace Frm
         /// Cuenta las filas que tiene DgSeguimientos
         /// </summary>             
         #region Eventos
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            new Frm.Reportes.frmReporteGeneral(this.IdTipoUsuario).Show();
+        }
         private void button7_Click(object sender, EventArgs e)
         {
-            MantenimientoCliente Cl = new MantenimientoCliente();
+            MantenimientoCliente Cl = new MantenimientoCliente(this.IdTipoUsuario);
             Cl.Show();
         }
         private void btnCitas_Click(object sender, EventArgs e)
@@ -81,7 +86,6 @@ namespace Frm
             {
                 ventanaConfiguracionGeneral.ShowDialog();
             }
-
         }
         private void dgSeguimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -191,9 +195,9 @@ namespace Frm
         #endregion                            
     #region Notificaciones
 
-     private void cargarNotificaiones ()
+     private void cargarNotificaciones ()
     {        
-        ClinicaPro.BL.OrdenarNotificacionesBL.cargar(this.dgNotificaciones, ClinicaPro.DB.Notificaciones.NotificaionesDB.ListarHoy());   
+        ClinicaPro.BL.OrdenarNotificacionesBL.cargar(this.dgNotificaciones, ClinicaPro.DB.Notificaciones.NotificaionesDB.ListarHoy());        
     }
    private void btnAgregar_Click_1(object sender, EventArgs e)
    {
@@ -202,14 +206,25 @@ namespace Frm
            frmNoti.ShowDialog();
        }
        this.dgNotificaciones.Columns.Clear();
-       cargarNotificaiones();
+       cargarNotificaciones();
    }
     #endregion   
-
-       private void button13_Click(object sender, EventArgs e)
+   private void btnEliminar_Click(object sender, EventArgs e)
+   {
+       if( dgNotificaciones.SelectedRows.Count == 1)
        {
-           new Frm.Reportes.frmReporteGeneral(this.IdTipoUsuario).Show();
+           bool result  ;
+            result = ClinicaPro.DB.Notificaciones.NotificaionesDB.Eliminar((int)dgNotificaciones.CurrentRow.Cells["Id"].Value);
+            if (result)
+            {
+                cargarNotificaciones();
+                MessageBox.Show("Se ha eliminado de la Base Datos");
+            }else
+                MessageBox.Show("Hubo un error");
        }
+       else MessageBox.Show("Selecciona una sola Fila ");
+   }
+
 
     }
 }

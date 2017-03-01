@@ -32,22 +32,50 @@ namespace ClinicaPro.BL
             {
                 bytecode = File.ReadAllBytes(filename);
             }
-
             return bytecode;
         }
         /// <summary>
-        /// Convierte un arreglo de Bits a aun Imagen 
+        /// Convierte un arreglo de Bytes a aun Imagen 
         /// </summary>
-        /// <param name="ImagenABitArray"></param>
+        /// <param name="ByteArrayToImage"></param>
         /// <returns></returns>
-        public static Image recuperarIMG(Byte[] ImagenABitArray)
+        public static Image recuperarIMG(Byte[] ByteArrayToImage)
         {
             Image image = null;
-            MemoryStream ms = new MemoryStream(ImagenABitArray);
+            MemoryStream ms = new MemoryStream(ByteArrayToImage);
             {
                 image = Image.FromStream(ms);
             }
             return image;
+        }
+        /// <summary>
+        /// Convierte un List de arreglos de Bytes en Imagenes
+        /// </summary>
+        /// <param name="List"></param>
+        /// <returns></returns>
+        public static List<Image> recuperarIMG(List<Byte[]> List)
+        {
+            try
+            {
+                if (List.Count > 0)
+                {
+                    List<Image> images = new List<Image>();
+                    foreach (var ByteArray in List)
+                    {
+                        images.Add(recuperarIMG(ByteArray));
+                    }
+                    return images;
+                }
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error al convertir las el vector de bytes a Images \n"
+                                + ex.InnerException.ToString());
+                return null;
+            }
+            
         }
     }
 }

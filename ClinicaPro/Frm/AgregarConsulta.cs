@@ -2397,6 +2397,13 @@ namespace Frm
         {
             if ( ! isNuevaConsulta() )
             new Frm.Seguimientos.frmSeguimientos(idConsulta).Show();            
+        }
+
+        private void btnImagenesComplentarias_Click(object sender, EventArgs e)
+        {
+            frmImagenesComplementarias imagenesComplementarias = new frmImagenesComplementarias(this.idCliente);
+            imagenesComplementarias.ShowDialog();
+            imagenesComplementarias.Dispose();
         }   
         
     }

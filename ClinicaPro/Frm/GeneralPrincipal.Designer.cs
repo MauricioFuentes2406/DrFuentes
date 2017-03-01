@@ -35,6 +35,7 @@
             this.panelNotificaciones = new System.Windows.Forms.Panel();
             this.dgNotificaciones = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -110,6 +111,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -117,6 +119,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(225, 65);
             this.panel2.TabIndex = 0;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = global::Frm.Properties.Resources.list_2;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(128, 22);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(39, 31);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -245,7 +261,7 @@
             this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button13.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnConfiguracion
             // 
@@ -464,5 +480,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Columndone;
         private System.Windows.Forms.DataGridView dgNotificaciones;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

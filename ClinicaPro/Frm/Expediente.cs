@@ -188,6 +188,27 @@ namespace Frm
         {
             this.dgAlergias.DataSource = ClinicaPro.DB.Cliente.Vistas.VClienteAlergias.Listar(idCliente);
         }
+        private void llenarImagenesDetalle(int IdCliente)
+        {
+            var list = ClinicaPro.DB.Cliente.ImagenesExamenesComplementariasBD.Listar(IdCliente);
+            if (list.Count == 0) return;                
+            List<Image> images = ClinicaPro.BL.manejaImagenes.recuperarIMG((from n in list select n.Imagen).ToList());                            
+            LigarImagenesBindingNavigator(images);                                  
+        }
+        private void LigarImagenesBindingNavigator(List<Image> images)
+        {          
+            BindingSource BindingSource = new BindingSource();
+            foreach (var item in images)
+            {
+                BindingSource.Add(item);
+            }
+            this.bNavigatorImagenesComplemntarias.BindingSource = BindingSource;
+
+            this.pictureBoxComplementarias.Image = (Image)bNavigatorImagenesComplemntarias.BindingSource.Current; //Carga la primera img en el bindingNavigator
+            
+            pictureBoxComplementarias.SizeMode = PictureBoxSizeMode.AutoSize; //Sincroniza los Scroll del Panel y PictureBox
+
+        }
         #endregion
         /// <summary>
         ///  identifica si la celda actual es la Botón del Grid para ver Detalles
@@ -203,10 +224,12 @@ namespace Frm
                 //  this.txtNumeroCliente = (int)senderASGrid.CurrentRow.Cells[columnIdCliente].Value;
                 setNombreNumeroClienteDisplayControl();
                 llenarconVerDetalle((int)senderASGrid.CurrentRow.Cells[Numero_Consulta].Value);
-                llenarAlergiasDetalle((int)senderASGrid.CurrentRow.Cells["IdCliente"].Value);
+                int IdCliente  = (int)senderASGrid.CurrentRow.Cells["IdCliente"].Value;
+                llenarAlergiasDetalle(IdCliente);
+                llenarImagenesDetalle(IdCliente);
                 manejaMensajeInformativo(sender);
             }
-        }
+        }        
         private void Expediente_Shown(object sender, EventArgs e)
         {
             // Sea nececio es con begin Onvoke
@@ -350,7 +373,26 @@ namespace Frm
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             llenarConsulta_NoFiltro();
+        }    
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+          //  bNavigator1.BindingSource.MoveNext();   El solito invoca este meotodo ,  no es necesario
+            this.pictureBoxComplementarias.Image = (Image)bNavigatorImagenesComplemntarias.BindingSource.Current;
         }
-
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            //   bNavigator1.BindingSource.MovePrevious();  El solito invoca este meotodo ,  no es necesario
+            this.pictureBoxComplementarias.Image = (Image)bNavigatorImagenesComplemntarias.BindingSource.Current;
+        }
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            //bNavigator1.BindingSource.MoveLast(); El solito invoca este meotodo ,  no es necesario
+            this.pictureBoxComplementarias.Image = (Image)bNavigatorImagenesComplemntarias.BindingSource.Current;
+        }
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            //bNavigator1.BindingSource.MoveFirst();  El solito invoca este meotodo ,  no es necesario
+            this.pictureBoxComplementarias.Image = (Image)bNavigatorImagenesComplemntarias.BindingSource.Current;
+        }                               
     }
 }

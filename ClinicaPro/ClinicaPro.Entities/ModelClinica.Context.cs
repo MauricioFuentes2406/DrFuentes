@@ -47,8 +47,6 @@ public partial class ClinicaDrFuentesEntities : DbContext
 
     public virtual DbSet<Cliente> Clientes { get; set; }
 
-    public virtual DbSet<ClienteOtrosArchivo> ClienteOtrosArchivos { get; set; }
-
     public virtual DbSet<ColorPaciente> ColorPacientes { get; set; }
 
     public virtual DbSet<Consulta> Consultas { get; set; }
@@ -182,6 +180,8 @@ public partial class ClinicaDrFuentesEntities : DbContext
     public virtual DbSet<Examenes> Examenes { get; set; }
 
     public virtual DbSet<TipoExamenes> TipoExamenes { get; set; }
+
+    public virtual DbSet<ClienteImagenesExamenesComplementarios> ClienteImagenesExamenesComplementarios { get; set; }
 
 
     public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
