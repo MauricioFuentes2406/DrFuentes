@@ -12,9 +12,11 @@ namespace Frm
 {
     public partial class Secretaria : Form
     {
-        public Secretaria()
+        private int _tipoUsuario;
+        public Secretaria(int tipoUsuario)
         {
             InitializeComponent();
+            this._tipoUsuario = tipoUsuario;
         }
 
         private void label2_Click(object sender, EventArgs e)

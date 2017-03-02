@@ -25,12 +25,7 @@ namespace Frm.IngresoGastos
         /// <summary>
         /// Value = 0
         /// </summary>
-        private const int  FuenteIngreso_Todos = 0;       
-        public frmVentanaInicial()
-        {
-            this.idTipoUsuario = 1;    // OJO ACA HAY Q ARREGLARLO DESPUES Q CAMBIE A PARAMETRO
-            InitializeComponent();            
-        }
+        private const int  FuenteIngreso_Todos = 0;              
         public frmVentanaInicial(int idtipousuario)
         {
             this.idTipoUsuario = idtipousuario;    // OJO ACA HAY Q ARREGLARLO DESPUES Q CAMBIE A PARAMETRO

@@ -173,10 +173,19 @@ namespace ClinicaPro.DB.Consulta
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities() )
             {
-                return (from tabla in Contexto.Consultas
-                        where tabla.FechaConsulta.Month == DateTime.Now.Month &&
-                              tabla.FechaConsulta.Year == DateTime.Now.Year
-                        select tabla.CobroFinalDeConsulta).Sum();
+                try
+                {
+                    return (from tabla in Contexto.Consultas
+                            where tabla.FechaConsulta.Month == DateTime.Now.Month &&
+                                  tabla.FechaConsulta.Year == DateTime.Now.Year
+                            select tabla.CobroFinalDeConsulta).Sum();
+                }
+                catch (Exception)
+                {
+
+                    return 0;
+                }
+                
             }
         }
         public List<int> ListaIdConsultaPorCliente(int idCliente)

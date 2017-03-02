@@ -19,5 +19,10 @@ namespace ClinicaPro.BL
                 return true;
             else return false;
         }
+
+        public static void ProblemaConexion ()
+        {
+
+        }
     }
 }

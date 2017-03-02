@@ -48,6 +48,7 @@
     <Compile Include="Constantes\GenericoComboBox.cs" />
     <Compile Include="Constantes\Mensajes.cs" />
     <Compile Include="Constantes\Meses.cs" />
+    <Compile Include="Constantes\TipoUsuarios.cs" />
     <Compile Include="Enumerados\ClienteEnums.cs" />
     <Compile Include="Enumerados\ConsultaEnums.cs" />
     <Compile Include="Excepciones\ExcepcionesMensajes.cs" />

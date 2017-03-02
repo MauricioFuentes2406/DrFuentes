@@ -20,11 +20,10 @@ namespace Frm
         public int IdTipoUsuario { get; set; }
         public String nombreCompleto { get; set; }
         private List<int> _IdSeguimientoRemove;
-        public GeneralPrincipal()
+        public GeneralPrincipal(int idTipoUsuario)
         {
-            this.IdTipoUsuario = 1;
+            this.IdTipoUsuario = idTipoUsuario;
             InitializeComponent();
-
         }
         private void Principal_Load(object sender, EventArgs e)
         {
@@ -74,7 +73,7 @@ namespace Frm
         }
         private void btnIngresoEgreso_Click(object sender, EventArgs e)
         {
-            new Frm.IngresoGastos.frmVentanaInicial().Show();
+            new Frm.IngresoGastos.frmVentanaInicial(this.IdTipoUsuario).Show();
         }
         private void btnInventario_Click(object sender, EventArgs e)
         {

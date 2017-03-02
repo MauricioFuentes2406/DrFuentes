@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+// Libreria Añadidas
+using ClinicaPro.DB.Usuario;
+using ClinicaPro.General.Constantes;
 namespace Frm
 {
     public partial class InicioSesion : Form
@@ -15,34 +17,31 @@ namespace Frm
         public InicioSesion()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        }         
         private void btnIniciar_Click(object sender, EventArgs e)
-        {        
-            new AuxiliarLogin().Show();
-            this.Hide();
-            // If Login exitoso entonces                      
+        {
+             int TipoUsuario  =  new UsuarioDB().Autentificar(this.txtUsername.Text, this.txtPassword.Text);
+             if (TipoUsuario <= 0) { MessageBox.Show("Nombre usuario y Contraseña Incorrecta","Inicio",MessageBoxButtons.OK,MessageBoxIcon.Error); return; }
+               
+            new AuxiliarLogin(TipoUsuario).Show();
+            this.Hide();                               
         }
         private void InicioSesion_Load(object sender, EventArgs e)
         {
 
         }
-        private void button2_Click(object sender, EventArgs e)
+
+        private void btnFraseRecordar_Click(object sender, EventArgs e)
         {
-            ClinicaPro.DB.Consulta.AntecedenteDrogaDB.oso();
-        }     
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            new Frm.Reportes.frmCitas().Show();
-        }
-      
+           if(!String.IsNullOrWhiteSpace(txtUsername.Text) && txtUsername.Text != "Username" )
+           {
+               String Result = new UsuarioDB().FraseRecordatorio(txtUsername.Text);
+               if(String.IsNullOrWhiteSpace(Result) )
+                   MessageBox.Show("No se encontro Frase asociada a ese Usuario\n Digito bien?");
+               else
+                   MessageBox.Show(Result);
+           }else
+               MessageBox.Show("Digite Su nombre de Usuario");
+        }             
     }
 }

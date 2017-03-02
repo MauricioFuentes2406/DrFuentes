@@ -41,7 +41,7 @@ namespace Frm
         private void MantenimientoCliente_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            if(this.idTipoUsario != 1  || this.idTipoUsario !=  2)
+            if (this.idTipoUsario != TipoUsuarios.CristianRoot && this.idTipoUsario != TipoUsuarios.General)
             { 
                 btnAgregarConsulta.Visible = false;
                 this.btnEliminar.Enabled = false;
