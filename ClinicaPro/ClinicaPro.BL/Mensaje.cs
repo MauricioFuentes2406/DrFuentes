@@ -18,8 +18,7 @@ namespace ClinicaPro.BL
             if (dialogresult == DialogResult.Yes)
                 return true;
             else return false;
-        }
-
+        }                
         public static void ProblemaConexion ()
         {
 

@@ -37,8 +37,9 @@ namespace ClinicaPro.DB.Consulta.Expediente
         List<Entities.VistaVacunas> _ListaVistaVacunas;
         List<Entities.VistaAlchol> _ListaVistaAlcohol;
         List<Entities.VistaTabaco> _ListaVistaTabaco;
-       //
-        List<Entities.VistaServicios> _ListaServicios;        
+       // Otras cosas
+        List<Entities.VistaServicios> _ListaServicios;
+        List<Entities.Seguimiento> _ListaSeguimientos;
 
         public controladorExpedienteDB()
         {
@@ -69,7 +70,8 @@ namespace ClinicaPro.DB.Consulta.Expediente
             _ListaVistaAlcohol = new List<Entities.VistaAlchol>();
             _ListaVistaTabaco = new List<Entities.VistaTabaco>();
             //
-            _ListaServicios = new List<Entities.VistaServicios>();           
+            _ListaServicios = new List<Entities.VistaServicios>();
+            _ListaSeguimientos = new List<Entities.Seguimiento>();
         }
         public void addVServicios(int idConsulta)
         {
@@ -132,6 +134,7 @@ namespace ClinicaPro.DB.Consulta.Expediente
             ConsultaReflejosDB rDb = new ConsultaReflejosDB();
             _ListaReflejos.AddRange(rDb.ListaPorConsulta(idConsulta));
         }
+     
         public List<Entities.ConsultaReflejo> get_ListaReflejo()
         {
             return this._ListaReflejos;
@@ -153,6 +156,10 @@ namespace ClinicaPro.DB.Consulta.Expediente
         public List<Entities.ConsultaSensibilidad> get_ListaSensibilidad()
         {
             return this._ListaSensibilidad;
+        }
+       public List<Entities.Seguimiento> get_ListaSeguimiento()
+        {
+            return this._ListaSeguimientos;
         }
         public void addEstadoEmocional(int idConsulta)
         {
@@ -272,6 +279,10 @@ namespace ClinicaPro.DB.Consulta.Expediente
         public void addVExploracionFisica(int idConsulta)
         {
             this._ListaVistaExploracionFisica.AddRange(ClinicaPro.DB.Consulta.Vistas.VExploracionFisica.Listar(idConsulta));
+        }
+        public void addSeguimiento(int idConsulta)
+        {
+            _ListaSeguimientos.AddRange(SeguimientoDB.ListaPorConsulta(idConsulta));
         }
         public List<Entities.VistaExploracionFisica> get_ListExploracionFisica()
         {

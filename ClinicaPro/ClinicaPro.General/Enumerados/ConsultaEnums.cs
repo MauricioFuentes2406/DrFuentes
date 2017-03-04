@@ -10,23 +10,7 @@ using ClinicaPro.General.Constantes;
 namespace ClinicaPro.General.Enumerados
 {
     public class ConsultaEnums
-    {
-        public enum Fuente_y_Veracidad
-        {
-            Directa = 1,
-            Indirecta,
-            Confiable,
-            No_Confiable
-        }
-
-
-        public enum enumNariz
-        {
-            Rinorrea = 0,
-            Epitaxis,
-            Sinusitis,
-            ResfríoFrecuente
-        }
+    {       
 
         public static readonly claseGenerica_ComboBox[] colorVomito = new[]
       {
@@ -50,16 +34,6 @@ namespace ClinicaPro.General.Enumerados
                 nombre = "Rojo Oscuro",
                 valor = 5}
 
-      };
-
-
-        #region  Escala de Glasgow
-
-
-
-        #endregion
-
-
-
+      };      
     }
 }

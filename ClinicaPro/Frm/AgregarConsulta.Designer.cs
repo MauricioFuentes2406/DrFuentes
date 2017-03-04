@@ -51,7 +51,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.txtMotivoConsulta = new System.Windows.Forms.RichTextBox();
             this.tabEstadoVivienda = new System.Windows.Forms.TabPage();
-            this.auxiliarEVivienda = new System.Windows.Forms.Button();
             this.gbEstadoVivienda = new System.Windows.Forms.GroupBox();
             this.label83 = new System.Windows.Forms.Label();
             this.txtServiciosBasicos = new System.Windows.Forms.TextBox();
@@ -98,8 +97,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.auxiliarNariz = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.gbOidos = new System.Windows.Forms.GroupBox();
             this.chk_Oidos_Tinitus = new System.Windows.Forms.CheckBox();
             this.chk_Oidos_Otorrea = new System.Windows.Forms.CheckBox();
@@ -121,7 +118,6 @@
             this.chk_Ojos_Lentes = new System.Windows.Forms.CheckBox();
             this.chk_Ojos_FotoFobia = new System.Windows.Forms.CheckBox();
             this.chk_Ojos_Diploplia = new System.Windows.Forms.CheckBox();
-            this.auxiliarCraneo = new System.Windows.Forms.Button();
             this.gbCraneo = new System.Windows.Forms.GroupBox();
             this.chk_Craneo_Prurito = new System.Windows.Forms.CheckBox();
             this.label70 = new System.Windows.Forms.Label();
@@ -133,7 +129,6 @@
             this.chk_Craneo_Simetrico = new System.Windows.Forms.CheckBox();
             this.chk_Craneo_TamanoForma = new System.Windows.Forms.CheckBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.auxiliarToraxP = new System.Windows.Forms.Button();
             this.gbTorax = new System.Windows.Forms.GroupBox();
             this.chk_Torax_SonoridadPulmonar = new System.Windows.Forms.CheckBox();
             this.label77 = new System.Windows.Forms.Label();
@@ -144,7 +139,6 @@
             this.cb_Torax_Expa = new System.Windows.Forms.ComboBox();
             this.label74 = new System.Windows.Forms.Label();
             this.cb_Torax_ResDiafraAbdo = new System.Windows.Forms.ComboBox();
-            this.auxiliarCuello = new System.Windows.Forms.Button();
             this.gbCuello = new System.Windows.Forms.GroupBox();
             this.label41 = new System.Windows.Forms.Label();
             this.txtPresionVenosaCuello = new System.Windows.Forms.NumericUpDown();
@@ -156,7 +150,6 @@
             this.cb_ArteriaCarotida = new System.Windows.Forms.ComboBox();
             this.label60 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
-            this.auxiliarboca = new System.Windows.Forms.Button();
             this.gbBoca = new System.Windows.Forms.GroupBox();
             this.chk_Boca_Disfagia = new System.Windows.Forms.CheckBox();
             this.chk_Boca_Ronquera = new System.Windows.Forms.CheckBox();
@@ -176,7 +169,6 @@
             this.cb_Ex_Color = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.AuxiliarDigestivo = new System.Windows.Forms.Button();
             this.gbAparatoDigestivo = new System.Windows.Forms.GroupBox();
             this.label72 = new System.Windows.Forms.Label();
             this.cbVomito = new System.Windows.Forms.ComboBox();
@@ -202,7 +194,6 @@
             this.cb_Abdomen_Rinon = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.auxCoorMarcha = new System.Windows.Forms.Button();
             this.gbCoordinacionMarcha = new System.Windows.Forms.GroupBox();
             this.txt_ObsCoordinacion = new System.Windows.Forms.TextBox();
             this.btn_Obs_CoordinacionMarcha = new System.Windows.Forms.Button();
@@ -212,8 +203,7 @@
             this.chk_CooMar_DedoNariz = new System.Windows.Forms.CheckBox();
             this.chk_CooMar_Camina = new System.Windows.Forms.CheckBox();
             this.tabGinecoObstréticos = new System.Windows.Forms.TabPage();
-            this.btnAuxiliar = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnEnableGineco = new System.Windows.Forms.Button();
             this.gbDatosGineco = new System.Windows.Forms.GroupBox();
             this.txtCesareas = new System.Windows.Forms.NumericUpDown();
             this.txtAbortos = new System.Windows.Forms.NumericUpDown();
@@ -244,7 +234,6 @@
             this.txtReflejoObservacion = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cb_Reflejo_ValoracionGeneral = new System.Windows.Forms.ComboBox();
-            this.AuiliarReflejo = new System.Windows.Forms.Button();
             this.gbSensibilidad = new System.Windows.Forms.GroupBox();
             this.txtSensibilidadDetalle = new System.Windows.Forms.TextBox();
             this.btnSensbilidadDetalle = new System.Windows.Forms.Button();
@@ -253,7 +242,6 @@
             this.chk_Sensiblidad_Dis_DosPuntos = new System.Windows.Forms.CheckBox();
             this.chk_Sensiblidad_Profunda = new System.Windows.Forms.CheckBox();
             this.chk_Sensiblidad_Superficial = new System.Windows.Forms.CheckBox();
-            this.auxiliarEstadoEmo = new System.Windows.Forms.Button();
             this.gbEstadoEmocional = new System.Windows.Forms.GroupBox();
             this.chk_Emocional_Distraido = new System.Windows.Forms.CheckBox();
             this.chk_Emocional_Desmayos = new System.Windows.Forms.CheckBox();
@@ -270,7 +258,6 @@
             this.chk_Emocional_Nervioso = new System.Windows.Forms.CheckBox();
             this.chk_Emocional_Depresion = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.auxPares = new System.Windows.Forms.Button();
             this.gbParesCraneales = new System.Windows.Forms.GroupBox();
             this.btnParCranealDetalle = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -356,7 +343,6 @@
             this.cb_NoPato_TabaquismoEscala = new System.Windows.Forms.ComboBox();
             this.tabHereditarioPatologico = new System.Windows.Forms.TabPage();
             this.gbAntecedentePatologicos = new System.Windows.Forms.GroupBox();
-            this.AuxPatologico = new System.Windows.Forms.Button();
             this.txt_Ante_Pato_Detalle = new System.Windows.Forms.TextBox();
             this.label99 = new System.Windows.Forms.Label();
             this.btnAntecedentePatologicoDetalle = new System.Windows.Forms.Button();
@@ -375,9 +361,6 @@
             this.cb_Ante_Pato_Rubeola = new System.Windows.Forms.ComboBox();
             this.cb_Ante_Pato_Paroditis = new System.Windows.Forms.ComboBox();
             this.gbHereditario = new System.Windows.Forms.GroupBox();
-            this.auxHere = new System.Windows.Forms.Button();
-            this.limpiar = new System.Windows.Forms.Button();
-            this.buttonmanu = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
             this.txt_HereditarioDetalle = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
@@ -415,7 +398,6 @@
             this.dgAlergias = new System.Windows.Forms.DataGridView();
             this.tabServicio = new System.Windows.Forms.TabPage();
             this.dgServicios = new System.Windows.Forms.DataGridView();
-            this.btnAuxServici = new System.Windows.Forms.Button();
             this.gbServicio = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -770,7 +752,6 @@
             // 
             // tabEstadoVivienda
             // 
-            this.tabEstadoVivienda.Controls.Add(this.auxiliarEVivienda);
             this.tabEstadoVivienda.Controls.Add(this.gbEstadoVivienda);
             this.tabEstadoVivienda.Location = new System.Drawing.Point(4, 22);
             this.tabEstadoVivienda.Name = "tabEstadoVivienda";
@@ -778,17 +759,6 @@
             this.tabEstadoVivienda.TabIndex = 9;
             this.tabEstadoVivienda.Text = "EstadoVivienda";
             this.tabEstadoVivienda.UseVisualStyleBackColor = true;
-            // 
-            // auxiliarEVivienda
-            // 
-            this.auxiliarEVivienda.Location = new System.Drawing.Point(606, 71);
-            this.auxiliarEVivienda.Name = "auxiliarEVivienda";
-            this.auxiliarEVivienda.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarEVivienda.TabIndex = 1;
-            this.auxiliarEVivienda.Text = "button2";
-            this.auxiliarEVivienda.UseVisualStyleBackColor = true;
-            this.auxiliarEVivienda.Visible = false;
-            this.auxiliarEVivienda.Click += new System.EventHandler(this.auxiliarEVivienda_Click);
             // 
             // gbEstadoVivienda
             // 
@@ -1299,12 +1269,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.auxiliarNariz);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.gbOidos);
             this.tabPage1.Controls.Add(this.gbNariz);
             this.tabPage1.Controls.Add(this.gbOjos);
-            this.tabPage1.Controls.Add(this.auxiliarCraneo);
             this.tabPage1.Controls.Add(this.gbCraneo);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -1312,26 +1279,6 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Craneo - Ojos - Nariz - Oidos";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // auxiliarNariz
-            // 
-            this.auxiliarNariz.Location = new System.Drawing.Point(345, 178);
-            this.auxiliarNariz.Name = "auxiliarNariz";
-            this.auxiliarNariz.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarNariz.TabIndex = 88;
-            this.auxiliarNariz.Text = "button1";
-            this.auxiliarNariz.UseVisualStyleBackColor = true;
-            this.auxiliarNariz.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(526, 178);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 87;
-            this.button1.Text = "auxiliarOido";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // gbOidos
             // 
@@ -1555,16 +1502,6 @@
             this.chk_Ojos_Diploplia.Text = "Diploplia";
             this.chk_Ojos_Diploplia.UseVisualStyleBackColor = true;
             // 
-            // auxiliarCraneo
-            // 
-            this.auxiliarCraneo.Location = new System.Drawing.Point(22, 309);
-            this.auxiliarCraneo.Name = "auxiliarCraneo";
-            this.auxiliarCraneo.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarCraneo.TabIndex = 3;
-            this.auxiliarCraneo.Text = "button2";
-            this.auxiliarCraneo.UseVisualStyleBackColor = true;
-            this.auxiliarCraneo.Visible = false;
-            // 
             // gbCraneo
             // 
             this.gbCraneo.Controls.Add(this.chk_Craneo_Prurito);
@@ -1676,11 +1613,8 @@
             // 
             // tabPage9
             // 
-            this.tabPage9.Controls.Add(this.auxiliarToraxP);
             this.tabPage9.Controls.Add(this.gbTorax);
-            this.tabPage9.Controls.Add(this.auxiliarCuello);
             this.tabPage9.Controls.Add(this.gbCuello);
-            this.tabPage9.Controls.Add(this.auxiliarboca);
             this.tabPage9.Controls.Add(this.gbBoca);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
@@ -1688,16 +1622,6 @@
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "Boca - Cuello - Torax y Pulmones";
             this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // auxiliarToraxP
-            // 
-            this.auxiliarToraxP.Location = new System.Drawing.Point(378, 301);
-            this.auxiliarToraxP.Name = "auxiliarToraxP";
-            this.auxiliarToraxP.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarToraxP.TabIndex = 87;
-            this.auxiliarToraxP.Text = "button2";
-            this.auxiliarToraxP.UseVisualStyleBackColor = true;
-            this.auxiliarToraxP.Visible = false;
             // 
             // gbTorax
             // 
@@ -1802,15 +1726,6 @@
             this.cb_Torax_ResDiafraAbdo.Name = "cb_Torax_ResDiafraAbdo";
             this.cb_Torax_ResDiafraAbdo.Size = new System.Drawing.Size(131, 21);
             this.cb_Torax_ResDiafraAbdo.TabIndex = 0;
-            // 
-            // auxiliarCuello
-            // 
-            this.auxiliarCuello.Location = new System.Drawing.Point(233, 344);
-            this.auxiliarCuello.Name = "auxiliarCuello";
-            this.auxiliarCuello.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarCuello.TabIndex = 85;
-            this.auxiliarCuello.Text = "Cuello";
-            this.auxiliarCuello.UseVisualStyleBackColor = true;
             // 
             // gbCuello
             // 
@@ -1936,17 +1851,6 @@
             this.label59.Size = new System.Drawing.Size(89, 13);
             this.label59.TabIndex = 55;
             this.label59.Text = "Arterias Carotidas";
-            // 
-            // auxiliarboca
-            // 
-            this.auxiliarboca.Location = new System.Drawing.Point(70, 305);
-            this.auxiliarboca.Name = "auxiliarboca";
-            this.auxiliarboca.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarboca.TabIndex = 5;
-            this.auxiliarboca.Text = "boca";
-            this.auxiliarboca.UseVisualStyleBackColor = true;
-            this.auxiliarboca.Visible = false;
-            this.auxiliarboca.Click += new System.EventHandler(this.auxiliarboca_Click);
             // 
             // gbBoca
             // 
@@ -2096,7 +2000,6 @@
             this.txtExploracionInfoAdicional.Location = new System.Drawing.Point(269, 33);
             this.txtExploracionInfoAdicional.Multiline = true;
             this.txtExploracionInfoAdicional.Name = "txtExploracionInfoAdicional";
-            this.txtExploracionInfoAdicional.ReadOnly = true;
             this.txtExploracionInfoAdicional.Size = new System.Drawing.Size(345, 100);
             this.txtExploracionInfoAdicional.TabIndex = 46;
             this.txtExploracionInfoAdicional.Text = "Info Adicional";
@@ -2137,7 +2040,6 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.AuxiliarDigestivo);
             this.tabPage4.Controls.Add(this.gbAparatoDigestivo);
             this.tabPage4.Controls.Add(this.gbAbdomen);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -2147,16 +2049,6 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Abdomen - Aparato Digestivo ";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // AuxiliarDigestivo
-            // 
-            this.AuxiliarDigestivo.Location = new System.Drawing.Point(359, 324);
-            this.AuxiliarDigestivo.Name = "AuxiliarDigestivo";
-            this.AuxiliarDigestivo.Size = new System.Drawing.Size(75, 23);
-            this.AuxiliarDigestivo.TabIndex = 49;
-            this.AuxiliarDigestivo.Text = "diges";
-            this.AuxiliarDigestivo.UseVisualStyleBackColor = true;
-            this.AuxiliarDigestivo.Visible = false;
             // 
             // gbAparatoDigestivo
             // 
@@ -2214,6 +2106,7 @@
             this.btnApaDigestivoDetalle.TabIndex = 81;
             this.btnApaDigestivoDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnApaDigestivoDetalle.UseVisualStyleBackColor = true;
+            this.btnApaDigestivoDetalle.Click += new System.EventHandler(this.btnApaDigestivoDetalle_Click_1);
             // 
             // label71
             // 
@@ -2436,7 +2329,6 @@
             // 
             // tabPage10
             // 
-            this.tabPage10.Controls.Add(this.auxCoorMarcha);
             this.tabPage10.Controls.Add(this.gbCoordinacionMarcha);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
@@ -2444,16 +2336,6 @@
             this.tabPage10.TabIndex = 3;
             this.tabPage10.Text = "Coodinacion y Marcha";
             this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // auxCoorMarcha
-            // 
-            this.auxCoorMarcha.Location = new System.Drawing.Point(26, 304);
-            this.auxCoorMarcha.Name = "auxCoorMarcha";
-            this.auxCoorMarcha.Size = new System.Drawing.Size(75, 23);
-            this.auxCoorMarcha.TabIndex = 47;
-            this.auxCoorMarcha.Text = "button2";
-            this.auxCoorMarcha.UseVisualStyleBackColor = true;
-            this.auxCoorMarcha.Visible = false;
             // 
             // gbCoordinacionMarcha
             // 
@@ -2492,6 +2374,7 @@
             this.btn_Obs_CoordinacionMarcha.TabIndex = 84;
             this.btn_Obs_CoordinacionMarcha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Obs_CoordinacionMarcha.UseVisualStyleBackColor = true;
+            this.btn_Obs_CoordinacionMarcha.Click += new System.EventHandler(this.btn_Obs_CoordinacionMarcha_Click_1);
             // 
             // chk_CooMar_TalonRodilla
             // 
@@ -2544,8 +2427,7 @@
             // 
             // tabGinecoObstréticos
             // 
-            this.tabGinecoObstréticos.Controls.Add(this.btnAuxiliar);
-            this.tabGinecoObstréticos.Controls.Add(this.button14);
+            this.tabGinecoObstréticos.Controls.Add(this.btnEnableGineco);
             this.tabGinecoObstréticos.Controls.Add(this.gbDatosGineco);
             this.tabGinecoObstréticos.Location = new System.Drawing.Point(4, 22);
             this.tabGinecoObstréticos.Name = "tabGinecoObstréticos";
@@ -2555,29 +2437,18 @@
             this.tabGinecoObstréticos.Text = "Gineco Obstréticos";
             this.tabGinecoObstréticos.UseVisualStyleBackColor = true;
             // 
-            // btnAuxiliar
+            // btnEnableGineco
             // 
-            this.btnAuxiliar.Location = new System.Drawing.Point(309, 17);
-            this.btnAuxiliar.Name = "btnAuxiliar";
-            this.btnAuxiliar.Size = new System.Drawing.Size(75, 23);
-            this.btnAuxiliar.TabIndex = 38;
-            this.btnAuxiliar.Text = "aux";
-            this.btnAuxiliar.UseVisualStyleBackColor = true;
-            this.btnAuxiliar.Visible = false;
-            this.btnAuxiliar.Click += new System.EventHandler(this.btnAuxiliar_Click);
-            // 
-            // button14
-            // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Image = global::Frm.Properties.Resources.more;
-            this.button14.Location = new System.Drawing.Point(443, 20);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 22);
-            this.button14.TabIndex = 37;
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnEnableGineco.FlatAppearance.BorderSize = 0;
+            this.btnEnableGineco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnableGineco.Image = global::Frm.Properties.Resources.more;
+            this.btnEnableGineco.Location = new System.Drawing.Point(301, 9);
+            this.btnEnableGineco.Name = "btnEnableGineco";
+            this.btnEnableGineco.Size = new System.Drawing.Size(30, 22);
+            this.btnEnableGineco.TabIndex = 37;
+            this.btnEnableGineco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnableGineco.UseVisualStyleBackColor = true;
+            this.btnEnableGineco.Click += new System.EventHandler(this.button14_Click);
             // 
             // gbDatosGineco
             // 
@@ -2595,7 +2466,7 @@
             this.gbDatosGineco.Controls.Add(this.dtFUP);
             this.gbDatosGineco.Controls.Add(this.labelFechaUltimoPapa);
             this.gbDatosGineco.Enabled = false;
-            this.gbDatosGineco.Location = new System.Drawing.Point(30, 48);
+            this.gbDatosGineco.Location = new System.Drawing.Point(30, 37);
             this.gbDatosGineco.Name = "gbDatosGineco";
             this.gbDatosGineco.Size = new System.Drawing.Size(449, 284);
             this.gbDatosGineco.TabIndex = 14;
@@ -2724,9 +2595,7 @@
             // tabEstadoEmocional
             // 
             this.tabEstadoEmocional.Controls.Add(this.gbReflejos);
-            this.tabEstadoEmocional.Controls.Add(this.AuiliarReflejo);
             this.tabEstadoEmocional.Controls.Add(this.gbSensibilidad);
-            this.tabEstadoEmocional.Controls.Add(this.auxiliarEstadoEmo);
             this.tabEstadoEmocional.Controls.Add(this.gbEstadoEmocional);
             this.tabEstadoEmocional.Location = new System.Drawing.Point(4, 22);
             this.tabEstadoEmocional.Name = "tabEstadoEmocional";
@@ -2769,6 +2638,7 @@
             this.btn_ReflejoObservacion.TabIndex = 79;
             this.btn_ReflejoObservacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ReflejoObservacion.UseVisualStyleBackColor = true;
+            this.btn_ReflejoObservacion.Click += new System.EventHandler(this.btn_ReflejoObservacion_Click);
             // 
             // chk_R_Patelar
             // 
@@ -2893,15 +2763,6 @@
             this.cb_Reflejo_ValoracionGeneral.TabIndex = 0;
             this.cb_Reflejo_ValoracionGeneral.Text = "Bien";
             // 
-            // AuiliarReflejo
-            // 
-            this.AuiliarReflejo.Location = new System.Drawing.Point(515, 335);
-            this.AuiliarReflejo.Name = "AuiliarReflejo";
-            this.AuiliarReflejo.Size = new System.Drawing.Size(75, 23);
-            this.AuiliarReflejo.TabIndex = 93;
-            this.AuiliarReflejo.Text = "reflejo";
-            this.AuiliarReflejo.UseVisualStyleBackColor = true;
-            // 
             // gbSensibilidad
             // 
             this.gbSensibilidad.Controls.Add(this.txtSensibilidadDetalle);
@@ -2938,6 +2799,7 @@
             this.btnSensbilidadDetalle.TabIndex = 83;
             this.btnSensbilidadDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSensbilidadDetalle.UseVisualStyleBackColor = true;
+            this.btnSensbilidadDetalle.Click += new System.EventHandler(this.btnSensbilidadDetalle_Click_1);
             // 
             // label79
             // 
@@ -2987,16 +2849,6 @@
             this.chk_Sensiblidad_Superficial.TabIndex = 0;
             this.chk_Sensiblidad_Superficial.Text = "Superficial";
             this.chk_Sensiblidad_Superficial.UseVisualStyleBackColor = true;
-            // 
-            // auxiliarEstadoEmo
-            // 
-            this.auxiliarEstadoEmo.Location = new System.Drawing.Point(15, 257);
-            this.auxiliarEstadoEmo.Name = "auxiliarEstadoEmo";
-            this.auxiliarEstadoEmo.Size = new System.Drawing.Size(75, 23);
-            this.auxiliarEstadoEmo.TabIndex = 91;
-            this.auxiliarEstadoEmo.Text = "Emocional";
-            this.auxiliarEstadoEmo.UseVisualStyleBackColor = true;
-            this.auxiliarEstadoEmo.Visible = false;
             // 
             // gbEstadoEmocional
             // 
@@ -3084,6 +2936,7 @@
             this.btn_EmocionalOtro.TabIndex = 80;
             this.btn_EmocionalOtro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_EmocionalOtro.UseVisualStyleBackColor = true;
+            this.btn_EmocionalOtro.Click += new System.EventHandler(this.btn_EmocionalOtro_Click);
             // 
             // txtEmocional_Otro
             // 
@@ -3166,7 +3019,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.auxPares);
             this.tabPage2.Controls.Add(this.gbParesCraneales);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -3174,16 +3026,6 @@
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Pares Craneales";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // auxPares
-            // 
-            this.auxPares.Location = new System.Drawing.Point(720, 34);
-            this.auxPares.Name = "auxPares";
-            this.auxPares.Size = new System.Drawing.Size(75, 23);
-            this.auxPares.TabIndex = 65;
-            this.auxPares.Text = "Pares";
-            this.auxPares.UseVisualStyleBackColor = true;
-            this.auxPares.Visible = false;
             // 
             // gbParesCraneales
             // 
@@ -3903,19 +3745,9 @@
             // txtNoPato_NumTiempo_Vacuna
             // 
             this.txtNoPato_NumTiempo_Vacuna.Location = new System.Drawing.Point(137, 28);
-            this.txtNoPato_NumTiempo_Vacuna.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtNoPato_NumTiempo_Vacuna.Name = "txtNoPato_NumTiempo_Vacuna";
             this.txtNoPato_NumTiempo_Vacuna.Size = new System.Drawing.Size(38, 20);
             this.txtNoPato_NumTiempo_Vacuna.TabIndex = 8;
-            this.txtNoPato_NumTiempo_Vacuna.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // cb_NoPato_VacunaEscala
             // 
@@ -3990,19 +3822,9 @@
             // txtNoPato_NumTiempo_Droga
             // 
             this.txtNoPato_NumTiempo_Droga.Location = new System.Drawing.Point(137, 28);
-            this.txtNoPato_NumTiempo_Droga.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtNoPato_NumTiempo_Droga.Name = "txtNoPato_NumTiempo_Droga";
             this.txtNoPato_NumTiempo_Droga.Size = new System.Drawing.Size(38, 20);
             this.txtNoPato_NumTiempo_Droga.TabIndex = 8;
-            this.txtNoPato_NumTiempo_Droga.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // cb_NoPato_DrogaEscala
             // 
@@ -4042,6 +3864,7 @@
             this.cb_NoPato_BebePromedio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_NoPato_BebePromedio.FormattingEnabled = true;
             this.cb_NoPato_BebePromedio.Items.AddRange(new object[] {
+            "No Bebe",
             "2 veces por Semana",
             "Todos los días",
             "Mucho ",
@@ -4063,19 +3886,9 @@
             // txtNoPato_NumTiempo_Alchol
             // 
             this.txtNoPato_NumTiempo_Alchol.Location = new System.Drawing.Point(137, 30);
-            this.txtNoPato_NumTiempo_Alchol.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtNoPato_NumTiempo_Alchol.Name = "txtNoPato_NumTiempo_Alchol";
             this.txtNoPato_NumTiempo_Alchol.Size = new System.Drawing.Size(38, 20);
             this.txtNoPato_NumTiempo_Alchol.TabIndex = 8;
-            this.txtNoPato_NumTiempo_Alchol.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // cb_NoPato_AlcoholEscala
             // 
@@ -4111,19 +3924,9 @@
             // txtNoPato_NumTiempo_Tabaquismo
             // 
             this.txtNoPato_NumTiempo_Tabaquismo.Location = new System.Drawing.Point(137, 28);
-            this.txtNoPato_NumTiempo_Tabaquismo.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtNoPato_NumTiempo_Tabaquismo.Name = "txtNoPato_NumTiempo_Tabaquismo";
             this.txtNoPato_NumTiempo_Tabaquismo.Size = new System.Drawing.Size(38, 20);
             this.txtNoPato_NumTiempo_Tabaquismo.TabIndex = 8;
-            this.txtNoPato_NumTiempo_Tabaquismo.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // cb_NoPato_TabaquismoEscala
             // 
@@ -4149,7 +3952,6 @@
             // 
             // gbAntecedentePatologicos
             // 
-            this.gbAntecedentePatologicos.Controls.Add(this.AuxPatologico);
             this.gbAntecedentePatologicos.Controls.Add(this.txt_Ante_Pato_Detalle);
             this.gbAntecedentePatologicos.Controls.Add(this.label99);
             this.gbAntecedentePatologicos.Controls.Add(this.btnAntecedentePatologicoDetalle);
@@ -4173,17 +3975,6 @@
             this.gbAntecedentePatologicos.TabIndex = 51;
             this.gbAntecedentePatologicos.TabStop = false;
             this.gbAntecedentePatologicos.Text = "Patologicos";
-            // 
-            // AuxPatologico
-            // 
-            this.AuxPatologico.Location = new System.Drawing.Point(125, 224);
-            this.AuxPatologico.Name = "AuxPatologico";
-            this.AuxPatologico.Size = new System.Drawing.Size(35, 23);
-            this.AuxPatologico.TabIndex = 99;
-            this.AuxPatologico.Text = "aux";
-            this.AuxPatologico.UseVisualStyleBackColor = true;
-            this.AuxPatologico.Visible = false;
-            this.AuxPatologico.Click += new System.EventHandler(this.AuxPatologico_Click);
             // 
             // txt_Ante_Pato_Detalle
             // 
@@ -4352,9 +4143,6 @@
             // 
             // gbHereditario
             // 
-            this.gbHereditario.Controls.Add(this.auxHere);
-            this.gbHereditario.Controls.Add(this.limpiar);
-            this.gbHereditario.Controls.Add(this.buttonmanu);
             this.gbHereditario.Controls.Add(this.label92);
             this.gbHereditario.Controls.Add(this.txt_HereditarioDetalle);
             this.gbHereditario.Controls.Add(this.label91);
@@ -4384,37 +4172,6 @@
             this.gbHereditario.TabIndex = 50;
             this.gbHereditario.TabStop = false;
             this.gbHereditario.Text = "Hereditarios";
-            // 
-            // auxHere
-            // 
-            this.auxHere.Location = new System.Drawing.Point(21, 310);
-            this.auxHere.Name = "auxHere";
-            this.auxHere.Size = new System.Drawing.Size(75, 23);
-            this.auxHere.TabIndex = 84;
-            this.auxHere.Text = "auxi ";
-            this.auxHere.UseVisualStyleBackColor = true;
-            this.auxHere.Visible = false;
-            this.auxHere.Click += new System.EventHandler(this.auxHere_Click);
-            // 
-            // limpiar
-            // 
-            this.limpiar.Location = new System.Drawing.Point(19, 281);
-            this.limpiar.Name = "limpiar";
-            this.limpiar.Size = new System.Drawing.Size(75, 23);
-            this.limpiar.TabIndex = 83;
-            this.limpiar.Text = "limpiar";
-            this.limpiar.UseVisualStyleBackColor = true;
-            // 
-            // buttonmanu
-            // 
-            this.buttonmanu.Location = new System.Drawing.Point(19, 245);
-            this.buttonmanu.Name = "buttonmanu";
-            this.buttonmanu.Size = new System.Drawing.Size(75, 23);
-            this.buttonmanu.TabIndex = 82;
-            this.buttonmanu.Text = "manu";
-            this.buttonmanu.UseVisualStyleBackColor = true;
-            this.buttonmanu.Visible = false;
-            this.buttonmanu.Click += new System.EventHandler(this.buttonmanu_Click);
             // 
             // label92
             // 
@@ -4779,7 +4536,6 @@
             // tabServicio
             // 
             this.tabServicio.Controls.Add(this.dgServicios);
-            this.tabServicio.Controls.Add(this.btnAuxServici);
             this.tabServicio.Controls.Add(this.gbServicio);
             this.tabServicio.Location = new System.Drawing.Point(4, 22);
             this.tabServicio.Name = "tabServicio";
@@ -4802,17 +4558,6 @@
             this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgServicios.Size = new System.Drawing.Size(446, 228);
             this.dgServicios.TabIndex = 91;
-            // 
-            // btnAuxServici
-            // 
-            this.btnAuxServici.Location = new System.Drawing.Point(279, 301);
-            this.btnAuxServici.Name = "btnAuxServici";
-            this.btnAuxServici.Size = new System.Drawing.Size(75, 23);
-            this.btnAuxServici.TabIndex = 19;
-            this.btnAuxServici.Text = "aux";
-            this.btnAuxServici.UseVisualStyleBackColor = true;
-            this.btnAuxServici.Visible = false;
-            this.btnAuxServici.Click += new System.EventHandler(this.btnAuxServici_Click);
             // 
             // gbServicio
             // 
@@ -4966,6 +4711,7 @@
             0,
             0});
             this.txtCostoConsulta.Name = "txtCostoConsulta";
+            this.txtCostoConsulta.ReadOnly = true;
             this.txtCostoConsulta.Size = new System.Drawing.Size(156, 20);
             this.txtCostoConsulta.TabIndex = 3;
             this.txtCostoConsulta.ThousandsSeparator = true;
@@ -5449,9 +5195,8 @@
         private System.Windows.Forms.Button btnImagenesComplementarias;
         private System.Windows.Forms.Label lblNombreCLiente;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnEnableGineco;
         private System.Windows.Forms.RichTextBox txtAuxilirAlergia;
-        private System.Windows.Forms.Button btnAuxiliar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown txtFrencuenciaCardiaca;
         private System.Windows.Forms.Label label7;
@@ -5472,7 +5217,6 @@
         private System.Windows.Forms.CheckBox chk_Boca_Ulceras;
         private System.Windows.Forms.CheckBox chk_Boca_Protesis;
         private System.Windows.Forms.CheckBox chk_Boca_Adoncia;
-        private System.Windows.Forms.Button auxiliarboca;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.TabPage tabEstadoVivienda;
         private System.Windows.Forms.GroupBox gbEstadoVivienda;
@@ -5492,7 +5236,6 @@
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.TextBox txtServiciosBasicos;
-        private System.Windows.Forms.Button auxiliarEVivienda;
         private System.Windows.Forms.GroupBox gbAbdomen;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.ComboBox cb_Abdomen_Recto;
@@ -5525,9 +5268,6 @@
         private System.Windows.Forms.ComboBox cb_Here_Asma;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cb_Here_DM;
-        private System.Windows.Forms.Button buttonmanu;
-        private System.Windows.Forms.Button limpiar;
-        private System.Windows.Forms.Button auxHere;
         private System.Windows.Forms.GroupBox gbAnteceDentesNoPatologicos;
         private System.Windows.Forms.ComboBox cb_NoPato_TabaquismoEscala;
         private System.Windows.Forms.GroupBox gbDrogra;
@@ -5578,11 +5318,9 @@
         private System.Windows.Forms.ComboBox cb_Ante_Pato_Rubeola;
         private System.Windows.Forms.ComboBox cb_Ante_Pato_Paroditis;
         private System.Windows.Forms.TextBox txt_Ante_Pato_Detalle;
-        private System.Windows.Forms.Button AuxPatologico;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Button btnAuxServici;
         private System.Windows.Forms.NumericUpDown txt_Consulta_NumTiempo;
         private System.Windows.Forms.ComboBox cb_Consulta_EscalaTiempo;
         private System.Windows.Forms.CheckBox chk_DiagnosticoEstado;
@@ -5605,7 +5343,6 @@
         private System.Windows.Forms.CheckBox chkLimpiarDatos;
         private System.Windows.Forms.DataGridView dgServicios;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button auxiliarCraneo;
         private System.Windows.Forms.GroupBox gbCraneo;
         private System.Windows.Forms.CheckBox chk_Craneo_Prurito;
         private System.Windows.Forms.Label label70;
@@ -5625,8 +5362,6 @@
         private System.Windows.Forms.CheckBox chk_Ojos_Lentes;
         private System.Windows.Forms.CheckBox chk_Ojos_FotoFobia;
         private System.Windows.Forms.CheckBox chk_Ojos_Diploplia;
-        private System.Windows.Forms.Button auxiliarNariz;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gbOidos;
         private System.Windows.Forms.CheckBox chk_Oidos_Tinitus;
         private System.Windows.Forms.CheckBox chk_Oidos_Otorrea;
@@ -5639,7 +5374,6 @@
         private System.Windows.Forms.CheckBox chk_Nariz_Sinusitis;
         private System.Windows.Forms.CheckBox chk_Nariz_Epitaxis;
         private System.Windows.Forms.CheckBox chk_Nariz_Rinorrea;
-        private System.Windows.Forms.Button auxiliarCuello;
         private System.Windows.Forms.GroupBox gbCuello;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.NumericUpDown txtPresionVenosaCuello;
@@ -5651,7 +5385,6 @@
         private System.Windows.Forms.ComboBox cb_ArteriaCarotida;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Button auxiliarToraxP;
         private System.Windows.Forms.GroupBox gbTorax;
         private System.Windows.Forms.CheckBox chk_Torax_SonoridadPulmonar;
         private System.Windows.Forms.Label label77;
@@ -5662,7 +5395,6 @@
         private System.Windows.Forms.ComboBox cb_Torax_Expa;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.ComboBox cb_Torax_ResDiafraAbdo;
-        private System.Windows.Forms.Button AuxiliarDigestivo;
         private System.Windows.Forms.GroupBox gbAparatoDigestivo;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.ComboBox cbVomito;
@@ -5677,7 +5409,6 @@
         private System.Windows.Forms.CheckBox chk_ApaDigestivo_FaltaApetito;
         private System.Windows.Forms.CheckBox chk_ApaDigestivo_Nauseas;
         private System.Windows.Forms.CheckBox chk_ApaDigestivo_Dolor;
-        private System.Windows.Forms.Button auxCoorMarcha;
         private System.Windows.Forms.GroupBox gbCoordinacionMarcha;
         private System.Windows.Forms.TextBox txt_ObsCoordinacion;
         private System.Windows.Forms.Button btn_Obs_CoordinacionMarcha;
@@ -5703,7 +5434,6 @@
         private System.Windows.Forms.TextBox txtReflejoObservacion;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cb_Reflejo_ValoracionGeneral;
-        private System.Windows.Forms.Button AuiliarReflejo;
         private System.Windows.Forms.GroupBox gbSensibilidad;
         private System.Windows.Forms.TextBox txtSensibilidadDetalle;
         private System.Windows.Forms.Button btnSensbilidadDetalle;
@@ -5712,7 +5442,6 @@
         private System.Windows.Forms.CheckBox chk_Sensiblidad_Dis_DosPuntos;
         private System.Windows.Forms.CheckBox chk_Sensiblidad_Profunda;
         private System.Windows.Forms.CheckBox chk_Sensiblidad_Superficial;
-        private System.Windows.Forms.Button auxiliarEstadoEmo;
         private System.Windows.Forms.GroupBox gbEstadoEmocional;
         private System.Windows.Forms.CheckBox chk_Emocional_Distraido;
         private System.Windows.Forms.CheckBox chk_Emocional_Desmayos;
@@ -5729,7 +5458,6 @@
         private System.Windows.Forms.CheckBox chk_Emocional_Nervioso;
         private System.Windows.Forms.CheckBox chk_Emocional_Depresion;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button auxPares;
         private System.Windows.Forms.GroupBox gbParesCraneales;
         private System.Windows.Forms.Button btnParCranealDetalle;
         private System.Windows.Forms.Label label27;

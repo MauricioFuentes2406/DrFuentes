@@ -29,82 +29,71 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuxiliarLogin));
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdministrador = new System.Windows.Forms.Button();
+            this.btnLaboratorio = new System.Windows.Forms.Button();
+            this.btnGeneral = new System.Windows.Forms.Button();
+            this.btnSecretaria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button7
+            // btnAdministrador
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = global::Frm.Properties.Resources.team1;
-            this.button7.Location = new System.Drawing.Point(192, 53);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 123);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Administrador";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnAdministrador.FlatAppearance.BorderSize = 0;
+            this.btnAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrador.Image = global::Frm.Properties.Resources.team1;
+            this.btnAdministrador.Location = new System.Drawing.Point(192, 53);
+            this.btnAdministrador.Name = "btnAdministrador";
+            this.btnAdministrador.Size = new System.Drawing.Size(115, 123);
+            this.btnAdministrador.TabIndex = 1;
+            this.btnAdministrador.Text = "Administrador";
+            this.btnAdministrador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAdministrador.UseVisualStyleBackColor = true;
+            this.btnAdministrador.Click += new System.EventHandler(this.btnAdministrador_Click);
             // 
-            // button1
+            // btnLaboratorio
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Frm.Properties.Resources.team1;
-            this.button1.Location = new System.Drawing.Point(345, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 123);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Laboratorio";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLaboratorio.FlatAppearance.BorderSize = 0;
+            this.btnLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaboratorio.Image = global::Frm.Properties.Resources.team1;
+            this.btnLaboratorio.Location = new System.Drawing.Point(345, 53);
+            this.btnLaboratorio.Name = "btnLaboratorio";
+            this.btnLaboratorio.Size = new System.Drawing.Size(115, 123);
+            this.btnLaboratorio.TabIndex = 2;
+            this.btnLaboratorio.Text = "Laboratorio";
+            this.btnLaboratorio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLaboratorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLaboratorio.UseVisualStyleBackColor = true;
+            this.btnLaboratorio.Click += new System.EventHandler(this.btnLaboratorio_Click);
             // 
-            // button2
+            // btnGeneral
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Frm.Properties.Resources.team1;
-            this.button2.Location = new System.Drawing.Point(25, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 123);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "General";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnGeneral.FlatAppearance.BorderSize = 0;
+            this.btnGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeneral.Image = global::Frm.Properties.Resources.team1;
+            this.btnGeneral.Location = new System.Drawing.Point(25, 53);
+            this.btnGeneral.Name = "btnGeneral";
+            this.btnGeneral.Size = new System.Drawing.Size(115, 123);
+            this.btnGeneral.TabIndex = 0;
+            this.btnGeneral.Text = "General";
+            this.btnGeneral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGeneral.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGeneral.UseVisualStyleBackColor = true;
+            this.btnGeneral.Click += new System.EventHandler(this.btnGeneral_Click);
             // 
-            // button3
+            // btnSecretaria
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Frm.Properties.Resources.team1;
-            this.button3.Location = new System.Drawing.Point(499, 53);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 123);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Secretaria";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(263, 193);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnSecretaria.FlatAppearance.BorderSize = 0;
+            this.btnSecretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecretaria.Image = global::Frm.Properties.Resources.team1;
+            this.btnSecretaria.Location = new System.Drawing.Point(499, 53);
+            this.btnSecretaria.Name = "btnSecretaria";
+            this.btnSecretaria.Size = new System.Drawing.Size(115, 123);
+            this.btnSecretaria.TabIndex = 3;
+            this.btnSecretaria.Text = "Secretaria";
+            this.btnSecretaria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSecretaria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSecretaria.UseVisualStyleBackColor = true;
+            this.btnSecretaria.Click += new System.EventHandler(this.btnSecretaria_Click);
             // 
             // AuxiliarLogin
             // 
@@ -112,14 +101,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(693, 259);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnSecretaria);
+            this.Controls.Add(this.btnGeneral);
+            this.Controls.Add(this.btnLaboratorio);
+            this.Controls.Add(this.btnAdministrador);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AuxiliarLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AuxiliarLogin_FormClosed);
             this.Load += new System.EventHandler(this.AuxiliarLogin_Load);
             this.ResumeLayout(false);
 
@@ -127,10 +119,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAdministrador;
+        private System.Windows.Forms.Button btnLaboratorio;
+        private System.Windows.Forms.Button btnGeneral;
+        private System.Windows.Forms.Button btnSecretaria;
     }
 }

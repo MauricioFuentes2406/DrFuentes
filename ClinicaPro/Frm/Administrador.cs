@@ -12,9 +12,11 @@ namespace Frm
 {
     public partial class Administrador : Form
     {
-        public Administrador()
+        private int _IdTipoUsuario;
+        public Administrador(int idTipoUsuario)
         {
             InitializeComponent();
+            this._IdTipoUsuario = idTipoUsuario;
         }
 
         private void button7_Click(object sender, EventArgs e)

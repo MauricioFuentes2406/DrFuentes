@@ -82,22 +82,22 @@ namespace ClinicaPro.DB.Cliente
                catch (EntityException entityException)
             {                               
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return false;
             }
             catch (SqlException sqlException)
             {
                 manejaExcepcionesDB.manejaSQLExcepciones(sqlException);
-                throw;
+                return false;
             }
             catch (NullReferenceException nullReference)
             {
-                manejaExcepcionesDB.manejaNullReference(nullReference);               
-                throw nullReference;
+                manejaExcepcionesDB.manejaNullReference(nullReference);
+                return false;
             }
             catch (Exception ex)
             {                
-                manejaExcepcionesDB.manejaExcepcion(ex);                
-                throw;
+                manejaExcepcionesDB.manejaExcepcion(ex);
+                return false;
             }
         }
 

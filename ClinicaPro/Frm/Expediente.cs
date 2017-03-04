@@ -51,31 +51,7 @@ namespace Frm
                                  where n.IdCliente == argIdCliente
                                  select n.Número_Consulta).ToList();
 
-        }
-        private void llenarGineco()
-        {
-            ClinicaPro.DB.Consulta.GinecoObstreticosDB ginecoDb = new GinecoObstreticosDB();
-            int idcliente = 2028;  // Monica
-            List<int> idConsultasMonica = new List<int>
-            {
-              1038,
-              1042
-            };
-            List<AntecedentesGinecoObstrectico> listConcat = new List<AntecedentesGinecoObstrectico>();
-            foreach (int FidConsulta in idConsultasMonica)
-            {
-                AntecedentesGinecoObstrectico temp = ginecoDb.Listar().Where(Entidadlocal => Entidadlocal.idConsulta == FidConsulta).First();
-                listConcat.Add(temp);
-            }
-            dgGinecoObstreticos.DataSource = listConcat;
-            cambiarEncabezadoIdConsulta_NumeroConsulta(dgGinecoObstreticos);
-        }
-        private void llenarAntecedentePatologico()
-        {
-
-            this.idCliente = 2;
-            //  this.dgEstadoVivienda.DataSource = VAntecedentePatologico.ListaPorCliente(idCliente);
-        }
+        }     
         private void llenarFiltroxCliente()
         {
             if (_ListaIdConsultas != null)
@@ -84,7 +60,6 @@ namespace Frm
                 {
                     llenarconVerDetalle(idConsulta);
                 }
-
             }
         }
         private void setNombreNumeroClienteDisplayControl()
@@ -99,55 +74,70 @@ namespace Frm
 
             controladorExpediente.addVExploracionFisica(idConsulta);
             this.dgExFisica_General.DataSource = controladorExpediente.get_ListExploracionFisica();
+          
 
             controladorExpediente.addVEstadoVivienda(idConsulta);
-            this.dgEstadoVivienda.DataSource = controladorExpediente.get_ListaEstadoVivienda();
+            this.dgEstadoVivienda.DataSource = controladorExpediente.get_ListaEstadoVivienda();           
 
             controladorExpediente.addVToraxPulmones(idConsulta);
             this.dgTorax.DataSource = controladorExpediente.get_ListaVistaToraxPulmones();
-
+          
             controladorExpediente.addConsultaCraneo(idConsulta);
             this.dgCraneo.DataSource = controladorExpediente.get_ListaConsultaCraneo();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgCraneo);
 
             controladorExpediente.addConsultaOjo(idConsulta);
             this.dgOjos.DataSource = controladorExpediente.get_ListaConsultaOjo();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgOjos);
 
             controladorExpediente.addConsultaOido(idConsulta);
             this.dgOidos.DataSource = controladorExpediente.get_ListaConsultaOido();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgOidos);
 
             controladorExpediente.addConsultaNariz(idConsulta);
             this.dgNariz.DataSource = controladorExpediente.get_ListaConsultaNariz();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgNariz);
 
             controladorExpediente.addConsultaBoca(idConsulta);
             this.dgBoca.DataSource = controladorExpediente.get_ListaConsultaBoca();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgBoca);
 
             controladorExpediente.addConsultaCuello(idConsulta);
             this.dgCuello.DataSource = controladorExpediente.get_ListaConsultaCuello();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgCuello);
 
             controladorExpediente.addConsultaAbdomen(idConsulta);
             this.dgAbdomen.DataSource = controladorExpediente.get_ListaConsultaAbdomen();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgAbdomen);
 
             controladorExpediente.addConsultaAparatoDigestivo(idConsulta);
             this.dgApaDigestivo.DataSource = controladorExpediente.get_ListaConsultaAparatoDigestivo();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgApaDigestivo);
+
 
             controladorExpediente.addConsultaCoordinacionMarcha(idConsulta);
             this.dgCoordinacion.DataSource = controladorExpediente.get_ListaConsultaCoodinacionMarcha();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgCoordinacion);
 
             controladorExpediente.addAntecedenteGinecoObstretico(idConsulta);
             this.dgGinecoObstreticos.DataSource = controladorExpediente.get_ListaAntecedenteGinecoObstreticos();
-
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgGinecoObstreticos);
             //  Sentidos
             controladorExpediente.addEstadoEmocional(idConsulta);
-            this.dgEstadoEmocional.DataSource = controladorExpediente.get_ListaEstadoEmocional();          
+            this.dgEstadoEmocional.DataSource = controladorExpediente.get_ListaEstadoEmocional();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgEstadoEmocional);
 
             controladorExpediente.addSensibilidad(idConsulta);
             this.dgSensibilidad.DataSource = controladorExpediente.get_ListaSensibilidad();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgSensibilidad);
 
             controladorExpediente.addConsultaParesCraneales(idConsulta);
             this.dgParesCraneales.DataSource = controladorExpediente.get_ListaParesCraneales();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgParesCraneales);
 
             controladorExpediente.addReflejo(idConsulta);
             this.dgReflejos.DataSource = controladorExpediente.get_ListaReflejo();
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgReflejos);
 
             /**/
             ClinicaPro.DB.Consulta.ConsultaGaslowDB.ListaPorConsulta(idConsulta, dgGlasgow);
@@ -159,6 +149,7 @@ namespace Frm
 
             controladorExpediente.addVAntecedentePatologico(idConsulta);
             dgAntePatologicos.DataSource = controladorExpediente.get_ListaVAntecedentePatologico();
+
 
             controladorExpediente.addVAntecedenteHereditario(idConsulta);
             dgHereditario.DataSource = controladorExpediente.get_ListaVAntecedenteHereditario();
@@ -175,7 +166,19 @@ namespace Frm
             controladorExpediente.addVTabaco(idConsulta);
             dgTabaco.DataSource = controladorExpediente.get_ListaVTabaco();
 
+            
+            //Otras Cosas 
+            controladorExpediente.addSeguimiento(idConsulta);
+            dgSeguimientos.DataSource = controladorExpediente.get_ListaSeguimiento();
+            dgSeguimientos.Columns["IdSeguimiento"].Visible = false;
+                
+            cambiarEncabezadoIdConsulta_NumeroConsulta(dgSeguimientos);
+
         }
+        /// <summary>
+        ///  Estetico , cambio nombre de IdConsulta a Numero de Consulta
+        /// </summary>
+        /// <param name="gridconIdConsulta"></param>
         private void cambiarEncabezadoIdConsulta_NumeroConsulta(DataGridView gridconIdConsulta)
         {
             gridconIdConsulta.Columns["IdConsulta"].HeaderText = "Número de Consulta";
@@ -209,6 +212,12 @@ namespace Frm
             pictureBoxComplementarias.SizeMode = PictureBoxSizeMode.AutoSize; //Sincroniza los Scroll del Panel y PictureBox
 
         }
+        private void llenarCitasDetalle(int IdCliente)
+        {
+           this.dgCitas.DataSource = ClinicaPro.DB.Cita.CitasDB.Listar(IdCliente);
+           this.dgCitas.Columns["IdCita"].Visible = false;
+           this.dgCitas.Columns["Cliente"].Visible = false;
+        }
         #endregion
         /// <summary>
         ///  identifica si la celda actual es la Botón del Grid para ver Detalles
@@ -227,6 +236,7 @@ namespace Frm
                 int IdCliente  = (int)senderASGrid.CurrentRow.Cells["IdCliente"].Value;
                 llenarAlergiasDetalle(IdCliente);
                 llenarImagenesDetalle(IdCliente);
+                llenarCitasDetalle(IdCliente);
                 manejaMensajeInformativo(sender);
             }
         }        

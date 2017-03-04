@@ -95,16 +95,8 @@
             this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
-            this.Column38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgSeguimientos = new System.Windows.Forms.DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bNavigatorImagenesComplemntarias = new System.Windows.Forms.BindingNavigator(this.components);
@@ -131,6 +123,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkMes = new System.Windows.Forms.CheckBox();
+            this.dgCitas = new System.Windows.Forms.DataGridView();
             this.tabGeneral.SuspendLayout();
             this.tabConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsulta)).BeginInit();
@@ -193,9 +186,8 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).BeginInit();
             this.tabPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bNavigatorImagenesComplemntarias)).BeginInit();
@@ -204,6 +196,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -235,7 +228,7 @@
             this.tabConsulta.Location = new System.Drawing.Point(4, 22);
             this.tabConsulta.Name = "tabConsulta";
             this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConsulta.Size = new System.Drawing.Size(960, 392);
+            this.tabConsulta.Size = new System.Drawing.Size(960, 399);
             this.tabConsulta.TabIndex = 0;
             this.tabConsulta.Text = "Consultas";
             this.tabConsulta.UseVisualStyleBackColor = true;
@@ -274,7 +267,7 @@
             this.tabExploracionFisica.Location = new System.Drawing.Point(4, 22);
             this.tabExploracionFisica.Name = "tabExploracionFisica";
             this.tabExploracionFisica.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExploracionFisica.Size = new System.Drawing.Size(960, 392);
+            this.tabExploracionFisica.Size = new System.Drawing.Size(960, 399);
             this.tabExploracionFisica.TabIndex = 3;
             this.tabExploracionFisica.Text = "Exploración Física";
             this.tabExploracionFisica.UseVisualStyleBackColor = true;
@@ -401,7 +394,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgOidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgOidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgOidos.Location = new System.Drawing.Point(6, 17);
+            this.dgOidos.Location = new System.Drawing.Point(3, 6);
             this.dgOidos.Name = "dgOidos";
             this.dgOidos.ReadOnly = true;
             this.dgOidos.Size = new System.Drawing.Size(947, 354);
@@ -595,7 +588,7 @@
             this.tabEstadoVivienda.Location = new System.Drawing.Point(4, 22);
             this.tabEstadoVivienda.Name = "tabEstadoVivienda";
             this.tabEstadoVivienda.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstadoVivienda.Size = new System.Drawing.Size(960, 392);
+            this.tabEstadoVivienda.Size = new System.Drawing.Size(960, 399);
             this.tabEstadoVivienda.TabIndex = 2;
             this.tabEstadoVivienda.Text = "EstadoVivienda";
             // 
@@ -608,7 +601,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgEstadoVivienda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEstadoVivienda.Location = new System.Drawing.Point(10, 21);
+            this.dgEstadoVivienda.Location = new System.Drawing.Point(0, 21);
             this.dgEstadoVivienda.Name = "dgEstadoVivienda";
             this.dgEstadoVivienda.ReadOnly = true;
             this.dgEstadoVivienda.Size = new System.Drawing.Size(947, 359);
@@ -620,7 +613,7 @@
             this.tabGineco.Location = new System.Drawing.Point(4, 22);
             this.tabGineco.Name = "tabGineco";
             this.tabGineco.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGineco.Size = new System.Drawing.Size(960, 392);
+            this.tabGineco.Size = new System.Drawing.Size(960, 399);
             this.tabGineco.TabIndex = 1;
             this.tabGineco.Text = "Gineco Obstréticos";
             this.tabGineco.UseVisualStyleBackColor = true;
@@ -634,7 +627,7 @@
             this.dgGinecoObstreticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgGinecoObstreticos.Location = new System.Drawing.Point(0, 21);
             this.dgGinecoObstreticos.Name = "dgGinecoObstreticos";
-            this.dgGinecoObstreticos.Size = new System.Drawing.Size(958, 316);
+            this.dgGinecoObstreticos.Size = new System.Drawing.Size(958, 373);
             this.dgGinecoObstreticos.TabIndex = 0;
             // 
             // tabSentidos5
@@ -643,7 +636,7 @@
             this.tabSentidos5.Location = new System.Drawing.Point(4, 22);
             this.tabSentidos5.Name = "tabSentidos5";
             this.tabSentidos5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSentidos5.Size = new System.Drawing.Size(960, 392);
+            this.tabSentidos5.Size = new System.Drawing.Size(960, 399);
             this.tabSentidos5.TabIndex = 4;
             this.tabSentidos5.Text = "Sentidos";
             this.tabSentidos5.UseVisualStyleBackColor = true;
@@ -802,7 +795,7 @@
             this.tabServicios.Location = new System.Drawing.Point(4, 22);
             this.tabServicios.Name = "tabServicios";
             this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabServicios.Size = new System.Drawing.Size(960, 392);
+            this.tabServicios.Size = new System.Drawing.Size(960, 399);
             this.tabServicios.TabIndex = 6;
             this.tabServicios.Text = "Servicios";
             this.tabServicios.UseVisualStyleBackColor = true;
@@ -829,7 +822,7 @@
             this.tabAntecedentes.Location = new System.Drawing.Point(4, 22);
             this.tabAntecedentes.Name = "tabAntecedentes";
             this.tabAntecedentes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAntecedentes.Size = new System.Drawing.Size(960, 392);
+            this.tabAntecedentes.Size = new System.Drawing.Size(960, 399);
             this.tabAntecedentes.TabIndex = 5;
             this.tabAntecedentes.Text = "Antecedentes";
             this.tabAntecedentes.UseVisualStyleBackColor = true;
@@ -990,7 +983,7 @@
             this.tabAlergias.Controls.Add(this.dgAlergias);
             this.tabAlergias.Location = new System.Drawing.Point(4, 22);
             this.tabAlergias.Name = "tabAlergias";
-            this.tabAlergias.Size = new System.Drawing.Size(960, 392);
+            this.tabAlergias.Size = new System.Drawing.Size(960, 399);
             this.tabAlergias.TabIndex = 10;
             this.tabAlergias.Text = "Alergias";
             this.tabAlergias.UseVisualStyleBackColor = true;
@@ -1017,7 +1010,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(960, 392);
+            this.tabPage8.Size = new System.Drawing.Size(960, 399);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Electros";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1045,85 +1038,40 @@
             // 
             // tabPage9
             // 
-            this.tabPage9.Controls.Add(this.dataGridView9);
+            this.tabPage9.Controls.Add(this.dgSeguimientos);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(960, 392);
+            this.tabPage9.Size = new System.Drawing.Size(960, 399);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Seguimientos";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // dataGridView9
+            // dgSeguimientos
             // 
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column38,
-            this.Column39,
-            this.Column40,
-            this.Column41,
-            this.Column42});
-            this.dataGridView9.Location = new System.Drawing.Point(6, 27);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.Size = new System.Drawing.Size(540, 147);
-            this.dataGridView9.TabIndex = 0;
-            // 
-            // Column38
-            // 
-            this.Column38.HeaderText = "idConsulta";
-            this.Column38.Name = "Column38";
-            // 
-            // Column39
-            // 
-            this.Column39.HeaderText = "Descripcion";
-            this.Column39.Name = "Column39";
-            // 
-            // Column40
-            // 
-            this.Column40.HeaderText = "Prioridad";
-            this.Column40.Name = "Column40";
-            // 
-            // Column41
-            // 
-            this.Column41.HeaderText = "FechaNotificacion";
-            this.Column41.Name = "Column41";
-            // 
-            // Column42
-            // 
-            this.Column42.HeaderText = "Estado";
-            this.Column42.Name = "Column42";
+            this.dgSeguimientos.AllowUserToAddRows = false;
+            this.dgSeguimientos.AllowUserToDeleteRows = false;
+            this.dgSeguimientos.AllowUserToOrderColumns = true;
+            this.dgSeguimientos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgSeguimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgSeguimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSeguimientos.Location = new System.Drawing.Point(0, 21);
+            this.dgSeguimientos.Name = "dgSeguimientos";
+            this.dgSeguimientos.Size = new System.Drawing.Size(944, 375);
+            this.dgSeguimientos.TabIndex = 0;
             // 
             // tabPage10
             // 
-            this.tabPage10.Controls.Add(this.dataGridView10);
+            this.tabPage10.Controls.Add(this.dgCitas);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(960, 392);
+            this.tabPage10.Size = new System.Drawing.Size(960, 399);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "Citas";
             this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView10
-            // 
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn7});
-            this.dataGridView10.Location = new System.Drawing.Point(7, 8);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.Size = new System.Drawing.Size(540, 147);
-            this.dataGridView10.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // tabPage1
             // 
@@ -1133,7 +1081,7 @@
             this.tabPage1.Size = new System.Drawing.Size(960, 399);
             this.tabPage1.TabIndex = 11;
             this.tabPage1.Text = "Imagenes Complementarias";
-            this.tabPage1.UseVisualStyleBackColor = true;            
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -1146,7 +1094,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(957, 393);
-            this.panel1.TabIndex = 2;            
+            this.panel1.TabIndex = 2;
             // 
             // bNavigatorImagenesComplemntarias
             // 
@@ -1253,7 +1201,7 @@
             this.pictureBoxComplementarias.Size = new System.Drawing.Size(954, 363);
             this.pictureBoxComplementarias.TabIndex = 0;
             this.pictureBoxComplementarias.TabStop = false;
-            this.pictureBoxComplementarias.WaitOnLoad = true;            
+            this.pictureBoxComplementarias.WaitOnLoad = true;
             // 
             // txtNombre
             // 
@@ -1414,6 +1362,21 @@
             this.chkMes.Text = "Mes";
             this.chkMes.UseVisualStyleBackColor = true;
             // 
+            // dgCitas
+            // 
+            this.dgCitas.AllowUserToAddRows = false;
+            this.dgCitas.AllowUserToDeleteRows = false;
+            this.dgCitas.AllowUserToOrderColumns = true;
+            this.dgCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCitas.Location = new System.Drawing.Point(0, 21);
+            this.dgCitas.Name = "dgCitas";
+            this.dgCitas.Size = new System.Drawing.Size(944, 375);
+            this.dgCitas.TabIndex = 1;
+            // 
             // Expediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1496,9 +1459,8 @@
             this.tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.tabPage9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).EndInit();
             this.tabPage10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1511,6 +1473,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1534,18 +1497,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
         private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.DataGridView dataGridView9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column38;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column40;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column41;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column42;
+        private System.Windows.Forms.DataGridView dgSeguimientos;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tabPage10;
-        private System.Windows.Forms.DataGridView dataGridView10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button btnFiltrarPorCliente;
         private System.Windows.Forms.DataGridViewButtonColumn btnVerDetalle;
         private System.Windows.Forms.TabControl tabSubExFisica;
@@ -1619,5 +1574,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.PictureBox pictureBoxComplementarias;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgCitas;
     }
 }

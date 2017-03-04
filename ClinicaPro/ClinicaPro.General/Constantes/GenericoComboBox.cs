@@ -8,9 +8,10 @@ namespace ClinicaPro.General.Constantes
 {
     /// <summary>
     /// Estas clase funcionan como alternativas a los Enumerados para llenar los comboBox, 
-    /// Se busca añadir la ventaja de no tener que estar haciendo un monto de cast para poder
+    /// La ventaja es no tener que estar haciendo tantos  cast para poder
     /// leer los valueMeber de las opciones,  de esta manera es mas sencilla configurarlos
     /// pues nada mas se pone como DataSource un array de la clase , 
+    /// 
     /// Luego displaymember = "nombre"
     /// Value member = "valor"
     /// </summary>

@@ -44,8 +44,7 @@ namespace ClinicaPro.General.Constantes
        public const String ContrasenaNoCoincide = " Las Contraseñas no Coinciden  ";
        public const String FraseIgualPassword = "La frase para recordar no debe  ser igual a la contraseña  por seguridad ";
        public const String CorreoEnviado = "El correo ya ha sido enviado  ";
-
-     
+       public const String GuardarPrimero = "Debes de guardar la consulta antes de crear el seguimiento";      
        #endregion
 
        public const String HuboErrorConteo = "Hubo un error Con el Conteo Total"; // Contado filas en  DataGrid
@@ -56,7 +55,7 @@ namespace ClinicaPro.General.Constantes
        public const String NotieneCorreo = "No se puede enviar el mensaje por que el registro seleccionado no tiene asignado un correo ";
        public const String NosePuedoGuardar = "No se pudo guardar los datos en la Base de Datos";
 
-
+       
        
        // Otros
 

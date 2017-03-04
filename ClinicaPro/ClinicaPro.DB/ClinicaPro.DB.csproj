@@ -137,9 +137,6 @@
       <Name>ClinicaPro.General</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Consulta\RuleSet1.ruleset" />
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

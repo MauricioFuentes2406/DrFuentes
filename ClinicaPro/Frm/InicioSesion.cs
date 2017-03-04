@@ -19,11 +19,12 @@ namespace Frm
             InitializeComponent();
         }         
         private void btnIniciar_Click(object sender, EventArgs e)
-        {
-             int TipoUsuario  =  new UsuarioDB().Autentificar(this.txtUsername.Text, this.txtPassword.Text);
-             if (TipoUsuario <= 0) { MessageBox.Show("Nombre usuario y Contraseña Incorrecta","Inicio",MessageBoxButtons.OK,MessageBoxIcon.Error); return; }
+        {                            
+           //  int TipoUsuario  =  new UsuarioDB().Autentificar(this.txtUsername.Text, this.txtPassword.Text);
+            // if (TipoUsuario <= 0) { MessageBox.Show("Nombre usuario y Contraseña Incorrecta","Inicio",MessageBoxButtons.OK,MessageBoxIcon.Error); return; }
                
-            new AuxiliarLogin(TipoUsuario).Show();
+            //new AuxiliarLogin(TipoUsuario).Show();
+            new AuxiliarLogin(1).Show();
             this.Hide();                               
         }
         private void InicioSesion_Load(object sender, EventArgs e)
@@ -42,6 +43,36 @@ namespace Frm
                    MessageBox.Show(Result);
            }else
                MessageBox.Show("Digite Su nombre de Usuario");
-        }             
+        }        
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPasswordStyle();
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtPasswordStyle();
+        }
+
+        private void txtPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPasswordStyle();
+        }
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            txtPasswordStyle();
+        }
+        private void txtPasswordStyle()
+        {
+            if (this.txtPassword.Text == "Password")
+            {
+                this.txtPassword.ResetText();
+                this.txtPassword.Multiline = false;
+                this.txtPassword.UseSystemPasswordChar = true;
+            }
+        }        
+        
+
+      
     }
 }

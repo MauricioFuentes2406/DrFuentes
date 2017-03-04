@@ -43,23 +43,22 @@ namespace ClinicaPro.DB.Consulta
             catch (EntityException entityException)
             {
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return -1;
             }
             catch (UpdateException sqlException)
             {
                 manejaExcepcionesDB.UpdateExcepcion(sqlException);
-                throw;
+                return -1 ;
             }
             catch (NullReferenceException nullReference)
             {
                 manejaExcepcionesDB.manejaNullReference(nullReference);
-                throw nullReference;
+                return -1;
             }
             catch (Exception ex)
-            {
-                 
+            {                 
                 manejaExcepcionesDB.manejaExcepcion(ex);
-                throw ex;
+                return -1;
             }
             
         }
@@ -84,32 +83,6 @@ namespace ClinicaPro.DB.Consulta
                                                   select tabla).ToList();
               return lista;
           }
-      }
-
-      ///// <summary>
-      ///// Propando  Un Inner Join , devolviendo una Entidad Nueva(Columnas distintas)
-      ///// </summary>
-      ///// <param name="Dg"></param>
-      //public static void ListarGrid( DataGridView Dg  )
-      //{
-      //   using (ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities() )
-      //   {
-      //       var lista = (from gineco in Contexto.AntecedentesGinecoObstrecticos
-      //                    join consulta in Contexto.Consultas
-      //                        on gineco.idConsulta equals consulta.IdConsulta
-      //                    select new
-      //                    {
-      //                        IdCliente = consulta.IdCliente,
-      //                        IdConsulta = gineco.idConsulta,
-      //                        Abortos = gineco.Abortos,
-      //                        Cecareas = gineco.Cecareas,
-      //                        FUM = gineco.FUM,
-      //                        FUPAC = gineco.FUPAC,
-      //                        Gestaciones = gineco.Gestaciones,
-      //                        Partos = gineco.Partos
-      //                    }).ToList();
-      //       Dg.DataSource = lista;
-      //   }
-      //} 
+      }    
     }
 }

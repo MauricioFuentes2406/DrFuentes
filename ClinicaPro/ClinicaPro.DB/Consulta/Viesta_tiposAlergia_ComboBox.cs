@@ -25,17 +25,17 @@ namespace ClinicaPro.DB.Consulta
             catch (EntityException entityException)
             {                               
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return  null;
             }
             catch (NullReferenceException nullReference)
             {
-                manejaExcepcionesDB.manejaNullReference(nullReference);           
-                throw nullReference;
+                manejaExcepcionesDB.manejaNullReference(nullReference);
+                return null;
             }
             catch (Exception ex)
             {
-                manejaExcepcionesDB.manejaExcepcion(ex);                
-                throw;
+                manejaExcepcionesDB.manejaExcepcion(ex);
+                return null;
             }           
 
         }      

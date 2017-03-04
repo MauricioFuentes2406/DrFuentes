@@ -58,17 +58,17 @@ namespace ClinicaPro.DB.Cliente
             catch (EntityException entityException)
             {
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return -1;
             }            
             catch (NullReferenceException nullReference)
             {
                 manejaExcepcionesDB.manejaNullReference(nullReference);
-                throw nullReference;
+                return -1;
             }
             catch (Exception ex)
             {
                 manejaExcepcionesDB.manejaExcepcion(ex);
-                throw ex;
+                return -1;
             }
         }
         /// <summary>
@@ -122,17 +122,17 @@ namespace ClinicaPro.DB.Cliente
             catch (EntityException entityException)
             {
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return null;
             }
             catch (NullReferenceException nullReference)
             {
                 manejaExcepcionesDB.manejaNullReference(nullReference);
-                throw nullReference;
+                return null;
             }
             catch (Exception ex)
             {
                 manejaExcepcionesDB.manejaExcepcion(ex);
-                throw;
+                return null;
             }
            
         }
@@ -196,27 +196,65 @@ namespace ClinicaPro.DB.Cliente
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
-                return (from tabla in Contexto.Clientes.AsNoTracking()
-                        where tabla.Sexo == "H"
-                        select tabla.IdCliente).Count();
+                try
+                {
+                    return (from tabla in Contexto.Clientes.AsNoTracking()
+                            where tabla.Sexo == "H"
+                            select tabla.IdCliente).Count();
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+                
             }
         }
         public static int TotalMujeres()
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
-                return (from tabla in Contexto.Clientes.AsNoTracking()
-                        where tabla.Sexo == "M"
-                        select tabla.IdCliente).Count();
+                try
+                {
+                    return (from tabla in Contexto.Clientes.AsNoTracking()
+                            where tabla.Sexo == "M"
+                            select tabla.IdCliente).Count();
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }                
+            }
+        }
+        public static int TotalClientes()
+        {
+            using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
+            {
+                try
+                {
+                    return (from tabla in Contexto.Clientes.AsNoTracking()
+                            select tabla.IdCliente).Count();
+                }
+                catch (Exception)
+                {
+                    
+                  return 0;
+                }                
             }
         }
         public static int TotalExtrajeros()
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
-                return (from tabla in Contexto.Clientes.AsNoTracking()
-                        where tabla.isExtranjero
-                        select tabla.IdCliente).Count();
+                try
+                {
+                    return (from tabla in Contexto.Clientes.AsNoTracking()
+                            where tabla.isExtranjero
+                            select tabla.IdCliente).Count();
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }               
             }
         }
         public static List<int> PersonasRangoEdad()
@@ -224,23 +262,30 @@ namespace ClinicaPro.DB.Cliente
             List<int> list = new List<int>();
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
-                // de 1  a 20
-                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
-                          where tabla.Edad >=1 && tabla.Edad <= 20
-                          select tabla.IdCliente).Count());
-                // 21 a 40
-                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
-                          where tabla.Edad >= 21 && tabla.Edad <= 40
-                          select tabla.IdCliente).Count());
-                // 41 a 50
-                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
-                          where tabla.Edad >= 41 && tabla.Edad <= 50
-                          select tabla.IdCliente).Count());
-                //> 50
-                list.Add((from tabla in Contexto.Clientes.AsNoTracking()
-                          where tabla.Edad > 50
-                          select tabla.IdCliente).Count());
-                return list;
+                try
+                {
+                    // de 1  a 20
+                    list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                              where tabla.Edad >= 1 && tabla.Edad <= 20
+                              select tabla.IdCliente).Count());
+                    // 21 a 40
+                    list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                              where tabla.Edad >= 21 && tabla.Edad <= 40
+                              select tabla.IdCliente).Count());
+                    // 41 a 50
+                    list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                              where tabla.Edad >= 41 && tabla.Edad <= 50
+                              select tabla.IdCliente).Count());
+                    //> 50
+                    list.Add((from tabla in Contexto.Clientes.AsNoTracking()
+                              where tabla.Edad > 50
+                              select tabla.IdCliente).Count());
+                    return list;
+                }
+                catch (Exception)
+                {
+                    return list;          
+                }              
             }
         }
     }

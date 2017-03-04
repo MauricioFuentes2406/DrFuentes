@@ -36,17 +36,17 @@ namespace ClinicaPro.DB.Consulta
             catch (EntityException entityException)
             {
                 manejaExcepcionesDB.manejaEntityException(entityException);
-                throw entityException;
+                return 0;
             }
             catch (NullReferenceException nullReference)
             {
                 manejaExcepcionesDB.manejaNullReference(nullReference);
-                throw nullReference;
+                return 0;
             }
             catch (Exception ex)
             {
                 manejaExcepcionesDB.manejaExcepcion(ex);
-                throw;
+                return 0;
             }
         }
         public bool Eliminar(int IdMaterial, int idTipoUsuario)

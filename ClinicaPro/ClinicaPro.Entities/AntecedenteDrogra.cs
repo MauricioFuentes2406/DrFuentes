@@ -20,9 +20,7 @@ public partial class AntecedenteDrogra
 
     public AntecedenteDrogra()
     {
-
         this.Drogas = new HashSet<Drogas>();
-
     }
 
 
