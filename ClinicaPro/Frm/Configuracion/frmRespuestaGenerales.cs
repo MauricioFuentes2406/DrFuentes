@@ -99,7 +99,7 @@ namespace Frm.Configuracion
                 
                 if (dgRespuestasGenerales.SelectedRows.Count == 1)
                 {
-                    this.IdRespuestaGeneral = (byte)dgRespuestasGenerales.CurrentRow.Cells[comboNombreIDs.respuestaGenerales].Value;
+                    this.IdRespuestaGeneral = (byte)dgRespuestasGenerales.SelectedRows[0].Cells[comboNombreIDs.respuestaGenerales].Value;
                 }
                 Consulta_RespuestasGenerales respuestaGeneral = resGeneral_ControlAClase();
                 respuestaGeneral.idRespuestaGeneral = this.IdRespuestaGeneral;
@@ -118,7 +118,7 @@ namespace Frm.Configuracion
             {
                 if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {
-                    this.IdRespuestaGeneral = (byte)dgRespuestasGenerales.CurrentRow.Cells[comboNombreIDs.respuestaGenerales].Value;
+                    this.IdRespuestaGeneral = (byte)dgRespuestasGenerales.SelectedRows[0].Cells[comboNombreIDs.respuestaGenerales].Value;
 
                     RespuestaGeneralesDB reespuestaGeneralDB = new RespuestaGeneralesDB();
                     if (reespuestaGeneralDB.Eliminar(this.IdRespuestaGeneral, this.IdUsuario))

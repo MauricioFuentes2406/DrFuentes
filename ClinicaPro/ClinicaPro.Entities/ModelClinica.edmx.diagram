@@ -156,6 +156,9 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ExamenesResultado_Examenes" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteImagenesExamenesComplementarios" Width="1.5" PointX="5.5" PointY="47.5" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_OtrosArchivosCliente_Cliente" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.ElectroResultados" Width="1.5" PointX="13.5" PointY="45.375" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ElectroResultados_Cliente" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_ElectroResultados_Consulta" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

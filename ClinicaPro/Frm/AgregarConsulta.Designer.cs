@@ -414,7 +414,7 @@
             this.btnImagenesComplementarias = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnElectro = new System.Windows.Forms.Button();
             this.txtDescuentoPorcentaje = new System.Windows.Forms.NumericUpDown();
             this.label35 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -432,6 +432,7 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtAuxilirAlergia = new System.Windows.Forms.RichTextBox();
             this.lblCampoRequerido = new System.Windows.Forms.Label();
+            this.openFileElectroResult = new System.Windows.Forms.OpenFileDialog();
             this.tabGeneral.SuspendLayout();
             this.tabMoticoConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Consulta_NumTiempo)).BeginInit();
@@ -732,6 +733,7 @@
             this.button20.TabIndex = 49;
             this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Visible = false;
             // 
             // label36
             // 
@@ -1431,7 +1433,7 @@
             this.label10.Location = new System.Drawing.Point(6, 157);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 13);
-            this.label10.TabIndex = 7;
+            this.label10.TabIndex = 6;
             this.label10.Text = "Perdida Agudeza";
             // 
             // txtPerdidaAgudeza
@@ -1440,7 +1442,7 @@
             this.txtPerdidaAgudeza.MaxLength = 100;
             this.txtPerdidaAgudeza.Name = "txtPerdidaAgudeza";
             this.txtPerdidaAgudeza.Size = new System.Drawing.Size(128, 20);
-            this.txtPerdidaAgudeza.TabIndex = 6;
+            this.txtPerdidaAgudeza.TabIndex = 7;
             // 
             // chk_Ojos_Midriasis
             // 
@@ -1526,7 +1528,7 @@
             this.chk_Craneo_Prurito.Location = new System.Drawing.Point(6, 157);
             this.chk_Craneo_Prurito.Name = "chk_Craneo_Prurito";
             this.chk_Craneo_Prurito.Size = new System.Drawing.Size(56, 17);
-            this.chk_Craneo_Prurito.TabIndex = 8;
+            this.chk_Craneo_Prurito.TabIndex = 6;
             this.chk_Craneo_Prurito.Text = "Prurito";
             this.chk_Craneo_Prurito.UseVisualStyleBackColor = true;
             // 
@@ -1549,7 +1551,7 @@
             0});
             this.txtMareos.Name = "txtMareos";
             this.txtMareos.Size = new System.Drawing.Size(120, 20);
-            this.txtMareos.TabIndex = 6;
+            this.txtMareos.TabIndex = 8;
             // 
             // chk_Craneo_PerdidaConciencia
             // 
@@ -1567,7 +1569,7 @@
             this.chk_Craneo_Cefalea.Location = new System.Drawing.Point(6, 88);
             this.chk_Craneo_Cefalea.Name = "chk_Craneo_Cefalea";
             this.chk_Craneo_Cefalea.Size = new System.Drawing.Size(62, 17);
-            this.chk_Craneo_Cefalea.TabIndex = 4;
+            this.chk_Craneo_Cefalea.TabIndex = 3;
             this.chk_Craneo_Cefalea.Text = "Cefalea";
             this.chk_Craneo_Cefalea.UseVisualStyleBackColor = true;
             // 
@@ -1577,7 +1579,7 @@
             this.chk_Craneo_Sincope.Location = new System.Drawing.Point(6, 111);
             this.chk_Craneo_Sincope.Name = "chk_Craneo_Sincope";
             this.chk_Craneo_Sincope.Size = new System.Drawing.Size(65, 17);
-            this.chk_Craneo_Sincope.TabIndex = 3;
+            this.chk_Craneo_Sincope.TabIndex = 4;
             this.chk_Craneo_Sincope.Text = "Sincope";
             this.chk_Craneo_Sincope.UseVisualStyleBackColor = true;
             // 
@@ -1657,7 +1659,7 @@
             this.label77.Location = new System.Drawing.Point(24, 165);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(94, 13);
-            this.label77.TabIndex = 7;
+            this.label77.TabIndex = 6;
             this.label77.Text = "Ruidos Agregados";
             // 
             // cb_Torax_RuidoAgregado
@@ -1668,7 +1670,7 @@
             this.cb_Torax_RuidoAgregado.Location = new System.Drawing.Point(27, 185);
             this.cb_Torax_RuidoAgregado.Name = "cb_Torax_RuidoAgregado";
             this.cb_Torax_RuidoAgregado.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_RuidoAgregado.TabIndex = 6;
+            this.cb_Torax_RuidoAgregado.TabIndex = 7;
             // 
             // label76
             // 
@@ -1676,7 +1678,7 @@
             this.label76.Location = new System.Drawing.Point(24, 121);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(151, 13);
-            this.label76.TabIndex = 5;
+            this.label76.TabIndex = 4;
             this.label76.Text = "Ascultacion Murmullo Vescular";
             // 
             // label75
@@ -1685,7 +1687,7 @@
             this.label75.Location = new System.Drawing.Point(24, 70);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(98, 13);
-            this.label75.TabIndex = 4;
+            this.label75.TabIndex = 2;
             this.label75.Text = "ExpancionToraxica";
             // 
             // cb_Torax_Ascultacion
@@ -1696,7 +1698,7 @@
             this.cb_Torax_Ascultacion.Location = new System.Drawing.Point(27, 141);
             this.cb_Torax_Ascultacion.Name = "cb_Torax_Ascultacion";
             this.cb_Torax_Ascultacion.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_Ascultacion.TabIndex = 3;
+            this.cb_Torax_Ascultacion.TabIndex = 5;
             // 
             // cb_Torax_Expa
             // 
@@ -1706,7 +1708,7 @@
             this.cb_Torax_Expa.Location = new System.Drawing.Point(27, 87);
             this.cb_Torax_Expa.Name = "cb_Torax_Expa";
             this.cb_Torax_Expa.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_Expa.TabIndex = 2;
+            this.cb_Torax_Expa.TabIndex = 3;
             // 
             // label74
             // 
@@ -1714,7 +1716,7 @@
             this.label74.Location = new System.Drawing.Point(24, 27);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(166, 13);
-            this.label74.TabIndex = 1;
+            this.label74.TabIndex = 0;
             this.label74.Text = "Respiracion Diafragma Abdominal";
             // 
             // cb_Torax_ResDiafraAbdo
@@ -1725,7 +1727,7 @@
             this.cb_Torax_ResDiafraAbdo.Location = new System.Drawing.Point(27, 46);
             this.cb_Torax_ResDiafraAbdo.Name = "cb_Torax_ResDiafraAbdo";
             this.cb_Torax_ResDiafraAbdo.Size = new System.Drawing.Size(131, 21);
-            this.cb_Torax_ResDiafraAbdo.TabIndex = 0;
+            this.cb_Torax_ResDiafraAbdo.TabIndex = 1;
             // 
             // gbCuello
             // 
@@ -1752,7 +1754,7 @@
             this.label41.Location = new System.Drawing.Point(4, 124);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(116, 13);
-            this.label41.TabIndex = 77;
+            this.label41.TabIndex = 4;
             this.label41.Text = "Presion Venosa mmHG";
             // 
             // txtPresionVenosaCuello
@@ -1760,7 +1762,7 @@
             this.txtPresionVenosaCuello.Location = new System.Drawing.Point(6, 145);
             this.txtPresionVenosaCuello.Name = "txtPresionVenosaCuello";
             this.txtPresionVenosaCuello.Size = new System.Drawing.Size(111, 20);
-            this.txtPresionVenosaCuello.TabIndex = 76;
+            this.txtPresionVenosaCuello.TabIndex = 5;
             // 
             // chk_Cuello_AdenoPatias
             // 
@@ -1768,7 +1770,7 @@
             this.chk_Cuello_AdenoPatias.Location = new System.Drawing.Point(6, 88);
             this.chk_Cuello_AdenoPatias.Name = "chk_Cuello_AdenoPatias";
             this.chk_Cuello_AdenoPatias.Size = new System.Drawing.Size(86, 17);
-            this.chk_Cuello_AdenoPatias.TabIndex = 75;
+            this.chk_Cuello_AdenoPatias.TabIndex = 3;
             this.chk_Cuello_AdenoPatias.Text = "AdenoPatias";
             this.chk_Cuello_AdenoPatias.UseVisualStyleBackColor = true;
             // 
@@ -1778,7 +1780,7 @@
             this.chk_Cuello_LesionPiel.Location = new System.Drawing.Point(6, 65);
             this.chk_Cuello_LesionPiel.Name = "chk_Cuello_LesionPiel";
             this.chk_Cuello_LesionPiel.Size = new System.Drawing.Size(114, 17);
-            this.chk_Cuello_LesionPiel.TabIndex = 74;
+            this.chk_Cuello_LesionPiel.TabIndex = 2;
             this.chk_Cuello_LesionPiel.Text = "Lesiones en la Piel";
             this.chk_Cuello_LesionPiel.UseVisualStyleBackColor = true;
             // 
@@ -1788,7 +1790,7 @@
             this.chk_Cuello_Simetrico.Location = new System.Drawing.Point(6, 42);
             this.chk_Cuello_Simetrico.Name = "chk_Cuello_Simetrico";
             this.chk_Cuello_Simetrico.Size = new System.Drawing.Size(69, 17);
-            this.chk_Cuello_Simetrico.TabIndex = 72;
+            this.chk_Cuello_Simetrico.TabIndex = 1;
             this.chk_Cuello_Simetrico.Text = "Simétrico";
             this.chk_Cuello_Simetrico.UseVisualStyleBackColor = true;
             // 
@@ -1798,7 +1800,7 @@
             this.chk_Cuello_ConfiguracionCuello.Location = new System.Drawing.Point(6, 19);
             this.chk_Cuello_ConfiguracionCuello.Name = "chk_Cuello_ConfiguracionCuello";
             this.chk_Cuello_ConfiguracionCuello.Size = new System.Drawing.Size(123, 17);
-            this.chk_Cuello_ConfiguracionCuello.TabIndex = 71;
+            this.chk_Cuello_ConfiguracionCuello.TabIndex = 0;
             this.chk_Cuello_ConfiguracionCuello.Text = "Configuracion Cuello";
             this.chk_Cuello_ConfiguracionCuello.UseVisualStyleBackColor = true;
             // 
@@ -1819,7 +1821,7 @@
             this.cbGanglioLinfatico.Location = new System.Drawing.Point(6, 262);
             this.cbGanglioLinfatico.Name = "cbGanglioLinfatico";
             this.cbGanglioLinfatico.Size = new System.Drawing.Size(111, 21);
-            this.cbGanglioLinfatico.TabIndex = 70;
+            this.cbGanglioLinfatico.TabIndex = 9;
             // 
             // cb_ArteriaCarotida
             // 
@@ -1832,7 +1834,7 @@
             this.cb_ArteriaCarotida.Location = new System.Drawing.Point(3, 203);
             this.cb_ArteriaCarotida.Name = "cb_ArteriaCarotida";
             this.cb_ArteriaCarotida.Size = new System.Drawing.Size(114, 21);
-            this.cb_ArteriaCarotida.TabIndex = 69;
+            this.cb_ArteriaCarotida.TabIndex = 7;
             // 
             // label60
             // 
@@ -1840,7 +1842,7 @@
             this.label60.Location = new System.Drawing.Point(3, 244);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(91, 13);
-            this.label60.TabIndex = 56;
+            this.label60.TabIndex = 8;
             this.label60.Text = "Ganglios Linfático";
             // 
             // label59
@@ -1849,7 +1851,7 @@
             this.label59.Location = new System.Drawing.Point(3, 181);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(89, 13);
-            this.label59.TabIndex = 55;
+            this.label59.TabIndex = 6;
             this.label59.Text = "Arterias Carotidas";
             // 
             // gbBoca
@@ -1897,7 +1899,7 @@
             this.chk_Boca_Amigdalitis.Location = new System.Drawing.Point(7, 157);
             this.chk_Boca_Amigdalitis.Name = "chk_Boca_Amigdalitis";
             this.chk_Boca_Amigdalitis.Size = new System.Drawing.Size(75, 17);
-            this.chk_Boca_Amigdalitis.TabIndex = 7;
+            this.chk_Boca_Amigdalitis.TabIndex = 6;
             this.chk_Boca_Amigdalitis.Text = "Amigdalitis";
             this.chk_Boca_Amigdalitis.UseVisualStyleBackColor = true;
             // 
@@ -1907,7 +1909,7 @@
             this.chk_Boca_Laringitis.Location = new System.Drawing.Point(6, 177);
             this.chk_Boca_Laringitis.Name = "chk_Boca_Laringitis";
             this.chk_Boca_Laringitis.Size = new System.Drawing.Size(67, 17);
-            this.chk_Boca_Laringitis.TabIndex = 6;
+            this.chk_Boca_Laringitis.TabIndex = 7;
             this.chk_Boca_Laringitis.Text = "Laringitis";
             this.chk_Boca_Laringitis.UseVisualStyleBackColor = true;
             // 
@@ -1937,7 +1939,7 @@
             this.chk_Boca_Calzas.Location = new System.Drawing.Point(6, 65);
             this.chk_Boca_Calzas.Name = "chk_Boca_Calzas";
             this.chk_Boca_Calzas.Size = new System.Drawing.Size(57, 17);
-            this.chk_Boca_Calzas.TabIndex = 3;
+            this.chk_Boca_Calzas.TabIndex = 2;
             this.chk_Boca_Calzas.Text = "Calzas";
             this.chk_Boca_Calzas.UseVisualStyleBackColor = true;
             // 
@@ -1947,7 +1949,7 @@
             this.chk_Boca_Ulceras.Location = new System.Drawing.Point(7, 88);
             this.chk_Boca_Ulceras.Name = "chk_Boca_Ulceras";
             this.chk_Boca_Ulceras.Size = new System.Drawing.Size(62, 17);
-            this.chk_Boca_Ulceras.TabIndex = 2;
+            this.chk_Boca_Ulceras.TabIndex = 3;
             this.chk_Boca_Ulceras.Text = "Úlceras";
             this.chk_Boca_Ulceras.UseVisualStyleBackColor = true;
             // 
@@ -2001,7 +2003,7 @@
             this.txtExploracionInfoAdicional.Multiline = true;
             this.txtExploracionInfoAdicional.Name = "txtExploracionInfoAdicional";
             this.txtExploracionInfoAdicional.Size = new System.Drawing.Size(345, 100);
-            this.txtExploracionInfoAdicional.TabIndex = 46;
+            this.txtExploracionInfoAdicional.TabIndex = 2;
             this.txtExploracionInfoAdicional.Text = "Info Adicional";
             // 
             // cb_Ex_ManosUnas
@@ -2010,7 +2012,7 @@
             this.cb_Ex_ManosUnas.Location = new System.Drawing.Point(94, 84);
             this.cb_Ex_ManosUnas.Name = "cb_Ex_ManosUnas";
             this.cb_Ex_ManosUnas.Size = new System.Drawing.Size(142, 21);
-            this.cb_Ex_ManosUnas.TabIndex = 50;
+            this.cb_Ex_ManosUnas.TabIndex = 1;
             // 
             // label62
             // 
@@ -2027,7 +2029,7 @@
             this.cb_Ex_Color.Location = new System.Drawing.Point(94, 45);
             this.cb_Ex_Color.Name = "cb_Ex_Color";
             this.cb_Ex_Color.Size = new System.Drawing.Size(142, 21);
-            this.cb_Ex_Color.TabIndex = 45;
+            this.cb_Ex_Color.TabIndex = 0;
             // 
             // label21
             // 
@@ -2093,7 +2095,7 @@
             this.cbVomito.Location = new System.Drawing.Point(51, 119);
             this.cbVomito.Name = "cbVomito";
             this.cbVomito.Size = new System.Drawing.Size(134, 21);
-            this.cbVomito.TabIndex = 82;
+            this.cbVomito.TabIndex = 4;
             // 
             // btnApaDigestivoDetalle
             // 
@@ -2103,7 +2105,7 @@
             this.btnApaDigestivoDetalle.Location = new System.Drawing.Point(48, 159);
             this.btnApaDigestivoDetalle.Name = "btnApaDigestivoDetalle";
             this.btnApaDigestivoDetalle.Size = new System.Drawing.Size(27, 17);
-            this.btnApaDigestivoDetalle.TabIndex = 81;
+            this.btnApaDigestivoDetalle.TabIndex = 5;
             this.btnApaDigestivoDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnApaDigestivoDetalle.UseVisualStyleBackColor = true;
             this.btnApaDigestivoDetalle.Click += new System.EventHandler(this.btnApaDigestivoDetalle_Click_1);
@@ -2125,7 +2127,7 @@
             this.txtAparatoDigestivoDetalle.Multiline = true;
             this.txtAparatoDigestivoDetalle.Name = "txtAparatoDigestivoDetalle";
             this.txtAparatoDigestivoDetalle.Size = new System.Drawing.Size(250, 73);
-            this.txtAparatoDigestivoDetalle.TabIndex = 8;
+            this.txtAparatoDigestivoDetalle.TabIndex = 6;
             // 
             // chk_ApaDigestivoDistencion
             // 
@@ -2133,7 +2135,7 @@
             this.chk_ApaDigestivoDistencion.Location = new System.Drawing.Point(105, 88);
             this.chk_ApaDigestivoDistencion.Name = "chk_ApaDigestivoDistencion";
             this.chk_ApaDigestivoDistencion.Size = new System.Drawing.Size(76, 17);
-            this.chk_ApaDigestivoDistencion.TabIndex = 7;
+            this.chk_ApaDigestivoDistencion.TabIndex = 3;
             this.chk_ApaDigestivoDistencion.Text = "Distencion";
             this.chk_ApaDigestivoDistencion.UseVisualStyleBackColor = true;
             // 
@@ -2143,7 +2145,7 @@
             this.chk_ApaDigestivo_Colico.Location = new System.Drawing.Point(105, 65);
             this.chk_ApaDigestivo_Colico.Name = "chk_ApaDigestivo_Colico";
             this.chk_ApaDigestivo_Colico.Size = new System.Drawing.Size(60, 17);
-            this.chk_ApaDigestivo_Colico.TabIndex = 6;
+            this.chk_ApaDigestivo_Colico.TabIndex = 2;
             this.chk_ApaDigestivo_Colico.Text = "Colicos";
             this.chk_ApaDigestivo_Colico.UseVisualStyleBackColor = true;
             // 
@@ -2153,7 +2155,7 @@
             this.chk_ApaDigestivo_Pirosis.Location = new System.Drawing.Point(105, 42);
             this.chk_ApaDigestivo_Pirosis.Name = "chk_ApaDigestivo_Pirosis";
             this.chk_ApaDigestivo_Pirosis.Size = new System.Drawing.Size(56, 17);
-            this.chk_ApaDigestivo_Pirosis.TabIndex = 5;
+            this.chk_ApaDigestivo_Pirosis.TabIndex = 1;
             this.chk_ApaDigestivo_Pirosis.Text = "Pirosis";
             this.chk_ApaDigestivo_Pirosis.UseVisualStyleBackColor = true;
             // 
@@ -2163,7 +2165,7 @@
             this.chk_ApaDigestivo_Estrenimiento.Location = new System.Drawing.Point(105, 19);
             this.chk_ApaDigestivo_Estrenimiento.Name = "chk_ApaDigestivo_Estrenimiento";
             this.chk_ApaDigestivo_Estrenimiento.Size = new System.Drawing.Size(89, 17);
-            this.chk_ApaDigestivo_Estrenimiento.TabIndex = 4;
+            this.chk_ApaDigestivo_Estrenimiento.TabIndex = 0;
             this.chk_ApaDigestivo_Estrenimiento.Text = "Estreñimiento";
             this.chk_ApaDigestivo_Estrenimiento.UseVisualStyleBackColor = true;
             // 
@@ -2238,7 +2240,7 @@
             this.cb_Abdomen_TamanoOrganos.Location = new System.Drawing.Point(135, 18);
             this.cb_Abdomen_TamanoOrganos.Name = "cb_Abdomen_TamanoOrganos";
             this.cb_Abdomen_TamanoOrganos.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_TamanoOrganos.TabIndex = 68;
+            this.cb_Abdomen_TamanoOrganos.TabIndex = 0;
             // 
             // chk_AbdomenAscititis
             // 
@@ -2246,7 +2248,7 @@
             this.chk_AbdomenAscititis.Location = new System.Drawing.Point(135, 132);
             this.chk_AbdomenAscititis.Name = "chk_AbdomenAscititis";
             this.chk_AbdomenAscititis.Size = new System.Drawing.Size(59, 17);
-            this.chk_AbdomenAscititis.TabIndex = 67;
+            this.chk_AbdomenAscititis.TabIndex = 4;
             this.chk_AbdomenAscititis.Text = "Asctitis";
             this.chk_AbdomenAscititis.UseVisualStyleBackColor = true;
             // 
@@ -2271,7 +2273,7 @@
             this.cb_Abdomen_Recto.Location = new System.Drawing.Point(135, 74);
             this.cb_Abdomen_Recto.Name = "cb_Abdomen_Recto";
             this.cb_Abdomen_Recto.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_Recto.TabIndex = 65;
+            this.cb_Abdomen_Recto.TabIndex = 2;
             // 
             // label55
             // 
@@ -2292,7 +2294,7 @@
             this.cb_Abdomen_Bazo.Location = new System.Drawing.Point(135, 105);
             this.cb_Abdomen_Bazo.Name = "cb_Abdomen_Bazo";
             this.cb_Abdomen_Bazo.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_Bazo.TabIndex = 63;
+            this.cb_Abdomen_Bazo.TabIndex = 3;
             // 
             // label46
             // 
@@ -2316,7 +2318,7 @@
             this.cb_Abdomen_Rinon.Location = new System.Drawing.Point(135, 45);
             this.cb_Abdomen_Rinon.Name = "cb_Abdomen_Rinon";
             this.cb_Abdomen_Rinon.Size = new System.Drawing.Size(121, 21);
-            this.cb_Abdomen_Rinon.TabIndex = 60;
+            this.cb_Abdomen_Rinon.TabIndex = 1;
             // 
             // label20
             // 
@@ -2361,7 +2363,7 @@
             this.txt_ObsCoordinacion.Multiline = true;
             this.txt_ObsCoordinacion.Name = "txt_ObsCoordinacion";
             this.txt_ObsCoordinacion.Size = new System.Drawing.Size(153, 146);
-            this.txt_ObsCoordinacion.TabIndex = 86;
+            this.txt_ObsCoordinacion.TabIndex = 5;
             // 
             // btn_Obs_CoordinacionMarcha
             // 
@@ -2371,7 +2373,7 @@
             this.btn_Obs_CoordinacionMarcha.Location = new System.Drawing.Point(79, 110);
             this.btn_Obs_CoordinacionMarcha.Name = "btn_Obs_CoordinacionMarcha";
             this.btn_Obs_CoordinacionMarcha.Size = new System.Drawing.Size(27, 17);
-            this.btn_Obs_CoordinacionMarcha.TabIndex = 84;
+            this.btn_Obs_CoordinacionMarcha.TabIndex = 4;
             this.btn_Obs_CoordinacionMarcha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Obs_CoordinacionMarcha.UseVisualStyleBackColor = true;
             this.btn_Obs_CoordinacionMarcha.Click += new System.EventHandler(this.btn_Obs_CoordinacionMarcha_Click_1);
@@ -2382,7 +2384,7 @@
             this.chk_CooMar_TalonRodilla.Location = new System.Drawing.Point(7, 65);
             this.chk_CooMar_TalonRodilla.Name = "chk_CooMar_TalonRodilla";
             this.chk_CooMar_TalonRodilla.Size = new System.Drawing.Size(88, 17);
-            this.chk_CooMar_TalonRodilla.TabIndex = 3;
+            this.chk_CooMar_TalonRodilla.TabIndex = 2;
             this.chk_CooMar_TalonRodilla.Text = "Talon-Rodilla";
             this.chk_CooMar_TalonRodilla.UseVisualStyleBackColor = true;
             // 
@@ -2401,7 +2403,7 @@
             this.chk_CooMar_Romberg.Location = new System.Drawing.Point(7, 88);
             this.chk_CooMar_Romberg.Name = "chk_CooMar_Romberg";
             this.chk_CooMar_Romberg.Size = new System.Drawing.Size(69, 17);
-            this.chk_CooMar_Romberg.TabIndex = 2;
+            this.chk_CooMar_Romberg.TabIndex = 3;
             this.chk_CooMar_Romberg.Text = "Romberg";
             this.chk_CooMar_Romberg.UseVisualStyleBackColor = true;
             // 
@@ -2478,21 +2480,21 @@
             this.txtCesareas.Location = new System.Drawing.Point(159, 165);
             this.txtCesareas.Name = "txtCesareas";
             this.txtCesareas.Size = new System.Drawing.Size(204, 20);
-            this.txtCesareas.TabIndex = 40;
+            this.txtCesareas.TabIndex = 4;
             // 
             // txtAbortos
             // 
             this.txtAbortos.Location = new System.Drawing.Point(159, 130);
             this.txtAbortos.Name = "txtAbortos";
             this.txtAbortos.Size = new System.Drawing.Size(204, 20);
-            this.txtAbortos.TabIndex = 39;
+            this.txtAbortos.TabIndex = 3;
             // 
             // txtPartos
             // 
             this.txtPartos.Location = new System.Drawing.Point(159, 95);
             this.txtPartos.Name = "txtPartos";
             this.txtPartos.Size = new System.Drawing.Size(204, 20);
-            this.txtPartos.TabIndex = 38;
+            this.txtPartos.TabIndex = 2;
             // 
             // dtFUM
             // 
@@ -2500,7 +2502,7 @@
             this.dtFUM.Location = new System.Drawing.Point(159, 25);
             this.dtFUM.Name = "dtFUM";
             this.dtFUM.Size = new System.Drawing.Size(204, 20);
-            this.dtFUM.TabIndex = 37;
+            this.dtFUM.TabIndex = 0;
             // 
             // label12
             // 
@@ -2543,7 +2545,7 @@
             this.txtGestaciones.Location = new System.Drawing.Point(159, 60);
             this.txtGestaciones.Name = "txtGestaciones";
             this.txtGestaciones.Size = new System.Drawing.Size(204, 20);
-            this.txtGestaciones.TabIndex = 32;
+            this.txtGestaciones.TabIndex = 1;
             // 
             // labelgestaciones
             // 
@@ -2560,7 +2562,7 @@
             this.dtFUP.Location = new System.Drawing.Point(159, 200);
             this.dtFUP.Name = "dtFUP";
             this.dtFUP.Size = new System.Drawing.Size(204, 20);
-            this.dtFUP.TabIndex = 30;
+            this.dtFUP.TabIndex = 5;
             // 
             // labelFechaUltimoPapa
             // 
@@ -2635,7 +2637,7 @@
             this.btn_ReflejoObservacion.Location = new System.Drawing.Point(76, 244);
             this.btn_ReflejoObservacion.Name = "btn_ReflejoObservacion";
             this.btn_ReflejoObservacion.Size = new System.Drawing.Size(27, 17);
-            this.btn_ReflejoObservacion.TabIndex = 79;
+            this.btn_ReflejoObservacion.TabIndex = 10;
             this.btn_ReflejoObservacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ReflejoObservacion.UseVisualStyleBackColor = true;
             this.btn_ReflejoObservacion.Click += new System.EventHandler(this.btn_ReflejoObservacion_Click);
@@ -2646,7 +2648,7 @@
             this.chk_R_Patelar.Location = new System.Drawing.Point(12, 180);
             this.chk_R_Patelar.Name = "chk_R_Patelar";
             this.chk_R_Patelar.Size = new System.Drawing.Size(59, 17);
-            this.chk_R_Patelar.TabIndex = 11;
+            this.chk_R_Patelar.TabIndex = 7;
             this.chk_R_Patelar.Text = "Patelar";
             this.chk_R_Patelar.UseVisualStyleBackColor = true;
             // 
@@ -2656,7 +2658,7 @@
             this.chk_R_Adominales.Location = new System.Drawing.Point(12, 157);
             this.chk_R_Adominales.Name = "chk_R_Adominales";
             this.chk_R_Adominales.Size = new System.Drawing.Size(80, 17);
-            this.chk_R_Adominales.TabIndex = 10;
+            this.chk_R_Adominales.TabIndex = 6;
             this.chk_R_Adominales.Text = "Adominales";
             this.chk_R_Adominales.UseVisualStyleBackColor = true;
             // 
@@ -2666,7 +2668,7 @@
             this.chk_R_Radial.Location = new System.Drawing.Point(12, 134);
             this.chk_R_Radial.Name = "chk_R_Radial";
             this.chk_R_Radial.Size = new System.Drawing.Size(56, 17);
-            this.chk_R_Radial.TabIndex = 9;
+            this.chk_R_Radial.TabIndex = 5;
             this.chk_R_Radial.Text = "Radial";
             this.chk_R_Radial.UseVisualStyleBackColor = true;
             // 
@@ -2676,7 +2678,7 @@
             this.chk_R_Tricipital.Location = new System.Drawing.Point(12, 111);
             this.chk_R_Tricipital.Name = "chk_R_Tricipital";
             this.chk_R_Tricipital.Size = new System.Drawing.Size(65, 17);
-            this.chk_R_Tricipital.TabIndex = 8;
+            this.chk_R_Tricipital.TabIndex = 4;
             this.chk_R_Tricipital.Text = "Tricipital";
             this.chk_R_Tricipital.UseVisualStyleBackColor = true;
             // 
@@ -2686,7 +2688,7 @@
             this.chk_R_Bicipital.Location = new System.Drawing.Point(12, 88);
             this.chk_R_Bicipital.Name = "chk_R_Bicipital";
             this.chk_R_Bicipital.Size = new System.Drawing.Size(62, 17);
-            this.chk_R_Bicipital.TabIndex = 7;
+            this.chk_R_Bicipital.TabIndex = 3;
             this.chk_R_Bicipital.Text = "Bicipital";
             this.chk_R_Bicipital.UseVisualStyleBackColor = true;
             // 
@@ -2696,7 +2698,7 @@
             this.chk_R_Mentoniano.Location = new System.Drawing.Point(12, 65);
             this.chk_R_Mentoniano.Name = "chk_R_Mentoniano";
             this.chk_R_Mentoniano.Size = new System.Drawing.Size(82, 17);
-            this.chk_R_Mentoniano.TabIndex = 6;
+            this.chk_R_Mentoniano.TabIndex = 2;
             this.chk_R_Mentoniano.Text = "Mentoniano";
             this.chk_R_Mentoniano.UseVisualStyleBackColor = true;
             // 
@@ -2706,7 +2708,7 @@
             this.chk_R_Carneano.Location = new System.Drawing.Point(12, 42);
             this.chk_R_Carneano.Name = "chk_R_Carneano";
             this.chk_R_Carneano.Size = new System.Drawing.Size(72, 17);
-            this.chk_R_Carneano.TabIndex = 5;
+            this.chk_R_Carneano.TabIndex = 1;
             this.chk_R_Carneano.Text = "Carneano";
             this.chk_R_Carneano.UseVisualStyleBackColor = true;
             // 
@@ -2716,7 +2718,7 @@
             this.chk_R_Orbicular_De_Los_Ojos.Location = new System.Drawing.Point(12, 19);
             this.chk_R_Orbicular_De_Los_Ojos.Name = "chk_R_Orbicular_De_Los_Ojos";
             this.chk_R_Orbicular_De_Los_Ojos.Size = new System.Drawing.Size(107, 17);
-            this.chk_R_Orbicular_De_Los_Ojos.TabIndex = 4;
+            this.chk_R_Orbicular_De_Los_Ojos.TabIndex = 0;
             this.chk_R_Orbicular_De_Los_Ojos.Text = "Orbicular de Ojos";
             this.chk_R_Orbicular_De_Los_Ojos.UseVisualStyleBackColor = true;
             // 
@@ -2737,7 +2739,7 @@
             this.txtReflejoObservacion.Multiline = true;
             this.txtReflejoObservacion.Name = "txtReflejoObservacion";
             this.txtReflejoObservacion.Size = new System.Drawing.Size(118, 20);
-            this.txtReflejoObservacion.TabIndex = 2;
+            this.txtReflejoObservacion.TabIndex = 11;
             // 
             // label11
             // 
@@ -2745,7 +2747,7 @@
             this.label11.Location = new System.Drawing.Point(6, 202);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 13);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 8;
             this.label11.Text = "Valoracion General";
             // 
             // cb_Reflejo_ValoracionGeneral
@@ -2760,7 +2762,7 @@
             this.cb_Reflejo_ValoracionGeneral.Location = new System.Drawing.Point(9, 219);
             this.cb_Reflejo_ValoracionGeneral.Name = "cb_Reflejo_ValoracionGeneral";
             this.cb_Reflejo_ValoracionGeneral.Size = new System.Drawing.Size(121, 21);
-            this.cb_Reflejo_ValoracionGeneral.TabIndex = 0;
+            this.cb_Reflejo_ValoracionGeneral.TabIndex = 9;
             this.cb_Reflejo_ValoracionGeneral.Text = "Bien";
             // 
             // gbSensibilidad
@@ -2879,7 +2881,7 @@
             this.chk_Emocional_Distraido.Location = new System.Drawing.Point(16, 108);
             this.chk_Emocional_Distraido.Name = "chk_Emocional_Distraido";
             this.chk_Emocional_Distraido.Size = new System.Drawing.Size(67, 17);
-            this.chk_Emocional_Distraido.TabIndex = 85;
+            this.chk_Emocional_Distraido.TabIndex = 4;
             this.chk_Emocional_Distraido.Text = "Distraido";
             this.chk_Emocional_Distraido.UseVisualStyleBackColor = true;
             // 
@@ -2889,7 +2891,7 @@
             this.chk_Emocional_Desmayos.Location = new System.Drawing.Point(108, 66);
             this.chk_Emocional_Desmayos.Name = "chk_Emocional_Desmayos";
             this.chk_Emocional_Desmayos.Size = new System.Drawing.Size(75, 17);
-            this.chk_Emocional_Desmayos.TabIndex = 84;
+            this.chk_Emocional_Desmayos.TabIndex = 8;
             this.chk_Emocional_Desmayos.Text = "Desmayos";
             this.chk_Emocional_Desmayos.UseVisualStyleBackColor = true;
             // 
@@ -2899,7 +2901,7 @@
             this.chk_Emocional_EdadAvanzada.Location = new System.Drawing.Point(108, 43);
             this.chk_Emocional_EdadAvanzada.Name = "chk_Emocional_EdadAvanzada";
             this.chk_Emocional_EdadAvanzada.Size = new System.Drawing.Size(102, 17);
-            this.chk_Emocional_EdadAvanzada.TabIndex = 83;
+            this.chk_Emocional_EdadAvanzada.TabIndex = 7;
             this.chk_Emocional_EdadAvanzada.Text = "Edad Avanzada";
             this.chk_Emocional_EdadAvanzada.UseVisualStyleBackColor = true;
             // 
@@ -2909,7 +2911,7 @@
             this.chk_Emocional_Debilidad.Location = new System.Drawing.Point(108, 89);
             this.chk_Emocional_Debilidad.Name = "chk_Emocional_Debilidad";
             this.chk_Emocional_Debilidad.Size = new System.Drawing.Size(70, 17);
-            this.chk_Emocional_Debilidad.TabIndex = 82;
+            this.chk_Emocional_Debilidad.TabIndex = 9;
             this.chk_Emocional_Debilidad.Text = "Debilidad";
             this.chk_Emocional_Debilidad.UseVisualStyleBackColor = true;
             // 
@@ -2921,7 +2923,7 @@
             this.chk_Emocional_Normal.Location = new System.Drawing.Point(15, 19);
             this.chk_Emocional_Normal.Name = "chk_Emocional_Normal";
             this.chk_Emocional_Normal.Size = new System.Drawing.Size(59, 17);
-            this.chk_Emocional_Normal.TabIndex = 81;
+            this.chk_Emocional_Normal.TabIndex = 0;
             this.chk_Emocional_Normal.Text = "Normal";
             this.chk_Emocional_Normal.UseVisualStyleBackColor = true;
             // 
@@ -2933,7 +2935,7 @@
             this.btn_EmocionalOtro.Location = new System.Drawing.Point(42, 163);
             this.btn_EmocionalOtro.Name = "btn_EmocionalOtro";
             this.btn_EmocionalOtro.Size = new System.Drawing.Size(27, 17);
-            this.btn_EmocionalOtro.TabIndex = 80;
+            this.btn_EmocionalOtro.TabIndex = 11;
             this.btn_EmocionalOtro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_EmocionalOtro.UseVisualStyleBackColor = true;
             this.btn_EmocionalOtro.Click += new System.EventHandler(this.btn_EmocionalOtro_Click);
@@ -2946,7 +2948,7 @@
             this.txtEmocional_Otro.Multiline = true;
             this.txtEmocional_Otro.Name = "txtEmocional_Otro";
             this.txtEmocional_Otro.Size = new System.Drawing.Size(151, 20);
-            this.txtEmocional_Otro.TabIndex = 80;
+            this.txtEmocional_Otro.TabIndex = 12;
             // 
             // label61
             // 
@@ -2963,7 +2965,7 @@
             this.chk_Emocional_Alucionaciones.Location = new System.Drawing.Point(108, 108);
             this.chk_Emocional_Alucionaciones.Name = "chk_Emocional_Alucionaciones";
             this.chk_Emocional_Alucionaciones.Size = new System.Drawing.Size(92, 17);
-            this.chk_Emocional_Alucionaciones.TabIndex = 5;
+            this.chk_Emocional_Alucionaciones.TabIndex = 10;
             this.chk_Emocional_Alucionaciones.Text = "Alucinaciones";
             this.chk_Emocional_Alucionaciones.UseVisualStyleBackColor = true;
             // 
@@ -2973,7 +2975,7 @@
             this.chk_Emocional_AlteracionSueno.Location = new System.Drawing.Point(16, 129);
             this.chk_Emocional_AlteracionSueno.Name = "chk_Emocional_AlteracionSueno";
             this.chk_Emocional_AlteracionSueno.Size = new System.Drawing.Size(154, 17);
-            this.chk_Emocional_AlteracionSueno.TabIndex = 4;
+            this.chk_Emocional_AlteracionSueno.TabIndex = 5;
             this.chk_Emocional_AlteracionSueno.Text = "Con alteraciones de Sueño";
             this.chk_Emocional_AlteracionSueno.UseVisualStyleBackColor = true;
             // 
@@ -3013,7 +3015,7 @@
             this.chk_Emocional_Depresion.Location = new System.Drawing.Point(108, 19);
             this.chk_Emocional_Depresion.Name = "chk_Emocional_Depresion";
             this.chk_Emocional_Depresion.Size = new System.Drawing.Size(74, 17);
-            this.chk_Emocional_Depresion.TabIndex = 0;
+            this.chk_Emocional_Depresion.TabIndex = 6;
             this.chk_Emocional_Depresion.Text = "Depresion";
             this.chk_Emocional_Depresion.UseVisualStyleBackColor = true;
             // 
@@ -3074,7 +3076,7 @@
             this.btnParCranealDetalle.Location = new System.Drawing.Point(60, 246);
             this.btnParCranealDetalle.Name = "btnParCranealDetalle";
             this.btnParCranealDetalle.Size = new System.Drawing.Size(27, 17);
-            this.btnParCranealDetalle.TabIndex = 83;
+            this.btnParCranealDetalle.TabIndex = 27;
             this.btnParCranealDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParCranealDetalle.UseVisualStyleBackColor = true;
             // 
@@ -3095,7 +3097,7 @@
             this.txtParCranealDetalle.Multiline = true;
             this.txtParCranealDetalle.Name = "txtParCranealDetalle";
             this.txtParCranealDetalle.Size = new System.Drawing.Size(631, 50);
-            this.txtParCranealDetalle.TabIndex = 27;
+            this.txtParCranealDetalle.TabIndex = 28;
             // 
             // chk_PC_XI_TonoFuerzaMuscarlarTrapecio
             // 
@@ -3173,7 +3175,7 @@
             this.chk_PC_IX_FunciasGustativa.Location = new System.Drawing.Point(471, 22);
             this.chk_PC_IX_FunciasGustativa.Name = "chk_PC_IX_FunciasGustativa";
             this.chk_PC_IX_FunciasGustativa.Size = new System.Drawing.Size(124, 17);
-            this.chk_PC_IX_FunciasGustativa.TabIndex = 19;
+            this.chk_PC_IX_FunciasGustativa.TabIndex = 18;
             this.chk_PC_IX_FunciasGustativa.Text = "IX_FunciasGustativa";
             this.chk_PC_IX_FunciasGustativa.UseVisualStyleBackColor = true;
             // 
@@ -3183,7 +3185,7 @@
             this.chk_PC_X_ElevacionSimetrica.Location = new System.Drawing.Point(471, 45);
             this.chk_PC_X_ElevacionSimetrica.Name = "chk_PC_X_ElevacionSimetrica";
             this.chk_PC_X_ElevacionSimetrica.Size = new System.Drawing.Size(129, 17);
-            this.chk_PC_X_ElevacionSimetrica.TabIndex = 18;
+            this.chk_PC_X_ElevacionSimetrica.TabIndex = 19;
             this.chk_PC_X_ElevacionSimetrica.Text = "X_ElevacionSimetrica";
             this.chk_PC_X_ElevacionSimetrica.UseVisualStyleBackColor = true;
             // 
@@ -3203,7 +3205,7 @@
             this.chk_PC_VII_MuecasAmbosLado.Location = new System.Drawing.Point(262, 160);
             this.chk_PC_VII_MuecasAmbosLado.Name = "chk_PC_VII_MuecasAmbosLado";
             this.chk_PC_VII_MuecasAmbosLado.Size = new System.Drawing.Size(139, 17);
-            this.chk_PC_VII_MuecasAmbosLado.TabIndex = 16;
+            this.chk_PC_VII_MuecasAmbosLado.TabIndex = 15;
             this.chk_PC_VII_MuecasAmbosLado.Text = "VII_MuecasAmbosLado";
             this.chk_PC_VII_MuecasAmbosLado.UseVisualStyleBackColor = true;
             // 
@@ -3213,7 +3215,7 @@
             this.chk_PC_VII_CierreOjosVsResistencia.Location = new System.Drawing.Point(262, 115);
             this.chk_PC_VII_CierreOjosVsResistencia.Name = "chk_PC_VII_CierreOjosVsResistencia";
             this.chk_PC_VII_CierreOjosVsResistencia.Size = new System.Drawing.Size(160, 17);
-            this.chk_PC_VII_CierreOjosVsResistencia.TabIndex = 15;
+            this.chk_PC_VII_CierreOjosVsResistencia.TabIndex = 13;
             this.chk_PC_VII_CierreOjosVsResistencia.Text = "VII_CierreOjosVsResistencia";
             this.chk_PC_VII_CierreOjosVsResistencia.UseVisualStyleBackColor = true;
             // 
@@ -3223,7 +3225,7 @@
             this.chk_PC_VII_MovibilidadMusculosCara.Location = new System.Drawing.Point(262, 69);
             this.chk_PC_VII_MovibilidadMusculosCara.Name = "chk_PC_VII_MovibilidadMusculosCara";
             this.chk_PC_VII_MovibilidadMusculosCara.Size = new System.Drawing.Size(165, 17);
-            this.chk_PC_VII_MovibilidadMusculosCara.TabIndex = 14;
+            this.chk_PC_VII_MovibilidadMusculosCara.TabIndex = 11;
             this.chk_PC_VII_MovibilidadMusculosCara.Text = "VII_MovibilidadMusculosCara";
             this.chk_PC_VII_MovibilidadMusculosCara.UseVisualStyleBackColor = true;
             // 
@@ -3233,7 +3235,7 @@
             this.chk_PC_V_ReflejoCorneano.Location = new System.Drawing.Point(262, 22);
             this.chk_PC_V_ReflejoCorneano.Name = "chk_PC_V_ReflejoCorneano";
             this.chk_PC_V_ReflejoCorneano.Size = new System.Drawing.Size(118, 17);
-            this.chk_PC_V_ReflejoCorneano.TabIndex = 13;
+            this.chk_PC_V_ReflejoCorneano.TabIndex = 9;
             this.chk_PC_V_ReflejoCorneano.Text = "V_ReflejoCorneano";
             this.chk_PC_V_ReflejoCorneano.UseVisualStyleBackColor = true;
             // 
@@ -3243,7 +3245,7 @@
             this.chk_PC_II_Campimetria.Location = new System.Drawing.Point(6, 137);
             this.chk_PC_II_Campimetria.Name = "chk_PC_II_Campimetria";
             this.chk_PC_II_Campimetria.Size = new System.Drawing.Size(95, 17);
-            this.chk_PC_II_Campimetria.TabIndex = 12;
+            this.chk_PC_II_Campimetria.TabIndex = 5;
             this.chk_PC_II_Campimetria.Text = "II_Campimetria";
             this.chk_PC_II_Campimetria.UseVisualStyleBackColor = true;
             // 
@@ -3253,7 +3255,7 @@
             this.chk_PC_III_IV_VI_MovimientoOcular.Location = new System.Drawing.Point(6, 160);
             this.chk_PC_III_IV_VI_MovimientoOcular.Name = "chk_PC_III_IV_VI_MovimientoOcular";
             this.chk_PC_III_IV_VI_MovimientoOcular.Size = new System.Drawing.Size(158, 17);
-            this.chk_PC_III_IV_VI_MovimientoOcular.TabIndex = 11;
+            this.chk_PC_III_IV_VI_MovimientoOcular.TabIndex = 6;
             this.chk_PC_III_IV_VI_MovimientoOcular.Text = "III_IV_VI_MovimientoOcular";
             this.chk_PC_III_IV_VI_MovimientoOcular.UseVisualStyleBackColor = true;
             // 
@@ -3263,7 +3265,7 @@
             this.chk_PC_II_VisionColores.Location = new System.Drawing.Point(6, 91);
             this.chk_PC_II_VisionColores.Name = "chk_PC_II_VisionColores";
             this.chk_PC_II_VisionColores.Size = new System.Drawing.Size(101, 17);
-            this.chk_PC_II_VisionColores.TabIndex = 10;
+            this.chk_PC_II_VisionColores.TabIndex = 3;
             this.chk_PC_II_VisionColores.Text = "II_VisionColores";
             this.chk_PC_II_VisionColores.UseVisualStyleBackColor = true;
             // 
@@ -3273,7 +3275,7 @@
             this.chk_PC_II_ReflejoPupilar.Location = new System.Drawing.Point(6, 114);
             this.chk_PC_II_ReflejoPupilar.Name = "chk_PC_II_ReflejoPupilar";
             this.chk_PC_II_ReflejoPupilar.Size = new System.Drawing.Size(103, 17);
-            this.chk_PC_II_ReflejoPupilar.TabIndex = 9;
+            this.chk_PC_II_ReflejoPupilar.TabIndex = 4;
             this.chk_PC_II_ReflejoPupilar.Text = "II_ReflejoPupilar";
             this.chk_PC_II_ReflejoPupilar.UseVisualStyleBackColor = true;
             // 
@@ -3283,7 +3285,7 @@
             this.chk_PC_VIII_WebberYRinne.Location = new System.Drawing.Point(262, 183);
             this.chk_PC_VIII_WebberYRinne.Name = "chk_PC_VIII_WebberYRinne";
             this.chk_PC_VIII_WebberYRinne.Size = new System.Drawing.Size(121, 17);
-            this.chk_PC_VIII_WebberYRinne.TabIndex = 8;
+            this.chk_PC_VIII_WebberYRinne.TabIndex = 16;
             this.chk_PC_VIII_WebberYRinne.Text = "VIII_WebberYRinne";
             this.chk_PC_VIII_WebberYRinne.UseVisualStyleBackColor = true;
             // 
@@ -3293,7 +3295,7 @@
             this.chk_PC_VII_SoplaMuentraDientes.Location = new System.Drawing.Point(262, 138);
             this.chk_PC_VII_SoplaMuentraDientes.Name = "chk_PC_VII_SoplaMuentraDientes";
             this.chk_PC_VII_SoplaMuentraDientes.Size = new System.Drawing.Size(147, 17);
-            this.chk_PC_VII_SoplaMuentraDientes.TabIndex = 7;
+            this.chk_PC_VII_SoplaMuentraDientes.TabIndex = 14;
             this.chk_PC_VII_SoplaMuentraDientes.Text = "VII_SoplaMuentraDientes";
             this.chk_PC_VII_SoplaMuentraDientes.UseVisualStyleBackColor = true;
             // 
@@ -3303,7 +3305,7 @@
             this.chk_PC_VII_Gustos2TerciosAnterioresLengua.Location = new System.Drawing.Point(262, 92);
             this.chk_PC_VII_Gustos2TerciosAnterioresLengua.Name = "chk_PC_VII_Gustos2TerciosAnterioresLengua";
             this.chk_PC_VII_Gustos2TerciosAnterioresLengua.Size = new System.Drawing.Size(202, 17);
-            this.chk_PC_VII_Gustos2TerciosAnterioresLengua.TabIndex = 6;
+            this.chk_PC_VII_Gustos2TerciosAnterioresLengua.TabIndex = 12;
             this.chk_PC_VII_Gustos2TerciosAnterioresLengua.Text = "VII_Gustos2TerciosAnterioresLengua";
             this.chk_PC_VII_Gustos2TerciosAnterioresLengua.UseVisualStyleBackColor = true;
             // 
@@ -3313,7 +3315,7 @@
             this.chk_PC_V_MovimientoMandibula.Location = new System.Drawing.Point(262, 45);
             this.chk_PC_V_MovimientoMandibula.Name = "chk_PC_V_MovimientoMandibula";
             this.chk_PC_V_MovimientoMandibula.Size = new System.Drawing.Size(142, 17);
-            this.chk_PC_V_MovimientoMandibula.TabIndex = 5;
+            this.chk_PC_V_MovimientoMandibula.TabIndex = 10;
             this.chk_PC_V_MovimientoMandibula.Text = "V_MovimientoMandibula";
             this.chk_PC_V_MovimientoMandibula.UseVisualStyleBackColor = true;
             // 
@@ -3323,7 +3325,7 @@
             this.chk_PC_V_SensibilidadCara.Location = new System.Drawing.Point(6, 205);
             this.chk_PC_V_SensibilidadCara.Name = "chk_PC_V_SensibilidadCara";
             this.chk_PC_V_SensibilidadCara.Size = new System.Drawing.Size(117, 17);
-            this.chk_PC_V_SensibilidadCara.TabIndex = 4;
+            this.chk_PC_V_SensibilidadCara.TabIndex = 8;
             this.chk_PC_V_SensibilidadCara.Text = "V_SensibilidadCara";
             this.chk_PC_V_SensibilidadCara.UseVisualStyleBackColor = true;
             // 
@@ -3333,7 +3335,7 @@
             this.chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual.Location = new System.Drawing.Point(6, 181);
             this.chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual.Name = "chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual";
             this.chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual.Size = new System.Drawing.Size(248, 17);
-            this.chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual.TabIndex = 3;
+            this.chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual.TabIndex = 7;
             this.chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual.Text = "III_IV_VI_ReflejoFotoMotorDirectoyConsensual";
             this.chk_PC_III_IV_VI_ReflejoFotoMotorDirectoyConsensual.UseVisualStyleBackColor = true;
             // 
@@ -3984,7 +3986,7 @@
             this.txt_Ante_Pato_Detalle.Multiline = true;
             this.txt_Ante_Pato_Detalle.Name = "txt_Ante_Pato_Detalle";
             this.txt_Ante_Pato_Detalle.Size = new System.Drawing.Size(274, 78);
-            this.txt_Ante_Pato_Detalle.TabIndex = 85;
+            this.txt_Ante_Pato_Detalle.TabIndex = 8;
             // 
             // label99
             // 
@@ -4003,7 +4005,7 @@
             this.btnAntecedentePatologicoDetalle.Location = new System.Drawing.Point(55, 230);
             this.btnAntecedentePatologicoDetalle.Name = "btnAntecedentePatologicoDetalle";
             this.btnAntecedentePatologicoDetalle.Size = new System.Drawing.Size(27, 26);
-            this.btnAntecedentePatologicoDetalle.TabIndex = 85;
+            this.btnAntecedentePatologicoDetalle.TabIndex = 7;
             this.btnAntecedentePatologicoDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAntecedentePatologicoDetalle.UseVisualStyleBackColor = true;
             this.btnAntecedentePatologicoDetalle.Click += new System.EventHandler(this.btnAntecedentePatologicoDetalle_Click);
@@ -4014,7 +4016,7 @@
             this.label66.Location = new System.Drawing.Point(18, 206);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(55, 13);
-            this.label66.TabIndex = 98;
+            this.label66.TabIndex = 6;
             this.label66.Text = "Paludismo";
             // 
             // label67
@@ -4023,7 +4025,7 @@
             this.label67.Location = new System.Drawing.Point(15, 173);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(53, 13);
-            this.label67.TabIndex = 97;
+            this.label67.TabIndex = 5;
             this.label67.Text = "Bronquitis";
             // 
             // label69
@@ -4032,7 +4034,7 @@
             this.label69.Location = new System.Drawing.Point(18, 141);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(93, 13);
-            this.label69.TabIndex = 96;
+            this.label69.TabIndex = 4;
             this.label69.Text = "Fiebre_Reumatica";
             // 
             // label94
@@ -4041,7 +4043,7 @@
             this.label94.Location = new System.Drawing.Point(21, 110);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(45, 13);
-            this.label94.TabIndex = 95;
+            this.label94.TabIndex = 3;
             this.label94.Text = "Varicela";
             // 
             // label96
@@ -4050,7 +4052,7 @@
             this.label96.Location = new System.Drawing.Point(21, 79);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(47, 13);
-            this.label96.TabIndex = 94;
+            this.label96.TabIndex = 2;
             this.label96.Text = "Rubeola";
             // 
             // label97
@@ -4059,7 +4061,7 @@
             this.label97.Location = new System.Drawing.Point(21, 52);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(57, 13);
-            this.label97.TabIndex = 93;
+            this.label97.TabIndex = 1;
             this.label97.Text = "Sarampion";
             // 
             // label98
@@ -4068,7 +4070,7 @@
             this.label98.Location = new System.Drawing.Point(19, 25);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(52, 13);
-            this.label98.TabIndex = 92;
+            this.label98.TabIndex = 0;
             this.label98.Text = "Parotiditis";
             // 
             // cb_Ante_Pato_Paludismo
@@ -4079,7 +4081,7 @@
             this.cb_Ante_Pato_Paludismo.Location = new System.Drawing.Point(195, 203);
             this.cb_Ante_Pato_Paludismo.Name = "cb_Ante_Pato_Paludismo";
             this.cb_Ante_Pato_Paludismo.Size = new System.Drawing.Size(103, 21);
-            this.cb_Ante_Pato_Paludismo.TabIndex = 91;
+            this.cb_Ante_Pato_Paludismo.TabIndex = 6;
             // 
             // cb_Ante_Pato_Bronquitis
             // 
@@ -4089,7 +4091,7 @@
             this.cb_Ante_Pato_Bronquitis.Location = new System.Drawing.Point(195, 169);
             this.cb_Ante_Pato_Bronquitis.Name = "cb_Ante_Pato_Bronquitis";
             this.cb_Ante_Pato_Bronquitis.Size = new System.Drawing.Size(103, 21);
-            this.cb_Ante_Pato_Bronquitis.TabIndex = 90;
+            this.cb_Ante_Pato_Bronquitis.TabIndex = 5;
             // 
             // cb_Ante_Pato_Varicela
             // 
@@ -4099,7 +4101,7 @@
             this.cb_Ante_Pato_Varicela.Location = new System.Drawing.Point(195, 107);
             this.cb_Ante_Pato_Varicela.Name = "cb_Ante_Pato_Varicela";
             this.cb_Ante_Pato_Varicela.Size = new System.Drawing.Size(103, 21);
-            this.cb_Ante_Pato_Varicela.TabIndex = 89;
+            this.cb_Ante_Pato_Varicela.TabIndex = 3;
             // 
             // cb_Ante_Pato_FiebreReumatica
             // 
@@ -4109,7 +4111,7 @@
             this.cb_Ante_Pato_FiebreReumatica.Location = new System.Drawing.Point(195, 138);
             this.cb_Ante_Pato_FiebreReumatica.Name = "cb_Ante_Pato_FiebreReumatica";
             this.cb_Ante_Pato_FiebreReumatica.Size = new System.Drawing.Size(103, 21);
-            this.cb_Ante_Pato_FiebreReumatica.TabIndex = 88;
+            this.cb_Ante_Pato_FiebreReumatica.TabIndex = 4;
             // 
             // cb_Ante_Pato_Sarampion
             // 
@@ -4119,7 +4121,7 @@
             this.cb_Ante_Pato_Sarampion.Location = new System.Drawing.Point(195, 49);
             this.cb_Ante_Pato_Sarampion.Name = "cb_Ante_Pato_Sarampion";
             this.cb_Ante_Pato_Sarampion.Size = new System.Drawing.Size(103, 21);
-            this.cb_Ante_Pato_Sarampion.TabIndex = 87;
+            this.cb_Ante_Pato_Sarampion.TabIndex = 1;
             // 
             // cb_Ante_Pato_Rubeola
             // 
@@ -4129,7 +4131,7 @@
             this.cb_Ante_Pato_Rubeola.Location = new System.Drawing.Point(195, 77);
             this.cb_Ante_Pato_Rubeola.Name = "cb_Ante_Pato_Rubeola";
             this.cb_Ante_Pato_Rubeola.Size = new System.Drawing.Size(103, 21);
-            this.cb_Ante_Pato_Rubeola.TabIndex = 86;
+            this.cb_Ante_Pato_Rubeola.TabIndex = 2;
             // 
             // cb_Ante_Pato_Paroditis
             // 
@@ -4139,7 +4141,7 @@
             this.cb_Ante_Pato_Paroditis.Location = new System.Drawing.Point(195, 22);
             this.cb_Ante_Pato_Paroditis.Name = "cb_Ante_Pato_Paroditis";
             this.cb_Ante_Pato_Paroditis.Size = new System.Drawing.Size(103, 21);
-            this.cb_Ante_Pato_Paroditis.TabIndex = 85;
+            this.cb_Ante_Pato_Paroditis.TabIndex = 0;
             // 
             // gbHereditario
             // 
@@ -4190,7 +4192,7 @@
             this.txt_HereditarioDetalle.Multiline = true;
             this.txt_HereditarioDetalle.Name = "txt_HereditarioDetalle";
             this.txt_HereditarioDetalle.Size = new System.Drawing.Size(296, 69);
-            this.txt_HereditarioDetalle.TabIndex = 20;
+            this.txt_HereditarioDetalle.TabIndex = 11;
             // 
             // label91
             // 
@@ -4282,7 +4284,7 @@
             this.cb_Here_Cardiopatia.Location = new System.Drawing.Point(138, 111);
             this.cb_Here_Cardiopatia.Name = "cb_Here_Cardiopatia";
             this.cb_Here_Cardiopatia.Size = new System.Drawing.Size(97, 21);
-            this.cb_Here_Cardiopatia.TabIndex = 10;
+            this.cb_Here_Cardiopatia.TabIndex = 3;
             // 
             // cb_Here_AfecTiroide
             // 
@@ -4292,7 +4294,7 @@
             this.cb_Here_AfecTiroide.Location = new System.Drawing.Point(334, 105);
             this.cb_Here_AfecTiroide.Name = "cb_Here_AfecTiroide";
             this.cb_Here_AfecTiroide.Size = new System.Drawing.Size(97, 21);
-            this.cb_Here_AfecTiroide.TabIndex = 9;
+            this.cb_Here_AfecTiroide.TabIndex = 8;
             // 
             // cb_Here_Cancer
             // 
@@ -4302,7 +4304,7 @@
             this.cb_Here_Cancer.Location = new System.Drawing.Point(334, 78);
             this.cb_Here_Cancer.Name = "cb_Here_Cancer";
             this.cb_Here_Cancer.Size = new System.Drawing.Size(97, 21);
-            this.cb_Here_Cancer.TabIndex = 8;
+            this.cb_Here_Cancer.TabIndex = 7;
             // 
             // cb_Here_EnferPulmunar
             // 
@@ -4312,7 +4314,7 @@
             this.cb_Here_EnferPulmunar.Location = new System.Drawing.Point(138, 138);
             this.cb_Here_EnferPulmunar.Name = "cb_Here_EnferPulmunar";
             this.cb_Here_EnferPulmunar.Size = new System.Drawing.Size(97, 21);
-            this.cb_Here_EnferPulmunar.TabIndex = 7;
+            this.cb_Here_EnferPulmunar.TabIndex = 4;
             // 
             // cb_Here_Neuropatia
             // 
@@ -4342,7 +4344,7 @@
             this.cb_Here_AVC.Location = new System.Drawing.Point(334, 135);
             this.cb_Here_AVC.Name = "cb_Here_AVC";
             this.cb_Here_AVC.Size = new System.Drawing.Size(97, 21);
-            this.cb_Here_AVC.TabIndex = 4;
+            this.cb_Here_AVC.TabIndex = 9;
             // 
             // cb_Here_HTA
             // 
@@ -4352,7 +4354,7 @@
             this.cb_Here_HTA.Location = new System.Drawing.Point(138, 54);
             this.cb_Here_HTA.Name = "cb_Here_HTA";
             this.cb_Here_HTA.Size = new System.Drawing.Size(97, 21);
-            this.cb_Here_HTA.TabIndex = 3;
+            this.cb_Here_HTA.TabIndex = 1;
             // 
             // cb_Here_Asma
             // 
@@ -4391,7 +4393,7 @@
             this.btnHereditarioDetalle.Location = new System.Drawing.Point(171, 230);
             this.btnHereditarioDetalle.Name = "btnHereditarioDetalle";
             this.btnHereditarioDetalle.Size = new System.Drawing.Size(27, 26);
-            this.btnHereditarioDetalle.TabIndex = 79;
+            this.btnHereditarioDetalle.TabIndex = 10;
             this.btnHereditarioDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHereditarioDetalle.UseVisualStyleBackColor = true;
             this.btnHereditarioDetalle.Click += new System.EventHandler(this.btnHereditarioDetalle_Click);
@@ -4663,7 +4665,7 @@
             this.tabDiagnostico.Controls.Add(this.btnImagenesComplementarias);
             this.tabDiagnostico.Controls.Add(this.button16);
             this.tabDiagnostico.Controls.Add(this.button15);
-            this.tabDiagnostico.Controls.Add(this.button12);
+            this.tabDiagnostico.Controls.Add(this.btnElectro);
             this.tabDiagnostico.Controls.Add(this.txtDescuentoPorcentaje);
             this.tabDiagnostico.Controls.Add(this.label35);
             this.tabDiagnostico.Controls.Add(this.label31);
@@ -4767,19 +4769,20 @@
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnElectro
             // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::Frm.Properties.Resources.electrocardiogram50;
-            this.button12.Location = new System.Drawing.Point(697, 61);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(87, 93);
-            this.button12.TabIndex = 40;
-            this.button12.Text = "Resultado Electro";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnElectro.FlatAppearance.BorderSize = 0;
+            this.btnElectro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElectro.Image = global::Frm.Properties.Resources.electrocardiogram50;
+            this.btnElectro.Location = new System.Drawing.Point(697, 61);
+            this.btnElectro.Name = "btnElectro";
+            this.btnElectro.Size = new System.Drawing.Size(87, 93);
+            this.btnElectro.TabIndex = 40;
+            this.btnElectro.Text = "Resultado Electro";
+            this.btnElectro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnElectro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnElectro.UseVisualStyleBackColor = true;
+            this.btnElectro.Click += new System.EventHandler(this.btnElectro_Click);
             // 
             // txtDescuentoPorcentaje
             // 
@@ -4971,6 +4974,14 @@
             this.lblCampoRequerido.TabIndex = 49;
             this.lblCampoRequerido.Text = " Campos Requeridos *";
             this.lblCampoRequerido.Visible = false;
+            // 
+            // openFileElectroResult
+            // 
+            this.openFileElectroResult.DefaultExt = "pdf";
+            this.openFileElectroResult.FileName = "openFileDialog1";
+            this.openFileElectroResult.Filter = "Elctro Resultado (.pdf)|*.pdf";
+            this.openFileElectroResult.InitialDirectory = "Desktop";
+            this.openFileElectroResult.Title = "ElectroCardiograma";
             // 
             // AgregarConsulta
             // 
@@ -5173,7 +5184,7 @@
         private System.Windows.Forms.NumericUpDown txtDescuentoPorcentaje;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnElectro;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.Button button16;
@@ -5520,5 +5531,6 @@
         private System.Windows.Forms.CheckBox checkIMC;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown txtIMC;
+        private System.Windows.Forms.OpenFileDialog openFileElectroResult;
     }
 }

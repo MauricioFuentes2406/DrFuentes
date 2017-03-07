@@ -147,11 +147,13 @@ namespace Frm.Configuracion
           }
           private void btnEliminar_Click(object sender, EventArgs e)
           {
+              if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar() == false)
+                  return;
               if (dgAlergia.SelectedRows.Count == 1)
               {
                   if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                   {
-                      this.idAlergia = (int)dgAlergia.CurrentRow.Cells["idAlergia"].Value;
+                      this.idAlergia = (int)dgAlergia.SelectedRows[0].Cells["idAlergia"].Value;
                       ClinicaPro.DB.Consulta.TipoAlergiaDB TipoalergiaDb = new ClinicaPro.DB.Consulta.TipoAlergiaDB();
                       if (TipoalergiaDb.Eliminar(this.idAlergia, this.IdUsuario))
                       {
@@ -172,7 +174,7 @@ namespace Frm.Configuracion
           private void dgAlergia_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
           {
               this.txtEspecificacion.Text = (string)dgAlergia.CurrentRow.Cells["Especificacion"].Value;
-              this.cbNombre.Text = (string)dgAlergia.CurrentRow.Cells["Tipo_Alergia"].Value;
+              this.cbNombre.Text = (string)dgAlergia.SelectedRows[0].Cells["Tipo_Alergia"].Value;
           }
           #endregion           
     }

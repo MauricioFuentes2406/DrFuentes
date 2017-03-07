@@ -109,7 +109,7 @@ namespace Frm.Configuracion
             {               
                     if (dgDrogas.SelectedRows.Count == 1)
                     {
-                        this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
+                        this.IdDrogas = (int)dgDrogas.SelectedRows[0].Cells[comboNombreIDs.drogas].Value;
                     }
                     Drogas droga = Droga_ControlAClase();
                     droga.idDrogas = this.IdDrogas;
@@ -127,8 +127,8 @@ namespace Frm.Configuracion
             if (dgDrogas.SelectedRows.Count == 1)
             {
                 if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
-                {                                  
-                        this.IdDrogas = (int)dgDrogas.CurrentRow.Cells[comboNombreIDs.drogas].Value;
+                {
+                    this.IdDrogas = (int)dgDrogas.SelectedRows[0].Cells[comboNombreIDs.drogas].Value;
                         DrogaDB drogaDB = new DrogaDB();
                         if (drogaDB.Eliminar(this.IdDrogas, this.IdUsuario))
                         {

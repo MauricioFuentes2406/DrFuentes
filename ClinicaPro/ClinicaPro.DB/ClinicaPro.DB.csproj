@@ -77,6 +77,7 @@
     <Compile Include="Consulta\ConsultaReflejosDB.cs" />
     <Compile Include="Consulta\CoordinacionYMarchaDB.cs" />
     <Compile Include="Consulta\DrogaDB.cs" />
+    <Compile Include="Consulta\ElectroDB.cs" />
     <Compile Include="Consulta\EscalaTiempoDB.cs" />
     <Compile Include="Consulta\EstadoViviendaDB.cs" />
     <Compile Include="Consulta\EstadoViviendaMaterialesDB.cs" />

@@ -27,6 +27,7 @@ namespace Frm.Configuracion
         private void frmMaterialesCasa_Load(object sender, EventArgs e)
         {
             cargarGrid();
+            txtNombre.Focus();
         }
         #region Metodos
         ///<summary>
@@ -122,10 +123,11 @@ namespace Frm.Configuracion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar() == false)
+                return;
             if (this.dgMateriales.SelectedRows.Count == 1)
             {
-
-                this.IdMaterial = (byte)dgMateriales.CurrentRow.Cells["IdMaterial"].Value;
+                this.IdMaterial = (byte)dgMateriales.SelectedRows[0].Cells["IdMaterial"].Value;
 
                 EstadoViviendaMaterialesDB MaterialesDB = new EstadoViviendaMaterialesDB();
                 if (MaterialesDB.Eliminar(this.IdMaterial, this.IdUsuario))

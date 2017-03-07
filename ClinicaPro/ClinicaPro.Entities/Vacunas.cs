@@ -24,9 +24,13 @@ public partial class Vacunas
         this.AntecedenteVacuna = new HashSet<AntecedenteVacuna>();
 
     }
+
+
     public int idVacunas { get; set; }
 
     public string Nombre { get; set; }
+
+
 
     public virtual ICollection<AntecedenteVacuna> AntecedenteVacuna { private get; set; }
 

@@ -2239,10 +2239,20 @@ namespace Frm
         {
             Limpiar();
         }
-
         private void checkIMC_CheckedChanged(object sender, EventArgs e)
         {
-            txtIMC.Value = ClinicaPro.BL.Calculos.IndiceMasaCorporal(txtPeso.Value, txtTalla.Value);
+            if (checkIMC.Checked == false)
+            {
+                this.checkIMC.BackgroundImage = null;
+                this.checkIMC.BackgroundImage = global::Frm.Properties.Resources.switch_OFF;
+                txtIMC.Value = 0;
+            }
+            if (checkIMC.Checked)
+            {               
+                    txtIMC.Value = ClinicaPro.BL.Calculos.IndiceMasaCorporal(txtPeso.Value, txtTalla.Value);                  
+                    this.checkIMC.BackgroundImage = null;
+                    this.checkIMC.BackgroundImage = global::Frm.Properties.Resources.switch_ON;
+            }
         }
         private void btnSeguimiento_Click(object sender, EventArgs e)
         {
@@ -2258,14 +2268,26 @@ namespace Frm
             imagenesComplementarias.ShowDialog();
             imagenesComplementarias.Dispose();
         }
-
+        private void btnElectro_Click(object sender, EventArgs e)
+        {
+            if (!isNuevaConsulta() )
+            {                
+             ElectroResultados electro =  new ElectroResultados();             
+              electro.ElectroResultado =  manejaPDFs.PdfToBitArray(this.openFileElectroResult);
+              if (electro.ElectroResultado != null)
+              {
+                  electro.IdCliente = this.idCliente;
+                  electro.IdConsulta = this.idConsulta;
+                  int result;
+                  result = ClinicaPro.DB.Consulta.ElectroDB.Agregar(electro);
+                  if (result >= 1)
+                      Mensaje.MensajeGuardadoEnDB("Electro Guardado");                  
+              }
+              else return;              
+            }
+            else
+                MessageBox.Show(Mensajes.GuardarPrimero, Mensajes.Upss_Falto_Algo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }                          
       
-
-     
-
-       
-        
-
-     
     }
 }

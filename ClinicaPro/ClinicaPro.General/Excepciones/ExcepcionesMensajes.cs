@@ -17,7 +17,7 @@ namespace ClinicaPro.General.Excepciones
        public const String Error_En_BaseDatos = " Ocurrio un error en la Base de Datos  ";
 
         #region Recomendaciones
-       public const String Revisar_Servicio_MSSQL = "\n *Revise  el estado del servicio MSSQLSERVER si es que esta detenido o  en pausa  ";
+       public const String Revisar_Servicio_MSSQL = "\n *Revise  el estado del servicio MSSQLSERVER , o si no aparece  ";
        public const String Revisar_Servidor_Encendido = "\n *Revise si la computadora-servidor está encendida";
        public const String IntenteModificar = " Intente Modificar el registro en vez de crear uno nuevo ";
         

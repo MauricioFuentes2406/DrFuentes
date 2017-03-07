@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace ClinicaPro.BL
 {
+    /// <summary>
+    /// Controlador para imagenes y PDFs
+    /// </summary>
     public class manejaImagenes
     {
         /// <summary>

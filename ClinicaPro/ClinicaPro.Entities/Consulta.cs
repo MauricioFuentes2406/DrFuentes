@@ -29,6 +29,8 @@ public partial class Consulta
 
         this.Seguimiento = new HashSet<Seguimiento>();
 
+        this.ElectroResultados = new HashSet<ElectroResultados>();
+
     }
 
 
@@ -117,6 +119,8 @@ public partial class Consulta
     public virtual ConsultaBoca ConsultaBoca { get; set; }
 
     public virtual ICollection<Seguimiento> Seguimiento { get; set; }
+
+    public virtual ICollection<ElectroResultados> ElectroResultados { get; set; }
 
 }
 

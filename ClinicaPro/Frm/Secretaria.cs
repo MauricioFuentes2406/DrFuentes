@@ -46,7 +46,12 @@ namespace Frm
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            new MantenimientoCliente().Show();
+            new MantenimientoCliente(this._tipoUsuario).Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Frm.Citas.frmGeneralCitas frmCitas = new Citas.frmGeneralCitas(this._tipoUsuario);
         }
     }
 }

@@ -103,7 +103,7 @@ namespace Frm.Configuracion
             {
                 if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {
-                    this.IdVacunas = (int)dgVacunas.CurrentRow.Cells[comboNombreIDs.vacunas].Value;
+                    this.IdVacunas = (int)dgVacunas.SelectedRows[0].Cells[comboNombreIDs.vacunas].Value;
 
                     VacunasDB vacunaDB = new VacunasDB();
                     if (vacunaDB.Eliminar(this.IdVacunas, this.IdUsuario))
@@ -125,7 +125,7 @@ namespace Frm.Configuracion
             {
                 if (dgVacunas.SelectedRows.Count == 1)
                 {
-                    this.IdVacunas = (int)dgVacunas.CurrentRow.Cells[comboNombreIDs.vacunas].Value;
+                    this.IdVacunas = (int)dgVacunas.SelectedRows[0].Cells[comboNombreIDs.vacunas].Value;
                 }
                 Vacunas vacuna = Vacuna_ControlAClase();
                 vacuna.idVacunas = this.IdVacunas;

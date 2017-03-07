@@ -47,6 +47,9 @@ namespace ClinicaPro.General.Constantes
        public const String GuardarPrimero = "Debes de guardar la consulta antes de crear el seguimiento";      
        #endregion
 
+       /// <summary>
+       /// Conteo de Que?
+       /// </summary>
        public const String HuboErrorConteo = "Hubo un error Con el Conteo Total"; // Contado filas en  DataGrid
        public const String fk_ConstraintDeleteConsulta = " No se puede eliminar el registro por que esta siendo usando en alguna Consulta,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
        public const String fk_ConstraintDelete = " No se puede eliminar el registro por que esta siendo usado ,\n Primero Modifique o Elimine los registren que utilizen esta ópcion ";
@@ -54,8 +57,12 @@ namespace ClinicaPro.General.Constantes
        public const String CitaChocan = " La fecha , hora o duración de la cita chocan con una cita ya existente";
        public const String NotieneCorreo = "No se puede enviar el mensaje por que el registro seleccionado no tiene asignado un correo ";
        public const String NosePuedoGuardar = "No se pudo guardar los datos en la Base de Datos";
-
-       
+       public const String PathTooLong = "El directorio donde desea guardar el es demasiado largo/nIntente guardarlo  en Documentos";
+       public const String AccesoNoAutorizado = "No tienes los permisos para acceder a esa carpeta";
+       /// <summary>
+       /// Respuesta  para  System.Security.SecurityException
+       /// </summary>
+       public const String ViolacionSeguridad = "Violacion de Seguridad";
        
        // Otros
 

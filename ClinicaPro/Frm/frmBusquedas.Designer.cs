@@ -85,7 +85,7 @@
             this.pictureBoxImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxImg.Location = new System.Drawing.Point(634, 76);
             this.pictureBoxImg.Name = "pictureBoxImg";
-            this.pictureBoxImg.Size = new System.Drawing.Size(272, 236);
+            this.pictureBoxImg.Size = new System.Drawing.Size(272, 244);
             this.pictureBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImg.TabIndex = 17;
             this.pictureBoxImg.TabStop = false;
@@ -151,7 +151,7 @@
             this.txtSintoma.MaxLength = 400;
             this.txtSintoma.Multiline = true;
             this.txtSintoma.Name = "txtSintoma";
-            this.txtSintoma.Size = new System.Drawing.Size(288, 85);
+            this.txtSintoma.Size = new System.Drawing.Size(288, 93);
             this.txtSintoma.TabIndex = 1;
             this.txtSintoma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSintoma_KeyDown);
             // 
@@ -161,7 +161,7 @@
             this.txtTratamiento.MaxLength = 350;
             this.txtTratamiento.Multiline = true;
             this.txtTratamiento.Name = "txtTratamiento";
-            this.txtTratamiento.Size = new System.Drawing.Size(288, 85);
+            this.txtTratamiento.Size = new System.Drawing.Size(288, 93);
             this.txtTratamiento.TabIndex = 2;
             this.txtTratamiento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTratamiento_KeyDown);
             // 
@@ -171,7 +171,7 @@
             this.txtEnfermedadRelacionada.MaxLength = 300;
             this.txtEnfermedadRelacionada.Multiline = true;
             this.txtEnfermedadRelacionada.Name = "txtEnfermedadRelacionada";
-            this.txtEnfermedadRelacionada.Size = new System.Drawing.Size(288, 85);
+            this.txtEnfermedadRelacionada.Size = new System.Drawing.Size(288, 93);
             this.txtEnfermedadRelacionada.TabIndex = 3;
             this.txtEnfermedadRelacionada.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEnfermedadRelacionada_KeyDown);
             // 
@@ -181,7 +181,7 @@
             this.txtDescripcionAdicional.MaxLength = 400;
             this.txtDescripcionAdicional.Multiline = true;
             this.txtDescripcionAdicional.Name = "txtDescripcionAdicional";
-            this.txtDescripcionAdicional.Size = new System.Drawing.Size(288, 85);
+            this.txtDescripcionAdicional.Size = new System.Drawing.Size(288, 93);
             this.txtDescripcionAdicional.TabIndex = 4;
             this.txtDescripcionAdicional.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcionAdicional_KeyDown);
             // 
@@ -202,7 +202,7 @@
             // 
             this.btnExaminarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExaminarImagen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExaminarImagen.Location = new System.Drawing.Point(634, 311);
+            this.btnExaminarImagen.Location = new System.Drawing.Point(634, 318);
             this.btnExaminarImagen.Name = "btnExaminarImagen";
             this.btnExaminarImagen.Size = new System.Drawing.Size(67, 26);
             this.btnExaminarImagen.TabIndex = 5;

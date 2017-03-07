@@ -111,7 +111,7 @@ namespace Frm.Configuracion
             {
                 if (dgFamiliar.SelectedRows.Count == 1)
                 {
-                    this.IdFamiliar = (byte)dgFamiliar.CurrentRow.Cells[comboNombreIDs.familiar].Value;
+                    this.IdFamiliar = (byte)dgFamiliar.SelectedRows[0].Cells[comboNombreIDs.familiar].Value;
                 }
                 Familiar familiar = Familiar_ControlesAClase();
                 familiar.IdFamiliar = this.IdFamiliar;
@@ -127,7 +127,7 @@ namespace Frm.Configuracion
         {
             if (dgFamiliar.SelectedRows.Count == 1)
             {
-                this.IdFamiliar = (byte)dgFamiliar.CurrentRow.Cells[comboNombreIDs.familiar].Value;
+                this.IdFamiliar = (byte)dgFamiliar.SelectedRows[0].Cells[comboNombreIDs.familiar].Value;
                 if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {                
                     FamiliarDB familiarDB = new FamiliarDB();

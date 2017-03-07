@@ -31,6 +31,8 @@ public partial class Cliente
 
         this.ClienteImagenesExamenesComplementarios = new HashSet<ClienteImagenesExamenesComplementarios>();
 
+        this.ElectroResultados = new HashSet<ElectroResultados>();
+
     }
 
 
@@ -71,6 +73,8 @@ public partial class Cliente
     public virtual ICollection<Examenes> Examenes { get; set; }
 
     public virtual ICollection<ClienteImagenesExamenesComplementarios> ClienteImagenesExamenesComplementarios { get; set; }
+
+    public virtual ICollection<ElectroResultados> ElectroResultados { get; set; }
 
 }
 

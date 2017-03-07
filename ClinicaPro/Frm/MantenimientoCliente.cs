@@ -24,13 +24,7 @@ namespace Frm
         public int idTipoUsario { get; set; }
 
 
-        //        ~~~~~~~~~~~~~~~~~~ Constructor  ~~~~~~~~~~~~~~~~~~~~~~~~
-        public MantenimientoCliente()
-        {
-            idTipoUsario = -1;
-            idCliente = -1;
-            InitializeComponent();
-        }
+        //        ~~~~~~~~~~~~~~~~~~ Constructor  ~~~~~~~~~~~~~~~~~~~~~~~~      
         public MantenimientoCliente(int idTipoUsuario)
         {
             idTipoUsario = idTipoUsuario;

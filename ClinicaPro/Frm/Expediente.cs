@@ -218,6 +218,16 @@ namespace Frm
            this.dgCitas.Columns["IdCita"].Visible = false;
            this.dgCitas.Columns["Cliente"].Visible = false;
         }
+         private void  llenarPDF(int  IdCliente)
+        {
+            this.dgElectros.DataSource= ElectroDB.ListaPorCliente(IdCliente);
+             this.dgElectros.Columns["Cliente"].Visible = false;
+             this.dgElectros.Columns["Consulta"].Visible = false;
+             this.dgElectros.Columns["Consulta"].Visible = false;
+             this.dgElectros.Columns["ElectroResultado"].Visible= false;
+             this.dgElectros.Columns["IdConsulta"].HeaderText=Numero_Consulta;
+             this.dgElectros.Columns["IdCliente"].HeaderText="Número_Cliente";                                      
+        }
         #endregion
         /// <summary>
         ///  identifica si la celda actual es la Botón del Grid para ver Detalles
@@ -237,6 +247,7 @@ namespace Frm
                 llenarAlergiasDetalle(IdCliente);
                 llenarImagenesDetalle(IdCliente);
                 llenarCitasDetalle(IdCliente);
+                llenarPDF(IdCliente);
                 manejaMensajeInformativo(sender);
             }
         }        
@@ -403,6 +414,27 @@ namespace Frm
         {
             //bNavigator1.BindingSource.MoveFirst();  El solito invoca este meotodo ,  no es necesario
             this.pictureBoxComplementarias.Image = (Image)bNavigatorImagenesComplemntarias.BindingSource.Current;
+        }
+        private void dgElectros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dgElectros.CurrentCell is DataGridViewButtonCell)
+            {
+                try
+                {
+                    Byte[] pdf = (Byte[])this.dgElectros.Rows[e.RowIndex].Cells["ElectroResultado"].Value;
+                    this.saveFileElectro.FileName ="Electro "+idCliente+" "+this.txtNombre.Text;
+                    ClinicaPro.BL.manejaPDFs.BitArray(this.saveFileElectro, pdf);
+                }
+                    catch(InvalidOperationException inv)
+                {
+                    MessageBox.Show(inv.InnerException.InnerException.ToString());  
+                }
+                catch (Exception)
+                {
+                                        
+                }                
+            }
+
         }                               
     }
 }

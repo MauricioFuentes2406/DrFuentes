@@ -115,7 +115,7 @@ namespace Frm.Configuracion
             {
                 if ( dgServicios.SelectedRows.Count == 1)
                 {
-                    this.idServicio = (int)dgServicios.CurrentRow.Cells[comboNombreIDs.GeneralServicio].Value;
+                    this.idServicio = (int)dgServicios.SelectedRows[0].Cells[comboNombreIDs.GeneralServicio].Value;
                 
                 GeneralTipoServicio service = Servicio_ControlAClase();
                 service.idServicio = this.idServicio;
@@ -135,7 +135,7 @@ namespace Frm.Configuracion
             {
                 if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {
-                    this.idServicio = (int)dgServicios.CurrentRow.Cells[comboNombreIDs.GeneralServicio].Value;
+                    this.idServicio = (int)dgServicios.SelectedRows[0].Cells[comboNombreIDs.GeneralServicio].Value;
                     GeneralTipoServicioDB servicioDb = new GeneralTipoServicioDB();
                     if (servicioDb.Eliminar(this.idServicio, this.IdUsuario))
                     {

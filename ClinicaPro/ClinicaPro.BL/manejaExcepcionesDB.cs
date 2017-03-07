@@ -15,13 +15,16 @@ namespace ClinicaPro.BL
     using System.Data.SqlClient;
     using ClinicaPro.General.Constantes;
 
+    
+
    public class manejaExcepcionesDB
     {
         public static void manejaEntityException(EntityException entityException)
         {
             //Void Open . No hay conexion con la base de datos
             if (entityException.TargetSite.ToString() == ExcepcionesMensajes.Void_Open)
-            {                
+            {
+                if(!intentarAbrirServicioDeSQLServerLocalArea())
                 MessageBox.Show(ExcepcionesMensajes.Revisar_Servidor_Encendido + ExcepcionesMensajes.Revisar_Servicio_MSSQL, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -73,6 +76,32 @@ namespace ClinicaPro.BL
                     a += data.ToString();
                 }
         }
+       /// <summary>
+       /// Intenta Iniciar el Servicio de MSSQLSERVer , en un entorno LocalHost
+       /// </summary>
+       /// <returns></returns>
+       private static bool intentarAbrirServicioDeSQLServerLocalArea()
+       {
+           try
+           {
+               System.ServiceProcess.ServiceController serviceController1 = new System.ServiceProcess.ServiceController();
+               serviceController1.ServiceName = "MSSQLSERVER";
+               if (serviceController1.Status ==  System.ServiceProcess.ServiceControllerStatus.Stopped
+                   ||
+                   serviceController1.Status == System.ServiceProcess.ServiceControllerStatus.Paused)
+               {
+                   serviceController1.Start();
+                   return true;
+               }
+               return false;
+           }
+           catch (Exception)
+           {               
+               return false;
+           }
+          
+
+       }
     
 #region Eliminar
        /// <summary>
@@ -90,6 +119,8 @@ namespace ClinicaPro.BL
             else return true;
 
         }
+       
+
 #endregion
        
     }

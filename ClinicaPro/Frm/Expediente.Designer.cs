@@ -91,12 +91,10 @@
             this.tabAlergias = new System.Windows.Forms.TabPage();
             this.dgAlergias = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.dgSeguimientos = new System.Windows.Forms.DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.dgCitas = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bNavigatorImagenesComplemntarias = new System.Windows.Forms.BindingNavigator(this.components);
@@ -123,7 +121,9 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkMes = new System.Windows.Forms.CheckBox();
-            this.dgCitas = new System.Windows.Forms.DataGridView();
+            this.saveFileElectro = new System.Windows.Forms.SaveFileDialog();
+            this.dgElectros = new System.Windows.Forms.DataGridView();
+            this.AbrirArchivo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabGeneral.SuspendLayout();
             this.tabConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsulta)).BeginInit();
@@ -184,10 +184,10 @@
             this.tabAlergias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).BeginInit();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).BeginInit();
             this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bNavigatorImagenesComplemntarias)).BeginInit();
@@ -196,7 +196,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgElectros)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -1006,7 +1006,7 @@
             // 
             // tabPage8
             // 
-            this.tabPage8.Controls.Add(this.dataGridView8);
+            this.tabPage8.Controls.Add(this.dgElectros);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
@@ -1014,27 +1014,6 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Electros";
             this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView8
-            // 
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column36,
-            this.Column37});
-            this.dataGridView8.Location = new System.Drawing.Point(6, 27);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.Size = new System.Drawing.Size(270, 149);
-            this.dataGridView8.TabIndex = 0;
-            // 
-            // Column36
-            // 
-            this.Column36.HeaderText = "idConsulta";
-            this.Column36.Name = "Column36";
-            // 
-            // Column37
-            // 
-            this.Column37.HeaderText = "Resultado";
-            this.Column37.Name = "Column37";
             // 
             // tabPage9
             // 
@@ -1072,6 +1051,21 @@
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "Citas";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // dgCitas
+            // 
+            this.dgCitas.AllowUserToAddRows = false;
+            this.dgCitas.AllowUserToDeleteRows = false;
+            this.dgCitas.AllowUserToOrderColumns = true;
+            this.dgCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCitas.Location = new System.Drawing.Point(0, 21);
+            this.dgCitas.Name = "dgCitas";
+            this.dgCitas.Size = new System.Drawing.Size(944, 375);
+            this.dgCitas.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -1362,20 +1356,36 @@
             this.chkMes.Text = "Mes";
             this.chkMes.UseVisualStyleBackColor = true;
             // 
-            // dgCitas
+            // saveFileElectro
             // 
-            this.dgCitas.AllowUserToAddRows = false;
-            this.dgCitas.AllowUserToDeleteRows = false;
-            this.dgCitas.AllowUserToOrderColumns = true;
-            this.dgCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.saveFileElectro.DefaultExt = "pdf";
+            this.saveFileElectro.Filter = "PDF Files (*.pdf)|*.pdf";
+            // 
+            // dgElectros
+            // 
+            this.dgElectros.AllowUserToAddRows = false;
+            this.dgElectros.AllowUserToDeleteRows = false;
+            this.dgElectros.AllowUserToOrderColumns = true;
+            this.dgElectros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCitas.Location = new System.Drawing.Point(0, 21);
-            this.dgCitas.Name = "dgCitas";
-            this.dgCitas.Size = new System.Drawing.Size(944, 375);
-            this.dgCitas.TabIndex = 1;
+            this.dgElectros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgElectros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AbrirArchivo});
+            this.dgElectros.Location = new System.Drawing.Point(7, 20);
+            this.dgElectros.Name = "dgElectros";
+            this.dgElectros.ReadOnly = true;
+            this.dgElectros.Size = new System.Drawing.Size(947, 359);
+            this.dgElectros.TabIndex = 7;
+            this.dgElectros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgElectros_CellContentClick);
+            // 
+            // AbrirArchivo
+            // 
+            this.AbrirArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AbrirArchivo.HeaderText = "File";
+            this.AbrirArchivo.MinimumWidth = 15;
+            this.AbrirArchivo.Name = "AbrirArchivo";
+            this.AbrirArchivo.ReadOnly = true;
             // 
             // Expediente
             // 
@@ -1457,10 +1467,10 @@
             this.tabAlergias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).EndInit();
             this.tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.tabPage9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).EndInit();
             this.tabPage10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1473,7 +1483,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgElectros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1493,9 +1503,6 @@
         private System.Windows.Forms.DataGridView dgEstadoVivienda;
         private System.Windows.Forms.TabPage tabSentidos5;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.DataGridView dataGridView8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.DataGridView dgSeguimientos;
         private System.Windows.Forms.TextBox txtNombre;
@@ -1575,5 +1582,8 @@
         private System.Windows.Forms.PictureBox pictureBoxComplementarias;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgCitas;
+        private System.Windows.Forms.SaveFileDialog saveFileElectro;
+        private System.Windows.Forms.DataGridView dgElectros;
+        private System.Windows.Forms.DataGridViewButtonColumn AbrirArchivo;
     }
 }

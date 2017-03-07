@@ -159,6 +159,9 @@
     <Compile Include="Droga_ListarConsultasRelacionadas_Result.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="ElectroResultados.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="EscalaTiempo.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>

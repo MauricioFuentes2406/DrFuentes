@@ -60,7 +60,7 @@ namespace Frm
         }
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            new Frm.Citas.frmGeneralCitas().Show();
+            new Frm.Citas.frmGeneralCitas(this.IdTipoUsuario).Show();
         }
         private void btnConsulta_Click(object sender, EventArgs e)
         {
