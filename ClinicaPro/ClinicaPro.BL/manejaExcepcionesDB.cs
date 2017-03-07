@@ -24,12 +24,22 @@ namespace ClinicaPro.BL
             //Void Open . No hay conexion con la base de datos
             if (entityException.TargetSite.ToString() == ExcepcionesMensajes.Void_Open)
             {
-                if(!intentarAbrirServicioDeSQLServerLocalArea())
-                MessageBox.Show(ExcepcionesMensajes.Revisar_Servidor_Encendido + ExcepcionesMensajes.Revisar_Servicio_MSSQL, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!intentarAbrirServicioDeSQLServerLocalArea())
+                    MessageBox.Show(ExcepcionesMensajes.Revisar_Servidor_Encendido + ExcepcionesMensajes.Revisar_Servicio_MSSQL, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else {
+                    MessageBox.Show("El servicio de MSSQLSERVER no estaba funcionando , Intente de nuevo");
+                    }
             }
             else
                 MessageBox.Show(ExcepcionesMensajes.Sin_ConexionDB, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);            
         }
+       public   static void manejaDBInfraestructureDBEx(System.Data.Entity.Infrastructure.DbUpdateException DbUpdate)
+        {
+           if ( DbUpdate.InnerException.InnerException.ToString().Contains(@"Violation of PRIMARY KEY constraint 'PK_ElectroResultados'. Cannot insert duplicate key"));
+           MessageBox.Show(ExcepcionesMensajes.Id_Duplicada, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);            
+          
+        }
+
         /// <summary>Maneja las excepciones en la Base Datos , añadir esta solo cuando se trabaja con los datos internos de la DB       
        /// </summary>
        /// <param name="sqlException"></param>
@@ -90,7 +100,7 @@ namespace ClinicaPro.BL
                    ||
                    serviceController1.Status == System.ServiceProcess.ServiceControllerStatus.Paused)
                {
-                   serviceController1.Start();
+                   serviceController1.Start();                   
                    return true;
                }
                return false;

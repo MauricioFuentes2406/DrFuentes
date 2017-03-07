@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -41,11 +40,13 @@ namespace Frm
 
         private void btnAdministrador_Click(object sender, EventArgs e)
         {
-            _frmAdministrador = new Administrador(_tipoUsuario);
-            _frmAdministrador.Show();
-            this.Hide();
+            using (_frmAdministrador = new Administrador(_tipoUsuario))
+            {
+                this.Hide();
+                _frmAdministrador.ShowDialog();
+                this.Visible = true; 
+            }                         
         }
-
         private void btnGeneral_Click(object sender, EventArgs e)
         {
             _frmGeneralPrincipal = new GeneralPrincipal(_tipoUsuario);

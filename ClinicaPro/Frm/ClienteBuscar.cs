@@ -33,9 +33,14 @@ namespace Frm
             return (from n in lista_filtrada
                     select n.IdCliente).ToList();
         }
+        public void Cargar_TipoDeSangre()
+        {
+            this.cbTipoSangre.DataSource = ClinicaPro.General.Enumerados.ClienteEnums.TipoDeSangre;
+        }
         private void ClienteBuscar_Load(object sender, EventArgs e)
         {
             ActivarAutoCompletetxtCiudad();
+            Cargar_TipoDeSangre();
         }
         private void btnEViviendaDetalle_Click(object sender, EventArgs e)
         {
@@ -64,6 +69,10 @@ namespace Frm
                 else if (rangoEdadChek() )
                 {
                     buscarRangoEdad();
+                }
+                else if (tipoSangreChek() )
+                {
+                    buscarTipoSangre();
                 }
             }
                 catch(NullReferenceException nullException)
@@ -138,6 +147,12 @@ namespace Frm
                                     EntidadLocal.Edad <= txtEdadMaxima.Value 
                               select EntidadLocal).ToList();
         }
+        private void buscarTipoSangre()
+        {
+            lista_filtrada = (from EntidadLocal in lista_filtrada
+                              where EntidadLocal.TipoSangre == this.cbTipoSangre.SelectedText                                    
+                              select EntidadLocal).ToList();
+        }
         private void ActivarAutoCompletetxtCiudad()
         {
             ClinicaPro.BL.AutoCompleteTextControl.Activar(txtCiudad, ClinicaPro.DB.Cliente.ClienteDB.ListarNombresCiudad());
@@ -173,6 +188,13 @@ namespace Frm
             else 
                 return true;
         }    
+        private bool tipoSangreChek()
+        {
+            if (this.cbTipoSangre.SelectedIndex != -1)
+                return true;
+            else
+                return false;
+        }
         /// <summary>
         /// Revisa que Edad Minima y Edad Maxima sean mayores a Cero
         /// </summary>

@@ -409,7 +409,7 @@
             this.cbServicios = new System.Windows.Forms.ComboBox();
             this.tabDiagnostico = new System.Windows.Forms.TabPage();
             this.chk_AplicarDescuento = new System.Windows.Forms.CheckBox();
-            this.txtCostoConsulta = new System.Windows.Forms.NumericUpDown();
+            this.numCostoConsulta = new System.Windows.Forms.NumericUpDown();
             this.chk_DiagnosticoEstado = new System.Windows.Forms.CheckBox();
             this.btnImagenesComplementarias = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -433,6 +433,7 @@
             this.txtAuxilirAlergia = new System.Windows.Forms.RichTextBox();
             this.lblCampoRequerido = new System.Windows.Forms.Label();
             this.openFileElectroResult = new System.Windows.Forms.OpenFileDialog();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.tabGeneral.SuspendLayout();
             this.tabMoticoConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Consulta_NumTiempo)).BeginInit();
@@ -514,7 +515,7 @@
             this.gbServicio.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabDiagnostico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCostoConsulta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCostoConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuentoPorcentaje)).BeginInit();
             this.SuspendLayout();
             // 
@@ -633,6 +634,7 @@
             this.txtPadecimientoActual.Name = "txtPadecimientoActual";
             this.txtPadecimientoActual.Size = new System.Drawing.Size(410, 76);
             this.txtPadecimientoActual.TabIndex = 2;
+            this.txtPadecimientoActual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPadecimientoActual_KeyDown);
             // 
             // txt_Consulta_NumTiempo
             // 
@@ -694,6 +696,7 @@
             this.txtPrimerIndicio.Name = "txtPrimerIndicio";
             this.txtPrimerIndicio.Size = new System.Drawing.Size(337, 33);
             this.txtPrimerIndicio.TabIndex = 5;
+            this.txtPrimerIndicio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrimerIndicio_KeyDown);
             // 
             // label48
             // 
@@ -751,6 +754,7 @@
             this.txtMotivoConsulta.Size = new System.Drawing.Size(585, 70);
             this.txtMotivoConsulta.TabIndex = 1;
             this.txtMotivoConsulta.Text = "";
+            this.txtMotivoConsulta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMotivoConsulta_KeyDown);
             // 
             // tabEstadoVivienda
             // 
@@ -1012,7 +1016,7 @@
             this.checkIMC.Location = new System.Drawing.Point(353, 236);
             this.checkIMC.Name = "checkIMC";
             this.checkIMC.Size = new System.Drawing.Size(29, 23);
-            this.checkIMC.TabIndex = 94;
+            this.checkIMC.TabIndex = 8;
             this.checkIMC.Text = "    ";
             this.checkIMC.UseVisualStyleBackColor = true;
             this.checkIMC.CheckedChanged += new System.EventHandler(this.checkIMC_CheckedChanged);
@@ -1033,7 +1037,7 @@
             this.txtIMC.Name = "txtIMC";
             this.txtIMC.ReadOnly = true;
             this.txtIMC.Size = new System.Drawing.Size(142, 20);
-            this.txtIMC.TabIndex = 92;
+            this.txtIMC.TabIndex = 7;
             // 
             // pictureIndeceMasaCorporal
             // 
@@ -1114,7 +1118,8 @@
             0});
             this.txtFrecuenciaRespiratoria.Name = "txtFrecuenciaRespiratoria";
             this.txtFrecuenciaRespiratoria.Size = new System.Drawing.Size(45, 20);
-            this.txtFrecuenciaRespiratoria.TabIndex = 75;
+            this.txtFrecuenciaRespiratoria.TabIndex = 6;
+            this.txtFrecuenciaRespiratoria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFrecuenciaRespiratoria_KeyDown);
             // 
             // label40
             // 
@@ -1145,7 +1150,8 @@
             0});
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(142, 20);
-            this.txtTalla.TabIndex = 32;
+            this.txtTalla.TabIndex = 1;
+            this.txtTalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTalla_KeyDown);
             // 
             // txtFrencuenciaCardiaca
             // 
@@ -1157,7 +1163,8 @@
             0});
             this.txtFrencuenciaCardiaca.Name = "txtFrencuenciaCardiaca";
             this.txtFrencuenciaCardiaca.Size = new System.Drawing.Size(45, 20);
-            this.txtFrencuenciaCardiaca.TabIndex = 71;
+            this.txtFrencuenciaCardiaca.TabIndex = 5;
+            this.txtFrencuenciaCardiaca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFrencuenciaCardiaca_KeyDown);
             // 
             // label2
             // 
@@ -1178,7 +1185,8 @@
             0});
             this.txtPresionArterial_Diastolica.Name = "txtPresionArterial_Diastolica";
             this.txtPresionArterial_Diastolica.Size = new System.Drawing.Size(48, 20);
-            this.txtPresionArterial_Diastolica.TabIndex = 66;
+            this.txtPresionArterial_Diastolica.TabIndex = 4;
+            this.txtPresionArterial_Diastolica.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPresionArterial_Diastolica_KeyDown);
             // 
             // txtTemperatura
             // 
@@ -1191,7 +1199,8 @@
             0});
             this.txtTemperatura.Name = "txtTemperatura";
             this.txtTemperatura.Size = new System.Drawing.Size(142, 20);
-            this.txtTemperatura.TabIndex = 31;
+            this.txtTemperatura.TabIndex = 2;
+            this.txtTemperatura.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTemperatura_KeyDown);
             // 
             // label47
             // 
@@ -1213,12 +1222,13 @@
             0});
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(142, 20);
-            this.txtPeso.TabIndex = 30;
+            this.txtPeso.TabIndex = 0;
             this.txtPeso.Value = new decimal(new int[] {
             1,
             0,
             0,
             131072});
+            this.txtPeso.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPeso_KeyDown);
             // 
             // txtPresionArterial_Sistolica
             // 
@@ -1230,7 +1240,8 @@
             0});
             this.txtPresionArterial_Sistolica.Name = "txtPresionArterial_Sistolica";
             this.txtPresionArterial_Sistolica.Size = new System.Drawing.Size(45, 20);
-            this.txtPresionArterial_Sistolica.TabIndex = 64;
+            this.txtPresionArterial_Sistolica.TabIndex = 3;
+            this.txtPresionArterial_Sistolica.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPresionArterial_Sistolica_KeyDown);
             // 
             // label4
             // 
@@ -2002,6 +2013,7 @@
             this.txtExploracionInfoAdicional.Location = new System.Drawing.Point(269, 33);
             this.txtExploracionInfoAdicional.Multiline = true;
             this.txtExploracionInfoAdicional.Name = "txtExploracionInfoAdicional";
+            this.txtExploracionInfoAdicional.ReadOnly = true;
             this.txtExploracionInfoAdicional.Size = new System.Drawing.Size(345, 100);
             this.txtExploracionInfoAdicional.TabIndex = 2;
             this.txtExploracionInfoAdicional.Text = "Info Adicional";
@@ -2013,6 +2025,7 @@
             this.cb_Ex_ManosUnas.Name = "cb_Ex_ManosUnas";
             this.cb_Ex_ManosUnas.Size = new System.Drawing.Size(142, 21);
             this.cb_Ex_ManosUnas.TabIndex = 1;
+            this.cb_Ex_ManosUnas.SelectionChangeCommitted += new System.EventHandler(this.cb_Ex_ManosUnas_SelectionChangeCommitted);
             // 
             // label62
             // 
@@ -2030,6 +2043,7 @@
             this.cb_Ex_Color.Name = "cb_Ex_Color";
             this.cb_Ex_Color.Size = new System.Drawing.Size(142, 21);
             this.cb_Ex_Color.TabIndex = 0;
+            this.cb_Ex_Color.SelectionChangeCommitted += new System.EventHandler(this.cb_Ex_Color_SelectionChangeCommitted);
             // 
             // label21
             // 
@@ -2077,7 +2091,7 @@
             // label72
             // 
             this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(6, 119);
+            this.label72.Location = new System.Drawing.Point(6, 124);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(39, 13);
             this.label72.TabIndex = 83;
@@ -2223,7 +2237,7 @@
             this.gbAbdomen.Controls.Add(this.label20);
             this.gbAbdomen.Location = new System.Drawing.Point(18, 27);
             this.gbAbdomen.Name = "gbAbdomen";
-            this.gbAbdomen.Size = new System.Drawing.Size(280, 169);
+            this.gbAbdomen.Size = new System.Drawing.Size(280, 183);
             this.gbAbdomen.TabIndex = 3;
             this.gbAbdomen.TabStop = false;
             this.gbAbdomen.Text = "Abdomen";
@@ -2237,7 +2251,7 @@
             "Inflamación",
             "Nota Percusiva Mate",
             "Otro.."});
-            this.cb_Abdomen_TamanoOrganos.Location = new System.Drawing.Point(135, 18);
+            this.cb_Abdomen_TamanoOrganos.Location = new System.Drawing.Point(129, 18);
             this.cb_Abdomen_TamanoOrganos.Name = "cb_Abdomen_TamanoOrganos";
             this.cb_Abdomen_TamanoOrganos.Size = new System.Drawing.Size(121, 21);
             this.cb_Abdomen_TamanoOrganos.TabIndex = 0;
@@ -2245,7 +2259,7 @@
             // chk_AbdomenAscititis
             // 
             this.chk_AbdomenAscititis.AutoSize = true;
-            this.chk_AbdomenAscititis.Location = new System.Drawing.Point(135, 132);
+            this.chk_AbdomenAscititis.Location = new System.Drawing.Point(135, 146);
             this.chk_AbdomenAscititis.Name = "chk_AbdomenAscititis";
             this.chk_AbdomenAscititis.Size = new System.Drawing.Size(59, 17);
             this.chk_AbdomenAscititis.TabIndex = 4;
@@ -2255,7 +2269,7 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(16, 77);
+            this.label56.Location = new System.Drawing.Point(15, 88);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(36, 13);
             this.label56.TabIndex = 66;
@@ -2270,7 +2284,7 @@
             "Hemorroides",
             "Colgajos de piel",
             ""});
-            this.cb_Abdomen_Recto.Location = new System.Drawing.Point(135, 74);
+            this.cb_Abdomen_Recto.Location = new System.Drawing.Point(129, 82);
             this.cb_Abdomen_Recto.Name = "cb_Abdomen_Recto";
             this.cb_Abdomen_Recto.Size = new System.Drawing.Size(121, 21);
             this.cb_Abdomen_Recto.TabIndex = 2;
@@ -2278,7 +2292,7 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(21, 104);
+            this.label55.Location = new System.Drawing.Point(16, 124);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(31, 13);
             this.label55.TabIndex = 64;
@@ -2291,7 +2305,7 @@
             "Normal",
             "Agrandado",
             "Sensible,Dolor"});
-            this.cb_Abdomen_Bazo.Location = new System.Drawing.Point(135, 105);
+            this.cb_Abdomen_Bazo.Location = new System.Drawing.Point(129, 114);
             this.cb_Abdomen_Bazo.Name = "cb_Abdomen_Bazo";
             this.cb_Abdomen_Bazo.Size = new System.Drawing.Size(121, 21);
             this.cb_Abdomen_Bazo.TabIndex = 3;
@@ -2315,7 +2329,7 @@
             "Inflamación",
             "Nota Percusiva Mate",
             "Otro.."});
-            this.cb_Abdomen_Rinon.Location = new System.Drawing.Point(135, 45);
+            this.cb_Abdomen_Rinon.Location = new System.Drawing.Point(129, 50);
             this.cb_Abdomen_Rinon.Name = "cb_Abdomen_Rinon";
             this.cb_Abdomen_Rinon.Size = new System.Drawing.Size(121, 21);
             this.cb_Abdomen_Rinon.TabIndex = 1;
@@ -4465,7 +4479,7 @@
             this.btnNuevaAlergia.Location = new System.Drawing.Point(95, 141);
             this.btnNuevaAlergia.Name = "btnNuevaAlergia";
             this.btnNuevaAlergia.Size = new System.Drawing.Size(105, 38);
-            this.btnNuevaAlergia.TabIndex = 14;
+            this.btnNuevaAlergia.TabIndex = 3;
             this.btnNuevaAlergia.Text = "NuevaAlergia";
             this.btnNuevaAlergia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevaAlergia.UseVisualStyleBackColor = true;
@@ -4479,7 +4493,7 @@
             this.btnAlergiaGrid.Location = new System.Drawing.Point(95, 97);
             this.btnAlergiaGrid.Name = "btnAlergiaGrid";
             this.btnAlergiaGrid.Size = new System.Drawing.Size(105, 38);
-            this.btnAlergiaGrid.TabIndex = 14;
+            this.btnAlergiaGrid.TabIndex = 2;
             this.btnAlergiaGrid.Text = "Añadir";
             this.btnAlergiaGrid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlergiaGrid.UseVisualStyleBackColor = true;
@@ -4491,7 +4505,7 @@
             this.cbEspecificacionAlergia.Location = new System.Drawing.Point(95, 70);
             this.cbEspecificacionAlergia.Name = "cbEspecificacionAlergia";
             this.cbEspecificacionAlergia.Size = new System.Drawing.Size(105, 21);
-            this.cbEspecificacionAlergia.TabIndex = 5;
+            this.cbEspecificacionAlergia.TabIndex = 1;
             // 
             // label22
             // 
@@ -4660,7 +4674,7 @@
             // tabDiagnostico
             // 
             this.tabDiagnostico.Controls.Add(this.chk_AplicarDescuento);
-            this.tabDiagnostico.Controls.Add(this.txtCostoConsulta);
+            this.tabDiagnostico.Controls.Add(this.numCostoConsulta);
             this.tabDiagnostico.Controls.Add(this.chk_DiagnosticoEstado);
             this.tabDiagnostico.Controls.Add(this.btnImagenesComplementarias);
             this.tabDiagnostico.Controls.Add(this.button16);
@@ -4694,29 +4708,29 @@
             this.chk_AplicarDescuento.Location = new System.Drawing.Point(727, 320);
             this.chk_AplicarDescuento.Name = "chk_AplicarDescuento";
             this.chk_AplicarDescuento.Size = new System.Drawing.Size(29, 23);
-            this.chk_AplicarDescuento.TabIndex = 55;
+            this.chk_AplicarDescuento.TabIndex = 9;
             this.chk_AplicarDescuento.Text = "    ";
             this.chk_AplicarDescuento.UseVisualStyleBackColor = true;
             this.chk_AplicarDescuento.CheckedChanged += new System.EventHandler(this.chk_AplicarDescuento_CheckedChanged);
             // 
-            // txtCostoConsulta
+            // numCostoConsulta
             // 
-            this.txtCostoConsulta.Increment = new decimal(new int[] {
+            this.numCostoConsulta.Increment = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.txtCostoConsulta.Location = new System.Drawing.Point(565, 272);
-            this.txtCostoConsulta.Maximum = new decimal(new int[] {
+            this.numCostoConsulta.Location = new System.Drawing.Point(565, 272);
+            this.numCostoConsulta.Maximum = new decimal(new int[] {
             2147483646,
             0,
             0,
             0});
-            this.txtCostoConsulta.Name = "txtCostoConsulta";
-            this.txtCostoConsulta.ReadOnly = true;
-            this.txtCostoConsulta.Size = new System.Drawing.Size(156, 20);
-            this.txtCostoConsulta.TabIndex = 3;
-            this.txtCostoConsulta.ThousandsSeparator = true;
+            this.numCostoConsulta.Name = "numCostoConsulta";
+            this.numCostoConsulta.ReadOnly = true;
+            this.numCostoConsulta.Size = new System.Drawing.Size(156, 20);
+            this.numCostoConsulta.TabIndex = 7;
+            this.numCostoConsulta.ThousandsSeparator = true;
             // 
             // chk_DiagnosticoEstado
             // 
@@ -4724,7 +4738,7 @@
             this.chk_DiagnosticoEstado.Location = new System.Drawing.Point(175, 44);
             this.chk_DiagnosticoEstado.Name = "chk_DiagnosticoEstado";
             this.chk_DiagnosticoEstado.Size = new System.Drawing.Size(108, 17);
-            this.chk_DiagnosticoEstado.TabIndex = 1;
+            this.chk_DiagnosticoEstado.TabIndex = 0;
             this.chk_DiagnosticoEstado.Text = "Estado Aceptado";
             this.chk_DiagnosticoEstado.UseVisualStyleBackColor = true;
             // 
@@ -4736,7 +4750,7 @@
             this.btnImagenesComplementarias.Location = new System.Drawing.Point(697, 150);
             this.btnImagenesComplementarias.Name = "btnImagenesComplementarias";
             this.btnImagenesComplementarias.Size = new System.Drawing.Size(101, 89);
-            this.btnImagenesComplementarias.TabIndex = 50;
+            this.btnImagenesComplementarias.TabIndex = 6;
             this.btnImagenesComplementarias.Text = "Imágenes Complementarios";
             this.btnImagenesComplementarias.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnImagenesComplementarias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -4777,7 +4791,7 @@
             this.btnElectro.Location = new System.Drawing.Point(697, 61);
             this.btnElectro.Name = "btnElectro";
             this.btnElectro.Size = new System.Drawing.Size(87, 93);
-            this.btnElectro.TabIndex = 40;
+            this.btnElectro.TabIndex = 5;
             this.btnElectro.Text = "Resultado Electro";
             this.btnElectro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnElectro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -4789,7 +4803,7 @@
             this.txtDescuentoPorcentaje.Location = new System.Drawing.Point(565, 320);
             this.txtDescuentoPorcentaje.Name = "txtDescuentoPorcentaje";
             this.txtDescuentoPorcentaje.Size = new System.Drawing.Size(156, 20);
-            this.txtDescuentoPorcentaje.TabIndex = 4;
+            this.txtDescuentoPorcentaje.TabIndex = 8;
             this.txtDescuentoPorcentaje.ValueChanged += new System.EventHandler(this.txtDescuentoPorcentaje_ValueChanged);
             // 
             // label35
@@ -4843,9 +4857,10 @@
             this.txtDiagnostico.Location = new System.Drawing.Point(27, 70);
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.Size = new System.Drawing.Size(375, 111);
-            this.txtDiagnostico.TabIndex = 0;
+            this.txtDiagnostico.TabIndex = 1;
             this.txtDiagnostico.Text = "";
             this.txtDiagnostico.Enter += new System.EventHandler(this.txtDiagnostico_Enter);
+            this.txtDiagnostico.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDiagnostico_KeyDown);
             this.txtDiagnostico.Leave += new System.EventHandler(this.txtDiagnostico_Leave);
             // 
             // btnCalcularCosto
@@ -4857,7 +4872,7 @@
             this.btnCalcularCosto.Location = new System.Drawing.Point(587, 70);
             this.btnCalcularCosto.Name = "btnCalcularCosto";
             this.btnCalcularCosto.Size = new System.Drawing.Size(92, 93);
-            this.btnCalcularCosto.TabIndex = 15;
+            this.btnCalcularCosto.TabIndex = 4;
             this.btnCalcularCosto.Text = "Calcular Costo";
             this.btnCalcularCosto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCalcularCosto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -4873,7 +4888,7 @@
             this.btnSeguimiento.Location = new System.Drawing.Point(473, 61);
             this.btnSeguimiento.Name = "btnSeguimiento";
             this.btnSeguimiento.Size = new System.Drawing.Size(92, 93);
-            this.btnSeguimiento.TabIndex = 14;
+            this.btnSeguimiento.TabIndex = 3;
             this.btnSeguimiento.Text = "Crear Seguimiento";
             this.btnSeguimiento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSeguimiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -4892,7 +4907,7 @@
             this.btnBusqueda.Text = "Diccionario";
             this.btnBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBusqueda.UseVisualStyleBackColor = true;
-            this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
+            this.btnBusqueda.Click += new System.EventHandler(this.btnDiccionario_Click);
             // 
             // label30
             // 
@@ -4983,6 +4998,18 @@
             this.openFileElectroResult.InitialDirectory = "Desktop";
             this.openFileElectroResult.Title = "ElectroCardiograma";
             // 
+            // txtEstado
+            // 
+            this.txtEstado.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.txtEstado.Location = new System.Drawing.Point(652, 6);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
+            this.txtEstado.Size = new System.Drawing.Size(67, 13);
+            this.txtEstado.TabIndex = 50;
+            this.txtEstado.Text = "Sin Guardar";
+            // 
             // AgregarConsulta
             // 
             this.AccessibleName = "";
@@ -4990,6 +5017,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1199, 507);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.lblCampoRequerido);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.txtAuxilirAlergia);
@@ -5119,7 +5147,7 @@
             this.groupBox5.PerformLayout();
             this.tabDiagnostico.ResumeLayout(false);
             this.tabDiagnostico.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCostoConsulta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCostoConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuentoPorcentaje)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -5336,7 +5364,7 @@
         private System.Windows.Forms.ComboBox cb_Consulta_EscalaTiempo;
         private System.Windows.Forms.CheckBox chk_DiagnosticoEstado;
         private System.Windows.Forms.Label lblCampoRequerido;
-        private System.Windows.Forms.NumericUpDown txtCostoConsulta;
+        private System.Windows.Forms.NumericUpDown numCostoConsulta;
         private System.Windows.Forms.TextBox txtPadecimientoActual;
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.ComboBox cb_Abdomen_TamanoOrganos;
@@ -5532,5 +5560,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown txtIMC;
         private System.Windows.Forms.OpenFileDialog openFileElectroResult;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }

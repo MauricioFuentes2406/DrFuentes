@@ -18,32 +18,10 @@ namespace Frm
             InitializeComponent();
             this._tipoUsuario = tipoUsuario;
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void Secretaria_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCliente_Click(object sender, EventArgs e)
         {
             new MantenimientoCliente(this._tipoUsuario).Show();
@@ -52,6 +30,14 @@ namespace Frm
         private void button4_Click(object sender, EventArgs e)
         {
             Frm.Citas.frmGeneralCitas frmCitas = new Citas.frmGeneralCitas(this._tipoUsuario);
+            frmCitas.ShowDialog();
+            frmCitas.Dispose();
         }
+
+        private void Secretaria_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+       
     }
 }

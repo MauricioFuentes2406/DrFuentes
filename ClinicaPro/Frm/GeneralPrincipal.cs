@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-// Librerias Añadias
-using ClinicaPro.DB.Consulta.Vistas;
-using ClinicaPro.Entities;
-using Frm.Properties;
-
+﻿
 namespace Frm
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    // Librerias Añadias
+    using ClinicaPro.DB.Consulta.Vistas;
+    using ClinicaPro.Entities;
+    using Frm.Properties;
+
     public partial class GeneralPrincipal : Form
-    {
-        public int idCliente { get; set; }
-        public int IdTipoUsuario { get; set; }
-        public String nombreCompleto { get; set; }
+    {       
+        public int IdTipoUsuario { get; set; }        
+        /// <summary>
+        /// Almacenas los Id de los seguimientos que se dejaran como isVisto en la BD
+        /// </summary>
         private List<int> _IdSeguimientoRemove;
         public GeneralPrincipal(int idTipoUsuario)
         {
@@ -32,7 +34,7 @@ namespace Frm
             cargarNotificaciones();
         }
         /// <summary>
-        /// Cuenta el numero de registros desde la BaseDatos
+        /// Cuenta el numero de seguimientos activos que hay , y cambia el color si hay registros
         /// </summary>
         private void  SeguimientoFormatoLoad()
         {
@@ -43,17 +45,14 @@ namespace Frm
                 this.btnSeguimientos.BackColor = Color.AliceBlue;
                 this.btnSeguimientos.Text = String.Format("El número de seguimientos hoy:  {0}  ",countSeguimientos);
             }
-        }
-        /// <summary>
-        /// Cuenta las filas que tiene DgSeguimientos
-        /// </summary>             
+        }                
         #region Eventos
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
             new Frm.Reportes.frmReporteGeneral(this.IdTipoUsuario).Show();
         }
-        private void button7_Click(object sender, EventArgs e)
+        private void btnMantemientoCliente_Click(object sender, EventArgs e)
         {
             MantenimientoCliente Cl = new MantenimientoCliente(this.IdTipoUsuario);
             Cl.Show();
@@ -86,14 +85,17 @@ namespace Frm
                 ventanaConfiguracionGeneral.ShowDialog();
             }
         }
+        /// <summary>
+        /// En Seguimientos , si usuario  hace click en la  primera columna(check), lo elimina de la lista globlal _IdSeguimiento
+        /// </summary>       
         private void dgSeguimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.ColumnIndex == 0)
+                if (e.ColumnIndex == 0)  // Index  cero = DataGridViewImage 
                 {
                     int IdSeguimiento = (int)this.dgSeguimientos.Rows[e.RowIndex].Cells["IdSeguimiento"].Value;
-                    if (this.dgSeguimientos.CurrentRow.Cells[0].Tag == null)
+                    if (this.dgSeguimientos.CurrentRow.Cells[0].Tag == null)  
                     {
                         this.dgSeguimientos.CurrentRow.Cells[0].Value = Resources.successGreen24;
                         this.dgSeguimientos.CurrentRow.Cells[0].Tag = true;
@@ -102,7 +104,7 @@ namespace Frm
                     else
                     {
                         this.dgSeguimientos.CurrentRow.Cells[0].Value = Resources.successGray;
-                        this.dgSeguimientos.CurrentRow.Cells[0].Tag = null;
+                        this.dgSeguimientos.CurrentRow.Cells[0].Tag = null; 
                         this._IdSeguimientoRemove.Remove(IdSeguimiento);
                     }
                 }
@@ -116,16 +118,19 @@ namespace Frm
         {
             Application.Exit();
         }
+        /// <summary>
+        /// Oculta el panel de Seguimiento
+        /// </summary>                
         private void btnOcultarPanel_Click(object sender, EventArgs e)
         {
-            RemoveSeguimientos();
+            RemoveSeguimientosDataGrid();
             this.panelSeguimiento.Visible = false;
         }
         private void btnSeguimientos_Click(object sender, EventArgs e)
         {
             if (this.panelSeguimiento.Visible)
             {
-                RemoveSeguimientos();
+                RemoveSeguimientosDataGrid();
                 this.panelSeguimiento.Visible = false;
             }
             else
@@ -157,6 +162,9 @@ namespace Frm
                 this.btnSeguimientos.Text = String.Format("El número de seguimientos hoy:  {0}  ", countSeguimientos);
             }
         }
+        /// <summary>
+        /// Para el desarrollo , se cambio el lugar del panel de Seguimientos, esta funciona la pone en su lugar
+        /// </summary>
         private void ubicarPanel()
         {
             this.panelSeguimiento.Location = new System.Drawing.Point(0, 24);
@@ -166,7 +174,10 @@ namespace Frm
             this.dgSeguimientos.Columns["IdSeguimiento"].Visible = false; // idSeguimient0
             this.dgSeguimientos.Columns["isVisto"].Visible = false;  // isVisto          
         }
-        private void RemoveSeguimientos()
+        /// <summary>
+        /// Quita los seguimientos que han sido marcados visto en el GRID, y se actulizan esos registros como Visto , no se borran de la BD 
+        /// </summary>
+        private void RemoveSeguimientosDataGrid()
         {
             if (_IdSeguimientoRemove.Count > 0)
             {
@@ -186,19 +197,20 @@ namespace Frm
                     SeguimientoFormatoClose();
                 }
                 catch (Exception)
-                {
-                    throw;
+                {                 
                 }
             }
         }
         #endregion                            
-    #region Notificaciones
-
+        #region Notificaciones
+        /// <summary>
+        /// Carga las notificaciones que existan para el día actual
+        /// </summary>
      private void cargarNotificaciones ()
     {        
         ClinicaPro.BL.OrdenarNotificacionesBL.cargar(this.dgNotificaciones, ClinicaPro.DB.Notificaciones.NotificaionesDB.ListarHoy());        
     }
-   private void btnAgregar_Click_1(object sender, EventArgs e)
+   private void btnAgregarNotificacion_Click_1(object sender, EventArgs e)
    {
        using (Frm.Notificacion.frmNotificacion frmNoti = new Notificacion.frmNotificacion())
        {
@@ -207,23 +219,22 @@ namespace Frm
        this.dgNotificaciones.Columns.Clear();
        cargarNotificaciones();
    }
-    #endregion   
-   private void btnEliminar_Click(object sender, EventArgs e)
+   private void btnEliminarNotificacion_Click(object sender, EventArgs e)
    {
-       if( dgNotificaciones.SelectedRows.Count == 1)
+       if (dgNotificaciones.SelectedRows.Count == 1)
        {
-           bool result  ;
-            result = ClinicaPro.DB.Notificaciones.NotificaionesDB.Eliminar((int)dgNotificaciones.CurrentRow.Cells["Id"].Value);
-            if (result)
-            {
-                cargarNotificaciones();
-                MessageBox.Show("Se ha eliminado de la Base Datos");
-            }else
-                MessageBox.Show("Hubo un error");
+           bool result;
+           result = ClinicaPro.DB.Notificaciones.NotificaionesDB.Eliminar((int)dgNotificaciones.CurrentRow.Cells["Id"].Value);
+           if (result)
+           {
+               cargarNotificaciones();
+               MessageBox.Show("Se ha eliminado de la Base Datos");
+           }
+           else
+               MessageBox.Show("Hubo un error");
        }
        else MessageBox.Show("Selecciona una sola Fila ");
    }
-
-
+    #endregion     
     }
 }

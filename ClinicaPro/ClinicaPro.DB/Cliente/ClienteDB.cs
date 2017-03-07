@@ -180,6 +180,9 @@ namespace ClinicaPro.DB.Cliente
                                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return -1;
         }
+        /// <summary>
+        ///  Cliente no es parte de la PK de consulta
+        /// </summary>                
         private void EliminarConsultasAsociadas(Entities.Cliente  Entidad,int idTipoUsuario)
         {
            using(ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities())

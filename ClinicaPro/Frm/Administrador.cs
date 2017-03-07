@@ -21,7 +21,7 @@ namespace Frm
 
         private void button7_Click(object sender, EventArgs e)
         {
-            new MantenimientoUsuarios().Show();
+            new MantenimientoUsuarios(this._IdTipoUsuario).Show();
         }
 
         private void Administrador_Load(object sender, EventArgs e)

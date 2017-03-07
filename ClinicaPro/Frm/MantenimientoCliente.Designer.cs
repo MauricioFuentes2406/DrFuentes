@@ -161,7 +161,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MantenimientoCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "MantenimientoCliente";
+            this.Text = "Mantenimiento Cliente";
             this.Load += new System.EventHandler(this.MantenimientoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.ResumeLayout(false);

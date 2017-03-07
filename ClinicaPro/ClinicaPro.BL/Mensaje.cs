@@ -10,7 +10,7 @@ namespace ClinicaPro.BL
     public class Mensaje
     {
         /// <summary>
-        ///  Windows Dialogog, Pregunta al usuario si esta seguro de Eliminar
+        ///  Windows Dialog, Pregunta al usuario si esta seguro de Eliminar
         /// </summary>
         /// <returns></returns>
         public static bool  isSeguroDeEliminar()

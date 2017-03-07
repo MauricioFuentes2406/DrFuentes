@@ -197,8 +197,6 @@ namespace ClinicaPro.DB.Consulta
                         select tabla.IdConsulta).ToList();
             }
         }
-
-
         //public void  ConsultasXMes()
         //{
         //    using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())

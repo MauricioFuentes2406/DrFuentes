@@ -54,6 +54,7 @@
             this.txtUsername.TabIndex = 0;
             this.txtUsername.Text = "Username";
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // txtPassword
             // 
@@ -68,6 +69,7 @@
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             this.txtPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseDown);
             // 
             // panel1

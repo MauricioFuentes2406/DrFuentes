@@ -91,6 +91,8 @@
             this.tabAlergias = new System.Windows.Forms.TabPage();
             this.dgAlergias = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dgElectros = new System.Windows.Forms.DataGridView();
+            this.AbrirArchivo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.dgSeguimientos = new System.Windows.Forms.DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
@@ -115,15 +117,12 @@
             this.chkActivarFiltro = new System.Windows.Forms.CheckBox();
             this.btnFiltrarXNumeroCliente = new System.Windows.Forms.Button();
             this.btnFiltrarPorCliente = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMensajeInformativo = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkMes = new System.Windows.Forms.CheckBox();
             this.saveFileElectro = new System.Windows.Forms.SaveFileDialog();
-            this.dgElectros = new System.Windows.Forms.DataGridView();
-            this.AbrirArchivo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabGeneral.SuspendLayout();
             this.tabConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsulta)).BeginInit();
@@ -184,6 +183,7 @@
             this.tabAlergias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).BeginInit();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgElectros)).BeginInit();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).BeginInit();
             this.tabPage10.SuspendLayout();
@@ -196,7 +196,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgElectros)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -1015,6 +1014,32 @@
             this.tabPage8.Text = "Electros";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // dgElectros
+            // 
+            this.dgElectros.AllowUserToAddRows = false;
+            this.dgElectros.AllowUserToDeleteRows = false;
+            this.dgElectros.AllowUserToOrderColumns = true;
+            this.dgElectros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgElectros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgElectros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AbrirArchivo});
+            this.dgElectros.Location = new System.Drawing.Point(7, 20);
+            this.dgElectros.Name = "dgElectros";
+            this.dgElectros.ReadOnly = true;
+            this.dgElectros.Size = new System.Drawing.Size(947, 359);
+            this.dgElectros.TabIndex = 7;
+            this.dgElectros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgElectros_CellContentClick);
+            // 
+            // AbrirArchivo
+            // 
+            this.AbrirArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AbrirArchivo.HeaderText = "File";
+            this.AbrirArchivo.MinimumWidth = 15;
+            this.AbrirArchivo.Name = "AbrirArchivo";
+            this.AbrirArchivo.ReadOnly = true;
+            // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.dgSeguimientos);
@@ -1214,7 +1239,7 @@
             this.groupBox1.Controls.Add(this.btnFiltrarXNumeroCliente);
             this.groupBox1.Controls.Add(this.btnFiltrarPorCliente);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Location = new System.Drawing.Point(339, 1);
+            this.groupBox1.Location = new System.Drawing.Point(271, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(501, 70);
             this.groupBox1.TabIndex = 40;
@@ -1284,20 +1309,6 @@
             this.btnFiltrarPorCliente.UseWaitCursor = true;
             this.btnFiltrarPorCliente.Click += new System.EventHandler(this.btnFiltrarPorCliente_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = global::Frm.Properties.Resources.unchecked_24;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(0, 0);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(92, 38);
-            this.btnCancelar.TabIndex = 44;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1326,7 +1337,7 @@
             this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(108, 1);
+            this.btnRefresh.Location = new System.Drawing.Point(12, 5);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(38, 36);
             this.btnRefresh.TabIndex = 47;
@@ -1338,7 +1349,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.chkMes);
-            this.groupBox2.Location = new System.Drawing.Point(152, 3);
+            this.groupBox2.Location = new System.Drawing.Point(85, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(166, 66);
             this.groupBox2.TabIndex = 48;
@@ -1361,32 +1372,6 @@
             this.saveFileElectro.DefaultExt = "pdf";
             this.saveFileElectro.Filter = "PDF Files (*.pdf)|*.pdf";
             // 
-            // dgElectros
-            // 
-            this.dgElectros.AllowUserToAddRows = false;
-            this.dgElectros.AllowUserToDeleteRows = false;
-            this.dgElectros.AllowUserToOrderColumns = true;
-            this.dgElectros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgElectros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgElectros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AbrirArchivo});
-            this.dgElectros.Location = new System.Drawing.Point(7, 20);
-            this.dgElectros.Name = "dgElectros";
-            this.dgElectros.ReadOnly = true;
-            this.dgElectros.Size = new System.Drawing.Size(947, 359);
-            this.dgElectros.TabIndex = 7;
-            this.dgElectros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgElectros_CellContentClick);
-            // 
-            // AbrirArchivo
-            // 
-            this.AbrirArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AbrirArchivo.HeaderText = "File";
-            this.AbrirArchivo.MinimumWidth = 15;
-            this.AbrirArchivo.Name = "AbrirArchivo";
-            this.AbrirArchivo.ReadOnly = true;
-            // 
             // Expediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1396,7 +1381,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.tabGeneral);
             this.Controls.Add(this.txtMensajeInformativo);
             this.Controls.Add(this.groupBox1);
@@ -1467,6 +1451,7 @@
             this.tabAlergias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).EndInit();
             this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgElectros)).EndInit();
             this.tabPage9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).EndInit();
             this.tabPage10.ResumeLayout(false);
@@ -1483,7 +1468,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroCliente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgElectros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1533,7 +1517,6 @@
         private System.Windows.Forms.DataGridView dgApaDigestivo;
         private System.Windows.Forms.TabPage tabCoordinacioMarcha;
         private System.Windows.Forms.DataGridView dgCoordinacion;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabEstadoEmocional;
         private System.Windows.Forms.DataGridView dgEstadoEmocional;

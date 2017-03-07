@@ -49,6 +49,8 @@
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cbTipoSangre = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbRangoEdad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).BeginInit();
@@ -61,7 +63,7 @@
             // 
             this.btnEViviendaDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEViviendaDetalle.Image = global::Frm.Properties.Resources.search;
-            this.btnEViviendaDetalle.Location = new System.Drawing.Point(164, 333);
+            this.btnEViviendaDetalle.Location = new System.Drawing.Point(160, 394);
             this.btnEViviendaDetalle.Name = "btnEViviendaDetalle";
             this.btnEViviendaDetalle.Size = new System.Drawing.Size(46, 40);
             this.btnEViviendaDetalle.TabIndex = 0;
@@ -71,6 +73,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cbTipoSangre);
             this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Controls.Add(this.gbRangoEdad);
             this.groupBox1.Controls.Add(this.txtIdCliente);
@@ -85,7 +89,7 @@
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(22, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 301);
+            this.groupBox1.Size = new System.Drawing.Size(337, 362);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Métodos  de Filtrado";
@@ -104,7 +108,7 @@
             this.gbRangoEdad.Controls.Add(this.label6);
             this.gbRangoEdad.Controls.Add(this.txtEdadMaxima);
             this.gbRangoEdad.Controls.Add(this.txtEdadMinima);
-            this.gbRangoEdad.Location = new System.Drawing.Point(22, 226);
+            this.gbRangoEdad.Location = new System.Drawing.Point(22, 281);
             this.gbRangoEdad.Name = "gbRangoEdad";
             this.gbRangoEdad.Size = new System.Drawing.Size(279, 57);
             this.gbRangoEdad.TabIndex = 3;
@@ -255,12 +259,31 @@
             this.txtNombre.Size = new System.Drawing.Size(109, 20);
             this.txtNombre.TabIndex = 1;
             // 
+            // cbTipoSangre
+            // 
+            this.cbTipoSangre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoSangre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoSangre.FormattingEnabled = true;
+            this.cbTipoSangre.Location = new System.Drawing.Point(22, 239);
+            this.cbTipoSangre.Name = "cbTipoSangre";
+            this.cbTipoSangre.Size = new System.Drawing.Size(109, 21);
+            this.cbTipoSangre.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Tipo de Sangre";
+            // 
             // ClienteBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(411, 385);
+            this.ClientSize = new System.Drawing.Size(411, 446);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEViviendaDetalle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -305,5 +328,7 @@
         private System.Windows.Forms.NumericUpDown txtEdadMaxima;
         private System.Windows.Forms.NumericUpDown txtEdadMinima;
         private System.Windows.Forms.MaskedTextBox txtCedula;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbTipoSangre;
     }
 }

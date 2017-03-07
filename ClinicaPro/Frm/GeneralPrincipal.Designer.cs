@@ -80,6 +80,10 @@
             // 
             // dgNotificaciones
             // 
+            this.dgNotificaciones.AllowUserToAddRows = false;
+            this.dgNotificaciones.AllowUserToDeleteRows = false;
+            this.dgNotificaciones.AllowUserToResizeColumns = false;
+            this.dgNotificaciones.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
@@ -132,7 +136,7 @@
             this.btnEliminar.TabIndex = 19;
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminarNotificacion_Click);
             // 
             // btnAgregar
             // 
@@ -146,7 +150,7 @@
             this.btnAgregar.TabIndex = 18;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregarNotificacion_Click_1);
             // 
             // label1
             // 
@@ -235,7 +239,7 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.btnMantemientoCliente_Click);
             // 
             // panel4
             // 

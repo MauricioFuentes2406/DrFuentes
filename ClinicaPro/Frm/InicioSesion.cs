@@ -18,14 +18,23 @@ namespace Frm
         {
             InitializeComponent();
         }         
-        private void btnIniciar_Click(object sender, EventArgs e)
-        {                            
-           //  int TipoUsuario  =  new UsuarioDB().Autentificar(this.txtUsername.Text, this.txtPassword.Text);
-            // if (TipoUsuario <= 0) { MessageBox.Show("Nombre usuario y Contraseña Incorrecta","Inicio",MessageBoxButtons.OK,MessageBoxIcon.Error); return; }
-               
-            //new AuxiliarLogin(TipoUsuario).Show();
-            new AuxiliarLogin(1).Show();
+        private void IniciarSesion()
+        {
+            int TipoUsuario = new UsuarioDB().Autentificar(this.txtUsername.Text, this.txtPassword.Text);
+            if (TipoUsuario <= 0)
+            {
+                txtUsername.ResetText();
+                txtPassword.ResetText();
+                MessageBox.Show("Nombre usuario y Contraseña Incorrecta", "Inicio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;               
+            }
+            new AuxiliarLogin(TipoUsuario).Show();
+            // new AuxiliarLogin(1).Show();
             this.Hide();                               
+        }
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            IniciarSesion();
         }
         private void InicioSesion_Load(object sender, EventArgs e)
         {
@@ -69,6 +78,26 @@ namespace Frm
                 this.txtPassword.ResetText();
                 this.txtPassword.Multiline = false;
                 this.txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (int)Keys.Enter)
+            {
+                IniciarSesion();
+            }
+        }
+        /// <summary>
+        ///  Cuando se toca enter, se dirige al sigt control (usa el TabOrder en referencia al orden)
+        /// </summary>                
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (int)Keys.Enter)
+            {
+                Control p;
+                p = ((TextBox)sender).Parent;
+                p.SelectNextControl(ActiveControl, true, true, true, true);
             }
         }        
         

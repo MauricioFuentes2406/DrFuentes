@@ -20,29 +20,31 @@ namespace Frm
     {
         public bool isModificar { get; set; }
         public int idAlergia { get; set; }
+        /// <summary>
+        /// Tamaño maximo  varchar en la BD  dia 3-7-2017
+        /// </summary>
+        private int varcharLenghDB = 50; 
         public AgregarAlergia()
         {
             InitializeComponent();
             isModificar = false;
         }
-    
+        ///<summary>
+        /// Guarcar Cliente  
+        /// Logica: 
+        ///  1. Crear parametro necesario  Boleano isModificar 
+        ///  2. Validar los controles del formulario  - Falso continua, True termina
+        ///  3. Crear Entidad Cliente, llenar los campos con los valores en los controles
+        ///  4. Compara el valor de idCLiente , si es -1 Nuevo registro, distinto a -1 Modifica
+        ///  5. LLama al controlador de ClienteDB  para que lo añada  a Base Datos            
+        ///  6.Agregar returna el id , la propiedad idCliente de esta ventana adquiere el valor
+        ///  7.Limpia los campos            
+        ///  8.GuardarResultado guarda la respuesta del mensaje de Dialogo 
+        ///  9.Si GuardarResultado es ok cierra esta ventana;
+        /// 
+        ///</summary>
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            ///<summary>
-            /// Guarcar Cliente  
-            /// Logica: 
-            ///  1. Crear parametro necesario  Boleano isModificar 
-            ///  2. Validar los controles del formulario  - Falso continua, True termina
-            ///  3. Crear Entidad Cliente, llenar los campos con los valores en los controles
-            ///  4. Compara el valor de idCLiente , si es -1 Nuevo registro, distinto a -1 Modifica
-            ///  5. LLama al controlador de ClienteDB  para que lo añada  a Base Datos            
-            ///  6.Agregar returna el id , la propiedad idCliente de esta ventana adquiere el valor
-            ///  7.Limpia los campos            
-            ///  8.GuardarResultado guarda la respuesta del mensaje de Dialogo 
-            ///  9.Si GuardarResultado es ok cierra esta ventana;
-            /// 
-            ///</summary>
-
+        {           
             Boolean isModificar = false;
 
             ClinicaPro.Entities.TipoAlergia tipoAlergia = new ClinicaPro.Entities.TipoAlergia();
@@ -55,12 +57,11 @@ namespace Frm
             if (isModificar) { tipoAlergia.idAlergia = this.idAlergia; }
 
             ClinicaPro.DB.Consulta.TipoAlergiaDB tipoAlergiaDB = new ClinicaPro.DB.Consulta.TipoAlergiaDB();
-            tipoAlergiaDB.Agregar_Modificar(tipoAlergia, isModificar);
+            int result = tipoAlergiaDB.Agregar_Modificar(tipoAlergia, isModificar);
 
-            MessageBox.Show(Mensajes.Agregar_Modificar,
-                                               "Agregar_Modificar Alergia",
-                                                 MessageBoxButtons.OKCancel,
-                                                   MessageBoxIcon.Information);
+            if (result > 1)
+                MensajeActualizacion();
+
             Limpiar();
         }
         private bool Validar()
@@ -81,10 +82,21 @@ namespace Frm
                 this.cbNombre.BackColor = System.Drawing.Color.AliceBlue;
                 hallazgo = true;
             }
-
+            if (cbNombre.Text.Length > varcharLenghDB)
+            {
+                detalles += "Campo Nombre" + Mensajes.TamanoTextoMuyGrande;
+                this.cbNombre.BackColor = System.Drawing.Color.AliceBlue;
+                hallazgo = true;
+            }
             if (txtEspecificacion.Text == String.Empty)
             {
                 detalles += "Campo Especificacion" + Mensajes.Campo_Requerido;
+                this.txtEspecificacion.BackColor = System.Drawing.Color.AliceBlue;
+                hallazgo = true;
+            }
+            if (txtEspecificacion.Text.Length > varcharLenghDB)
+            {
+                detalles += "Campo Especificacion" + Mensajes.TamanoTextoMuyGrande;
                 this.txtEspecificacion.BackColor = System.Drawing.Color.AliceBlue;
                 hallazgo = true;
             }
@@ -126,6 +138,13 @@ namespace Frm
         {
             this.Close();            
             
+        }
+        private void MensajeActualizacion()
+        {
+            MessageBox.Show(Mensajes.Agregar_Modificar,
+                                               "Agregar_Modificar Alergia",
+                                                 MessageBoxButtons.OKCancel,
+                                                   MessageBoxIcon.Information);
         }
     }
 

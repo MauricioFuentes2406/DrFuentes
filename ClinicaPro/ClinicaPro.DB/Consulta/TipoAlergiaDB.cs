@@ -43,6 +43,7 @@ namespace ClinicaPro.DB.Consulta
                 Contexto.SaveChanges();
                 return tipoAlergia.idAlergia;
             }
+           
             ///<remark>No me acuerdo que iba a poner  </remark>
             catch (EntityException entityException)
             {                               

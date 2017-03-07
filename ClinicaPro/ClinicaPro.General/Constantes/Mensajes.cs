@@ -24,6 +24,7 @@ namespace ClinicaPro.General.Constantes
 
        #region Para las  Validaciones
 
+       public const String TamanoTextoMuyGrande = "El tamaño maximo de ese texto sobrepasa el maximo permitido para ese campo";
        public const String Campo_Requerido = " No puede quedar en blanco \n";
        public const String Campo_DatoIncompleto = " Está Incompleto, Llena el campo faltante  , o Elimínalo del todo";
        public const String Numero_Mayor_Cero = " Deberia ser un número mayor a Cero  \n";
@@ -44,7 +45,7 @@ namespace ClinicaPro.General.Constantes
        public const String ContrasenaNoCoincide = " Las Contraseñas no Coinciden  ";
        public const String FraseIgualPassword = "La frase para recordar no debe  ser igual a la contraseña  por seguridad ";
        public const String CorreoEnviado = "El correo ya ha sido enviado  ";
-       public const String GuardarPrimero = "Debes de guardar la consulta antes de crear el seguimiento";      
+       public const String GuardarPrimero = "Debes de guardar la consulta antes para poder realizar esta acción";      
        #endregion
 
        /// <summary>
