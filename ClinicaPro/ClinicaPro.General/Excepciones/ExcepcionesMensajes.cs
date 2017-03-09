@@ -15,6 +15,7 @@ namespace ClinicaPro.General.Excepciones
        public const String ExcepcionGeneral = " Ocurrío un  error ";
        public const String Id_Duplicada = " No se puede añadir un nuevo Registro , por que ya existe uno";
        public const String Error_En_BaseDatos = " Ocurrio un error en la Base de Datos  ";
+       public const String NombresRepetidos = "No necesitas añadir  un nuevo registro con un nombre repetido";
 
         #region Recomendaciones
        public const String Revisar_Servicio_MSSQL = "\n *Revise  el estado del servicio MSSQLSERVER , o si no aparece  ";

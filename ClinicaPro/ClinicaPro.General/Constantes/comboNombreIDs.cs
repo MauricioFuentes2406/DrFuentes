@@ -21,5 +21,7 @@ namespace ClinicaPro.General.Constantes
         public const string CategoriaIngreso = "IdCategoriaIngreso";  /// Tabla Categoria Ingreso
         public const string TipoUsuario = "IdTipoUsuario";  // Tabla TipoUsuario 
         public const string TipoExamenes = "IdTipoExamen";  // TablaTipoExaemnes
+        public const string TipoUnidad = "IdTipoUnidad"; // //Tabla InventarioTipoUnidad
+        public const string EstadoInventario = "IdEstado";// Tabla InventarioEstado
     }
 }

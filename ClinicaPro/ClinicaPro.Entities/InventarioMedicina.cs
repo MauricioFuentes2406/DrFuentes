@@ -21,14 +21,12 @@ public partial class InventarioMedicina
     public InventarioMedicina()
     {
 
-        this.GeneralTipoServicios = new HashSet<GeneralTipoServicio>();
+        this.GeneralTipoServicio = new HashSet<GeneralTipoServicio>();
 
     }
 
 
     public int IdArticulo { get; set; }
-
-    public int idTipoUnidad { get; set; }
 
     public string Nombre { get; set; }
 
@@ -40,11 +38,13 @@ public partial class InventarioMedicina
 
     public string Presentacion { get; set; }
 
-    public int Estado { get; set; }
 
 
+    public virtual InventarioEstado InventarioEstado { get; set; }
 
-    public virtual ICollection<GeneralTipoServicio> GeneralTipoServicios { private get; set; }
+    public virtual InventarioTipoUnidad InventarioTipoUnidad { get; set; }
+
+    public virtual ICollection<GeneralTipoServicio> GeneralTipoServicio { get; set; }
 
 }
 

@@ -23,7 +23,7 @@ public partial class GeneralTipoServicio
 
         this.Consultas = new HashSet<Consulta>();
 
-        this.InventarioMedicinas = new HashSet<InventarioMedicina>();
+        this.InventarioMedicina = new HashSet<InventarioMedicina>();
 
     }
 
@@ -40,7 +40,7 @@ public partial class GeneralTipoServicio
 
     public virtual ICollection<Consulta> Consultas { private get; set; }
 
-    public virtual ICollection<InventarioMedicina> InventarioMedicinas { protected get; set; }
+    public virtual ICollection<InventarioMedicina> InventarioMedicina { get; set; }
 
 }
 

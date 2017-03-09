@@ -43,8 +43,7 @@
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnExpediente = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCliente = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnGastosIngresos = new System.Windows.Forms.Button();
@@ -63,7 +62,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panelSeguimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +109,7 @@
             this.dgNotificaciones.RowTemplate.Height = 38;
             this.dgNotificaciones.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgNotificaciones.Size = new System.Drawing.Size(231, 415);
-            this.dgNotificaciones.TabIndex = 1;
+            this.dgNotificaciones.TabIndex = 0;
             // 
             // panel2
             // 
@@ -133,7 +131,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(128, 22);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(39, 31);
-            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.TabIndex = 1;
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminarNotificacion_Click);
@@ -147,7 +145,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(96, 22);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(39, 31);
-            this.btnAgregar.TabIndex = 18;
+            this.btnAgregar.TabIndex = 0;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregarNotificacion_Click_1);
@@ -172,14 +170,18 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button13);
             this.panel3.Controls.Add(this.btnCitas);
             this.panel3.Controls.Add(this.btnExpediente);
+            this.panel3.Controls.Add(this.btnConfiguracion);
             this.panel3.Controls.Add(this.btnConsulta);
-            this.panel3.Controls.Add(this.button7);
+            this.panel3.Controls.Add(this.btnGastosIngresos);
+            this.panel3.Controls.Add(this.btnCliente);
+            this.panel3.Controls.Add(this.button9);
             this.panel3.Location = new System.Drawing.Point(25, 59);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(686, 151);
-            this.panel3.TabIndex = 3;
+            this.panel3.Size = new System.Drawing.Size(686, 335);
+            this.panel3.TabIndex = 0;
             // 
             // btnCitas
             // 
@@ -189,7 +191,7 @@
             this.btnCitas.Location = new System.Drawing.Point(453, 10);
             this.btnCitas.Name = "btnCitas";
             this.btnCitas.Size = new System.Drawing.Size(115, 123);
-            this.btnCitas.TabIndex = 6;
+            this.btnCitas.TabIndex = 3;
             this.btnCitas.Text = "Ver Citas";
             this.btnCitas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCitas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -204,7 +206,7 @@
             this.btnExpediente.Location = new System.Drawing.Point(300, 10);
             this.btnExpediente.Name = "btnExpediente";
             this.btnExpediente.Size = new System.Drawing.Size(115, 123);
-            this.btnExpediente.TabIndex = 5;
+            this.btnExpediente.TabIndex = 2;
             this.btnExpediente.Text = "Expedientes";
             this.btnExpediente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExpediente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -219,48 +221,37 @@
             this.btnConsulta.Location = new System.Drawing.Point(158, 10);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(115, 123);
-            this.btnConsulta.TabIndex = 3;
+            this.btnConsulta.TabIndex = 1;
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConsulta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
-            // button7
+            // btnCliente
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = global::Frm.Properties.Resources.team1;
-            this.button7.Location = new System.Drawing.Point(28, 10);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 123);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Cliente";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.btnMantemientoCliente_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button13);
-            this.panel4.Controls.Add(this.btnConfiguracion);
-            this.panel4.Controls.Add(this.btnGastosIngresos);
-            this.panel4.Controls.Add(this.button9);
-            this.panel4.Location = new System.Drawing.Point(25, 243);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(686, 151);
-            this.panel4.TabIndex = 4;
+            this.btnCliente.FlatAppearance.BorderSize = 0;
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Image = global::Frm.Properties.Resources.team1;
+            this.btnCliente.Location = new System.Drawing.Point(28, 10);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(115, 123);
+            this.btnCliente.TabIndex = 0;
+            this.btnCliente.Text = "Cliente";
+            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnMantemientoCliente_Click);
             // 
             // button13
             // 
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Image = global::Frm.Properties.Resources.reportes;
-            this.button13.Location = new System.Drawing.Point(453, 12);
+            this.button13.Location = new System.Drawing.Point(453, 181);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(115, 123);
-            this.button13.TabIndex = 6;
+            this.button13.TabIndex = 7;
             this.button13.Text = "Reportes";
             this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -272,10 +263,10 @@
             this.btnConfiguracion.FlatAppearance.BorderSize = 0;
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfiguracion.Image = global::Frm.Properties.Resources.settings_4;
-            this.btnConfiguracion.Location = new System.Drawing.Point(291, 12);
+            this.btnConfiguracion.Location = new System.Drawing.Point(291, 181);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(115, 123);
-            this.btnConfiguracion.TabIndex = 4;
+            this.btnConfiguracion.TabIndex = 6;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -287,10 +278,10 @@
             this.btnGastosIngresos.FlatAppearance.BorderSize = 0;
             this.btnGastosIngresos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGastosIngresos.Image = global::Frm.Properties.Resources.point_of_service;
-            this.btnGastosIngresos.Location = new System.Drawing.Point(158, 12);
+            this.btnGastosIngresos.Location = new System.Drawing.Point(158, 181);
             this.btnGastosIngresos.Name = "btnGastosIngresos";
             this.btnGastosIngresos.Size = new System.Drawing.Size(115, 123);
-            this.btnGastosIngresos.TabIndex = 3;
+            this.btnGastosIngresos.TabIndex = 5;
             this.btnGastosIngresos.Text = "Gastos e Ingresos";
             this.btnGastosIngresos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGastosIngresos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -302,10 +293,10 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::Frm.Properties.Resources.barcode_1;
-            this.button9.Location = new System.Drawing.Point(28, 12);
+            this.button9.Location = new System.Drawing.Point(28, 181);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(115, 123);
-            this.button9.TabIndex = 2;
+            this.button9.TabIndex = 4;
             this.button9.Text = "Inventario";
             this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -358,7 +349,7 @@
             this.btnSeguimientos.Location = new System.Drawing.Point(0, 0);
             this.btnSeguimientos.Name = "btnSeguimientos";
             this.btnSeguimientos.Size = new System.Drawing.Size(970, 23);
-            this.btnSeguimientos.TabIndex = 9;
+            this.btnSeguimientos.TabIndex = 2;
             this.btnSeguimientos.Text = "Numero Seguimientos Hoy : ";
             this.btnSeguimientos.UseVisualStyleBackColor = true;
             this.btnSeguimientos.Click += new System.EventHandler(this.btnSeguimientos_Click);
@@ -432,7 +423,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelNotificaciones);
             this.Controls.Add(this.btnSeguimientos);
@@ -449,7 +439,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panelSeguimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSeguimientos)).EndInit();
             this.ResumeLayout(false);
@@ -463,9 +452,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnExpediente;
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Button button13;

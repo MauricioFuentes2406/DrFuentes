@@ -4923,7 +4923,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::Frm.Properties.Resources.unchecked_24;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(448, 453);
+            this.btnCancelar.Location = new System.Drawing.Point(449, 449);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 38);
             this.btnCancelar.TabIndex = 14;
@@ -4937,7 +4937,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::Frm.Properties.Resources.diskette;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.Location = new System.Drawing.Point(298, 453);
+            this.btnGuardar.Location = new System.Drawing.Point(601, 449);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(92, 38);
             this.btnGuardar.TabIndex = 13;

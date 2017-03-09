@@ -33,6 +33,17 @@ namespace ClinicaPro.BL
             else
                 MessageBox.Show(ExcepcionesMensajes.Sin_ConexionDB, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);            
         }
+       public static void DbUpdateException(System.Data.Entity.Infrastructure.DbUpdateException DbUpdate)
+       {
+           string InnerEx = DbUpdate.InnerException.InnerException.ToString();
+          if (InnerEx.Contains("Cannot insert duplicate key row in object") )
+          {
+              MessageBox.Show(ExcepcionesMensajes.NombresRepetidos,"Repetido",MessageBoxButtons.OK,MessageBoxIcon.Error);
+          }else
+          {                           
+               manejaExcepcion(new Exception());
+          }
+       }
        public   static void manejaDBInfraestructureDBEx(System.Data.Entity.Infrastructure.DbUpdateException DbUpdate)
         {
            if ( DbUpdate.InnerException.InnerException.ToString().Contains(@"Violation of PRIMARY KEY constraint 'PK_ElectroResultados'. Cannot insert duplicate key"));

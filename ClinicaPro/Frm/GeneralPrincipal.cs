@@ -32,6 +32,7 @@ namespace Frm
             ubicarPanel();
             SeguimientoFormatoLoad();
             cargarNotificaciones();
+            this.btnCliente.Focus();
         }
         /// <summary>
         /// Cuenta el numero de seguimientos activos que hay , y cambia el color si hay registros
@@ -45,6 +46,7 @@ namespace Frm
                 this.btnSeguimientos.BackColor = Color.AliceBlue;
                 this.btnSeguimientos.Text = String.Format("El número de seguimientos hoy:  {0}  ",countSeguimientos);
             }
+            
         }                
         #region Eventos
 
@@ -76,7 +78,7 @@ namespace Frm
         }
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            new MantenimientoInventario().Show();
+            new MantenimientoInventario(this.IdTipoUsuario).Show();
         }
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {

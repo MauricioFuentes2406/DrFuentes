@@ -57,7 +57,7 @@ namespace Frm
         }
         private void btnDiccionario_Click(object sender, EventArgs e)
         {
-            new frmDiccionario().Show();
+            new Frm.Diccionario.frmDiccionario().Show();
         }
 
         private void btnAlergias_Click(object sender, EventArgs e)

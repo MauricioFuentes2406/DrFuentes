@@ -4,6 +4,6 @@ E:\Practicas c#\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.dll
 E:\Practicas c#\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.pdb
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.dll
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\bin\Debug\ClinicaPro.General.pdb
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.csprojResolveAssemblyReference.cache
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.dll
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.pdb
-E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.General\obj\Debug\ClinicaPro.General.csprojResolveAssemblyReference.cache

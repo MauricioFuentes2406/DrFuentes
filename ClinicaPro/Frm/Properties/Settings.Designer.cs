@@ -34,5 +34,29 @@ namespace Frm.Properties {
                 this["LastDayEmailCitas"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isTemporalSuspended {
+            get {
+                return ((bool)(this["isTemporalSuspended"]));
+            }
+            set {
+                this["isTemporalSuspended"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("02/17/2017 22:54:00")]
+        public global::System.DateTime HoraDeSuspencion {
+            get {
+                return ((global::System.DateTime)(this["HoraDeSuspencion"]));
+            }
+            set {
+                this["HoraDeSuspencion"] = value;
+            }
+        }
     }
 }

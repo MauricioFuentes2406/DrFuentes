@@ -26,16 +26,22 @@ namespace Frm
 
         private void btnSecretaria_Click(object sender, EventArgs e)
         {
-            this._frmSecretaria = new Secretaria(_tipoUsuario);
-            _frmSecretaria.Show();
-            this.Hide();
+            using (this._frmSecretaria = new Secretaria(_tipoUsuario))
+            {
+                this.Hide();
+                _frmSecretaria.ShowDialog();
+            }
+            this.Visible = true;           
         }
 
         private void btnLaboratorio_Click(object sender, EventArgs e)
         {
             _frmLaboratorio = new Frm.Laboratorio.LaboratorioGeneral(_tipoUsuario);
-             _frmLaboratorio.Show();
             this.Hide();
+            _frmLaboratorio.ShowDialog();
+            _frmLaboratorio.Dispose();
+            this.Visible = true;
+            
         }
 
         private void btnAdministrador_Click(object sender, EventArgs e)
@@ -56,7 +62,7 @@ namespace Frm
         }
         private void AuxiliarLogin_Load(object sender, EventArgs e)
         {
-           
+            this.btnAdministrador.Focus();
         }
      /// <summary>
      ///  Se asegura que el programa deje de ejecutarse cuando se cierra la ventana sin entrar a ningun modulo

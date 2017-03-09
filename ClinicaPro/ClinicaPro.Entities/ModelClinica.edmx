@@ -603,18 +603,32 @@
           <Property Name="IdServicio" Type="int" Nullable="false" />
           <Property Name="idArticulo" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="InventarioEstado">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="InventarioMedicina">
           <Key>
             <PropertyRef Name="IdArticulo" />
           </Key>
-          <Property Name="IdArticulo" Type="int" Nullable="false" />
-          <Property Name="idTipoUnidad" Type="int" Nullable="false" />
+          <Property Name="IdArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTipoUnidad" Type="tinyint" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Precio" Type="int" Nullable="false" />
           <Property Name="Cantidad" Type="int" Nullable="false" />
           <Property Name="CantidadAlerta" Type="int" Nullable="false" />
           <Property Name="Presentacion" Type="varchar" MaxLength="50" />
-          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="IdEstado" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InventarioTipoUnidad">
+          <Key>
+            <PropertyRef Name="IdTipoUnidad" />
+          </Key>
+          <Property Name="IdTipoUnidad" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Notificaciones">
           <Key>
@@ -1378,7 +1392,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AntecedenteYDrogas_AntecedenteDrogra">
-          <End Role="AntecedenteDrogra" Type="Self.AntecedenteDrogra" Multiplicity="1" />
+          <End Role="AntecedenteDrogra" Type="Self.AntecedenteDrogra" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="AntecedenteYDrogas" Type="Self.AntecedenteYDrogas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AntecedenteDrogra">
@@ -1416,7 +1432,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Citas_Cliente">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Citas" Type="Self.Citas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -1814,7 +1832,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ElectroResultados_Consulta">
-          <End Role="Consulta" Type="Self.Consulta" Multiplicity="1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ElectroResultados" Type="Self.ElectroResultados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Consulta">
@@ -1826,7 +1846,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Examenes_Cliente">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Examenes" Type="Self.Examenes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -1981,8 +2003,34 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_InventarioMedicina_InventarioEstado">
+          <End Role="InventarioEstado" Type="Self.InventarioEstado" Multiplicity="1" />
+          <End Role="InventarioMedicina" Type="Self.InventarioMedicina" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InventarioEstado">
+              <PropertyRef Name="IdEstado" />
+            </Principal>
+            <Dependent Role="InventarioMedicina">
+              <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventarioMedicina_InventarioTipoUnidad">
+          <End Role="InventarioTipoUnidad" Type="Self.InventarioTipoUnidad" Multiplicity="1" />
+          <End Role="InventarioMedicina" Type="Self.InventarioMedicina" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InventarioTipoUnidad">
+              <PropertyRef Name="IdTipoUnidad" />
+            </Principal>
+            <Dependent Role="InventarioMedicina">
+              <PropertyRef Name="idTipoUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OtrosArchivosCliente_Cliente">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ClienteImagenesExamenesComplementarios" Type="Self.ClienteImagenesExamenesComplementarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -2181,7 +2229,9 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <EntitySet Name="GlasgowResultado" EntityType="Self.GlasgowResultado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ingresos" EntityType="Self.Ingresos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InsumosPorServicio" EntityType="Self.InsumosPorServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventarioEstado" EntityType="Self.InventarioEstado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InventarioMedicina" EntityType="Self.InventarioMedicina" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventarioTipoUnidad" EntityType="Self.InventarioTipoUnidad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notificaciones" EntityType="Self.Notificaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seguimiento" EntityType="Self.Seguimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -2685,6 +2735,14 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <AssociationSet Name="FK_InsumosPorServicio_InventarioMedicina" Association="Self.FK_InsumosPorServicio_InventarioMedicina">
             <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
             <End Role="InsumosPorServicio" EntitySet="InsumosPorServicio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventarioMedicina_InventarioEstado" Association="Self.FK_InventarioMedicina_InventarioEstado">
+            <End Role="InventarioEstado" EntitySet="InventarioEstado" />
+            <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventarioMedicina_InventarioTipoUnidad" Association="Self.FK_InventarioMedicina_InventarioTipoUnidad">
+            <End Role="InventarioTipoUnidad" EntitySet="InventarioTipoUnidad" />
+            <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
           </AssociationSet>
           <AssociationSet Name="FK_OtrosArchivosCliente_Cliente" Association="Self.FK_OtrosArchivosCliente_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
@@ -3195,22 +3253,8 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Precio" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Consultas" Relationship="Self.ConsultaServicios" FromRole="GeneralTipoServicio" ToRole="Consulta" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="InventarioMedicinas" Relationship="Self.InsumosPorServicio" FromRole="GeneralTipoServicio" ToRole="InventarioMedicina" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="IsPrecioEditable" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="InventarioMedicina">
-          <Key>
-            <PropertyRef Name="IdArticulo" />
-          </Key>
-          <Property Name="IdArticulo" Type="Int32" Nullable="false" />
-          <Property Name="idTipoUnidad" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Precio" Type="Int32" Nullable="false" />
-          <Property Name="Cantidad" Type="Int32" Nullable="false" />
-          <Property Name="CantidadAlerta" Type="Int32" Nullable="false" />
-          <Property Name="Presentacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Estado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="GeneralTipoServicios" Relationship="Self.InsumosPorServicio" FromRole="InventarioMedicina" ToRole="GeneralTipoServicio" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="InventarioMedicina" Relationship="ClinicaDrFuentesModel.InsumosPorServicio" FromRole="GeneralTipoServicio" ToRole="InventarioMedicina" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -3760,10 +3804,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
           <End Role="GeneralTipoServicio" Type="Self.GeneralTipoServicio" Multiplicity="*" />
         </Association>
-        <Association Name="InsumosPorServicio">
-          <End Role="GeneralTipoServicio" Type="Self.GeneralTipoServicio" Multiplicity="*" />
-          <End Role="InventarioMedicina" Type="Self.InventarioMedicina" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="ClinicaDrFuentesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AntecedenteHereditarios" EntityType="Self.AntecedenteHereditario" />
           <EntitySet Name="AntecedentePersonalesPatologicos" EntityType="Self.AntecedentePersonalesPatologico" />
@@ -3794,7 +3834,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <EntitySet Name="ExploracionManos" EntityType="Self.ExploracionMano" />
           <EntitySet Name="Familiars" EntityType="Self.Familiar" />
           <EntitySet Name="GeneralTipoServicios" EntityType="Self.GeneralTipoServicio" />
-          <EntitySet Name="InventarioMedicinas" EntityType="Self.InventarioMedicina" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TipoAlergias" EntityType="Self.TipoAlergia" />
           <EntitySet Name="ExpedienteTs" EntityType="Self.ExpedienteT" />
@@ -3973,10 +4012,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <AssociationSet Name="ConsultaServicios" Association="Self.ConsultaServicios">
             <End Role="Consulta" EntitySet="Consultas" />
             <End Role="GeneralTipoServicio" EntitySet="GeneralTipoServicios" />
-          </AssociationSet>
-          <AssociationSet Name="InsumosPorServicio" Association="Self.InsumosPorServicio">
-            <End Role="GeneralTipoServicio" EntitySet="GeneralTipoServicios" />
-            <End Role="InventarioMedicina" EntitySet="InventarioMedicinas" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -4224,6 +4259,21 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <AssociationSet Name="FK_ElectroResultados_Consulta" Association="ClinicaDrFuentesModel.FK_ElectroResultados_Consulta">
             <End Role="Consulta" EntitySet="Consultas" />
             <End Role="ElectroResultados" EntitySet="ElectroResultados" />
+          </AssociationSet>
+          <EntitySet Name="InventarioEstado" EntityType="ClinicaDrFuentesModel.InventarioEstado" />
+          <EntitySet Name="InventarioMedicina" EntityType="ClinicaDrFuentesModel.InventarioMedicina" />
+          <EntitySet Name="InventarioTipoUnidad" EntityType="ClinicaDrFuentesModel.InventarioTipoUnidad" />
+          <AssociationSet Name="FK_InventarioMedicina_InventarioEstado" Association="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioEstado">
+            <End Role="InventarioEstado" EntitySet="InventarioEstado" />
+            <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventarioMedicina_InventarioTipoUnidad" Association="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioTipoUnidad">
+            <End Role="InventarioTipoUnidad" EntitySet="InventarioTipoUnidad" />
+            <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
+          </AssociationSet>
+          <AssociationSet Name="InsumosPorServicio" Association="ClinicaDrFuentesModel.InsumosPorServicio">
+            <End Role="GeneralTipoServicio" EntitySet="GeneralTipoServicios" />
+            <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -5129,6 +5179,48 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="InventarioEstado">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InventarioMedicina" Relationship="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioEstado" FromRole="InventarioEstado" ToRole="InventarioMedicina" />
+        </EntityType>
+        <EntityType Name="InventarioMedicina">
+          <Key>
+            <PropertyRef Name="IdArticulo" />
+          </Key>
+          <Property Name="IdArticulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="CantidadAlerta" Type="Int32" Nullable="false" />
+          <Property Name="Presentacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InventarioEstado" Relationship="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioEstado" FromRole="InventarioMedicina" ToRole="InventarioEstado" />
+          <NavigationProperty Name="InventarioTipoUnidad" Relationship="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioTipoUnidad" FromRole="InventarioMedicina" ToRole="InventarioTipoUnidad" />
+          <NavigationProperty Name="GeneralTipoServicio" Relationship="ClinicaDrFuentesModel.InsumosPorServicio" FromRole="InventarioMedicina" ToRole="GeneralTipoServicio" />
+        </EntityType>
+        <EntityType Name="InventarioTipoUnidad">
+          <Key>
+            <PropertyRef Name="IdTipoUnidad" />
+          </Key>
+          <Property Name="IdTipoUnidad" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InventarioMedicina" Relationship="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioTipoUnidad" FromRole="InventarioTipoUnidad" ToRole="InventarioMedicina" />
+        </EntityType>
+        <Association Name="FK_InventarioMedicina_InventarioEstado">
+          <End Type="ClinicaDrFuentesModel.InventarioEstado" Role="InventarioEstado" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.InventarioMedicina" Role="InventarioMedicina" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_InventarioMedicina_InventarioTipoUnidad">
+          <End Type="ClinicaDrFuentesModel.InventarioTipoUnidad" Role="InventarioTipoUnidad" Multiplicity="1" />
+          <End Type="ClinicaDrFuentesModel.InventarioMedicina" Role="InventarioMedicina" Multiplicity="*" />
+        </Association>
+        <Association Name="InsumosPorServicio">
+          <End Type="ClinicaDrFuentesModel.GeneralTipoServicio" Role="GeneralTipoServicio" Multiplicity="*" />
+          <End Type="ClinicaDrFuentesModel.InventarioMedicina" Role="InventarioMedicina" Multiplicity="*" />
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5534,20 +5626,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="InventarioMedicinas">
-            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.InventarioMedicina">
-              <MappingFragment StoreEntitySet="InventarioMedicina">
-                <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
-                <ScalarProperty Name="idTipoUnidad" ColumnName="idTipoUnidad" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="CantidadAlerta" ColumnName="CantidadAlerta" />
-                <ScalarProperty Name="Presentacion" ColumnName="Presentacion" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="ClinicaDrFuentesModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -5583,14 +5661,6 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             </EndProperty>
             <EndProperty Name="GeneralTipoServicio">
               <ScalarProperty Name="idServicio" ColumnName="IdServicio" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="InsumosPorServicio" TypeName="ClinicaDrFuentesModel.InsumosPorServicio" StoreEntitySet="InsumosPorServicio">
-            <EndProperty Name="GeneralTipoServicio">
-              <ScalarProperty Name="idServicio" ColumnName="IdServicio" />
-            </EndProperty>
-            <EndProperty Name="InventarioMedicina">
-              <ScalarProperty Name="IdArticulo" ColumnName="idArticulo" />
             </EndProperty>
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ClinicaDrFuentesModel.Store.sp_alterdiagram" />
@@ -6374,6 +6444,58 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="InventarioEstado">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.InventarioEstado">
+              <MappingFragment StoreEntitySet="InventarioEstado">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventarioMedicina">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.InventarioMedicina">
+              <MappingFragment StoreEntitySet="InventarioMedicina">
+                <ScalarProperty Name="Presentacion" ColumnName="Presentacion" />
+                <ScalarProperty Name="CantidadAlerta" ColumnName="CantidadAlerta" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventarioTipoUnidad">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.InventarioTipoUnidad">
+              <MappingFragment StoreEntitySet="InventarioTipoUnidad">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdTipoUnidad" ColumnName="IdTipoUnidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_InventarioMedicina_InventarioEstado" TypeName="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioEstado" StoreEntitySet="InventarioMedicina">
+            <EndProperty Name="InventarioMedicina">
+              <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+            </EndProperty>
+            <EndProperty Name="InventarioEstado">
+              <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_InventarioMedicina_InventarioTipoUnidad" TypeName="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioTipoUnidad" StoreEntitySet="InventarioMedicina">
+            <EndProperty Name="InventarioMedicina">
+              <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+            </EndProperty>
+            <EndProperty Name="InventarioTipoUnidad">
+              <ScalarProperty Name="IdTipoUnidad" ColumnName="idTipoUnidad" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="InsumosPorServicio" TypeName="ClinicaDrFuentesModel.InsumosPorServicio" StoreEntitySet="InsumosPorServicio">
+            <EndProperty Name="InventarioMedicina">
+              <ScalarProperty Name="IdArticulo" ColumnName="idArticulo" />
+            </EndProperty>
+            <EndProperty Name="GeneralTipoServicio">
+              <ScalarProperty Name="idServicio" ColumnName="IdServicio" />
+            </EndProperty>
+          </AssociationSetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

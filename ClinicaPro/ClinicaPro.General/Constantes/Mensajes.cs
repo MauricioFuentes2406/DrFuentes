@@ -12,9 +12,7 @@ namespace ClinicaPro.General.Constantes
     /// </summary>
 
    public class Mensajes
-    {
-       
-
+    {       
        public const String Agregar_Modificar = "Los Datos se han actualizado correctamente ";
        public const String DeseaAbrirFRM_AgregarConsulta = "\n Desea abrir el formulario de consulta  ";
        public const String Seleccione_Una_Fila = " Seleccione una fila para continuar  ";
@@ -45,8 +43,10 @@ namespace ClinicaPro.General.Constantes
        public const String ContrasenaNoCoincide = " Las Contraseñas no Coinciden  ";
        public const String FraseIgualPassword = "La frase para recordar no debe  ser igual a la contraseña  por seguridad ";
        public const String CorreoEnviado = "El correo ya ha sido enviado  ";
-       public const String GuardarPrimero = "Debes de guardar la consulta antes para poder realizar esta acción";      
-       #endregion
+       public const String GuardarPrimero = "Debes de guardar la consulta antes para poder realizar esta acción";
+       public const String Suspended = "Has fallado los datos de ingresar  3 veces , mejor inténtalo en  5 Minutos ";
+       #endregion 
+
 
        /// <summary>
        /// Conteo de Que?
@@ -60,6 +60,7 @@ namespace ClinicaPro.General.Constantes
        public const String NosePuedoGuardar = "No se pudo guardar los datos en la Base de Datos";
        public const String PathTooLong = "El directorio donde desea guardar el es demasiado largo/nIntente guardarlo  en Documentos";
        public const String AccesoNoAutorizado = "No tienes los permisos para acceder a esa carpeta";
+       public const String FraseNoseEncontro = "No se encontro Frase asociada a ese Usuario\n Digito correctamente el nombre del usuario?";
        /// <summary>
        /// Respuesta  para  System.Security.SecurityException
        /// </summary>

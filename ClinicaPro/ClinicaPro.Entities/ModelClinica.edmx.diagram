@@ -34,7 +34,6 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExploracionMano" Width="1.5" PointX="14.25" PointY="38" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Familiar" Width="1.5" PointX="11.25" PointY="62.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.GeneralTipoServicio" Width="1.5" PointX="10.5" PointY="102.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicaDrFuentesModel.InventarioMedicina" Width="1.5" PointX="12.75" PointY="102.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.TipoAlergia" Width="1.5" PointX="0.5" PointY="49.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ExpedienteT" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
@@ -82,7 +81,6 @@
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaEstadoVivienda_ConsultaEstadoViviendaMateriales_Piso" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ConsultaExploracionFisica_ExploracionManos" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicaDrFuentesModel.ConsultaServicios" ManuallyRouted="false" />
-        <AssociationConnector Association="ClinicaDrFuentesModel.InsumosPorServicio" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.Vista_TiposAlergia_comboBox" Width="1.5" PointX="10.375" PointY="0.75" />
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ClienteAlergia" Width="1.875" PointX="2.375" PointY="57.375" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ClienteAlergias_Cliente" />
@@ -159,6 +157,12 @@
         <EntityTypeShape EntityType="ClinicaDrFuentesModel.ElectroResultados" Width="1.5" PointX="13.5" PointY="45.375" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ElectroResultados_Cliente" />
         <AssociationConnector Association="ClinicaDrFuentesModel.FK_ElectroResultados_Consulta" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.InventarioEstado" Width="1.5" PointX="10.5" PointY="105.875" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.InventarioMedicina" Width="1.5" PointX="12.75" PointY="102.5" />
+        <EntityTypeShape EntityType="ClinicaDrFuentesModel.InventarioTipoUnidad" Width="1.5" PointX="10.5" PointY="100.25" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioEstado" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.FK_InventarioMedicina_InventarioTipoUnidad" />
+        <AssociationConnector Association="ClinicaDrFuentesModel.InsumosPorServicio" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

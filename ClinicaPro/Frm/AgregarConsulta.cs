@@ -80,6 +80,7 @@ namespace Frm
                     recuperarDatosDeConsulta(this.idConsulta);
                 estadoConsulta();
             }
+          
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -104,6 +105,8 @@ namespace Frm
                                             "Agregar Consulta",
                                               MessageBoxButtons.OKCancel,
                                                 MessageBoxIcon.Information);
+                    estadoConsulta();
+
                 }
                 catch (Exception)
                 {
@@ -128,7 +131,7 @@ namespace Frm
         /// </summary>
         public void estadoConsulta() // Estetico
         {
-            if (idConsulta >= 1)
+            if (this.idConsulta >= 1)
                 txtEstado.Text = "Guardado";
             else
                 txtEstado.Text = "Sin guardar";
@@ -543,7 +546,7 @@ namespace Frm
         /// Guarda en la Base Datos todos los datos de los controles
         /// </summary>
         /// <param name="isModificar">false para agregar, true modificar</param>
-        private void GuardarTodos(bool isModificar)
+        private bool GuardarTodos(bool isModificar)
         {
             // Alergias es con CLiente, tiene su propio Metodo
             // Servicio Se Añade dentro de ConsultaDB             
@@ -699,9 +702,9 @@ namespace Frm
                 cAbdomen.IdConsulta = this.idConsulta;
                 cAbdomenDB.Agregar_Modificar(cAbdomen, isModificar);
 
-                AlergiasABaseDatos(isModificar);
-
+                AlergiasABaseDatos(isModificar);                    
                 scope.Complete();
+                return true;
             }
         }
         /// <summary>
@@ -714,7 +717,8 @@ namespace Frm
             Consulta consulta;
             ClinicaPro.DB.Consulta.ConsultaDB consultaDB = new ClinicaPro.DB.Consulta.ConsultaDB();
             consulta = Consulta_Controles_A_Clase();
-            consultaDB.Agregar_Modificar(consulta, isModificar);
+             this.idConsulta = consultaDB.Agregar_Modificar(consulta, isModificar);
+
         }
         /// <summary>
         /// Verifica si  hay objetos en la coleccion del ComboBox
@@ -824,7 +828,7 @@ namespace Frm
         }
         private void btnDiccionario_Click(object sender, EventArgs e)
         {
-            new Frm.frmDiccionario().ShowDialog();
+            new Frm.Diccionario.frmDiccionario().ShowDialog();
         }
         private void chk_AplicarDescuento_CheckedChanged(object sender, EventArgs e)
         {

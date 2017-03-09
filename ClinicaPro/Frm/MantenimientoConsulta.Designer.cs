@@ -105,12 +105,13 @@
             this.dgConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgConsulta.Location = new System.Drawing.Point(12, 101);
             this.dgConsulta.MultiSelect = false;
             this.dgConsulta.Name = "dgConsulta";
             this.dgConsulta.ReadOnly = true;
+            this.dgConsulta.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgConsulta.Size = new System.Drawing.Size(1028, 392);
             this.dgConsulta.TabIndex = 7;
             // 

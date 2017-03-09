@@ -133,7 +133,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AgregarAlergia";
-            this.Text = "AgregarAlergia";
+            this.Text = "Agregar Alergia";
             this.Load += new System.EventHandler(this.AgregarAlergia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

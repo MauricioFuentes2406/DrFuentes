@@ -198,7 +198,13 @@
     <Compile Include="Ingreso.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="InventarioEstado.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="InventarioMedicina.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioTipoUnidad.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelClinica.Context.cs">

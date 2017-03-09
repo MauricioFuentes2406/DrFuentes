@@ -115,6 +115,9 @@
     <Compile Include="GastosIngresos\IngresoDB.cs" />
     <Compile Include="GastosIngresos\Vistas\VGasto.cs" />
     <Compile Include="GastosIngresos\Vistas\VIngreso.cs" />
+    <Compile Include="Inventario\EstadoDB.cs" />
+    <Compile Include="Inventario\InventarioDB.cs" />
+    <Compile Include="Inventario\TipoUnidadDB.cs" />
     <Compile Include="Laboratorio\EstadoExamenDB.cs" />
     <Compile Include="Laboratorio\ExamenesDB.cs" />
     <Compile Include="Laboratorio\TipoExamenDB.cs" />
