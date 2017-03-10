@@ -35,24 +35,25 @@
             this.btnRespuestaGenerales = new System.Windows.Forms.Button();
             this.btnVacuna = new System.Windows.Forms.Button();
             this.btnDrogas = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnAlergias = new System.Windows.Forms.Button();
             this.btnDiccionario = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAlergias);
+            this.panel1.Controls.Add(this.btnDiccionario);
             this.panel1.Controls.Add(this.btnMaterialesCasa);
+            this.panel1.Controls.Add(this.btnServicios);
             this.panel1.Controls.Add(this.btnFamiliar);
             this.panel1.Controls.Add(this.btnRespuestaGenerales);
             this.panel1.Controls.Add(this.btnVacuna);
             this.panel1.Controls.Add(this.btnDrogas);
             this.panel1.Location = new System.Drawing.Point(35, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(770, 151);
+            this.panel1.Size = new System.Drawing.Size(770, 337);
             this.panel1.TabIndex = 4;
             // 
             // btnMaterialesCasa
@@ -130,23 +131,13 @@
             this.btnDrogas.UseVisualStyleBackColor = true;
             this.btnDrogas.Click += new System.EventHandler(this.btnDrogas_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnAlergias);
-            this.panel2.Controls.Add(this.btnDiccionario);
-            this.panel2.Controls.Add(this.btnServicios);
-            this.panel2.Location = new System.Drawing.Point(35, 260);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(770, 151);
-            this.panel2.TabIndex = 8;
-            // 
             // btnAlergias
             // 
             this.btnAlergias.BackgroundImage = global::Frm.Properties.Resources.molecule_100;
             this.btnAlergias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAlergias.FlatAppearance.BorderSize = 0;
             this.btnAlergias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlergias.Location = new System.Drawing.Point(328, 14);
+            this.btnAlergias.Location = new System.Drawing.Point(321, 180);
             this.btnAlergias.Name = "btnAlergias";
             this.btnAlergias.Size = new System.Drawing.Size(115, 123);
             this.btnAlergias.TabIndex = 9;
@@ -161,7 +152,7 @@
             this.btnDiccionario.FlatAppearance.BorderSize = 0;
             this.btnDiccionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiccionario.Image = global::Frm.Properties.Resources.dictionary__100;
-            this.btnDiccionario.Location = new System.Drawing.Point(173, 12);
+            this.btnDiccionario.Location = new System.Drawing.Point(166, 178);
             this.btnDiccionario.Name = "btnDiccionario";
             this.btnDiccionario.Size = new System.Drawing.Size(115, 123);
             this.btnDiccionario.TabIndex = 8;
@@ -176,7 +167,7 @@
             this.btnServicios.FlatAppearance.BorderSize = 0;
             this.btnServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServicios.Image = global::Frm.Properties.Resources.open;
-            this.btnServicios.Location = new System.Drawing.Point(28, 12);
+            this.btnServicios.Location = new System.Drawing.Point(21, 178);
             this.btnServicios.Name = "btnServicios";
             this.btnServicios.Size = new System.Drawing.Size(115, 123);
             this.btnServicios.TabIndex = 7;
@@ -192,7 +183,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(827, 432);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -203,7 +193,6 @@
             this.Text = "ConfiguracionGeneral";
             this.Load += new System.EventHandler(this.ConfiguracionGeneral_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -216,7 +205,6 @@
         private System.Windows.Forms.Button btnVacuna;
         private System.Windows.Forms.Button btnDrogas;
         private System.Windows.Forms.Button btnMaterialesCasa;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnDiccionario;
         private System.Windows.Forms.Button btnAlergias;

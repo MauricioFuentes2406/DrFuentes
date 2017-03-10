@@ -152,10 +152,9 @@ namespace Frm
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            new Frm.MantenimientoInventario(1).Show();
-        }        
-        
-
-      
+           // new Frm.MantenimientoInventario(1).Show();
+            //new testing().Show();
+            new Frm.Diccionario.frmDiccionario().Show();
+        }                      
     }
 }

@@ -15,6 +15,7 @@ using ClinicaPro.General.Constantes;
 using ClinicaPro.BL;
 using System.Speech.Recognition;
 using System.Transactions;
+using ClinicaPro.DB.Inventario;
 
 namespace Frm
 {
@@ -27,6 +28,9 @@ namespace Frm
         #region Atributos
         public int idCliente { get; set; }
         public String NombreCliente { get; set; }  //  uso estético
+        /// <summary>
+        /// Variable Global, g
+        /// </summary>
         public int idConsulta { get; set; }
         /// <summary>
         /// Sincroniza el contenido de lista con los datos visibles del Grid
@@ -38,6 +42,8 @@ namespace Frm
         BindingList<Drogas> listaDataGridDrogas;
         List<GeneralTipoServicio> listaOriginalServicio;
         BindingList<GeneralTipoServicio> listaGridServicios;
+        BindingList<InventarioDB.ArticulosInventario> ListaArticulos;
+
         /// <summary>
         /// <value>_isLLenadoRapido</value>
         ///  Indica q se va llenar con datos predefinidos y sin llenar las tablas relacionada como Ojos,Boca, etc
@@ -108,8 +114,9 @@ namespace Frm
                     estadoConsulta();
 
                 }
-                catch (Exception)
+                catch (Exception )
                 {
+
                 }
             }
         }
@@ -159,6 +166,7 @@ namespace Frm
             LlenarComboAparatoDigestivo();
             llenaComboTorax();
             LlenaComboServicio();
+            llenaComboInventario();
         }
         /// <summary>
         /// Chekea si han añadido servios al gridDeServicios 
@@ -242,6 +250,8 @@ namespace Frm
             cbServicios.SelectedIndex = 0;
             cbTipoAlergia.SelectedIndex = 0;
             cbVomito.SelectedIndex = 0;
+            cbArticulo.SelectedIndex = 0;
+
         }
         private void LimpiarTextTodos()
         {
@@ -702,7 +712,8 @@ namespace Frm
                 cAbdomen.IdConsulta = this.idConsulta;
                 cAbdomenDB.Agregar_Modificar(cAbdomen, isModificar);
 
-                AlergiasABaseDatos(isModificar);                    
+                AlergiasABaseDatos(isModificar);
+                ActualizarInventario();   
                 scope.Complete();
                 return true;
             }
@@ -713,12 +724,21 @@ namespace Frm
         /// <param name="isModificar"></param>
         private void GuardarRapido(bool isModificar)
         {
-            // Aveces solo se quisiera agregar un servicio
-            Consulta consulta;
-            ClinicaPro.DB.Consulta.ConsultaDB consultaDB = new ClinicaPro.DB.Consulta.ConsultaDB();
-            consulta = Consulta_Controles_A_Clase();
-             this.idConsulta = consultaDB.Agregar_Modificar(consulta, isModificar);
+            using (TransactionScope scope = new TransactionScope())  // scope Hace un RollBack si ocurre un error
+            {
+                Consulta consulta;
+                ClinicaPro.DB.Consulta.ConsultaDB consultaDB = new ClinicaPro.DB.Consulta.ConsultaDB();
+                consulta = Consulta_Controles_A_Clase();
+                this.idConsulta = consultaDB.Agregar_Modificar(consulta, isModificar);
+                ActualizarInventario();
+                AlergiasABaseDatos(isModificar);
 
+                 var exploracionFisica = ExploracionFisica_Controles_A_Clase();
+                exploracionFisica.IdConsulta = this.idConsulta;
+                 new ClinicaPro.DB.Consulta.ConsultaExploracionFisicaDB().Agregar_Modificar(exploracionFisica, isModificar);
+                
+                scope.Complete();
+            }                        
         }
         /// <summary>
         /// Verifica si  hay objetos en la coleccion del ComboBox
@@ -933,7 +953,7 @@ namespace Frm
         private void btnSeguimiento_Click(object sender, EventArgs e)
         {
             if (!isNuevaConsulta())
-                new Frm.Seguimientos.frmSeguimientos(idConsulta).ShowDialog();
+                new Frm.Seguimientos.frmSeguimientos(idConsulta,this.NombreCliente).ShowDialog(this);
             else
                 MessageBox.Show(Mensajes.GuardarPrimero, Mensajes.Upss_Falto_Algo, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -1020,7 +1040,7 @@ namespace Frm
                     listaGridServicios.Add(item);
                 }
                 dgServicios.DataSource = listaGridServicios;
-                ocultarColumnas_gdServicio();
+                ocultarColumnaDgServicio();
 
                 txtDescuentoPorcentaje.Value = (int)Entidad.Descuento;
                 if ((int)Entidad.Descuento > 0)
@@ -1160,7 +1180,7 @@ namespace Frm
             {
                 listaGridServicios = new BindingList<GeneralTipoServicio>();
                 this.dgServicios.DataSource = listaGridServicios;
-                ocultarColumnas_gdServicio();
+                ocultarColumnaDgServicio();
             }
             listaGridServicios.Add((GeneralTipoServicio)cbServicios.SelectedItem); 
         }
@@ -1170,7 +1190,7 @@ namespace Frm
             { return listaGridServicios.ToList(); }
             else { return null; }
         }
-        private void ocultarColumnas_gdServicio() // Estetico
+        private void ocultarColumnaDgServicio() // Estetico
         {
             this.dgServicios.Columns[comboNombreIDs.GeneralServicio].Visible = false;
         }
@@ -2013,7 +2033,6 @@ namespace Frm
             }
             else return true;
         }
-
         private void llenaComboDrogas()
         {
 
@@ -2328,7 +2347,61 @@ namespace Frm
             }
         }
         #endregion
-
+        #region Inventario
+        public void llenaComboInventario()
+        {
+            var list = ClinicaPro.DB.Inventario.InventarioDB.ListarParaCombo();
+            new ClinicaPro.BL.ComboBoxBL<InventarioDB.ArticulosInventario>().fuenteBaseDatos(cbArticulo, list, comboNombreIDs.Inventario);
+            if (this.cbArticulo.Items.Count != 0)
+            {
+                try
+                {
+                    var art = (InventarioDB.ArticulosInventario)cbArticulo.SelectedItem;
+                    txtArticuloUnidad.Text = art.Unidad;
+                }
+                catch (Exception)
+                {
+                                        
+                }               
+            }
+        }
+        /// <summary>
+        /// Agrega El articulo usado y la cantidad Utiliza en el GridInventario
+        /// </summary>                
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            if (ListaArticulos == null)
+            {
+                ListaArticulos = new BindingList<InventarioDB.ArticulosInventario>();
+                this.dgInventario.DataSource = ListaArticulos;                
+                ocultarColumnsDgInventario();
+            }           
+            var Articulo = (InventarioDB.ArticulosInventario)cbArticulo.SelectedItem;
+            Articulo.Cantidad_Utilizada = (int)this.numInventarioCantidadUtilizada.Value;
+            ListaArticulos.Add(Articulo);            
+        }
+        private void ocultarColumnsDgInventario()
+        {
+            this.dgInventario.Columns[comboNombreIDs.Inventario].Visible = false;
+        }
+        /// <summary>
+        ///  Coloca en el control Unidad , el tipo de Unidad del Articulo Seleccionado
+        /// </summary>                
+        private void cbArticulo_SelectionChangeCommitted(object sender, EventArgs e)
+        {            
+            var Articulo = (InventarioDB.ArticulosInventario)cbArticulo.SelectedItem;
+            this.txtArticuloUnidad.Text = Articulo.Unidad;
+        }
+        /// <summary>
+        /// Cuando se guarda la consulta, actualiza la cantidad unidades utlizados en caso de el usuario las registre
+        /// </summary>
+        private void ActualizarInventario ()
+        {
+            if (ListaArticulos == null) { return; }
+            if (ListaArticulos.Count == 0) { return; }              
+             InventarioDB.ActulizarCantidadExistente(ListaArticulos);
+        }
+        #endregion
         private void txtPeso_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == (int)Keys.Enter)
@@ -2378,7 +2451,6 @@ namespace Frm
                 p.SelectNextControl(ActiveControl, true, true, true, true);
             }
         }
-
         private void txtFrencuenciaCardiaca_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == (int)Keys.Enter)
@@ -2388,7 +2460,6 @@ namespace Frm
                 p.SelectNextControl(ActiveControl, true, true, true, true);
             }
         }
-
         private void txtFrecuenciaRespiratoria_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == (int)Keys.Enter)
@@ -2397,11 +2468,6 @@ namespace Frm
                 p = ((NumericUpDown)sender).Parent;
                 p.SelectNextControl(ActiveControl, true, true, true, true);
             }
-        }
-             
-      
-        
-
-       
+        }                                                    
     }
 }

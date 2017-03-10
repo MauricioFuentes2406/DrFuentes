@@ -32,19 +32,19 @@ public partial class InventarioMedicina
 
     public int Precio { get; set; }
 
-    public int Cantidad { get; set; }
-
     public int CantidadAlerta { get; set; }
 
     public string Presentacion { get; set; }
+
+    public int CantidadActual { get; set; }
 
 
 
     public virtual InventarioEstado InventarioEstado { get; set; }
 
-    public virtual InventarioTipoUnidad InventarioTipoUnidad { get; set; }
-
     public virtual ICollection<GeneralTipoServicio> GeneralTipoServicio { get; set; }
+
+    public virtual InventarioTipoUnidad InventarioTipoUnidad { get; set; }
 
 }
 

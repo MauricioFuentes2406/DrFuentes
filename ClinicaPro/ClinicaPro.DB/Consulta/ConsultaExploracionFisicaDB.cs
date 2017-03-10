@@ -52,12 +52,7 @@ namespace ClinicaPro.DB.Consulta
             {
                 manejaExcepcionesDB.manejaEntityException(entityException);
                 return -1;
-            }
-            catch (UpdateException sqlException)
-            {
-                manejaExcepcionesDB.UpdateExcepcion(sqlException);
-                return -1;
-            }
+            }            
             catch (NullReferenceException nullReference)
             {
                 manejaExcepcionesDB.manejaNullReference(nullReference);

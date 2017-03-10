@@ -15,6 +15,10 @@ namespace ClinicaPro.DB.Consulta
 {
     public class ConsultaDB : Abstract.IEstandar_ManejoDB<Entities.Consulta>
     {
+        /// <summary>
+        ///  Guarda Y modifica los datos de una Consulta y Los servicios Utilzados
+        /// </summary>                
+        /// <returns></returns>
         public int Agregar_Modificar(Entities.Consulta Entidad, Boolean isModificar)
         {
             try

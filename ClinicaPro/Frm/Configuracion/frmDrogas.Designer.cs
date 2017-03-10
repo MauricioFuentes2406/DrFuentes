@@ -156,6 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDrogas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Drogas";
             this.Load += new System.EventHandler(this.frmDrogas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgDrogas)).EndInit();

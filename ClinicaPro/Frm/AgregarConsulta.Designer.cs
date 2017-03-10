@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarConsulta));
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -397,13 +398,17 @@
             this.cbTipoAlergia = new System.Windows.Forms.ComboBox();
             this.dgAlergias = new System.Windows.Forms.DataGridView();
             this.tabServicio = new System.Windows.Forms.TabPage();
+            this.dgInventario = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.numInventarioCantidadUtilizada = new System.Windows.Forms.NumericUpDown();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtArticuloUnidad = new System.Windows.Forms.TextBox();
+            this.cbArticulo = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.dgServicios = new System.Windows.Forms.DataGridView();
             this.gbServicio = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.btnServicios = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.cbServicios = new System.Windows.Forms.ComboBox();
@@ -434,6 +439,7 @@
             this.lblCampoRequerido = new System.Windows.Forms.Label();
             this.openFileElectroResult = new System.Windows.Forms.OpenFileDialog();
             this.txtEstado = new System.Windows.Forms.TextBox();
+            this.toolTipLlenadoRapid0 = new System.Windows.Forms.ToolTip(this.components);
             this.tabGeneral.SuspendLayout();
             this.tabMoticoConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Consulta_NumTiempo)).BeginInit();
@@ -511,9 +517,11 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).BeginInit();
             this.tabServicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numInventarioCantidadUtilizada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.gbServicio.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tabDiagnostico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuentoPorcentaje)).BeginInit();
@@ -579,6 +587,8 @@
             this.tabMoticoConsulta.Size = new System.Drawing.Size(834, 396);
             this.tabMoticoConsulta.TabIndex = 7;
             this.tabMoticoConsulta.Text = "MotivoConsulta*";
+            this.tabMoticoConsulta.ToolTipText = "Sólo se Almacenan Los Datos de Motivo de Consulta, Servicios,Inventario,Alergias " +
+    "\nImágenes Relacionadas\nElectrocardiogramas";
             this.tabMoticoConsulta.UseVisualStyleBackColor = true;
             // 
             // chkLimpiarDatos
@@ -614,6 +624,8 @@
             this.btnLLenaodoRapido.TabIndex = 7;
             this.btnLLenaodoRapido.Text = "Llenado Rapido";
             this.btnLLenaodoRapido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTipLlenadoRapid0.SetToolTip(this.btnLLenaodoRapido, "Sólo se almacena los datos de \r\nMotivo de Consulta,Exploracion Fisica \n ,Alergias.Servicios, Diagnostico," +
+        " \r\nImagenes Relacionadas, y ElectroCardiogramas");
             this.btnLLenaodoRapido.UseVisualStyleBackColor = true;
             this.btnLLenaodoRapido.Click += new System.EventHandler(this.btnLLenaodoRapido_Click);
             // 
@@ -4551,6 +4563,8 @@
             // 
             // tabServicio
             // 
+            this.tabServicio.Controls.Add(this.dgInventario);
+            this.tabServicio.Controls.Add(this.groupBox5);
             this.tabServicio.Controls.Add(this.dgServicios);
             this.tabServicio.Controls.Add(this.gbServicio);
             this.tabServicio.Location = new System.Drawing.Point(4, 22);
@@ -4560,6 +4574,105 @@
             this.tabServicio.TabIndex = 6;
             this.tabServicio.Text = "Servicios*";
             this.tabServicio.UseVisualStyleBackColor = true;
+            // 
+            // dgInventario
+            // 
+            this.dgInventario.AllowUserToAddRows = false;
+            this.dgInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgInventario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInventario.Location = new System.Drawing.Point(346, 217);
+            this.dgInventario.MultiSelect = false;
+            this.dgInventario.Name = "dgInventario";
+            this.dgInventario.ReadOnly = true;
+            this.dgInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgInventario.Size = new System.Drawing.Size(446, 147);
+            this.dgInventario.TabIndex = 92;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnInventario);
+            this.groupBox5.Controls.Add(this.label23);
+            this.groupBox5.Controls.Add(this.numInventarioCantidadUtilizada);
+            this.groupBox5.Controls.Add(this.label33);
+            this.groupBox5.Controls.Add(this.txtArticuloUnidad);
+            this.groupBox5.Controls.Add(this.cbArticulo);
+            this.groupBox5.Controls.Add(this.label34);
+            this.groupBox5.Location = new System.Drawing.Point(39, 217);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(253, 173);
+            this.groupBox5.TabIndex = 19;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Inventario";
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.Image = global::Frm.Properties.Resources.list;
+            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInventario.Location = new System.Drawing.Point(138, 129);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(105, 38);
+            this.btnInventario.TabIndex = 15;
+            this.btnInventario.Text = "Añadir";
+            this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(15, 99);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(92, 13);
+            this.label23.TabIndex = 20;
+            this.label23.Text = "Cantidad Utilizada";
+            // 
+            // numInventarioCantidadUtilizada
+            // 
+            this.numInventarioCantidadUtilizada.Location = new System.Drawing.Point(139, 97);
+            this.numInventarioCantidadUtilizada.Name = "numInventarioCantidadUtilizada";
+            this.numInventarioCantidadUtilizada.Size = new System.Drawing.Size(104, 20);
+            this.numInventarioCantidadUtilizada.TabIndex = 19;
+            this.numInventarioCantidadUtilizada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(18, 23);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(42, 13);
+            this.label33.TabIndex = 15;
+            this.label33.Text = "Articulo";
+            // 
+            // txtArticuloUnidad
+            // 
+            this.txtArticuloUnidad.Location = new System.Drawing.Point(138, 60);
+            this.txtArticuloUnidad.Name = "txtArticuloUnidad";
+            this.txtArticuloUnidad.ReadOnly = true;
+            this.txtArticuloUnidad.Size = new System.Drawing.Size(105, 20);
+            this.txtArticuloUnidad.TabIndex = 18;
+            this.txtArticuloUnidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // cbArticulo
+            // 
+            this.cbArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbArticulo.FormattingEnabled = true;
+            this.cbArticulo.Location = new System.Drawing.Point(138, 23);
+            this.cbArticulo.Name = "cbArticulo";
+            this.cbArticulo.Size = new System.Drawing.Size(105, 21);
+            this.cbArticulo.TabIndex = 16;
+            this.cbArticulo.SelectionChangeCommitted += new System.EventHandler(this.cbArticulo_SelectionChangeCommitted);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(18, 63);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(41, 13);
+            this.label34.TabIndex = 17;
+            this.label34.Text = "Unidad";
             // 
             // dgServicios
             // 
@@ -4572,78 +4685,29 @@
             this.dgServicios.Name = "dgServicios";
             this.dgServicios.ReadOnly = true;
             this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgServicios.Size = new System.Drawing.Size(446, 228);
+            this.dgServicios.Size = new System.Drawing.Size(446, 147);
             this.dgServicios.TabIndex = 91;
             // 
             // gbServicio
             // 
             this.gbServicio.BackgroundImage = global::Frm.Properties.Resources.computer24;
             this.gbServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gbServicio.Controls.Add(this.groupBox5);
             this.gbServicio.Controls.Add(this.btnServicios);
             this.gbServicio.Controls.Add(this.label32);
             this.gbServicio.Controls.Add(this.cbServicios);
-            this.gbServicio.Location = new System.Drawing.Point(48, 49);
+            this.gbServicio.Location = new System.Drawing.Point(39, 49);
             this.gbServicio.Name = "gbServicio";
-            this.gbServicio.Size = new System.Drawing.Size(244, 228);
+            this.gbServicio.Size = new System.Drawing.Size(253, 147);
             this.gbServicio.TabIndex = 18;
             this.gbServicio.TabStop = false;
             this.gbServicio.Text = "          Añadir Servicio";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label33);
-            this.groupBox5.Controls.Add(this.textBox5);
-            this.groupBox5.Controls.Add(this.comboBox11);
-            this.groupBox5.Controls.Add(this.label34);
-            this.groupBox5.Enabled = false;
-            this.groupBox5.Location = new System.Drawing.Point(6, 70);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(228, 100);
-            this.groupBox5.TabIndex = 19;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Solo si Aplica";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(18, 33);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(49, 13);
-            this.label33.TabIndex = 15;
-            this.label33.Text = "Cantidad";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(103, 70);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(105, 20);
-            this.textBox5.TabIndex = 18;
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(103, 33);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(105, 21);
-            this.comboBox11.TabIndex = 16;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(18, 73);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(41, 13);
-            this.label34.TabIndex = 17;
-            this.label34.Text = "Unidad";
             // 
             // btnServicios
             // 
             this.btnServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServicios.Image = global::Frm.Properties.Resources.list;
             this.btnServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnServicios.Location = new System.Drawing.Point(129, 176);
+            this.btnServicios.Location = new System.Drawing.Point(133, 84);
             this.btnServicios.Name = "btnServicios";
             this.btnServicios.Size = new System.Drawing.Size(105, 38);
             this.btnServicios.TabIndex = 14;
@@ -4655,7 +4719,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 32);
+            this.label32.Location = new System.Drawing.Point(6, 37);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(69, 13);
             this.label32.TabIndex = 1;
@@ -4666,7 +4730,7 @@
             this.cbServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbServicios.FormattingEnabled = true;
-            this.cbServicios.Location = new System.Drawing.Point(95, 29);
+            this.cbServicios.Location = new System.Drawing.Point(95, 34);
             this.cbServicios.Name = "cbServicios";
             this.cbServicios.Size = new System.Drawing.Size(139, 21);
             this.cbServicios.TabIndex = 0;
@@ -5010,6 +5074,11 @@
             this.txtEstado.TabIndex = 50;
             this.txtEstado.Text = "Sin Guardar";
             // 
+            // toolTipLlenadoRapid0
+            // 
+            this.toolTipLlenadoRapid0.ShowAlways = true;
+            this.toolTipLlenadoRapid0.ToolTipTitle = "Solo Guarda los datos mínimos";
+            // 
             // AgregarConsulta
             // 
             this.AccessibleName = "";
@@ -5140,11 +5209,13 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergias)).EndInit();
             this.tabServicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numInventarioCantidadUtilizada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.gbServicio.ResumeLayout(false);
             this.gbServicio.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tabDiagnostico.ResumeLayout(false);
             this.tabDiagnostico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoConsulta)).EndInit();
@@ -5201,9 +5272,9 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TabPage tabServicio;
         private System.Windows.Forms.GroupBox gbServicio;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtArticuloUnidad;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.ComboBox cbArticulo;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox cbServicios;
@@ -5561,5 +5632,10 @@
         private System.Windows.Forms.NumericUpDown txtIMC;
         private System.Windows.Forms.OpenFileDialog openFileElectroResult;
         private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.NumericUpDown numInventarioCantidadUtilizada;
+        private System.Windows.Forms.DataGridView dgInventario;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.ToolTip toolTipLlenadoRapid0;
     }
 }

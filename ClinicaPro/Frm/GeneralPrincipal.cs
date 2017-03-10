@@ -111,7 +111,7 @@ namespace Frm
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return;
             }

@@ -156,6 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMaterialesCasa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMaterialesCasa";
             this.Load += new System.EventHandler(this.frmMaterialesCasa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgMateriales)).EndInit();

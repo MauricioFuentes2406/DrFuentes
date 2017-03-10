@@ -40,7 +40,7 @@ public partial class GeneralTipoServicio
 
     public virtual ICollection<Consulta> Consultas { private get; set; }
 
-    public virtual ICollection<InventarioMedicina> InventarioMedicina { get; set; }
+    public virtual ICollection<InventarioMedicina> InventarioMedicina { private get; set; }
 
 }
 

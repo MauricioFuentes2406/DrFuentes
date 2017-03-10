@@ -52,7 +52,7 @@ namespace Frm
             DialogResult abrirConsulta;
             using (Agregar_Modificar_Cliente agregarClienteFrm = new Agregar_Modificar_Cliente())
             {
-                agregarClienteFrm.ShowDialog();
+                agregarClienteFrm.ShowDialog(this);
                 this.idCliente = agregarClienteFrm.idCliente;
                 abrirConsulta = agregarClienteFrm.abrirConsulta;
                 _nombre = agregarClienteFrm.getNombreCompleto();
@@ -115,7 +115,7 @@ namespace Frm
             }
             else
             {
-                MessageBox.Show(Mensajes.Seleccione_Una_Fila, "Para Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this,Mensajes.Seleccione_Una_Fila, "Para Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -153,6 +153,8 @@ namespace Frm
             {
                 ClinicaPro.DB.Cliente.ClienteDB clienteDB = new ClinicaPro.DB.Cliente.ClienteDB();
                 this.dgClientes.DataSource = clienteDB.Listar();
+                this.dgClientes.Columns[0].HeaderText = "Número_Cliente";
+
             }
             catch (Exception)
             {
@@ -193,10 +195,6 @@ namespace Frm
         }
 
         #endregion
-
-
-
-
     }
 
 }

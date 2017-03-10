@@ -77,6 +77,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgBusqueda.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgBusqueda.RowTemplate.Height = 28;
             this.dgBusqueda.Size = new System.Drawing.Size(741, 289);
             this.dgBusqueda.TabIndex = 10;
             // 

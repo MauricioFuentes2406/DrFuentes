@@ -170,6 +170,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmRespuestaGenerales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Respuesta Generales";
             this.Load += new System.EventHandler(this.frmRespuestaGenerales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgRespuestasGenerales)).EndInit();

@@ -99,7 +99,7 @@ namespace ClinicaPro.DB.Cliente
                     return false;
                 }                   
                }
-                catch(Exception ex)
+                catch(Exception )
                {
                    MessageBox.Show(Mensajes.AlgoPaso);
                    return false;

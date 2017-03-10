@@ -209,6 +209,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmServicios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servicios";
             this.Load += new System.EventHandler(this.frmServicios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();

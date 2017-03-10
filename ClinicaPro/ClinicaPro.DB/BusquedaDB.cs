@@ -12,47 +12,51 @@ namespace ClinicaPro.DB
    public class BusquedaDB : Abstract.IEstandar_ManejoDB<Entities.Busqueda>
     {
        public int Agregar_Modificar(Entities.Busqueda Entidad, Boolean isModificar)
-        {
-            try
-            {
-                ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
-                if (isModificar)
-                {                    
-                    Entities.Busqueda Original = Contexto.Busquedas.First(EntidadLocal => EntidadLocal.IdItem == Entidad.IdItem);
-                    if (Original != null)
-                    {
-                        Original.BusquedaImagenes = Entidad.BusquedaImagenes;
-                        Original.DescripcionAdicional = Entidad.DescripcionAdicional;
-                        Original.EnfermedadRelacionada = Entidad.EnfermedadRelacionada;
-                        Original.Nombre = Entidad.Nombre;
-                        Original.Síntoma = Entidad.Síntoma;
-                        Original.Tratamiento = Entidad.Tratamiento;
-                    }
-                }
-                else
-                {
-                    Contexto.Busquedas.Add(Entidad);
-                }
-                Contexto.SaveChanges();
-                return Entidad.IdItem;                            // Retorna id de objeto añadido a la DB  
-            }
-            catch (EntityException entityException)
-            {
-                manejaExcepcionesDB.manejaEntityException(entityException);
-                return -1;
-            }
-            catch (NullReferenceException nullReference)
-            {
-                manejaExcepcionesDB.manejaNullReference(nullReference);
-                return -1;
-            }
-            catch (Exception ex)
-            {
-                manejaExcepcionesDB.manejaExcepcion(ex);
-                return -1;
-            }
-
-        }
+       {
+           try
+           {
+               ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new ClinicaPro.Entities.ClinicaDrFuentesEntities();
+               if (isModificar)
+               {
+                   Entities.Busqueda Original = Contexto.Busquedas.First(EntidadLocal => EntidadLocal.IdItem == Entidad.IdItem);
+                   if (Original != null)
+                   {
+                       Original.BusquedaImagenes = Entidad.BusquedaImagenes;
+                       Original.DescripcionAdicional = Entidad.DescripcionAdicional;
+                       Original.EnfermedadRelacionada = Entidad.EnfermedadRelacionada;
+                       Original.Nombre = Entidad.Nombre;
+                       Original.Síntoma = Entidad.Síntoma;
+                       Original.Tratamiento = Entidad.Tratamiento;
+                   }
+               }
+               else
+               {
+                   Contexto.Busquedas.Add(Entidad);
+               }
+               Contexto.SaveChanges();
+               return Entidad.IdItem;                            // Retorna id de objeto añadido a la DB  
+           }
+           catch (System.Data.Entity.Infrastructure.DbUpdateException Dbex)
+           {
+               manejaExcepcionesDB.DbUpdateException(Dbex);
+               return -1;
+           }
+           catch (EntityException entityException)
+           {
+               manejaExcepcionesDB.manejaEntityException(entityException);
+               return -1;
+           }
+           catch (NullReferenceException nullReference)
+           {
+               manejaExcepcionesDB.manejaNullReference(nullReference);
+               return -1;
+           }
+           catch (Exception ex)
+           {
+               manejaExcepcionesDB.manejaExcepcion(ex);
+               return -1;
+           }
+       }
        public bool Eliminar(int idCliente, int idTipoUsuario)
         {
             return false;

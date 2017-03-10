@@ -36,21 +36,14 @@ namespace ClinicaPro.BL
        public static void DbUpdateException(System.Data.Entity.Infrastructure.DbUpdateException DbUpdate)
        {
            string InnerEx = DbUpdate.InnerException.InnerException.ToString();
-          if (InnerEx.Contains("Cannot insert duplicate key row in object") )
+           if (InnerEx.Contains("Cannot insert duplicate key row in object") || InnerEx.Contains("Violation of UNIQUE KEY constraint"))
           {
               MessageBox.Show(ExcepcionesMensajes.NombresRepetidos,"Repetido",MessageBoxButtons.OK,MessageBoxIcon.Error);
           }else
           {                           
                manejaExcepcion(new Exception());
           }
-       }
-       public   static void manejaDBInfraestructureDBEx(System.Data.Entity.Infrastructure.DbUpdateException DbUpdate)
-        {
-           if ( DbUpdate.InnerException.InnerException.ToString().Contains(@"Violation of PRIMARY KEY constraint 'PK_ElectroResultados'. Cannot insert duplicate key"));
-           MessageBox.Show(ExcepcionesMensajes.Id_Duplicada, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);            
-          
-        }
-
+       }      
         /// <summary>Maneja las excepciones en la Base Datos , añadir esta solo cuando se trabaja con los datos internos de la DB       
        /// </summary>
        /// <param name="sqlException"></param>
@@ -88,15 +81,7 @@ namespace ClinicaPro.BL
             /// y Guada los detalles en un EventLog
             ///</summary>           
             MessageBox.Show(ExcepcionesMensajes.ExcepcionGeneral, ExcepcionesMensajes.Title_Exception, MessageBoxButtons.OK, MessageBoxIcon.Error);            
-        }
-        public static void UpdateExcepcion(UpdateException ex)
-        {
-            String a = String.Empty;
-                foreach( var data in ex.Data)
-                {
-                    a += data.ToString();
-                }
-        }
+        }       
        /// <summary>
        /// Intenta Iniciar el Servicio de MSSQLSERVer , en un entorno LocalHost
        /// </summary>

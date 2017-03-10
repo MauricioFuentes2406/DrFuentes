@@ -178,6 +178,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAlergias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alergias";
             this.Load += new System.EventHandler(this.frmAlergias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgAlergia)).EndInit();

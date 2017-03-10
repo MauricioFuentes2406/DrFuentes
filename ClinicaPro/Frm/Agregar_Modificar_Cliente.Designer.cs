@@ -405,6 +405,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Agregar_Modificar_Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar/Modificar Cliente";
             this.Load += new System.EventHandler(this.AgregarCliente_Load);
             this.groupBox1.ResumeLayout(false);
