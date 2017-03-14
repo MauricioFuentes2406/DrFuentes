@@ -156,7 +156,7 @@
       <ProjName>ClinicaPro.General</ProjName>
     </ProjBinary>
     <ProjBinary>
-      <Path>Frm\obj\Debug\Frm.exe</Path>
+      <Path>Frm\obj\Debug\ClinicaPro.exe</Path>
       <ArgumentTimestamp>01/01/0001 00:00:00</ArgumentTimestamp>
       <Instrument>true</Instrument>
       <Sample>true</Sample>
@@ -168,7 +168,7 @@
       <LaunchProject>true</LaunchProject>
       <OverrideProjectSettings>false</OverrideProjectSettings>
       <LaunchMethod>Executable</LaunchMethod>
-      <ExecutablePath>Frm\bin\Debug\Frm.exe</ExecutablePath>
+      <ExecutablePath>Frm\bin\Debug\ClinicaPro.exe</ExecutablePath>
       <StartupDirectory>Frm\bin\Debug\</StartupDirectory>
       <Arguments>
       </Arguments>
