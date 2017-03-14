@@ -94,8 +94,7 @@ namespace Frm.IngresoGastos
                 CategoriaIngresoDB fuenteIngresoDB = new CategoriaIngresoDB();
                 if (fuenteIngresoDB.Agregar_Modificar(fuente, ClinicaPro.General.accion.Agregar) != IdVacia)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Limpiar();                    
                 }
             }
         }

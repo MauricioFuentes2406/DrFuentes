@@ -38,7 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +76,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnIniciar);
             this.panel1.Controls.Add(this.btnFraseRecordar);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -102,7 +100,6 @@
             this.btnIniciar.TabIndex = 6;
             this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = false;
-            this.btnIniciar.UseWaitCursor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // btnFraseRecordar
@@ -157,16 +154,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Sesion";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(218, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +162,7 @@
             this.ClientSize = new System.Drawing.Size(414, 267);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InicioSesion";
@@ -202,7 +190,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFraseRecordar;
         private System.Windows.Forms.Button btnIniciar;
-        private System.Windows.Forms.Button button1;
     }
 }
 

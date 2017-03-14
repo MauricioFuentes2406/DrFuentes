@@ -86,8 +86,7 @@ namespace Frm.Configuracion
                 RespuestaGeneralesDB reespuestaGeneralDB = new RespuestaGeneralesDB();
                 if (reespuestaGeneralDB.Agregar_Modificar(respuestaGeneral, ClinicaPro.General.accion.Agregar) != 0)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Limpiar();                    
                 }            
             }            
         }

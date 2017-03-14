@@ -198,13 +198,13 @@ namespace Frm.IngresoGastos
         }
         private void btnGastos_Click(object sender, EventArgs e)
         {            
-            new frmAgregarGastos(enviarFuenteIngreso(), this.idTipoUsuario,fuenteid()).ShowDialog();                        
+            new frmAgregarGastos(enviarFuenteIngreso(), this.idTipoUsuario,fuenteid()).ShowDialog(this);                        
             ActulizarGasto();
             ultimos10Movimientos();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            new frmAgregarIngreso(enviarFuenteIngreso(), this.idTipoUsuario, fuenteid()).ShowDialog();           
+            new frmAgregarIngreso(enviarFuenteIngreso(), this.idTipoUsuario, fuenteid()).ShowDialog(this);           
             ActulizarIngreso();
             ultimos10Movimientos();
         }
@@ -216,21 +216,21 @@ namespace Frm.IngresoGastos
 
         private void btnListaMovimientos_Click(object sender, EventArgs e)
         {
-            new frmListaMovimientos(this.idTipoUsuario).Show();
+            new frmListaMovimientos(this.idTipoUsuario).ShowDialog(this);
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            new frmFuenteIngreso(this.idTipoUsuario).Show();
+            new frmFuenteIngreso(this.idTipoUsuario).ShowDialog(this);
         }
 
         private void btnCategoriaIngreso_Click(object sender, EventArgs e)
         {
-            new frmCategoriaIngreso(this.idTipoUsuario).Show();
+            new frmCategoriaIngreso(this.idTipoUsuario).ShowDialog(this);
         }
 
         private void btnCategoriasGasto_Click(object sender, EventArgs e)
         {
-            new frmCategoriaGasto(this.idTipoUsuario).Show();
+            new frmCategoriaGasto(this.idTipoUsuario).ShowDialog(this);
         }        
     }
 }

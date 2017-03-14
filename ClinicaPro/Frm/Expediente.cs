@@ -173,6 +173,7 @@ namespace Frm
             dgSeguimientos.Columns["IdSeguimiento"].Visible = false;
                 
             cambiarEncabezadoIdConsulta_NumeroConsulta(dgSeguimientos);
+            HeadertextNumeroConsulta(); // Estético
 
         }
         /// <summary>
@@ -255,6 +256,10 @@ namespace Frm
         {
             // Sea nececio es con begin Onvoke
         }
+        /// <summary>
+        /// Uso Estetico , de acuerdo al boton que lo invoque define un texto del control txtMensajeInformativo
+        /// </summary>
+        /// <param name="botonInvocado"></param>
         private void manejaMensajeInformativo(object botonInvocado)
         {
             if (botonInvocado is DataGridView) //En referencia de VerDetalle Grid
@@ -282,7 +287,8 @@ namespace Frm
         private void btnFiltrarPorCliente_Click(object sender, EventArgs e)
         {
             this.UseWaitCursor = true;
-            _ListaIdConsultas.Clear();
+            _ListaIdConsultas.Clear();  
+
             using ( ClienteBuscar frmClienteBuscar = new ClienteBuscar() )
             {
                 frmClienteBuscar.ShowDialog();
@@ -390,6 +396,36 @@ namespace Frm
 		  this.dgAlchol.DataSource = controladorExpediente.get_ListaVAlcohol();
 		  dgTabaco.DataSource = controladorExpediente.get_ListaVTabaco();
          /**/ //  ClinicaPro.DB.Consulta.ConsultaGaslowDB.ListaPorConsulta(idConsulta, dgGlasgow);
+
+          HeadertextNumeroConsulta(); // Estético
+        }
+        /// <summary>
+        /// Cambia el nombre del encabezado de IdConsulta a Número Consulta
+        /// </summary>
+        private void  HeadertextNumeroConsulta() //Estetico
+        {
+            // No estan Todos los, algunos vienen de View de la BD
+
+            List<DataGridView> dataGrids = new List<DataGridView>();
+            dataGrids.Add(dgCraneo);
+            dataGrids.Add(dgOjos);
+            dataGrids.Add(dgOidos);
+            dataGrids.Add(dgNariz);
+            dataGrids.Add(dgBoca);
+            dataGrids.Add(dgCuello);
+            dataGrids.Add(dgAbdomen);
+            dataGrids.Add(dgApaDigestivo);
+            dataGrids.Add(dgCoordinacion);
+            dataGrids.Add(dgGinecoObstreticos);
+            dataGrids.Add(dgEstadoEmocional);
+            dataGrids.Add(dgSensibilidad);
+            dataGrids.Add(dgParesCraneales);
+            dataGrids.Add(dgReflejos);
+            foreach (var item in dataGrids)  
+            {
+                item.Columns["Idconsulta"].HeaderText = "Número_Consulta";
+            }
+            
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {

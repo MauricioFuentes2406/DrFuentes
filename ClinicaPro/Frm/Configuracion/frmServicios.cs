@@ -103,8 +103,7 @@ namespace Frm.Configuracion
                 GeneralTipoServicioDB servicioDb = new GeneralTipoServicioDB();
                 if (servicioDb.Agregar_Modificar(service, ClinicaPro.General.accion.Agregar) != 0)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Limpiar();                    
                 }
             }
         }

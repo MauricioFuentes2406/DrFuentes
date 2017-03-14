@@ -322,6 +322,9 @@
     <Compile Include="VistaAntecedentesPatologicos.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>
+    <Compile Include="VistaCliente.cs">
+      <DependentUpon>ModelClinica.tt</DependentUpon>
+    </Compile>
     <Compile Include="VistaClienteAlergias.cs">
       <DependentUpon>ModelClinica.tt</DependentUpon>
     </Compile>

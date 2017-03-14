@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using ClinicaPro.General.Constantes;
 
 namespace ClinicaPro.BL
 {
@@ -44,12 +46,23 @@ namespace ClinicaPro.BL
         /// <returns></returns>
         public static Image recuperarIMG(Byte[] ByteArrayToImage)
         {
-            Image image = null;
-            MemoryStream ms = new MemoryStream(ByteArrayToImage);
+
+            if (ByteArrayToImage == null) return null;
+            try
             {
-                image = Image.FromStream(ms);
+                Image image = null;
+                MemoryStream ms = new MemoryStream(ByteArrayToImage);
+                {
+                    image = Image.FromStream(ms);
+                }
+                return image;
             }
-            return image;
+            catch (Exception)
+            {
+                MessageBox.Show( Mensajes.ErrorCargarImagen, Mensajes.Upss_Falto_Algo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }            
+           
         }
         /// <summary>
         /// Convierte un List de arreglos de Bytes en Imagenes
@@ -79,6 +92,22 @@ namespace ClinicaPro.BL
                 return null;
             }
             
+        }
+        public static void ConfigurarFileDialogFilter(OpenFileDialog openFileDialog1)
+        {
+              ImageCodecInfo[] ArrayImageEncoders = ImageCodecInfo.GetImageEncoders();
+            string separador = string.Empty;
+            openFileDialog1.FileName = "Imagen";
+
+            foreach (var codec in ArrayImageEncoders) 
+            {
+                string codecName = codec.CodecName.Substring(8).Replace("Codec", "Files").Trim();
+                openFileDialog1.Filter = String.Format("{0}{1}{2} ({3})|{3}", openFileDialog1.Filter, separador, codecName, codec.FilenameExtension);
+                separador = "|";  // En la primera iteracion  debe ir en blanco  | 
+            }
+            openFileDialog1.Filter = String.Format("{0}{1}{2} ({3})|{3}", openFileDialog1.Filter, separador, "All Images", "*.*");
+
+            openFileDialog1.DefaultExt = ".png"; // Default file extension 
         }
     }
 }

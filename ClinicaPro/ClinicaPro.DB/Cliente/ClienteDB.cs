@@ -106,6 +106,10 @@ namespace ClinicaPro.DB.Cliente
                }               
             }
         }
+        /// <summary>
+        /// Lista Todas los Clientes
+        /// </summary>
+        /// <returns></returns>
         public  List<Entities.Cliente> Listar()                                     //AsNoTracking()
         {
             try                           
@@ -140,7 +144,7 @@ namespace ClinicaPro.DB.Cliente
         /// Trae una lista con los distintos nombres de las ciudades de clientes existentes
         /// </summary>
         /// <returns></returns>
-        public static List<string> ListarNombresCiudad()
+        public static List<string> ListarNombresCiudad() // Usado para los AutoCompleteText 
         {
             using (ClinicaPro.Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
@@ -167,8 +171,7 @@ namespace ClinicaPro.DB.Cliente
                     return null;
                 }
             }
-        }
-        
+        }            
         #endregion
         /// <summary>
         /// Si no existe algun registro en la DB
@@ -195,7 +198,7 @@ namespace ClinicaPro.DB.Cliente
                }
            }
         }
-        public static int TotalHombres()
+        public static int TotalHombres()  // Usado para reportes
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
@@ -212,7 +215,7 @@ namespace ClinicaPro.DB.Cliente
                 
             }
         }
-        public static int TotalMujeres()
+        public static int TotalMujeres()// Usado para reportes
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
@@ -228,7 +231,7 @@ namespace ClinicaPro.DB.Cliente
                 }                
             }
         }
-        public static int TotalClientes()
+        public static int TotalClientes()// Usado para reportes
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
@@ -244,7 +247,7 @@ namespace ClinicaPro.DB.Cliente
                 }                
             }
         }
-        public static int TotalExtrajeros()
+        public static int TotalExtrajeros()// Usado para reportes
         {
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
             {
@@ -260,7 +263,7 @@ namespace ClinicaPro.DB.Cliente
                 }               
             }
         }
-        public static List<int> PersonasRangoEdad()
+        public static List<int> PersonasRangoEdad()// Usado para reportes
         {
             List<int> list = new List<int>();
             using (Entities.ClinicaDrFuentesEntities Contexto = new Entities.ClinicaDrFuentesEntities())
@@ -279,7 +282,7 @@ namespace ClinicaPro.DB.Cliente
                     list.Add((from tabla in Contexto.Clientes.AsNoTracking()
                               where tabla.Edad >= 41 && tabla.Edad <= 50
                               select tabla.IdCliente).Count());
-                    //> 50
+                    //> 51
                     list.Add((from tabla in Contexto.Clientes.AsNoTracking()
                               where tabla.Edad > 50
                               select tabla.IdCliente).Count());

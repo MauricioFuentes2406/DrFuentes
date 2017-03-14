@@ -227,7 +227,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAgregarIngreso";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Ingreso";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAgregarIngreso_FormClosed);
             this.Load += new System.EventHandler(this.frmAgregarIngreso_Load);

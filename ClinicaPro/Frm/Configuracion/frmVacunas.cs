@@ -92,8 +92,7 @@ namespace Frm.Configuracion
                 VacunasDB vacunaDB = new VacunasDB();
                 if (vacunaDB.Agregar_Modificar(vacuna, ClinicaPro.General.accion.Agregar) != 0)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Limpiar();                    
                 }            
             }
         }

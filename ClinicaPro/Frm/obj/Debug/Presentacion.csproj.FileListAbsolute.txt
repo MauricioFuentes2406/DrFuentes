@@ -157,3 +157,21 @@ E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmFuenteIngreso.reso
 E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmListaMovimientos.resources
 E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.IngresoGastos.frmVentanaInicial.resources
 E:\Practicas c#\ClinicaPro\Frm\obj\Debug\Frm.Seguimientos.frmSeguimientos.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.ConsultaGeneral.AgregarConsulta.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.ConsultaGeneral.GeneralPrincipal.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.ConsultaGeneral.MantenimientoConsulta.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Diccionario.frmDiccionario.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.frmImagenesComplementarias.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Inventario.frmAgregarInventario.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Inventario.frmEstado.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Inventario.frmTipoUnidad.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Laboratorio.frmTipoExamen.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Laboratorio.LaboratorioGeneral.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Laboratorio.MantenimientoExa.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Notificacion.frmNotificacion.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Reportes.frmCitas.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Reportes.frmConsultas.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Reportes.frmCliente.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Reportes.frmIngresoEgreso.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Reportes.frmReporteGeneral.resources
+E:\PracticaEmpresarial\DrFuentes\ClinicaPro\Frm\obj\Debug\Frm.Usuarios.frmTipoUsuario.resources

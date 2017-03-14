@@ -50,7 +50,7 @@
             this.lblCampoRequerido.AutoSize = true;
             this.lblCampoRequerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCampoRequerido.ForeColor = System.Drawing.Color.Maroon;
-            this.lblCampoRequerido.Location = new System.Drawing.Point(47, 364);
+            this.lblCampoRequerido.Location = new System.Drawing.Point(98, 88);
             this.lblCampoRequerido.Name = "lblCampoRequerido";
             this.lblCampoRequerido.Size = new System.Drawing.Size(112, 13);
             this.lblCampoRequerido.TabIndex = 58;
@@ -63,10 +63,10 @@
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(229, 93);
+            this.btnEliminar.Location = new System.Drawing.Point(225, 115);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(52, 38);
-            this.btnEliminar.TabIndex = 57;
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -77,10 +77,10 @@
             this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(171, 93);
+            this.btnActualizar.Location = new System.Drawing.Point(167, 115);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(52, 38);
-            this.btnActualizar.TabIndex = 56;
+            this.btnActualizar.TabIndex = 5;
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -91,10 +91,10 @@
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(113, 93);
+            this.btnAgregar.Location = new System.Drawing.Point(109, 115);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(52, 38);
-            this.btnAgregar.TabIndex = 55;
+            this.btnAgregar.TabIndex = 4;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -105,10 +105,10 @@
             this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(55, 93);
+            this.btnRefresh.Location = new System.Drawing.Point(51, 115);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(52, 38);
-            this.btnRefresh.TabIndex = 54;
+            this.btnRefresh.TabIndex = 3;
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -119,13 +119,13 @@
             this.dgServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgServicios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgServicios.Location = new System.Drawing.Point(35, 137);
+            this.dgServicios.Location = new System.Drawing.Point(31, 159);
             this.dgServicios.MultiSelect = false;
             this.dgServicios.Name = "dgServicios";
             this.dgServicios.ReadOnly = true;
             this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgServicios.Size = new System.Drawing.Size(332, 211);
-            this.dgServicios.TabIndex = 53;
+            this.dgServicios.TabIndex = 7;
             this.dgServicios.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgServicios_RowHeaderMouseClick);
             // 
             // txtNombre
@@ -134,7 +134,7 @@
             this.txtNombre.MaxLength = 35;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(143, 20);
-            this.txtNombre.TabIndex = 52;
+            this.txtNombre.TabIndex = 0;
             // 
             // label1
             // 
@@ -148,10 +148,10 @@
             // chkIsEditable
             // 
             this.chkIsEditable.AutoSize = true;
-            this.chkIsEditable.Location = new System.Drawing.Point(101, 37);
+            this.chkIsEditable.Location = new System.Drawing.Point(101, 36);
             this.chkIsEditable.Name = "chkIsEditable";
             this.chkIsEditable.Size = new System.Drawing.Size(79, 17);
-            this.chkIsEditable.TabIndex = 59;
+            this.chkIsEditable.TabIndex = 1;
             this.chkIsEditable.Text = "Es Editable";
             this.chkIsEditable.UseVisualStyleBackColor = true;
             // 
@@ -165,7 +165,7 @@
             0});
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(140, 20);
-            this.txtPrecio.TabIndex = 60;
+            this.txtPrecio.TabIndex = 2;
             // 
             // label2
             // 
@@ -182,7 +182,7 @@
             this.chkLimpiar.Location = new System.Drawing.Point(262, 14);
             this.chkLimpiar.Name = "chkLimpiar";
             this.chkLimpiar.Size = new System.Drawing.Size(59, 17);
-            this.chkLimpiar.TabIndex = 62;
+            this.chkLimpiar.TabIndex = 8;
             this.chkLimpiar.Text = "Limpiar";
             this.chkLimpiar.UseVisualStyleBackColor = true;
             this.chkLimpiar.CheckedChanged += new System.EventHandler(this.chkLimpiar_CheckedChanged);

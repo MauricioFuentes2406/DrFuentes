@@ -112,7 +112,15 @@ namespace Frm
         }
         private void Limpiar()
         {
-            this.cbNombre.SelectedIndex = 0;
+            try
+            {
+                this.cbNombre.SelectedIndex = 0;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                cbNombre.SelectedText = string.Empty;                
+            }
+            
             this.txtEspecificacion.ResetText();
             this.idAlergia = -1;
             this.isModificar = false;

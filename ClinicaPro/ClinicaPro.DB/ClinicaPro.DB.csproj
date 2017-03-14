@@ -54,6 +54,7 @@
     <Compile Include="Cliente\ClienteAlergiasDB.cs" />
     <Compile Include="Cliente\ClienteDB.cs" />
     <Compile Include="Cliente\ImagenesExamenesComplementariasBD.cs" />
+    <Compile Include="Cliente\Vistas\VCliente.cs" />
     <Compile Include="Cliente\Vistas\VClienteAlergias.cs" />
     <Compile Include="Consulta\AntecedenteAlcoholDB.cs" />
     <Compile Include="Consulta\AntecedenteDrogaDB.cs" />

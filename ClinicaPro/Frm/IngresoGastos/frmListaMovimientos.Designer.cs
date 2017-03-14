@@ -304,7 +304,7 @@
             this.Controls.Add(this.dgMovimientos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListaMovimientos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lista Movimientos";
             this.toolTipCopiar.SetToolTip(this, "km");
             this.Load += new System.EventHandler(this.frmListaMovimientos_Load);

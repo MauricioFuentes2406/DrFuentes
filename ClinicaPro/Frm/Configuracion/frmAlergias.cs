@@ -127,8 +127,7 @@ namespace Frm.Configuracion
 
                       if (tipoAlergiaDb.Agregar_Modificar(droga, ClinicaPro.General.accion.Agregar) != IdVacia)
                       {
-                          Limpiar();
-                          MensajeDeActulizacion();
+                          Limpiar();                          
                       }                                    
               }
           }

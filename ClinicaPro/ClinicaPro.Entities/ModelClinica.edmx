@@ -785,6 +785,33 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaAntecedentesPatolo
           <Property Name="Varicela" Type="varchar" MaxLength="30" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaCliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VistaCliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Apellido1" />
+            <PropertyRef Name="Apellido2" />
+            <PropertyRef Name="Edad" />
+            <PropertyRef Name="Ciudad" />
+            <PropertyRef Name="Sexo" />
+            <PropertyRef Name="isExtranjero" />
+          </Key>
+          <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido1" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Apellido2" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Celular" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="Edad" Type="tinyint" Nullable="false" />
+          <Property Name="Cedula" Type="varchar" MaxLength="11" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sexo" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="isExtranjero" Type="bit" Nullable="false" />
+          <Property Name="TipoSangre" Type="varchar" MaxLength="3" />
+          <Property Name="Estado" Type="tinyint" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaClienteAlergias' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VistaClienteAlergias">
           <Key>
@@ -2286,6 +2313,23 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
     [VistaAntecedentesPatologicos].[Sarampión] AS [Sarampión], 
     [VistaAntecedentesPatologicos].[Varicela] AS [Varicela]
     FROM [dbo].[VistaAntecedentesPatologicos] AS [VistaAntecedentesPatologicos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaCliente" EntityType="Self.VistaCliente" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaCliente].[IdCliente] AS [IdCliente], 
+    [VistaCliente].[Nombre] AS [Nombre], 
+    [VistaCliente].[Apellido1] AS [Apellido1], 
+    [VistaCliente].[Apellido2] AS [Apellido2], 
+    [VistaCliente].[Celular] AS [Celular], 
+    [VistaCliente].[Email] AS [Email], 
+    [VistaCliente].[Edad] AS [Edad], 
+    [VistaCliente].[Cedula] AS [Cedula], 
+    [VistaCliente].[Ciudad] AS [Ciudad], 
+    [VistaCliente].[Sexo] AS [Sexo], 
+    [VistaCliente].[isExtranjero] AS [isExtranjero], 
+    [VistaCliente].[TipoSangre] AS [TipoSangre], 
+    [VistaCliente].[Estado] AS [Estado]
+    FROM [dbo].[VistaCliente] AS [VistaCliente]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VistaClienteAlergias" EntityType="Self.VistaClienteAlergias" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -4275,6 +4319,7 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="InventarioTipoUnidad" EntitySet="InventarioTipoUnidad" />
             <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
           </AssociationSet>
+          <EntitySet Name="VistaCliente" EntityType="ClinicaDrFuentesModel.VistaCliente" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -5221,6 +5266,31 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
           <End Type="ClinicaDrFuentesModel.InventarioTipoUnidad" Role="InventarioTipoUnidad" Multiplicity="1" />
           <End Type="ClinicaDrFuentesModel.InventarioMedicina" Role="InventarioMedicina" Multiplicity="*" />
         </Association>
+        <EntityType Name="VistaCliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Apellido1" />
+            <PropertyRef Name="Apellido2" />
+            <PropertyRef Name="Edad" />
+            <PropertyRef Name="Ciudad" />
+            <PropertyRef Name="Sexo" />
+            <PropertyRef Name="isExtranjero" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido1" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido2" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Edad" Type="Byte" Nullable="false" />
+          <Property Name="Cedula" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="isExtranjero" Type="Boolean" Nullable="false" />
+          <Property Name="TipoSangre" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Byte" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6496,6 +6566,25 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               <ScalarProperty Name="IdTipoUnidad" ColumnName="IdTipoUnidad" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="VistaCliente">
+            <EntityTypeMapping TypeName="ClinicaDrFuentesModel.VistaCliente">
+              <MappingFragment StoreEntitySet="VistaCliente">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
+                <ScalarProperty Name="isExtranjero" ColumnName="isExtranjero" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

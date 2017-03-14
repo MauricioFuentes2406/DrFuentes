@@ -67,8 +67,9 @@ namespace ClinicaPro.General.Constantes
        public const String ViolacionSeguridad = "Violacion de Seguridad";
        
        // Otros
-
+       public const String ExtencionImagen = "Asegúrate que estes cargando una imagen";
        public const String LLenadoRapido = "Llenado Rapido";
+       public const String ErrorCargarImagen = "Hubo un error al cargar la Imagen";
 
     }
 }

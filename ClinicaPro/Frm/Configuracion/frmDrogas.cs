@@ -98,8 +98,7 @@ namespace Frm.Configuracion
                     DrogaDB drogaDB = new DrogaDB();
                     if (drogaDB.Agregar_Modificar(droga, ClinicaPro.General.accion.Agregar) != IdVacia)
                     {
-                        Limpiar();
-                        MensajeDeActulizacion();
+                        Limpiar();                        
                     }                               
             }
         }

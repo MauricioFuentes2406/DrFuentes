@@ -95,8 +95,7 @@ namespace Frm.Configuracion
                 EstadoViviendaMaterialesDB MaterialesDB = new EstadoViviendaMaterialesDB();
                 if (MaterialesDB.Agregar_Modificar(material, ClinicaPro.General.accion.Agregar) != 0)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Limpiar();                    
                 }
             }
         }

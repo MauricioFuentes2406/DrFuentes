@@ -157,6 +157,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmCategoriaGasto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Categoria Gasto";
             this.Load += new System.EventHandler(this.frmCategoriaGasto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgFuente)).EndInit();

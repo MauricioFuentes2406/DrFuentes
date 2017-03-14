@@ -99,8 +99,7 @@ namespace Frm.Configuracion
                 FamiliarDB familiarDB = new FamiliarDB();
                 if (familiarDB.Agregar_Modificar(familiar, ClinicaPro.General.accion.Agregar) != 0)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Limpiar();                    
                 }
             }
         }

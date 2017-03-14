@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Librerias Añadidas
+using ClinicaPro.General.Constantes;
 
 namespace Frm
 {
@@ -16,7 +18,7 @@ namespace Frm
         private Secretaria _frmSecretaria;  
         private Frm.Laboratorio.LaboratorioGeneral _frmLaboratorio;
         private Administrador _frmAdministrador;
-        private GeneralPrincipal _frmGeneralPrincipal; 
+        private ConsultaGeneral.GeneralPrincipal _frmGeneralPrincipal; 
 
         public AuxiliarLogin(int  TipoUsuario)
         {
@@ -55,14 +57,36 @@ namespace Frm
         }
         private void btnGeneral_Click(object sender, EventArgs e)
         {
-            _frmGeneralPrincipal = new GeneralPrincipal(_tipoUsuario);
+            _frmGeneralPrincipal = new ConsultaGeneral.GeneralPrincipal(_tipoUsuario);
             _frmGeneralPrincipal.Show();
             this.Hide();
             
         }
         private void AuxiliarLogin_Load(object sender, EventArgs e)
         {
-            this.btnAdministrador.Focus();
+            Permisos();
+            this.btnAdministrador.Focus();            
+        }
+        private void Permisos()
+        {
+            switch(_tipoUsuario)
+            {
+                case TipoUsuarios.General :
+                    btnLaboratorio.Enabled = false;
+                    btnAdministrador.Enabled = false;
+                    break;
+                case TipoUsuarios.Laboratorio:
+                    btnGeneral.Enabled = false;
+                    btnAdministrador.Enabled = false;
+                    btnSecretaria.Enabled = false;
+                    break;
+                case TipoUsuarios.Secretaria:
+                    btnGeneral.Enabled = false;
+                    btnLaboratorio.Enabled=false;
+                    btnAdministrador.Enabled= false;
+                    break;
+            }
+
         }
      /// <summary>
      ///  Se asegura que el programa deje de ejecutarse cuando se cierra la ventana sin entrar a ningun modulo

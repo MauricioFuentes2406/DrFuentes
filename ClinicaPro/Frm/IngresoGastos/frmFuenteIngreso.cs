@@ -103,8 +103,7 @@ namespace Frm.IngresoGastos
                     FuenteIngresoDB fuenteIngresoDB = new FuenteIngresoDB();
                     if (fuenteIngresoDB.Agregar_Modificar(fuente, ClinicaPro.General.accion.Agregar) != IdVacia)
                     {
-                        Limpiar();
-                        MensajeDeActulizacion();
+                        Limpiar();                        
                     }                              
             }
         }

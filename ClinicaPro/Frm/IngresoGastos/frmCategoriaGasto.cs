@@ -92,8 +92,7 @@ namespace Frm.IngresoGastos
                 CategoriaGastoDB categoriaGastoDB = new CategoriaGastoDB();
                 if (categoriaGastoDB.Agregar_Modificar(categoria, ClinicaPro.General.accion.Agregar) != IdVacia)
                 {
-                    Limpiar();
-                    MensajeDeActulizacion();
+                    Limpiar();                    
                 }
             }
         }       

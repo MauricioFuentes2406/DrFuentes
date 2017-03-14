@@ -24,12 +24,13 @@ namespace Frm
         }
         #region Metodos
         private void IniciarSesion()
-        {
+        {            
             int TipoUsuario = new UsuarioDB().Autentificar(this.txtUsername.Text, this.txtPassword.Text);
             if (TipoUsuario <= 0)
             {
                 txtPasswordStyle();                
                 MessageBox.Show("Nombre usuario y Contraseña Incorrecta", "Inicio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UseWaitCursor = false;
                 if (_NumeroIntentos < 3)
                 {
                     _NumeroIntentos++;
@@ -88,8 +89,8 @@ namespace Frm
                 MensajeSuspended();
                 this.Close();
             }
-        }
-
+           
+        }             
         private void btnFraseRecordar_Click(object sender, EventArgs e)
         {
            if(!String.IsNullOrWhiteSpace(txtUsername.Text) && txtUsername.Text != "Username" )
@@ -149,12 +150,6 @@ namespace Frm
                 p = ((TextBox)sender).Parent;
                 p.SelectNextControl(ActiveControl, true, true, true, true);
             }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-           // new Frm.MantenimientoInventario(1).Show();
-            //new testing().Show();
-            new Frm.Diccionario.frmDiccionario().Show();
-        }                      
+        }                                     
     }
 }
