@@ -1,0 +1,4 @@
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Release\ClinicaPro.csprojResolveAssemblyReference.cache
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Release\ClinicaPro.InicioSesion.resources
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Release\ClinicaPro.Properties.Resources.resources
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Release\ClinicaPro.csproj.GenerateResource.Cache
