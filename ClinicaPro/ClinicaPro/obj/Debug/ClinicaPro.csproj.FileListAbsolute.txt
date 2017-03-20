@@ -68,3 +68,9 @@ E:\DrFuentes\ClinicaPro\ClinicaPro\bin\Debug\EntityFramework.xml
 E:\DrFuentes\ClinicaPro\ClinicaPro\bin\Debug\EntityFramework.SqlServer.xml
 E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Debug\ClinicaPro.exe
 E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Debug\ClinicaPro.pdb
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Debug\ClinicaPro.ConsultaGeneral.frmEscogerCliente.resources
+E:\DrFuentes\ClinicaPro\ClinicaPro\bin\Debug\ClinicaPro.exe.manifest
+E:\DrFuentes\ClinicaPro\ClinicaPro\bin\Debug\ClinicaPro.application
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Debug\ClinicaPro.TrustInfo.xml
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Debug\ClinicaPro.exe.manifest
+E:\DrFuentes\ClinicaPro\ClinicaPro\obj\Debug\ClinicaPro.application

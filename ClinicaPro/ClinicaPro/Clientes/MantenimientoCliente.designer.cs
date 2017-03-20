@@ -49,7 +49,6 @@
             this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgClientes.Location = new System.Drawing.Point(12, 93);
-            this.dgClientes.MultiSelect = false;
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.ReadOnly = true;
             this.dgClientes.Size = new System.Drawing.Size(788, 373);

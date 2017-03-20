@@ -62,7 +62,7 @@ namespace ClinicaPro.ConsultaGeneral
         }
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            new ClinicaPro.Citas.frmGeneralCitas(this.IdTipoUsuario).Show();
+            new ClinicaPro.Citas.frmGeneralCitas(this.IdTipoUsuario).Show(this);
         }
         private void btnConsulta_Click(object sender, EventArgs e)
         {

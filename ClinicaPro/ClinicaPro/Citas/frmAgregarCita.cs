@@ -24,19 +24,39 @@ namespace ClinicaPro.Citas
         private int _IdCita;
         private int _IdCliente;
         private int _IdTipoUsuario;
+        // StackvOverflow
+
+        private DateTime _prevDate;
+        private bool initialValue = false;
+        /// <summary>
+        /// Variable auxiliar ayuda a poner los minutos  dtHora en 00 o 30
+        /// </summary>
+        DateTime dateTime;
+        /// <summary>
+        /// Agrear
+        /// </summary>
+        /// <param name="idTipoUsuario"></param>
         public frmAgregarCita(int idTipoUsuario)
         {
             InitializeComponent();
             this._IdCita = -1;
             this._IdCita = -1;
             this._IdTipoUsuario = idTipoUsuario;
+         //   dateTime = dateTimePicker1.Value;
         }
+        /// <summary>
+        /// Modificar
+        /// </summary>
+        /// <param name="idCita"></param>
+        /// <param name="idCliente"></param>
+        /// <param name="idTipousuario"></param>
         public frmAgregarCita(int idCita, int idCliente, int idTipousuario)
         {
             InitializeComponent();
             this._IdCita = idCita;
             this._IdCliente = idCliente;
             this._IdTipoUsuario = idTipousuario;
+            initialValue = true;
         }
 
         private void frmAgregarCita_Load(object sender, EventArgs e)
@@ -44,10 +64,13 @@ namespace ClinicaPro.Citas
             cargarGrid();
             cbEstado.SelectedIndex = 0;
             _currentDay = DateTime.Now.DayOfYear;
+            llenarComboDuracion();
             if (_IdCita > 0)
             {
                 Cita_Clase_A_Controles();
             }
+            HoraCitaFormato0030m();
+         
         }
         #region Metodos
         private void Cita_Clase_A_Controles()
@@ -58,13 +81,19 @@ namespace ClinicaPro.Citas
                 this.numIdCliente.Value = this._IdCliente;
                 this.txtComentario.Text = cita.Comentario;
                 this.cbEstado.Text = cita.EstadoCita;
-                this.dtDateTime.Value = cita.FechaCitaDesde;
-                {
-                    var aux = cita.FechaCitaHasta - cita.FechaCitaDesde.TimeOfDay;
-                    double minute = aux.TotalMinutes;
-                    double cociente = minute / 30;
-                    this.numDuracion.Value = (decimal)(cociente*0.50);
-                }
+                this.dtFechaCita.Value = cita.FechaCitaDesde;
+                this.dtDesde.Value = cita.FechaCitaDesde;                               
+                    TimeSpan horaA = new TimeSpan(cita.FechaCitaDesde.Hour, cita.FechaCitaDesde.Minute, 0);
+                    TimeSpan horaB = cita.FechaCitaHasta;
+                    var result = horaB - horaA;
+                    try
+                    {
+                        cbDuracion.SelectedValue = (byte)result.TotalMinutes;
+                    }
+                    catch (InvalidOperationException)
+                    { 
+                        MessageBox.Show(this,Mensajes.AlgoPaso+"\n Se pondrá la  duracion de cita  Media hora","Duración Cita",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }               
                 cita.SePresento = chkSePresento.Checked;                
             }
         }
@@ -90,7 +119,7 @@ namespace ClinicaPro.Citas
         private ClinicaPro.Entities.Citas Cita_ControlAClase()
         {
             ClinicaPro.Entities.Citas cita = new ClinicaPro.Entities.Citas();
-            cita.FechaCitaDesde = this.dtDateTime.Value;
+            cita.FechaCitaDesde = timeDesde();
             cita.FechaCitaHasta = timeHasta();
             cita.EstadoCita = (string)cbEstado.SelectedItem;
             cita.Comentario = txtComentario.Text.Trim();
@@ -106,9 +135,24 @@ namespace ClinicaPro.Citas
         }
         private TimeSpan timeHasta()
         {
-            var timeHasta = dtDateTime.Value;
-            timeHasta = timeHasta.AddHours((double)numDuracion.Value);
-            return TimeSpan.Parse(timeHasta.TimeOfDay.ToString());
+            TimeSpan time = new TimeSpan(0, (byte)cbDuracion.SelectedValue , 0);
+            TimeSpan timeHasta = new TimeSpan(dtDesde.Value.Hour,dtDesde.Value.Minute,0);
+            ///timeHasta = timeHasta.AddHours((double)cbDuracion.SelectedValue ) ;
+             return timeHasta.Add(time);
+           
+        }
+        private DateTime timeDesde()
+        {
+            try
+            {
+                return new DateTime(dtFechaCita.Value.Year, dtFechaCita.Value.Month, dtFechaCita.Value.Day, dtDesde.Value.Hour, dtDesde.Value.Minute, 0);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show(this,"Se produjo un erro en la fecha de Inicio , se añadio la fecha selecciona con la hora actual");
+                return dtFechaCita.Value;            
+            }
+            
         }
         private void Limpiar()
         {
@@ -119,7 +163,7 @@ namespace ClinicaPro.Citas
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            if (_currentDay != dtDateTime.Value.DayOfYear)
+            if (_currentDay != dtFechaCita.Value.DayOfYear)
             {
                 //   this.dgInfoDia.DefaultCellStyle.BackColor = Color.White;
                 cargarGrid();
@@ -127,7 +171,7 @@ namespace ClinicaPro.Citas
         }
         private void colorAlGrid()
         {
-            var list = CitasDB.ListarDia(this.dtDateTime.Value.Date);
+            var list = CitasDB.ListarDia(this.dtFechaCita.Value.Date);
             if (list.Count > 0)
             {
                 foreach (var item in list)
@@ -222,6 +266,11 @@ namespace ClinicaPro.Citas
                     break;
             }
         }
+  /// <summary>
+  /// LLena los Datos del Grid y da color a las filas
+  /// </summary>
+  /// <param name="HourRowIndex">Cada media hora representa un indice</param>
+  /// <param name="cita"></param>
         private void setRow(int HourRowIndex, ClinicaPro.Entities.Citas cita)
         {
             var somethig = cita.FechaCitaHasta - cita.FechaCitaDesde.TimeOfDay;
@@ -263,6 +312,55 @@ namespace ClinicaPro.Citas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             new ClinicaPro.Clientes.MantenimientoCliente(this._IdTipoUsuario).Show();
+        }
+       /// <summary>
+       /// Hace que el DateTime.value sea de minutos 0 o 30 m
+       /// </summary>
+        private void HoraCitaFormato0030m()
+        {
+            if (_IdCita <= 0)
+            {
+                var dateTime = DateTime.Now;
+                int MinutoActual = dateTime.Minute;
+
+                if (MinutoActual < 30)  // 
+                {
+                    initialValue = true;
+                    TimeSpan diff = new TimeSpan(0, MinutoActual, 0);
+                    dtDesde.Value = dateTime.Subtract(diff);
+                }
+                else
+                {
+                    initialValue = true;
+                    TimeSpan diff = new TimeSpan(0, MinutoActual - 30, 0);
+                    dtDesde.Value = dateTime.Subtract(diff);
+                }
+            }
+            _prevDate = dtDesde.Value;
+        }
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (initialValue)
+            {
+                initialValue = false;
+                return;
+            }
+            dateTime = dtDesde.Value;
+            TimeSpan diff = dateTime - _prevDate;
+
+            if (diff.Ticks < 0)
+                dtDesde.Value = _prevDate.AddMinutes(-30);
+            else
+                dtDesde.Value = _prevDate.AddMinutes(30);
+
+            _prevDate = dtDesde.Value;
+        }
+        private void llenarComboDuracion()
+        {
+            this.cbDuracion.DataSource = General.Enumerados.CitaEnums.DuracionPorMediaHora;
+            cbDuracion.DisplayMember = "nombre";
+            cbDuracion.ValueMember = "valor";
+            cbDuracion.SelectedIndex = 0;
         }
     }
 }

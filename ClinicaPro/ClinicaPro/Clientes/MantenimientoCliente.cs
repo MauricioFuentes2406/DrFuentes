@@ -89,9 +89,9 @@ namespace ClinicaPro.Clientes
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (this.dgClientes.SelectedRows.Count >= 1)
+            if (this.dgClientes.SelectedRows.Count == 1)
             {
-                Cliente auxiliar = Modificar_DeFila_A_Clase(this.dgClientes.CurrentRow);
+                Cliente auxiliar = Modificar_DeFila_A_Clase(this.dgClientes.SelectedRows[0]);
 
                 using (Agregar_Modificar_Cliente agregarClienteFrm = new Agregar_Modificar_Cliente())
                 {
@@ -100,6 +100,9 @@ namespace ClinicaPro.Clientes
 
                 }
                 CargarDatos();
+            }else
+            {
+                BL.Mensaje.MensajeSeleccionUnaFila();
             }
 
         }

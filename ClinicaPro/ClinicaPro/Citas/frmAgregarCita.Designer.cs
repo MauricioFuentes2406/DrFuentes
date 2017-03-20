@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarCita));
-            this.dtDateTime = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaCita = new System.Windows.Forms.DateTimePicker();
             this.dgInfoDia = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
@@ -38,28 +38,28 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.numDuracion = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.numIdCliente = new System.Windows.Forms.NumericUpDown();
             this.chkSePresento = new System.Windows.Forms.CheckBox();
+            this.dtDesde = new System.Windows.Forms.DateTimePicker();
+            this.cbDuracion = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInfoDia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numIdCliente)).BeginInit();
             this.SuspendLayout();
             // 
-            // dtDateTime
+            // dtFechaCita
             // 
-            this.dtDateTime.CustomFormat = "hh:mm:tt                dd/MM/yyyy";
-            this.dtDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDateTime.Location = new System.Drawing.Point(34, 45);
-            this.dtDateTime.Name = "dtDateTime";
-            this.dtDateTime.Size = new System.Drawing.Size(200, 20);
-            this.dtDateTime.TabIndex = 4;
-            this.dtDateTime.Value = new System.DateTime(2017, 2, 3, 8, 0, 0, 0);
-            this.dtDateTime.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtFechaCita.CustomFormat = " dd/MM/yyyy";
+            this.dtFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFechaCita.Location = new System.Drawing.Point(34, 45);
+            this.dtFechaCita.Name = "dtFechaCita";
+            this.dtFechaCita.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtFechaCita.Size = new System.Drawing.Size(92, 20);
+            this.dtFechaCita.TabIndex = 4;           
+            this.dtFechaCita.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dgInfoDia
             // 
@@ -76,9 +76,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(31, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Hora y Fecha";
+            this.label1.Text = " Fecha";
             // 
             // cbEstado
             // 
@@ -152,35 +152,6 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // numDuracion
-            // 
-            this.numDuracion.DecimalPlaces = 2;
-            this.numDuracion.Increment = new decimal(new int[] {
-            50,
-            0,
-            0,
-            131072});
-            this.numDuracion.Location = new System.Drawing.Point(34, 91);
-            this.numDuracion.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.numDuracion.Minimum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            131072});
-            this.numDuracion.Name = "numDuracion";
-            this.numDuracion.Size = new System.Drawing.Size(170, 20);
-            this.numDuracion.TabIndex = 12;
-            this.numDuracion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numDuracion.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            131072});
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -189,15 +160,6 @@
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Duracion ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(210, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "h:m";
             // 
             // label6
             // 
@@ -243,6 +205,37 @@
             this.chkSePresento.Text = "Se Presentó";
             this.chkSePresento.UseVisualStyleBackColor = true;
             // 
+            // dtDesde
+            // 
+            this.dtDesde.Checked = false;
+            this.dtDesde.CustomFormat = "hh:mm :tt";
+            this.dtDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDesde.Location = new System.Drawing.Point(150, 45);
+            this.dtDesde.Name = "dtDesde";
+            this.dtDesde.ShowUpDown = true;
+            this.dtDesde.Size = new System.Drawing.Size(82, 20);
+            this.dtDesde.TabIndex = 34;
+            this.dtDesde.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
+            // 
+            // cbDuracion
+            // 
+            this.cbDuracion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDuracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbDuracion.FormattingEnabled = true;
+            this.cbDuracion.Location = new System.Drawing.Point(34, 93);
+            this.cbDuracion.Name = "cbDuracion";
+            this.cbDuracion.Size = new System.Drawing.Size(200, 21);
+            this.cbDuracion.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(147, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Hora";
+            // 
             // frmAgregarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,13 +243,14 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(765, 443);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbDuracion);
+            this.Controls.Add(this.dtDesde);
             this.Controls.Add(this.chkSePresento);
             this.Controls.Add(this.numIdCliente);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numDuracion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label3);
@@ -264,14 +258,13 @@
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtDateTime);
+            this.Controls.Add(this.dtFechaCita);
             this.Controls.Add(this.dgInfoDia);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgregarCita";
             this.Text = "Agregar Cita";
             this.Load += new System.EventHandler(this.frmAgregarCita_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgInfoDia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numIdCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,7 +273,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dtDateTime;
+        private System.Windows.Forms.DateTimePicker dtFechaCita;
         private System.Windows.Forms.DataGridView dgInfoDia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbEstado;
@@ -289,12 +282,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.NumericUpDown numDuracion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.NumericUpDown numIdCliente;
         private System.Windows.Forms.CheckBox chkSePresento;
+        private System.Windows.Forms.DateTimePicker dtDesde;
+        private System.Windows.Forms.ComboBox cbDuracion;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -15,7 +15,8 @@ namespace ClinicaPro.ConsultaGeneral
     {
         //        ~~~~~~~~~~~~~~~~~~ Atributos  ~~~~~~~~~~~~~~~~~~~~~~~~
 
-        public int IdCliente { get; set; }
+        public int _IdCliente { get; set; }
+        private string nombreCliente;
         private const String Numero_Cliente = "Número_Cliente";
         private const String Numero_Consulta = "Número Consulta";
         private bool _IsFiltradaPorDiagnosticoEstado = false;
@@ -28,7 +29,7 @@ namespace ClinicaPro.ConsultaGeneral
         public MantenimientoConsulta(int IdCliente)
         {
             InitializeComponent();
-            this.IdCliente = IdCliente;
+            this._IdCliente = IdCliente;
         }
         private void MantenimientoConsulta_Load(object sender, EventArgs e)
         {
@@ -66,7 +67,7 @@ namespace ClinicaPro.ConsultaGeneral
             {
                 if (ClinicaPro.BL.Mensaje.isSeguroDeEliminar())
                 {
-                    new ClinicaPro.DB.Consulta.ConsultaDB().Eliminar(getIdConsultaDataGridView(), this.IdCliente);
+                    new ClinicaPro.DB.Consulta.ConsultaDB().Eliminar(getIdConsultaDataGridView(), this._IdCliente);
                     CargarDatos();
                 }
             }
@@ -99,6 +100,31 @@ namespace ClinicaPro.ConsultaGeneral
                    row.Visible = false;                                                                                   
                }
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            DialogResult Dialog;
+            using (frmEscogerCliente escogerCliente = new frmEscogerCliente())
+            {
+                Dialog = escogerCliente.ShowDialog(this);
+                if (Dialog == System.Windows.Forms.DialogResult.OK)
+                {
+                    this._IdCliente = escogerCliente.IdCliente;
+                    this.nombreCliente = escogerCliente.nombreCliente;
+                }
+                else
+                    return;
+            }
+            if (Dialog == System.Windows.Forms.DialogResult.OK)
+            {
+                using (ConsultaGeneral.AgregarConsulta agregarConsultaFrm = new ConsultaGeneral.AgregarConsulta(this._IdCliente, this.nombreCliente ))
+                {
+                    this.Close();
+                    agregarConsultaFrm.ShowDialog();
+                }
+            }
+            
         }
         
     }

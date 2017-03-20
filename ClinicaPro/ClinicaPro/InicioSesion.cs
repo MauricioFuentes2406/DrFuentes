@@ -150,6 +150,6 @@ namespace ClinicaPro
                 p = ((TextBox)sender).Parent;
                 p.SelectNextControl(ActiveControl, true, true, true, true);
             }
-        }                                     
+        }                             
     }
 }

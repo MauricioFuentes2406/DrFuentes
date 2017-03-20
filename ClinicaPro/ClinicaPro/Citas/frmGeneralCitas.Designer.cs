@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeneralCitas));
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.dgCitas = new System.Windows.Forms.DataGridView();
             this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.chkHoy = new System.Windows.Forms.CheckBox();
+            this.toolTipMesActual = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +107,6 @@
             this.dgCitas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCitas.Location = new System.Drawing.Point(21, 67);
-            this.dgCitas.MultiSelect = false;
             this.dgCitas.Name = "dgCitas";
             this.dgCitas.ReadOnly = true;
             this.dgCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -139,8 +140,17 @@
             this.chkHoy.Size = new System.Drawing.Size(50, 46);
             this.chkHoy.TabIndex = 56;
             this.chkHoy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTipMesActual.SetToolTip(this.chkHoy, "Activado Muestras citas del mes Desactivado  todas");
             this.chkHoy.UseVisualStyleBackColor = false;
             this.chkHoy.CheckedChanged += new System.EventHandler(this.chkHoy_CheckedChanged);
+            // 
+            // toolTipMesActual
+            // 
+            this.toolTipMesActual.AutoPopDelay = 5000;
+            this.toolTipMesActual.InitialDelay = 500;
+            this.toolTipMesActual.ReshowDelay = 50;
+            this.toolTipMesActual.ShowAlways = true;
+            this.toolTipMesActual.ToolTipTitle = "Muestra Citas del Mes";
             // 
             // frmGeneralCitas
             // 
@@ -157,6 +167,7 @@
             this.Controls.Add(this.dgCitas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGeneralCitas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Citas";
             this.Load += new System.EventHandler(this.frmGeneralCitas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCitas)).EndInit();
@@ -173,5 +184,6 @@
         private System.Windows.Forms.DataGridView dgCitas;
         private System.Windows.Forms.Button btnEnviarCorreo;
         private System.Windows.Forms.CheckBox chkHoy;
+        private System.Windows.Forms.ToolTip toolTipMesActual;
     }
 }
