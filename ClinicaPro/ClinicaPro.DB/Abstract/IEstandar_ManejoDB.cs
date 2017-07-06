@@ -23,7 +23,7 @@ namespace ClinicaPro.DB.Abstract
              
          /// <param name="Entidad">Alguna de Entidad mapeada de la Base datos ejemplo "Usuario"</param>
          /// <param name="isModificar">En caso  agregar un nuevo registro su valor es, false</param>
-         
+         // Añadi un nuevo comentario
          int Agregar_Modificar(T Entidad, Boolean isModificar);
          bool Eliminar(int idCliente,int idTipoUsuario);
        /// <summary> Selecciona todos los datos , usarlo  para  llenar los DataGrids
