@@ -860,6 +860,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo-012.ico" />
+    <None Include="Resources\database-14.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

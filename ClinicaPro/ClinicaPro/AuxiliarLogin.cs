@@ -67,6 +67,9 @@ namespace ClinicaPro
             Permisos();
             this.btnAdministrador.Focus();            
         }
+        /// <summary>
+        /// Deshabilita los botones segun el tipo de usuario que inicia sesion 
+        /// </summary>
         private void Permisos()
         {
             switch(_tipoUsuario)
@@ -90,9 +93,7 @@ namespace ClinicaPro
         }
      /// <summary>
      ///  Se asegura que el programa deje de ejecutarse cuando se cierra la ventana sin entrar a ningun modulo
-     /// </summary>
-     /// <param name="sender"></param>
-     /// <param name="e"></param>
+     /// </summary>          
         private void AuxiliarLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (_frmGeneralPrincipal == null && _frmAdministrador == null && _frmLaboratorio == null && _frmSecretaria == null)

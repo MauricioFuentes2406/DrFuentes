@@ -141,6 +141,42 @@ namespace ClinicaPro.DB.Cliente
            
         }
         /// <summary>
+        ///  Consulta en la BD los nombres y id de los clientes existentes
+        /// </summary>
+        /// <param name="cbNombres"></param>
+        public  List<NombresYIDs> ListarNombreyID()
+        {
+            using (ClinicaDrFuentesEntities Contexto = new ClinicaDrFuentesEntities ())
+            {
+                try
+                {
+                    return  (from tabla in Contexto.Clientes.AsNoTracking()
+                                select new NombresYIDs
+                                {
+                                    IdCliente = tabla.IdCliente,
+                                    Nombre = tabla.Nombre + " " + tabla.Apellido1 + " " + tabla.Apellido2
+                                }
+                                    ).ToList();                    
+                    
+                }
+                catch (EntityException entityException)
+                {
+                    manejaExcepcionesDB.manejaEntityException(entityException);
+                    return null;
+                }
+                catch (NullReferenceException nullReference)
+                {
+                    manejaExcepcionesDB.manejaNullReference(nullReference);
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    manejaExcepcionesDB.manejaExcepcion(ex);
+                    return null;
+                }
+            }
+        }
+        /// <summary>
         /// Trae una lista con los distintos nombres de las ciudades de clientes existentes
         /// </summary>
         /// <returns></returns>
@@ -294,5 +330,17 @@ namespace ClinicaPro.DB.Cliente
                 }              
             }
         }
+        public class NombresYIDs
+        {
+            public int IdCliente { get; set; }
+            public string Nombre { get; set; } 
+
+            public NombresYIDs()
+            {
+
+            }
+        }
+
+        
     }
 }

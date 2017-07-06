@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracionGeneral));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAlergias = new System.Windows.Forms.Button();
+            this.btnDiccionario = new System.Windows.Forms.Button();
             this.btnMaterialesCasa = new System.Windows.Forms.Button();
+            this.btnServicios = new System.Windows.Forms.Button();
             this.btnFamiliar = new System.Windows.Forms.Button();
             this.btnRespuestaGenerales = new System.Windows.Forms.Button();
             this.btnVacuna = new System.Windows.Forms.Button();
             this.btnDrogas = new System.Windows.Forms.Button();
-            this.btnAlergias = new System.Windows.Forms.Button();
-            this.btnDiccionario = new System.Windows.Forms.Button();
-            this.btnServicios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,37 @@
             this.panel1.Size = new System.Drawing.Size(770, 337);
             this.panel1.TabIndex = 4;
             // 
+            // btnAlergias
+            // 
+            this.btnAlergias.BackgroundImage = global::ClinicaPro.Properties.Resources.molecule_100;
+            this.btnAlergias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAlergias.FlatAppearance.BorderSize = 0;
+            this.btnAlergias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlergias.Location = new System.Drawing.Point(321, 180);
+            this.btnAlergias.Name = "btnAlergias";
+            this.btnAlergias.Size = new System.Drawing.Size(115, 123);
+            this.btnAlergias.TabIndex = 9;
+            this.btnAlergias.Text = "Alergias";
+            this.btnAlergias.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAlergias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAlergias.UseVisualStyleBackColor = true;
+            this.btnAlergias.Click += new System.EventHandler(this.btnAlergias_Click);
+            // 
+            // btnDiccionario
+            // 
+            this.btnDiccionario.FlatAppearance.BorderSize = 0;
+            this.btnDiccionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiccionario.Image = global::ClinicaPro.Properties.Resources.dictionary__100;
+            this.btnDiccionario.Location = new System.Drawing.Point(166, 178);
+            this.btnDiccionario.Name = "btnDiccionario";
+            this.btnDiccionario.Size = new System.Drawing.Size(115, 123);
+            this.btnDiccionario.TabIndex = 8;
+            this.btnDiccionario.Text = "Diccionario";
+            this.btnDiccionario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDiccionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDiccionario.UseVisualStyleBackColor = true;
+            this.btnDiccionario.Click += new System.EventHandler(this.btnDiccionario_Click);
+            // 
             // btnMaterialesCasa
             // 
             this.btnMaterialesCasa.FlatAppearance.BorderSize = 0;
@@ -70,6 +101,21 @@
             this.btnMaterialesCasa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMaterialesCasa.UseVisualStyleBackColor = true;
             this.btnMaterialesCasa.Click += new System.EventHandler(this.btnMaterialesCasa_Click);
+            // 
+            // btnServicios
+            // 
+            this.btnServicios.FlatAppearance.BorderSize = 0;
+            this.btnServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServicios.Image = global::ClinicaPro.Properties.Resources.open;
+            this.btnServicios.Location = new System.Drawing.Point(21, 178);
+            this.btnServicios.Name = "btnServicios";
+            this.btnServicios.Size = new System.Drawing.Size(115, 123);
+            this.btnServicios.TabIndex = 7;
+            this.btnServicios.Text = "Servicios";
+            this.btnServicios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
             // btnFamiliar
             // 
@@ -131,52 +177,6 @@
             this.btnDrogas.UseVisualStyleBackColor = true;
             this.btnDrogas.Click += new System.EventHandler(this.btnDrogas_Click);
             // 
-            // btnAlergias
-            // 
-            this.btnAlergias.BackgroundImage = global::ClinicaPro.Properties.Resources.molecule_100;
-            this.btnAlergias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAlergias.FlatAppearance.BorderSize = 0;
-            this.btnAlergias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlergias.Location = new System.Drawing.Point(321, 180);
-            this.btnAlergias.Name = "btnAlergias";
-            this.btnAlergias.Size = new System.Drawing.Size(115, 123);
-            this.btnAlergias.TabIndex = 9;
-            this.btnAlergias.Text = "Alergias";
-            this.btnAlergias.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAlergias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAlergias.UseVisualStyleBackColor = true;
-            this.btnAlergias.Click += new System.EventHandler(this.btnAlergias_Click);
-            // 
-            // btnDiccionario
-            // 
-            this.btnDiccionario.FlatAppearance.BorderSize = 0;
-            this.btnDiccionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiccionario.Image = global::ClinicaPro.Properties.Resources.dictionary__100;
-            this.btnDiccionario.Location = new System.Drawing.Point(166, 178);
-            this.btnDiccionario.Name = "btnDiccionario";
-            this.btnDiccionario.Size = new System.Drawing.Size(115, 123);
-            this.btnDiccionario.TabIndex = 8;
-            this.btnDiccionario.Text = "Diccionario";
-            this.btnDiccionario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDiccionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDiccionario.UseVisualStyleBackColor = true;
-            this.btnDiccionario.Click += new System.EventHandler(this.btnDiccionario_Click);
-            // 
-            // btnServicios
-            // 
-            this.btnServicios.FlatAppearance.BorderSize = 0;
-            this.btnServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServicios.Image = global::ClinicaPro.Properties.Resources.open;
-            this.btnServicios.Location = new System.Drawing.Point(21, 178);
-            this.btnServicios.Name = "btnServicios";
-            this.btnServicios.Size = new System.Drawing.Size(115, 123);
-            this.btnServicios.TabIndex = 7;
-            this.btnServicios.Text = "Servicios";
-            this.btnServicios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnServicios.UseVisualStyleBackColor = true;
-            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
-            // 
             // ConfiguracionGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +190,7 @@
             this.MaximizeBox = false;
             this.Name = "ConfiguracionGeneral";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ConfiguracionGeneral";
             this.Load += new System.EventHandler(this.ConfiguracionGeneral_Load);
             this.panel1.ResumeLayout(false);

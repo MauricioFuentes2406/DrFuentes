@@ -27,5 +27,23 @@ namespace ClinicaPro
         {
 
         }
+
+        private void btnCrearBackUp_Click(object sender, EventArgs e)
+        {
+             bool isHecho  = new ClinicaPro.DB.RespaldoBD().CrearRespaldo();
+             if(isHecho)
+                 MessageBox.Show("Respaldo","Respaldo Actualizado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+             else
+                 MessageBox.Show("Respaldo", "Respaldo No se puedo Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnCargarRespaldo_Click(object sender, EventArgs e)
+        {
+            bool isHecho = new ClinicaPro.DB.RespaldoBD().CargarRespaldoUltimo();
+            if (isHecho)
+                MessageBox.Show("Respaldo", "Respaldo Cargado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Respaldo", "Respaldo No se puedo Cargar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

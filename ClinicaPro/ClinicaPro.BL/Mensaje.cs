@@ -31,6 +31,14 @@ namespace ClinicaPro.BL
                                                 MessageBoxIcon.Information);
                 
         }
+      public static void MensajeSeleccionUnaFila()
+      {
+          MessageBox.Show(Mensajes.Seleccione_Una_Fila,
+                                           Mensajes.Upss_Falto_Algo ,
+                                            MessageBoxButtons.OKCancel,
+                                              MessageBoxIcon.Information);
+
+      }
            
     }
 }

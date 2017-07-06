@@ -291,7 +291,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDiccionario";
-            this.Text = "Busquedas";
+            this.Text = "Diccionario";
             this.Load += new System.EventHandler(this.frmBusquedas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).EndInit();
             this.panel1.ResumeLayout(false);

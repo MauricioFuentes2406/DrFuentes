@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ClinicaPro.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ClinicaPro.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Logo-012.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClinicaPro.exe" size="20387312">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClinicaPro.exe" size="20390384">
       <assemblyIdentity name="ClinicaPro" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CWxTtF6Uwmomb1VMLsATwPOk9Vnv+SNce2PaQjBjOeA=</dsig:DigestValue>
+        <dsig:DigestValue>Ep4AHWWijiEAVxJT39dk55tSCugy/ucL3Wrji0NWjhw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,31 +62,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>M9Lpy53NkGqCJLriSeXI7uD2ftNbtUj9u6UAkXgHUBM=</dsig:DigestValue>
+        <dsig:DigestValue>oWkDiilE53uR5ZOjzI4/xnH0Y72Al0Ol3nAIKIO6vl0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClinicaPro.DB.dll" size="188416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClinicaPro.DB.dll" size="188928">
       <assemblyIdentity name="ClinicaPro.DB" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DZ/LIhlKmJlZylJHfJ9sccxfTC15FNNQ1jdTcMRkOak=</dsig:DigestValue>
+        <dsig:DigestValue>5tHMrx2MLA3uV3tD4kwoD68AEUNTHSdtAS2XQes8eK4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClinicaPro.Entities.dll" size="543232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClinicaPro.Entities.dll" size="544256">
       <assemblyIdentity name="ClinicaPro.Entities" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2kjHgdOJ034IYslJjl/mgiu/yDXKSkNqf2JhMcnTQwo=</dsig:DigestValue>
+        <dsig:DigestValue>7aaIqGbvVXZ1eX9v5zJeYztv7kjMQYulQG2/XHY+YaE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pzl6h7OWbPq0QsWwFC+uM/jkM4c91NpGUkhIUeAzOUc=</dsig:DigestValue>
+        <dsig:DigestValue>MANV3VD3GwcbLUpDlYR5dDy+HfSFAxJuHhRIGU5opkc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

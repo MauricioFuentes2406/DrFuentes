@@ -91,13 +91,21 @@ namespace ClinicaPro.ConsultaGeneral
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnRechazados_Click(object sender, EventArgs e)
-        {
+        {            
             foreach (DataGridViewRow row in this.dgConsulta.Rows)
             {
                 bool DiagnosticoEstado = (bool)row.Cells["Diagnostico_Confirmado"].Value;
                if (DiagnosticoEstado)
-               {                                                  
-                   row.Visible = false;                                                                                   
+               {
+                   try
+                   {
+                       row.Visible = false;               
+                   }
+                   catch (Exception)
+                   {
+                                                                                                                     
+                   }                                              
+                   
                }
             }
         }

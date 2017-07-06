@@ -91,7 +91,7 @@ namespace ClinicaPro.Diccionario
             }
             txtDescripcionAdicional.Text = Entidad.DescripcionAdicional;
             txtEnfermedadRelacionada.Text = Entidad.EnfermedadRelacionada;
-            txtSintoma.Text = Entidad.EnfermedadRelacionada;
+            txtSintoma.Text = Entidad.Síntoma;
             txtTratamiento.Text = Entidad.Tratamiento;
         }
         private List<BusquedaImagene> creaInstanciaBusquedaImagen() // No añade Id, lo hace EF al agregar 
@@ -226,10 +226,10 @@ namespace ClinicaPro.Diccionario
             {
                 Busqueda entidad;
                 ClinicaPro.DB.BusquedaDB busquedaDB = new BusquedaDB();
-                entidad = busquedaDB.busquedaPorNombre(txtNombre.Text.ToLower().Trim());
-                IdItem = entidad.IdItem;
+                entidad = busquedaDB.busquedaPorNombre(txtNombre.Text.ToLower().Trim());                
                 if (entidad != null)
                 {
+                    IdItem = entidad.IdItem;
                     Clase_A_Controles(entidad);
                 }
                 else

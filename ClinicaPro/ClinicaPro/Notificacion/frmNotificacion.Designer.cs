@@ -45,7 +45,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::ClinicaPro.Properties.Resources.unchecked_24;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(171, 183);
+            this.btnCancelar.Location = new System.Drawing.Point(72, 183);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 38);
             this.btnCancelar.TabIndex = 16;
@@ -59,7 +59,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::ClinicaPro.Properties.Resources.diskette;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.Location = new System.Drawing.Point(60, 182);
+            this.btnGuardar.Location = new System.Drawing.Point(171, 183);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(92, 38);
             this.btnGuardar.TabIndex = 15;

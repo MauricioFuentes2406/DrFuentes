@@ -110,7 +110,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEstado";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estado";
             this.Load += new System.EventHandler(this.frmEstado_Load);
             this.ResumeLayout(false);

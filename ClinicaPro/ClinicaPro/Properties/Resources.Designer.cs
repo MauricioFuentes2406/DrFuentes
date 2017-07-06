@@ -173,6 +173,16 @@ namespace ClinicaPro.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap database_14 {
+            get {
+                object obj = ResourceManager.GetObject("database_14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap database_9 {
             get {
                 object obj = ResourceManager.GetObject("database_9", resourceCulture);

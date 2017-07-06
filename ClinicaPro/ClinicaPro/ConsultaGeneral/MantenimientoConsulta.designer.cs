@@ -144,6 +144,7 @@
             this.Controls.Add(this.dgConsulta);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MantenimientoConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mantenimiento Consulta";
             this.Load += new System.EventHandler(this.MantenimientoConsulta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgConsulta)).EndInit();

@@ -66,7 +66,7 @@ namespace ClinicaPro.Notificacion
                 result = NotificaionesDB.Agregar(Notificacion_Control_A_Clase());
                 if(result)
                 {
-                    MessageBox.Show(Mensajes.Agregar_Modificar,"Notifacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this,Mensajes.Agregar_Modificar,"Notifacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                 }
             }

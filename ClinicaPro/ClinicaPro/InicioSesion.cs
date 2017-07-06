@@ -15,8 +15,7 @@ namespace ClinicaPro
 {
     public partial class InicioSesion : Form
     {
-
-        private int _NumeroIntentos;        
+        private int _NumeroIntentos;  // Número de intentos para iniciar sesion      
         public InicioSesion()
         {
             InitializeComponent();
@@ -29,15 +28,14 @@ namespace ClinicaPro
             if (TipoUsuario <= 0)
             {
                 txtPasswordStyle();                
-                MessageBox.Show("Nombre usuario y Contraseña Incorrecta", "Inicio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                UseWaitCursor = false;
+                MessageBox.Show("Nombre usuario y Contraseña Incorrecta", "Inicio", MessageBoxButtons.OK, MessageBoxIcon.Error);                
                 if (_NumeroIntentos < 3)
                 {
                     _NumeroIntentos++;
                 }else
                 {
-                    Suspender();
-                    MensajeSuspended();
+                //   Suspender();           Por pedido de cfch no se suspendera
+                    //   MensajeSuspended();   Por pedido de cfch no se suspendera
                     this.Close();
                 }
                 return;
@@ -46,10 +44,17 @@ namespace ClinicaPro
             // new AuxiliarLogin(1).Show();
             this.Hide();
         }
+        /// <summary>
+        ///  Si ha fallado mas de 3 veces mara iniciar sesion muestra mensaje de suspendido
+        /// </summary>
         private void MensajeSuspended()
         {
             MessageBox.Show(Mensajes.Suspended,"Olvidaste la Contraseña?",MessageBoxButtons.OK,MessageBoxIcon.Question);
         }
+        /// <summary>
+        /// Revisa el estado actual, de pasar los minutos de suspensión se habilitara 
+        /// </summary>
+        /// <returns></returns>
         private bool isSuspended()
         {
             bool Suspended  = Properties.Settings.Default.isTemporalSuspended;
@@ -99,7 +104,7 @@ namespace ClinicaPro
                if(String.IsNullOrWhiteSpace(Result) )
                    MessageBox.Show(Mensajes.FraseNoseEncontro,"Frase",MessageBoxButtons.OK,MessageBoxIcon.Question);
                else
-                   MessageBox.Show(Result);
+                   MessageBox.Show(this,Result,"Inicio Sesion",MessageBoxButtons.OK,MessageBoxIcon.Information);
            }else
                MessageBox.Show("Digite Un Nombre de Usuario","Frase",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
         }        
@@ -121,6 +126,9 @@ namespace ClinicaPro
         {
             txtPasswordStyle();
         }
+        /// <summary>
+        /// El activa el UseSystemPasswordChar , y además quita el multline(No funcionan juntos)
+        /// </summary>
         private void txtPasswordStyle()
         {
             if (!txtPassword.UseSystemPasswordChar)

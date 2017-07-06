@@ -5100,6 +5100,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Consulta";
             this.Load += new System.EventHandler(this.AgregarConsulta_Load);
             this.tabGeneral.ResumeLayout(false);

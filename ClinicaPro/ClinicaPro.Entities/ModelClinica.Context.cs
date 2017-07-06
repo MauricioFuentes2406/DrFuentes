@@ -506,6 +506,20 @@ public partial class ClinicaDrFuentesEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReporteCitasTotal_Result>("SpReporteCitasTotal");
     }
 
+
+    public virtual int spCrearBackUp()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spCrearBackUp");
+    }
+
+
+    public virtual int spCargarRespaldo()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spCargarRespaldo");
+    }
+
 }
 
 }

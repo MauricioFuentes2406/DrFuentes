@@ -2179,6 +2179,8 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
         <Function Name="sp_VacunaListarConsultasRelacionadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdVacuna" Type="int" Mode="In" />
         </Function>
+        <Function Name="spCargarRespaldo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spCrearBackUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteCitasCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteCitasTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpReporteClienteLugares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -4320,6 +4322,8 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
             <End Role="InventarioMedicina" EntitySet="InventarioMedicina" />
           </AssociationSet>
           <EntitySet Name="VistaCliente" EntityType="ClinicaDrFuentesModel.VistaCliente" />
+          <FunctionImport Name="spCrearBackUp" />
+          <FunctionImport Name="spCargarRespaldo" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -6585,6 +6589,8 @@ advertencia 6002: La tabla o vista 'ClinicaDrFuentes.dbo.VistaVacunas' no tiene 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spCrearBackUp" FunctionName="ClinicaDrFuentesModel.Store.spCrearBackUp" />
+          <FunctionImportMapping FunctionImportName="spCargarRespaldo" FunctionName="ClinicaDrFuentesModel.Store.spCargarRespaldo" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

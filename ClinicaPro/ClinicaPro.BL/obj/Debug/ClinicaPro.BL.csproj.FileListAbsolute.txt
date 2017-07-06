@@ -18,3 +18,14 @@ E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\EntityFramew
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.csprojResolveAssemblyReference.cache
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.dll
 E:\PracticaEmpresarial\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.pdb
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.BL.dll
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.BL.pdb
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.Entities.dll
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.General.dll
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\EntityFramework.dll
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.Entities.pdb
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\ClinicaPro.General.pdb
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\bin\Debug\EntityFramework.xml
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.csprojResolveAssemblyReference.cache
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.dll
+E:\DrFuentes\ClinicaPro\ClinicaPro.BL\obj\Debug\ClinicaPro.BL.pdb

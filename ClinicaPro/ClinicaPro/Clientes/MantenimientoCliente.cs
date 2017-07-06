@@ -135,7 +135,7 @@ namespace ClinicaPro.Clientes
         {
             using (ClienteBuscar buscarClienteFrm = new ClienteBuscar(dgClientes.DataSource as List<VistaCliente>))
             {
-                buscarClienteFrm.ShowDialog();
+                buscarClienteFrm.ShowDialog(this);
                 dgClientes.DataSource = buscarClienteFrm.lista_filtrada;
                 this.dgClientes.Columns["IdCliente"].HeaderText = "Numero_Cliente";
             }

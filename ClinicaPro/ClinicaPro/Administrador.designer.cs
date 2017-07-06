@@ -29,30 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCrearRespaldo = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnCrearRespaldo
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::ClinicaPro.Properties.Resources.database_9;
-            this.button1.Location = new System.Drawing.Point(361, 110);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 123);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Respaldo";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCrearRespaldo.FlatAppearance.BorderSize = 0;
+            this.btnCrearRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearRespaldo.Image = global::ClinicaPro.Properties.Resources.database_9;
+            this.btnCrearRespaldo.Location = new System.Drawing.Point(331, 110);
+            this.btnCrearRespaldo.Name = "btnCrearRespaldo";
+            this.btnCrearRespaldo.Size = new System.Drawing.Size(115, 123);
+            this.btnCrearRespaldo.TabIndex = 4;
+            this.btnCrearRespaldo.Text = "Crear Respaldo";
+            this.btnCrearRespaldo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCrearRespaldo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCrearRespaldo.UseVisualStyleBackColor = true;
+            this.btnCrearRespaldo.Click += new System.EventHandler(this.btnCrearBackUp_Click);
             // 
             // button7
             // 
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Image = global::ClinicaPro.Properties.Resources.user_49;
-            this.button7.Location = new System.Drawing.Point(132, 110);
+            this.button7.Location = new System.Drawing.Point(34, 110);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(115, 123);
             this.button7.TabIndex = 3;
@@ -68,7 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(624, 357);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCrearRespaldo);
             this.Controls.Add(this.button7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Administrador";
@@ -81,6 +82,6 @@
         #endregion
 
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCrearRespaldo;
     }
 }

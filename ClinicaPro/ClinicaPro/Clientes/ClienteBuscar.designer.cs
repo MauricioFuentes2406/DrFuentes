@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteBuscar));
             this.btnEViviendaDetalle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbTipoSangre = new System.Windows.Forms.ComboBox();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.gbRangoEdad = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.cbTipoSangre = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbRangoEdad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdadMaxima)).BeginInit();
@@ -93,6 +93,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Métodos  de Filtrado";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Tipo de Sangre";
+            // 
+            // cbTipoSangre
+            // 
+            this.cbTipoSangre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoSangre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoSangre.FormattingEnabled = true;
+            this.cbTipoSangre.Location = new System.Drawing.Point(22, 239);
+            this.cbTipoSangre.Name = "cbTipoSangre";
+            this.cbTipoSangre.Size = new System.Drawing.Size(109, 21);
+            this.cbTipoSangre.TabIndex = 18;
             // 
             // txtCedula
             // 
@@ -259,25 +278,6 @@
             this.txtNombre.Size = new System.Drawing.Size(109, 20);
             this.txtNombre.TabIndex = 1;
             // 
-            // cbTipoSangre
-            // 
-            this.cbTipoSangre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoSangre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTipoSangre.FormattingEnabled = true;
-            this.cbTipoSangre.Location = new System.Drawing.Point(22, 239);
-            this.cbTipoSangre.Name = "cbTipoSangre";
-            this.cbTipoSangre.Size = new System.Drawing.Size(109, 21);
-            this.cbTipoSangre.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 223);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Tipo de Sangre";
-            // 
             // ClienteBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +291,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ClienteBuscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Buscar Cliente";
             this.Load += new System.EventHandler(this.ClienteBuscar_Load);
             this.groupBox1.ResumeLayout(false);

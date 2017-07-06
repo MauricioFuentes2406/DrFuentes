@@ -42,8 +42,13 @@ namespace ClinicaPro
         private void llenarConsulta_NoFiltro()
         {
             this.dgConsulta.DataSource = ClinicaPro.DB.Consulta.Vistas.VConsulta.Listar();
-            dgConsulta.Columns[columnIdCliente].Visible = false;
+            dgConsulta.Columns[columnIdCliente].Visible = true;
+            dgConsulta.Columns[columnIdCliente].HeaderText = "Número_Cliente";
         }
+        /// <summary>
+        /// Obtiene las Id de los clientes que cumplan algun requisito
+        /// </summary>
+        /// <param name="argIdCliente"></param>
         private void obtenerIdConsultasdeCliente(int argIdCliente)
         {
             var lista = this.dgConsulta.DataSource as List<VistaConsulta>;
@@ -62,11 +67,26 @@ namespace ClinicaPro
                 }
             }
         }
+        /// <summary>
+        /// Coloca en los campos esteticos el nombre y el número del Cliente que se esta consultando
+        /// </summary>
         private void setNombreNumeroClienteDisplayControl()
         {
-            this.txtNombre.Text = this.dgConsulta.CurrentRow.Cells[Nombre].Value.ToString();
-            this.txtNumeroCliente.Value = (int)this.dgConsulta.CurrentRow.Cells[columnIdCliente].Value;
+            try
+            {
+                this.txtNombre.Text = this.dgConsulta.SelectedRows[0].Cells[Nombre].Value.ToString();
+                this.txtNumeroCliente.Value = (int)this.dgConsulta.SelectedRows[0].Cells[columnIdCliente].Value;
+            }
+            catch (Exception)
+            {
+                                
+            }
+            
         }
+        /// <summary>
+        /// Carga los Datos de la consulta en los grids
+        /// </summary>
+        /// <param name="idConsulta"></param>
         private void llenarconVerDetalle(int idConsulta)
         {
             // Exploracion Fisica
@@ -219,6 +239,10 @@ namespace ClinicaPro
            this.dgCitas.Columns["IdCita"].Visible = false;
            this.dgCitas.Columns["Cliente"].Visible = false;
         }
+        /// <summary>
+        /// Llena los datos del GridDe ElectroCardiogramas
+        /// </summary>
+        /// <param name="IdCliente"></param>
          private void  llenarPDF(int  IdCliente)
         {
             this.dgElectros.DataSource= ElectroDB.ListaPorCliente(IdCliente);
@@ -229,6 +253,129 @@ namespace ClinicaPro
              this.dgElectros.Columns["IdConsulta"].HeaderText=Numero_Consulta;
              this.dgElectros.Columns["IdCliente"].HeaderText="Número_Cliente";                                      
         }
+         /// <summary>
+         /// Uso Estetico , de acuerdo al boton que lo invoque define un texto del control txtMensajeInformativo
+         /// </summary>
+         /// <param name="botonInvocado"></param>
+         private void manejaMensajeInformativo(object botonInvocado)
+         {
+             if (botonInvocado is DataGridView) //En referencia de VerDetalle Grid
+             {
+                 txtMensajeInformativo.Text = "Ver detalle: ";
+             }
+             if (botonInvocado == btnFiltrarPorCliente)
+             {
+                 txtMensajeInformativo.Text = " Filtro Por Clientes: ";
+             }
+             if (txtMensajeInformativo.Visible)
+             {
+                 txtMensajeInformativo.Text += Mensajes.DetallesActualizados;
+             }
+             else
+             {
+                 txtMensajeInformativo.Text += Mensajes.Detalles_Cargados;
+                 txtMensajeInformativo.Visible = true;
+             }
+         }
+         /// <summary>
+         /// Cambia el nombre del encabezado de IdConsulta a Número Consulta
+         /// </summary>
+         private void HeadertextNumeroConsulta() //Estetico
+         {
+             // No estan Todos los, algunos vienen de View de la BD
+
+             List<DataGridView> dataGrids = new List<DataGridView>();
+             dataGrids.Add(dgCraneo);
+             dataGrids.Add(dgOjos);
+             dataGrids.Add(dgOidos);
+             dataGrids.Add(dgNariz);
+             dataGrids.Add(dgBoca);
+             dataGrids.Add(dgCuello);
+             dataGrids.Add(dgAbdomen);
+             dataGrids.Add(dgApaDigestivo);
+             dataGrids.Add(dgCoordinacion);
+             dataGrids.Add(dgGinecoObstreticos);
+             dataGrids.Add(dgEstadoEmocional);
+             dataGrids.Add(dgSensibilidad);
+             dataGrids.Add(dgParesCraneales);
+             dataGrids.Add(dgReflejos);
+             foreach (var item in dataGrids)
+             {
+                 item.Columns["Idconsulta"].HeaderText = "Número_Consulta";
+             }
+
+         }
+         private void llenarConCliente(List<int> ListaIdConsultas)
+         {
+             ClinicaPro.DB.Consulta.Expediente.controladorExpedienteDB controladorExpediente = new ClinicaPro.DB.Consulta.Expediente.controladorExpedienteDB();
+             foreach (int idConsulta in ListaIdConsultas)
+             {
+                 // Exploracion Fisica         
+                 controladorExpediente.addVExploracionFisica(idConsulta);
+                 controladorExpediente.addVEstadoVivienda(idConsulta);
+                 controladorExpediente.addVToraxPulmones(idConsulta);
+                 controladorExpediente.addConsultaCraneo(idConsulta);
+                 controladorExpediente.addConsultaOjo(idConsulta);
+                 controladorExpediente.addConsultaOido(idConsulta);
+                 controladorExpediente.addConsultaNariz(idConsulta);
+                 controladorExpediente.addConsultaBoca(idConsulta);
+                 controladorExpediente.addConsultaCuello(idConsulta);
+                 controladorExpediente.addConsultaAbdomen(idConsulta);
+                 controladorExpediente.addConsultaAparatoDigestivo(idConsulta);
+                 controladorExpediente.addConsultaCoordinacionMarcha(idConsulta);
+                 controladorExpediente.addAntecedenteGinecoObstretico(idConsulta);
+                 //  Sentidos
+                 controladorExpediente.addEstadoEmocional(idConsulta);
+                 controladorExpediente.addSensibilidad(idConsulta);
+                 controladorExpediente.addConsultaParesCraneales(idConsulta);
+                 controladorExpediente.addReflejo(idConsulta);
+                 controladorExpediente.addVServicios(idConsulta);
+                 //Antecedentes              
+                 controladorExpediente.addVAntecedentePatologico(idConsulta);
+                 controladorExpediente.addVAntecedenteHereditario(idConsulta);
+                 controladorExpediente.addVDrogas(idConsulta);
+                 controladorExpediente.addVVacunas(idConsulta);
+                 controladorExpediente.addVAlcohol(idConsulta);
+                 controladorExpediente.addVTabaco(idConsulta);
+             }
+             this.dgExFisica_General.DataSource = controladorExpediente.get_ListExploracionFisica();
+             this.dgEstadoVivienda.DataSource = controladorExpediente.get_ListaEstadoVivienda();
+             this.dgTorax.DataSource = controladorExpediente.get_ListaVistaToraxPulmones();
+             this.dgCraneo.DataSource = controladorExpediente.get_ListaConsultaCraneo();
+             this.dgOjos.DataSource = controladorExpediente.get_ListaConsultaOjo();
+             this.dgOidos.DataSource = controladorExpediente.get_ListaConsultaOido();
+             this.dgNariz.DataSource = controladorExpediente.get_ListaConsultaNariz();
+             this.dgBoca.DataSource = controladorExpediente.get_ListaConsultaBoca();
+             this.dgCuello.DataSource = controladorExpediente.get_ListaConsultaCuello();
+             this.dgAbdomen.DataSource = controladorExpediente.get_ListaConsultaAbdomen();
+             this.dgApaDigestivo.DataSource = controladorExpediente.get_ListaConsultaAparatoDigestivo();
+             this.dgCoordinacion.DataSource = controladorExpediente.get_ListaConsultaCoodinacionMarcha();
+             this.dgGinecoObstreticos.DataSource = controladorExpediente.get_ListaAntecedenteGinecoObstreticos();
+             // Sentidos		 
+             this.dgEstadoEmocional.DataSource = controladorExpediente.get_ListaEstadoEmocional();
+             this.dgSensibilidad.DataSource = controladorExpediente.get_ListaSensibilidad();
+             this.dgParesCraneales.DataSource = controladorExpediente.get_ListaParesCraneales();
+             this.dgReflejos.DataSource = controladorExpediente.get_ListaReflejo();
+             this.dgServicios.DataSource = controladorExpediente.get_ListaVServicios();
+             //Antecedentes		       
+             dgHereditario.DataSource = controladorExpediente.get_ListaVAntecedenteHereditario();
+             dgAntePatologicos.DataSource = controladorExpediente.get_ListaVAntecedentePatologico();
+             this.dgDroga.DataSource = controladorExpediente.get_ListaVDrogas();
+             this.dgVacunas.DataSource = controladorExpediente.get_ListaVVacunas();
+             this.dgAlchol.DataSource = controladorExpediente.get_ListaVAlcohol();
+             dgTabaco.DataSource = controladorExpediente.get_ListaVTabaco();
+             /**/
+             //  ClinicaPro.DB.Consulta.ConsultaGaslowDB.ListaPorConsulta(idConsulta, dgGlasgow);
+
+             HeadertextNumeroConsulta(); // Estético
+         }
+         private void getListConsulta_FromGridCOnsulta()
+         {
+             var lista = dgConsulta.DataSource as List<VistaConsulta>;
+             _ListaIdConsultas = (from n in lista
+                                  where n.IdCliente == txtNumeroCliente.Value
+                                  select n.Número_Consulta).ToList();
+         }
         #endregion
         /// <summary>
         ///  identifica si la celda actual es la Botón del Grid para ver Detalles
@@ -239,9 +386,7 @@ namespace ClinicaPro
             var senderASGrid = (DataGridView)sender;
             if (senderASGrid.CurrentCell is DataGridViewButtonCell)
             {
-                this.idCliente = (int)senderASGrid.CurrentRow.Cells[columnIdCliente].Value;
-                //   this.txtNombre.Text = senderASGrid.CurrentRow.Cells[Nombre].Value.ToString();
-                //  this.txtNumeroCliente = (int)senderASGrid.CurrentRow.Cells[columnIdCliente].Value;
+                this.idCliente = (int)senderASGrid.CurrentRow.Cells[columnIdCliente].Value;                              
                 setNombreNumeroClienteDisplayControl();
                 llenarconVerDetalle((int)senderASGrid.CurrentRow.Cells[Numero_Consulta].Value);
                 int IdCliente  = (int)senderASGrid.CurrentRow.Cells["IdCliente"].Value;
@@ -255,35 +400,7 @@ namespace ClinicaPro
         private void Expediente_Shown(object sender, EventArgs e)
         {
             // Sea nececio es con begin Onvoke
-        }
-        /// <summary>
-        /// Uso Estetico , de acuerdo al boton que lo invoque define un texto del control txtMensajeInformativo
-        /// </summary>
-        /// <param name="botonInvocado"></param>
-        private void manejaMensajeInformativo(object botonInvocado)
-        {
-            if (botonInvocado is DataGridView) //En referencia de VerDetalle Grid
-            {
-                txtMensajeInformativo.Text = "Ver detalle: ";
-            }
-            if (botonInvocado == btnFiltrarPorCliente)
-            {
-                txtMensajeInformativo.Text = " Filtro Por Clientes: ";
-            }
-            if (txtMensajeInformativo.Visible)
-            {
-                txtMensajeInformativo.Text += Mensajes.DetallesActualizados;
-            }
-            else
-            {
-                txtMensajeInformativo.Text += Mensajes.Detalles_Cargados;
-                txtMensajeInformativo.Visible = true;
-            }
-        }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        }                 
         private void btnFiltrarPorCliente_Click(object sender, EventArgs e)
         {
             this.UseWaitCursor = true;
@@ -328,105 +445,7 @@ namespace ClinicaPro
             obtenerIdConsultasdeCliente((int)txtNumeroCliente.Value);
             llenarConCliente(_ListaIdConsultas);
             manejaMensajeInformativo(sender);
-        }
-        private void getListConsulta_FromGridCOnsulta()
-        {
-            var lista = dgConsulta.DataSource as List<VistaConsulta>;
-            _ListaIdConsultas = (from n in lista
-                                 where n.IdCliente == txtNumeroCliente.Value
-                                 select n.Número_Consulta).ToList();
-        }
-        private void llenarConCliente(List<int> ListaIdConsultas)
-        {
-            ClinicaPro.DB.Consulta.Expediente.controladorExpedienteDB controladorExpediente = new ClinicaPro.DB.Consulta.Expediente.controladorExpedienteDB();
-            foreach (int idConsulta in ListaIdConsultas)
-            {
-                  // Exploracion Fisica         
-            controladorExpediente.addVExploracionFisica(idConsulta);                      
-            controladorExpediente.addVEstadoVivienda(idConsulta);          
-            controladorExpediente.addVToraxPulmones(idConsulta);
-            controladorExpediente.addConsultaCraneo(idConsulta);
-            controladorExpediente.addConsultaOjo(idConsulta);         
-            controladorExpediente.addConsultaOido(idConsulta);           
-            controladorExpediente.addConsultaNariz(idConsulta);           
-            controladorExpediente.addConsultaBoca(idConsulta);          
-            controladorExpediente.addConsultaCuello(idConsulta);            
-            controladorExpediente.addConsultaAbdomen(idConsulta);
-            controladorExpediente.addConsultaAparatoDigestivo(idConsulta);            
-            controladorExpediente.addConsultaCoordinacionMarcha(idConsulta);           
-            controladorExpediente.addAntecedenteGinecoObstretico(idConsulta);           
-            //  Sentidos
-            controladorExpediente.addEstadoEmocional(idConsulta);
-            controladorExpediente.addSensibilidad(idConsulta);
-            controladorExpediente.addConsultaParesCraneales(idConsulta);
-            controladorExpediente.addReflejo(idConsulta);
-            controladorExpediente.addVServicios(idConsulta);
-             //Antecedentes              
-            controladorExpediente.addVAntecedentePatologico(idConsulta);
-            controladorExpediente.addVAntecedenteHereditario(idConsulta);
-            controladorExpediente.addVDrogas(idConsulta);
-            controladorExpediente.addVVacunas(idConsulta);
-            controladorExpediente.addVAlcohol(idConsulta);
-            controladorExpediente.addVTabaco(idConsulta);     
-            }  
-            this.dgExFisica_General.DataSource = controladorExpediente.get_ListExploracionFisica();
-            this.dgEstadoVivienda.DataSource = controladorExpediente.get_ListaEstadoVivienda();          
-            this.dgTorax.DataSource = controladorExpediente.get_ListaVistaToraxPulmones();    
-            this.dgCraneo.DataSource = controladorExpediente.get_ListaConsultaCraneo();            
-            this.dgOjos.DataSource=controladorExpediente.get_ListaConsultaOjo();            
-	        this.dgOidos.DataSource = controladorExpediente.get_ListaConsultaOido();
-	        this.dgNariz.DataSource = controladorExpediente.get_ListaConsultaNariz();
-	        this.dgBoca.DataSource = controladorExpediente.get_ListaConsultaBoca();
-	        this.dgCuello.DataSource = controladorExpediente.get_ListaConsultaCuello();
-	        this.dgAbdomen.DataSource = controladorExpediente.get_ListaConsultaAbdomen();
-	        this.dgApaDigestivo.DataSource= controladorExpediente.get_ListaConsultaAparatoDigestivo();
-	        this.dgCoordinacion.DataSource = controladorExpediente.get_ListaConsultaCoodinacionMarcha();
-		    this.dgGinecoObstreticos.DataSource = controladorExpediente.get_ListaAntecedenteGinecoObstreticos();            		 		 
-		 // Sentidos		 
-           this.dgEstadoEmocional.DataSource = controladorExpediente.get_ListaEstadoEmocional();
-           this.dgSensibilidad.DataSource = controladorExpediente.get_ListaSensibilidad();
-	       this.dgParesCraneales.DataSource = controladorExpediente.get_ListaParesCraneales();
-	       this.dgReflejos.DataSource = controladorExpediente.get_ListaReflejo();		
-		   this.dgServicios.DataSource = controladorExpediente.get_ListaVServicios();
-		   //Antecedentes		       
-		  dgHereditario.DataSource = controladorExpediente.get_ListaVAntecedenteHereditario();
-		  dgAntePatologicos.DataSource = controladorExpediente.get_ListaVAntecedentePatologico();
-          this.dgDroga.DataSource= controladorExpediente.get_ListaVDrogas();
-	      this.dgVacunas.DataSource= controladorExpediente.get_ListaVVacunas();
-		  this.dgAlchol.DataSource = controladorExpediente.get_ListaVAlcohol();
-		  dgTabaco.DataSource = controladorExpediente.get_ListaVTabaco();
-         /**/ //  ClinicaPro.DB.Consulta.ConsultaGaslowDB.ListaPorConsulta(idConsulta, dgGlasgow);
-
-          HeadertextNumeroConsulta(); // Estético
-        }
-        /// <summary>
-        /// Cambia el nombre del encabezado de IdConsulta a Número Consulta
-        /// </summary>
-        private void  HeadertextNumeroConsulta() //Estetico
-        {
-            // No estan Todos los, algunos vienen de View de la BD
-
-            List<DataGridView> dataGrids = new List<DataGridView>();
-            dataGrids.Add(dgCraneo);
-            dataGrids.Add(dgOjos);
-            dataGrids.Add(dgOidos);
-            dataGrids.Add(dgNariz);
-            dataGrids.Add(dgBoca);
-            dataGrids.Add(dgCuello);
-            dataGrids.Add(dgAbdomen);
-            dataGrids.Add(dgApaDigestivo);
-            dataGrids.Add(dgCoordinacion);
-            dataGrids.Add(dgGinecoObstreticos);
-            dataGrids.Add(dgEstadoEmocional);
-            dataGrids.Add(dgSensibilidad);
-            dataGrids.Add(dgParesCraneales);
-            dataGrids.Add(dgReflejos);
-            foreach (var item in dataGrids)  
-            {
-                item.Columns["Idconsulta"].HeaderText = "Número_Consulta";
-            }
-            
-        }
+        }               
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             llenarConsulta_NoFiltro();

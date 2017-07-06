@@ -16,10 +16,15 @@ namespace ClinicaPro.General.Constantes
     /// Value member = "valor"
     /// </summary>
 
-   public  class claseGenerica_ComboBox
+   public  class claseGenerica_ComboBox  
     {
         public String nombre { get; set; }
         public byte valor { get; set; }
+
+       /*
+       No cambiar los nombres de estas variables                
+        */
+
     }
 
 }
